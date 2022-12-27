@@ -1,0 +1,25 @@
+<input
+  [(ngModel)]="name"
+  (input)="onChangeName()"
+  (keydown.enter)="name.length && close(true)"
+  placeholder="Shop name"
+/>
+
+<mat-selection-list [multiple]="false" [(ngModel)]="fixture" (ngModelChange)="onChangeFixture()">
+  <mat-list-option *ngFor="let f of fixtures; let i = index" [value]="f" [disableRipple]="true">
+    <div class="label">
+      <span>{{ f }}</span>
+      <span class="label__hotkey">ctrl / cmd + {{ i + 1 }}</span>
+    </div>
+  </mat-list-option>
+</mat-selection-list>
+
+<div class="controls">
+  <button
+    [disabled]="!name.length || !fixture.length"
+    (click)="close(true)"
+  >
+    Create
+  </button>
+  <button (click)="close(false)">Close</button>
+</div>

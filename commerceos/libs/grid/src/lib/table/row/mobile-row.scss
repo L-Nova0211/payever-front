@@ -1,0 +1,233 @@
+.mobile-row-wrap {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px 0;
+
+  &.is-table-width-scroll {
+    width: fit-content;
+    min-width: 100%;
+  }
+
+
+  &:not(.selectable) {
+    padding-left: 8px;
+
+    &.grid-table-body-cell {
+      padding-left: 0;
+    }
+  }
+
+  .grid-table-body-cell {
+    height: 50px;
+    border: 0;
+    min-width: var(--checkboxWidth);
+    width: var(--checkboxWidth);
+  }
+
+  &__thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mat-icon {
+      width: 30px;
+    }
+  }
+
+  &__thumbnail-grid {
+    flex: 24px;
+    border-radius: 4px;
+    align-items: center;
+  }
+
+  &__thumbnail-item {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    background-image: linear-gradient(#474747, #000);
+    stroke: #ffffff;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 8px;
+    margin-left: 12px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    .rows-wrap {
+      width: 100%;
+
+      &__row {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      &__description {
+        margin: 0;
+        padding-top: 0;
+        height: 26px;
+        width: 100%;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1.2;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .bottom-line {
+      width: 100%;
+      display: grid;
+      grid-template-columns: max-content;
+      grid-auto-flow: column;
+      gap: 10px;
+      height: 25px;
+      margin-top: 10px;
+    }
+  }
+
+  &__content-with-label {
+    width: 52%;
+  }
+
+  .first-cell ~ &__content-with-label {
+    width: 46%;
+  }
+
+  &__content-grid {
+    margin-left: 8px;
+    margin-right: 0;
+
+    .rows-wrap {
+      display: grid;
+      grid-template-columns: 22% auto min-content;
+      align-items: center;
+      font-size: 10px;
+
+      &__row {
+        padding: 0 4px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &.is-table-width-scroll {
+      flex-direction: row;
+      min-width: 100%;
+      margin-left: 0;
+
+      .rows-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: fit-content;
+        min-width: 100%;
+      }
+    }
+
+    & ~ .mobile-row-wrap__badge-wrap {
+      display: none;
+    }
+  }
+
+  &__badge-wrap {
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    height: 50px;
+  }
+
+  &__badge {
+    align-items: center;
+    background-color: #3a3941;
+    border-radius: 11px;
+    color: #a6a5ac;
+    cursor: default;
+    display: flex;
+    height: 22px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &.dark {
+    background-color: #1c1d1e;
+    border-top: 1px solid #393939;
+
+    .mobile-row-wrap__content {
+      .rows-wrap {
+        &__description,
+        &__row {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  &.transparent {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid #393939;
+
+    .mobile-row-wrap__content {
+      .rows-wrap {
+        &__description,
+        &__row {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  &.light {
+    background-color: #f7f7f7;
+    border-top: 1px solid rgb(242, 242, 242);
+
+    .mobile-row-wrap__content {
+      .rows-wrap {
+        &__description,
+        &__row {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &.first-row {
+    border-width: 0;
+
+    &.is-show-header {
+      border-radius: 0;
+    }
+  }
+  &.last-row {
+    border-radius: 0 0 12px 12px;
+  }
+}

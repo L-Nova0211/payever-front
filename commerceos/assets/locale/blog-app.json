@@ -1,0 +1,80 @@
+{
+  "blog-app": {
+    "actions": {
+      "edit": "Edit",
+      "copy_link": "Copy Link",
+      "download_qr":"QR",
+      "open": "Open",
+      "cancel": "Cancel",
+      "done": "Done",
+      "save": "Save",
+      "create_new": "Create New",
+      "remove_domain": "Remove domain",
+      "create_domain": "Add domain"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "errors": {
+      "unknown_error": "Unknown error",
+      "link_copied": "Link copied"
+    },
+    "messages": {
+      "domain_connected": "Domain connected",
+      "domain_incorrect": "entered incorrectly. Check that you’ve entered the required values, and verify your connection again.",
+      "domain_disconnected": "Domain is not connected",
+      "no_domain":"No domains connected"
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "info":{
+      "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px",
+      "app_offline": "The current state of the store is set to offline"
+    },
+    "dialogs": {
+      "window_exit": {
+        "heading":"Editing blog",
+        "title": "Are you sure?",
+        "label": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+        "confirm": "Yes",
+        "decline": "No"
+      },
+      "delete_confirmation": {
+        "delete": "Delete",
+        "do_you_really_want_to_delete_item": "Do you really want to delete this item?",
+        "accept_button": "Yes",
+        "decline_button": "No"
+      }
+    },
+    "settings": {
+      "customer_privacy": "Customer privacy",
+      "title": "Settings",
+      "live_status": "Live status",
+      "payever_domain": "payever domain",
+      "personal_domain": "Personal domain",
+      "connect_existing": "Connect existing domain",
+      "password_protection": "Password Protection",
+      "social_image": "Social sharing image",
+      "spam_protection": "Spam protection",
+      "publishing": "PUBLISHING",
+      "domains": "DOMAINS",
+      "domain_label": "Domain",
+      "domain_placeholder": "Enter Domain",
+      "date_placeholder": "Enter Date",
+      "date_label": "Date Added",
+      "provider_label": "Provider",
+      "provider_placeholder": "Enter Provider",
+      "safety": "SAFETY",
+      "social": "SOCIAL",
+      "all_blogs": "ALL BLOGS",
+      "meta_description":"Meta description",
+      "page_title":"Page title",
+      "facebook_pixel":"Facebook Pixel",
+      "google_analytics":"Google Analytics"
+    },
+    "themes": {
+      "title": "Themes"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+id: header-nike
+variant: front
+data: {}
+template:
+  id: header-nike
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            src: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAACXCAMAAAAvQTlLAAAAY1BMVEX///8AAAD29vbHx8fm5ubx8fH5+fmAgIBTU1Pp6emnp6dPT0/e3t78/PzZ2dmYmJhjY2O+vr6ysrIwMDBKSkoKCgokJCQeHh4pKSk7OztERETT09OMjIxsbGyenp5xcXEYGBgs3MZiAAACyUlEQVR4nO3ZbcNyMBgG4GYYqs1bSqT+/6981ovSjWw2ni/n8bnNiWsX1mYDAAAAAAAAAAAAAAAAAACgiO/XPqIT+tM/SpLlg3zhdRJOXwpaOitkeXF2SXwWKvenItHiaV72tA5InihdhopkCrfanMejLSFHtlP7eViSetlAd17KZChCGsVUGy8gJFw00t6lIrtnIkGqPupKyGXJ28iba/kIRWKqsbqEHKBxFlrkyrvenplIxlydoVQOKVRvuRa58uI2FDlEescIj3JQbj3Tc+W96ZTVw/5yH2Z5NYYpyzuhyIVql694DKTWIvlhJY6HbqiMzVjr/DnWVpfgUbvy3qkarWJ/8Z41cPPMIzkuvRaH71CyrOa9pNTP4cbPbJ+K+G8mQq5zX1Gq1wRnk1yem8bHXibdbtXlx+0cs++jl9Z5PxMhp2h2qs0mfU8zK5dXNfnAhZItVPEtZoTzmVS/3fOIlUOZ7mVl2HXEZyqhM84PKStvI6FktzL8TgiLz2xn9VBy5Y1lkgu7Me84dXdCpceXI1de1m8H77IKEgtvS8735Z/s+G4iX8t/YXYeZs33rNtfp+rtxPb0M9SpNugLX4f6e/LByMR7nrLfmWR5RtZew6ve5Fnaazq+J1deMRCk63CmFh6vLTZ42ryTyU2aeOBHf1kqq9bwWi/yi0iklMVlphCqsFVWrf5tnGHbWN87aKaPOuEQ6HxzqRoqL61UrLIfSjZVlYoeZ72sWr3upSOIFtuSMsi1SFmZ5rotU1ZvM+tLLFRWHzPW49xvLi1iOse3vLL4EBy30wp1Ut14NDf16tJRLF9WH+l0nqd4tY3qB287HYlobjxawadDHWs+PY91U3fyoLyfbRkd/w4kpelHs4nqPFZVyYorcEjS27UqAkZX/8Ovz6+628axoLtV2rqikFfcXbshAAAAAAAAAAAAAAAAAADAf/cPlEAc2xtrHT4AAAAASUVORK5CYII=
+        - id: header-menu
+          type: menu
+          data:
+            routes:
+              - title: HOME
+                variant: default
+                value: nike-main-page-route
+                type: internal
+              - title: CATEGORY
+                variant: category
+                value: ''
+                type: internal-special
+              - title: ABOUT
+                variant: default
+                value: nike-about-page-route
+                type: internal
+              - title: CONTACTS
+                variant: default
+                value: nike-contacts-page-route
+                type: internal
+              - title: PAYEVER
+                variant: ''
+                value: payever.org
+                type: external
+        - id: header-cart
+          type: shop-cart
+
+
+stylesheets:
+  desktop:
+    header-nike: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 72
+      position: sticky
+      top: 0
+      zIndex: 1
+      display: grid
+      gridTemplateColumns: 75 1fr 75
+    header-logo:
+      width: 42
+      height: 42
+      margin: 10 0 0 20
+      gridArea: 1 / 1 / 1 / 1
+    header-menu:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Roboto
+      color: '#000'
+      margin: 25 0 0 30
+      height: 20
+      gridArea: 1 / 2 / 1 / 2
+    header-cart:
+      width: 28
+      height: 28
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      margin: 15 20 0 30
+      gridArea: 1 / 3 / 1 / 3
+
+  tablet:
+    header-nike: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 44
+      position: sticky
+      top: 0
+      zIndex: 1
+      display: grid
+      gridTemplateColumns: 75 1fr 55
+    header-logo:
+      width: 32
+      height: 32
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Roboto
+      color: '#000'
+      margin: 10 12
+      width: 24
+      height: 24
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 24
+      height: 24
+      margin: 10 0 0 580
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+
+
+  mobile:
+    header-nike: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 44
+      position: sticky
+      top: 0
+      zIndex: 1
+      display: grid
+      gridTemplateColumns: 75 1fr 55
+    header-logo:
+      width: 32
+      height: 32
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 12
+    header-menu:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Roboto
+      color: '#000'
+      margin: 12 0 0 0
+      width: 24
+      height: 24
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 24
+      height: 24
+      margin: 12 30 0 180
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+context: {}

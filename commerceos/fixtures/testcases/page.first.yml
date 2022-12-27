@@ -1,0 +1,105 @@
+id: testcases-first
+name: General elements
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: front-document
+  type: document
+  children:
+    - id: header
+      type: section
+      children: []
+    - id: body
+      type: section
+      children:
+        - id: body-block-red
+          type: block
+          children: []
+        - id: body-block-green
+          type: block
+          children: []
+        - id: body-block-yellow
+          type: block
+          children: []
+        - id: body-block-magenta
+          type: block
+          children: []
+        - id: body-block-blue
+          type: block
+          children: []
+    - id: footer
+      type: section
+      children: []
+
+stylesheets:
+  desktop:
+    front-document: {}
+    header:
+      height: 50
+      backgroundColor: "#ffffff"
+    body:
+      display: grid
+      margin: 0 auto
+      gridTemplateRows: 280 200 200 160
+      gridTemplateColumns: 360 120 400
+      backgroundColor: "#f8f8f8"
+      backgroundImage: linear-gradient(to right, rgba(194, 194, 194, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(194, 194, 194, 0.2) 1px, transparent 1px)
+      backgroundSize: 40px 40px, 40px 40px
+      backgroundPosition: -1px -1px, -1px -1px
+    body-block-red:
+      gridArea: 3 / 1 / 4 / 1
+      height: 240
+      width: 240
+      margin: 40 0 0 80
+      backgroundColor: red
+    body-block-green:
+      gridArea: 2 / 3 / 3 / 3
+      height: 320
+      width: 280
+      margin: 40 0 0 40
+      backgroundColor: green
+    body-block-blue:
+      gridArea: 1 / 3 / 1 / 3
+      width: 280
+      height: 160
+      margin: 80 0 0 80
+      backgroundColor: blue
+    body-block-yellow:
+      gridArea: 1 / 1 / 2 / 2
+      height: 240
+      width: 240
+      margin: 200 0 0 200
+      backgroundColor: yellow
+    body-block-magenta:
+      gridArea: 4 / 2 / 4 / 3
+      width: 280
+      height: 120
+      margin: 40 0 0 40
+      backgroundColor: magenta
+    footer:
+      height: 50
+      backgroundColor: "#ffffff"
+  tablet:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-green: {}
+    body-block-blue: {}
+    body-block-yellow: {}
+    body-block-magenta: {}
+    footer: {}
+  mobile:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-green: {}
+    body-block-blue: {}
+    body-block-yellow: {}
+    body-block-magenta: {}
+    footer: {}
+
+context: {}

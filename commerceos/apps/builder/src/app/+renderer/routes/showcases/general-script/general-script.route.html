@@ -1,0 +1,26 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  [title]="'Script renderer check: Desktop'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  [title]="'Script renderer check: Tablet'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  [title]="'Script renderer check: Mobile'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>

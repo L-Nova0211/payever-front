@@ -1,0 +1,18 @@
+<div class="appearance-shadow">
+  <peb-button-toggle
+    [(ngModel)]="showMessageShadow"
+    label="{{ 'message-app.message-integration.shadow' | translate }}"
+    [spacer]="true"
+    labelPosition="before"
+    (changed)="disable()"
+  ></peb-button-toggle>
+  <peb-color-picker-form
+    *ngIf="showMessageShadow"
+    class="appearance-shadow__shadow-color-picker"
+    buttonLabel="{{ 'message-app.message-integration.change-color' | translate }}"
+    label="{{ 'message-app.message-integration.color' | translate }}"
+    [(ngModel)]="shadowColor"
+    (changed)="change($event)"
+  >
+  </peb-color-picker-form>
+</div>

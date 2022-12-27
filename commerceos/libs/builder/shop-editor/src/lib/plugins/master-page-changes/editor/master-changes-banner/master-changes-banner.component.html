@@ -1,0 +1,10 @@
+<div class="center">
+  Edit Master Page:&nbsp;<b>{{ pageName }}</b>
+</div>
+<div class="right">
+  <button (click)="onApply()" [disabled]="loading">
+    <span *ngIf="!loading">Apply</span>
+    <mat-spinner *ngIf="loading" [strokeWidth]="2" [diameter]="20"></mat-spinner>
+  </button>
+  <!-- <button (click)="onDeny()" [disabled]="loading">Deny</button> -->
+</div>

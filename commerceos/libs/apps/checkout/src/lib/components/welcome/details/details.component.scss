@@ -1,0 +1,33 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+// TODO Sizes from variables
+
+.pe-info-box-container-stepper-fixed { // TODO Move to uikit for stepper
+  min-height: calc(100vh - 90px - #{2 * $grid-unit-y}) !important; // 90px is stepper height
+  margin-top: 2 * $grid-unit-y;
+}
+
+.welcome-details ::ng-deep {
+  .form-table pe-form-fieldset {
+    min-width: 320px;
+    .image-picker.image-picker-round {
+      @include pe_flexbox;
+      @include pe_align-items(center);
+      justify-content: center;
+      margin-bottom: 4px !important;
+
+      .image-picker-container {
+        display: block;
+        flex: none;
+        min-width: 96px !important;
+        width: 96px !important;
+        height: 96px !important;
+
+        .image-picker-empty {
+          background: $color-primary-8;
+        }
+      }
+    }
+  }
+}

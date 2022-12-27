@@ -1,0 +1,129 @@
+.pe-bootstrap {
+  .app-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: $grid-unit-y * 7;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    .swiper-container {
+      width: 80%;
+      position: absolute;
+      left: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+        width: 95%;
+        left: 2.5%;
+      }
+
+      &.slider-visibility {
+        opacity: 0;
+      }
+
+      &.slider-about-to-close {
+        opacity: 0;
+        transition: all $animation-duration-slide-in ease;
+      }
+
+      .swiper-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start;
+        margin: 0 auto;
+
+        .swiper-slide {
+          height: auto;
+          width: auto;
+          margin-bottom: 10px;
+
+          a {
+            display: inline-block;
+            position: relative;
+
+            .info-circle {
+              z-index: 1;
+              position: absolute;
+              background-color: $color-red;
+              border-radius: 100%;
+              display: block;
+              top: -6px;
+              right: -6px;
+              width: 24px;
+              height: 24px;
+            }
+
+            .icon-app-md {
+              transform: scale(0.5, 0.5);
+              opacity: 0.7;
+
+              &.up {
+                transition: all $animation-duration-slide-in ease;
+                transform: scale(1, 1);
+                opacity: 1;
+              }
+
+              &.down {
+                transition: all $animation-duration-slide-in ease;
+                transform: scale(0.5, 0.5);
+                opacity: 0.7;
+              }
+            }
+          }
+
+          .small {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: $color-white;
+            margin: $margin-adjust auto ceil($margin-adjust / 2);
+          }
+        }
+      }
+
+      .swiper-pagination {
+        position: static;
+
+        .swiper-pagination-bullet {
+          background-color: $color-white;
+
+          &.swiper-pagination-bullet-active {
+            background-color: $color-white;
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+  .mat-expansion-panel-body {
+    border-radius: 12px;
+    .mat-accordion {
+      .mat-expansion-panel {
+        border-radius: 0 !important;
+        padding: 0px;
+      }
+    }
+  }
+
+  .mat-expansion-panel-dark {
+    .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .mat-card-content {
+    .mat-expansion-panel-dark {
+      .mat-expansion-panel-content {
+        .mat-expansion-panel-body {
+          border-radius: 0 !important;
+        }
+      }
+    }
+  }
+}

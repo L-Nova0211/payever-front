@@ -1,0 +1,65 @@
+<div class="pe-info-box-container-fixed scp-settings">
+  <pe-info-box [withHeader]="false"
+               [withFooter]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               [fixed]="false"
+               (onClose)="goBack()">
+
+    <ng-container content>
+      <mat-list class="mat-list-transparent mat-list-transparent-no-padding scp-settings-item">
+        <mat-list-item>
+          <div class="mat-list-item-flex csp-form-table-container">
+            <form
+              *ngIf="form"
+              class="csp-form-table"
+              novalidate
+              [formGroup]="form">
+              <peb-form-field-input
+                class="csp-settings-input"
+                [label]="title"
+                appearance="label">
+                <input formControlName="host"/>
+              </peb-form-field-input>
+              <button
+                type="submit"
+                class="csp-form-table_submit-button"
+                (click)="addOne()"
+                translate>
+                actions.add
+              </button>
+            </form>
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          *ngFor="let host of checkoutHosts; let i = index"
+          class="sections-mat-list-item">
+          <div class="mat-list-item-flex">
+            <div class="mat-list-item-col">
+              <span class="pe-truncate-text secondary-text">{{ host }}</span>
+            </div>
+            <div class="mat-list-item-col text-right">
+              <button
+                mat-raised-button
+                type="button"
+                color="muted-light"
+                class="expansion-list-button danger-color"
+                [class.mat-button-xs]="true"
+                [class.mat-button-rounded]="true"
+                (click)="onRemove(i)">
+                {{ 'actions.remove' | translate }}
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </ng-container>
+  </pe-info-box>
+</div>
+
+<div
+  class="scp-validation"
+  [class.validation-visible]="form?.controls?.host.value && form?.controls?.host.invalid"
+  translate>
+  settings.csp.validation.unavailableHost
+</div>

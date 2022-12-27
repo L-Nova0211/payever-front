@@ -1,0 +1,10 @@
+<form *ngIf="formGroup" [formGroup]="formGroup">
+  <li (click)="preview.emit()">Preview animation</li>
+  <div class="orders" *ngFor="let order of orders; let i = index">
+    <span>{{ i + 1 }}</span>
+    <div class="order">
+      <span>Object</span>
+      <span>{{order.animation.type}}</span>
+    </div>
+  </div>
+</form>

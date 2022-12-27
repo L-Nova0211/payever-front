@@ -1,0 +1,25 @@
+<pe-style-color-picker
+  *ngIf="type === StyleItemTypeEnum.ColorPicker"
+  [theme]="theme"
+  [control]="control"
+  [buttonLabelTranslateKey]="buttonLabelTranslateKey"
+  [labelTranslateKey]="labelTranslateKey"
+></pe-style-color-picker>
+<pe-style-input-px
+  *ngIf="type === StyleItemTypeEnum.InputPx"
+  [theme]="theme"
+  [control]="control"
+  [labelTranslateKey]="labelTranslateKey"
+></pe-style-input-px>
+<pe-style-corner-select
+  *ngIf="type === StyleItemTypeEnum.CornerSelect"
+  [theme]="theme"
+  [control]="control"
+  [labelTranslateKey]="labelTranslateKey"
+></pe-style-corner-select>
+<pe-style-alignment
+  *ngIf="type === StyleItemTypeEnum.Alignment"
+  [theme]="theme"
+  [control]="control"
+  [labelTranslateKey]="labelTranslateKey"
+></pe-style-alignment>

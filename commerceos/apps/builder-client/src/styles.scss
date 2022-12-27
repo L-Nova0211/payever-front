@@ -1,0 +1,52 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+:root {
+  --sat: env(safe-area-inset-top, 0);
+  --sar: env(safe-area-inset-right, 0);
+  --sab: env(safe-area-inset-bottom, 0);
+  --sal: env(safe-area-inset-left, 0);
+}
+
+html, body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+.mat-snack-bar-container {
+  color: #fff;
+  background-color: #838388;
+  box-shadow: none;
+
+  .mat-simple-snackbar {
+    justify-content: center;
+  }
+}
+
+.mat-body-1 .ql-editor p,
+.mat-body .ql-editor p,
+.mat-typography .ql-editor p {
+  margin: 0;
+}
+
+.page-overlay-panel {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+peb-page-overlay {
+  peb-element-document {
+    background-color: transparent !important;
+  }
+}
+
+.snackbar {
+  &__button {
+    padding: 0 16px !important;
+  }
+}
+
+peb-element-section {
+  padding: 0 !important;
+}

@@ -1,0 +1,35 @@
+<div class="controls">
+
+  <div class="controls__preview">
+    <div class="controls__control" [class.active]="(activeScreen$|async)===PebScreen.Desktop" (click)="changeScreenType(PebScreen.Desktop)">
+      Desktop
+    </div>
+    <div class="controls__divider" *ngIf="(activeScreen$|async)===PebScreen.Mobile"></div>
+    <div class="controls__control controls__middle" [class.active]="(activeScreen$|async)===PebScreen.Tablet" (click)="changeScreenType(PebScreen.Tablet)">
+      Tablet
+    </div>
+    <div class="controls__divider" *ngIf="(activeScreen$|async)===PebScreen.Desktop"></div>
+    <div class="controls__control" [class.active]="(activeScreen$|async)===PebScreen.Mobile" (click)="changeScreenType(PebScreen.Mobile)">
+      Mobile
+    </div>
+  </div>
+  <div class="controls__control controls__control--transparent controls__control--back-icon" (click)="close()">
+    <mat-icon class="preview-back-icon" svgIcon="preview-back"></mat-icon>
+  </div>
+</div>
+
+<div
+  #frameWrapper
+  class="frame-wrapper"
+  [class]="frameScreenType$ | async">
+  <peb-viewer-device-frame
+    [type]="frameScreenType$ | async"
+    [style.transform] = "deviceFrameTransform$ | async"
+    [style.height]="deviceFrameHeight$ | async"
+  >
+    <peb-viewer
+      [screen]="activeScreen$ | async"
+      [themeSnapshot]="themeSnapshot"
+    ></peb-viewer>
+  </peb-viewer-device-frame>
+</div>

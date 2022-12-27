@@ -1,0 +1,118 @@
+//
+// Number field
+// ----------------------------
+
+.pe-bootstrap {
+  .number-field {
+    display: flex;
+    width: $grid-unit-x * 8;
+    height: $grid-unit-y * 3;
+    border-radius: $border-radius-base;
+    @include pe_align-items(center);
+
+    .mat-button {
+      width: $grid-unit-x * 2;
+      min-width: auto;
+      color: $color-grey-4;
+      border: 1px solid $color-grey-5;
+
+      .mat-button-focus-overlay {
+        background-color: transparent;
+      }
+
+      &:hover:not([disabled]) {
+        background-color: $color-grey-5;
+        border-color: $color-grey-4;
+        color: $color-white-grey-7;
+      }
+
+      &:focus:not([disabled]){
+        background-color: $color-grey-4;
+        border-color: $color-grey-3;
+        color: $color-white-grey-7;
+      }
+
+      &.plus {
+        border-radius: 0 $border-radius-base $border-radius-base 0;
+      }
+
+      &.minus {
+        border-radius: $border-radius-base 0 0 $border-radius-base;
+      }
+    }
+
+    .mat-input-element {
+      border: none;
+      outline: none;
+      margin: 0;
+      width: $grid-unit-x * 4;
+      border-top: 1px solid $color-grey-5;
+      border-bottom: 1px solid $color-grey-5;
+      text-align: center;
+      background-color: transparent;
+      height: $grid-unit-y * 3;
+      color: $color-primary-2;
+      caret-color: $color-primary-2;
+    }
+
+    // Size Variations
+    // -------------------
+
+    &-lg {
+      width: 100%;
+      height: $grid-unit-y * 5;
+
+      .mat-button {
+        width: $icon-size-128;
+
+        &.minus, &.plus {
+          text-align: center;
+          height: $grid-unit-y * 5;
+          font-size: $grid-unit-y * 4;
+          font-weight: $font-weight-thin;
+          color: $color-grey-3;
+        }
+
+        &.minus {
+          border-radius: $border-radius-base 0 0 $border-radius-base;
+        }
+
+        &.plus {
+          border-radius: 0 $border-radius-base $border-radius-base 0;
+        }
+      }
+
+      .mat-input-element {
+        width: 100%;
+        height: $grid-unit-y * 5;
+        text-align: center;
+        font-size: $font-size-h4;
+      }
+    }
+
+    // Controls form variations
+    // -------------------
+
+    &-rounded {
+      width: 100%;
+      border: none;
+
+      .mat-input-element {
+        border: none;
+        width: $grid-unit-y * 8;
+        height: $grid-unit-y * 3;
+      }
+
+      .mat-button {
+        width: auto;
+
+        &,plus, &.minus {
+          border-radius: 50%;
+          width: $grid-unit-y * 3;
+          border: 1px solid $color-grey-5;
+          color: $color-grey-3;
+        }
+      }
+    }
+  }
+}

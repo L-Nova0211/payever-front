@@ -1,0 +1,77 @@
+<div class="pe-message-chat-room-list__icon" [class.no-info]="!hasInfo">
+  <div *ngIf="avatar" class="pe-message-chat-room-list__avatar">
+    <img 
+      class="pe-message-chat-room-list__avatar-img" 
+      [src]="avatar" 
+      alt="chat-avatar"
+      loading="lazy"
+    >
+  </div>
+  <div *ngIf="!avatar" class="pe-message-chat-room-list__initials">
+    {{ chat.initials }}
+  </div>
+</div>
+<div *ngIf="hasInfo" class="pe-message-chat-room-list__info">
+  <div class="pe-message-chat-room-list__header">
+    <span class="pe-message-chat-room-list__title">{{ chat.title }}</span>
+    <span *ngIf="chat.draftUpdatedAt" class="pe-message-chat-room-list__time">
+      {{ chat.draftUpdatedAt | date: 'HH:mm' }}
+    </span>
+    <span *ngIf="!chat.draftUpdatedAt" class="pe-message-chat-room-list__time">
+      {{ chat.updatedAt | date: 'HH:mm' }}
+    </span>
+  </div>
+  <div class="pe-message-chat-room-list__body">
+    <span class="pe-message-chat-room-list__draft-message" *ngIf="!!this.draftMessage">
+      <span class="draft-heading">
+        {{ 'message-app.sidebar.draft' | translate }}
+      </span>
+      <span class="draft-title"
+        *ngIf="chat.integrationName !== 'email' else emailSubject"
+        [innerHTML]="this.draftMessage?.content"
+      ></span>
+    </span>
+    <span class="pe-message-chat-room-list__last-message" *ngIf="!this.draftMessage">
+      <svg *ngIf="isLastMessageIcon()">
+        <use xlink:href="#icon-file-14"></use>
+      </svg>
+      <div
+        *ngIf="chat.integrationName !== 'email' else emailSubject"
+        [innerHTML]="getLastMessageContent()"
+      ></div>
+    </span>
+    <div class="pe-message-chat-room-list__right">
+      <span
+        *ngIf="showTag()"
+        class="pe-message-chat-room-list__tag"
+        [style.background-color]="accentColor"
+      >
+        <svg class="icon icon-18">
+          <use [attr.xlink:href]="'#icon-at-sign'"></use>
+        </svg>
+      </span>
+      <ng-container *ngIf="getNumberUnreadMessages() as number; else privateChat">
+        <span
+          *ngIf="number - showTag()"
+          class="pe-message-chat-room-list__unread" 
+          [style.background-color]="accentColor"
+        >
+          <ng-container *ngIf="number >= 50">50+</ng-container>
+          <ng-container *ngIf="number < 50">{{ number }}</ng-container>
+        </span>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #emailSubject>
+  <div>{{ chat.description }}</div>
+</ng-template>
+
+<ng-template #privateChat>
+  <span *ngIf="isPrivateChannel()" class="pe-message-chat-room-list__private-chat">
+    <svg class="icon icon-16">
+      <use [attr.xlink:href]="'#icon-lock'"></use>
+    </svg>
+  </span>
+</ng-template>

@@ -1,0 +1,96 @@
+<div class="grid-table-root"
+     [style.--num-columns]="displayColumnsData?.length - buttonsCount"
+     [style.--num-buttons]="buttonsCount"
+     [style.--checkboxWidth.px]="checkboxWidth"
+     [class.is-mobile]="isMobile"
+>
+  <ng-container>
+    <div class="table-container">
+      <div
+        #virtualScrollTable
+        class="virtual-list__items"
+        pe-grid-infinite-scroll
+        [wrapperRef]="virtualScrollTableWrapper"
+        (scrolledToEnd)="scrolledToEnd.emit()"
+        (activeScroll)="isTableActive = $event"
+      >
+      <div #virtualScrollTableWrapper
+        class="grid-table-body"
+        [class.grid-table-body-selectable]="peGridViewportService.selectable"
+        [class.mobile-view]="isMobile"
+        [class.has-buttons]="buttonsCount"
+        >
+        <pe-table-skeleton
+          @fadeOutAnimation
+          *ngIf="isShowSkeleton()"
+          [displayedColumns]="displayColumnsData"
+          [isMobile]="isMobile"
+          [class.selectable]="peGridViewportService.selectable"
+          [class.mobile-view]="isMobile"
+          [class.has-buttons]="buttonsCount"
+        ></pe-table-skeleton>
+        <div *ngIf="items?.length"
+          [class.hidden]="isShowSkeleton()"
+          [@showHideAnimation]="isShowSkeleton() ? 'hide' : 'show'"
+          class="grid-table-body__wrapper"
+          [class.is-table-width-scroll]="isTableWidthScroll && isMobile"
+          [class.selectable]="peGridViewportService.selectable"
+          [class.mobile-view]="isMobile"
+          [class.has-buttons]="buttonsCount"
+        >
+          <div class="head-box" *ngIf="items?.length && (!isMobile || showHeadInMobile)">
+            <div *ngIf="peGridViewportService.selectable" class="grid-table-head-cell head">
+              <mat-icon
+                class="checkbox"
+                svgIcon="checkbox-icon"
+                [class.active]="peGridViewportService.isSelectedAll()"
+                (click)="peGridViewportService.onSelectAll()"
+              ></mat-icon>
+            </div>
+            <ng-container *ngFor="let column of displayColumnsData">
+              <div
+                *ngIf="items?.length || (isTableWidthScroll && column?.widthCellForMobile && isMobile)"
+                class="grid-table-head-cell head"
+                [title]="column.title"
+                [ngStyle]="{
+                  width: (isTableWidthScroll && isMobile) ? column?.widthCellForMobile : 'auto',
+                  minWidth: (isTableWidthScroll && isMobile) ? column?.widthCellForMobile : 'auto'
+                }"
+              >
+                <span class="cut-overflow">{{ column.title | translate }}</span>
+                </div>
+              </ng-container>
+            </div>
+
+            <ng-container *ngFor="let item of items; trackBy: trackByIdx">
+              <ng-container
+                *ngIf="rowTemplate && !isShowSkeleton()"
+                [ngTemplateOutlet]="rowTemplate"
+                [ngTemplateOutletContext]="{item: item}">
+              </ng-container>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div
+        #scrollWrapper
+        class="scroll-wrapper"
+        (activeScroll)="isScrollActive = $event"
+      >
+        <div [style.height.px]="scrollWrapperHeight"></div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="itemsInitialized$ | async"
+  class="table-list-container__no-items"
+  [class]="'text-'+theme"
+  [class.hidden]="isShowSkeleton()">
+  <ng-container *ngIf="!items?.length">
+    <span class="table-list-container__no-items--title">No {{ noItemsPlaceholder }}</span>
+    <span class="table-list-container__no-items--subtitle">
+      There are no {{ noItemsPlaceholder }} for your search
+    </span>
+  </ng-container>
+</div>

@@ -1,0 +1,1720 @@
+@charset "UTF-8";
+
+// Folowing imports are for /entry/second-factor-code page (additional 20kb)
+@import "../../../../../node_modules/@angular/material/theming";
+@import "pe_variables";
+@import "pe_mixins.scss";
+@import "material/theming.scss";
+@import "material/input.scss";
+@import "material/slide-toggle.scss";
+
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row:after,
+.row:before {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+  float: left;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 700;
+}
+
+.hidden {
+  display: none !important;
+}
+
+body.pe-bootstrap {
+  background-color: #fff;
+  padding: 0 !important;
+}
+
+@media (max-width: 719px) {
+  .pe-bootstrap .pe-hidden-sm-2 {
+    display: none !important;
+  }
+
+}
+
+.pe-bootstrap {
+  line-height: 22px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 0.6);
+
+  .text-right {
+    text-align: right;
+  }
+}
+
+.col-xs-12 {
+  width: 100%;
+}
+
+.row {
+  margin-right: -12px;
+  margin-left: -12px;
+}
+
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.mat-button,
+.mat-fab,
+.mat-flat-button,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button,
+.mat-stroked-button {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mat-form-field {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-infix {
+  padding: 0.5em 0;
+  border-top: 0.84375em solid transparent;
+}
+
+.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label,
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  -webkit-transform: translateY(-1.34375em) scale(0.75);
+  transform: translateY(-1.34375em) scale(0.75);
+  width: 133.33333333%;
+}
+
+.mat-form-field-label-wrapper {
+  top: -0.84375em;
+  padding-top: 0.84375em;
+}
+
+.mat-form-field-label {
+  top: 1.34375em;
+}
+
+.mat-form-field-underline {
+  bottom: 0;
+  position: absolute;
+}
+
+.mat-form-field-subscript-wrapper {
+  font-size: 75%;
+  margin-top: 0;
+  top: 0;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.4375em 0;
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-can-float
+  .mat-input-server:focus
+  + .mat-form-field-label-wrapper
+  .mat-form-field-label,
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  -webkit-transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  -ms-transform: translateY(-1.28125em) scale(0.75);
+  width: 133.33333333%;
+}
+
+.pe-bootstrap .mat-progress-spinner-light circle {
+  stroke: #fff;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.28125em;
+}
+
+input.mat-input-element {
+  margin-top: -0.0625em;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+.mat-list-item,
+.mat-list-option {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-list-base .mat-list-item {
+  font-size: 16px;
+}
+
+@keyframes cdk-text-field-autofill-start {
+  /*!*/
+}
+@keyframes cdk-text-field-autofill-end {
+  /*!*/
+}
+
+.cdk-text-field-autofill-monitored:-webkit-autofill {
+  -webkit-animation-name: cdk-text-field-autofill-start;
+  animation-name: cdk-text-field-autofill-start;
+}
+
+.cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
+  -webkit-animation-name: cdk-text-field-autofill-end;
+  animation-name: cdk-text-field-autofill-end;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+.pe-bootstrap .mat-button,
+.pe-bootstrap .mat-raised-button {
+  font-size: 15px;
+  border-radius: 4px;
+  line-height: 33px;
+  height: 33px;
+  font-weight: 300;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  box-shadow: none !important;
+  padding: 0 12px;
+}
+
+.pe-bootstrap .mat-button .mat-button-wrapper,
+.pe-bootstrap .mat-raised-button .mat-button-wrapper {
+  height: 100%;
+  display: -moz-flex;
+  display: flex;
+  -moz-justify-content: center;
+  justify-content: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+.pe-bootstrap .mat-button .mat-button-focus-overlay,
+.pe-bootstrap .mat-raised-button .mat-button-focus-overlay {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.pe-bootstrap .mat-button:not([disabled]) *,
+.pe-bootstrap .mat-raised-button:not([disabled]) * {
+  cursor: pointer;
+}
+
+.pe-bootstrap .mat-button .mat-button-focus-overlay {
+  background: 0 0;
+}
+
+.pe-bootstrap .mat-button-link:hover:not([disabled]) {
+  color: #0084ff;
+}
+
+.pe-bootstrap .mat-button-block {
+  display: block;
+  width: 100%;
+}
+
+.pe-bootstrap .mat-button-space-around .mat-button-wrapper {
+  -moz-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.pe-bootstrap .mat-button-small-padding {
+  padding: 0 6px;
+}
+
+.pe-bootstrap .mat-button-dark {
+  background-color: rgba(17, 17, 17, 0.6);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pe-bootstrap .mat-button-sm {
+  height: 28px;
+  font-size: 13px;
+}
+
+.pe-bootstrap .mat-raised-button {
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  color: rgba(17, 17, 17, 0.8);
+  background-color: #fff;
+  background-image: none;
+  background-origin: border-box;
+  line-height: 31px;
+  min-width: auto;
+}
+
+.open > .pe-bootstrap .mat-raised-button.dropdown-toggle,
+.pe-bootstrap .mat-raised-button.active,
+.pe-bootstrap .mat-raised-button.focus,
+.pe-bootstrap .mat-raised-button:active,
+.pe-bootstrap .mat-raised-button:focus,
+.pe-bootstrap .mat-raised-button:hover {
+  color: rgba(17, 17, 17, 0.8);
+  background-color: #fff;
+  border-color: rgba(17, 17, 17, 0.15);
+  background-image: none;
+}
+
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button {
+  color: inherit;
+  background: 0 0;
+}
+
+.mat-button-focus-overlay {
+  background: #000;
+}
+
+.mat-fab,
+.mat-flat-button,
+.mat-mini-fab,
+.mat-raised-button {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+}
+
+.pe-bootstrap .mat-card {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pe-bootstrap .mat-card-backdrop-filter-blur {
+  backdrop-filter: blur(20px);
+}
+
+.pe-bootstrap .mat-card-transparent {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  width: 408px;
+  font-family: Roboto, sans-serif;
+}
+
+.pe-bootstrap .mat-card-transparent:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 2px 10px rgba(17, 17, 17, 0.15);
+}
+
+.pe-bootstrap .mat-card-transparent .mat-button-link {
+  &:hover {
+    text-decoration: underline;
+  }
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pe-bootstrap .mat-card-transparent .mat-button-link:hover:not([disabled]) {
+  color: #fff;
+}
+
+.pe-bootstrap .mat-card-transparent .mat-card-content {
+  margin-bottom: 0;
+}
+
+.pe-bootstrap .mat-card-transparent .mat-card-content-padding-sm {
+  padding: 22px 24px;
+}
+
+.pe-bootstrap .mat-card-transparent .mat-card-content-padding-sm .form-table .form-fieldset {
+  margin: 0 -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.pe-bootstrap .mat-card-transparent .mat-card-content .mat-button-block {
+  color: rgba(255, 255, 255, 0.95);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 45px;
+}
+
+.pe-bootstrap .pe-info-box {
+  position: relative;
+  transform: translate(-50%, -50%);
+  padding: 12px 0;
+}
+
+.mat-form-field-label,
+.mat-hint {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-form-field-appearance-legacy .mat-hint {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
+.pe-bootstrap .mat-form-field {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: inherit;
+}
+
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pe-bootstrap .mat-button-sm .mat-button-wrapper {
+  line-height: 28px;
+}
+
+.mat-form-field-appearance-legacy div.mat-form-field-subscript-wrapper {
+  margin-top: 0;
+  top: 0;
+}
+
+.form-table .mat-form-field.mat-form-field-invalid .mat-form-field-label{
+  opacity: 0;
+}
+
+.pe-bootstrap .mat-form-field-hint-wrapper {
+  display: none;
+}
+
+.pe-bootstrap .mat-form-field-infix {
+  padding-top: 7px;
+  border-top-width: 13px;
+  font-weight: 300;
+}
+
+// .pe-bootstrap .mat-form-field-infix .mat-input-element {
+//   color: rgba(17,17,17,.85)
+// }
+
+.pe-bootstrap .mat-form-field-label {
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.pe-bootstrap .mat-form-field-empty {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 1.34375em;
+}
+
+.pe-bootstrap .mat-input-with-addon-inline-prepend-wrapper {
+  display: -moz-flex;
+  display: flex;
+  -moz-align-items: left;
+  align-items: left;
+}
+
+.mat-input-element {
+  caret-color: #0084ff;
+}
+
+.mat-input-element::placeholder {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.mat-input-element::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.pe-bootstrap .mat-list,
+.pe-bootstrap .mat-nav-list {
+  background-color: #fff;
+  padding: 11px 0;
+}
+
+.pe-bootstrap .mat-list .mat-list-item,
+.pe-bootstrap .mat-nav-list .mat-list-item {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pe-bootstrap .mat-list .mat-list-item-content,
+.pe-bootstrap .mat-nav-list .mat-list-item-content {
+  padding: 0 12px;
+  color: rgba(17, 17, 17, 0.6);
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 44px;
+  white-space: nowrap;
+}
+
+.mat-button-toggle,
+.mat-card {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pe-bootstrap label {
+  // margin-bottom: 11px;
+}
+
+.pe-bootstrap .mat-list .mat-list-item-no-padding-left .mat-list-item-content,
+.pe-bootstrap .mat-nav-list .mat-list-item-no-padding-left .mat-list-item-content {
+  padding-left: 0;
+}
+
+.pe-bootstrap .mat-list .mat-list-item-no-padding-right .mat-list-item-content,
+.pe-bootstrap .mat-nav-list .mat-list-item-no-padding-right .mat-list-item-content {
+  padding-right: 0;
+}
+
+.pe-bootstrap .mat-list-transparent,
+.pe-bootstrap .mat-nav-list-transparent {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: -1px;
+  letter-spacing: 0;
+  position: relative;
+}
+
+.pe-bootstrap .mat-list-transparent-no-padding,
+.pe-bootstrap .mat-nav-list-transparent-no-padding {
+  padding: 0;
+}
+
+.pe-bootstrap .mat-list-transparent .mat-list-item-content,
+.pe-bootstrap .mat-nav-list-transparent .mat-list-item-content {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+}
+
+.pe-bootstrap .mat-list-transparent .mat-list-item-flex,
+.pe-bootstrap .mat-nav-list-transparent .mat-list-item-flex {
+  display: -moz-flex;
+  display: flex;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.pe-bootstrap .mat-list-transparent .mat-list-item-flex .mat-list-item-col,
+.pe-bootstrap .mat-list-transparent .mat-list-item-flex .mat-list-item-col-2,
+.pe-bootstrap .mat-nav-list-transparent .mat-list-item-flex .mat-list-item-col,
+.pe-bootstrap .mat-nav-list-transparent .mat-list-item-flex .mat-list-item-col-2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-line;
+  word-wrap: break-word;
+  line-height: 22px;
+  padding: 11px 0;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 479px) {
+  .pe-bootstrap
+    .mat-card-transparent:not(.mat-card-transparent-sm)
+    .mat-card-content-padding-sm
+    .form-table
+    .mat-button-block {
+    height: 44px;
+  }
+}
+@media (max-width: 599px) {
+  .mat-card-transparent:not(.mat-card-transparent-sm) .mat-card-content-padding-sm {
+    padding: 11px 12px;
+  }
+}
+
+.pe-bootstrap .form-table .mat-form-field {
+  width: 100%;
+}
+
+.pe-bootstrap .form-table {
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0;
+  .mat-select-value-text{
+    // font-size: 12px;
+  }
+  .mat-form-field-infix{
+    font-size:15px
+  }
+}
+
+.pe-bootstrap .form-table .pe-form-fieldset,
+.pe-bootstrap .form-table .pe-form-fieldset {
+  display: block;
+}
+
+.pe-bootstrap .form-table .form-fieldset {
+  box-shadow: inset 0 0 0 1px rgba(17, 17, 17, 0.15);
+  position: relative;
+  padding-top: 0;
+}
+
+.pe-bootstrap .form-table .mat-form-field-wrapper {
+  padding: 9px 0;
+  height: 45px;
+  margin-bottom: -1px;
+}
+
+.pe-bootstrap .form-table .mat-form-field-underline {
+  left: -12px;
+  right: -12px;
+  z-index: -1;
+  width: auto;
+  bottom: -2px;
+}
+
+.pe-bootstrap .app-main .form-table .mat-form-field-underline {
+  bottom: -1px;
+}
+
+.pe-bootstrap .form-table .mat-form-field-infix {
+  padding-bottom: 0;
+}
+
+.pe-bootstrap .form-table .mat-form-field-label {
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 1px;
+  z-index: -1;
+}
+
+.pe-bootstrap .form-table .mat-form-field-label-wrapper {
+  z-index: 3;
+}
+
+.pe-bootstrap .form-table .mat-form-field-ripple {
+  height: 1px;
+}
+
+.pe-bootstrap .form-table .form-fieldset {
+  border-radius: 12px;
+  margin-bottom: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.pe-bootstrap .form-table .form-fieldset .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.pe-bootstrap .form-table .form-fieldset .row > [class*="col"] > * {
+  width: 100%;
+}
+
+.pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset,
+.pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset {
+  box-shadow: none;
+  overflow: visible;
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]:first-child.col-xs-12,
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]:first-child.com-lg-12,
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]:first-child.com-md-12,
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]:first-child.com-sm-12,
+.pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:first-child.col-xs-12,
+.pe-bootstrap .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:first-child.com-lg-12,
+.pe-bootstrap .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:first-child.com-md-12,
+.pe-bootstrap .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:first-child.com-sm-12 {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"] pe-input-password,
+.pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] pe-input-password {
+  position: relative;
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .forgot-password-link,
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .forgot-password-link {
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .forgot-password-link
+  a,
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .forgot-password-link
+  a {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  padding: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  outline: 0;
+  transition: font-size 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+@media (max-width: 480px) {
+  .pe-bootstrap
+    .form-table
+    .form-fieldset-container.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .mat-focused
+    + .forgot-password-link,
+  .pe-bootstrap
+    .form-table
+    .form-fieldset-container.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .mat-form-field-should-float
+    + .forgot-password-link,
+  .pe-bootstrap
+    .form-table
+    .pe-form-fieldset.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .mat-focused
+    + .forgot-password-link,
+  .pe-bootstrap
+    .form-table
+    pe-form-fieldset.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .mat-form-field-should-float
+    + .forgot-password-link {
+    height: 18px;
+  }
+}
+
+.pe-bootstrap .form-table-border-radius-md {
+  overflow: visible;
+  border-radius: 8px !important;
+}
+
+@media (max-width: 479px) {
+  .pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"],
+  .pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] {
+    min-height: 44px;
+  }
+  /*
+  .pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset .row>[class*=col] .mat-form-field-wrapper,
+  .pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row>[class*=col] .mat-form-field-wrapper {
+      height: 44px;
+      min-height: 44px;
+      padding: 2px 10px 2px 5px
+  }
+*/
+  .pe-bootstrap
+    .form-table
+    .form-fieldset-container.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    .mat-form-field-textarea
+    .mat-form-field-wrapper,
+  .pe-bootstrap
+    .form-table
+    .pe-form-fieldset.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    .mat-form-field-textarea
+    .mat-form-field-wrapper {
+    height: auto;
+  }
+
+  .pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"] .mat-form-field,
+  .pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field {
+    font-size: 14px;
+  }
+
+  .pe-bootstrap
+    .form-table
+    .form-fieldset-container.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .input-password-errors,
+  .pe-bootstrap
+    .form-table
+    .pe-form-fieldset.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    pe-input-password
+    .input-password-errors {
+    width: 80%;
+  }
+}
+
+.pe-bootstrap .layout-blur-middle-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.pe-bootstrap .blurry-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.pe-bootstrap .pe-info-box {
+  min-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-focused
+  + .forgot-password-link
+  a,
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link
+  a,
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-focused
+  + .forgot-password-link
+  a,
+.pe-bootstrap
+  .form-table
+  pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link
+  a {
+  font-size: 11px;
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-focused
+  + .forgot-password-link,
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link,
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-focused
+  + .forgot-password-link,
+.pe-bootstrap
+  .form-table
+  pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link {
+  height: 32px;
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  .mat-form-field-label,
+.pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 300;
+}
+
+.pe-bootstrap .pe-info-box > .info-box {
+  -webkit-animation: 485ms initOverlay;
+  animation: 485ms initOverlay;
+  height: 100%;
+}
+
+.pe-bootstrap .pe-info-box > .info-box .mat-card-transparent {
+  margin: 0 auto 22px;
+  // width: 90vw;
+  max-width: 408px;
+}
+
+@media (max-width: 767px) {
+  .pe-bootstrap .pe-info-box > .info-box .mat-card-transparent {
+    margin-bottom: 0;
+  }
+}
+
+.pe-bootstrap
+  .form-table
+  .form-fieldset-container.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  .mat-form-field
+  .mat-input-element,
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  .mat-form-field
+  .mat-input-element {
+  color: rgba(255, 255, 255, 0.75);
+  caret-color: rgba(255, 255, 255, 0.2);
+}
+
+.pe-bootstrap .mat-card-transparent .mat-card-content .mat-button-block {
+  border-radius: 0 0 12px 12px;
+}
+
+.layout-blur-middle-bg {
+  outline: gray solid 1px;
+  -webkit-animation: 0.1s infinite renderFix;
+  animation: 0.1s infinite renderFix;
+}
+
+.pe-bootstrap .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"],
+.pe-bootstrap .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] {
+  border-width: 0 1px 1px 0;
+  border-color: transparent;
+  background-clip: padding-box;
+  background-color: rgba(255, 255, 255, 0.03);
+  // border-top-left-radius: 1px;
+  // border-top-right-radius: 1px;
+  z-index: 1;
+}
+
+.pe-bootstrap .pe-info-box > .info-box .content-wrapper {
+  position: relative;
+}
+
+.pe-bootstrap .form-table .form-fieldset-container.transparent,
+.pe-bootstrap .form-table .pe-form-fieldset.transparent {
+  overflow: visible;
+  padding-left: 1px;
+  .mat-select-value-text{
+    color: white;
+  }
+}
+
+.pe-bootstrap .form-table .form-fieldset-container.dark,
+.pe-bootstrap .form-table .pe-form-fieldset.dark {
+  overflow: visible;
+  padding-left: 1px;
+  background-color: #111111;
+  .mat-select-value-text{
+    color: white;
+  }
+.form-fieldset{
+  background-color:#111111 ;
+}
+.mat-form-field-empty, .mat-form-field-label{
+  color: white;
+}
+}
+
+.pe-bootstrap .form-table input::-webkit-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.pe-bootstrap .form-table .form-fieldset .row > [class*="col"] {
+  position: relative;
+  height: 45px;
+  display: -moz-flex;
+  display: flex;
+  -moz-align-items: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.pe-bootstrap .form-table .mat-form-field:not(.mat-form-field-should-float) .mat-form-field-label {
+  -webkit-transform: translate(0, -9px);
+  transform: translate(0, -9px);
+}
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  -ms-transform: translateY(-1.28125em) scale(0.75);
+  width: 133.33333333%;
+}
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link {
+  height: 32px;
+}
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .mat-form-field-should-float
+  + .forgot-password-link
+  a {
+  font-size: 11px;
+}
+
+.pe-bootstrap
+  .form-table
+  .pe-form-fieldset.transparent
+  .form-fieldset
+  .row
+  > [class*="col"]
+  pe-input-password
+  .forgot-password-link
+  a {
+  font-size: 11px;
+}
+
+.pe-bootstrap .form-table .mat-form-field-flex {
+  -moz-align-items: center;
+  align-items: center;
+}
+
+.pe-bootstrap .form-table .form-fieldset .row > [class*="col"] {
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent rgba(17, 17, 17, 0.15) rgba(17, 17, 17, 0.15) transparent;
+}
+
+.pe-bootstrap .pe-info-box .mat-card-content,
+.pe-bootstrap .pe-overlay-container > .overlay-container .mat-card-content,
+.pe-bootstrap pe-overlay-container > .overlay-container .mat-card-content {
+  background-color: rgba(37, 37, 37, 0.6);
+}
+
+.pe-bootstrap .pe-info-box .mat-card-content-no-background-color,
+.pe-bootstrap .pe-overlay-container > .overlay-container .mat-card-content-no-background-color,
+.pe-bootstrap pe-overlay-container > .overlay-container .mat-card-content-no-background-color {
+  background: 0 0;
+}
+
+.pe-bootstrap .data-grid-scroll-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+}
+
+.pe-bootstrap .data-grid-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.icon-8 {
+  width: 8px;
+  height: 8px;
+}
+
+.pe-bootstrap .mat-list-transparent .mat-list-item-flex .mat-list-item-col,
+.pe-bootstrap .mat-nav-list-transparent .mat-list-item-flex .mat-list-item-col {
+  flex: 1;
+}
+
+a {
+  background-color: transparent;
+  color: #0084ff;
+  text-decoration: none;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+input {
+  line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
+
+.platform-background-overlay {
+  opacity: 0;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  top: -1px;
+  right: 0;
+  bottom: -1px;
+  z-index: -1;
+  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1) 0s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.app-main {
+  visibility: visible;
+}
+
+.pe-bootstrap .mat-button-xs {
+  height: 22px;
+  font-size: 11px;
+}
+
+.pe-bootstrap .mat-button-rounded {
+  border-radius: 100px;
+}
+
+.pe-bootstrap .mat-raised-button {
+  border: 1px solid rgba(17, 17, 17, 0.6);
+  color: rgba(17, 17, 17, 0.8);
+  background-color: #ffffff;
+  border-color: rgba(17, 17, 17, 0.15);
+  background-image: none;
+  border-width: 1px;
+  background-origin: border-box;
+  line-height: 31px;
+  min-width: auto;
+}
+
+.pe-bootstrap .mat-raised-button.mat-muted-white {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+  background-image: none;
+  border-width: 1px;
+  background-origin: border-box;
+}
+
+.pe-bootstrap .mat-menu-panel {
+  box-shadow: 0 2px 10px rgba(17, 17, 17, 0.15);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  margin-bottom: 5.5px;
+  min-height: 48px;
+  max-height: 66vh;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.pe-bootstrap .mat-menu-item {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  // color: rgba(17, 17, 17, 0.6);
+  line-height: 33px;
+  height: 33px;
+  font-weight: 400;
+  padding: 0 24px;
+  background-color: transparent;
+}
+
+.pe-bootstrap .mat-menu-item:hover:not([disabled]) {
+  background-color: rgba(17, 17, 17, 0.03);
+  text-decoration: none;
+}
+
+// Safari corners fix
+.pe-bootstrap .top-rounded {
+  border-top-left-radius: 2 * $border-radius-large !important;
+  border-top-right-radius: 2 * $border-radius-large !important;
+  overflow: hidden !important;
+}
+
+/* For entry page we have custom dark styles */
+
+.pe-bootstrap .commerceos-info-box-wrap {
+  .mat-card-transparent .mat-card-content-padding-sm {
+    padding: 54px 23px;
+  }
+
+  .mat-card-transparent .mat-card-content .mat-button-block {
+    color: #fff;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+  }
+
+  .mat-expansion-panel-dark-extended .mat-expansion-panel-header,
+  .mat-expansion-panel-dark-extended .mat-expansion-panel-header[aria-disabled="true"] {
+    background-color: rgba(0, 0, 0, 0.55);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .mat-expansion-panel-dark .mat-expansion-panel-header-title {
+    font-size: 13px;
+  }
+
+  .mat-expansion-panel-dark-extended:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mat-expansion-panel-dark:not(.mat-expanded):not(:last-of-type) {
+    border-bottom: none;
+  }
+
+  .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"],
+  .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"],
+  .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"] {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .mat-form-field,
+  .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field-label,
+  .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field-label,
+  .form-table .form-fieldset-container.transparent .form-fieldset .row > [class*="col"] .mat-form-field-label,
+  .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field .mat-input-element,
+  .form-table .pe-form-fieldset.transparent .form-fieldset .row > [class*="col"] .mat-form-field .mat-input-element,
+  .form-table
+    .form-fieldset-container.transparent
+    .form-fieldset
+    .row
+    > [class*="col"]
+    .mat-form-field
+    .mat-input-element {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 170%;
+    color: rgba(#ffffff, 0.45);
+  }
+
+  pe-input-password .input-password-errors {
+    width: 80% !important;
+  }
+
+  // Safari fix
+
+  .info-box .mat-card-transparent {
+    overflow: hidden !important;
+  }
+}
+
+/* Safari borders fix */
+.pe-bootstrap .top-rounded {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.hidden-content {
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  width: 0;
+}
+
+/* Mat menu classes for shop (used without .pe-bootstrap) */
+.shop-menu {
+  .mat-menu-content {
+    background-color: #111111d9 !important;
+    opacity: 1;
+  }
+
+  .mat-menu-item {
+    background: transparent;
+    color: var(--color-secondary-0);
+    height: 33px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 33px;
+
+    &:hover {
+      background-color: var(--color-secondary-2) !important;
+    }
+  }
+
+  &.mat-menu-panel {
+    box-shadow: 0 2px 10px rgba(17, 17, 17, 0.15);
+    background-color: var(--color-primary-0) !important;
+    border-radius: 8px;
+    margin-top: 5.5px;
+    margin-bottom: 5.5px;
+    min-height: 48px;
+    max-height: 66vh;
+    width: 112px !important;
+  }
+}
+
+/* Mat menu classes for POS terminal (used without .pe-bootstrap) */
+.terminal-menu {
+  .mat-menu-content {
+    background-color: #111111d9 !important;
+    opacity: 1;
+  }
+
+  .mat-menu-item {
+    color: var(--color-secondary-0);
+    height: 33px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 33px;
+
+    &:hover {
+      background-color: var(--color-secondary-2) !important;
+    }
+  }
+
+  &.mat-menu-panel {
+    box-shadow: 0 2px 10px rgba(17, 17, 17, 0.15);
+    background-color: var(--color-primary-0) !important;
+    border-radius: 8px;
+    margin-top: 5.5px;
+    margin-bottom: 5.5px;
+    min-height: 48px;
+    max-height: 66vh;
+  }
+}
+
+div.pe-header-menu.mat-menu-panel{
+  border-radius: 12px;
+  width: 267px;
+  padding:  8px;
+  margin-top: 17px;
+  .header{
+    padding: 0 8px;
+  }
+
+  .title {
+    padding: 6px 8px 4px;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .mat-menu-content {
+    background-color: transparent;
+  }
+
+  .mat-menu-item {
+    font-size: 16px;
+    padding: 6px 8px;
+    margin-top: 8px;
+    line-height: 0;
+    border-bottom: 0;
+    background-color: transparent;
+
+    svg {
+      color: white;
+      vertical-align: text-bottom;
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    &:hover {
+      background-color: #0371e2 !important;
+      border-radius: 7px;
+    }
+  }
+  @media (max-width:720px) {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 50px);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 16px;
+    .mat-menu-content{
+      padding: 0;
+      .header{
+        padding: 0;
+        margin: 0 10px 22px;
+        span{
+          font-size: 26px!important;
+          line-height: normal;
+        }
+      }
+      .close_btn{
+        width: 20px;
+        height: 20px;
+        margin-top: 4px;
+      }
+      .mat-menu-item{
+        padding: 9px;
+        margin-bottom: 3px;
+        margin-top: 11px;
+        font-size: 15px;
+        svg{
+          margin-right: 10px;
+          background-color: #86868b;
+          width: 24px!important;
+          height: 24px!important;
+          padding: 4px;
+          border-radius: 5px;
+        }
+        .section-button__label{
+          padding: 0;
+        }
+      }
+    }
+
+  }
+}
+
+.mat-spinner-themed svg circle {
+  stroke: var(--color-secondary-0, #fff);
+}
+
+.mat-spinner-black svg circle {
+  stroke: #000;
+}
+
+.mat-spinner-white svg circle {
+  stroke: #fff;
+}
+
+.mat-snackbar-shop-panel-class {
+  background-color: #8e8e93 !important;
+}
+
+.mat-snackbar-settings-panel-class {
+  background-color: #8e8e93 !important;
+}
+
+.themes-preview-dialog mat-dialog-container.mat-dialog-container {
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  overflow: initial;
+}
+
+.viewer-scrollbar .ng-native-scrollbar-hider {
+  height: calc(100% + 14px);
+}
+
+.pe-data-grid-scroll {
+  .ng-scroll-viewport {
+    display: flex;
+    flex-direction: column;
+  }
+  .ng-scroll-content {
+    flex: 1;
+  }
+}
+// Show sprites (SVG symbols). Needed for gradient background issue.
+.sprite,
+.pe-icons-container {
+  position: absolute;
+  top: 100vh;
+  width: 0;
+  height: 0;
+}
+
+.error-dialog {
+  mat-dialog-container {
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    box-shadow: 4px 4px 40px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+select:-webkit-autofill,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  color: hsla(0, 0%, 100%, 0.75);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-fill-color: hsla(0, 0%, 100%, 0.75);
+}

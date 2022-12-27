@@ -1,0 +1,12 @@
+@media print {
+  .pe-bootstrap {
+    .table td,
+    .table th {
+      background-color: $color-white !important;
+    }
+    .table-bordered th,
+    .table-bordered td {
+      border: $border-light-gray-2 !important;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+:host {
+  overflow: hidden!important;
+
+  .box-color {
+    padding: 4px;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    cursor: pointer;
+
+    &__message {
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      border: solid 2px #111111;
+    }
+
+    &__settings {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &.selected {
+        .box-color__dots {
+          width: 20px;
+          height: 20px;
+        }
+
+        .box-color__round {
+          margin: 4px;
+          width: 24px;
+          height: 24px;
+          border-radius: 24px;
+          border: solid 2px #111111;
+        }
+      }
+    }
+
+    &__dots {
+      width: 0;
+      height: 0;
+      transition: 0.2s all ease;
+    }
+
+    &__round {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 32px;
+      border: solid 0 #111111;
+      transition: 0.2s all ease;
+    }
+  }
+
+  .add-color-set {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+
+    & > div {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+
+    & > div:nth-child(1) {
+      top: 12px;
+      left: 12px;
+    }
+
+    & > div:nth-child(2) {
+      top: 2px;
+      left: 6px;
+      background-color: #f83b4c;
+    }
+
+    & > div:nth-child(3) {
+      top: 2px;
+      right: 6px;
+      background-color: #ff7517;
+    }
+
+    & > div:nth-child(4) {
+      top: 12px;
+      left: 24px;
+      background-color: #28b327;
+    }
+
+    & > div:nth-child(5) {
+      bottom: 2px;
+      right: 6px;
+      background-color: #02c2ed;
+    }
+
+    & > div:nth-child(6) {
+      bottom: 2px;
+      left: 6px;
+      background-color: #ff5da3;
+    }
+
+    & > div:nth-child(7) {
+      top: 12px;
+      left: 0;
+      background-color: #7748ff;
+    }
+  }
+}
+

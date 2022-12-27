@@ -1,0 +1,14 @@
+<div class="chat-message-mail-container">
+  <peb-renderer #renderer
+    *ngIf="snapshot"
+    [element]="snapshot.template"
+    [stylesheet]="snapshot.stylesheets.desktop"
+    [context]="snapshot.context"
+    [options.readOnly]="true"
+    [options.screen]="pebScreen.Desktop"
+    [options.interactions]="false"
+    [options.scale]="scale$ | async"
+    [options.locale]="language$ | async"
+    [options.defaultLocale]="defaultLanguage"
+  ></peb-renderer>
+</div>

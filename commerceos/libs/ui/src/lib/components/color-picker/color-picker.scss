@@ -1,0 +1,237 @@
+:host {
+  width: 100%;
+}
+
+.color-picker-form {
+  &__container {
+    width: 100%;
+    max-height: 44px;
+    height: 44px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+  }
+
+  &__color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: solid 1px #979797;
+  }
+
+  &__label {
+    padding: 0 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+
+  &__button-container {
+    display: inherit;
+    flex-direction: row;
+    width: 105px;
+    min-width: 105px;
+    align-items: center;
+    justify-content: flex-end;
+    color: #0091df;
+
+    .color-picker-form__button-item {
+      height: 100%;
+      font-size: 12px;
+      line-height: 1.33;
+    }
+  }
+
+  &__trigger {
+    background-color: transparent;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  &-menu {
+    &__container {
+      padding: 16px;
+      border-radius: 12px;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 18px;
+      width: 100%;
+    }
+
+    &__label {
+      max-width: 200px;
+      font-family: Roboto, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      color: #636363;
+      cursor: pointer;
+    }
+  }
+}
+
+peb-color-picker .color-picker.open {
+  .hue-alpha.box {
+    .hue {
+      margin-bottom: 10px;
+    }
+
+    .saturation {
+      display: none;
+    }
+
+    .value {
+      display: none;
+    }
+  }
+
+  .opacity {
+    display: none;
+  }
+
+  .grid {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: normal;
+    color: #ffffff;
+
+    input {
+      font-size: 11px;
+      line-height: normal;
+    }
+  }
+}
+
+.cdk-overlay-backdrop.color-picker-form-menu-dark + .cdk-overlay-connected-position-bounding-box {
+  .cdk-overlay-pane {
+    margin-left: 8px;
+    margin-top: -8px;
+
+    .mat-menu-panel {
+      background-color: transparent;
+      backdrop-filter: none;
+      box-shadow: none;
+      -webkit-mask-image: none;
+
+      .mat-menu-content {
+        background-color: transparent;
+        padding: 8px;
+
+        .color-picker-form-menu {
+          &__container {
+            min-width: 262px;
+            min-height: 386px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.color-picker-form-menu-light + .cdk-overlay-connected-position-bounding-box {
+  .cdk-overlay-pane {
+    margin-left: 8px;
+    margin-top: -8px;
+
+    .mat-menu-panel {
+      background-color: transparent;
+      backdrop-filter: none;
+      box-shadow: none;
+      -webkit-mask-image: none;
+
+      .mat-menu-content {
+        background-color: transparent;
+        padding: 8px;
+
+        .color-picker-form-menu {
+          &__container {
+            min-width: 262px;
+            min-height: 386px;
+            background-color: #ffffff;
+          }
+
+          &__label {
+            color: #111111;
+          }
+        }
+
+        peb-color-picker .color-picker.open {
+          .grid {
+            color: #111111;
+
+            input {
+              color: #111111;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.color-picker-form-menu-transparent + .cdk-overlay-connected-position-bounding-box {
+  .cdk-overlay-pane {
+    margin-left: 8px;
+    margin-top: -8px;
+
+    .mat-menu-panel {
+      background-color: transparent;
+      backdrop-filter: none;
+      box-shadow: none;
+      -webkit-mask-image: none;
+
+      .mat-menu-content {
+        background-color: transparent;
+        padding: 8px;
+
+        .color-picker-form-menu {
+          &__container {
+            min-width: 262px;
+            min-height: 386px;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

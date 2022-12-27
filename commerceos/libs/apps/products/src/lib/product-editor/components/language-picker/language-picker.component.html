@@ -1,0 +1,21 @@
+<div class="backdrop" (click)="closePicker()"></div>
+<div class="overlay">
+  <div class="overlay__header">
+    <button class="overlay__button overlay__button_grey" (click)="closePicker()">{{'cancel' | translate}}</button>
+    <span class="overlay__title">{{'placeholders.language' | translate}}</span>
+    <button class="overlay__button" (click)="onSubmit()">{{'variantEditor.done' | translate}}</button>
+  </div>
+  <div class="overlay__body">
+    <div #languageList class="language-list">
+      <div
+        *ngFor="let item of languages; trackBy: trackByCode"
+        class="language-list__item"
+        (click)="onSelect(item)">
+        <span>{{item.name}}</span>
+        <svg *ngIf="item?.code === selected?.code" viewBox="0 0 16 16" class="active">
+          <path d="M4.8 8L7.2 10.4 11.2 5.6"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<peb-editor-sidebar-tabs>
+  <peb-editor-sidebar-tab title="Text">
+    <ng-container *ngIf="(editMode$ | async) === false">
+      <ng-container *ngIf="component?.background?.form">
+        <peb-color-palette
+          class="color-palette"
+          placeholder="Text"
+          [formControl]="backgroundControl"
+        ></peb-color-palette>
+
+        <div class="form__row_border">
+          <div class="group__row">
+            <label class="group__label">
+              Fill
+            </label>
+            <div class="peb-fill" (click)="showBackgroundForm()">
+              <div class="peb-fill__thumbnail" [ngStyle]="background$ | async"></div>
+              <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <peb-functions-form></peb-functions-form>
+    </ng-container>
+
+    <div class="form__row">
+      <div class="group__row">
+        <label class="group__label">
+          Link
+        </label>
+      </div>
+      <peb-link-form></peb-link-form>
+    </div>
+
+    <div class="fonts-form" *ngIf="showTextForm">
+      <peb-text-form></peb-text-form>
+    </div>
+  </peb-editor-sidebar-tab>
+  <peb-editor-sidebar-tab title="Arrange">
+    <div class="group">
+      <div class="group__row">
+        <peb-position-form></peb-position-form>
+      </div>
+      <div class="group__row">
+        <peb-dimensions-form></peb-dimensions-form>
+      </div>
+    </div>
+
+    <peb-alignment-form
+      *ngIf="alignment?.form"
+      [formGroup]="alignment?.form"
+    ></peb-alignment-form>
+
+  </peb-editor-sidebar-tab>
+</peb-editor-sidebar-tabs>

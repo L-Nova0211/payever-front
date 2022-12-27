@@ -1,0 +1,25 @@
+<div class="backdrop" (click)="closePicker()"></div>
+<div class="overlay">
+  <div class="overlay__header">
+    <button class="overlay__button overlay__button_grey" (click)="closePicker()">{{'cancel' | translate}}</button>
+    <span class="overlay__title">{{'placeholders.country' | translate}}</span>
+    <button class="overlay__button" (click)="onSubmit()">{{'variantEditor.done' | translate}}</button>
+  </div>
+  <div class="overlay__body">
+    <cdk-virtual-scroll-viewport
+      #virtualScroll
+      itemSize="40"
+      class="country-list"
+    >
+      <div
+        *cdkVirtualFor="let item of countries; trackBy: trackByCode"
+        class="country-list__item"
+        (click)="onSelect(item)">
+        <span>{{item.name}}</span>
+        <svg *ngIf="item?.code === selected?.code" viewBox="0 0 16 16" class="active">
+          <path d="M4.8 8L7.2 10.4 11.2 5.6"></path>
+        </svg>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

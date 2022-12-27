@@ -1,0 +1,209 @@
+.appearance-widget-panel .overlay-widget-container .overlay-widget__content {
+  padding: 0!important;
+
+  //need for safari 10.1+
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) {
+    margin-right: -4px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }}
+}
+
+.pe-message-appearance {
+  .sidebar-container {
+    &__content {
+      mat-tab-header {
+        display: none;
+      }
+
+      .peb-expandable-panel {
+        background-color: rgba(0, 0, 0, .3);
+
+        .expandable-panel {
+          overflow: hidden;
+        }
+
+        .expandable-panel__header {
+          padding: 8px 16px;
+          height: 40px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          font-family: Roboto, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          box-sizing: border-box;
+        }
+
+        .expandable-panel__content {
+          padding: 0;
+        }
+      }
+
+      .widget-bubble-settings {
+        margin: 12px;
+
+        &__nav {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 12px;
+          padding: 1px;
+          height: 24px;
+          border-radius: 6px;
+          font-family: Roboto, sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          box-sizing: border-box;
+          color: #ffffff;
+          list-style: none;
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        &__nav-item {
+          width: 50%;
+          text-align: center;
+          line-height: 20px;
+          cursor: pointer;
+
+          &.active {
+            height: 20px;
+            border-radius: 6px;
+            background-color: #37363b;
+          }
+        }
+      }
+
+      .color-picker-container {
+        padding: 16px!important;
+        .color-picker {
+          .saturation {
+            display: none;
+          }
+
+          .grid {
+            display: flex;
+            & > span {
+              margin-right: auto;
+            }
+
+            & > span + input {
+              flex-basis: 70px;
+            }
+          }
+        }
+        &__done {
+          width: 100%;
+          height: 40px;
+          margin: 16px 0 0;
+          padding: 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 40px;
+          letter-spacing: normal;
+          text-align: center;
+          color: #0091df;
+          border-radius: 12px;
+          background-color: #1c1d1e;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          cursor: pointer;
+
+          &:focus,
+          &:hover,
+          &:active {
+            border: none;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+
+      //need for safari 10.1+
+      @media not all and (min-resolution:.001dpcm)
+      { @supports (-webkit-appearance:none) {
+        margin-right: -4px;
+        overflow: scroll;
+        overflow-x: hidden;
+      }}
+    }
+  }
+
+  .sidebar-color-settings {
+    &__nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 12px 12px;
+      padding: 1px;
+      height: 24px;
+      border-radius: 6px;
+      font-family: Roboto, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      box-sizing: border-box;
+      color: #ffffff;
+      list-style: none;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &__nav-item {
+      width: 50%;
+      text-align: center;
+      line-height: 20px;
+      cursor: pointer;
+
+      &.active {
+        height: 20px;
+        border-radius: 6px;
+        background-color: #37363b;
+      }
+
+      &_back {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 16px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+          align-self: center;
+        }
+      }
+    }
+  }
+
+  .appearance-widget-panel {
+
+    .overlay-widget {
+      &__header {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      &__back {
+        margin: 0 !important;
+      }
+
+      &__done {
+        margin: 0 !important;
+      }
+
+      &__content {
+        padding: 0 !important;
+      }
+    }
+
+    .expandable-panel__content {
+      padding: 16px !important;
+    }
+  }
+}

@@ -1,0 +1,968 @@
+@import "~swiper/dist/css/swiper.min";
+
+$docker_tabs_area_height: $grid-unit-y * 23;
+$docker_settings_content_height: $grid-unit-y * 18;
+$docker_settings_content_height_plug_tabs_height: $docker_settings_content_height + $docker_tabs_area_height;
+$docker_z_index: 1040;
+
+$db_icon_size_big: 128px;
+$db_icon_size_med: 110px;
+$db_icon_size_small: 64px;
+
+.pe-bootstrap {
+  .docker-desktop {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: calc(-100% + #{$docker_tabs_area_height});
+    z-index: $docker_z_index;
+    @include payever_transition(bottom, $animation-duration-slide-out, $animation-effect-ease-out);
+    @media screen and (max-width: $viewport-breakpoint-ipad) {
+      display: none;
+    }
+    &.opened {
+      bottom: 0;
+    }
+    &.closed {
+      bottom: -100%;
+    }
+    &.settings-opened {
+      bottom: calc(-100% + #{$docker_settings_content_height_plug_tabs_height});
+      @include payever_transition(bottom, $animation-duration-slide-out, $animation-effect-ease-out);
+    }
+
+    .main-apps {
+      height: $docker_tabs_area_height;
+      position: relative;
+
+      .bg-container {
+        @include payever_absolute();
+        //height: 232px;
+        height: $docker_tabs_area_height - $grid-unit-y;
+        overflow: hidden;
+        @include backface-visibility(hidden);
+        clip: rect(0, auto, auto, 0);
+        @include payever_transition(height, $animation-duration-slide-out, $animation-effect-ease-out);
+
+        &.active {
+          height: 100%;
+        }
+
+        .blur {
+          position: fixed;
+          top: -$blur-background-margin;
+          bottom: -$blur-background-margin;
+          left: -$blur-background-margin;
+          right: -$blur-background-margin;
+          transform: translate3d(0, 0, 0);
+          background-position: center;
+          background-size: cover;
+          filter: blur($margin-adjust);
+          &::after {
+            content: '';
+            background-color: rgba($color-justblack, 0.3);
+            position: absolute;
+            top: -$blur-background-margin;
+            bottom: -$blur-background-margin;
+            left: -$blur-background-margin;
+            right: -$blur-background-margin;
+          }
+        }
+      }
+
+      .close-arrow-container {
+        text-align: center;
+        position: relative;
+        width: $margin-adjust * 8;
+        height: $margin-adjust * 8;
+        margin: 0 auto;
+        .arrow-dashboard {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: $margin-adjust * 8;
+          z-index: 1;
+          cursor: pointer;
+          &::after,
+          &::before {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $margin-adjust * 3.5;
+            height: $margin-adjust * 0.5;
+            margin-top: $margin-adjust * -0.25;
+            border-radius: $margin-adjust * 5;
+            background-color: $color-white;
+            transition: opacity $animation-duration-complex-mobile cubic-bezier(0.645, 0.045, 0.355, 1), transform $animation-duration-complex-mobile cubic-bezier(0.645, 0.045, 0.355, 1);
+            opacity: 0.75;
+          }
+
+          &::before {
+            @include transform-origin(13px center);
+            margin-left: -13px;
+          }
+
+          &::after {
+            @include transform-origin(1px center);
+            margin-right: -13px;
+          }
+
+          &:hover,
+          &.hovered {
+            &::before,
+            &::after {
+              opacity: 1;
+            }
+          }
+
+          &.down {
+            &:hover,
+            &.hovered {
+              &::before {
+                @include payever_transform_rotate(20deg);
+              }
+
+              &::after {
+                @include payever_transform_rotate(-20deg);
+              }
+            }
+          }
+
+          &.up {
+            &:hover,
+            &.hovered {
+              &::before {
+                @include payever_transform_rotate(-20deg);
+              }
+
+              &::after {
+                @include payever_transform_rotate(20deg);
+              }
+            }
+          }
+        }
+      }
+
+      ul {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        @include pe_flexbox();
+        @include pe_justify-content(space-between);
+        margin: 0;
+        padding: 0 calc(8.33% - #{$db_icon_size_big / 2});
+        @media screen and (max-width: $viewport-breakpoint-sm-3) {
+          padding: 0 calc(8.33% - #{$db_icon_size_med / 2});
+        }
+        @media screen and (max-width: $viewport-breakpoint-sm-2) {
+          padding: 0 calc(8.33% - #{$db_icon_size_small / 2});
+        }
+
+        li {
+          position: relative;
+          display: inline-block;
+          margin: $margin-adjust * 1.5 $grid-unit-y $pe_hgrid_gutter 0;
+          text-decoration: none;
+          height: $pe_hgrid_gutter * 6;
+          width: $pe_hgrid_gutter * 10;
+          border-radius: $border-radius-base * 2;
+          @include payever_transition(opacity);
+          box-shadow: $box-shadow;
+          cursor: pointer;
+          z-index: 0;
+          &::before,
+          &::after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: inherit;
+            border-radius: $border-radius-base * 2 ;
+            width: 100%;
+            @include payever_transition(opacity, $animation-duration-complex);
+          }
+
+          &::before {
+            background-color: rgba($color-white, 0.25);
+            opacity: 1;
+          }
+
+          &::after {
+            opacity: 0;
+            background: rgb(125, 185, 232); // not changing these colors -  since don't know if they we asked to be so.
+            @include gradient-vertical(rgba(125, 185, 232, 1), rgba(30, 87, 153, 1), 0%, 100%);
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          &:hover,
+          &.opened {
+            &::after {
+              opacity: 1;
+            }
+            &::before {
+              opacity: 0;
+            }
+          }
+
+          .app-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include payever_transform_translate(-50%, -50%);
+
+            .icon {
+              color: $color-white;
+            }
+          }
+
+          .app-title {
+            position: absolute;
+            text-align: center;
+            bottom: $margin-adjust * -10;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            .subheading {
+              color: $color-light-gray-1;
+              text-shadow: 2px 2px 3px rgba($color-justblack, 0.4);
+              font-size: 14px;
+              font-weight: 600;
+              white-space: nowrap;
+              -webkit-font-smoothing: antialiased;
+              letter-spacing: .8px;
+            }
+          }
+          .warning {
+            position: absolute;
+            background: $color-red;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            top: -5px;
+            right: -5px;
+            color: $color-white;
+            text-align: center;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+            &:after {
+              content: '\0021';
+            }
+          }
+        }
+      }
+    }
+
+    .docker-content-container {
+      height: calc(100% - #{$docker_tabs_area_height});
+      width: 100%;
+      background-color: rgba($color-white, 0.4);
+
+      .bg-container {
+        position: absolute;
+        overflow: hidden;
+        @include backface-visibility(hidden);
+        clip: rect(0, auto, auto, 0);
+        top: $docker_tabs_area_height;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .blur {
+          position: fixed;
+          top: $margin-adjust;
+          bottom: $margin-adjust * -5;
+          left: $margin-adjust * -5;
+          right: $margin-adjust * -5;
+          transform: translate3d(0, 0, 0);
+          background-position: center;
+          background-size: cover;
+          filter: blur($margin-adjust * 5);
+
+          &::after {
+            content: '';
+            background-color: rgba($color-white, 0.05);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+
+      .apps-container,
+      .store-container,
+      .todos-container,
+      .settings-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        &.opened {
+          visibility: visible;
+          opacity: 1;
+          @include payever_transition(opacity, $animation-duration-complex);
+        }
+      }
+
+      .apps-container {
+        .categories-header {
+          width: 100%;
+          padding: 0 calc(8.33% - #{$db_icon_size_big / 2});
+          @media screen and (max-width: $viewport-breakpoint-sm-3) {
+            padding: 0 calc(8.33% - #{$db_icon_size_med / 2});
+          }
+          @media screen and (max-width: $viewport-breakpoint-sm-2) {
+            padding: 0 calc(8.33% - #{$db_icon_size_small / 2});
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li.subheading {
+              display: inline-block;
+              text-decoration: none;
+              margin: $margin-adjust * 4 $margin-adjust * 2.5 $margin-adjust * 4 0;
+              color: $color-white;
+              font-size: 12px;
+              cursor: pointer;
+              text-transform: uppercase;
+              -webkit-font-smoothing: antialiased;
+              letter-spacing: 1px;
+              opacity: .75;
+              &:hover {
+                opacity: 1;
+              }
+
+              &.active {
+                opacity: .3;
+              }
+            }
+          }
+        }
+        .apps-wrapper {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          opacity: 0;
+          visibility: hidden;
+          @include payever_transform_translate(0, -50%);
+          @include pe_flexbox();
+          @include pe_flex-wrap(wrap);
+          @include pe_justify-content(space-between);
+          &.opened {
+            @include payever_transition(opacity, $animation-duration-complex);
+            visibility: visible;
+            opacity: 1;
+          }
+
+          .app {
+            display: inline-block;
+            position: relative;
+            margin: $margin-adjust * 7.5 0;
+            vertical-align: bottom;
+            @include last-row-flexbox(6, 16.6%);
+            text-align: center;
+            @media screen and (max-width: $viewport-breakpoint-sm-3) {
+              margin: $margin-adjust * 6 0;
+            }
+
+            a {
+              cursor: pointer;
+              display: inline-block;
+              & > span {
+                position: absolute;
+                bottom: $grid-unit-y * -3;
+                left: 50%;
+                margin: 0;
+                @include payever_transform_translate(-50%, 0);
+                border-radius: $border-radius-base;
+                text-shadow: 2px 3px 3px rgba($color-justblack, 0.4);
+                color: $color-very-light-gray;
+                white-space: nowrap;
+                -webkit-font-smoothing: antialiased;
+              }
+            }
+
+            .icon {
+              @media only screen and (min-width: $viewport-breakpoint-sm-2) {
+                @media only screen and (max-height: 650px ) {
+                  width: $icon-size-64;
+                  height: $icon-size-64;
+                  background-size: $icon-size-64 $icon-size-64 * 2 !important;
+                  &:hover {
+                    background-position: 0px $icon-size-64;
+                  }
+                }
+              }
+              @media only screen and (min-width: $viewport-breakpoint-sm-3) {
+                @media only screen and (max-height: 700px ) {
+                  width: $icon-size-64;
+                  height: $icon-size-64;
+                  background-size: $icon-size-64 $icon-size-64 * 2;
+                  &:hover {
+                    background-position: 0px $icon-size-64;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .todos-container {
+        @include payever_transform_translate(0, -100%);
+        .notifications-swiper-container {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          right: 0;
+          bottom: 0;
+          height: $grid-unit-y * 26;
+          @include payever_transform_translate(0, -50%);
+          .arrow {
+            position: absolute;
+            top: 50%;
+            opacity: 0.4;
+            cursor: pointer;
+            margin-top: -32px;
+            z-index: $docker_z_index;
+            &.swiper-button-disabled {
+              display: none;
+            }
+            &.arrow-visibility {
+              opacity: 0;
+            }
+            &.left {
+              left: $pe_hgrid_gutter;
+              @media (max-width: $viewport-breakpoint-sm-3 - 1) {
+                left: $margin-adjust * 4;
+              }
+            }
+            &.right {
+              right: $pe_hgrid_gutter;
+              @media (max-width: $viewport-breakpoint-sm-3 - 1) {
+                right: $margin-adjust * 4;
+              }
+            }
+            svg {
+              color: $color-white;
+            }
+            &:hover {
+              opacity: 0.3;
+            }
+            @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+              display: none;
+            }
+          }
+
+          .swiper-container {
+            width: 84%;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            @include payever_transition();
+            @media (max-width: $viewport-breakpoint-sm-3 - 1) {
+              width: 80%;
+              left: 10%;
+              right: 10%;
+            }
+            @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+              width: 95%;
+              left: 2.5%;
+              right: 2.5%;
+            }
+            @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+              width: 90%;
+              left: 5%;
+              right: 5%;
+              margin-top: 74px;
+              top: 0;
+            }
+            &.slider-visibility {
+              opacity: 0;
+            }
+            .swiper-wrapper {
+              text-align: center;
+              font-size: 0;
+              margin-bottom: 20px;
+
+              .swiper-slide {
+                padding: 0 $margin-adjust * 2.5;
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+                text-align: left;
+                @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+                  width: 50%;
+                  margin-bottom: $margin-adjust * 7.5;
+                }
+
+                .notify2-list {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .help-question-container {
+          position: absolute;
+          bottom: 5%;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          .subheading {
+            color: $color-white;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .store-container {
+        @include payever_transform_translate(0, -200%);
+        .store-apps-wrapper {
+          position: absolute;
+          top: 50%;
+          @include payever_transform_translate(0, -50%);
+          width: 100%;
+          opacity: 0;
+          visibility: hidden;
+          @include pe_flexbox();
+          @include pe_flex-wrap(wrap);
+          @include pe_justify-content(space-between);
+          &.opened {
+            @include payever_transition(opacity, $animation-duration-complex);
+            visibility: visible;
+            opacity: 1;
+          }
+
+          .app {
+            display: inline-block;
+            position: relative;
+            margin: $margin-adjust * 10 0;
+            vertical-align: bottom;
+            @include last-row-flexbox(6, 16.6%);
+            text-align: center;
+            @media screen and (max-width: $viewport-breakpoint-sm-3) {
+              margin: $margin-adjust * 2 0;
+            }
+
+            a {
+              cursor: pointer;
+              display: inline-block;
+              & > span {
+                position: absolute;
+                bottom: $margin-adjust * -10;
+                left: 50%;
+                margin: 0;
+                @include payever_transform_translate(-50%, 0);
+                border-radius: $border-radius-base;
+                text-shadow: 2px 3px 3px rgba($color-justblack, 0.4);
+                color: $color-very-light-gray;
+                white-space: nowrap;
+                -webkit-font-smoothing: antialiased;
+              }
+            }
+          }
+        }
+      }
+
+      .settings-container {
+        text-align: center;
+        @include payever_transform_translate(0, -300%);
+      }
+      .settings-wrapper {
+        min-height: $docker_settings_content_height;
+        position: relative;
+      }
+      .settings-item-list {
+        @include pe_flexbox();
+        @include pe_justify-content(center);
+        max-width: $pe_hgrid_gutter * 46;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 50%;
+        @include payever_transform_translate(0, -50%);
+        .settings-item {
+          display: inline-block;
+          color: $color-white;
+          text-align: center;
+          vertical-align: top;
+          padding: $margin-adjust * 2;
+          text-decoration: none;
+          @include pe_flex(1);
+          @include break(sm_3) {
+            padding: $margin-adjust * 2 $margin-adjust * 4.5;
+          }
+          a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+          }
+          .icon {
+            margin-bottom:  $margin-adjust * 3.5
+          }
+
+          .title {
+            display: block;
+            text-shadow: 2px 3px 3px rgba($color-justblack, 0.4);
+            color: $color-very-light-gray;
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+      }
+
+      h3 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 50%;
+        margin: 0 auto;
+        @include payever_transform_translate(0, -50%);
+        color: $color-white;
+        text-align: center;
+        text-shadow: 2px 2px 2px rgba($color-justblack, 0.3);
+      }
+    }
+  }
+}
+
+$mobile_docker_tabs_area_height: $grid-unit-y * 7;
+
+.pe-bootstrap {
+  .docker-mobile {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 70%;
+    left: 0;
+    bottom: calc(-70% + #{$mobile_docker_tabs_area_height});
+    z-index: $docker_z_index;
+    @include payever_transition(bottom, $animation-duration-slide-out-mobile, $animation-effect-ease-out);
+    @media screen and (min-width: $viewport-breakpoint-ipad + 1) {
+      display: none;
+    }
+    &.opened {
+      bottom: 0;
+    }
+
+    .main-apps {
+      height: $mobile_docker_tabs_area_height;
+      position: relative;
+
+      .bg-container {
+        position: absolute;
+        height: $mobile_docker_tabs_area_height;
+        overflow: hidden;
+        @include backface-visibility(hidden);
+        clip: rect(0, auto, auto, 0);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include payever_transition(all, $animation-duration-complex-mobile);
+
+        .blur {
+          position: fixed;
+          top: -$blur-background-margin;
+          bottom: -$blur-background-margin;
+          left: -$blur-background-margin;
+          right: -$blur-background-margin;
+          transform: translate3d(0, 0, 0);
+          background-position: center;
+          background-size: cover;
+          filter: blur($margin-adjust);
+
+          &::after {
+            content: '';
+            background-color: rgba($color-justblack, 0.3);
+            position: absolute;
+            top: -$blur-background-margin;
+            bottom: -$blur-background-margin;
+            left: -$blur-background-margin;
+            right: -$blur-background-margin;
+          }
+        }
+      }
+
+      ul {
+        position: relative;
+        top: $margin-adjust * 3;
+        z-index: 1;
+        width: 100%;
+        @include pe_flexbox();
+        @include pe_justify-content(space-between);
+        padding: 0 calc(8.33% - #{$pe_hgrid_gutter * 2});
+        margin: 0;
+        @include payever_transition(top, $animation-duration-slide-out-mobile);
+        @media screen and (max-width: $viewport-breakpoint-sm-3) {
+          padding: 0 calc(8.33% - #{$pe_hgrid_gutter * 1.5});
+        }
+
+        &.opened {
+          top: $margin-adjust * 6;
+        }
+
+        li {
+          position: relative;
+          display: inline-block;
+          margin: 0;
+          text-decoration: none;
+          width: 20%;
+          height: $margin-adjust * 8;
+          border-radius: $border-radius-base * 2;
+          @include payever_transition();
+          cursor: pointer;
+          z-index: 0;
+
+          .app-icon {
+            .icon {
+              display: block;
+              margin: 0 auto;
+              color: $color-white;
+              filter: drop-shadow(4px 4px 4px rgba($color-justblack, 0.2));
+            }
+          }
+
+          .app-title {
+            position: absolute;
+            bottom:  $margin-adjust * -9;
+            left: 0;
+            right: 0;
+            text-align: center;
+            visibility: visible;
+
+            &.disabled {
+              opacity: 0;
+              visibility: hidden;
+            }
+
+            .small {
+              color: $color-light-gray-1;
+              white-space: nowrap;
+              @include payever_transition();
+              -webkit-font-smoothing: antialiased;
+              letter-spacing: .8px;
+            }
+          }
+        }
+      }
+    }
+
+    .docker-content-container {
+      height: calc(100% - #{$mobile_docker_tabs_area_height});
+
+      .bg-container {
+        position: absolute;
+        overflow: hidden;
+        @include backface-visibility(hidden);
+        clip: rect(0, auto, auto, 0);
+        top: $mobile_docker_tabs_area_height;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .blur {
+          position: fixed;
+          top: -$blur-background-margin;
+          bottom: -$blur-background-margin;
+          left: -$blur-background-margin;
+          right: -$blur-background-margin;
+          transform: translate3d(0, 0, 0);
+          background-position: center;
+          background-size: cover;
+          filter: blur($margin-adjust * 5);
+
+          &::after {
+            content: '';
+            background-color: rgba($color-justblack, 0.3);
+            @include payever_absolute();
+          }
+        }
+      }
+
+      .close-arrow-container {
+        text-align: center;
+        position: relative;
+        width: $margin-adjust * 8;
+        height: $margin-adjust * 8;
+        margin: 0 auto;
+        .icon {
+          color: $color-white;
+        }
+      }
+
+      .content-wrapper {
+        position: relative;
+        height: calc(100% - #{$mobile_docker_tabs_area_height});
+
+        .notifications-container,
+        .store-container,
+        .apps-container,
+        .settings-container {
+          @include payever_absolute();
+          opacity: 0;
+          visibility: hidden;
+          &.opened {
+            @include payever_transition(opacity, $animation-duration-complex-mobile);
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        .notifications-swiper-container,
+        .store-apps-wrapper,
+        .apps-wrapper,
+        .settings-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          opacity: 0;
+          visibility: hidden;
+          text-align: center;
+          &.opened {
+            @include payever_transition(opacity, $animation-duration-complex-mobile);
+            visibility: visible;
+            opacity: 1;
+          }
+
+          .swiper-container {
+            padding: $margin-adjust * 2.5 0;
+            .swiper-wrapper {
+              .swiper-slide {
+                p.small {
+                  margin: 5px 0 16px;
+                  color: #e1e1e1;
+                  text-overflow: ellipsis;
+                  -webkit-font-smoothing: antialiased;
+                }
+              }
+            }
+          }
+        }
+
+        .notifications-container {
+          .notifications-swiper-container {
+          }
+        }
+
+        .store-container {
+          .store-apps-wrapper {
+          }
+        }
+
+        h3 {
+          color: $color-white;
+          text-align: center;
+        }
+
+        .apps-container {
+          .apps-wrapper {
+
+            .app {
+              display: inline-block;
+              position: relative;
+              margin: $margin-adjust * 10 0;
+              vertical-align: bottom;
+              @include last-row-flexbox(4, 25%);
+              text-align: center;
+              @media screen and (max-width: $viewport-breakpoint-sm-3) {
+                margin: $margin-adjust * 2.5 0 $margin-adjust * 9;
+              }
+
+              a {
+                cursor: pointer;
+                display: inline-block;
+              }
+            }
+          }
+        }
+
+        .settings-container {
+
+        }
+        .settings-wrapper {
+          .settings-item {
+            color: $color-white;
+            text-align: center;
+            margin-bottom: $margin-adjust * 5;
+            padding: $margin-adjust $margin-adjust * 2;
+            a {
+              color: $color-white;
+              text-decoration: none;
+            }
+            .icon {
+              margin-bottom: $margin-adjust * 2;
+              width: $icon-size-32;
+              height: $icon-size-32;
+            }
+
+            .title {
+              display: block;
+              text-shadow: 2px 3px 3px rgba($color-justblack, 0.4);
+              color: $color-very-light-gray;
+              -webkit-font-smoothing: antialiased;
+            }
+          }
+        }
+      }
+
+      .categories-header {
+        position: relative;
+
+        .apps-footer {
+          ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            li.subheading {
+              display: inline-block;
+              text-decoration: none;
+              margin: $margin-adjust * 2.5 $margin-adjust * 5;
+              color: $color-white;
+              font-size: 12px;
+              cursor: pointer;
+              white-space: nowrap;
+              -webkit-font-smoothing: antialiased;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              opacity: .75;
+
+              &.active {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .notifications-footer {
+          a {
+            display: block;
+            text-align: center;
+            text-overflow: ellipsis;
+            color: $color-very-light-gray;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<pe-autocomplete
+  class="d-block"
+  [label]="'forms.business_create.industry.placeholder' | translate"
+  [isFieldInvalid]="isSubmitted && control.invalid"
+  [data]="industryOptions$ | async"
+  [formControl]="control"
+  [errorMessage]="errorMessage[controlScheme.name]"
+  [initialValue]="initialIndustryLabel"
+></pe-autocomplete>

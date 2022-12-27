@@ -1,0 +1,18 @@
+@mixin peb-logo-picker-theme($theme-config) {
+    $primary: map-get($theme-config, primary);
+    $accent: map-get($theme-config, accent);
+    $separator: map-get($theme-config, separator);
+    $text-color: map-get($theme-config, text-color);
+    $spinner: map-get($theme-config, spinner);
+  
+    .logo-picker-wrapper {  
+      .image {
+        &__spinner {
+            .mat-progress-spinner circle, .mat-spinner circle {
+              stroke: $spinner;
+            }
+        }
+      }
+    }
+  }
+  

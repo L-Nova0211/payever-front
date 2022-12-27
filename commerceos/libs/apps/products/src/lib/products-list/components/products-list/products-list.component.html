@@ -1,0 +1,135 @@
+<pe-grid [theme]="theme" [items]="gridItems$ | async">
+  <pe-grid-sidenav
+    #sideNav
+    [sidenavTitle]="'sidebar.products' | translate"
+    [sidenavMenu]="!popupMode ? sidenavMenu : null"
+    (menuItemSelected)="!popupMode ? selectSideNavMenu($event) : null"
+  >
+    <pe-folders
+      [sideNav]="sideNav"
+      [rootFolder]="rootFolderData"
+      [folders]="folders"
+      [selectFolder]="selectedFolder"
+      [isLoading]="isFoldersLoading$ | async"
+      (selectedRootFolder)="onSelectRootFolder()"
+      (selectedFolder)="onSelectFolder($event)"
+      (selectedDefaultFolder)="onSelectFolder($event)"
+      (createFolder)="this.productsFoldersService.onCreateFolder($event)"
+      (updateFolder)="this.productsFoldersService.onUpdateFolder($event)"
+      (deleteFolder)="onDeleteFolder($event)"
+      (createHeadline)="this.productsFoldersService.onCreateHeadline($event)"
+      (updateHeadline)="this.productsFoldersService.onUpdateHeadline($event)"
+      (deleteHeadline)="this.productsFoldersService.onDeleteHeadline($event)"
+      (positionsChanged)="this.productsFoldersService.onUpdatePositions($event)"
+    ></pe-folders>
+  </pe-grid-sidenav>
+  <pe-grid-content
+    [mobileTitle]="mobileTitle$ | async"
+    (deleteItems)="onContentDelete($event)"
+    (moveToFolder)="moveToFolder($event)"
+    >
+    <pe-grid-toolbar
+      [totalItems]="paginator.total"
+      [viewAdd]="!popupMode"
+      [viewMenu]="viewMenu"
+      (filtersChange)="filtersChange($event)"
+      [filterConfig]="toolbar.filterConfig"
+      [optionsMenu]="toolbar.optionsMenu"
+      (optionsChange)="optionsChange($event)"
+      [sortMenu]="toolbar.sortMenu"
+      [customMenus]="toolbarCustomMenu$ | async"
+      (sortChange)="sortChange($event)"
+      (viewChange)="viewChange()"
+      (create)="createByHand()"
+    ></pe-grid-toolbar>
+    <pe-grid-viewport
+      [selectable]="true"
+      [viewportTitle]="viewportTitle"
+      [defaultLayout]="gridLayout"
+      [contextMenu]="viewportContextMenu$ | async"
+      [allowSetQueryPArams]="true"
+      (itemContextSelect)="onViewportContextMenu($event)"
+    >
+      <pe-grid-list
+        noItemsPlaceholder="products"
+        [viewAdd]="!popupMode"
+        [scrollBottomOffset]="200"
+        [isLoading]="isLoading$ | async"
+        (create)="createByHand()"
+        (scrolledToEnd)="scrollBottom()"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            class='product-item'
+            [peDropIntoFolder]="itemsToMove(item)"
+            [item]="item"
+            [itemContextMenu]="itemContextMenu$ | async"
+            (actionClick)="actionClick($event)"
+            (itemClick)="actionClick($event)"
+            (moveToFolder)="moveToFolder($event)"
+            (moveToRootFolder)="moveToRootFolder($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          ></pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+      <pe-grid-table
+        class='product-item'
+        noItemsPlaceholder="products"
+        [isLoading]="isLoading$ | async"
+        [displayedColumns]="displayedColumns"
+        [scrollBottomOffset]="50"
+        (actionClick)="actionClick($event)"
+        (scrolledToEnd)="scrollBottom()"
+      >
+      <ng-template let-item="item">
+        <pe-table-row
+          [peDropIntoFolder]="itemsToMove(item)"
+          [item]="item"
+          [itemContextMenu]="itemContextMenu$ | async"
+          (actionClick)="actionClick($event)"
+          (rowClicked)="actionClick($event)"
+          (moveToFolder)="moveToFolder($event)"
+          (moveToRootFolder)="moveToRootFolder($event)"
+          (itemContextSelect)="onItemContentContextMenu($event)"
+        >
+        <ng-template #bottomLine>
+          <pe-action-btn
+            [item]="item"
+            [inMobile]="true"
+            (actionClick)="actionClick($event)"
+          ></pe-action-btn>
+        </ng-template>
+        </pe-table-row>
+      </ng-template>
+
+      </pe-grid-table>
+    </pe-grid-viewport>
+  </pe-grid-content>
+</pe-grid>
+
+<ng-template #importMenu let-menuRef="menuRef">
+  <pf-import-menu
+    [theme]="theme"
+    (importCSV)="this.selectImportFile(FileType.CSV, $event)"
+    (importXML)="this.selectImportFile(FileType.XML, $event)"
+    (selected)="menuRef.closeMenu.emit()"
+  ></pf-import-menu>
+</ng-template>
+
+<div hidden>
+  <input
+    #csvFileInput
+    type="file"
+    class="file-input"
+    accept="text/plain, .csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+    (change)="onExport($event)"
+  />
+
+  <input
+    #xmlFileInput
+    type="file"
+    class="file-input"
+    accept="text/xml"
+    (change)="onExport($event)"
+  />
+</div>

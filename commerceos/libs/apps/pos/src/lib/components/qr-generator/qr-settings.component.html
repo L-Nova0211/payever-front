@@ -1,0 +1,12 @@
+
+<pe-third-party-root-form
+  *ngIf="thirdPartyService"
+  class="third-party-root-form-container"
+  [theme]="theme"
+  [thirdPartyFormService]="thirdPartyService"
+  [translationsCategory]="posConnectService.integration.category"
+  [baseApiData]="{}"
+  [withHeader]="false"
+  (onClose)="handleClose()">
+</pe-third-party-root-form>
+

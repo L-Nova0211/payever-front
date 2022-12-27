@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <mat-tab-group dynamicHeight headerPosition="below" (selectedTabChange)="onSizeChange($event)">
+    <mat-tab *ngFor="let sizeOption of sizeOptions" [label]="ucfirst(sizeOption.size)">
+      <peb-widget-wrapper
+        [class]="sizeOption.size"
+        [useDefaultDataSource]="true"
+        [config]="{ size: sizeOption.size, viewType: viewType }"
+      ></peb-widget-wrapper>
+    </mat-tab>
+  </mat-tab-group>
+</form>

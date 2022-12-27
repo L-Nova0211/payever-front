@@ -1,0 +1,13 @@
+<div class="product-type-wrapper">
+    <mat-button-toggle-group [value]="productType" (change)="onChange($event.value)" class="mat-button-toggle-group-transparent">
+      <mat-button-toggle
+        *ngFor="let type of productTypeEnum | keyvalue"
+        [value]="type.valye"
+        disableRipple="true">
+        {{'product_type.' + type.value | translate}}
+      </mat-button-toggle>
+        <!-- <mat-button-toggle [value]="productTypeEnum.Service" disableRipple="true">{{'product_type.service' | translate}}</mat-button-toggle>
+        <mat-button-toggle [value]="productTypeEnum.Digital" disableRipple="true">{{'product_type.digital' | translate}}</mat-button-toggle>
+        <mat-button-toggle [value]="productTypeEnum.Physical" disableRipple="true">{{'product_type.physical' | translate}}</mat-button-toggle> -->
+    </mat-button-toggle-group>
+</div>

@@ -1,0 +1,26 @@
+<div class='welcome-screen' [ngClass]="'welcome_'+theme">
+  <div class='welcome-screen__content'>
+    <div class='welcome-screen__content--image'>
+      <svg width="61" height="56" viewBox="0 0 61 56">
+        <g fill="none" fill-rule="evenodd">
+          <g fill="#FFBE00">
+            <path d="M34.43 1.003c1.284.721 2.345 1.783 3.066 3.067l22.452 39.975c2.17 3.864.797 8.757-3.068 10.927-1.2.674-2.553 1.028-3.93 1.028H8.049C3.616 56 .023 52.407.023 47.975c0-1.377.354-2.73 1.028-3.93L23.502 4.07c2.17-3.864 7.063-5.238 10.927-3.067zm-3.947 41.186c-1.19 0-2.086.322-2.692.967-.605.644-.908 1.442-.908 2.393 0 .951.303 1.738.908 2.362.606.623 1.503.935 2.692.935 1.189 0 2.091-.312 2.708-.935.616-.624.925-1.411.925-2.362 0-.95-.309-1.749-.925-2.393-.617-.645-1.52-.967-2.708-.967zm3.038-25.537h-6.407l.43 22.394h5.515l.462-22.394z" transform="translate(-190 -78) translate(190 78)"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class='welcome-screen__content--title'>{{data.title}}</div>
+    <div *ngIf="data.subject" class='welcome-screen__content--description'>{{data.subtitle}}{{data.subject | titlecase}}{{data.subtitle1}}</div>
+    <div *ngIf="!data.subject" class='welcome-screen__content--description'>{{data.subtitle}}</div>
+
+    <button class='welcome-screen__content--button' (click)='onConfirmClick()'>
+      {{ data.confirmButtonTitle }}
+    </button>
+    <button class='welcome-screen__content--button welcome-screen__content--button-dashboard' (click)='onCancelClick()'>
+      {{ data.cancelButtonTitle }}
+    </button>
+  </div>
+</div>
+
+

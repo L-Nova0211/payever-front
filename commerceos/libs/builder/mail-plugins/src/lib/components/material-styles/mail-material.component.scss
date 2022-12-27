@@ -1,0 +1,96 @@
+.form-field {
+  background: rgba(0, 0, 0, 0.3);
+
+  .label-input-content-wrapper {
+    height: 32px;
+    .input-field {
+      margin-bottom: 8px;
+    }
+    .form-label {
+      box-sizing: border-box;
+    }
+  }
+  .mat-chip-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .mat-chip-list-wrapper {
+      margin: 0 4px;
+      width: 100%;
+      height: 32px !important;
+
+      input {
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: Roboto,sans-serif;
+      }
+
+      .mat-standard-chip {
+        min-height: 24px;
+        height: 24px;
+        padding: 0 7px 0 8px !important;
+        border-radius: 8px;
+        background-color: #393b3e !important;
+        color: white !important;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 30px #1c1d1e inset;
+  -webkit-text-fill-color: white;
+}
+.sender-select {
+  .input {
+    padding-left: 8px;
+    margin-right: -10px !important;
+    overflow: auto;
+  }
+
+  .select-input-text {
+    margin-left: 0 !important;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+.peb-select-options-container {
+  margin-top: 4px;
+
+  .peb-select-option {
+    background: #1c1d1e;
+  }
+}
+
+.cdk-focused .label-input-content-wrapper .label-container {
+  position: relative;
+
+  &::after {
+    height: 0px;
+  }
+}
+.message {
+  &__autocomplete {
+    .option {
+      &.mat-selected {
+        background: #0371e2 !important;
+        color: white !important
+      }
+
+      font-size: 14px;
+      height: 32px !important;
+      background-color: #1c1d1e;
+      color: white;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+    }
+  }
+}

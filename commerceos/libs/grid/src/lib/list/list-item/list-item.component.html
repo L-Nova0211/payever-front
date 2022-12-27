@@ -1,0 +1,174 @@
+<div #gridItem class="pe-grid-item__wrapper unselectable"
+  [class.pe-grid-item__wrapper_to-add]="toAdd"
+  [class.pe-grid-item__wrapper_with-mobile-view]="isListWithMobileView"
+  [class.pe-grid-item__wrapper_big-list]="peGridViewportService.view === peGridView.BigList
+  || peGridViewportService.view === peGridView.BigListCover"
+>
+  <div class="pe-grid-item__container">
+    <ng-container *ngIf="toAdd; then add else itemOrFolder"></ng-container>
+  </div>
+</div>
+
+<ng-template #itemOrFolder>
+  <div
+    *ngIf="peGridViewportService.selectable || (item.badge && !isMobile)"
+    class="pe-grid-item__header"
+  >
+  <svg
+    *ngIf="peGridViewportService.selectable && !disableSelect"
+    viewBox="0 0 16 16"
+    class="pe-grid-item__checkbox"
+    [class.pe-grid-item__checkbox_active]="peGridViewportService.isSelected(item)"
+    (click)="selectItem($event, item)"
+  >
+    <path d="M4.8 8L7.2 10.4 11.2 5.6"/>
+  </svg>
+  <div class="pe-grid-item__spacer"></div>
+  <ng-container *ngIf="isTopBadge">
+    <span
+      *ngIf="item.badge?.label"
+      class="pe-grid-item__badge"
+      [style.backgroundColor]="item.badge?.backgroundColor"
+      [style.color]="item.badge?.color"
+    >{{ item.badge.label | translate }}</span>
+    <div *ngIf="item.badge?.componentCell" class="pe-grid-item__badge component">
+      <pe-list-mobile-item-component-host
+        [inputData]="{
+          item: item,
+          component: item.badge.componentCell
+        }"
+      ></pe-list-mobile-item-component-host>
+    </div>
+  </ng-container>
+  </div>
+  <div *ngIf="!text && !template"
+    class="pe-grid-item__image"
+    [class.pe-grid-item__image_big-list]="peGridViewportService.view === peGridView.BigList"
+    [class.pe-grid-item__image_big-list-cover]="peGridViewportService.view === peGridView.BigListCover"
+    [class.auto-height]="autoHeightImage"
+    [class.folder]="item.type === peGridItemType.Folder"
+  >
+    <div class="pe-grid-item__image-wrapper">
+      <img #imageRef [class.hidden]="!image">
+    </div>
+    <img *ngIf="item.type === peGridItemType.Folder" [src]="folderIcon" alt="" class="mat-icon">
+    <div
+      *ngIf="allowPreview && item.type !== peGridItemType.Folder"
+      class="preview"
+      (click)="onPreview($event, item)"
+    >
+      <button class="preview__button">{{ previewTitle }}</button>
+    </div>
+    <div class="item-loader" *ngIf="item.itemLoader$ | async"></div>
+  </div>
+
+  <div *ngIf="text && !template"
+    class="pe-grid-item__text"
+    [class.is-list-with-mobile]="isListWithMobileView"
+    [innerHTML]="text">
+  </div>
+
+  <div *ngIf="template">
+    <ng-container [ngTemplateOutlet]="template"
+    [ngTemplateOutletContext]="{ item: item }">
+    </ng-container>
+  </div>
+
+  <div
+    class="pe-grid-item__footer"
+    [class.pe-grid-item__footer-static-height]="peGridViewportService.view === peGridView.BigList"
+  >
+  <div class="more-item-wrap"  *ngIf="!isListWithMobileView">
+    <div #textBlock
+      class="more-item-wrap__text-block"
+      [class.more-item-wrap__text-block-list]="peGridViewportService.view === peGridView.List"
+      [ngSwitch]="peGridViewportService.view"
+    >
+      <ng-template [ngSwitchCase]="peGridView.List">
+        <p class="more-item-wrap__title" title="{{ item.title }}">{{ item.title }}</p>
+        <ng-container *ngTemplateOutlet="actionButton"></ng-container>
+      </ng-template>
+      <ng-template ngSwitchDefault>
+        <p class="more-item-wrap__title" title="{{ item.title }}">{{ item.title }}</p>
+        <p *ngIf="item.description" class="more-item-wrap__description">
+          <span title="{{ item.description }}">{{ item.description }}</span>
+        </p>
+      </ng-template>
+    </div>
+    <ng-container
+      *ngIf="footerRightRef && item.type === peGridItemType.Item"
+      [ngTemplateOutlet]="footerRightRef"
+    >
+    </ng-container>
+
+  </div>
+  <ng-container *ngIf="item?.additionalInfo">
+    <p class="pe-grid-item__additional-info" *ngFor="let info of item.additionalInfo" [innerHTML]="info"></p>
+  </ng-container>
+  <pe-grid-vertical-columns
+    *ngIf="isListWithMobileView"
+    class="pe-grid-item__additional-info"
+    [item]="item"
+    [excludeColumns]="excludeColumns"
+    [displayColumns]="displayColumns"
+  ></pe-grid-vertical-columns>
+  </div>
+  <div *ngIf="isBottomBadge" class="pe-grid-item__footer-action">
+    <span
+      *ngIf="item.badge?.label"
+      class="pe-grid-item__badge"
+      [style.backgroundColor]="item.badge?.backgroundColor"
+      [style.color]="item.badge?.color"
+    >{{ item.badge.label | translate }}</span>
+    <div *ngIf="item.badge?.componentCell || item.badge?.cellComponentFactory" class="pe-grid-item__badge component">
+      <pe-list-mobile-item-component-host
+        [inputData]="{
+          item: item,
+          component: item.badge?.componentCell,
+          componentFactory: item.badge?.cellComponentFactory
+        }"
+      ></pe-list-mobile-item-component-host>
+    </div>
+    <ng-container *ngTemplateOutlet="actionButton"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #add>
+  <div class="pe-grid-item__to-add">
+    <mat-icon svgIcon="add-icon" aria-hidden="false"></mat-icon>
+  </div>
+</ng-template>
+
+<ng-template #actionButton>
+  <button #moreButton
+    *ngIf="viewAction && item.action?.more"
+    class="pe-grid-item__more"
+    (click)="clickedMore($event)"
+  >
+    <mat-icon
+      *ngIf="(item.isLoading$ | async) !== true"
+      aria-hidden="false"
+      svgIcon="more-icon"
+    ></mat-icon>
+    <div
+      *ngIf="item.isLoading$ | async"
+      class="pe-grid-item__spinner"
+    >
+      <mat-spinner [diameter]="16" [strokeWidth]="2"></mat-spinner>
+    </div>
+  </button>
+  <button
+    *ngIf="viewAction && item.action && !item.action?.more"
+    class="pe-grid-item__button"
+    (click)="item.isLoading$?.value ? null : actionClick.emit(item)"
+    [style.backgroundColor]="item.action?.backgroundColor"
+    [style.color]="item.action?.color"
+  >
+    <span *ngIf="(item.isLoading$ | async) !== true">{{ item.action?.label | translate }}</span>
+    <mat-spinner
+      *ngIf="item.isLoading$ | async"
+      [diameter]="16"
+      [strokeWidth]="2"
+    ></mat-spinner>
+  </button>
+</ng-template>

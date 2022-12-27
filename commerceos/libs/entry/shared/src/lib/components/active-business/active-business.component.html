@@ -1,0 +1,12 @@
+
+<div class="logo-container" [class.no-margin]="noMargin">
+    <img [ngStyle]="{'width': size + 'px', 'height': size + 'px'}" *ngIf="logo" class="logo img-circle" [src]="logo">
+    <div [ngStyle]="{'width': size + 'px', 'height': size + 'px'}" *ngIf="!logo" class="logo logo-placeholder img-circle">
+        <h2>{{ name | abbreviation }}</h2>
+    </div>
+
+    <div class="business-info">
+        <span class="business-title">{{name}}</span>
+        <span class="business-industry">{{city ? (city + ', ') : ''}}{{email ? (email) : '' }}</span>
+    </div>
+</div>

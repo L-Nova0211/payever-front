@@ -1,0 +1,5918 @@
+id: apple-connected-page
+name: connectED
+variant: front
+type: replica
+master: null
+data: {}
+template:
+  id: apple-connected-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-wrapper
+          type: block
+          children:
+            - id: first-section-row-overview
+              type: block
+              children:
+                - id: first-section-row-overview-text
+                  type: text
+                  data:
+                    text: Apple and ConnectED
+            - id: first-section-row-headline
+              type: block
+              children:
+                - id: first-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      Giving products, support, and opportunities
+                      to schools that need them&nbsp;most.
+            - id: first-section-row-intro
+              type: block
+              children:
+                - id: first-section-row-intro-text
+                  type: text
+                  data:
+                    text: |-
+                      Apple has been part of the ConnectED initiative since
+                      2014, pledging $100 million of teaching and learning
+                      solutions to 114 underserved schools across the country.
+                      We’ve donated an iPad to every student, a Mac and
+                      iPad to every teacher, and an Apple TV to every
+                      classroom. And we’ve implemented a process that
+                      provides planning, professional learning, and ongoing
+                      guidance so every school can experience the
+                      transformational power of&nbsp;technology.
+                - id: first-section-row-intro-subtext
+                  type: button
+                  data:
+                    text: |-
+                      Learn more about the impact of the initiative in
+                      SRI Education’s research report &#8599;
+                    link:
+                      type: custom
+                      routeId: https://www.sri.com/work/publications/apple-and-connected-research-year-2-survey-report
+            - id: first-ection-row-caption
+              type: block
+              children:
+                - id: first-ection-row-caption-title
+                  type: text
+                  data:
+                    text: Daveon, Student
+                - id: first-ection-row-caption-text
+                  type: text
+                  data:
+                    text: Riverview Gardens High School
+    - id: first-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: second-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-wrapper
+          type: block
+          children:
+            - id: second-section-row-overview
+              type: block
+              children:
+                - id: second-section-row-overview-text
+                  type: text
+                  data:
+                    text: Establishing Goals
+            - id: second-section-row-headline
+              type: block
+              children:
+                - id: second-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      “We all met to come up with our vision, mission statement, goals, and challenges.”
+            - id: second-section-row-intro
+              type: block
+              children:
+                - id: second-section-row-content
+                  type: block
+                  children:
+                    - id: second-section-row-content-text0
+                      type: text
+                      data:
+                        text: |-
+                          Every school faces unique challenges. That’s why we
+                          meet with administrators from each Apple ConnectED
+                          school to craft a vision for the role of technology
+                          in their classrooms. As part of this planning,
+                          we work with school leadership to form a core
+                          group of individuals responsible for defining
+                          clear and measurable&nbsp;goals.
+                    - id: second-section-row-content-text1
+                      type: text
+                      data:
+                        text: |-
+                          At Berkley Campostella Early Childhood Education
+                          Center in Norfolk, Virginia, Principal
+                          Dr. Doreatha White leads her faculty with a
+                          powerful vision — that children are capable of
+                          anything if you give them the right tools.
+                          “Our motto is: College begins in prekindergarten,”
+                          she says. “We have to guide a student’s whole
+                          thinking toward being successful beyond pre-K.
+                          But to truly start closing the digital divide,
+                          we have to get our parents and the community to
+                          believe in what we’re doing as well.”
+                    - id: second-section-row-content-text2
+                      type: text
+                      data:
+                        text: |-
+                          With that challenge in mind, Dr. White created a
+                          community outreach program to help parents understand
+                          the transformative power of technology in learning.
+                          And one of her first goals was to get 100 percent of
+                          the students’ parents to attend How to Use iPad with
+                          Your Child workshops, which she achieved with
+                          surprising ease. “In the community’s eyes, it was a
+                          big thing. We could demonstrate how this would
+                          benefit their children and prepare them for lifelong
+                          learning. That not only are they doing ABCs
+                          and 123s, they’re also learning how to analyze and
+                          synthesize instruction. And now they’re excited
+                          about learning, which they’ll remember going
+                          into kindergarten and beyond.”
+                    - id: second-section-row-content-text3
+                      type: text
+                      data:
+                        text: |-
+                          Learn more about Berkley Campostella Early Childhood
+                          Center’s journey with ConnectED in a free book
+                          written by Principal Dr. Doreatha White.
+                - id: second-section-row-intro-subtext
+                  type: button
+                  data:
+                    text: |-
+                      View on iBooks &#8599;
+                    link:
+                      type: custom
+                      routeId: https://www.sri.com/work/publications/apple-and-connected-research-year-2-survey-report
+            - id: second-ection-row-caption
+              type: block
+              children:
+                - id: second-ection-row-caption-title
+                  type: text
+                  data:
+                    text: Dr. Doreatha White, Principal
+                - id: second-ection-row-caption-text
+                  type: text
+                  data:
+                    text: Berkley Campostella Early Childhood Education Center
+    - id: second-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-section-wrapper
+          type: block
+          children:
+            - id: third-section-row-overview
+              type: block
+              children:
+                - id: third-section-row-overview-text
+                  type: text
+                  data:
+                    text: Building Infrastructure
+            - id: third-section-row-headline
+              type: block
+              children:
+                - id: third-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      “If you can understand the system, you can maintain it.”
+            - id: third-section-row-content
+              type: block
+              children:
+                - id: third-section-row-content-col-a
+                  type: block
+                  children:
+                    - id: third-section-row-content-col-a-text0
+                      type: text
+                      data:
+                        text: |-
+                          Many Apple ConnectED schools do not have a strong
+                          network or a dedicated technology department.
+                          So before any products are delivered, Apple
+                          Project Engineers conduct a full survey of the
+                          school’s existing wireless infrastructure and help
+                          install or upgrade a&nbsp;network.
+                    - id: third-section-row-content-col-a-text1
+                      type: text
+                      data:
+                        text: |-
+                          In the remote village of Nanwalek, Alaska, the K–12
+                          school was making plans to improve its slow,
+                          satellite-provided Internet connection. Our engineers
+                          consulted with district officials to ensure that
+                          the school’s wireless infrastructure would not
+                          only be fast, but would also be ready to support
+                          the arrival of over 100 new Apple products.
+                          In addition to working with the district’s
+                          offsite IT team, Apple Project Managers needed
+                          to find someone local to handle day-to-day
+                          management of the devices. Tommy Evans, an aide
+                          and parent in the village, volunteered for the role.
+                          “They showed us where a signal goes and how to
+                          tailor equipment around students’ needs,” he says.
+                          “When things were put in place, it took off
+                          like a&nbsp;rocket.”
+                    - id: third-section-row-content-col-a-text3
+                      type: text
+                      data:
+                        text: |-
+                          The new wireless infrastructure has profoundly
+                          affected the school, especially students like
+                          Evans’s daughter, Tessie, who is hearing impaired.
+                          “Because we’re so isolated, she felt like she was
+                          the only one who is deaf.” But soon, Tessie was
+                          using FaceTime and other iPad apps to communicate
+                          with students and mentors all over the&nbsp;world.
+                    - id: third-section-row-content-col-a-text4
+                      type: text
+                      data:
+                        text: |-
+                          Learn more about how access to technology
+                          connected Nanwalek students to the world beyond
+                          their shores in a free book written by
+                          Principal Nancy Kleine.
+                    - id: third-section-row-content-col-a-link
+                      type: button
+                      data:
+                        text: |-
+                          View on iBooks &#8599;
+                        link:
+                          type: custom
+                          routeId:
+                - id: third-section-row-content-col-b
+                  type: block
+                  children:
+                    - id: third-section-row-content-col-b-item-one
+                      type: block
+                      children:
+                        - id: third-section-row-content-col-b-item-one-title
+                          type: text
+                          data:
+                            text: 760,320
+                        - id: third-section-row-content-col-b-item-one-text
+                          type: text
+                          data:
+                            text: |-
+                              feet of Internet cable have been installed in
+                              Apple ConnectED schools
+                    - id: third-section-row-content-col-b-item-two
+                      type: block
+                      children:
+                        - id: third-section-row-content-col-b-item-two-title
+                          type: text
+                          data:
+                            text: 95
+                        - id: third-section-row-content-col-b-item-two-text
+                          type: text
+                          data:
+                            text: |-
+                              Apple ConnectED schools have received upgrades
+                              to their wireless networks since 2014
+            - id: third-section-row-caption
+              type: block
+              children:
+                - id: third-section-row-caption-title
+                  type: text
+                  data:
+                    text: Tommy Evans, Aide
+                - id: third-section-row-caption-text
+                  type: text
+                  data:
+                    text: Nanwalek School
+    - id: third-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourth-section-wrapper
+          type: block
+          children:
+            - id: fourth-section-row-overview
+              type: block
+              children:
+                - id: fourth-section-row-overview-text
+                  type: text
+                  data:
+                    text: Preparing Teachers
+            - id: fourth-section-row-headline
+              type: block
+              children:
+                - id: fourth-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      “I’ve had to slow down because I get so excited about all you can do.”
+            - id: fourth-section-row-content
+              type: block
+              children:
+                - id: fourth-section-row-content-col-a
+                  type: block
+                  children:
+                    - id: fourth-section-row-content-col-a-text0
+                      type: text
+                      data:
+                        text: |-
+                          To help every teacher become comfortable with new
+                          technology, the Apple Education team provides a
+                          series of workshops designed specifically for
+                          educators. We start by helping them integrate
+                          iPad, Mac, and Apple TV into their curriculum and
+                          lessons, then show them how to create original
+                          and engaging books, presentations, and other learning materials.
+                    - id: fourth-section-row-content-col-a-text1
+                      type: text
+                      data:
+                        text: |-
+                          “Apple made sure not to overwhelm us,” says Kirt
+                          Gordon, a third-grade teacher at Salida del Sol
+                          Elementary School in Yuma, Arizona. “We could
+                          approach each session in small segments, enabling
+                          those of us who were further along to
+                          advance on our own.”
+                    - id: fourth-section-row-content-col-a-text3
+                      type: text
+                      data:
+                        text: |-
+                          Inspired by his professional learning workshops and
+                          the agricultural community that surrounds the school,
+                          Gordon teaches a lesson about the Archimedes screw,
+                          an irrigation device invented in ancient Greece.
+                          Using animated simulations in apps, the lesson
+                          enables students to rotate iPad for a 3D look
+                          at how the machine works so they can
+                          create models of their own.
+                    - id: fourth-section-row-content-col-a-text4
+                      type: text
+                      data:
+                        text: |-
+                          In 2017, Gordon became part of the Apple
+                          Distinguished Educators (ADE) program, which
+                          celebrates pioneers of classroom technology.
+                          He is one of 13 ConnectED teachers to join
+                          the global ADE community.
+                    - id: fourth-section-row-content-col-a-link
+                      type: button
+                      data:
+                        text: |-
+                          Learn more about Apple Distinguished Educators &gt;
+                        link:
+                          type: custom
+                          routeId:
+                - id: fourth-section-row-content-col-b
+                  type: block
+                  children:
+                    - id: fourth-section-row-content-col-b-item-one
+                      type: block
+                      children:
+                        - id: fourth-section-row-content-col-b-item-one-title
+                          type: text
+                          data:
+                            text: 4,400+
+                        - id: fourth-section-row-content-col-b-item-one-text
+                          type: text
+                          data:
+                            text: |-
+                              teachers are using iPad in Apple ConnectED schools
+            - id: fourth-section-row-caption
+              type: block
+              children:
+                - id: fourth-section-row-caption-title
+                  type: text
+                  data:
+                    text: Tommy Evans, Aide
+                - id: fourth-section-row-caption-text
+                  type: text
+                  data:
+                    text: Nanwalek School
+    - id: fourth-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: fifth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fifth-section-wrapper
+          type: block
+          children:
+            - id: fifth-section-row-overview
+              type: block
+              children:
+                - id: fifth-section-row-overview-text
+                  type: text
+                  data:
+                    text: Delivering Devices to Students
+            - id: fifth-section-row-headline
+              type: block
+              children:
+                - id: fifth-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      “When something’s on iPad, it’s automatically fun.”
+            - id: fifth-section-row-content
+              type: block
+              children:
+                - id: fifth-section-row-content-col-a
+                  type: block
+                  children:
+                    - id: fifth-section-row-content-col-a-text0
+                      type: text
+                      data:
+                        text: |-
+                          With a strong infrastructure and inspired teachers, schools are ready to put an iPad into each student’s hands.
+                    - id: fifth-section-row-content-col-a-text1
+                      type: text
+                      data:
+                        text: |-
+                          All over the country, students at Apple ConnectED schools are using iPad to learn in ways they never could have imagined. Daveon was a ninth-grader at Riverview Gardens High School in St. Louis, Missouri, when he used iMovie on his new iPad to direct a documentary about the misconceptions surrounding his school and community, narrated by teachers and fellow students. Creating the film gave Daveon a way to share his perspective publicly. “It was like I stepped into a new reality,” he said.
+                    - id: fifth-section-row-content-col-a-text3
+                      type: text
+                      data:
+                        text: |-
+                          In Mr. Nunez’s Language Arts class in Yuma, Arizona, students are learning about rhyme and meter by directing and recording screenplays using GarageBand. Tyrell, who was a sixth-grader at Westview Middle School in St. Louis, created a multimedia presentation in Keynote about the Bahamas after he used Flyover in Maps to take a tour of the islands. And in Nanwalek, Alaska, a student named Severan discovered how important math is in pursuing his dream of being a pilot. He used apps like IXL and Notes to learn about angles and multiplication tables, concepts he planned to put into action flying supplies and people to his village.
+                - id: fifth-section-row-content-col-b
+                  type: block
+                  children:
+                    - id: fifth-section-row-content-col-b-item-one
+                      type: block
+                      children:
+                        - id: fifth-section-row-content-col-b-item-one-title
+                          type: text
+                          data:
+                            text: 55,000+
+                        - id: fifth-section-row-content-col-b-item-one-text
+                          type: text
+                          data:
+                            text: |-
+                              students are learning with iPad in Apple ConnectED schools
+                        - id: fifth-section-row-content-col-b-item-one-image
+                          type: image
+                          data:
+                            src: https://www.apple.com/v/connectED/a/images/overview/students_gallery_thumbnail_large.jpg
+                        - id: fifth-section-row-content-col-b-item-one-link
+                          type: button
+                          data:
+                            text: See how students are learning with iPad.
+                            link:
+                              type: custom
+                              routeId:
+            - id: fifth-section-row-caption
+              type: block
+              children:
+                - id: fifth-section-row-caption-title
+                  type: text
+                  data:
+                    text: Tommy Evans, Aide
+                - id: fifth-section-row-caption-text
+                  type: text
+                  data:
+                    text: Nanwalek School
+    - id: fifth-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: sixth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: sixth-section-wrapper
+          type: block
+          children:
+            - id: sixth-section-row-overview
+              type: block
+              children:
+                - id: sixth-section-row-overview-text
+                  type: text
+                  data:
+                    text: Providing Ongoing Support
+            - id: sixth-section-row-headline
+              type: block
+              children:
+                - id: sixth-section-row-headline-text
+                  type: text
+                  data:
+                    text: |-
+                      “It’s not just ‘Here are the devices,
+                      figure out how to use them.’
+                      We’re learning how to do it for life.”
+            - id: sixth-section-row-content
+              type: block
+              children:
+                - id: sixth-section-row-content-col-a
+                  type: block
+                  children:
+                    - id: sixth-section-row-content-col-a-text0
+                      type: text
+                      data:
+                        text: |-
+                          After each student receives an iPad, we continue
+                          building relationships with the schools. Apple
+                          Professional Learning Specialists, many of whom are
+                          former teachers and maintain teaching certificates,
+                          provide administrators, teachers, and students with
+                          tailored, onsite support and guidance to help them
+                          reach their goals. We also support teachers with
+                          online classroom workshops taught by Apple
+                          Distinguished Educators and Apple Retail team
+                          members. And with Apple Teacher, educators have a
+                          free, self-paced learning program to build
+                          skills on iPad and Mac.
+                    - id: sixth-section-row-content-col-a-text1
+                      type: text
+                      data:
+                        text: |-
+                          At Westview Middle School in St. Louis, Missouri,
+                          eighth-grade teacher Brandon Small’s relationship
+                          with his Apple Professional Learning Specialist
+                          continues to evolve. At first, his APL Specialist
+                          was a resource for questions about his new
+                          technology. “It was nice sitting down with
+                          an expert on Keynote and Pages to learn everything
+                          about them,” he remembers. “It gave us something
+                          we could use right away in the classroom.”
+                    - id: sixth-section-row-content-col-a-text3
+                      type: text
+                      data:
+                        text: |-
+                          Now Small looks to his APL Specialist for ideas to
+                          enhance his lessons and his students’ learning.
+                          Through a series of workshops, he’s discovering
+                          how other apps can help him incorporate interactive
+                          games, graphs, and films into his classes.
+                          “They’re giving us support and we’re learning.
+                          It’s not a one-time thing,” says Small.
+                          “The learning keeps getting better.”
+                    - id: sixth-section-row-content-col-a-link
+                      type: button
+                      data:
+                        text: |-
+                          Learn more about Apple Teacher &gt;
+                        link:
+                          type: custom
+                          routeId:
+                - id: sixth-section-row-content-col-b
+                  type: block
+                  children:
+                    - id: sixth-section-row-content-col-b-item-one
+                      type: block
+                      children:
+                        - id: sixth-section-row-content-col-b-item-one-title
+                          type: text
+                          data:
+                            text: 2,190
+                        - id: sixth-section-row-content-col-b-item-one-text
+                          type: text
+                          data:
+                            text: |-
+                              days of Apple Professional Learning have
+                              been delivered to ConnectED schools since 2014
+            - id: sixth-section-row-caption
+              type: block
+              children:
+                - id: sixth-section-row-caption-title
+                  type: text
+                  data:
+                    text: Brandon Small, Teacher
+                - id: sixth-section-row-caption-text
+                  type: text
+                  data:
+                    text: Westview Middle School
+    - id: sixth-section-blank-space
+      type: section
+      meta:
+        deletable: true
+    - id: seventh-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: seventh-section-wrapper
+          type: block
+          children:
+            - id: seventh-section-row-overview
+              type: block
+              children:
+                - id: seventh-section-row-overview-text
+                  type: text
+                  data:
+                    text: |-
+                      Apple and ConnectED<br>
+                      Partner Schools
+                - id: seventh-section-row-overview-link
+                  type: button
+                  data:
+                    text: |-
+                      View the full list of schools &gt;
+                    link:
+                      type: custom
+                      routeId:
+
+stylesheets:
+  desktop:
+    apple-connected-page: {}
+    # ----------------------------------
+    # Desktop First
+    # ----------------------------------
+    first-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: |-
+        https://www.apple.com/v/connectED/a/images/overview/hero_3_xlarge.jpg
+      backgroundSize: 2560px 1586px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    first-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    first-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    first-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 580
+      maxWidth: 580
+      minWidth: 580
+      minHeight: auto
+
+    first-section-row-intro:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-intro-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 580
+      maxWidth: auto
+      minWidth: 580
+      minHeight: auto
+    first-section-row-intro-subtext:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#6bf"
+      backgroundColor: transparent
+      height: auto
+      width: 580
+      maxWidth: auto
+      minWidth: 580
+
+    first-ection-row-caption:
+      margin: 0
+      padding: 580 0 25 0
+      width: 650
+      color: "#ffffff"
+    first-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    first-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+      # ----------------------------------
+    first-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Desktop Second
+    # ----------------------------------
+    second-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: |-
+        https://www.apple.com/v/connectED/a/images/overview/vision_xlarge.jpg
+      backgroundSize: 2560px 2013px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    second-section-wrapper:
+      display: flex
+      justifyContent: center
+      alignItems: center
+      flexDirection: column
+      margin: 0
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    second-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    second-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    second-section-row-intro:
+      display: block
+    second-section-row-content:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-content-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: 490
+      minWidth: 490
+      minHeight: auto
+    second-section-row-content-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: 490
+      minWidth: 490
+      minHeight: auto
+    second-section-row-content-text2:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 600
+      maxWidth: 490
+      minWidth: 490
+      minHeight: auto
+    second-section-row-content-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: 490
+      minWidth: 490
+      minHeight: auto
+
+    second-section-row-intro-subtext:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 580
+      maxWidth: auto
+      minWidth: 580
+
+    second-ection-row-caption:
+      margin: 0
+      padding: 700 0 25 0
+      width: 650
+      color: "#ffffff"
+    second-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 600
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-section-blank-space:
+      display: block
+      width: 100%
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Desktop Third
+    # ----------------------------------
+    third-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_xlarge.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 2560px 1546px, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    third-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    third-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    third-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0
+      padding: 0
+      width: 980
+
+    third-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+
+    third-section-row-content-col-b:
+      margin: 0
+      padding: 20 0 0 82
+      width: 600
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 260
+    third-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 245
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-b-item-two:
+      margin: 0
+      padding: 0
+      width: 260
+    third-section-row-content-col-b-item-two-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-two-text:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-caption:
+      margin: 0
+      padding: 900 0 25 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Desktop fourth
+    # ----------------------------------
+    fourth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_xlarge.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 2560px 1849px, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fourth-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    fourth-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fourth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0
+      padding: 0
+      width: 980
+
+    fourth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 490
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+
+    fourth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 82
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 260
+    fourth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-b-item-two:
+      margin: 0
+      padding: 0
+      width: 260
+    fourth-section-row-content-col-b-item-two-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-content-col-b-item-two-text:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-caption:
+      margin: 0
+      padding: 1250 0 25 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-blank-space:
+      display: block
+
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Desktop fifth
+    # ----------------------------------
+    fifth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/students_xlarge.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/students_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 2560px 1849px, 4px 4px
+      backgroundPosition: center top, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fifth-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    fifth-section-row-overview:
+      margin: 0
+      padding: 1200 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fifth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fifth-section-row-content:
+      display: grid
+      gridTemplateColumns: 50% 50%
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0
+      padding: 0
+      width: 980
+
+    fifth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 490
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 100%
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 81
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 260
+    fifth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 320
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-image:
+      margin: 0
+      padding: 0
+      width: 260
+      height: auto
+    fifth-section-row-content-col-b-item-one-link:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-caption:
+      margin: 0
+      padding: 50 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Desktop sixth
+    # ----------------------------------
+    sixth-section:
+      display: block
+      margin: 0
+      padding: 0
+      width: 1024
+      height: auto
+      minHeight: max-content
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/support_xlarge.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 2560px 2438px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    sixth-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    sixth-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    sixth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 56
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-content:
+      display: grid
+      gridTemplateColumns: 50% 50%
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0
+      padding: 0
+      width: 980
+
+    sixth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 490
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 490
+      maxWidth: auto
+      minWidth: auto
+
+    sixth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 82
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 260
+    sixth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 68
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 69
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 23
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-caption:
+      margin: 0
+      padding: 1220 0 25 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Desktop seventh
+    # ----------------------------------
+    seventh-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/partner_schools_xlarge.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 2560px 388px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    seventh-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 980
+      backgroundColor: transparent
+
+    seventh-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 650
+      color: "#ffffff"
+      backgroundColor: transparent
+    seventh-section-row-overview-text:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 32
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 35
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    seventh-section-row-overview-link:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0 0 85 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 650
+      maxWidth: auto
+      minWidth: auto
+  tablet:
+    apple-connected-page: {}
+    # ----------------------------------
+    # Tablet First
+    # ----------------------------------
+    first-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: |-
+        https://www.apple.com/v/connectED/a/images/overview/hero_3_medium_2x.jpg
+      backgroundSize: 1068px 1024px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    first-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+    first-section-row-overview:
+      margin: 0 auto
+      padding: 180 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    first-section-row-headline:
+      margin: 42 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 54
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 58
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: 580
+      minWidth: 580
+      minHeight: auto
+
+    first-section-row-intro:
+      margin: 42 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-intro-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 20
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 24
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: 580
+      minHeight: auto
+    first-section-row-intro-subtext:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 580
+      maxWidth: auto
+      minWidth: 580
+
+    first-ection-row-caption:
+      margin: 0 auto
+      padding: 0 0 25 0
+      width: 692
+      color: "#ffffff"
+    first-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    first-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+      # ----------------------------------
+    first-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Tablet Second
+    # ----------------------------------
+    second-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/vision_medium_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/vision_background_large_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 1600px, 4px 4px
+      backgroundPosition: center bottom, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    second-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+
+    second-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    second-section-row-headline:
+      margin: 38 0 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 40
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 42
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 430
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-intro:
+      display: block
+    second-section-row-content:
+      margin: 42 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-content-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 430
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 430
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text2:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 430
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 430
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    second-section-row-intro-subtext:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: 692
+
+    second-ection-row-caption:
+      margin: 0 auto
+      padding: 850 0 25 0
+      width: 692
+      color: "#ffffff"
+    second-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Tablet Third
+    # ----------------------------------
+    third-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_medium_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 1000px, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    third-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+
+    third-section-row-overview:
+      margin: 0 auto
+      padding: 90 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    third-section-row-headline:
+      margin: 42 0 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 40
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 42
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 460
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0 0
+      padding: 0
+      width: 692
+
+    third-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 500
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 356
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+
+    third-section-row-content-col-b:
+      margin: 0
+      padding: 20 0 0 115
+      width: 500
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 260
+    third-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 58
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 64
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 14
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 173
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-b-item-two:
+      margin: 0
+      padding: 0
+      width: 260
+    third-section-row-content-col-b-item-two-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 58
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 64
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 260
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-two-text:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 14
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 173
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-caption:
+      margin: 0
+      padding: 600 0 25 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Tablet fourth
+    # ----------------------------------
+    fourth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_medium_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 1000px, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fourth-section-wrapper:
+      margin: 0 auto
+      padding: 0
+      width: 692
+      backgroundColor: transparent
+
+    fourth-section-row-overview:
+      margin: 0
+      padding: 180 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fourth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 430
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 40
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 42
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 500
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0 0
+      padding: 0
+      width: 692
+
+    fourth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 346
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+
+    fourth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 115
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 182
+    fourth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 58
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 182
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 14
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 250
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-caption:
+      margin: 0
+      padding: 550 0 25 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-blank-space:
+      display: block
+      width: 768
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Tablet Fifth
+    # ----------------------------------
+    fifth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/students_medium_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/students_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 1100px, 4px 4px
+      backgroundPosition: center top, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fifth-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+
+    fifth-section-row-overview:
+      margin: 0
+      padding: 680 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 24
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fifth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 40
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 42
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 530
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fifth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0 0
+      padding: 0
+      width: 692
+
+    fifth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 346
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#6bf"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 115
+      width: 400
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 230
+    fifth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 58
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 64
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 230
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 14
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 230
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-image:
+      margin: 0
+      padding: 0
+      width: 230
+      height: auto
+    fifth-section-row-content-col-b-item-one-link:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 230
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-caption:
+      margin: 0
+      padding: 50 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Tablet sixth
+    # ----------------------------------
+    sixth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/support_medium_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/support_background_large_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 1400px, 4px 4px
+      backgroundPosition: center bottom, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    sixth-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+
+    sixth-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 24
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    sixth-section-row-headline:
+      margin: 42 0 0 0
+      padding: 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 40
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 42
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 410
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-content:
+      display: grid
+      gridTemplateColumns: 50% 50%
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 50 0 0
+      padding: 0
+      width: 692
+
+    sixth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 346
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 346
+      maxWidth: auto
+      minWidth: auto
+
+    sixth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0 0 115
+      width: 300
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 180
+    sixth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 58
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 62
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 14
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-caption:
+      margin: 0
+      padding: 840 0 25 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-blank-space:
+      display: block
+      width: 100%
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Tablet seventh
+    # ----------------------------------
+    seventh-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/partner_schools_medium_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 1068px 280px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    seventh-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0 38
+      padding: 0
+      backgroundColor: transparent
+
+    seventh-section-row-overview:
+      margin: 0
+      padding: 80 0
+      width: 692
+      color: "#ffffff"
+      backgroundColor: transparent
+    seventh-section-row-overview-text:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 28
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 31
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    seventh-section-row-overview-link:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 692
+      maxWidth: auto
+      minWidth: auto
+
+  mobile:
+    apple-connected-page: {}
+    # ----------------------------------
+    # Mobile First
+    # ----------------------------------
+    first-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: |-
+        https://www.apple.com/v/connectED/a/images/overview/hero_3_small_2x.jpg
+      backgroundSize: 736px 558px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    first-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    first-section-row-overview:
+      margin: 0
+      padding: 210 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    first-section-row-headline:
+      margin: 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    first-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 38
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 58
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: 280
+      minWidth: 280
+      minHeight: auto
+
+    first-section-row-intro:
+      display: block
+      margin: 100 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: "#ffffff"
+    first-section-row-intro-text:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.342
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    first-section-row-intro-subtext:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 19
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.342
+      lineHeight: 28
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+    first-ection-row-caption:
+      display: block
+      margin: 0
+      padding: 20 0 25 0
+      width: 280
+      color: "#ffffff"
+    first-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    first-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+      # ----------------------------------
+    first-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Mobile Second
+    # ----------------------------------
+    second-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundColor: "#ffffff"
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/vision_small_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/vision_background_large_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 100%, 4px 4px
+      backgroundPosition: center bottom, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    second-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    second-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.336
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: 280
+      minHeight: auto
+
+    second-section-row-headline:
+      margin: 42 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 31
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: 0.341
+      lineHeight: 34
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    second-section-row-intro:
+      display: block
+    second-section-row-content:
+      margin: 25 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    second-section-row-content-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text2:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    second-section-row-content-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    second-section-row-intro-subtext:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: 280
+
+    second-ection-row-caption:
+      margin: 0
+      padding: 550 0 25 0
+      width: 280
+      color: "#ffffff"
+    second-ection-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-ection-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    second-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Mobile Third
+    # ----------------------------------
+    third-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_small_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/infrastructure_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 100%, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    third-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    third-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.341
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    third-section-row-headline:
+      margin: 10 0 0 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 31
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: 0.341
+      lineHeight: 34
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-content:
+      display: grid
+      gridTemplateColumns: 100%
+      gridTemplateRows: auto
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 25 0 0
+      padding: 0
+      width: 280
+
+    third-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+    third-section-row-content-col-b:
+      display: flex
+      flexDirection: column
+      justifyContent: center
+      alignItems: center
+      margin: 0
+      padding: 20
+      width: 300
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-content-col-b-item-one:
+      margin: 50 0 0 0
+      padding: 0
+      width: 280
+    third-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0 auto
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 48
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: 0.288
+      lineHeight: 50
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 13
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 17
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    third-section-row-content-col-b-item-two:
+      margin: 0
+      padding: 0
+      width: 280
+    third-section-row-content-col-b-item-two-title:
+      display: flex
+      margin: 0 auto
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 48
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: 0.288
+      lineHeight: 50
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-content-col-b-item-two-text:
+      display: flex
+      margin: 0 auto
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 13
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 17
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    third-section-row-caption:
+      margin: 0
+      padding: 450 0 25 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    third-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    third-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Mobile fourth
+    # ----------------------------------
+    fourth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_small_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/teachers_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 100%, 4px 4px
+      backgroundPosition: center 100%, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fourth-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    fourth-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fourth-section-row-headline:
+      margin: 10 0 0 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 31
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 34
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: auto
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 25 0
+      padding: 0
+      width: 280
+
+    fourth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fourth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+    fourth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0
+      width: 300
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 280
+    fourth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 48
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 50
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 13
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 17
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fourth-section-row-caption:
+      margin: 0
+      padding: 350 0 25 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fourth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fourth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+
+    # ----------------------------------
+    # Mobile Fifth
+    # ----------------------------------
+    fifth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/students_small_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/students_background_large.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 100%, 4px 4px
+      backgroundPosition: center top, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    fifth-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    fifth-section-row-overview:
+      margin: 0
+      padding: 590 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    fifth-section-row-headline:
+      margin: 25 0 0 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 31
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 34
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    fifth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 25 0 0
+      padding: 0
+      width: 280
+
+    fifth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 100%
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 22
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 32
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#6bf"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 100%
+    fifth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 48
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 50
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 13
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 17
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    fifth-section-row-content-col-b-item-one-image:
+      margin: 0
+      padding: 0
+      width: 100%
+      height: auto
+    fifth-section-row-content-col-b-item-one-link:
+      display: flex
+      justifyContent: center
+      alignItems: center
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 100%
+      maxWidth: auto
+      minWidth: auto
+
+    fifth-section-row-caption:
+      margin: 0
+      padding: 50 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    fifth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#333"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    fifth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Mobile sixth
+    # ----------------------------------
+    sixth-section:
+      display: block
+      margin: 0
+      padding: 0
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/support_small_2x.jpg"),
+        url("https://www.apple.com/v/connectED/a/images/overview/support_background_large_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 100%, 4px 4px
+      backgroundPosition: center bottom, top
+      backgroundRepeat: no-repeat, repeat
+      zIndex: 0
+
+    sixth-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    sixth-section-row-overview:
+      margin: 0
+      padding: 90 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-overview-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 21
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 21
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+
+    sixth-section-row-headline:
+      margin: 25 0 0 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-headline-text:
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 31
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 34
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-content:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 1fr
+      gridGap: 0
+      justifyContent: flex-start
+      alignItems: flex-start
+      alignContent: flex-start
+      margin: 25 0
+      padding: 0
+      width: 280
+
+    sixth-section-row-content-col-a:
+      margin: 0
+      padding: 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-a-text0:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text1:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text3:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-text4:
+      margin: 12 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 22
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+    sixth-section-row-content-col-a-link:
+      display: inline-flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 300
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+    sixth-section-row-content-col-b:
+      margin: 0
+      padding: 30 0
+      width: auto
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-content-col-b-item-one:
+      margin: 0
+      padding: 0
+      width: 280
+    sixth-section-row-content-col-b-item-one-title:
+      display: flex
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 48
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 50
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-content-col-b-item-one-text:
+      display: flex
+      margin: 0 0 30 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 13
+      fontWeight: 200
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 17
+      textAlign: center
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 180
+      maxWidth: auto
+      minWidth: auto
+      minHeight: auto
+
+    sixth-section-row-caption:
+      margin: 0
+      padding: 720 0 25 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    sixth-section-row-caption-title:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-row-caption-text:
+      display: block
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 12
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 18
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    sixth-section-blank-space:
+      display: block
+      height: 5
+      backgroundColor: transparent
+    # ----------------------------------
+    # Mobile seventh
+    # ----------------------------------
+    seventh-section:
+      display: block
+      margin: 0
+      padding: 0
+      width: 280
+      height: auto
+      minHeight: max-content
+      backgroundImage: >-
+        url("https://www.apple.com/v/connectED/a/images/overview/partner_schools_small_2x.jpg"),
+        linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)
+      backgroundSize: 736px 335px
+      backgroundPosition: center top
+      backgroundRepeat: no-repeat
+      zIndex: 0
+
+    seventh-section-wrapper:
+      display: flex
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0 20
+      padding: 0
+      backgroundColor: transparent
+
+    seventh-section-row-overview:
+      margin: 0
+      padding: 130 0 0 0
+      width: 280
+      color: "#ffffff"
+      backgroundColor: transparent
+    seventh-section-row-overview-text:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      margin: 0
+      padding: 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 24
+      fontWeight: 500
+      fontStyle: normal
+      letterSpacing: normal
+      lineHeight: 29
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      color: "#ffffff"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: max-content
+      minHeight: auto
+    seventh-section-row-overview-link:
+      display: flex
+      justifyContent: flex-start
+      alignItems: flex-start
+      flexWrap: wrap
+      margin: 11 0 0 0
+      padding: 0 0 85 0
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+      fontSize: 17
+      fontWeight: 400
+      fontStyle: normal
+      letterSpacing: 0.352
+      lineHeight: 26
+      textAlign: left
+      overflowWrap: normal
+      textDecoration: none
+      whiteSpace: normal
+      color: "#0070c9"
+      backgroundColor: transparent
+      height: auto
+      width: 280
+      maxWidth: auto
+      minWidth: auto
+
+context: {}

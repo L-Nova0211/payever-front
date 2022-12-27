@@ -1,0 +1,40 @@
+<div class="app">
+
+  <!-- Swiper -->
+  <div class="app__slider">
+    <swiper [config]="swiperConfig" [useSwiperClass]="'swiper-class'">
+      <img class="app__slide" *ngFor="let imageLink of integration.installationOptions.links" [src]="imageLink.url">
+    </swiper>
+  </div>
+
+  <!-- Integration description -->
+  <div class="app__info">
+    <div [innerHTML]="integration.installationOptions.description | translate"></div>
+
+    <!-- Side links -->
+    <div class="app__contacts">
+      <div class="app__company">{{ integration.installationOptions.developer | translate }}</div>
+      <div class="app__website">
+          <div (click)="navigateByLink(integration.installationOptions.website)" class="app__website-label">
+            {{ 'integration_full_page.app.website' | translate }}
+          </div>
+          <div class="app__icon">
+            <svg class="icon icon-16">
+              <use [attr.xlink:href]="'#icon-network'"></use>
+            </svg>
+          </div>
+        </div>
+      <div class="app__support">
+        <div (click)="navigateByLink(integration.installationOptions.appSupport)" class="app__support-label">
+          {{ 'integration_full_page.app.support' | translate }}
+        </div>
+        <div>
+          <svg class="icon icon-16">
+            <use [attr.xlink:href]="'#icon-micro-headphones'"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

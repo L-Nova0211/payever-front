@@ -1,0 +1,50 @@
+id: nike-not-found-page
+name: Not found Page
+variant: default
+type: replica
+master: ~
+data: {}
+template:
+  id: nike-not-found-page
+  type: document
+  children:
+    - id: content-section
+      type: section
+      children:
+        - id: content-section-text
+          type: text
+          data:
+            text: Page not found
+
+stylesheets:
+  desktop:
+    nike-not-found-page: {}
+    # ----------------------------------
+    # Desktop Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-text:
+      margin: 200 0 0 500
+
+  tablet:
+    nike-not-found-page: {}
+    # ----------------------------------
+    # Tablet Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-text:
+      margin: 200 0 0 400
+
+  mobile:
+    nike-not-found-page: {}
+    # ----------------------------------
+    # Mobile Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-text:
+      margin: 200 0 0 100
+
+context: {}

@@ -1,0 +1,43 @@
+<div class="container" [ngClass]="config.theme">
+  <form [formGroup]="siteConfig">
+    <div style="margin-bottom: 16px">
+      <div style="margin-bottom: 16px">
+        <peb-logo-picker
+          [isImageLoading]="isImageLoading"
+          (file)="onLogoUpload($event)"
+          [image]="siteConfig.controls.siteImage.value"
+          [abbrevation]="siteConfig.controls.siteName.value | abbreviation"
+        ></peb-logo-picker>
+      </div>
+      <peb-form-background>
+        <peb-form-field-input
+          [animated]="true"
+          appearance="label"
+          class="peb-form-field-input"
+          [label]="'site-app.settings.site_name_label' | translate"
+          [errorMessage]="errors.siteName.errorMessage"
+          [isFieldInvalid]="errors.siteName.hasError"
+        >
+          <input
+            formControlName="siteName"
+            (blur)="checkErrors('siteName')"
+            (focus)="resetErrors('siteName')"
+            pebInput
+            type="text"
+          />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+    <div style="margin-bottom: 16px" *ngIf="errorMsg">
+      <peb-messages [showIcon]="false" [message]="errorMsg"></peb-messages>
+    </div>
+    <button
+      *ngIf="appData.id && appData.name && !appData.isDefault"
+      class="delete-button"
+      (click)="removeSite()"
+      [ngClass]="config.theme"
+    >
+      {{ 'site-app.actions.delete_site' | translate }}
+    </button>
+  </form>
+</div>

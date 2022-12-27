@@ -1,0 +1,69 @@
+<pe-third-party-root-form *ngIf="integration && thirdPartyService && !useOldApproach"
+                          #thirdPartyRootForm
+                          [thirdPartyFormService]="thirdPartyService"
+                          [translationsCategory]="category"
+                          [baseApiData]="{ redirectUri: redirectUri }"
+                          [withHeader]="false"
+                          [payeverFieldsData]="payEverFieldsData"
+                          [handlePayeverFieldsSaveCallback]="onPayEverFieldSave"
+                          (onClose)="handleClose()">
+
+  <div after-accordion>
+    <mat-expansion-panel *ngIf="apiKeysEditorEnabled$ | async"
+                         [class.mat-expansion-panel-dark]="true"
+                         [class.mat-expansion-panel-no-border-radius]="true">
+      <mat-expansion-panel-header
+        #panel
+        collapsedHeight="40px"
+        expandedHeight="40px"
+        class="mat-expansion-panel-header-no-logo">
+        <mat-panel-title>API keys</mat-panel-title>
+        <mat-panel-description>
+          <svg>
+            <use [attr.xlink:href]="panel?.panel?.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+          </svg>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <plugin-api-keys [name]="integrationName" (keysChanged)="onKeysChanged()"></plugin-api-keys>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel *ngIf="onboardingFormEnabled$ | async"
+                         [class.mat-expansion-panel-dark]="true"
+                         [class.mat-expansion-panel-no-border-radius]="true">
+
+      <mat-expansion-panel-header
+        collapsedHeight="40px"
+        expandedHeight="40px"
+        class="mat-expansion-panel-header-no-logo">
+        <mat-panel-title>Onboarding form</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-accordion>
+        <onboarding-form *ngIf="business"
+                         [business]="business"
+                         [isLoading]="isOnboardingLoading"
+                         [paymentMethod]="integrationName"
+                         [requiredFields]="onboardingRequiredFields"
+                         (submitSuccess)="onOnboardingSubmitSuccess($event)"
+                         (submitFailed)="onOnboardingSubmitFailed($event)"
+                         (ready)="onOnboardingReady($event)"
+        ></onboarding-form>
+      </mat-accordion>
+
+    </mat-expansion-panel>
+  </div>
+</pe-third-party-root-form>
+
+<div class="uninstall-button">
+  <button (click)="this.uninstallService.uninstall(integration, overlayData.isLoading)"
+  >{{ 'connect-app.actions.uninstall' | translate }}</button>
+</div>
+
+<pe-info-box-generator *ngIf="integration && useOldApproach"
+                       [baseApiUrl]="baseApiUrl"
+                       [baseApiData]="baseApiData"
+                       [withHeader]="false"
+                       [payeverFieldsData]="payEverFieldsData"
+                       [handlePayeverFieldsSaveCallback]="onPayEverFieldSave"
+                       (onClose)="handleClose()">
+</pe-info-box-generator>

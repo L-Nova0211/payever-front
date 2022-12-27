@@ -1,0 +1,75 @@
+<pe-info-box
+    [class.hidden]="isAddingKey$ | async"
+    background="./assets/ui-kit/images/commerseos-background.jpg"
+    class="connect-payment-option-wrapper"
+    [fixed]="false"
+    [transparent]="true"
+    [withHeader]="false"
+    [withFooter]="false"
+    [title]="title"
+    [withPadding]="false"
+    [blurred]="false"
+    [notFullwidthOnMobile]="true"
+    [roundBorder]="true"
+    (onClose)="handleClose()">
+  <ng-container content>
+    <mat-accordion class="wrapper">
+      <mat-expansion-panel #panel *ngIf="!forceHideSectionDownloads" [class.mat-expansion-panel-dark]="true" expanded>
+        <mat-expansion-panel-header
+            collapsedHeight="40px"
+            expandedHeight="40px"
+            class="mat-expansion-panel-header-no-logo">
+          <mat-panel-title translate>categories.shopsystems.main.titles.downloads</mat-panel-title>
+          <mat-panel-description>
+            <svg>
+              <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+            </svg>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-content select="[downloads]"></ng-content>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel #panel *ngIf="!forceHideSectionApiKeys" [class.mat-expansion-panel-dark]="true">
+        <mat-expansion-panel-header
+            collapsedHeight="40px"
+            expandedHeight="40px"
+            class="mat-expansion-panel-header-no-logo border-radius">
+          <mat-panel-title translate>categories.shopsystems.main.titles.api_keys</mat-panel-title>
+          <mat-panel-description>
+            <svg>
+              <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+            </svg>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-content select="[api-keys]"></ng-content>
+        <div
+            *ngIf="(apiKeys$ | async)?.length < maxKeys"
+            class="plugin-main-wrap-container__api-keys"
+            (click)="isAddingKey$.next(true)">
+          <div class="add-button" translate>categories.shopsystems.api_keys.default.actions.key_add</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-container>
+</pe-info-box>
+
+<div
+    *ngIf="isAddingKey$ | async"
+    class="add-key__container">
+  <pe-info-box class="pe-info-box-header-padding"
+               [transparent]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [withPadding]="false"
+               [blurred]="false"
+               [fixed]="true"
+               [title]="'categories.shopsystems.api_keys.default.titles.create_key' | translate"
+               [notFullwidthOnMobile]="false"
+               [noBackgroundColor]="false"
+               [roundBorder]="true"
+               (onClose)="isAddingKey$.next(false)">
+    <ng-container content>
+      <ng-content select="[api-key-add]"></ng-content>
+    </ng-container>
+  </pe-info-box>
+</div>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-content {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}

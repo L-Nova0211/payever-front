@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.header {
+  display: grid;
+  padding: 14px;
+  margin: -12px -12px 0;
+  grid-template-columns: 51px 1fr 51px;
+
+  span {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.3125;
+    text-align: center;
+  }
+
+  button {
+    appearance: none;
+    background-color: rgba(255, 255, 255, .3);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    height: 24px;
+    outline: none;
+    width: 51px;
+  }
+}
+

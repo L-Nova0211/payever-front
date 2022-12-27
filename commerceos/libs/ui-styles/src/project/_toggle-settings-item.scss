@@ -1,0 +1,41 @@
+.pe-bootstrap {
+  .toggle-settings-item {
+    height: $grid-unit-y * 5;
+    background: $color-very-light-gray;
+    border-radius: $grid-unit-y * 5 / 2;
+    margin-bottom: $grid-unit-y;
+    .toggle-settings-item-info {
+      padding-left: 0;
+      line-height: $grid-unit-y * 5;
+      @include text-overflow;
+      img.toggle-settings-item-logo {
+        width: $grid-unit-y * 4;
+        height: $grid-unit-y * 4;
+        vertical-align: top;
+        margin-right: $pe_hgrid_gutter/2;
+        margin-top: ($grid-unit-y * 5 - $grid-unit-y * 4) / 2;
+        margin-left: $pe_hgrid_gutter/4;
+      }
+    }
+    .toggle-settings-item-controls {
+      padding-top: ($grid-unit-y * 5 - $grid-unit-y * 3) / 2;
+      .btn {
+        vertical-align: top;
+      }
+    }
+    @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+      height: $grid-unit-y * 4;
+      border-radius: $grid-unit-y * 4 / 2;
+      .toggle-settings-item-info {
+        line-height: $grid-unit-y * 4;
+        img.toggle-settings-item-logo {
+          width: $grid-unit-y * 3;
+          height: $grid-unit-y * 3;
+        }
+      }
+      .toggle-settings-item-controls {
+        padding-top: ($grid-unit-y * 4 - $grid-unit-y * 3) / 2;
+      }
+    }
+  }
+}

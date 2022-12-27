@@ -1,0 +1,54 @@
+<div class="switcher-container">
+  <div class="business-items-container">
+    <div class="header">Choose Business</div>
+    <div class="content">
+      <peb-expandable-panel [headerLabel]="'Current Business'" [isContentOpen]="true">
+        <div class="profile-card" *ngIf="profileCardConfig$ | async as defaultBusines">
+          <div class="card-image" (click)="onProfileCardClick()">
+            <img *ngIf="defaultBusines?.images && defaultBusines?.images[0]" class="logo img-circle"
+              [src]="defaultBusines?.images[0]">
+            <div *ngIf="!defaultBusines?.images || !defaultBusines?.images[0]" class="logo">
+              <ng-container *ngIf="defaultBusines?.type === profileCardType.Personal">
+                <svg class="icon icon-48">
+                  <use xlink:href="#icon-user-4-128"></use>
+                </svg>
+              </ng-container>
+              <ng-container
+                *ngIf="defaultBusines?.type === profileCardType.Business || defaultBusines?.type === profileCardType.App">
+                <div class="abbreviation">{{ defaultBusines?.placeholderTitle | abbreviation | uppercase }}</div>
+              </ng-container>
+            </div>
+            <pe-profile-card-spinner *ngIf="showBusinessLoader$ | async"></pe-profile-card-spinner>
+          </div>
+          <div class="card-title">{{defaultBusines.placeholderTitle }}</div>
+        </div>
+      </peb-expandable-panel>
+      <peb-expandable-panel class="business-list-panel" [headerLabel]="'Other ' + (total - 1) + ' Businesses'" [isContentOpen]="true">
+        <pe-search-animated (searchString)="filterBusiness($event)"></pe-search-animated>
+        <div class="business-list">
+          <ng-container *ngIf="businessesInfo$ | async as businessInfo">
+            <cdk-virtual-scroll-viewport #scroller [itemSize]="isMobile ? 54 : 40" class="scroll-viewport">
+              <div *cdkVirtualFor="let item of businessInfo.businesses" class="business-item" (click)="onProfileFromListClick(item)">
+                <div class="business-logo">
+                  <img *ngIf="item?.logo" [src]="item?.logo">
+                  <div *ngIf="!item?.logo">{{ item.name | abbreviation }}</div>
+                  <pe-profile-card-spinner *ngIf="item._id===businessWithLoader"></pe-profile-card-spinner>
+
+                </div>
+                <div class="business-title">{{item.name}}</div>
+                <div class="icon-arrow">
+                  <svg>
+                    <use xlink:href="#icon-arrow-right-2-16"></use>
+                  </svg>
+                </div>
+              </div>
+            </cdk-virtual-scroll-viewport>
+          </ng-container>
+          <div class="no-data" *ngIf="!(businessesInfo$ | async) && !(isloading$ | async)">
+            No Result
+          </div>
+        </div>
+      </peb-expandable-panel>
+    </div>
+  </div>
+</div>

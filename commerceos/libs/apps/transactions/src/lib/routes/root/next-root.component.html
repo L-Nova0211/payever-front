@@ -1,0 +1,9 @@
+<div class="root" [ngClass]="theme" style="height: 100%;">
+  <pe-new-platform-header [theme]="theme" [isLoading]="isGlobalLoading">
+  </pe-new-platform-header>
+  <div class="transaction-app">
+    <router-outlet></router-outlet>
+    <router-outlet name="details"></router-outlet>
+    <router-outlet name="actions"></router-outlet>
+  </div>
+</div>

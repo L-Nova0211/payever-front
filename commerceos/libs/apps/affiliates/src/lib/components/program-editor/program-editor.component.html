@@ -1,0 +1,286 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="programForm"
+  [ngClass]="theme"
+>
+  <peb-expandable-panel
+    [headerLabel]="'affiliates-app.program_editor.general' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.program_editor.program_name.error' | translate"
+        [isFieldInvalid]="programForm.controls.name.invalid"
+        [label]="'affiliates-app.program_editor.program_name.label' | translate"
+      >
+        <input
+          formControlName="name"
+          [placeholder]="'affiliates-app.program_editor.program_name.placeholder' | translate"
+        />
+      </peb-form-field-input>
+      <two-column-form>
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="'affiliates-app.program_editor.program_api_id.error' | translate"
+          [isFieldInvalid]="programForm.controls.programApi.invalid"
+          [label]="'affiliates-app.program_editor.program_api_id.label' | translate"
+        >
+          <input
+            formControlName="programApi"
+            [placeholder]="'affiliates-app.program_editor.program_api_id.placeholder' | translate"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input
+          appearance="label"
+          (click)="openDatepicker(programForm.controls.startedAt)"
+          [errorMessage]="'affiliates-app.program_editor.start_date.error' | translate"
+          [isFieldInvalid]="programForm.controls.startedAt.invalid"
+          [label]="'affiliates-app.program_editor.start_date.label' | translate"
+        >
+          <input readonly
+            formControlName="startedAt"
+            [placeholder]="'affiliates-app.program_editor.start_date.placeholder' | translate"
+            [textMask]="maskRule(dateMask)"
+            type="text"
+          />
+          <div class="suffix-icon">
+            <mat-icon svgIcon="calendar"></mat-icon>
+          </div>
+        </peb-form-field-input>
+      </two-column-form>
+      <two-column-form>
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="'affiliates-app.program_editor.assets.error' | translate"
+          [isFieldInvalid]="programForm.controls.assets.invalid"
+          [label]="'affiliates-app.program_editor.assets.label' | translate"
+        >
+          <input
+            formControlName="assets"
+            type="text"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="'affiliates-app.program_editor.cookie.error' | translate"
+          [isFieldInvalid]="programForm.controls.cookie.invalid"
+          [label]="'affiliates-app.program_editor.cookie.label' | translate"
+        >
+          <input
+            formControlName="cookie"
+            [placeholder]="'affiliates-app.program_editor.cookie.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+      </two-column-form>
+      <peb-select
+        formControlName="currency"
+        [label]="'affiliates-app.program_editor.currency.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let currency of currencies"
+          [label]="currency.label"
+          [value]="currency.value"
+        ></peb-select-option>
+      </peb-select>
+      <peb-select
+        formControlName="commissionType"
+        [label]="'affiliates-app.program_editor.commission_type.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let commissionType of commissionTypes"
+          [label]="('affiliates-app.program_editor.commission_type.' + commissionType.label) | translate"
+          [value]="commissionType.value"
+        ></peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="(programForm.controls.defaultCommission.errors?.required
+          ? 'affiliates-app.program_editor.default_commission_recurrence.error.required'
+          : programForm.controls.defaultCommission.errors?.max
+            ? 'affiliates-app.program_editor.default_commission_recurrence.error.max_percentage_value'
+            : 'affiliates-app.program_editor.default_commission_recurrence.error.positive_number') | translate"
+        [isFieldInvalid]="programForm.controls.defaultCommission.invalid"
+        [label]="'affiliates-app.program_editor.default_commission_recurrence.label' | translate"
+      >
+        <input
+          formControlName="defaultCommission"
+          [placeholder]="'affiliates-app.program_editor.default_commission_recurrence.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'affiliates-app.program_editor.products.label' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-select
+        formControlName="appliesTo"
+        [label]="'affiliates-app.program_editor.program_applies_to.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of appliesTo"
+          [label]="('affiliates-app.program_editor.program_applies_to.' + option.label) | translate"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+      <ng-container [ngSwitch]="programForm.controls.appliesTo.value">
+        <ng-template
+          *ngSwitchCase="programAppliesTo.SpecificProducts"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Products,
+            control: programForm.controls.products
+          }"
+        ></ng-template>
+        <ng-template
+          *ngSwitchCase="programAppliesTo.SpecificCategories"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Categories,
+            control: programForm.controls.categories
+          }"
+        ></ng-template>
+      </ng-container>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'affiliates-app.program_editor.recruit_affiliates.label' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.program_editor.invite_link.error' | translate"
+        [isFieldInvalid]="programForm.controls.inviteLink.invalid"
+        [label]="'affiliates-app.program_editor.invite_link.label' | translate"
+      >
+        <input
+          formControlName="inviteLink"
+          [placeholder]="'affiliates-app.program_editor.invite_link.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'affiliates-app.program_editor.target_link.label' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.program_editor.target_link.error' | translate"
+        [isFieldInvalid]="programForm.controls.url.invalid"
+        [label]="'affiliates-app.program_editor.target_link.label' | translate"
+      >
+        <input
+          formControlName="url"
+          [placeholder]="'affiliates-app.program_editor.target_link.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'affiliates-app.program_editor.levels.label' | translate"
+    [isContentOpen]="true"
+  >
+    <div formArrayName="levels">
+      <div
+        *ngFor="let level of levels.controls; let i=index"
+        [style.margin-bottom.px]="16"
+      >
+        <peb-form-background [formGroupName]="i">
+          <two-column-form>
+            <peb-form-field-input
+              appearance="label"
+              [errorMessage]="'Required'"
+              [isFieldInvalid]="levels.controls[i].controls.title.invalid"
+              [label]="'affiliates-app.program_editor.levels.title.label' | translate"
+            >
+              <input
+                formControlName="title"
+                placeholder="Title"
+                type="text"
+              />
+            </peb-form-field-input>
+            <peb-select
+              formControlName="commissionType"
+              [label]="'affiliates-app.program_editor.levels.commission_form.label' | translate"
+              selectType="label"
+            >
+              <peb-select-option
+                *ngFor="let commissionType of commissionTypes"
+                [label]="'affiliates-app.program_editor.commission_type.'+commissionType.label | translate"
+                [value]="commissionType.value"
+              ></peb-select-option>
+            </peb-select>
+            <peb-form-field-input
+              appearance="label"
+              [errorMessage]="(levels.controls[i].controls.commission.errors?.required
+                ? 'affiliates-app.program_editor.levels.commission.error.required'
+                : levels.controls[i].controls.commission.errors?.max
+                  ? 'affiliates-app.program_editor.levels.commission.error.max_percentage_value'
+                  : 'affiliates-app.program_editor.levels.commission.error.positive_number') | translate"
+              [isFieldInvalid]="levels.controls[i].controls.commission.invalid"
+              [label]="'affiliates-app.program_editor.levels.commission.label' | translate"
+            >
+              <input
+                formControlName="commission"
+                placeholder="Commission"
+                type="text"
+              />
+            </peb-form-field-input>
+          </two-column-form>
+        </peb-form-background>
+        <div [style.margin-top.px]="16">
+          <peb-form-background>
+            <button pe-form-button
+              (click)="removeLevel(i)"
+              color="warn"
+            >{{ 'affiliates-app.actions.remove' | translate }}</button>
+          </peb-form-background>
+        </div>
+      </div>
+    </div>
+
+    <peb-form-background>
+      <button pe-form-button
+        (click)="addLevel()"
+        color="confirm"
+      >{{ 'affiliates-app.actions.add_level' | translate }}</button>
+    </peb-form-background>
+  </peb-expandable-panel>
+</form>
+
+<ng-template #searchItems
+  let-arrayName="arrayName"
+  let-control="control"
+>
+  <pe-search
+    [errorMessage]="('affiliates-app.program_editor.' + arrayName + '.error')| translate"
+    (filterChanged)="setFilter($event, arrayName)"
+    [isFieldInvalid]="control.invalid"
+    [items]="filteredItems(control) | async"
+    [label]="('affiliates-app.program_editor.' + arrayName + '.label') | translate"
+    [placeholder]="('affiliates-app.program_editor.' + arrayName + '.placeholder') | translate"
+    (selected)="addToArray($event, control)"
+  ></pe-search>
+  <pe-search-list>
+    <pe-search-list-item
+      *ngFor="let item of control.value; let i = index; trackBy: trackItem"
+      [image]="item?.image"
+      [removeButtonLabel]="'affiliates-app.actions.remove'"
+      (remove)="removeFromArray(control, i)"
+    >{{ item.title }}</pe-search-list-item>
+  </pe-search-list>
+</ng-template>

@@ -1,0 +1,26 @@
+export enum PeListSectionCategoriesEnum {
+  // categories of integrations
+  Communications = 'communications',
+  Payments = 'payments',
+  Products = 'products',
+  Shopsystems = 'shopsystems',
+  Shippings = 'shippings',
+  // categories of settings
+  AllBlogs = 'all_blogs',
+  AllCheckouts = 'all_checkouts',
+  AllInvoices = 'all_invoices',
+  AllPlans = 'all_plans',
+  AllPrograms = 'all_programs',
+  AllShops = 'all_shops',
+  AllSites = 'all_sites',
+  AllTerminals = 'all_terminals',
+  Apperance = 'apperance',
+  BusinessSettings = 'business_settings',
+  Domains = 'domains',
+  EmbedLinks = 'embed_links',
+  GeneralSettings = 'general_settings',
+  PoliciesSettings = 'policies_settings',
+  Publishing = 'publishing',
+  Safety = 'safety',
+  Social = 'social',
+}

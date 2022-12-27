@@ -1,0 +1,82 @@
+<form [ngClass]="theme" [formGroup]="profilesForm">
+  <div class="main-form">
+    <peb-form-background>
+      <peb-form-field-input
+        [label]="'shipping-app.forms.profiles_dialog.name.label' | translate"
+        appearance="label"
+        [isFieldInvalid]="profilesForm.get('name').invalid"
+        [errorMessage]="'shipping-app.forms.profiles_dialog.errors.profile' | translate">
+      >
+        <input pebInput [placeholder]="'shipping-app.forms.profiles_dialog.name.placeholder' | translate" formControlName="name" />
+      </peb-form-field-input>
+    </peb-form-background>
+
+    <div class="form-disclamer">
+      <span>{{ 'shipping-app.forms.profiles_dialog.disclamer' | translate }}</span>
+    </div>
+
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-product-picker
+          #productPibker
+          [isFieldInvalid]="profilesForm.get('products').invalid"
+          [errorMessage]="'shipping-app.forms.profiles_dialog.errors.products' | translate"
+          [data]="productsData$ | async"
+          formControlName="products"
+          (changed)="onChangeProduct($event)"
+          (filtered)="filterProduct$.next($event)"
+          [buttonFunction]="openProductDialog"
+          [placeholder]="'shipping-app.forms.profiles_dialog.products.placeholder' | translate"
+        ></peb-product-picker>
+      </peb-form-background>
+    </div>
+
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-form-field-input
+          [label]="'shipping-app.forms.profiles_dialog.from_origin.label' | translate"
+          appearance="label"
+          [isFieldInvalid]="profilesForm.get('origins').invalid"
+          [errorMessage]="'shipping-app.forms.profiles_dialog.errors.zones_origins' | translate "
+        >
+          <input
+            pebInput
+            [placeholder]="'shipping-app.forms.profiles_dialog.from_origin.placeholder' | translate"
+            readonly
+            formControlName="origins"
+          />
+          <div class="suffix">
+            <button peb-text-button color="confirm" (click)="openEditOriginDialog()">
+              {{ 'shipping-app.forms.profiles_dialog.from_origin.button' | translate }}
+            </button>
+          </div>
+        </peb-form-field-input>
+        <div class="zones-picker-wrapper">
+          <pe-picker class="zones-picker"
+                     #picker
+                     [label]="'shipping-app.forms.profiles_dialog.to_zone.label' | translate"
+                     [placeholder]="'shipping-app.forms.profiles_dialog.to_zone.placeholder' | translate"
+                     [data]="zonesAutocomplete"
+                     [isEditableItem]="true"
+                     [isFieldInvalid]="profilesForm.get('zones').invalid"
+                     [errorMessage]="'shipping-app.forms.profiles_dialog.errors.zones_origins' | translate"
+                     [buttonLabel]="'shipping-app.forms.profiles_dialog.to_zone.button' | translate"
+                     [removeBtnText]="'shipping-app.actions.edit' | translate"
+                     [editBtnText]="'shipping-app.actions.edit' | translate"
+                     (onEdit)="onEditZone($event)"
+                     (buttonClick)="openCreateZoneDialog()"
+                     (changed)="zoneChanged($event)"
+                     formControlName="zones"
+          >
+          </pe-picker>
+        </div>
+      </peb-form-background>
+    </div>
+
+    <div class="form-margins" >
+      <peb-form-background>
+        <peb-checkbox formControlName="isDefault"> {{ 'shipping-app.forms.profiles_dialog.default_message' | translate }} </peb-checkbox>
+      </peb-form-background>
+    </div>
+  </div>
+</form>

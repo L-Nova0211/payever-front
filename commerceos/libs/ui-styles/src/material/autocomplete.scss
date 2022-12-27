@@ -1,0 +1,46 @@
+//
+// Autocomplete
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-autocomplete {
+
+    &-panel {
+      @include material-panel();
+
+      &-body {
+        border-bottom: 0;
+      }
+
+      &.mat-dark {
+        background-color: $color-solid-grey-2;
+        padding: $grid-unit-x 0;
+
+        .mat-option {
+          height: $grid-unit-y * 3;
+          line-height: $grid-unit-y * 3;
+          color: $color-white-pe;
+          background-color: transparent;
+          font-size: $font-size-base;
+          z-index: 1;
+
+          &:hover {
+            background-color: $color-white-grey-2;
+          }
+        }
+
+        &::after {
+          @include payever_absolute();
+          content: "";
+          background-color: $color-grey-3;
+          z-index: 0;
+        }
+      }
+
+      &-below {
+        margin-top: $grid-unit-y + $padding-xs-vertical * 2;
+      }
+    }
+  }
+}

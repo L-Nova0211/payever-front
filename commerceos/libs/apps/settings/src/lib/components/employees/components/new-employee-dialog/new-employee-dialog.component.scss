@@ -1,0 +1,73 @@
+.dialog {
+  width: 100%;
+  max-height: 690px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: auto;
+
+  &__title {
+    margin-top: 19px;
+    display: flex;
+
+    &__button {
+      margin: 0 12px;
+    }
+
+    &__text {
+      margin: 0;
+      flex-grow: 1;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .employee-panel {
+    margin-top: 1px;
+
+    .position-picker {
+      .mat-option {
+        border-radius: 0;
+      }
+    }
+
+    &__app {
+      margin-bottom: 16px;
+      display: block;
+    }
+  }
+
+  .form-group {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    &__row {
+      display: flex;
+    }
+
+    &__input {
+      flex-grow: 1;
+    }
+
+    &__small-field {
+      max-width: 50%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .full-width-select {
+    display: block;
+    width: 100%;
+  }
+}

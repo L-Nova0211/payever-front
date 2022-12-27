@@ -1,0 +1,11 @@
+.login-header {
+  text-align: center;
+  margin: 10px 10px 16px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.3333333333;
+
+  @media (min-width: 521px) {
+    line-height: 1.5714285714;
+  }
+}

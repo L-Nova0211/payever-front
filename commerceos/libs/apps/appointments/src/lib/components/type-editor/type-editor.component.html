@@ -1,0 +1,191 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="typeForm"
+  [ngClass]="theme"
+>
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.type_editor.general' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-select
+        formControlName="type"
+        [label]="'appointments-app.type_editor.type.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let type of types"
+          [label]="type.label | translate"
+          [value]="type.value"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.name, 'name') | translate"
+        [isFieldInvalid]="typeForm.controls.name.invalid"
+        [label]="'appointments-app.type_editor.name.label' | translate"
+      >
+        <input
+          formControlName="name"
+          [placeholder]="'appointments-app.type_editor.name.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'appointments-app.type_editor.description.label' | translate"
+      >
+        <input
+          formControlName="description"
+          [placeholder]="'appointments-app.type_editor.description.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.eventLink, 'event_link') | translate"
+        [isFieldInvalid]="typeForm.controls.eventLink.invalid"
+        [label]="'appointments-app.type_editor.event_link.label' | translate"
+      >
+        <span
+          class="prefix"
+          (click)="eventLink.focus()"
+        >{{ 'calendar.' + primaryHost + '/' }}</span>
+        <input #eventLink
+          formControlName="eventLink"
+          placeholder="type-name"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        *ngIf="typeForm.controls.type.value === 'group'"
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.maxInvitees, 'max_invitees') | translate"
+        [isFieldInvalid]="typeForm.controls.maxInvitees.invalid"
+        [label]="'appointments-app.type_editor.max_invitees.label' | translate"
+      >
+        <input
+          formControlName="maxInvitees"
+          [placeholder]="'appointments-app.type_editor.max_invitees.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.type_editor.date_range' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-checkbox
+        formControlName="indefinitelyRange"
+        type="label"
+      >{{ 'appointments-app.type_editor.indefinitely' | translate }}</peb-checkbox>
+      <peb-form-field-input
+        *ngIf="!typeForm.controls.indefinitelyRange.value"
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.dateRange, 'range') | translate"
+        [isFieldInvalid]="typeForm.controls.dateRange.invalid"
+        [label]="'appointments-app.type_editor.range.label' | translate"
+      >
+        <input
+          formControlName="dateRange"
+          [placeholder]="'appointments-app.type_editor.range.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.type_editor.details' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <two-column-form>
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="getControlError(typeForm.controls.duration, 'duration') | translate"
+          [isFieldInvalid]="typeForm.controls.duration.invalid"
+          [label]="'appointments-app.type_editor.duration.label' | translate"
+        >
+          <input
+            formControlName="duration"
+            [placeholder]="'appointments-app.type_editor.duration.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+        <peb-select
+          formControlName="unit"
+          [label]="'appointments-app.type_editor.unit.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let unit of units"
+            [label]="unit.label | translate"
+            [value]="unit.value"
+          ></peb-select-option>
+        </peb-select>
+      </two-column-form>
+      <peb-checkbox
+        formControlName="isTimeBefore"
+        type="label"
+      >{{ 'appointments-app.type_editor.time_before.label' | translate }}</peb-checkbox>
+      <peb-form-field-input
+        *ngIf="typeForm.controls.isTimeBefore.value"
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.timeBefore, 'time_before') | translate"
+        [isFieldInvalid]="typeForm.controls.timeBefore.invalid"
+        [label]="'appointments-app.type_editor.time_before.label' | translate"
+      >
+        <input
+          formControlName="timeBefore"
+          [placeholder]="'appointments-app.type_editor.time_before.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-checkbox
+        formControlName="isTimeAfter"
+        type="label"
+      >{{ 'appointments-app.type_editor.time_after.label' | translate }}</peb-checkbox>
+      <peb-form-field-input
+        *ngIf="typeForm.controls.isTimeAfter.value"
+        appearance="label"
+        [errorMessage]="getControlError(typeForm.controls.timeAfter, 'time_after') | translate"
+        [isFieldInvalid]="typeForm.controls.timeAfter.invalid"
+        [label]="'appointments-app.type_editor.time_after.label' | translate"
+      >
+        <input
+          formControlName="timeAfter"
+          [placeholder]="'appointments-app.type_editor.time_after.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+
+      <peb-select
+        formControlName="schedule"
+        [label]="'appointments-app.type_editor.schedule.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let schedule of schedules$ | async"
+          [label]="schedule.label"
+          [value]="schedule.value"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <peb-checkbox
+        formControlName="isDefault"
+        type="label"
+      >{{ 'appointments-app.type_editor.set_as_default' | translate }}</peb-checkbox>
+    </peb-form-background>
+  </peb-expandable-panel>
+</form>

@@ -1,0 +1,22 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.sections-wrapper {
+  @include pe_flexbox;
+
+  .mat-divider {
+    background-color: $color-secondary-1;
+    margin: 0 20px;
+  }
+}
+.section-value {
+  font-size: 45px;
+  font-weight: $font-weight-light;
+  color: $color-secondary;
+  line-height: normal;
+  min-width: 4 * $grid-unit-x;
+}
+.section-title {
+  font-size: $font-size-small;
+  line-height: normal;
+}

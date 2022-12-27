@@ -1,0 +1,237 @@
+.overlay-panel {
+  max-width: 436px;
+  width: 100%;
+  height: auto;
+  max-height: calc(100% - 32px);
+
+  @media screen and (max-width: 720px) {
+    max-width: 436px;
+    height: auto;
+    max-height: 410px;
+  }
+
+  .overlay-widget-container {
+    max-width: 436px;
+    width: calc(100% - 32px);
+    max-height: calc(100% - 32px);
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+
+    @media screen and (max-width: 720px) {
+      height: auto;
+      max-height: 400px;
+    }
+  }
+
+  .overlay-dark {
+    border-radius: 12px;
+  }
+
+  .overlay-widget__content {
+    height: 100%;
+  }
+}
+
+.rules {
+  max-width: 412px;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: 720px) {
+    max-height: 330px;
+  }
+
+  &__items {
+    position: relative;
+
+    .scroll {
+      position: relative;
+      top: 0;
+      left: -12px;
+      width: calc(100% + 24px);
+      max-height: 549px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 0 8px 0 12px;
+
+      &.is-scrolling {
+        &::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.7);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+      }
+
+      @media screen and (max-width: 720px) {
+        max-height: 270px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 412px;
+    height: 44px;
+    border-radius: 12px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #0091df;
+    background-color: #1c1d1e;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+  }
+}
+
+.add-rule-overlay-panel {
+  max-width: 436px;
+  max-height: 700px;
+
+  @media screen and (max-width: 720px) {
+    max-width: 436px;
+    max-height: 437px;
+  }
+
+  .overlay-widget-container {
+    max-width: 436px;
+    width: 100%;
+    max-height: calc(100% - 32px);
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgba(36, 39, 46, 0.85);
+
+    @media screen and (max-width: 720px) {
+      max-height: calc(100% - 32px);
+    }
+
+    & > div {
+      border-radius: 12px;
+    }
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .overlay-widget {
+    width: 100%;
+    max-width: 436px;
+
+    .form-background-wrapper {
+      @media screen and (max-width: 720px) {
+        min-width: 188px;
+      }
+    }
+  }
+}
+
+
+.mat-dialog-container[id^="mat-dialog-"] {
+  background-color: #24272e;
+  padding: 1em;
+  border-radius: 1em;
+  font-family: "Roboto", sans-serif;
+
+  pe-rule-datepicker {
+    .mat-calendar-header {
+      padding: 0.125em 0;
+      margin-bottom: 1px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 0.75em 0.75em 0 0;
+    }
+
+    .mat-calendar-controls {
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+
+      .mat-calendar-arrow {
+        display: none;
+      }
+    }
+
+    .mat-calendar-previous-button {
+      order: 1;
+      background-color: transparent;
+      color: #fff;
+    }
+
+    .mat-calendar-period-button {
+      order: 2;
+      background-color: transparent;
+      color: #fff;
+    }
+
+    .mat-calendar-next-button {
+      order: 3;
+      background-color: transparent;
+      color: #fff;
+    }
+    .mat-calendar-spacer {
+      display: none;
+    }
+
+    .mat-calendar-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 0.75em 0.75em;
+      padding: 8px 0 0 0;
+    }
+
+    .mat-calendar-table-header-divider::after {
+      background: #979797;
+      opacity: 0.3;
+      left: 0;
+      right: 0;
+    }
+
+    .mat-calendar-table-header {
+      color: #ffffff;
+
+      th {
+        padding-bottom: 8px;
+      }
+    }
+
+    .mat-calendar-body-cell {
+      &:not(.mat-calendar-body-disabled) {
+        .mat-calendar-body-cell-content {
+          color: #ffffff;
+          border: none;
+        }
+      }
+
+      &.mat-calendar-body-disabled {
+        .mat-calendar-body-cell-content {
+          color: #78787d;
+          border: none;
+        }
+      }
+    }
+
+    .mat-calendar-previous-button[disabled],
+    .mat-calendar-next-button[disabled] {
+      color: #78787d;
+    }
+  }
+}

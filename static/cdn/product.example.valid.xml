@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<import
+        xsi:noNamespaceSchemaLocation="https://gitlab.devpayever.com/snippets/2/raw"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <products>
+        <product>
+            <sku>aaosdj</sku>
+            <type>physical</type>
+            <title>Some product</title>
+            <description>
+                Some product description
+            </description>
+            <images>
+                <image url="https://picsum.photos/200/300"/>
+                <image url="https://picsum.photos/200/300"/>
+            </images>
+            <hidden>false</hidden>
+            <price>100</price>
+            <currency>eur</currency>
+            <sales-price>50</sales-price>
+            <bar-code>bar-code</bar-code>
+            <enabled>true</enabled>
+            <inventory>
+                <stock>100</stock>
+                <reserved>50</reserved>
+            </inventory>
+            <product-categories>
+                <product-category>
+                    <title>Some category</title>
+                </product-category>
+            </product-categories>
+            <channel-sets>
+                <channel-set>
+                    <id>a918abc5-dbd7-405e-8cec-c4ad57f570bf</id>
+                </channel-set>
+            </channel-sets>
+        </product>
+
+        <product>
+            <sku>laksjd</sku>
+            <type>digital</type>
+            <title>Some digital product</title>
+            <description>Some description</description>
+            <hidden>true</hidden>
+            <price>100.0</price>
+            <sales-price>50.0</sales-price>
+            <bar-code>barcode123</bar-code>
+            <enabled>true</enabled>
+            <inventory>
+                <stock>100</stock>
+                <reserved>50</reserved>
+            </inventory>
+        </product>
+
+        <product>
+            <sku>alasdasdkja</sku>
+            <type>service</type>
+            <title>Some service product</title>
+            <description>Some description</description>
+            <images>
+                <image url="https://picsum.photos/200/300"/>
+                <image url="https://picsum.photos/200/300"/>
+            </images>
+            <hidden>true</hidden>
+            <price>100.0</price>
+            <sales-price>50.0</sales-price>
+            <bar-code>barcode123</bar-code>
+            <enabled>true</enabled>
+            <variants>
+                <variant>
+                    <sku>kasd</sku>
+                    <title>Variant 1</title>
+                    <description>Variant 1</description>
+                    <hidden>false</hidden>
+                    <price>50</price>
+                    <sales-price>10</sales-price>
+                    <bar-code>laksjhf</bar-code>
+                    <inventory>
+                        <stock>100</stock>
+                        <reserved>50</reserved>
+                    </inventory>
+                </variant>
+                <variant>
+                    <sku>alsdj</sku>
+                    <title>Variant 2</title>
+                    <description>Variant 2</description>
+                    <hidden>false</hidden>
+                    <price>50</price>
+                    <sales-price>10</sales-price>
+                    <bar-code>akljsfh</bar-code>
+                    <inventory>
+                        <stock>50</stock>
+                        <reserved>40</reserved>
+                    </inventory>
+                </variant>
+            </variants>
+        </product>
+    </products>
+</import>

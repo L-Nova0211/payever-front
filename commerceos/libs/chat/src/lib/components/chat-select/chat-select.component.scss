@@ -1,0 +1,48 @@
+:host {
+  align-items: center;
+  background-color: #000000;
+  border-radius: 12px;
+  display: flex;
+}
+
+.label {
+  cursor: pointer;
+  display: flex;
+  padding: 4px 3px 4px 3px;
+
+  img,
+  svg,
+  span {
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+
+  img,
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  svg {
+    color: #37363b;
+  }
+
+  img {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  span {
+    color: #666666;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.3333333333;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  display: flex;
+}

@@ -1,0 +1,42 @@
+.container {
+    padding: 0;
+    max-height: 364px;
+    overflow-y: auto;
+    overflow-y: overlay;
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .setting-button {
+        padding: 12px 0;
+        border-radius: 12px;
+        background-color: #1c1d1e;
+        width: 100%;
+        display: block;
+        border: 0;
+        outline: 0;
+        color: #eb4653;
+        font-size: 12px;
+        margin: 16px 0 8px;
+        &.confirm {
+            color: #0091df;
+        }
+    }
+
+    &.light {
+        .setting-button {
+            background-color: #fafafa;
+        }
+    }
+    .no-domain {
+        padding: 16px;
+    }
+}

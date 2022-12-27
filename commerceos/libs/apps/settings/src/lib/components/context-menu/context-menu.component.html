@@ -1,0 +1,17 @@
+<div class="settings-context-menu" [class.context-menu_light]="this.theme === 'light'"
+  [class.context-menu_transparent]="this.theme === 'transparent'">
+  <div class="settings-context-menu__header">
+    <span class="settings-context-menu__title">Options</span>
+    <button class="settings-context-menu__close" (click)="closeContextMenu()">
+      <svg width="20" height="20" viewBox="0 0 20 20">
+        <use xlink:href="#icon-apps-overlay-close"></use>
+      </svg>
+    </button>
+  </div>
+  <ul class="settings-context-menu__list">
+    <li *ngFor="let action of actions" class="settings-context-menu__list-item active"
+      (click)="onChange($event, action)">
+      <span class="settings-context-menu__list-item-label" translate="">{{action.label}}</span>
+    </li>
+  </ul>
+</div>

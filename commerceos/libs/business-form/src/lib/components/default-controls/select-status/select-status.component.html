@@ -1,0 +1,12 @@
+<peb-select
+  class="d-block"
+  [isFieldInvalid]="isSubmitted && control.invalid"
+  [errorMessage]="errorMessage[controlScheme.name]"
+  selectType="label"
+  [animated]="true"
+  [formControl]="control"
+  [label]="'forms.business_create.status.label' | translate"
+>
+  <peb-select-option *ngFor="let item of statusOptions$ | async" [value]="item.value" [label]="item.label">
+  </peb-select-option>
+</peb-select>

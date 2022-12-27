@@ -1,0 +1,73 @@
+.pe-message-invite-form {
+  display: block;
+  padding: 12px;
+  width: 95vw;
+
+  @media (min-width: 620px) {
+    width: 436px;
+  }
+
+  .peb-form-field-input {
+    border-radius: 12px;
+    display: block;
+  }
+
+  .pe-picker {
+    border-radius: 12px;
+    display: block;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+
+  .invite-form {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 7px;
+      margin-bottom: 18px;
+      padding: 0 12px;
+
+      div {
+        min-width: 44px;
+
+        &.right {
+          text-align: right;
+        }
+
+        span {
+          font-size: 14px;
+          color: #7a7a7a;
+          cursor: pointer;
+          line-height: 1.2857142857;
+
+          &.blue {
+            color: #0091df;
+          }
+
+          &.loading-btn {
+            color: #78787d;
+            cursor: default;
+            font-style: italic;
+          }
+        }
+      }
+
+      p {
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+
+    &__content {
+      overflow: hidden;
+      border-radius: 12px;
+      mat-tab-header {
+        display: none;
+      }
+    }
+  }
+}

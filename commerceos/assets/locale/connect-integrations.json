@@ -1,0 +1,807 @@
+{
+  "integrations": {
+    "actions": {
+      "open": "Open",
+      "install": "Install"
+    },
+    "statuses": {
+      "installed": "Installed",
+      "integration_was_installed": "\"{{ integration }}\" was installed!"
+    },
+    "debitoor": {
+      "description": "Tired of late customer payments? Now you can get paid within minutes by giving your customers a comfortable and secure way to accept PayPal, credit card, direct debit, or SOFORTüberweisung directly through Debitoor invoice. It only takes you a few minutes and is free of charge."
+    },
+    "accountings": {
+      "debitoor": {
+        "title": "PayPal",
+        "description": "Tired of late customer payments? Now you can get paid within minutes by giving your customers a comfortable and secure way to accept PayPal, credit card, direct debit, or SOFORTüberweisung directly through Debitoor invoice. It only takes you a few minutes and is free of charge.",
+        "price": "---",
+        "category": "Accounting",
+        "developer": "PayPal",
+        "languages": "English"
+      }
+    },
+    "communications": {
+      "twilio": {
+        "title": "Twilio",
+        "description": "With Twilio inside payever you can send SMS to your customers for differnet purposes. Let them pay via payever Point of Sale directly on their phone or send marketing offers. Everything is easy and simple to use.",
+        "price": "---",
+        "category": "Communication",
+        "developer": "Twilio",
+        "languages": "English"
+      },
+      "qr": {
+        "title": "QR",
+        "description": "QR let you easily convert any URL link into convenient visual representation",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "email": {
+        "title": "Email",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "device-payments": {
+        "title": "Device Payments",
+        "description": "With the Device Payments Plugin on payever you can manage payment process by SMS messages",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "instagram-posts": {
+        "title": "Instagram Posts",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "linkedin-social": {
+        "title": "Linkedin Social",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "youtube-social": {
+        "title": "Youtube Social",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "twitter-social": {
+        "title": "Twitter Social",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "facebook-posts": {
+        "title": "Facebook Posts",
+        "description": "",
+        "price": "---",
+        "category": "Communication",
+        "developer": "payever GmbH",
+        "languages": "English"
+      }
+    },
+    "messaging": {
+      "facebook-messenger": {
+        "title": "Facebook Messenger",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "instagram-messenger": {
+        "title": "Facebook Messenger",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "instagram_messenger": {
+        "title": "Facebook Messenger",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "live_chat": {
+        "title": "Live chat",
+        "description": "",
+        "category": "Messaging",
+        "developer": "payever GmbH",
+        "languages": "English"
+      }
+    },
+    "shipping": {
+      "dhl": {
+        "title": "DHL",
+        "description": "DHL shipping",
+        "price": "Free",
+        "category": "Shipping",
+        "developer": "DHL International GmbH",
+        "languages": "English"
+      },
+      "hermes": {
+        "title": "Hermes",
+        "price": "Free",
+        "category": "Shipping",
+        "description": "Hermes shipping",
+        "developer": "Hermes",
+        "languages": "English"
+      },
+      "ups": {
+        "title": "Ups",
+        "price": "Free",
+        "category": "Shipping",
+        "developer": "Ups",
+        "languages": "English"
+      }
+    },
+    "shopsystems": {
+      "presta": {
+        "title": "PrestaShop",
+        "description": "With the Prestashop Plugin on payever you can accept all payever Checkout payments inside your Prestashop shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "PrestaShop",
+        "languages": "English"
+      },
+      "shopware": {
+        "title": "Shopware",
+        "description": "With the Shopware Plugin on payever you can accept all payever Checkout payments inside your Shopware shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "Shopware",
+        "languages": "English"
+      },
+      "jtl": {
+        "title": "JTL",
+        "description": "With the JTL Plugin on payever you can accept all payever Checkout payments inside your JTL shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "JTL-Software-GmbH",
+        "languages": "English"
+      },
+      "oxid": {
+        "title": "OXID",
+        "description": "With the OXID Plugin on payever you can accept all payever Checkout payments inside your OXID shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "OXID",
+        "languages": "English"
+      },
+      "xt_commerce": {
+        "title": "xt:Commerce",
+        "description": "With the xt:Commerce Plugin on payever you can accept all payever Checkout payments inside your xt:Commerce shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "xt:Commerce GmbH",
+        "languages": "English"
+      },
+      "shopify": {
+        "title": "Shopify",
+        "description": "With the Shopify Plugin on payever you can accept all payever Checkout payments inside your Shopify shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "Shopify",
+        "languages": "English"
+      },
+      "dandomain": {
+        "title": "DanDomain",
+        "description": "With the DanDomain Plugin on payever you can accept all payever Checkout payments inside your DanDomain shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "DanDomain A/S",
+        "languages": "English"
+      },
+      "plentymarkets": {
+        "title": "Plentymarkets",
+        "description": "With the Plentymarkets Plugin on payever you can accept all payever Checkout payments inside your Plentymarkets shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "Plentymarkets GmbH",
+        "languages": "English"
+      },
+      "api": {
+        "title": "API",
+        "description": "API description",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "magento": {
+        "title": "Magento",
+        "description": "With the Magento Plugin on payever you can accept all payever Checkout payments inside your Magento shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "Magento",
+        "languages": "English"
+      },
+      "woo_commerce": {
+        "title": "WooCommerce",
+        "description": "With the WooCommerce Plugin on payever you can accept all payever Checkout payments inside your WooCommerce shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "WooCommerce",
+        "languages": "English"
+      },
+      "commercetools": {
+        "title": "Commercetools",
+        "description": "With the Commercetools Plugin for payever you can accept all payever Checkout payments inside your Commercetools shop.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "payeverm GmbH",
+        "languages": "English"
+      },
+      "shop": {
+        "title": "Shop",
+        "description": "The best feature.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "payeverm GmbH",
+        "languages": "English"
+      },
+      "link": {
+        "title": "Link",
+        "description": "The best feature.",
+        "price": "Free",
+        "category": "Shopsystem",
+        "developer": "payeverm GmbH",
+        "languages": "English"
+      }
+    },
+    "payments": {
+      "title": "Payments",
+      "pos": {
+        "title": "POS",
+        "description": "",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "invoice": {
+        "title": "Invoice",
+        "description": "",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "groups": {
+        "santander": "Santander",
+        "payex": "PayEx",
+        "stripe": "Stripe"
+      },
+      "paymill_creditcard": {
+        "title": "PayMill Credit Card"
+      },
+      "paymill_directdebit": {
+        "title": "PayMill Direct Debit"
+      },
+      "paypal": {
+        "title": "PayPal",
+        "description": "PayPal is the faster, safer way for your customers to make an online payment to your merchant account. Connect your PayPal account with payever with one simple login. It takes you seconds and you can directly accept PayPal payments for all channels including your Shop, Checkout, Point of Sale or Marketing.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/mpp/paypal-fees"
+      },
+      "stripe": {
+        "title": "Stripe Credit Card",
+        "description": "With Stripe inside payever you can accept credit cards within minutes: Just create an online account leaving a few information about you and your business. After that you can already accept payments in every selling channel. It´s the easier and fastest way to accept credit card payments.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://stripe.com/de/pricing"
+      },
+      "swedbank_invoice": {
+        "title": "Swedbank Invoice",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://stripe.com/de/pricing"
+      },
+      "swedbank_creditcard": {
+        "title": "Swedbank CreditCard",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://stripe.com/de/pricing"
+      },
+      "openbank": {
+        "title": "OpenBank",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://stripe.com/de/pricing"
+      },
+      "stripe_directdebit": {
+        "title": "Stripe Direct Debit",
+        "description": "With Stripe inside payever you can accept credit cards within minutes: Just create an online account leaving a few information about you and your business. After that you can already accept payments in every selling channel. It´s the easier and fastest way to accept credit card payments.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://stripe.com/de/pricing"
+      },
+      "sofort": {
+        "title": "Sofortüberweisung",
+        "description": "Sofortüberweisung enables your customers to securely transfer you money directly during the payment process as a payment option. Accept payments in any channel and get safe payments directly into your business bank account.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.klarna.com/sofort/business/mit-sofort-verkaufen/"
+      },
+      "santander_installment": {
+        "title": "Santander Installment",
+        "description": "With Santander installment inside payever you can accept part payments starting as low as 99€ and without limits up. Raise the average size of your baskets by offering this payment option to your customers. Online and at the Point of Sale.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_installment_at": {
+        "title": "Santander Installment AT",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_installment_uk": {
+        "title": "Santander Installment UK",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_factoring_de": {
+        "title": "Santander installment factoring",
+        "description": "Santander Installment Factoring is the easiest way to accept installments inside any channel of payever. Your customers don´t need to go to a postal office and can finish the installment within seconds.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_factoring_de": {
+        "title": "Santander installment factoring POS",
+        "description": "Santander Installment Factoring POS is the easiest way to accept installments inside any channel of payever. Your customers don´t need to go to a postal office and can finish the installment within seconds.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_ccp_installment": {
+        "title": "Santander Comfort Card Plus",
+        "description": "Santander Comfort Card Plus enables installment payments with a physical card. Your customers get in addition to the installment payment that generally happens one time an option to finance goods many times in the future.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_invoice_de": {
+        "title": "Santander Invoice",
+        "description": "Santander Invoice inside payever is the easiest way for your customers to pay online:<br><br>1. Customer leaves address and birthday information<br>2. Waits a few seconds<br>3. Gets approved and received the goods<br><br>FOR BUSINESSES<br><br>- You have no risk and get fully covered by Santander<br>- Ship goods directly after the approval to your customers<br>- Fair pricing<br><br>FOR CUSTOMERS<br><br>- Receive goods without entering payment data or paying upfront<br>- A fair reminder system without direct fees<br>- No risk by entering data or paying upfront<br>",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_invoice_de": {
+        "title": "Santander Invoice POS",
+        "description": "Santander Invoice POS inside payever is the easiest way for your customers to pay online:<br><br>1. Customer leaves address and birthday information<br>2. Waits a few seconds<br>3. Gets approved and received the goods<br><br>FOR BUSINESSES<br><br>- You have no risk and get fully covered by Santander<br>- Ship goods directly after the approval to your customers<br>- Fair pricing<br><br>FOR CUSTOMERS<br><br>- Receive goods without entering payment data or paying upfront<br>- A fair reminder system without direct fees<br>- No risk by entering data or paying upfront<br>",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_invoice_no": {
+        "title": "Santander Invoice POS NO",
+        "description": "Santander Invoice POS inside payever is the easiest way for your customers to pay online:<br><br>1. Customer leaves address and birthday information<br>2. Waits a few seconds<br>3. Gets approved and received the goods<br><br>FOR BUSINESSES<br><br>- You have no risk and get fully covered by Santander<br>- Ship goods directly after the approval to your customers<br>- Fair pricing<br><br>FOR CUSTOMERS<br><br>- Receive goods without entering payment data or paying upfront<br>- A fair reminder system without direct fees<br>- No risk by entering data or paying upfront<br>",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_installment": {
+        "title": "Santander Installment POS",
+        "description": "With Santander installment inside payever you can accept part payments starting as low as 99€ and without limits up. Raise the average size of your baskets by offering this payment option to your customers. Online and at the Point of Sale.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_installment_dk": {
+        "title": "Santander Installment POS DK",
+        "description": "With Santander installment inside payever you can accept part payments starting as low as 99€ and without limits up. Raise the average size of your baskets by offering this payment option to your customers. Online and at the Point of Sale.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_installment_no": {
+        "title": "Santander Installment POS NO",
+        "description": "With Santander installment inside payever you can accept part payments starting as low as 99€ and without limits up. Raise the average size of your baskets by offering this payment option to your customers. Online and at the Point of Sale.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_pos_installment_uk": {
+        "title": "Santander Installment POS UK",
+        "description": "With Santander installment inside payever you can accept part payments starting as low as 99€ and without limits up. Raise the average size of your baskets by offering this payment option to your customers. Online and at the Point of Sale.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "cash": {
+        "title": "Wire transfer",
+        "description": "Offer your customers the most established and for businesses most secure payment option. Customers transfer money directly to your bank account. Once you´ve received the money you ship the goods.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": ""
+      },
+      "santander_installment_dk": {
+        "title": "Santander installment DK",
+        "description": "With Santander installment inside payever you can accept part payments. Raise the average size of your baskets by offering this payment option to your customers.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_installment_no": {
+        "title": "Santander Installment / BuyNowPayLater",
+        "description": "With Santander installment inside payever you can accept part payments and Buy Now Pay Later payments. Raise the average size of your baskets by offering this payment option to your customers.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_installment_nl": {
+        "title": "Santander Installment NL",
+        "description": "With Santander installment inside payever you can accept part payments and Buy Now Pay Later payments. Raise the average size of your baskets by offering this payment option to your customers.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_installment_se": {
+        "title": "Santander Installment SE",
+        "description": "With Santander installment inside payever you can accept part payments and Buy Now Pay Later payments. Raise the average size of your baskets by offering this payment option to your customers.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "payex_faktura": {
+        "title": "PayEx Invoice / Faktura",
+        "description": "Santander Invoice inside payever is the easiest way for your customers to pay online:<br><br>1. Customer enters his SSN number<br>2. Waits a few seconds<br>3. Gets approved and received the goods<br><br>FOR BUSINESSES<br><br>- You have no risk and get fully covered by Santander<br>- Ship goods directly after the approval to your customers<br>- Fair pricing<br><br>FOR CUSTOMERS<br><br>- Receive goods without entering payment data or paying upfront<br>- A fair reminder system without direct fees<br>- No risk by entering data or paying upfront<br>",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": ""
+      },
+      "payex_creditcard": {
+        "title": "PayEx Credit Card",
+        "description": "With PayEx inside payever you can accept credit cards. Enable your customers to pay via credit cards inside your online shop.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": ""
+      },
+      "subscriptions": {
+        "title": "Subscriptions",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": ""
+      },
+      "santander_pos_installment_se": {
+        "title": "Santander Installment POS",
+        "description": "With Santander installment at the Point of Sale inside payever you can accept part payments. Raise the average size of your baskets when customers shop in your local store  by offering this payment option to your customers.",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "santander_invoice_no": {
+        "title": "Santander Invoice",
+        "description": "Santander Invoice inside payever is the easiest way for your customers to pay online:<br><br>1. Customer enters his data<br>2. Waits a few seconds<br>3. Gets approved and received the goods<br><br>FOR BUSINESSES<br><br>- You have no risk and get fully covered by Santander<br>- Ship goods directly after the approval to your customers<br>- Fair pricing<br><br>FOR CUSTOMERS<br><br>- Receive goods without entering payment data or paying upfront<br>- A fair reminder system without direct fees<br>- No risk by entering data or paying upfront<br>",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      },
+      "apple_pay": {
+        "title": "Apple Pay",
+        "description": "",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "google_pay": {
+        "title": "Google Pay",
+        "description": "",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "google_wallet": {
+        "title": "Google Wallet",
+        "description": "",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "English"
+      },
+      "instant_payment": {
+        "title": "Instant Payment",
+        "description": "",
+        "price": "No monthly fees. Pay per transaction.",
+        "category": "Payments",
+        "developer": "payever GmbH",
+        "languages": "German",
+        "support_link": "https://getpayever.com/payments/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.santander.de"
+      }
+    },
+    "products": {
+      "ebay": {
+        "title": "eBay",
+        "description": "eBay is one of the biggest online marketplaces, which enables you to reach many potential customers. Connect your eBay account with payever with a simple login. It takes you seconds, but allows you to synchronize your offers back and forth",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/ebay"
+      },
+      "google_shopping": {
+        "title": "Google Shopping",
+        "description": "Google Merchant Center is a tool that helps you upload your store and product data to Google and make it available for Shopping ads and other Google services. Now you can easily upload your offers to Google Merchant or retrieve your listings from Google Merchant with Google Shopping Payever Plugin",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/google"
+      },
+      "amazon": {
+        "title": "Amazon",
+        "description": "Amazon products",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/amazon"
+      },
+      "external-inventory": {
+        "title": "API",
+        "description": "API products",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/amazon"
+      },
+      "mobilede": {
+        "title": "MobileDe",
+        "description": "",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/amazon"
+      },
+      "autoscout": {
+        "title": "Autoscout",
+        "description": "",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/amazon"
+      },
+      "autoscout24": {
+        "title": "Autoscout24",
+        "description": "",
+        "price": "TBD",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages": "English, German",
+        "support_link": "https://getpayever.com/products/",
+        "website_link": "https://www.payever.org",
+        "pricing_link": "https://www.paypal.com/de/webapps/products/amazon"
+      },
+      "facebook": {
+        "title": "Facebook",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "facebook-posts": {
+        "title": "Facebook Posts",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "instagram-posts": {
+        "title": "Instagram Posts",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "youtube": {
+        "title": "Youtube",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "linkedin": {
+        "title": "Linkedin",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      },
+      "pos": {
+        "title": "POS",
+        "description": "",
+        "category": "Products",
+        "developer": "payever GmbH",
+        "languages":"English"
+      }
+    }
+  }
+}

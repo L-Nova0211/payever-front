@@ -1,0 +1,60 @@
+.pe-message-product-list {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .pe-message-loader {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 12px;
+
+    button {
+      appearance: none;
+      background-color: rgba(255, 255, 255, .3);
+      border: none;
+      border-radius: 6px;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      height: 24px;
+      outline: none;
+      margin-right: 4px;
+      margin-left: 4px;
+      width: 51px;
+
+      &.add {
+        background-color: #0371e2;
+      }
+    }
+  }
+
+  .pe-data-grid {
+    height: calc(100% - 53px);
+
+    .grid-navbar {
+      padding-bottom: 10px;
+    }
+
+    .navbar-wrapper .controls-wrap {
+      padding-left: 8px;
+
+      & > * {
+        padding: 0 8px 0 0!important;
+      }
+    }
+
+    .grid-view-container {
+      margin-right: 16px;
+      margin-left: -12px;
+    }
+  }
+}

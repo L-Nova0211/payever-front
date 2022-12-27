@@ -1,0 +1,50 @@
+:host {
+  padding: 24px;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: '1fr';
+  grid-auto-rows: 'auto';
+  grid-template-areas:
+    'desktop';
+}
+
+#preview-desktop {
+  grid-area: desktop;
+}
+
+
+//::ng-deep peb-element-document {
+//  border: 1px solid #c0c0c0 !important;
+//  margin: 20px auto;
+//  display: flex !important;
+//  flex-direction: column;
+//
+//  peb-element-section:nth-child(odd)> div peb-element-block:nth-child(odd) {
+//    background: #000;
+//  }
+//  peb-element-section:nth-child(even)> div peb-element-block:nth-child(even) {
+//    background: #000;
+//  }
+//
+//  peb-element-block > peb-element-block {
+//    border: 1px solid red !important;
+//    margin: 1px !important;
+//    border-radius: 50% !important;
+//    width: 7px !important;
+//    height: 7px !important;
+//    background-color: red !important;
+//  }
+//
+//
+//  peb-element-section > div{
+//    height: 10px;
+//    display: flex;
+//    flex-direction: row;
+//    justify-content: center;
+//
+//    peb-element-block {
+//      width: 10px;
+//      height: 10px;
+//    }
+//  }
+//}

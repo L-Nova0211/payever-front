@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  height: calc(100%);
+  will-change: transform;
+}
+
+ace-editor {
+  height: 100%;
+}

@@ -1,0 +1,116 @@
+{
+  "site-app": {
+    "actions": {
+      "edit": "Edit",
+      "open": "Open",
+      "cancel": "Cancel",
+      "done": "Done",
+      "save": "Save",
+      "create_new": "Create New",
+      "remove_domain": "Remove domain",
+      "create_domain": "Add domain",
+      "copy_link": "Copy link",
+      "copy": "Copy",
+      "verify_connection": "Verify connection",
+      "delete_site": "Delete Site",
+      "loading": "Loading...",
+      "create": "Create"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "connect": {
+      "title": "Connect",
+      "add": "Add",
+      "qr": {
+        "title": "QR"
+      }
+    },
+    "errors": {
+      "unknown_error": "Unknown error"
+    },
+    "messages": {
+      "domain_connected": "Domain connected",
+      "domain_disconnected": "Domain is not connected",
+      "no_domain": "No domains connected",
+      "incorrect_domain": "entered incorrectly. Check that you’ve entered the required values, and verify your connection again."
+    },
+    "sidebar": {
+      "title": "Site"
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "info": {
+      "connection_info_verify": "Verify the connection to make sure your domain is set up correctly.",
+      "connection_info_footer": "Some providers take a few minutes to update their settings. Try verifying again, or add your domain now and check back later for connection updates.",
+      "connection_info": "To connect your domain, you need to log in to your provider account and change your settings. Follow the provider step-by-step instructions to get started.",
+      "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px",
+      "app_offline": "The current state of the site is set to offline",
+      "link_copied": "Link copied"
+    },
+    "dialogs": {
+      "window_exit": {
+        "title": "Are you sure?",
+        "label": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+        "confirm": "Yes",
+        "decline": "No"
+      }
+    },
+    "settings": {
+      "password-info": "Enable password to restrict access to your online store. Only customers with the password can access it.",
+      "password": "Password",
+      "private-message": {
+        "label": "Message for visitors"
+      },
+      "title": "Settings",
+      "live_status": "Live status",
+      "payever_domain": "payever domain",
+      "personal_domain": "Personal domain",
+      "connect_existing": "Connect existing domain",
+      "password_protection": "Password protection",
+      "customer_privacy": "Customer privacy",
+      "facebook_pixel": "Facebook Pixel",
+      "google_analytics": "Google Analytics",
+      "spam_protection": "Spam protection",
+      "social_image": "Social sharing image",
+      "publishing": "PUBLISHING",
+      "domains": "DOMAINS",
+      "domain_label": "Domain",
+      "domain_placeholder": "Enter Domain",
+      "date_placeholder": "Enter Date",
+      "date_label": "Date Added",
+      "provider_label": "Provider",
+      "provider_placeholder": "Enter Provider",
+      "safety": "SAFETY",
+      "social": "SOCIAL",
+      "all_sites": "ALL SITES",
+      "meta_description": "Meta description",
+      "page_title": "Page title",
+      "enter_domain_label": "Enter the domain you want to connect",
+      "enter_domain_placeholder": "Enter domain",
+      "current_ip_label": "Current IP address",
+      "recuired_ip_label": "Required IP address",
+      "current_value_label": "Current value",
+      "recuired_value_label": "Required value",
+      "site_name_label": "Site name",
+      "site_name_placeholder": "Enter Site Name"
+    },
+    "themes": {
+      "title": "Themes"
+    },
+    "view_options": {
+      "navigator": "Navigator",
+      "inspector": "Inspector",
+      "master_pages": "Master pages",
+      "layer_list": "Layer list",
+      "preview": "Preview",
+      "history": "History"
+    },
+    "overlay": {
+      "options": "Options",
+      "publish": "Publish",
+      "view": "View"
+    }
+  }
+}

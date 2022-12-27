@@ -1,0 +1,28 @@
+<ng-container *ngIf="saveSubjectListener$ | async"></ng-container>
+<pe-list-container [title]="'subscriptions-app.settings.title'" [hideTitleInMobile]="true">
+  <pe-list-section
+    [actionButtonType]="toggleButtonType"
+    [integrations]="getAccessConfig$ | async"
+    [sectionTitle]="'subscriptions-app.settings.publishing.title'"
+    [showGroupTitle]="true"
+    (switched)="switchDomainLiveStatus($event)"
+  ></pe-list-section>
+  <pe-list-section
+    [actionButtonType]="arrowButtonType"
+    [integrations]="domains"
+    [sectionTitle]="'domains-lib.title'"
+    [showGroupTitle]="true"
+    (navigated)="openEditor($event, true)"
+  ></pe-list-section>
+
+  <pe-list-section
+    [actionButtonType]="arrowButtonType"
+    [addButtonLabel]="'subscriptions-app.actions.create_new'"
+    [integrations]="getAllNetworks$ | async"
+    [sectionTitle]="'subscriptions-app.settings.networks'"
+    [showAddButton]="true"
+    [showGroupTitle]="true"
+    [translateItemsTitle]="false"
+    (navigated)="openNetworkEditor($event)"
+  ></pe-list-section>
+</pe-list-container>

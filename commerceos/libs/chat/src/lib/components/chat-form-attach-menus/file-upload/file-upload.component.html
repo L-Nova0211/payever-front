@@ -1,0 +1,61 @@
+<div
+  (drop)="onDrop($event)"
+  (dragover)="onDrag($event)"
+  (dragleave)="onDragLeave($event)"
+  class="plus-menu {{dragAreaClass}}"
+  [formGroup]="attachFields"
+  [style.background-color]="messageAppColor"
+  [class.show]="secondLevelMenuTrigger"
+  [style.width]="addPhotoVideoWidth">
+  <div class="plus-menu__header">
+    <button class="plus-menu__header__cancel" (click)="cancelPhotoVideo()"
+      >{{'message-app.chat.attach_menu.cancel' | translate}}</button>
+    <span class="plus-menu__header__title">{{ title }}</span>
+    <button class="plus-menu__header__send" (click)="sendFiles()"
+      >{{'message-app.chat.attach_menu.send' | translate}}</button>
+  </div>
+  <div class="plus-menu__drop-photo">
+    <mat-icon *ngIf="images.length === 0" class="drop-photo-icon" svgIcon="drop-photo"></mat-icon>
+    <ng-container *ngFor="let image of images">
+      <img class="plus-menu__image-preview" *ngIf="image" [src]="image" />
+    </ng-container>
+  </div>
+  <div class="plus-menu__add-more" (click)="addMore()">
+    <button class="plus-menu__header__send">{{'message-app.chat.attach_menu.add_more' | translate}}</button>
+  </div>
+  <div *ngIf="isMedia" class="plus-menu__compress">
+    <span class="plus-menu__compress__label">{{'message-app.chat.attach_menu.compressed' | translate}}</span>
+    <peb-button-toggle
+      formControlName="compressed"
+    ></peb-button-toggle>
+  </div>
+  <div class="plus-menu__text">
+    <peb-form-field-input
+      class="peb-form-field-input"
+      [appearance]="'label'"
+      [label]="'message-app.chat.attach_menu.optional_text' | translate"
+      [animated]="true"
+    >
+      <input type="text" name="" placeholder="" formControlName="text"/>
+    </peb-form-field-input>
+  </div>
+  <div class="plus-menu__url">
+    <peb-form-field-input
+      class="peb-form-field-input"
+      [appearance]="'label'"
+      [label]="'message-app.chat.attach_menu.url' | translate"
+      [animated]="true"
+    >
+      <input type="text" name="" placeholder="" formControlName="url"/>
+    </peb-form-field-input>
+  </div>
+</div>
+
+<input
+  #fileSelector
+  multiple
+  [accept]="isMedia ? uploadAcceptTypes.media : uploadAcceptTypes.file"
+  type="file"
+  style="display: none"
+  (change)="uploadMedia($event)"
+/>

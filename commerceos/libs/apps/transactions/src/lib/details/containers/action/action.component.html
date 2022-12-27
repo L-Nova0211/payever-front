@@ -1,0 +1,24 @@
+<div class="backdrop" (click)="onClose()"></div>
+  <div class="overlay">
+    <div class="overlay__header">
+      <button
+        class="overlay__button overlay__button_grey"
+        (click)="onClose()"
+      >
+        {{cancelTranslateKey | translate}}
+      </button>
+      <span class="overlay__title">{{titleTranslateKey | translate}}</span>
+      <ng-container *ngIf="!useSubmitAction else submitAction">
+        <button mat-button class="overlay__button" (click)="onSubmit()">{{doneTranslateKey | translate}}</button>
+      </ng-container>
+    </div>
+  <div class="overlay__body" [ngClass]="theme">
+    <ng-content></ng-content>
+  </div>
+</div>
+<ng-template #submitAction>
+  <pe-action-submit
+    [label]="submitTitleTranslateKey || doneTranslateKey"
+    [isLoading]="isLoading$ | async" (clicked)="onSubmit()"
+  ></pe-action-submit>
+</ng-template>

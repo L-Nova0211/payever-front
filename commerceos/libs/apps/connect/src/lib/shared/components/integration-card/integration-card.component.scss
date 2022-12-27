@@ -1,0 +1,131 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+$shade-background: rgba(0, 0, 0, .3);
+
+:host {
+  border-radius: 0;
+}
+
+.integration-card {
+  height: 100%;
+  padding: 0;
+  border-radius: 0;
+  color: $color-secondary;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+
+  &__header {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  &__preview {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgb(71, 71, 71), rgb(0, 0, 0));
+  }
+
+  &__image {
+    height: 0;
+    overflow: hidden;
+    padding-top: 56.25%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+  }
+
+  &__installed-chips {
+    position: absolute;
+    text-transform: uppercase;
+    top: 9px;
+    right: 10px;
+    font-size: 11px;
+    height: 20px;
+    max-width: calc(100% - 20px);
+    min-width: fit-content;
+    padding: 0 10px;
+    font-weight: 500;
+    color: $color-white;
+    border: none;
+    border-radius: 10px;
+    background-color: $shade-background;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin: 15px 18px 10px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  &__description {
+    margin: 5px 18px 15px 18px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: $color-white;
+    height: 34px;
+    max-height: 34px;
+    overflow: hidden;
+    line-height: 17px;
+    font-weight: 400;
+
+    @media (min-width: 1336px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.hidden-image {
+  position: absolute;
+  top: -10000px;
+}
+
+.ellipsis-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 480px) {
+  .integration-card {
+    height: auto;
+    font-family: Roboto;
+
+    .item__title {
+      height: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 4px 11px 2px 11px;
+    }
+
+    .item__description {
+      opacity: 0.4;
+      font-size: 9px;
+      font-weight: normal;
+      line-height: 1.25;
+      margin: 2px 11px 4px 11px;
+    }
+  }
+}

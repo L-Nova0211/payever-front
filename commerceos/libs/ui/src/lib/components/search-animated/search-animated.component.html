@@ -1,0 +1,28 @@
+<div class="widget-wrapper" [ngClass]="theme">
+  <div class="search-container search-business-right">
+    <div
+      class="search-box"
+    >
+      <mat-icon class="prefix addon-icon-button search-widget-icon icon-search">
+        <svg class="icon icon-18">
+          <use xlink:href="#icon-search-18"></use>
+        </svg>
+      </mat-icon>
+      
+      <input
+        [@animateText]="isSearchFocused ? 'focus' : 'unFocus'"
+        [(ngModel)]="searchText" 
+        (focus)="onSearchClicked()"
+        (blur)="outOfFocus()"
+        placeholder="{{ 'dashboard_docker.items.search' | translate }}" 
+        class="search-input"        
+        (input)="goToSearch($event)"
+      >
+    </div>
+    <span class="action" [@enterSearchAnimation]="isSearchFocused ? 'open' : 'closed'">
+      <button peb-button (click)="clearSearch()" class="cancel-button">
+        Cancel
+      </button>
+    </span>
+  </div>
+</div>

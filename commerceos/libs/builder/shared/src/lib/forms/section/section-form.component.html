@@ -1,0 +1,38 @@
+<form [formGroup]="sectionForm">
+  <div class="form">
+    <peb-slide-toggle formControlName="default">Default</peb-slide-toggle>
+
+    <div class="form__row">
+      <span>Section name</span>
+      <peb-editor-text-input
+          placeholder="Name"
+          formControlName="name"
+      ></peb-editor-text-input>
+    </div>
+
+    <div class="form__row">
+      <span>Section size</span>
+      <peb-number-input formControlName="height" units="H"></peb-number-input>
+    </div>
+
+    <div class="form__row add">
+      <peb-slide-toggle formControlName="sticky">Fixed</peb-slide-toggle>
+    </div>
+
+    <div class="form__row">
+      <span>Section position</span>
+      <div class="position">
+        <button (click)="changePosition(+1)">
+          <peb-editor-move-down-icon></peb-editor-move-down-icon>
+        </button>
+        <button (click)="changePosition(-1)">
+          <peb-editor-move-up-icon></peb-editor-move-up-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="form__row add" *ngIf="(screen$ | async) === PebScreen.Desktop">
+      <peb-slide-toggle formControlName="fullWidth">Full width</peb-slide-toggle>
+    </div>
+  </div>
+</form>

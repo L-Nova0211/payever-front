@@ -1,0 +1,42 @@
+<div class="page__container">
+
+  <div class="page__main-title" translate="">info_boxes.panels.paymentOptions</div>
+
+  <ng-container *ngIf="onlyContent" [ngTemplateOutlet]="body"></ng-container>
+
+  <div class="pe-info-box-container-fixed pe-checkout-payment-options" *ngIf="!onlyContent">
+    <pe-info-box
+      class="pe-info-box-header-padding"
+      [fixed]="false"
+      [transparent]="true"
+      [withHeader]="false"
+      [withFooter]="false"
+      [withPadding]="false"
+      [notFullwidthOnMobile]="true"
+      [roundBorder]="true">
+      <ng-container content>
+        <ng-container [ngTemplateOutlet]="body"></ng-container>
+      </ng-container>
+    </pe-info-box>
+    <div
+      class="add-button"
+      (click)="clickedIntegrationAddButton(categories.Payments)">
+      {{ 'actions.add' | translate }}
+    </div>
+  </div>
+
+  <ng-template #body>
+    <checkout-expansion-conn-menu-list [category]="categories.Payments"
+                                       [integrations]="payments$ | async"
+                                       [connections]="connections$ | async"
+                                       [installedConnections]="installedConnections$ | async"
+                                       [isShowToggleButton]="true"
+                                       [isShowAddButton]="false"
+                                       [noPaddingLeft]="onlyContent"
+                                       [sizeMd]="!onlyContent"
+                                       (clickedToggleButton)="onToggleIntegrationConnection($event)"
+                                       (clickedOpenButton)="clickedIntegrationOpenButton($event)"
+                                       (clickedAddButton)="clickedIntegrationAddButton($event)">
+    </checkout-expansion-conn-menu-list>
+  </ng-template>
+</div>

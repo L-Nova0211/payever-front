@@ -1,0 +1,168 @@
+:host {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-content {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-wrap {
+  display: flex;
+  height: 100%;
+  margin-left: 16px;
+  transform: translateX(0);
+  transition: 0.3s ease-in-out;
+}
+
+.grid-content {
+  &__right {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+pe-sidebar {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 721px) {
+  pe-sidebar {
+    transition: 0.3s ease-in-out;
+  }
+
+  .sidebar-wrap{
+    padding-bottom: 16px;
+
+    &.close {
+      transform: translateX(calc(-100% - 17px));
+    }
+  }
+
+  .grid-content {
+    &__right {
+      width: calc(100% - 270px);
+
+      &.close {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .grid-content__right {
+    width: calc(100% - 226px);
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-content {
+    padding-right: 0;
+  }
+
+  .sidebar-wrap {
+    margin: 0 16px;
+
+    &.close {
+      transform: translateX(-100vw);
+    }
+  }
+
+  .grid-content {
+    &__right {
+      transform: translateX(100%);
+
+      &.close {
+        width: 100%;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  pe-sidebar {
+    height: 100%;
+    width: calc(100vw - 32px);
+
+    .sidebar-header {
+      margin: 0 6px 22px;
+    }
+    
+    .sidebar {
+      &__content {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.active {
+  outline: none;
+  background-color: #0371e2;
+}
+
+.sidebar-item {
+  align-items: center;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 0.86;
+  margin-bottom: 3px;
+  overflow: hidden;
+  padding: 9px;
+
+  &:not(.active):hover {
+    background-color: hsla(0, 0%, 100%, 0.05);
+    outline: none;
+  }
+
+  &__icon {
+    height: 24px;
+    border-radius: 5px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 24px;
+  }
+}
+
+.item-icon {
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: top;
+  background-color: rgb(134, 134, 139);
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .abbreviation {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

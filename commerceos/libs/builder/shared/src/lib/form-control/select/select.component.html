@@ -1,0 +1,20 @@
+<div
+  class="select"
+  [class.select_disabled]="disabled"
+  (click)="openOptionList()">
+  <span *ngIf="value$ | async as value; else empty">
+    {{ value }}
+  </span>
+</div>
+<div
+  class="down"
+  [class.down_disabled]="disabled">
+  <svg width="9" height="4" viewBox="0 0 7 3" style="overflow: unset; transform: rotate(-90deg);">
+    <path fill="none" fill-rule="evenodd" stroke="#7a7a7a" d="M0 3L3.5 0 7 3" transform="rotate(-180 3.5 1.5)"/>
+  </svg>
+</div>
+<ng-template #empty>
+  <span *ngIf="placeholder">
+    {{ placeholder }}
+  </span>
+</ng-template>

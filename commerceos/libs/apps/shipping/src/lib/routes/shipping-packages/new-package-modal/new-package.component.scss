@@ -1,0 +1,63 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.main-form {
+  pre {
+    margin: 0;
+  }
+  .form-margins {
+    margin-top: 16px;
+
+    &__error {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      peb-messages {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.cdk-overlay-pane {
+  margin-top: 0;
+}
+
+.select-options {
+  span {
+    font-size: 12px;
+  }
+}
+
+.form-container {
+  margin: 0 -12px -12px;
+}
+
+.side-margin {
+  margin: 12px 12px;
+}
+
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+.carrier-box {
+  display: flex;
+  justify-content: space-between;
+  peb-checkbox {
+    width: 100%;
+  }
+  .suffix {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 105px;
+    height: 44px;
+  }
+}

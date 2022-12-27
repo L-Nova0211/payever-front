@@ -1,0 +1,22 @@
+<div class="navbar-detail" [ngClass]="theme">
+  <div></div>
+  <div class="actions-detail">
+    <div (click)="downloadImage()">
+      <mat-icon svgIcon="download"></mat-icon>
+    </div>
+
+    <div (click)="openPreviewDialog()">
+      <mat-icon svgIcon="vertical-dots"></mat-icon>
+    </div>
+    <button matDialogClose class="navbar-detail__close">
+      <mat-icon svgIcon="close"></mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="container-fluid" [ngClass]="theme">
+  <div
+    class="bg-preview preview"
+    [ngStyle]="{ 'background-image': 'url(' + (image$ | async)?.url + ')' }"
+  ></div>
+</div>

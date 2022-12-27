@@ -1,0 +1,39 @@
+.auth-code-wrapper {
+  display: flex;
+
+  :nth-child(3n) {
+    margin-right: 8px !important;
+  }
+
+  :last-child {
+    margin: 0 !important;
+  }
+
+  .digit-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #111111;
+    height: 40px;
+    width: 32px;
+    margin-right: 4px;
+
+    input {
+      height: 17px;
+      width: 9px;
+      border: 0;
+      outline: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins.scss";
+
+:host {
+  .subdashboard-header {
+
+    .content-inner {
+      @include pe_flexbox;
+      @include pe_flex(1);
+      @include pe_align-items(center);
+      max-width: 100%;
+
+      @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+        .content-inner {
+          @include pe_flexbox;
+          @include pe_flex-wrap(wrap);
+          @include pe_flex(1);
+          @include pe_align-items(center);
+
+          .subdashboard-header-title {
+            @include pe_flex(3);
+            min-width: 160px;
+          }
+
+          .buttons-wrapper {
+            padding-top: $padding-large-vertical;
+          }
+        }
+
+        .buttons-wrapper {
+          @include pe_flex(5);
+          .subdashboard-header-button-action {
+            @include pe_flex(1);
+          }
+        }
+      }
+
+    }
+
+    .content-inner-mobile {
+      display: none;
+    }
+
+    &-logo {
+      height: $grid-unit-y * 5;
+      width: $grid-unit-y * 5;
+      min-width: $grid-unit-y * 5;
+      max-width: $grid-unit-y * 5;
+      margin-right: $margin-adjust * 6;
+      @include pe_flex(1);
+    }
+
+    &-button-action {
+      margin-left: $margin-adjust * 2;
+      &:not(.dropdown-button) {
+        min-width: 0;
+      }
+    }
+
+    &-title {
+      min-width: 0;
+      .mat-expansion-panel-header-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    .buttons-wrapper {
+      @include pe_flexbox;
+      @include pe_justify-content(right);
+
+      pe-progress-button-content {
+        max-width: 100%;
+      }
+
+      .mat-button-wrapper {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+      .content-inner {
+        display: none;
+      }
+
+      .content-inner-mobile {
+        @include pe_flexbox;
+        width: 100%;
+
+        .subdashboard-header-logo {
+          height: $grid-unit-y * 7;
+          width: $grid-unit-y * 7;
+          min-width: $grid-unit-y * 7;
+          max-width: $grid-unit-y * 7;
+        }
+
+        .subdashboard-header-title {
+          @include pe_flexbox;
+          @include pe_flex-direction(column);
+          @include pe_flex(1);
+          @include pe_justify-content(space-between);
+
+          .buttons-wrapper {
+            @include pe_justify-content(space-between);
+          }
+
+          .mat-expansion-panel-header-title {
+            font-size: $font-size-large-0;
+          }
+        }
+
+        .subdashboard-header-button-action {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &.header-no-title {
+    .subdashboard-header-title {
+      mat-panel-title {
+        display: none;
+      }
+      mat-panel-description {
+        display: none;
+      }
+    }
+  }
+}

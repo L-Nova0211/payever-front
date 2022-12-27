@@ -1,0 +1,109 @@
+<div class="message-dialog-wrapper">
+  <div class="message-dialog-wrapper__header">
+    <button class="close-button" (click)="close()">Close</button>
+  </div>
+</div>
+
+<pe-grid
+  [theme]="theme"
+  [items]="gridItems$|async"
+>
+  <pe-grid-sidenav #sideNav
+  [sidenavTitle]="'Shapes'"
+  [sidenavMenu]="foldersSidenavMenu"
+  (menuItemSelected)="menuItemSelected($event)"
+  >
+    <pe-folders
+      [sideNav]="sideNav"
+      [rootFolder]="rootFolder"
+      [folders]="foldersTree$ | async"
+      [selectFolder]="getSelectedFolder"
+      (selectedDefaultFolder)="onSelectFolder($event)"
+      (selectedFolder)="onSelectFolder($event)"
+      (selectedRootFolder)="onSelectFolder($event)"
+      (createFolder)="createFolder($event)"
+      (updateFolder)="updateFolder($event)"
+      (deleteFolder)="deleteFolder($event)"
+    >
+    </pe-folders>
+  </pe-grid-sidenav>
+
+  <pe-grid-content>
+    <pe-grid-toolbar
+      *ngIf="toolbar"
+      [viewAdd]="false"
+      [viewMenu]="viewMenu"
+      [totalItems]="paginator.total"
+      [filterConfig]="toolbar.filterConfig"
+      [customMenus]="toolbar.customMenus"
+      [optionsMenu]="toolbar.optionsMenu"
+      [sortMenu]="toolbar.sortMenu"
+      (sortChange)="sortChange($event)"
+      (filtersChange)="filtersChange($event)"
+      (optionsChange)="optionsChange($event)"
+    ></pe-grid-toolbar>
+
+    <pe-grid-viewport
+      [selectable]="isListView"
+      [viewportTitle]="viewportTitle"
+      [defaultLayout]="gridLayout"
+      [allowSetQueryPArams]="true"
+      [contextMenu]="viewportContextMenu$|async"
+    >
+      <pe-grid-list
+        [viewAdd]="false"
+        [isLoading]="isLoading$ | async"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            [item]="item"
+            [template]="renderer"
+            [itemContextMenu]="itemContextMenu"
+            [allowPreview]="false"
+            [disableContextMenu]="item.basic"
+            [disableSelect]="item.basic"
+            (actionClick)="actionClick($event)"
+          >
+          </pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+
+      <pe-grid-table
+        [displayedColumns]="tableDisplayedColumns"
+        [scrollBottomOffset]="scrollBottomOffset"
+      >
+        <ng-template let-item="item">
+          <pe-table-row
+            [item]="item"
+            (actionClick)="actionClick($event)"
+          ></pe-table-row>
+        </ng-template>
+      </pe-grid-table>
+    </pe-grid-viewport>
+
+  </pe-grid-content>
+</pe-grid>
+
+<ng-template #renderer let-item="item">
+  <div class="shapes-item__image">
+    <div class="shapes-item__image-wrapper">
+      <ng-container *ngTemplateOutlet="rendererItem; context:{ item: shapeItems[item.id] }"></ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #rendererItem let-item="item">
+ <ng-container *ngIf="item?.scale">
+  <div class="renderer-wrap">
+    <peb-renderer
+      [preview]="true"
+      [style.transform]="'scale(' + item.scale + ')'"
+      [style.width.px]="item.styles.width"
+      [style.height.px]="item.styles.height"
+      [element]="item.elm.definition"
+      [stylesheet]="item.stylesheet"
+      [context]="item.elm.context"
+    ></peb-renderer>
+  </div>
+ </ng-container>
+</ng-template>

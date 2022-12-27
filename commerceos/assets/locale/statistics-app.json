@@ -1,0 +1,183 @@
+{
+  "statistics": {
+    "action": {
+      "add_widget": "Add widget",
+      "add_dashboard": "Add new dashboard",
+      "add_folder": "Add new folder",
+      "rename_dashboard": "Rename dashboard",
+      "delete_dashboard": "Delete dashboard",
+      "initial_dashboard": "Initial dashboard",
+      "new_dashboard": "New dashboard",
+      "back": "Back",
+      "next": "Next",
+      "done": "Done",
+      "add": "Add",
+      "remove_widget": "Remove widget",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "reset": "Reset",
+      "save": "Save",
+      "yes": "Yes",
+      "no": "No",
+      "full_screen_zoom": "Full screen zoom",
+      "exit_full_screen_zoom": "Exit full screen zoom"
+    },
+    "confirm_dialog": {
+      "delete_widget": "Are you really sure you want to delete this widget?",
+      "are_you_sure": "Are you sure?",
+      "subtitle_exit": "Do you really want to exit? All data will be lost and you will not be able to restore it.",
+      "subtitle_reset": "Do you really want to reset? All data will be lost and you will not be able to restore it.",
+      "subtitle_delete_widget": "Do you really want to delete widget? All data will be lost and you will not be able to restore it."
+    },
+    "filters": {
+      "calendar": "Calendar",
+      "time_range": "Time range",
+      "currency": "Currency"
+    },
+    "widget_apps": {
+      "checkout": "Checkout",
+      "shipping": "Shipping",
+      "products": "Products",
+      "pos": "Point of Sale",
+      "transactions": "Transactions",
+      "shop": "Shop",
+      "contacts": "Contacts",
+      "cart": "Cart",
+      "studio": "Studio",
+      "ads": "Ads",
+      "site": "Site",
+      "invoice": "Invoice",
+      "subscriptions": "Subscriptions"
+    },
+    "overlay_titles": {
+      "add_widget": "Add widget",
+      "widget_style": "Widget style",
+      "edit_widget": "Edit widget"
+    },
+    "sidebar": {
+      "title": "Statistics",
+      "subtitle_my": "My statistics",
+      "subtitle_calendar": "Calendar",
+      "calendar": {
+        "today": "Today",
+        "last_week": "Last week",
+        "last_month": "Last month"
+      },
+      "subtitle_apps": "Apps",
+      "subtitle_channels": "Channels"
+    },
+    "form_fields": {
+      "expandable_panels": {
+        "preview": "Preview",
+        "content": "Content"
+      },
+      "widget_name": "Widget name",
+      "field": "Field",
+      "channels": "Chennels",
+      "channels_options": {
+        "all": "All devices"
+      },
+      "businesses": "Businesses",
+      "granularity": "Granularity",
+      "devices_label": "Devices",
+      "browsers_label": "Browsers",
+      "time_frame_label": "Time frame",
+      "time_frame_options": {
+        "hourly": "Hourly",
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "yearly": "Yearly",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "last_week": "Last week",
+        "last_month": "Last month",
+        "last_year": "Last year",
+        "date_range": "Date range"
+      },
+      "start_date": "Start date",
+      "end_date": "End date",
+      "payment_status_options": {
+      },
+      "currency_label": "Currency",
+      "currency_options": {
+        "all": "All currencies",
+        "usd": "USD",
+        "eur": "EUR",
+        "dkk": "DKK",
+        "se": "SE",
+        "nok": "NOK"
+      },
+      "devices_options": {
+        "all": "All devices",
+        "desktop": "Desktop",
+        "tablet": "Tablet",
+        "mobile": "Mobile"
+      },
+      "browsers_options": {
+        "all": "All browsers",
+        "chrome": "Chrome",
+        "safari": "Safari",
+        "edge": "Edge",
+        "firefox": "firefox",
+        "other": "Other"
+      },
+      "payment_method_label": "Payment method",
+      "payment_method_options": {
+        "all": "All payment methods"
+      },
+      "metrics": "Metrics",
+      "metric_groups": {
+        "behaviorMetric": "Behavior metrics type",
+        "conversionMetric": "Conversion metric type",
+        "conversion_metric": "Conversion metric",
+        "behavior_metric": "Behavior metric",
+        "paymentStatus": "Payment status type",
+        "payment_status": "Payment status"
+      },
+      "metric_optons": {
+        "averageSuccessPayments": "Average of successful payments",
+        "conversionRate": "Conversion rate percentage",
+        "countNewPayments": "Number of new payments",
+        "countPaidPayments": "Number of paid payments",
+        "countRefunds": "Number of refunds",
+        "countSessions": "Number of total sessions",
+        "countSuccessPayments": "Number of successful payments",
+        "countUnsuccessfulPayments": "Number of unsuccessful payments",
+        "exitRate": "Exit rate percentage",
+        "maxSuccessPayments": "Max successful payment",
+        "minSuccessPayments": "Min successful payment",
+        "rateNewPayments": "Percentage of new payments",
+        "ratePaidPayments": "Percentage of paid payments",
+        "rateRefundPayments": "Percentage of refunds",
+        "rateSuccessPayments": "Percentage of successful payments",
+        "sessionDuration": "Duration of checkout session",
+        "revenue": "Revenue",
+        "totalCount": "Total number of payments"
+      }
+    },
+    "error_messages": {
+      "start_date": "Start date invalid.",
+      "end_date": "End date invalid.",
+      "time_frame": "Time frame required.",
+      "metrics": "Metrics required.",
+      "metric_type": "Metric type required.",
+      "payment_methods": "Payment method(s) required.",
+      "granularity": "Granularity required."
+    },
+    "channels": {
+      "link": "Link",
+      "commercetools": "Commerce tools",
+      "api": "Api",
+      "magento": "Magento",
+      "shop": "Shop",
+      "pos": "pos",
+      "shopify": "Shopify",
+      "woo_commerce": "Woo commerce",
+      "shopware": "Shopware",
+      "facebook-messenger": "Facebook messenger",
+      "jtl": "Jtl",
+      "finance_express": "Finance express"
+    }
+  }
+}

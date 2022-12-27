@@ -1,0 +1,76 @@
+
+@media (max-width: 720px) {
+  .contacts-dialog-wrapper {
+    width: 100%;
+    max-width: 720px;    
+  }
+}
+@media (max-height: 667px) {
+  .contacts-dialog-wrapper {
+    height: 496px;
+  }
+}
+@media (min-height: 667px) {
+  .contacts-dialog-wrapper {
+    height: 570px;
+  }
+}
+@media (min-width: 720px) and (max-width: 1076px) {
+  .contacts-dialog-wrapper {
+    width: 720px;
+  }
+}
+@media (min-width: 1076px) {
+  .contacts-dialog-wrapper {
+    width: auto;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cdk-global-overlay-wrapper {
+  .mat-dialog-container {
+    border-radius: 20px;
+    background-color: rgba(36, 39, 46, 1);
+    overflow: hidden;
+    padding: 0 0 26px 0;
+  }
+}
+
+.contacts-dialog-wrapper {
+  padding: 12px 4px;
+  &__header {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 8px;
+    .header-buttons {
+      width: 51px;
+      height: 24px;
+      border-radius: 6px;
+      outline: 0;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .close-button {
+      background-color: #86868b;
+
+    }
+    .add-button {
+      background-color: #0371e2;
+      margin-left: 8px;
+    }
+  }
+  &__content {          
+    height: calc(100% - 24px);    
+  }
+}

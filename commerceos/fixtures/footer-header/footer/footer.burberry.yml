@@ -1,0 +1,340 @@
+id: footer-page
+variant: front
+data: {}
+template:
+  id: burberry-main-page
+  type: document
+  children:
+    - id: footer1
+      type: section
+      children:
+        - id: footer-block1
+          type: block
+          children:
+            - id: footer-block1-title
+              type: text
+              data:
+                text: EASY ONLINE SHOPPING
+            - id: footer-block1-description
+              type: text
+              data:
+                text: Fast Delivery <br> Fair return policy <br> Great Customer Support
+        - id: footer-block2
+          type: block
+          children:
+            - id: footer-block2-title
+              type: text
+              data:
+                text: PAYMENT METHODS
+            - id: footer-block2-text
+              type: text
+              data:
+                text: Credit Card <br> PayPal
+        - id: footer-block3
+          type: block
+          children:
+            - id: footer-block3-title
+              type: text
+              data:
+                text: COMPANY
+            - id: footer-block3-link1
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/" style="color: #000">Home</a>'
+            - id: footer-block3-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/contacts" style="color: #000">Contact us</a>'
+            - id: footer-block3-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/category" style="color: #000">Catalogue</a>'
+            - id: footer-block3-link4
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/about" style="color: #000">About us</a>'
+    - id: footer2
+      type: section
+      children:
+        - id: footer2-section-link
+          type: text
+          data:
+            text: 'Shop with love. ♡ Made with <a href="#" peb-link-action="navigate.external-page" peb-link-payload="http://payever.org/" style="color: #8b8b8b">payever</a>'
+
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer2:
+      height: 80
+      backgroundColor: '#e3e3e3'
+      display: grid
+    footer2-section-link:
+      color: '#000'
+      margin: 20 0 0 300
+      width: 400
+      textAlign: center
+      fontSize: 18
+
+    footer1:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    footer-block1:
+      display: grid
+      height: 100
+      gridTemplateRows: 30 30
+      margin: 20 0 0 30
+    footer-block2:
+      display: grid
+      gridTemplateRows: 30 50 30
+      margin: 20 50
+    footer-block3:
+      display: grid
+      gridTemplateRows: 30 20 20 20
+      margin: 20 50
+    footer-block1-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 210
+      textAlign: left
+    footer-block2-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 150
+      textAlign: left
+    footer-block3-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 91
+      textAlign: left
+    footer-block1-description:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      textAlign: left
+      margin: 0 5 0 0
+      width: 300
+    footer-block3-link1:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link2:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link3:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link4:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block2-text:
+      width: 106
+      display: grid
+      margin: 0 0 0 0
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: 13
+
+    footer3:
+      display: none
+      gridTemplateRows: 1fr 1fr 1fr
+      height: 170
+      backgroundColor: '#e3e3e3'
+    footer3-section-link1:
+      color: '#000'
+      margin: 20 0 0 12
+      fontWeight: 400
+      fontSize: 17
+      width: 200
+      textAlign: left
+      backgroundColor: 'transparent'
+    footer3-section-link2:
+      color: '#000'
+      margin: 20 0 0 12
+      fontWeight: 400
+      width: 200
+      textAlign: left
+      fontSize: 17
+      backgroundColor: 'transparent'
+    footer3-section-title3:
+      color: '#000'
+      margin: 20 0 0 12
+      fontWeight: 600
+      width: 200
+      textAlign: left
+      fontSize: 17
+      backgroundColor: 'transparent'
+    footer3-section-link3:
+      color: '#000'
+      margin: 0 0 20 12
+      fontWeight: 400
+      width: 200
+      textAlign: left
+      fontSize: 17
+      backgroundColor: 'transparent'
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer1:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    footer-block1:
+      display: grid
+      height: 100
+      gridTemplateRows: 30 30
+      margin: 20 0 0 20
+    footer-block2:
+      display: grid
+      gridTemplateRows: 30 50 30
+      margin: 20 40
+    footer-block3:
+      display: grid
+      gridTemplateRows: 30 20 20 20
+      margin: 20 40
+    footer-block1-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      width: 210
+      textAlign: left
+      fontWeight: 700
+    footer-block2-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 150
+      textAlign: left
+    footer-block3-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 91
+      textAlign: left
+    footer-block1-description:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      textAlign: left
+      margin: 0 5 0 0
+      width: 300
+    footer-block2-text:
+      width: 106
+      margin: 0 0 0 0
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: 13
+    footer-block3-link1:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link2:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link3:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link4:
+      width: 140
+      textAlign: left
+      fontSize: 13
+
+    footer2:
+      height: 80
+      backgroundColor: '#e3e3e3'
+      display: grid
+    footer2-section-link:
+      color: '#000'
+      margin: 20 0 0 200
+      fontSize: 18
+      width: 400
+      textAlign: center
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer1:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr
+    footer-block1:
+      display: grid
+      gridTemplateRows: 30 30
+      height: 100
+      margin: 20 0 0 10
+    footer-block2:
+      display: grid
+      gridTemplateRows: 30 50 30
+      margin: 20 0 0 10
+    footer-block3:
+      display: grid
+      gridTemplateRows: 30 20 20 20
+      margin: 20 0 20 10
+    footer-block1-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 210
+      textAlign: left
+    footer-block2-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 150
+      textAlign: left
+    footer-block3-title:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      width: 91
+      textAlign: left
+    footer-block1-description:
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      textAlign: left
+      margin: 0 5 0 0
+      width: 300
+    footer-block2-text:
+      width: 106
+      margin: 0 0 0 0
+      fontFamily: Apercu Bold,Helvetica,Arial,Sans-serif
+      fontSize: 13
+    footer-block3-link1:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link2:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link3:
+      width: 140
+      textAlign: left
+      fontSize: 13
+    footer-block3-link4:
+      width: 140
+      textAlign: left
+      fontSize: 13
+
+    footer2:
+      height: 80
+      backgroundColor: '#e3e3e3'
+      display: grid
+    footer2-section-link:
+      color: '#000'
+      margin: 0 0 0 10
+      fontSize: 18
+      width: 250
+      textAlign: center
+context: {}

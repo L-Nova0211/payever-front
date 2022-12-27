@@ -1,0 +1,40 @@
+<div class="widget">
+  <div class="widget__header">
+    <div class="widget__title">Zoom</div>
+    <mat-icon svgIcon="button-close" class="widget__close" (click)="close()"></mat-icon>
+  </div>
+  <div class="widget__body">
+    <div [formGroup]="formGroup" class="scale__control">
+      <peb-range-input
+        class="combined-range-input"
+        [min]="0"
+        [max]="200"
+        formControlName="scale"
+      ></peb-range-input>
+      <peb-number-input
+        class="combined-number-input"
+        [min]="0"
+        [max]="200"
+        formControlName="scale"
+        units="%"
+      ></peb-number-input>
+    </div>
+    <div
+      class="scale-item"
+      (click)="fitToScale()"
+      [class.scale-item--active]="toFit$ | async"
+    >
+      <mat-icon svgIcon="button-fit" class="scale-item__icon"></mat-icon>
+      <div class="scale-item__title">Fit</div>
+    </div>
+    <div
+      class="scale-item"
+      *ngFor="let scale of scales"
+      [class.scale-item--active]="(scale$ | async) * 100 === scale"
+      (click)="setScale(scale)"
+    >
+      <div class="scale-item__icon"></div>
+      <div class="scale-item__title">{{ scale }}%</div>
+    </div>
+  </div>
+</div>

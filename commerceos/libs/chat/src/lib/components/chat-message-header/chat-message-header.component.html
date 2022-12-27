@@ -1,0 +1,46 @@
+<div class="message-header">
+  <div class="message-header__group">
+    <div class="message-header__from" (click)="getMember()">
+      <span *ngIf="!grouped && sender" [style.color]="accentColor" class="message-header__sender">{{ sender }}</span>
+      <span *ngIf="forward" class="message-header__sender">
+        {{ 'message-app.chat.forward-from' | translate }}
+        {{ showAuthor && forwardBy.sender ? forwardBy.senderTitle : forwardBy.messagingTitle }}
+      </span>
+    </div>
+    <div class="message-header__message-info">
+      <div class="message-header__status {{status}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8">
+          <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" opacity=".6">
+            <g [attr.stroke]="accentColor" stroke-width=".8">
+              <g>
+                <path d="M8 6.667L9.333 8 16 0" transform="translate(-1275 -536) translate(1268 536)"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8">
+          <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" opacity=".6">
+            <g [attr.stroke]="accentColor" stroke-width=".8">
+              <g>
+                <path d="M8 6.667L9.333 8 16 0" transform="translate(-1275 -536) translate(1268 536)"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="message-header__corner">
+    <div class="message-header__reply" [style.color]="accentColor" (click)="replyMessage($event)">
+      {{ 'message-app.chat-room.reply_inside_message' | translate }}
+    </div>
+    <div *ngIf="selected" class="checkbox-frame" (click)="timeClick($event)">
+      <svg class="checkbox-frame__background">
+        <use xlink:href="#icon-ui-checkbox"></use>
+      </svg>
+      <svg class="checkbox-frame__check">
+        <use xlink:href="#icon-ui-check"></use>
+      </svg>
+    </div>
+  </div>
+</div>

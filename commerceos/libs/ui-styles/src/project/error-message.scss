@@ -1,0 +1,29 @@
+
+$triangle-size: $padding-large-vertical;
+
+.pe-error-message {
+  @include border-radius($border-radius-large);
+  background-color: $color-light-yellow;
+  text-align: center;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  color: $color-solid-grey-1;
+  margin-top: $padding-base-vertical;
+  margin-bottom: $padding-base-vertical;
+  position: relative;
+
+  &.pe-error-message_arrow-top {
+    margin-top: $triangle-size + $padding-base-vertical;
+  }
+
+  &.pe-error-message_arrow-top:before {
+    @include payever_transform_translateX(-$triangle-size);
+    position: absolute;
+    content: "";
+    width: $triangle-size * 2;
+    height: $triangle-size * 2;
+    border: $triangle-size solid transparent;
+    border-bottom: $triangle-size solid $color-light-yellow;
+    top: -$triangle-size * 2;
+    left: 50%;
+  }
+}

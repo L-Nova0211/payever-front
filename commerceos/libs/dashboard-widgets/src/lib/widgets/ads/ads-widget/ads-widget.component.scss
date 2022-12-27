@@ -1,0 +1,19 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+
+.install-ads {
+  width: 100%;
+  font-size: $font-size-base;
+  font-weight: normal;
+}
+
+::ng-deep ads-widget .widget-card {
+  &-header {
+    &-icon {
+      background-size: $icon-size-20!important;
+    }
+  }
+}

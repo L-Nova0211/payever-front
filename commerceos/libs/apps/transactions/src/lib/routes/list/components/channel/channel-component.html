@@ -1,0 +1,11 @@
+<div class="container" [title]="item.columns | transactionLabel:'channel'">
+  <div class="channel-icon"
+    [class.channel-icon__big]="isBig"
+    [class.channel-icon__thumbnail]="isThumbnail"
+  >
+    <svg class="abbreviation">
+      <use [attr.xlink:href]="getIcon"></use>
+    </svg>
+  </div>
+  <span class="label" *ngIf="!isThumbnail">{{ item.columns | transactionLabel:'channel' }}</span>
+</div>

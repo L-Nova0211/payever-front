@@ -1,0 +1,13 @@
+<peb-renderer
+  *ngIf="(pageSnapshot$ | async) as snap"
+  [element]="snap.template"
+  [stylesheet]="snap.stylesheet"
+  [context]="snap.context"
+  [options.screen]="screen || snap.screen"
+  [options.scale]="scale"
+  [options.locale]="locale$ | async"
+  [options.defaultLocale]="defaultLocale$ | async"
+  [options.interactions]="true"
+  [preview]="true"
+  (interacted)="onRendererInteraction($event)"
+></peb-renderer>

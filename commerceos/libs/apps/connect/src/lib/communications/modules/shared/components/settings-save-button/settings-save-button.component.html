@@ -1,0 +1,11 @@
+<form novalidate (ngSubmit)="onSubmit()">
+  <button #submitTriggerSaveSettings id="submitTriggerSaveSettings" name="submitButton" type="submit"
+          class="native-submit"></button>
+  <div class="create-account-btn">
+    <button mat-raised-button type="button" class="no-border" (click)="submitTriggerSaveSettings.click()"
+            [class.mat-button-block]="true">
+      <pe-progress-button-content
+          [loading]="isLoading$ | async">{{ 'actions.save' | translate }}</pe-progress-button-content>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,2558 @@
+id: apple-newsroom-page
+name: Boxes with Pictures
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-newsroom-page
+  type: document
+  children:
+    - id: box-1
+      type: section
+      children:
+        - id: image-1-box-1
+          type: image
+          data:
+            src: https://www.apple.com/newsroom/images/product/os/ios/lifestyle/Apple_design-award-graphic_06222020_LP_hero.jpg.large_2x.jpg
+        - id: text-box-1
+          type: block
+          children:
+            - id: text-1-box-1
+              type: text
+              data:
+                text: UPDATE
+            - id: text-2-box-1
+              type: text
+              data:
+                text: Apple honors eight developers with annual Apple Design Awards
+            - id: text-3-box-1
+              type: text
+              data:
+                text: Apple today honored eight app and game developers from around the world for the annual Apple Design Awards.
+    - id: box-wrapper-1
+      type: section
+      children:
+        - id: box-2
+          type: block
+          children:
+            - id: image-1-box-2
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/live-action/wwdc-2020/Apple_WWDC20-keynote-tim-cook_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-2
+              type: block
+              children:
+                - id: text-1-box-2
+                  type: text
+                  data:
+                    text: PHOTOS
+                - id: text-2-box-2
+                  type: text
+                  data:
+                    text: 13 new innovative technologies and features unveiled at WWDC20
+                - id: date-box-2
+                  type: text
+                  data:
+                    text: June 26, 2020
+        - id: box-3
+          type: block
+          children:
+            - id: image-1-box-3
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/live-action/wwdc-2020/apple_apple-silicon_xcode-alert_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-3
+              type: block
+              children:
+                - id: text-1-box-3
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-3
+                  type: text
+                  data:
+                    text: Apple reveals new developer technologies to foster the next generation of apps
+                - id: date-box-3
+                  type: text
+                  data:
+                    text: June 22, 2020
+
+    - id: box-wrapper-2
+      type: section
+      children:
+        - id: box-4
+          type: block
+          children:
+            - id: image-1-box-4
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/os/macos/standard/apple_macos-bigsur_redesignedapps_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-4
+              type: block
+              children:
+                - id: text-1-box-4
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-4
+                  type: text
+                  data:
+                    text: Apple introduces macOS Big Sur with a beautiful new design
+                - id: date-box-4
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-5
+          type: block
+          children:
+            - id: image-1-box-5
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipados14_widgets_062220_LP_wide.jpg.large_2x.jpg
+            - id: text-box-5
+              type: block
+              children:
+                - id: text-1-box-5
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-5
+                  type: text
+                  data:
+                    text: iPadOS 14 introduces new features designed specifically for iPad
+                - id: date-box-5
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-3
+      type: section
+      children:
+        - id: box-6
+          type: block
+          children:
+            - id: image-1-box-6
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/os/ios/standard/Apple_ios14-widgets-redesigned_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-6
+              type: block
+              children:
+                - id: text-1-box-6
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-6
+                  type: text
+                  data:
+                    text: Apple reimagines the iPhone experience with iOS 14
+                - id: date-box-6
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-7
+          type: block
+          children:
+            - id: image-1-box-7
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/os/watchos/standard/Apple-watch-watchos7_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-7
+              type: block
+              children:
+                - id: text-1-box-7
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-7
+                  type: text
+                  data:
+                    text: watchOS 7 adds personalization, health, and fitness features to Apple Watch
+                - id: date-box-7
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-4
+      type: section
+      children:
+        - id: box-8
+          type: block
+          children:
+            - id: image-1-box-8
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/live-action/wwdc/apple-swift-student-wnners_06162020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-8
+              type: block
+              children:
+                - id: text-1-box-8
+                  type: text
+                  data:
+                    text: UPDATE
+                - id: text-2-box-8
+                  type: text
+                  data:
+                    text: WWDC20 Swift Student Challenge winners announced
+                - id: date-box-8
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-9
+          type: block
+          children:
+            - id: image-1-box-9
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/os/watchos/standard/Apple-watch-watchos7_06222020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-9
+              type: block
+              children:
+                - id: text-1-box-9
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-9
+                  type: text
+                  data:
+                    text: App Store ecosystem drove over half a trillion dollars in commerce in 2019
+                - id: date-box-9
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-5
+      type: section
+      children:
+        - id: box-10
+          type: block
+          children:
+            - id: image-1-box-10
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/live-action/wwdc/Apple_details-for-WWDC2020_06022020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-10
+              type: block
+              children:
+                - id: text-1-box-10
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-10
+                  type: text
+                  data:
+                    text: Apple reveals lineup for its biggest-ever Worldwide Developers Conference
+                - id: date-box-10
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-11
+          type: block
+          children:
+            - id: image-1-box-11
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/watch/lifestyle/Apple_pride-goes-virtual-apple-watch-pride-edition-illustration_05182020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-11
+              type: block
+              children:
+                - id: text-1-box-11
+                  type: text
+                  data:
+                    text: FEATURE
+                - id: text-2-box-11
+                  type: text
+                  data:
+                    text: New Apple Watch Pride Edition celebrates Pride
+                - id: date-box-11
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-6
+      type: section
+      children:
+        - id: box-12
+          type: block
+          children:
+            - id: image-1-box-12
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/os/macos/standard/apple_logic-pro-update_macbookpro-ipadpro_05122020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-12
+              type: block
+              children:
+                - id: text-1-box-12
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-12
+                  type: text
+                  data:
+                    text: Apple unveils major update to Logic Pro X
+                - id: date-box-12
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-13
+          type: block
+          children:
+            - id: image-1-box-13
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/values/corporate/Apple_advanced-manufacturing-fund-to-COPAN-Diagnostics_05062020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-13
+              type: block
+              children:
+                - id: text-1-box-13
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-13
+                  type: text
+                  data:
+                    text: Apple awards $10 million from Advanced Manufacturing Fund to COPAN Diagnostics
+                - id: date-box-13
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-7
+      type: section
+      children:
+        - id: box-14
+          type: block
+          children:
+            - id: image-1-box-14
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/live-action/wwdc/standard/apple_wwdc-announcement_ready-set-code_05052020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-14
+              type: block
+              children:
+                - id: text-1-box-14
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-14
+                  type: text
+                  data:
+                    text: Apple to host virtual WWDC20 beginning June 22
+                - id: date-box-14
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-15
+          type: block
+          children:
+            - id: image-1-box-15
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/mac/standard/Apple_macbookpro-13-inch_screen_05042020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-15
+              type: block
+              children:
+                - id: text-1-box-15
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-15
+                  type: text
+                  data:
+                    text: Apple updates 13-inch MacBook Pro with Magic Keyboard and twice the storage
+                - id: date-box-15
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-8
+      type: section
+      children:
+        - id: box-16
+          type: block
+          children:
+            - id: image-1-box-16
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/default_LP_wide.jpg.large_2x.jpg
+            - id: text-box-16
+              type: block
+              children:
+                - id: text-1-box-16
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-16
+                  type: text
+                  data:
+                    text: Apple Reports Second Quarter Results
+                - id: date-box-16
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-17
+          type: block
+          children:
+            - id: image-1-box-17
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/services/standard/Apple_iphone-11-pro-app-store-screen_04212020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-17
+              type: block
+              children:
+                - id: text-1-box-17
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-17
+                  type: text
+                  data:
+                    text: Apple Services now available in more countries around the world
+                - id: date-box-17
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-9
+      type: section
+      children:
+        - id: box-18
+          type: block
+          children:
+            - id: image-1-box-18
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/iphone/standard/Apple_new-iphone-se_04152020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-18
+              type: block
+              children:
+                - id: text-1-box-18
+                  type: text
+                  data:
+                    text: PRESS RELEASE
+                - id: text-2-box-18
+                  type: text
+                  data:
+                    text: 'iPhone SE: A powerful new smartphone in a popular design'
+                - id: date-box-18
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-19
+          type: block
+          children:
+            - id: image-1-box-19
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-pro-keyboard_now-available_04152020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-19
+              type: block
+              children:
+                - id: text-1-box-19
+                  type: text
+                  data:
+                    text: UPDATE
+                - id: text-2-box-19
+                  type: text
+                  data:
+                    text: New Magic Keyboard for iPad Pro now available to order
+                - id: date-box-19
+                  type: text
+                  data:
+                    text: June 22, 2020
+    - id: box-wrapper-10
+      type: section
+      children:
+        - id: box-20
+          type: block
+          children:
+            - id: image-1-box-20
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/values/corporate/Apple_make-mobility-data-available-to-aid-covid-19_04142020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-20
+              type: block
+              children:
+                - id: text-1-box-20
+                  type: text
+                  data:
+                    text: UPDATE
+                - id: text-2-box-20
+                  type: text
+                  data:
+                    text: Apple makes mobility data available to aid COVID-19 efforts
+                - id: date-box-20
+                  type: text
+                  data:
+                    text: June 22, 2020
+        - id: box-21
+          type: block
+          children:
+            - id: image-1-box-21
+              type: image
+              data:
+                src: https://www.apple.com/newsroom/images/values/corporate/Apple_google-partner-on-covid-19-contact-tracing-technology_04102020_LP_wide.jpg.large_2x.jpg
+            - id: text-box-21
+              type: block
+              children:
+                - id: text-1-box-21
+                  type: text
+                  data:
+                    text: UPDATE
+                - id: text-2-box-21
+                  type: text
+                  data:
+                    text: Apple and Google partner on COVID-19 contact tracing technology
+                - id: date-box-21
+                  type: text
+                  data:
+                    text: June 22, 2020
+stylesheets:
+  desktop:
+    apple-newsroom-page: {}
+    # ----------------------------------
+    # Desktop Body
+    # ----------------------------------
+    box-1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      width: 980
+      backgroundColor: '#f5f5f7'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-1:
+      width: 480
+      height: 300
+    text-box-1:
+      display: grid
+      gridTemplateRows: 20 100
+      margin: 42
+      width: 500
+    text-1-box-1:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-1:
+      fontSize: 24
+      fontWeight: bold
+      textAlign: left
+      width: 462
+      lineHeight: 1.16667
+    text-3-box-1:
+      fontSize: 17
+      width: 495
+      textAlign: left
+      lineHeight: 1.47059
+
+    box-wrapper-1:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: 20 auto auto auto
+      backgroundColor: '#f5f5f7'
+    box-2:
+      # display: grid
+      # gridTemplateColumns: 1fr 1fr
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-2:
+      width: 480
+      height: 270
+    text-box-2:
+      margin: 24
+    text-1-box-2:
+      color: '#0381A2'
+      width: 90
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-2:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 390
+      lineHeight: 1.16667
+    date-box-2:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-3:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-3:
+      width: 480
+      height: 270
+    text-box-3:
+      margin: 24
+    text-1-box-3:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-3:
+      fontSize: 22
+      fontWeight: bold
+      width: 428
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-3:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-2:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-4:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-4:
+      width: 480
+      height: 270
+    text-box-4:
+      margin: 24
+    text-1-box-4:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-4:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 429
+    date-box-4:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-5:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-5:
+      width: 480
+      height: 270
+    text-box-5:
+      margin: 24
+    text-1-box-5:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-5:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 415
+      lineHeight: 1.16667
+    date-box-5:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-wrapper-3:
+      width: 980
+      backgroundColor: '#f5f5f7'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    box-6:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-6:
+      width: 480
+      height: 270
+    text-box-6:
+      margin: 24
+    text-1-box-6:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-6:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 419
+    date-box-6:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-7:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-7:
+      width: 480
+      height: 270
+    text-box-7:
+      margin: 24
+    text-1-box-7:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-7:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 427
+    date-box-7:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-4:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-8:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-8:
+      width: 480
+      height: 270
+    text-box-8:
+      margin: 24
+    text-1-box-8:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 45
+      textAlign: left
+    text-2-box-8:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 425
+      lineHeight: 1.16667
+    date-box-8:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-9:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-9:
+      width: 480
+      height: 270
+    text-box-9:
+      margin: 24
+    text-1-box-9:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-9:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 425
+    date-box-9:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-5:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-10:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-10:
+      width: 480
+      height: 270
+    text-box-10:
+      margin: 24
+    text-1-box-10:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-10:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 408
+      lineHeight: 1.16667
+    date-box-10:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-11:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-11:
+      width: 480
+      height: 270
+    text-box-11:
+      margin: 24
+    text-1-box-11:
+      color: '#688000'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 51
+    text-2-box-11:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 412
+    date-box-11:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-6:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-12:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-12:
+      width: 480
+      height: 270
+    text-box-12:
+      margin: 24
+    text-1-box-12:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-12:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 393
+      lineHeight: 1.16667
+    date-box-12:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 48
+
+    box-13:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-13:
+      width: 480
+      height: 270
+    text-box-13:
+      margin: 24
+    text-1-box-13:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-13:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 428
+    date-box-13:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-7:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-14:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-14:
+      width: 480
+      height: 270
+    text-box-14:
+      margin: 24
+    text-1-box-14:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-14:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 390
+    date-box-14:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-15:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-15:
+      width: 480
+      height: 270
+    text-box-15:
+      margin: 24
+    text-1-box-15:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-15:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 412
+    date-box-15:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-8:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-16:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-16:
+      width: 480
+      height: 270
+    text-box-16:
+      margin: 24
+    text-1-box-16:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-16:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 381
+      lineHeight: 1.16667
+    date-box-16:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 48
+      width: 75
+
+    box-17:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-17:
+      width: 480
+      height: 270
+    text-box-17:
+      margin: 24
+    text-1-box-17:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-17:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 418
+    date-box-17:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-9:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-18:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-18:
+      width: 480
+      height: 270
+    text-box-18:
+      margin: 24
+    text-1-box-18:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-18:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 418
+      lineHeight: 1.16667
+    date-box-18:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-19:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-19:
+      width: 480
+      height: 270
+    text-box-19:
+      margin: 24
+    text-1-box-19:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-19:
+      fontSize: 22
+      fontWeight: bold
+      width: 420
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-19:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-10:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+    box-20:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      marginRight: 21
+    image-1-box-20:
+      width: 480
+      height: 270
+    text-box-20:
+      margin: 24
+    text-1-box-20:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 45
+      textAlign: left
+    text-2-box-20:
+      fontSize: 22
+      width: 423
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-20:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-21:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-21:
+      width: 480
+      height: 270
+    text-box-21:
+      margin: 24
+    text-1-box-21:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-21:
+      fontSize: 22
+      fontWeight: bold
+      width: 426
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-21:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+  tablet:
+    apple-newsroom-page: {}
+    # ----------------------------------
+    # Tablet Body
+    # ----------------------------------
+    box-1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      width: 980
+      backgroundColor: '#f5f5f7'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-1:
+      width: 320
+      height: 250
+    text-box-1:
+      display: grid
+      gridTemplateRows: 20 100
+      margin: 42
+      width: 400
+    text-1-box-1:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-1:
+      fontSize: 24
+      fontWeight: bold
+      textAlign: left
+      width: 383
+      lineHeight: 1.16667
+    text-3-box-1:
+      fontSize: 17
+      width: 320
+      textAlign: left
+      lineHeight: 1.47059
+
+    box-wrapper-1:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-2:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-2:
+      width: 480
+      height: 270
+    text-box-2:
+      margin: 24
+    text-1-box-2:
+      color: '#0381A2'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-2:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 390
+      lineHeight: 1.16667
+    date-box-2:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-3:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-3:
+      width: 480
+      height: 270
+    text-box-3:
+      margin: 24
+    text-1-box-3:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-3:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 428
+      lineHeight: 1.16667
+    date-box-3:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+
+    box-wrapper-2:
+      width: 980
+      display: grid
+      marginBottom: 21
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-4:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-4:
+      width: 480
+      height: 270
+    text-box-4:
+      margin: 24
+    text-1-box-4:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-4:
+      fontSize: 22
+      width: 429
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-4:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-5:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-5:
+      width: 480
+      height: 270
+    text-box-5:
+      margin: 24
+    text-1-box-5:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-5:
+      fontSize: 22
+      fontWeight: bold
+      width: 415
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-5:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-wrapper-3:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-6:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-6:
+      width: 480
+      height: 270
+    text-box-6:
+      margin: 24
+    text-1-box-6:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-6:
+      fontSize: 22
+      fontWeight: bold
+      width: 419
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-6:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-7:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-7:
+      width: 480
+      height: 270
+    text-box-7:
+      margin: 24
+    text-1-box-7:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-7:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 427
+      lineHeight: 1.16667
+    date-box-7:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-4:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-8:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-8:
+      width: 480
+      height: 270
+    text-box-8:
+      margin: 24
+    text-1-box-8:
+      color: '#4F69F8'
+      width: 45
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-8:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 425
+      lineHeight: 1.16667
+    date-box-8:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-9:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-9:
+      width: 480
+      height: 270
+    text-box-9:
+      margin: 24
+    text-1-box-9:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-9:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 425
+      lineHeight: 1.16667
+    date-box-9:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-5:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-10:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-10:
+      width: 480
+      height: 270
+    text-box-10:
+      margin: 24
+    text-1-box-10:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-10:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+      width: 408
+    date-box-10:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-11:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-11:
+      width: 480
+      height: 270
+    text-box-11:
+      margin: 24
+    text-1-box-11:
+      color: '#688000'
+      fontSize: 12
+      fontWeight: bold
+      width: 51
+      textAlign: left
+    text-2-box-11:
+      fontSize: 22
+      fontWeight: bold
+      width: 412
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-11:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 412
+      marginTop: 24
+
+    box-wrapper-6:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-12:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-12:
+      width: 480
+      height: 270
+    text-box-12:
+      margin: 24
+    text-1-box-12:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-12:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 393
+      lineHeight: 1.16667
+    date-box-12:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 48
+      width: 75
+
+    box-13:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-13:
+      width: 480
+      height: 270
+    text-box-13:
+      margin: 24
+    text-1-box-13:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-13:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 428
+      lineHeight: 1.16667
+    date-box-13:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 24
+      width: 75
+
+    box-wrapper-7:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-14:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-14:
+      width: 480
+      height: 270
+    text-box-14:
+      margin: 24
+    text-1-box-14:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-14:
+      fontSize: 22
+      fontWeight: bold
+      width: 390
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-14:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-15:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-15:
+      width: 480
+      height: 270
+    text-box-15:
+      margin: 24
+    text-1-box-15:
+      color: '#DA0F47'
+      width: 90
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-15:
+      fontSize: 22
+      fontWeight: bold
+      width: 412
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-15:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-8:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-16:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-16:
+      width: 480
+      height: 270
+    text-box-16:
+      margin: 24
+    text-1-box-16:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-16:
+      fontSize: 22
+      fontWeight: bold
+      width: 381
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-16:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 48
+
+    box-17:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-17:
+      width: 480
+      height: 270
+    text-box-17:
+      margin: 24
+    text-1-box-17:
+      color: '#DA0F47'
+      width: 90
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-17:
+      fontSize: 22
+      fontWeight: bold
+      width: 418
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-17:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-9:
+      width: 980
+      display: grid
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+    box-18:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-18:
+      width: 480
+      height: 270
+    text-box-18:
+      margin: 24
+    text-1-box-18:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-18:
+      fontSize: 22
+      fontWeight: bold
+      textAlign: left
+      width: 418
+      lineHeight: 1.16667
+    date-box-18:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-19:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-19:
+      width: 480
+      height: 270
+    text-box-19:
+      margin: 24
+    text-1-box-19:
+      color: '#4F69F8'
+      width: 45
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-19:
+      fontSize: 22
+      fontWeight: bold
+      width: 420
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-19:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+    box-wrapper-10:
+      width: 980
+      display: grid
+      backgroundColor: '#f5f5f7'
+      gridTemplateColumns: 1fr
+    box-20:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: auto
+    image-1-box-20:
+      width: 480
+      height: 270
+    text-box-20:
+      margin: 24
+    text-1-box-20:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-20:
+      fontSize: 22
+      fontWeight: bold
+      width: 423
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-20:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 24
+
+    box-21:
+      width: 480
+      height: 420
+      backgroundColor: '#fff'
+      marginBottom: 21
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 200
+    image-1-box-21:
+      width: 480
+      height: 270
+    text-box-21:
+      margin: 24
+    text-1-box-21:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-21:
+      fontSize: 22
+      fontWeight: bold
+      width: 426
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-21:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 24
+
+  mobile:
+    apple-newsroom-page: {}
+    # ----------------------------------
+    # Mobile Body
+    # ----------------------------------
+    box-1:
+      width: 414
+      height: 390.75
+      backgroundColor: '#f5f5f7'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+
+    image-1-box-1:
+      width: 300
+      height: 224
+    text-box-1:
+      margin: 24
+    text-1-box-1:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 45
+      fontWeight: bold
+      textAlign: left
+    text-2-box-1:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    text-3-box-1:
+      display: none
+
+    box-wrapper-1:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-2:
+      width: 360
+      height: 390.75
+      marginBottom: 10
+      backgroundColor: '#fff'
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-2:
+      width: 360
+      height: 270
+    text-box-2:
+      margin: 24
+      marginTop: 10
+    text-1-box-2:
+      color: '#0381A2'
+      fontSize: 12
+      fontWeight: bold
+      width: 47
+      textAlign: left
+    text-2-box-2:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 281
+      lineHeight: 1.16667
+    date-box-2:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-3:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-3:
+      width: 360
+      height: 270
+    text-box-3:
+      margin: 24
+      marginTop: 10
+    text-1-box-3:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-3:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-3:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 10
+      width: 75
+
+    box-wrapper-2:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-4:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-4:
+      width: 360
+      height: 270
+    text-box-4:
+      margin: 24
+      marginTop: 10
+    text-1-box-4:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-4:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-4:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+    box-5:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-5:
+      width: 360
+      height: 270
+    text-box-5:
+      margin: 24
+      marginTop: 10
+    text-1-box-5:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-5:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-5:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+    box-wrapper-3:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-6:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-6:
+      width: 360
+      height: 270
+    text-box-6:
+      margin: 24
+      marginTop: 10
+    text-1-box-6:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-6:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-6:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-7:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-7:
+      width: 360
+      height: 270
+    text-box-7:
+      margin: 24
+      marginTop: 10
+    text-1-box-7:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-7:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-7:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+    box-wrapper-4:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-8:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-8:
+      width: 360
+      height: 270
+    text-box-8:
+      margin: 24
+      marginTop: 10
+    text-1-box-8:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-8:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-8:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+    box-9:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-9:
+      width: 360
+      height: 270
+    text-box-9:
+      margin: 24
+      marginTop: 10
+    text-1-box-9:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-9:
+      fontSize: 17
+      width: 300
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-9:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-5:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-10:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-10:
+      width: 360
+      height: 270
+    text-box-10:
+      margin: 24
+      marginTop: 10
+    text-1-box-10:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+      width: 90
+    text-2-box-10:
+      fontSize: 17
+      width: 300
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-10:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+    box-11:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      margin: 0 0 0 30
+      borderBottom: '1px solid #d2d2d7'
+    image-1-box-11:
+      width: 360
+      height: 270
+    text-box-11:
+      margin: 24
+      marginTop: 10
+    text-1-box-11:
+      color: '#688000'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-11:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-11:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-6:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-12:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-12:
+      width: 360
+      height: 270
+    text-box-12:
+      margin: 24
+      marginTop: 10
+    text-1-box-12:
+      color: '#DA0F47'
+      width: 90
+      fontSize: 12
+      fontWeight: bold
+      textAlign: left
+    text-2-box-12:
+      fontSize: 17
+      width: 300
+      fontWeight: bold
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-12:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 20
+
+    box-13:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-13:
+      width: 360
+      height: 270
+    text-box-13:
+      margin: 24
+      marginTop: 10
+    text-1-box-13:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-13:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-13:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-7:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-14:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-14:
+      width: 360
+      height: 270
+    text-box-14:
+      margin: 24
+      marginTop: 10
+    text-1-box-14:
+      color: '#DA0F47'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-14:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-14:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-15:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-15:
+      width: 360
+      height: 270
+    text-box-15:
+      margin: 24
+      marginTop: 10
+    text-1-box-15:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-15:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-15:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-8:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-16:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-16:
+      width: 360
+      height: 270
+    text-box-16:
+      margin: 24
+      marginTop: 10
+    text-1-box-16:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-16:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-16:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 20
+
+    box-17:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-17:
+      width: 360
+      height: 270
+    text-box-17:
+      margin: 24
+      marginTop: 10
+    text-1-box-17:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-17:
+      fontSize: 17
+      fontWeight: bold
+      width: 300
+      textAlign: left
+      lineHeight: 1.16667
+    date-box-17:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-9:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-18:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-18:
+      width: 360
+      height: 270
+    text-box-18:
+      margin: 24
+      marginTop: 10
+    text-1-box-18:
+      color: '#DA0F47'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-18:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-18:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-19:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: auto
+    image-1-box-19:
+      width: 360
+      height: 270
+    text-box-19:
+      margin: 24
+      marginTop: 10
+    text-1-box-19:
+      color: '#4F69F8'
+      fontSize: 12
+      width: 90
+      fontWeight: bold
+      textAlign: left
+    text-2-box-19:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-19:
+      fontSize: 12
+      color: '#6e6e73'
+      width: 75
+      marginTop: 10
+
+    box-wrapper-10:
+      width: 360
+      backgroundColor: '#f5f5f7'
+    box-20:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-20:
+      width: 360
+      height: 270
+    text-box-20:
+      margin: 24
+      marginTop: 10
+    text-1-box-20:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-20:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-20:
+      fontSize: 12
+      color: '#6e6e73'
+      marginTop: 10
+      width: 75
+
+    box-21:
+      width: 360
+      height: 390.75
+      backgroundColor: '#fff'
+      marginBottom: 10
+      borderBottom: '1px solid #d2d2d7'
+      margin: 0 0 0 30
+    image-1-box-21:
+      width: 360
+      height: 270
+    text-box-21:
+      margin: 24
+      marginTop: 10
+    text-1-box-21:
+      color: '#4F69F8'
+      fontSize: 12
+      fontWeight: bold
+      width: 90
+      textAlign: left
+    text-2-box-21:
+      fontSize: 17
+      fontWeight: bold
+      textAlign: left
+      width: 300
+      lineHeight: 1.16667
+    date-box-21:
+      fontSize: 12
+      width: 75
+      color: '#6e6e73'
+      marginTop: 10
+
+context: {}

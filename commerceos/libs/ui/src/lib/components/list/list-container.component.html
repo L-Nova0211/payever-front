@@ -1,0 +1,12 @@
+<div class="pe-list-container">
+  <h1
+    *ngIf="title"
+    class="pe-list-container__title"
+    [class.hide-in-mobile]="hideTitleInMobile"
+  >{{ title | translate }}</h1>
+  <div class="pe-list-container__scroll-port">
+    <div class="pe-list-container__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

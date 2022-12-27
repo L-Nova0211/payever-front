@@ -1,0 +1,8 @@
+<div class="timeline-section" *ngIf="order" [ngClass]="theme">
+  <div class="section-item" *ngFor="let historyItem of history">
+    <div class="section-item__label">{{historyItem.date | date: 'dd MMMM YYYY HH:mm':undefined:locale }}</div>
+    <div class="section-item__value">
+      {{historyItem.text}}
+    </div>
+  </div>
+</div>

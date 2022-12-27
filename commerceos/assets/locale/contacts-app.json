@@ -1,0 +1,146 @@
+{
+  "contacts-app": {
+    "all_contacts": "All Contacts",
+    "all_folders": "All folders",
+    "error": "Error",
+    "actions": {
+      "add_media": "Add media",
+      "status": {
+        "title": "Status",
+        "form": {
+          "add": { "title": "Add Status" },
+          "edit": {
+            "title": "Edit Status",
+            "action": "Edit"
+          },
+          "cancel": "Cancel",
+          "save": "Save",
+          "delete": "Delete Status",
+          "status_name": "Status Name"
+        },
+        "add_status": "Add Status...",
+        "new": "New",
+        "lead": "Lead",
+        "customer": "Customer"
+      },
+      "done": "Done",
+      "save": "Save",
+      "edit": "Edit",
+      "add-new-field":"Add new Field",
+      "saving": "Saving...",
+      "loading":"Loading..."
+    },
+    "sidebar": {
+      "title": "Contacts"
+    },
+    "confirm_dialog": {
+      "buttons": {
+        "yes": "Yes",
+        "no": "No",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "close": "Close"
+      },
+      "cancel": {
+        "contact_editor": {
+          "creating": {
+            "title": "Creating contact",
+            "subtitle": "Do you really want to close creating a contact? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing contact",
+            "subtitle": "Do you really want to close editing a contact? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "contact": {
+          "title": "Delete contact",
+          "subtitle": "Are you sure you want to delete selected contact?"
+        },
+        "contacts": {
+          "title": "Delete contacts",
+          "subtitle": "Are you sure you want to delete selected contacts?"
+        }
+      }
+    },
+    "contact_editor": {
+      "create_contact": "Create contact",
+      "general": "General",
+      "type": {
+        "admin": "Admin",
+        "company": "Company",
+        "partner": "Partner",
+        "private_customer": "Private customer",
+        "title": "Type"
+      },
+      "name": "Name",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "country": "Country",
+      "mobile_phone": "Mobile phone",
+      "call": "Call",
+      "email": "E-Mail",
+      "copy": "Copy",
+      "homepage": "Homepage",
+      "visit": "Visit",
+      "street": "Street",
+      "enter_location": "Enter a location",
+      "city": "City",
+      "state": "State",
+      "zip": "ZIP"
+    },
+    "displayed_columns":{
+      "name": "Name",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "country": "Country"
+    },
+    "filter": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "folder_name": "Folder Name",
+      "email": "Email"
+    },
+    "menu": {
+      "options": "Options",
+      "import": "Import",
+      "items": {
+        "approve": "Approve",
+        "deny": "Deny"
+      }
+    },
+    "messages": {
+      "contact_added": "Contact successfully added",
+      "contact_updated": "Contact successfully updated",
+      "items_deleted": "Selected items successfully deleted",
+      "items_not_deleted": "Cannot delete items",
+      "approve_title": "Are you sure?",
+      "approve_subtitle": "Do you really want to delete these items? These items will be lost and you will not be able to restore it.",
+      "upload_process": "Upload in progress. You will be informed by email",
+      "upload_failed": "Upload of products failed",
+      "contact_deleted": "Contact successfully deleted",
+      "contact_cannot_delete": "Cannot delete contact"
+    },
+    "viewport": {
+      "title": "payever Contacts"
+    },
+    "group_modal":{
+        "cancel": "Cancel",
+        "loading": "Loading...",
+        "done": "Done",
+        "select_group": "Choose existing Folder",
+        "group_name": "Add new Folder",
+        "add_new_group":"Add Folder",
+        "title":"Add to Folder",
+        "create_folder_success":"Create folder Successfully",
+        "select_folder_required": "Select folder is required",
+        "group_name_required": "Folder name is required"
+    }
+
+  }
+}

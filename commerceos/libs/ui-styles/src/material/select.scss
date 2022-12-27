@@ -1,0 +1,140 @@
+//
+// Select
+// ----------------------------
+
+@include mat-select-theme($theme);
+
+.top-bar {
+
+  .mat-select-value {
+    width: auto;
+    display: inline-block;
+    overflow: inherit;
+    color: white;
+    max-width: unset;
+  }
+
+  .mat-select-value-text {
+    font-weight: 500;
+  }
+}
+
+.pe-bootstrap {
+  .mat-select {
+    &-panel {
+      @include panel();
+
+      &-border-radius-lg {
+        border-radius: $border-radius-base * 3;
+      }
+
+      .mat-option {
+        @include panel-item();
+
+        &-fit-content {
+          height: auto;
+        }
+
+        &.save-option-button {
+          height: 55px;
+          background-color: $color-grey-7;
+        }
+
+      }
+
+      .mat-optgroup-label {
+        margin-bottom: 0;
+      }
+
+      &-dark {
+        background-color: $color-primary-0;
+
+        .mat-select-content {
+          background-color: transparent;
+        }
+
+        .mat-optgroup-label {
+          color: $color-white;
+        }
+
+        .mat-option:hover {
+          background-color: $color-primary-3;
+        }
+
+        .mat-option-text {
+          color: $color-secondary-0;
+          font-family: $font-family-base;
+        }
+        .mat-option.mat-active.mat-selected:not(.mat-option-multiple) {
+          .mat-option-text {
+            color: $color-secondary-0;
+          }
+        }
+        .mat-option.mat-selected:not(.mat-option-multiple) {
+          background-color: $color-primary-3;
+        }
+      }
+    }
+
+    &-country {
+      &-panel {
+        max-height: 98% !important; // Material sets max-height directly on element, that's why !important is required
+
+        .mat-optgroup-label {
+          height: 1.4em;
+          margin-top: $margin-base-y;
+          line-height: 1.4em;
+        }
+
+        .mat-option {
+          height: 1.4em;
+          line-height: 1.4em;
+        }
+      }
+    }
+
+    &-arrow {
+      border-width: 0;
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        @include translate(0, -50%);
+        background-image: url($dropdown-arrow);
+        background-repeat: no-repeat;
+        appearance: none;
+        opacity: 0.2;
+        height: $icon-size-20;
+        width: $icon-size-20;
+        background-size: 100% 100%;
+        right: ceil(-$grid-unit-x / 2);
+      }
+    }
+
+    &-transparent {
+      background-color: $color-solid-grey-2;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mat-select-content {
+        background-color: $color-solid-grey-2;
+      }
+
+      .mat-option-text {
+        color: $color-white-grey-5;
+        font-family: $font-family-base;
+      }
+
+      .mat-option.mat-active.mat-selected:not(.mat-option-multiple) {
+        background-color: $color-primary-3;
+      }
+
+      .mat-option:hover:not(.mat-option-disabled) {
+        background-color: $color-solid-grey-3;
+      }
+    }
+  }
+}

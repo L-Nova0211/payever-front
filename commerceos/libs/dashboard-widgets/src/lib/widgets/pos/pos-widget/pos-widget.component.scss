@@ -1,0 +1,64 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.pos-widget-button {
+  margin-left: auto;
+  width: 50%;
+}
+/*
+.payment-methods {
+  margin-left: 14px;
+}
+.payment-methods-title {
+  line-height: normal;
+  font-size: 12px;
+}
+.payment-methods-list {
+  margin-top: 12px;
+  color: #fff;
+
+  .item {
+    margin-right: 12px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &.Santander {
+      width: 26px; // fix for not square icon
+    }
+  }
+}
+.arrow-right {
+  margin: auto 0 auto auto;
+  position: relative;
+  right: -8px;
+  color: $color-secondary-4;
+  cursor: pointer;
+}
+
+@media (max-width: $viewport-breakpoint-ipad - 1) {
+  .payment-methods-title {
+    margin-top: 3px;
+    margin-bottom: 14px;
+  }
+
+  .payment-methods-list {
+    @include pe_flexbox;
+    .item.icon-24 {
+      width: 16px;
+      height: 16px;
+      &.Santander {
+        width: 18px;
+      }
+    }
+  }
+  @media (max-width: $viewport-breakpoint-xs-1) {
+    .payment-methods-list {
+      display: block;
+    }
+  }
+}
+*/

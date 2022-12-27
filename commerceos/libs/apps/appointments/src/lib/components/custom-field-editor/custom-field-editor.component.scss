@@ -1,0 +1,92 @@
+.custom-field-option {
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    > *:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .cdk-drag-placeholder {
+      display: flex !important;
+      flex-direction: row !important;
+      visibility: hidden !important;
+      height: 100%;
+
+      div {
+        visibility: hidden !important;
+      }
+    }
+  }
+
+  &__list.cdk-drag-animating,
+  &__list.cdk-drop-list-dragging &__item:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &__select {
+    padding: 0 12px;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+
+    peb-form-background {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    > div {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__field,
+  &__handle,
+  &__remove {
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+    height: 44px;
+  }
+
+  &__select {
+    .form-background-wrapper {
+      min-width: unset !important;
+    }
+  }
+
+  &__handle,
+  &__remove {
+    align-items: center;
+    background-color: #111111;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    width: 44px;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.8;
+    }
+  }
+
+  &__handle-icon {
+    width: 16px;
+    height: 9px;
+  }
+
+  &__remove-icon {
+    width: 16px;
+    height: 18px;
+  }
+}

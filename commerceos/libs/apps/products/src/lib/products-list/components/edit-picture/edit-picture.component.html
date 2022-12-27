@@ -1,0 +1,26 @@
+<div peFileDrop [class.container__dragging]="isDragging" (onFileOver)="onFileOver($event)"
+    (onFileDrop)="onFileDrop($event)">
+
+
+    <div class="picture-wrapper" [style.minHeight]="!picture || loading ? '213px' : 'auto'">
+        <ng-container *ngIf="!loading">
+            <mat-icon *ngIf="isDragging || !picture" svgIcon="image-placeholder" style="width: 103px; height: 86px;"></mat-icon>
+
+            <div *ngIf="!picture && !isDragging">
+                <p translate>Drag & Drop here to add</p>
+            </div>
+            <img *ngIf="picture && !isDragging" class="picture-main" [src]="picture | themesMedia:'builder':'thumbnail'">
+        </ng-container>
+
+        <div *ngIf="isDragging" (click)="isDragging=false">
+            <p translate>you_can_drop_image</p>
+        </div>
+
+        <mat-progress-spinner *ngIf="loading" style="stroke: rgba(0, 0, 0, .2) !important" [strokeWidth]="2"
+            [diameter]="64" [value]="uploadProgress" [mode]="'determinate'"></mat-progress-spinner>
+    </div>
+
+    <input type="file" (change)="onFileChange($event)" #pictureUploader>
+
+    <div class="button" (click)="pictureUploader.click()">{{ 'Add image' | translate }}</div>
+</div>

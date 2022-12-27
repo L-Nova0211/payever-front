@@ -1,0 +1,108 @@
+<div
+  class="chat-header__row"
+  [style.background-color]="messageAppColor"
+  (mousedown)="callAvatar($event)"
+  (touchstart)="callAvatar($event)"
+>
+  <svg class="text-arrow" (mousedown)="callHandleArrow($event)" (touchstart)="callHandleArrow($event)">
+    <use xlink:href="#icon-arrow-left-48"></use>
+  </svg>
+  <ng-container *ngIf="title">
+      <span
+        class="chat-header__title"
+        [class.mobile-view]="mobileView"
+      >
+        <span class="chat-name">{{ title.length > 24 && mobileView ? (title | slice: 0:24) + '…' : title }}</span>
+      </span>
+  </ng-container>
+  <div class="chat-header__autocomplete" *ngIf="showContactAutocomplete">
+    <input #input type="text" [formControl]="formControl" [matAutocomplete]="auto" />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="optionSelected($event.option.value)"
+      [displayWith]="displayFn"
+      class="pe-chat-header-autocomplete">
+      <mat-option
+        *ngFor="let item of filteredItems | async; let i = index; trackBy: trackOption"
+        id="pe-chat-option-{{ i }}"
+        [value]="item">{{ item.title }}</mat-option>
+    </mat-autocomplete>
+  </div>
+  <div
+    class="chat-header__actions chat-header__actions-clickable"
+    [class.chat-header__mobile-view]="mobileView"
+  >
+    <div class="avatar">
+      <img class="avatar__img" *ngIf="avatarStyle" [src]="avatarStyle" alt="a" />
+      <div class="avatar__initials" *ngIf="!avatarStyle">
+        {{ activeChatInitials | uppercase }}
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="chat-header__row"
+  *ngIf="!(typingMembers && typingMembers.length) && members && !selectedMessages"
+  [style.background-color]="messageAppColor"
+  (click)="callAvatar($event)"
+  (mousedown)="callAvatar($event)"
+  (touchstart)="callAvatar($event)"
+>
+  <p class="chat-header__label-info members" (click)="clickOnMembers()">{{ members }} members</p>
+  <p class="chat-header__label-info members" *ngIf="liveMembersCount > 0" (click)="clickOnMembers()">
+    , {{ liveMembersCount }} online
+  </p>
+</div>
+<pe-chat-typing-dots
+  *ngIf="typingMembers && typingMembers.length > 0"
+  class="chat-dots-header"
+  [userTyping]="typingMembers"
+  [messageAppColor]="messageAppColor"
+>
+</pe-chat-typing-dots>
+<div *ngIf="selectedMessages" class="chat-header__row" [style.background-color]="messageAppColor">
+  <button class="chat-header__selected-action mr-12" (click)="selectedAction(chatHeaderSelectedActionEnum.Forward)"
+    >{{ 'message-app.chat-room.context-menu.items.forward' | translate }} <span>{{ selectedMessages }}</span></button
+  >
+  <button class="chat-header__selected-action mr-auto" (click)="selectedAction(chatHeaderSelectedActionEnum.Delete)"
+    >{{ 'message-app.chat-room.context-menu.items.delete' | translate }} <span>{{ selectedMessages }}</span></button
+  >
+  <button class="chat-header__selected-action" (click)="selectedAction(chatHeaderSelectedActionEnum.Cancel)">{{
+    'message-app.message-interface.cancel' | translate
+  }}</button>
+</div>
+<div
+  class="chat-header__row"
+  *ngIf="_pinnedMessages.length && _pinnedMessages[indexScroll] as pinMessage"
+  [style.background-color]="messageAppColor"
+>
+  <div class="chat-header-pin" (click)="clickPinnedMessage(pinMessage)">
+    <div class="chat-header-pin__dash-group chat-header-pin__dash-group_one-to-three">
+      <div
+        *ngFor="let pM of _pinnedMessages; let indx = index"
+        class="chat-header-pin__dash"
+        [class.chat-header-pin__dash_active]="indx === indexScroll"
+        [class.chat-header-pin__dash_hide]="indx > indexScroll + 3 || indx < indexScroll - 3"
+        [class.chat-header-pin__dash_shadow-hide]="indx > indexScroll + 2 || indx < indexScroll - 2"
+        [style.background-color]="accentColor"
+      ></div>
+    </div>
+    <div class="chat-header-pin__group">
+      <div
+        class="chat-header-pin__preview"
+        *ngIf="previewImage(pinMessage)"
+        [style.background-image]="previewImage(pinMessage)"
+      ></div>
+      <div>
+        <p class="chat-header-pin__label">{{ 'Pinned Message' | translate }}</p>
+        <p class="chat-header-pin__content">{{ pinMessage.content }}</p>
+      </div>
+    </div>
+  </div>
+  <div (click)="chatHeaderModeToggleMethod()">
+    <mat-icon svgIcon="edit-pin"></mat-icon>
+  </div>
+</div>
+<div class="chat-header__row" *ngIf="timeInfo?.lastSeen" [style.background-color]="messageAppColor">
+  <p class="chat-header__label-info">{{ timeInfo.lastSeen | timeAgo }} ago</p>
+</div>

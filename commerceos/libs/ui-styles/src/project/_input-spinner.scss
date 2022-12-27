@@ -1,0 +1,12 @@
+.pe-bootstrap {
+
+  .pe-input-spinner {
+    .mat-form-field-infix {
+      padding: 0;
+    }
+    .mat-form-field.mat-form-field-invalid .mat-form-field-subscript-wrapper {
+      top: 3px;
+    }
+  }
+
+}

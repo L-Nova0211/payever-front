@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="xMidYMin slice" width="100%" viewBox="0 0 64 64" fill="none">
+  <path d="M13.617 43.9149L39.149 53.4468" stroke="#8D8C92" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M25.8723 10.8936L46.9787 18.411L50.7234 19.7447" stroke="#8D8C92" stroke-width="2" stroke-linecap="round"></path>
+  <path
+    d="M30.2979 12.2553C28.9362 13.5035 26.3489 17.0213 26.8936 21.1064C27.5745 26.2128 31.9508 26.3701 30.2979 31.6596C28.5957 37.1064 18.383 32 17.0213 45.2766"
+    stroke="#8D8C92" stroke-width="2"></path>
+  <path
+    d="M46.9787 18.383C47.235 20.212 47.0268 24.3425 44.0082 27.1482C40.2348 30.6553 37.0089 28.1027 34.6695 33.1264C32.3404 38.1277 43.643 40.9653 36.2479 52.0754"
+    stroke="#8D8C92" stroke-width="2"></path>
+  <circle cx="34.0425" cy="28.2553" r="0.680851" fill="#8D8C92"></circle>
+  <rect x="31.1512" y="34.383" width="1.3617" height="4.76596" rx="0.680851" transform="rotate(23.1625 31.1512 34.383)"
+    fill="#8D8C92"></rect>
+  <path
+    d="M33.0213 13.617C32.9078 16.7943 33.7021 23.6255 35.0638 24.1702C36.4255 24.7149 42.3262 19.8581 45.2766 17.7021"
+    stroke="#8D8C92" stroke-width="2"></path>
+  <circle cx="32" cy="32" r="31" stroke="#8F8E94" stroke-width="2"></circle>
+  <circle cx="55.1489" cy="55.1489" r="8.85106" fill="#8D8C92"></circle>
+  <path d="M55.1489 47.6595V55.4893L60.2553 59.234" stroke="white"></path>
+</svg>

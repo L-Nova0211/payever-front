@@ -1,0 +1,176 @@
+<div class="invoice-text">
+  <form *ngIf="form"
+    novalidate
+    [ngClass]="{'clumped': !spreadButtons}"
+    [formGroup]="form"
+    (keydown)="onFormKey($event)">
+    <button
+      *ngIf="!hideLink"
+      mat-raised-button
+      [class.button-settings-toggle]="true"
+      [class.mat-button-xxs]="true"
+      [class.mat-button-menu]="true"
+      [class.mat-button-small-padding]="true"
+      [matMenuTriggerFor]="linksMenu"
+      pe-qa-text-editor-toolbar="links"
+    >
+      <span [innerHtml]="linkToText"></span>
+      <svg class="icon icon-16" width="17" height="17">
+        <use xlink:href="#icon-arrow-down-small-16"></use>
+      </svg>
+    </button>
+    <mat-menu #linksMenu="matMenu">
+      <div (click)="$event.stopPropagation()">
+        <pe-form-fieldset
+          [isSubmitted]="isSubmitted"
+          [fields]="hrefFieldset"
+          [formGroup]="form"
+          [errors]="errors$ | async"
+          [formStyle]="'dark'"
+          [orientation]="'horizontal'"
+        ></pe-form-fieldset>
+      </div>
+
+      <ng-container *ngIf="!hideLink">
+        <ng-container *ngFor="let link of links">
+          <button mat-menu-item
+            (click)="setCurrentLink(link); $event.stopPropagation()"
+            [attr.pe-qa-text-editor-toolbar]="'links-' + parseAttribute(link.title)">
+            <span>{{ link.title }}</span>
+            <svg *ngIf="isActiveLink(link)" width="17" height="17">
+              <use xlink:href="#icon-checkmark-24"></use>
+            </svg>
+          </button>
+        </ng-container>
+      </ng-container>
+    </mat-menu>
+    <pe-form-fieldset
+      *ngIf="!hideOpenNewTab && !hideLink"
+      [isSubmitted]="isSubmitted"
+      [fields]="openInNewTabFieldset"
+      [formGroup]="form"
+      [errors]="errors$ | async"
+      [formStyle]="'dark'"
+      [orientation]="'horizontal'"
+      ></pe-form-fieldset>
+    <pe-form-fieldset
+       class="font-size"
+      *ngIf="!hideFontSize"
+      [isSubmitted]="isSubmitted"
+      [fields]="fontFieldset"
+      [formGroup]="form"
+      [errors]="errors$ | async"
+      [formStyle]="'dark'"
+      [orientation]="'horizontal'"
+    ></pe-form-fieldset>
+    <pe-form-fieldset
+      *ngIf="!hideFontFamily && fontFamilies.length"
+      [isSubmitted]="isSubmitted"
+      [fields]="fontFamilyFieldset"
+      [formGroup]="form"
+      [errors]="errors$ | async"
+      [formStyle]="'dark'"
+      [orientation]="'horizontal'"
+    ></pe-form-fieldset>
+    <pe-form-fieldset
+      *ngIf="!hideColorPicker"
+      class="right-space"
+      [isSubmitted]="isSubmitted"
+      [fields]="colorFieldset"
+      [formGroup]="form"
+      [errors]="errors$ | async"
+      [formStyle]="'dark'"
+      [orientation]="'horizontal'"
+    ></pe-form-fieldset>
+    <div *ngIf="!hideDecorations" class="actions style">
+      <button
+        (click)="decorationClick(ExecuteCommands.BOLD)"
+        pe-qa-text-editor-toolbar="bold"
+        [ngClass]="{'active': textDecoration[ExecuteCommands.BOLD]}">
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-bold-16"></use>
+        </svg>
+      </button>
+      <button
+        (click)="decorationClick(ExecuteCommands.ITALIC)"
+        pe-qa-text-editor-toolbar="italic"
+        [ngClass]="{'active': textDecoration[ExecuteCommands.ITALIC]}"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-italic-16"></use>
+        </svg>
+      </button>
+      <button
+        (click)="decorationClick(ExecuteCommands.UNDERLINE)"
+        [ngClass]="{'active': textDecoration[ExecuteCommands.UNDERLINE]}"
+        pe-qa-text-editor-toolbar="underline"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-underline-16"></use>
+        </svg>
+      </button>
+    </div>
+    <div *ngIf="!hideJustifies" class="actions align">
+      <button
+        [ngClass]="{'active': justifyContent === ExecuteCommands.JUSTIFY_LEFT}"
+        pe-qa-text-editor-toolbar="justify-left"
+        (click)="justifyClick(ExecuteCommands.JUSTIFY_LEFT)"
+      >
+        <svg style="transform: rotateY(180deg)" class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-justify-right-16"></use>
+        </svg>
+      </button>
+      <button
+        pe-qa-text-editor-toolbar="justify-center"
+        [ngClass]="{'active': justifyContent === ExecuteCommands.JUSTIFY_CENTER}"
+        (click)="justifyClick(ExecuteCommands.JUSTIFY_CENTER)"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-justify-center-16"></use>
+        </svg>
+      </button>
+      <button
+        [ngClass]="{'active': justifyContent === ExecuteCommands.JUSTIFY_RIGHT}"
+        pe-qa-text-editor-toolbar="justify-right"
+        (click)="justifyClick(ExecuteCommands.JUSTIFY_RIGHT)"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-justify-right-16"></use>
+        </svg>
+      </button>
+      <button
+        [ngClass]="{'active': justifyContent === ExecuteCommands.JUSTIFY_FULL}"
+        pe-qa-text-editor-toolbar="justify-full"
+        (click)="justifyClick(ExecuteCommands.JUSTIFY_FULL)"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-justify-full-16"></use>
+        </svg>
+      </button>
+    </div>
+    <div *ngIf="!hideLists" class="actions list">
+      <button
+        [ngClass]="{'active': contentList === ExecuteCommands.LIST_UNORDERED}"
+        pe-qa-text-editor-toolbar="list-unordered"
+        (click)="listClick(ExecuteCommands.LIST_UNORDERED)"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-unordered-list-16"></use>
+        </svg>
+      </button>
+      <button
+        [ngClass]="{'active': contentList === ExecuteCommands.LIST_ORDERED}"
+        pe-qa-text-editor-toolbar="list-ordered"
+        (click)="listClick(ExecuteCommands.LIST_ORDERED)"
+      >
+        <svg class="icon icon-16" width="17" height="17">
+          <use xlink:href="#icon-me-ordered-list-16"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="placeholder">
+      <button #placeholderBtn (click)="openPlaceholderMenu()">Placeholder</button>
+    </div>
+  </form>
+
+</div>

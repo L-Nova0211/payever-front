@@ -1,0 +1,69 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+input,
+button,
+select,
+.controls {
+  color: white;
+  background: transparent;
+  width: 100%;
+}
+
+option {
+  background: #222;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  margin-top: 1em;
+}
+
+input,
+button,
+select{
+  border: 1px solid #373c41;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+button:hover:not([disabled]) {
+  background: #383838;
+  cursor: pointer;
+}
+
+button:nth-child(odd) {
+  margin-right: 1em;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+mat-selection-list {
+  width: 100%;
+  max-height: 250px;
+  overflow-y: scroll;
+
+  mat-list-option {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+
+    &__hotkey {
+      opacity: 0.3;
+    }
+  }
+}

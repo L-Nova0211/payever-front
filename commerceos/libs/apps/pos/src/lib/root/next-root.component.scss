@@ -1,0 +1,211 @@
+@import "theming/theming";
+@import "theming/all-theme";
+@import "~@pe/ui-kit/scss/pe_variables";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+$regular-text-color: darken(#ffffff, 10%);
+$regular-light-text-color: #111111;
+$content-transparent-background-color: rgba(0, 0, 0, 0.3);
+$content-transparent-button-background-color: rgba(0, 0, 0, 0.5);
+$content-transparent-border-color: rgba(255, 255, 255, 0.1);
+
+.dark {
+  @include peb-theme($theme-dark);
+  &.root {
+    background-color: #24272e;
+  }
+}
+.light {
+  @include peb-theme($theme-light);
+  &.root {
+    background-color: #f3f2f8;
+  }
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+  }
+}
+
+.sidebar-wrap {
+  padding-left: 11px;
+}
+
+
+
+peb-pos {
+  .nav-content {
+    .grid-content__right {
+      margin-right: 22px;
+      width: 100%;
+
+      @media (max-width: 720px) {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.settings-widget-panel {
+  .overlay-widget-container .overlay-widget__content{
+    height: calc(100% - 71px);
+  }
+}
+
+
+cos-next-root {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+div.navbar-container {
+  @media (min-width: 720px) {
+    padding-left: 0;
+  }
+
+  peb-terminal-dashboard {
+    .ng-scroll-content {
+      background: white;
+      min-height: 100vh;
+      position: relative !important;
+    }
+  }
+}
+
+.peb-pos-client {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: overlay !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 720px) {
+  pe-sidebar {
+    z-index: 3 !important;
+    top: -4px !important;
+  }
+}
+
+.pos-app {
+  height: calc(100% - 60px);
+  @media (max-width: 720px) {
+    height: calc(100% - 70px);
+  }
+}
+
+.builder-dialog .mat-dialog-container {
+  border-radius: 12px;
+  img {
+    vertical-align: top;
+  }
+  @media (max-width: 720px) {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    .widget {
+      height: 100%;
+    }
+  }
+}
+
+.pe-context-menu ul li span {
+  font-weight: 400;
+}
+
+pe-third-party-root-form {
+  &.qr-connect {
+    .tpm-outer-container.pe-info-box-container-fixed {
+      width: 100%;
+      min-height: auto;
+
+      .pe-info-box {
+        padding: 0;
+        width: 100%;
+        min-width: fit-content;
+
+        mat-card.mat-card {
+          margin: 0;
+          width: 100%;
+          max-width: 100%;
+
+          .mat-card-content {
+            background-color: #24272e;
+
+            .content-wrapper {
+              background-color: transparent;
+
+              .mat-accordion .mat-expansion-panel {
+                margin-top: 0;
+                margin-bottom: 0;
+                .mat-expansion-panel-header {
+                  border: none;
+                  background-color: rgba(0, 0, 0, 0.3);
+
+                  .mat-content mat-panel-title {
+                    font-family: Roboto, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding-left: 0;
+                    text-transform: none;
+                    color: $regular-text-color;
+                  }
+
+                  .mat-expansion-indicator {
+                    color: $regular-text-color;
+                  }
+                }
+
+                .mat-expansion-panel-body {
+                  padding: 0;
+                }
+
+                mat-list.mat-list.mat-list-base mat-list-item.mat-list-item .mat-list-item-content {
+                  height: fit-content !important;
+
+                  .mat-list-item-flex {
+                    padding: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.light {
+    background-color: transparent;
+
+    .content-wrapper .mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+      background-color: rgba(255, 255, 255, 0.7);
+
+      .mat-content mat-panel-title {
+        color: $regular-light-text-color;
+      }
+
+      .mat-expansion-indicator {
+        color: $regular-light-text-color;
+      }
+    }
+  }
+
+  &.transparent {
+    background-color: $content-transparent-background-color;
+
+    .content-wrapper .mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+      background-color: $content-transparent-button-background-color;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="1.3 1 25 25">
+  <defs>
+    <filter id="37she18jma" width="160%" height="160%" x="-30%" y="-30%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1"
+                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="currentColor" fill-rule="evenodd">
+    <g filter="url(#37she18jma)">
+      <path
+        d="M14 19.489l-4.488 1.986c-.445.197-.966-.004-1.163-.45-.063-.14-.087-.295-.071-.447l.502-4.882-3.276-3.654c-.325-.363-.295-.92.068-1.246.115-.102.254-.173.404-.206l4.798-1.03 2.463-4.245c.244-.421.784-.565 1.206-.32.133.077.243.187.32.32l2.463 4.244 4.798 1.031c.477.103.78.572.677 1.048-.032.15-.103.29-.205.404l-3.276 3.654.502 4.882c.05.485-.302.918-.787.968-.153.015-.307-.009-.447-.071L14 19.489z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+
+  .backdrop {
+    z-index: 1;
+  }
+
+  .overlay {
+    z-index: 2;
+
+    &__body {
+      padding: 0 12px 12px 12px;
+    }
+  }
+}

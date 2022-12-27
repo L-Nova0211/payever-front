@@ -1,0 +1,250 @@
+<div class="field-form-container">
+  <div class="field-margin" *ngIf="showFieldTypeSelect">
+    <peb-form-background>
+      <peb-select
+        selectType="label"
+        label="Field type"
+        placeholder="Select field type"
+        [formControl]="fieldTypeControl"
+      >
+        <peb-select-option
+          *ngFor="let item of fieldType"
+          value="{{ item.value }}"
+          label="{{ item.label }}"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+  </div>
+
+  <ng-container *ngIf="fieldTypeControl.value === 'text'">
+    <div class="field-margin">
+      <peb-form-background *ngIf="overlayData.readonlyName">
+        <peb-form-field-input appearance="label" label="Form field name">
+          <input placeholder="Enter name" [formControl]="nameControl" />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="fieldTypeControl.value === 'data'">
+    <form [formGroup]="fieldForm">
+      <ng-container *ngIf="doesDimensionExist('channel')">
+        <ng-container
+          *ngTemplateOutlet="
+            selectForm;
+            context: { label: 'statistics.form_fields.channels', control: 'channel', options: channels }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="doesDimensionExist('device')">
+        <ng-container
+          *ngTemplateOutlet="
+            selectForm;
+            context: { label: 'statistics.form_fields.devices_label', control: 'device', options: devices }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="doesDimensionExist('browser')">
+        <ng-container
+          *ngTemplateOutlet="
+            selectForm;
+            context: { label: 'statistics.form_fields.browsers_label', control: 'browser', options: browsers }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <ng-container
+        *ngTemplateOutlet="
+          selectForm;
+          context: { label: 'statistics.form_fields.time_frame_label', control: 'timeFrame', options: timeFrames }
+        "
+      ></ng-container>
+
+      <ng-container *ngIf="widgetService.viewType === 'LineGraph' && overlayData.fieldId === 2">
+        <ng-container
+          *ngTemplateOutlet="
+            selectForm;
+            context: {
+              label: 'statistics.form_fields.granularity',
+              control: 'lineGraphGranularity',
+              options: lineGraphGranularity
+            }
+          "></ng-container>
+
+        <div class="form-margin__error" *ngIf="fieldForm?.controls?.lineGraphGranularity?.invalid">
+          <peb-messages message="{{ 'statistics.error_messages.granularity' | translate }}"></peb-messages>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="fieldForm.value.timeFrame === 'date_range'">
+        <div class="field-margin">
+          <peb-form-background>
+            <peb-form-field-input label="{{ 'statistics.form_fields.start_date' | translate }}" appearance="label">
+              <input
+                type="datetime"
+                pebInput
+                placeholder="DD.MM.YYYY"
+                formControlName="dateTimeFrom"
+                (click)="openDatepicker($event, 'dateTimeFrom')"
+                #dateFromInput
+              />
+              <div class="suffix-icon">
+                <mat-icon
+                  svgIcon="datetime-picker"
+                  (click)="openDatepicker({ target: dateFromInput }, 'dateTimeFrom')"
+                ></mat-icon>
+              </div>
+            </peb-form-field-input>
+          </peb-form-background>
+
+          <div class="form-margin__error">
+            <peb-messages
+              *ngIf="fieldForm?.controls?.dateTimeFrom?.invalid"
+              message="{{ 'statistics.error_messages.start_date' | translate }}"
+            ></peb-messages>
+          </div>
+        </div>
+
+        <div class="field-margin">
+          <peb-form-background>
+            <peb-form-field-input label="{{ 'statistics.form_fields.end_date' | translate }}" appearance="label">
+              <input
+                type="datetime"
+                pebInput
+                placeholder="DD.MM.YYYY"
+                formControlName="dateTimeTo"
+                (click)="openDatepicker($event, 'dateTimeTo')"
+                #dateToInput
+              />
+              <div class="suffix-icon">
+                <mat-icon
+                  svgIcon="datetime-picker"
+                  (click)="openDatepicker({ target: dateToInput }, 'dateTimeTo')"
+                ></mat-icon>
+              </div>
+            </peb-form-field-input>
+          </peb-form-background>
+
+          <div class="form-margin__error">
+            <peb-messages
+              *ngIf="fieldForm?.controls?.dateTimeTo?.invalid"
+              message="{{ 'statistics.error_messages.end_date' | translate }}"
+            ></peb-messages>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="field-margin">
+        <peb-form-background>
+          <peb-select
+            selectType="label"
+            label="{{ 'statistics.form_fields.metrics' | translate }}"
+            formControlName="metrics">
+            <peb-select-option
+              *ngFor="let metric of metrics"
+              [label]="metric.type"
+              [value]="metric.formName"
+            ></peb-select-option>
+          </peb-select>
+        </peb-form-background>
+      </div>
+
+      <div class="form-margin__error" *ngIf="fieldForm?.controls?.metrics?.invalid">
+        <peb-messages message="{{ 'statistics.error_messages.metrics' | translate }}"></peb-messages>
+      </div>
+
+      <div class="field-margin" *ngIf="fieldForm?.controls?.metrics?.value">
+        <peb-form-background>
+          <peb-select
+            selectType="label"
+            label="{{ 'statistics.form_fields.metric_groups.' + metricsType?.formName | translate }}"
+            formControlName="metricsType"
+          >
+            <peb-select-option
+              *ngFor="let metric of metricsType?.list"
+              [label]="metric.label"
+              [value]="metric.value"
+            ></peb-select-option>
+          </peb-select>
+        </peb-form-background>
+      </div>
+
+      <div class="form-margin__error" *ngIf="fieldForm?.controls?.metrics?.value && fieldForm?.controls?.metricsType?.invalid">
+        <peb-messages message="{{ 'statistics.error_messages.metric_type' | translate }}"></peb-messages>
+      </div>
+
+      <ng-container *ngIf="doesDimensionExist('currency')">
+        <ng-container
+          *ngTemplateOutlet="
+            selectForm;
+            context: { label: 'statistics.form_fields.currency_label', control: 'currency', options: currencies }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="doesDimensionExist('paymentMethod')">
+        <ng-container
+          *ngTemplateOutlet="
+            multipleSelectForm;
+            context: {
+              label: 'statistics.form_fields.payment_method_label',
+              control: 'paymentMethod',
+              options: paymentMethods
+            }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <div class="field-margin" *ngIf="showChips()">
+        <peb-form-background>
+          <div class="chips-container">
+            <ng-container *ngFor="let item of fieldForm?.controls?.paymentMethod?.value; let i = index">
+              <span class="chip">
+                {{ getChipLabel(item) }}
+              </span>
+            </ng-container>
+          </div>
+        </peb-form-background>
+      </div>
+
+      <ng-template #selectForm let-control="control" let-label="label" let-options="options">
+        <div class="field-margin">
+          <peb-form-background>
+            <peb-select selectType="label" label="{{ label | translate }}" formControlName="{{ control }}">
+              <peb-select-option
+                *ngFor="let item of options"
+                value="{{ item.value }}"
+                label="{{ item.label }}"
+              ></peb-select-option>
+            </peb-select>
+          </peb-form-background>
+        </div>
+      </ng-template>
+
+      <ng-template #multipleSelectForm let-control="control" let-label="label" let-options="options">
+        <div class="field-margin">
+          <peb-form-background>
+            <peb-select
+              selectType="label"
+              label="{{ label | translate }}"
+              formControlName="{{ control }}"
+              [multiple]="true"
+            >
+              <peb-select-option
+                *ngFor="let item of options"
+                value="{{ item.value }}"
+                label="{{ item.label }}"
+              ></peb-select-option>
+            </peb-select>
+          </peb-form-background>
+        </div>
+      </ng-template>
+    </form>
+  </ng-container>
+
+  <button *ngIf="fieldTypeControl.value" class="reset-btn" (click)="onReset()">
+    {{ 'statistics.action.reset' | translate }}
+  </button>
+</div>

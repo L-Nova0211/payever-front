@@ -1,0 +1,156 @@
+id: header-page
+variant: front
+data: {}
+template:
+  id: tesla-main-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            text: TESLA
+        - id: header-menu
+          type: menu
+          data:
+            routes:
+              - title: MODEL S
+                route: /category
+              - title: MODEL 3
+                route: /category
+              - title: MODEL X
+                route: /category
+              - title: MODEL Y
+                route: /category
+              - title: SOLAR ROOF
+                route: /category
+              - title: SOLAR PANELS
+                route: /contacts
+        - id: header-cart
+          type: shop-cart
+
+stylesheets:
+  desktop:
+    tesla-main-page: {}
+
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 64
+      position: sticky
+      top: 0
+      zIndex: 1
+      display: grid
+      gridTemplateColumns: 1fr 2fr 1fr
+    header-logo:
+      fontSize: 24
+      fontWeight: 700
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 15 20
+    header-menu:
+      fontSize: 14
+      fontWeight: 700
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#393c41'
+      margin: 5 20
+    header-cart:
+      width: 24
+      height: 30
+      margin: 10 20 0 100
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+    header-mobile-menu: {}
+
+  tablet:
+    tesla-main-page: {}
+
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      fontSize: 24
+      fontWeight: 700
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 20 20
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      color: '#393c41'
+      margin: 20 12
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 5 20 0 580
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+  mobile:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Mobile Upper-banner
+    # ----------------------------------
+    upper-banner:
+      backgroundColor: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#fff'
+      fontSize:  15
+      height: 40
+      width: 360
+      top: 0
+      display: grid
+      gridTemplateColumns: 150 1fr 100
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      fontSize: 20
+      fontWeight: 700
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      color: '#393c41'
+      margin: 10 0 0 0
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 0 30 0 150
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+context: {}

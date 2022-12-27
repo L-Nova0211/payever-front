@@ -1,0 +1,9 @@
+<div class="group">
+  <div
+  *ngFor="let option of options"
+  (click)="onSelect(option.value)"
+  class="group__row group__option"
+  >
+    {{ option.title }}
+  </div>
+</div>

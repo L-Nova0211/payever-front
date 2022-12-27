@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  position: relative;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.nav-content {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}

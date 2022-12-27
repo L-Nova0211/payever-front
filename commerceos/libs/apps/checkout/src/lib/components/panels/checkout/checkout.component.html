@@ -1,0 +1,90 @@
+<div class="checkout-panel-header">
+  <div
+    class="checkout-panel-header__action"
+    translate
+    (click)="onOpenDirectLink()">
+    actions.open
+  </div>
+  <div
+    class="checkout-panel-header__icon"
+    [matMenuTriggerFor]="checkoutMenu">
+    <svg>
+      <use xlink:href="#icon-dots-block-24"></use>
+    </svg>
+  </div>
+  <mat-menu
+    #checkoutMenu="matMenu"
+    [backdropClass]="theme === 'dark' || theme === 'default' ? 'checkout-mat-menu' : 'checkout-mat-menu-' + theme">
+    <div
+      class="checkout-panel-header-menu"
+      (click)="$event.stopPropagation()">
+      <div class="checkout-panel-header-menu__title">
+        <div translate>directLinkEditing.menuTitle</div>
+        <svg
+          class="checkout-panel-header-menu__title-icon"
+          (click)="checkoutMenu.closed.emit()">
+          <use xlink:href="#icon-x-solid-24"></use>
+        </svg>
+      </div>
+      <div
+        class="checkout-panel-header-menu__item selectable"
+        (click)="checkoutMenu.closed.emit(); copyLink()">
+        <div class="checkout-panel-header-menu__item-content">
+          <svg class="icon">
+            <use xlink:href="#icon-link3-16"></use>
+          </svg>
+          <div
+            class="checkout-panel-header-menu__name"
+            translate>
+            directLinkEditing.actions.copyLink
+          </div>
+        </div>
+      </div>
+      <div
+        class="checkout-panel-header-menu__item selectable"
+        (click)="checkoutMenu.closed.emit(); copyLinkWithPrefilled()">
+        <div class="checkout-panel-header-menu__item-content">
+          <svg class="icon">
+            <use xlink:href="#icon-link-prefilled-16"></use>
+          </svg>
+          <div
+            class="checkout-panel-header-menu__name"
+            translate>
+            directLinkEditing.actions.copyWithPrefilled
+          </div>
+        </div>
+      </div>
+      <div
+        class="checkout-panel-header-menu__item selectable"
+        (click)="checkoutMenu.closed.emit(); wrapperService.doEmailPrefilled()">
+        <div class="checkout-panel-header-menu__item-content">
+          <svg class="icon">
+            <use xlink:href="#icon-contact"></use>
+          </svg>
+          <div
+            class="checkout-panel-header-menu__name"
+            translate>
+            directLinkEditing.actions.emailLink
+          </div>
+        </div>
+      </div>
+      <div
+        class="checkout-panel-header-menu__item selectable"
+        (click)="checkoutMenu.closed.emit(); getQr()">
+        <div class="checkout-panel-header-menu__item-content">
+          <svg class="icon">
+            <use xlink:href="#icon-communications-qr-white"></use>
+          </svg>
+          <div
+            class="checkout-panel-header-menu__name"
+            translate>
+            directLinkEditing.actions.qr
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-menu>
+</div>
+<div class="checkout-main-content">
+  <root-checkout-wrapper></root-checkout-wrapper>
+</div>

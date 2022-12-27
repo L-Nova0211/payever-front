@@ -1,0 +1,17 @@
+.form-container {
+  width: 100%;
+}
+
+.statistics-preview {
+  display: flex;
+  justify-content: center;
+  .small {
+    max-width: 142px;
+  }
+  .medium {
+    max-width: 284px;
+  }
+  .large {
+    max-width: 284px;
+  }
+}

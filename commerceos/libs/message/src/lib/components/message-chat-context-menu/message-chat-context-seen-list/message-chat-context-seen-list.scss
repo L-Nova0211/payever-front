@@ -1,0 +1,11 @@
+.pe-context-menu-seen-list {
+  display: flex;
+  flex-direction: row;
+  
+  &__row{
+    width: 13px;
+    &:last-child {
+      width: 26px;
+    }
+  }
+}

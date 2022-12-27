@@ -1,0 +1,235 @@
+<pe-folders-material-styles></pe-folders-material-styles>
+<pe-folders-skeleton *ngIf="isLoading || isGlobalLoading"></pe-folders-skeleton>
+<div
+  #treeContainer
+  cdkDropListGroup
+  class="folder-tree"
+  [class.hidden]="isLoading || isGlobalLoading"
+>
+  <div
+    cdkDropList
+    [cdkDropListSortingDisabled]="true"
+    (cdkDropListEntered)="onRootEnteredList($event, rootFolder)"
+    (cdkDragExited)="handleDragEnd()"
+    (cdkDropListDropped)="handleRootDrop(rootFolder)"
+  >
+    <div
+      [ngClass]="dragRootNodeAreaType()"
+      [ngClass]="theme"
+      class="folder-tree__node {{theme}}"
+      *ngIf="rootFolder"
+      (click)="rootNodeSelect(rootFolder)"
+      [style.--folder-level]="0"
+      [class.folder-tree__node--active]="enableMarkAsActive && isSelectedRootItem"
+    >
+      <div class="folder-tree__node-container">
+        <div class="folder-tree__node-container-data">
+          <div class="folder-tree__node-image" [class.is-avatar]="rootFolder?.isAvatar">
+            <img
+              *ngIf="!rootFolder?.imageIcon && !rootFolder?.abbrText"
+              [src]="rootFolder?.image || defaultFolderIcon"
+              class="folder-tree__node-img"
+            />
+            <svg *ngIf="rootFolder?.imageIcon">
+              <use [attr.xlink:href]="rootFolder.imageIcon"></use>
+            </svg>
+            <span *ngIf="rootFolder?.abbrText" class="folder-tree__node-abbr">{{rootFolder.abbrText}}</span>
+          </div>
+          <span class="folder-tree__node-name">{{ rootFolder.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-tree [dataSource]="dataSource"
+    [treeControl]="treeControl"
+  >
+    <div
+      class="external-list"
+      cdkDropList
+      [cdkDropListSortingDisabled]="true"
+      #externalDropList="cdkDropList"
+    ></div>
+
+    <!-- This is the tree node template for leaf nodes -->
+    <mat-tree-node *matTreeNodeDef="let node;"
+      cdkDropList
+      [cdkDropListSortingDisabled]="true"
+      (cdkDropListEntered)="onEnteredList($event, node)"
+      (cdkDragExited)="handleDragEnd()"
+      (cdkDropListDropped)="handleDrop(node)"
+    >
+      <div
+        cdkDrag
+        [cdkDragStartDelay]="dndDelay"
+        [cdkDragBoundary]="treeContainer"
+        [cdkDragData]="node"
+        [cdkDragDisabled]="node.isProtected || node.editing"
+        (cdkDragStarted)="handleDragStart(node)"
+        (cdkDragMoved)="onDragMoved($event)"
+      >
+        <ng-container *ngTemplateOutlet="folderNode; context: {node: node}"></ng-container>
+      </div>
+    </mat-tree-node>
+    <!-- This is the tree node template for expandable nodes -->
+    <mat-tree-node *matTreeNodeDef="let node; when: hasChildren"
+      cdkDropList
+      [cdkDropListSortingDisabled]="true"
+      (cdkDropListEntered)="onEnteredList($event, node)"
+      (cdkDragExited)="handleDragEnd()"
+      (cdkDropListDropped)="handleDrop(node)"
+    >
+      <div
+        cdkDrag
+        [cdkDragStartDelay]="dndDelay"
+        [cdkDragBoundary]="treeContainer"
+        [cdkDragData]="node"
+        [cdkDragDisabled]="node.isProtected"
+        (cdkDragStarted)="handleDragStart(node)"
+        (cdkDragMoved)="onDragMoved($event)"
+      >
+        <ng-container *ngTemplateOutlet="folderNode; context: {node: node}"></ng-container>
+      </div>
+    </mat-tree-node>
+    <mat-tree-node *matTreeNodeDef="let node; when: isCreateHeadline" [class.is-headline]="node.isHeadline"
+      class="folder-tree__node creating">
+      <ng-container *ngTemplateOutlet="headlineEdit; context: {node: node, isEdit: false}"></ng-container>
+    </mat-tree-node>
+    <mat-tree-node *matTreeNodeDef="let node; when: isCreateFolder" class="folder-tree__node creating"
+      [class.folder-tree__node--in-nested]="node.level > 0"
+      [class.folder-tree__node--parent-headline]="node.parentIsHeadline" [style.--folder-level]="node.level">
+      <div class="folder-tree__node-image" [class.is-avatar]="node?.isAvatar">
+        <img
+          *ngIf="!node?.imageIcon && !node?.abbrText"
+          [src]="node?.image || defaultFolderIcon"
+          class="folder-tree__node-img"
+          [alt]="node?.abbrText"
+        />
+        <svg *ngIf="node?.imageIcon" class="folder-tree__node-img">
+          <use [attr.xlink:href]="node.imageIcon"></use>
+        </svg>
+        <span *ngIf="node?.abbrText" class="folder-tree__node-abbr">{{node.abbrText}}</span>
+      </div>
+      <ng-container *ngTemplateOutlet="folderEdit; context: {node: node, isEdit: false}"></ng-container>
+    </mat-tree-node>
+  </mat-tree>
+</div>
+
+<ng-template #headlineEdit let-node="node" let-isEdit="isEdit">
+  <div class="create-headline" (click)="clickEditNode($event)" [ngClass]="theme">
+    <input #headlineCreating type="text" class="folder-tree__input" name="headline-creating" [value]="node.name"
+      peClickOutside
+      [placeholder]="headlinePlaceholder"
+      (clickOutside)="onCreateHeadline(node, $event)"
+      (keyup.enter)="onCreateHeadline(node, headlineCreating.value)" />
+    <mat-icon class="folder-expand-icon" svgIcon="arrow-down-icon"></mat-icon>
+  </div>
+</ng-template>
+
+<ng-template #folderEdit let-node="node" let-isEdit="isEdit">
+  <div class="create-folder" (click)="clickEditNode($event)" [ngClass]="theme">
+    <input #folderCreating type="text" class="folder-tree__input" name="folder-creating" [value]="node.name"
+      peClickOutside
+      [placeholder]="folderPlaceholder"
+      (clickOutside)="onCreateFolder(node, $event)"
+      (keydown.enter)="onCreateFolder(node, folderCreating.value)" />
+  </div>
+</ng-template>
+
+<ng-template #folderNode let-node="node">
+  <div
+    [ngClass]="dragNodeAreaType(node)"
+    class="folder-tree__node {{theme}}"
+    [class.folder-tree__node--active]="enableMarkAsActive && node._id == selectedItem?._id"
+    [class.is-headline]="node.isHeadline"
+    [class.is-dragging]="isDragging"
+    [class.folder-tree__node--parent-headline]="node.parentIsHeadline && !node.isHeadline && node.level > 0"
+    [style.--folder-level]="node.level"
+    [id]="'drop-list'+node._id" (click)="nodeSelect(node)"
+    longpressevent
+    (longPress)="onContextMenuNode($event, node, foldersContextMenu)"
+  >
+    <div class="folder-tree__node-container">
+      <div class="folder-tree__node-container-data" [class.has-children]="node.expandable">
+        <div *ngIf="!node.isHeadline" class="folder-tree__node-image" [class.is-avatar]="node?.isAvatar">
+          <img
+            *ngIf="!node?.imageIcon && !node?.abbrText"
+            [src]="node?.image || defaultFolderIcon"
+            class="folder-tree__node-img"
+            [alt]="node?.abbrText"
+          />
+          <svg *ngIf="node?.imageIcon" class="folder-tree__node-img">
+            <use [attr.xlink:href]="node.imageIcon"></use>
+          </svg>
+          <span *ngIf="node?.abbrText" class="folder-tree__node-abbr">{{node.abbrText}}</span>
+        </div>
+        <span *ngIf="!node.editing" class="folder-tree__node-name">{{ node.name }}</span>
+        <ng-container *ngIf="node.editing && node.isHeadline">
+          <ng-container *ngTemplateOutlet="headlineEdit; context: {node: node, isEdit: true}"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="node.editing && !node.isHeadline">
+          <ng-container *ngTemplateOutlet="folderEdit; context: {node: node, isEdit: true}"></ng-container>
+        </ng-container>
+      </div>
+      <button *ngIf="!node.editing && (node.expandable || node?.isHeadline)" mat-icon-button
+        [class.expanded]="treeControl.isExpanded(node)" [attr.aria-label]="'Toggle ' + node.name"
+        class="folder-tree__toggle-button" (click)="nodeToggle($event, node)">
+        <div>
+          <mat-icon class="folder-expand-icon" svgIcon="arrow-down-icon"></mat-icon>
+        </div>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #foldersContextMenu>
+  <div class="folder-context-menu theme-{{theme}}">
+    <div class="folder-context-menu__header">
+      <span class="folder-context-menu__title">{{'folders.context_menu.options' | translate}}</span>
+      <button class="folder-context-menu__close" (click)="closeContextMenu()">
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <use xlink:href="#icon-chip-close"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="folder-context-menu__list">
+      <li class="folder-context-menu__list-item active" (click)="handleEditNode()"
+          *ngIf="!isProtectFolder && isShowItemMenu(PeFoldersContextMenuEnum.Edit)">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.edit' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item active" (click)="handleOpenNode()"
+          *ngIf="!isProtectFolder && isShowItemMenu(PeFoldersContextMenuEnum.Open)">
+        <span class="folder-context-menu__list-item-label">
+          {{ openActionLabel || ('folders.context_menu.open' | translate)}}
+        </span>
+      </li>
+      <li class="folder-context-menu__list-item active" (click)="handleCopyFolder()"
+          *ngIf="isFolderContextMenu && isShowItemMenu(PeFoldersContextMenuEnum.Copy)">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.copy' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item" [class.active]="isCopied && isEnablePaste"
+          *ngIf="isShowItemMenu(PeFoldersContextMenuEnum.Paste)"
+        (click)="handlePastFolder()">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.paste' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item active" (click)="handleDuplicateFolder()"
+          *ngIf="isFolderContextMenu && isShowItemMenu(PeFoldersContextMenuEnum.Duplicate)">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.duplicate' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item divider-item top active"
+          *ngIf="isShowItemMenu(PeFoldersContextMenuEnum.AddFolder)"
+          (click)="handleCreateFolder()">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.add_folder' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item divider-item bottom active"
+          *ngIf="isShowItemMenu(PeFoldersContextMenuEnum.AddHeadline)"
+          (click)="handleCreateHeadline()">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.add_headline' | translate}}</span>
+      </li>
+      <li class="folder-context-menu__list-item active" (click)="handleDeleteNode()"
+          *ngIf="!isProtectFolder && isShowItemMenu(PeFoldersContextMenuEnum.Delete)">
+        <span class="folder-context-menu__list-item-label">{{'folders.context_menu.delete' | translate}}</span>
+      </li>
+    </ul>
+  </div>
+</ng-template>

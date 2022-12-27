@@ -1,0 +1,96 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "./../../panels/page-container.scss";
+
+.overlay-widget .pe-info-box-container-fixed.store-app-container {
+  width: 100%;
+  min-height: fit-content;
+
+  .pe-info-box {
+    min-width: 100%;
+    padding: 0;
+
+    mat-list.mat-list.mat-list-base {
+      width: 100%;
+      background-color: #111111;
+
+      mat-list-item.mat-list-item {
+        cursor: default;
+        height: 40px !important;
+        padding: 0;
+
+        &.action-item {
+          cursor: pointer;
+        }
+
+        .mat-list-item-content {
+          padding: 0 12px !important;
+          border-bottom: 1px solid $menu-item-border-color;
+
+          .mat-list-item-title {
+            font-family: Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: $regular-text-color;
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.channels-modal + .cdk-global-overlay-wrapper {
+  .overlay-widget-container .overlay-light {
+    .pe-info-box-container-fixed.store-app-container .mat-list {
+      background-color: $content-light-background-color;
+
+      .mat-list-item {
+        .mat-list-item-content {
+          border-bottom: 1px solid $content-light-border-color;
+
+          .mat-list-item-title {
+            color: $regular-light-text-color;
+          }
+        }
+
+        &:last-of-type .mat-list-item-content {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.channels-modal + .cdk-global-overlay-wrapper {
+  .overlay-widget-container .overlay-transparent {
+    .pe-info-box-container-fixed.store-app-container {
+      .content-wrapper {
+        background-color: transparent;
+      }
+
+      .info-box .mat-list {
+        background-color: $content-transparent-background-color;
+
+        .mat-list-item {
+          border-bottom: none;
+
+          .mat-list-item-content {
+            border-bottom: 1px solid $content-transparent-border-color;
+
+            .mat-list-item-title {
+              color: $regular-text-color;
+            }
+          }
+
+          &:last-of-type .mat-list-item-content {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}

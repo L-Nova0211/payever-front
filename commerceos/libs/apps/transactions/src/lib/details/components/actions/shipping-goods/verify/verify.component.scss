@@ -1,0 +1,6 @@
+.form-background {
+  & + .form-background {
+    display: block;
+    margin-top: 12px;
+  }
+}

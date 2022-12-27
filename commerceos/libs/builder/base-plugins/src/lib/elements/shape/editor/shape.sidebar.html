@@ -1,0 +1,168 @@
+<peb-editor-sidebar-tabs [activeTabIndex]="activeTabIndex$ | async">
+  <peb-editor-sidebar-tab title="Style">
+    <div class="form__row">
+      <div class="group__row">
+        <label class="group__label">
+          Link
+        </label>
+      </div>
+      <peb-link-form></peb-link-form>
+    </div>
+
+    <div class="form__row_border" *ngIf="!isImageContext">
+      <div class="palette-row" [formGroup]="component.background.form" (change)="component.background.submit.next()">
+        <peb-color-palette formControlName="bgColor"></peb-color-palette>
+      </div>
+    </div>
+
+    <div class="form__row_border" *ngIf="!isImageContext || isImageContext && component.background.form.value.bgImage">
+      <div class="group__row">
+        <label class="group__label">
+          Fill
+        </label>
+        <div class="peb-fill" (click)="showBackgroundForm()">
+          <div class="peb-fill__thumbnail" [ngStyle]="background$ | async"></div>
+          <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="form__row_border">
+      <peb-functions-form></peb-functions-form>
+    </div>
+
+    <div
+      *ngIf="!isCell"
+      class="form__row_border"
+      [formGroup]="component.shadow.form"
+      (change)="component.shadow.submit.next()"
+    >
+      <div class="group__row">
+        <label class="group__label">
+          Shadow
+        </label>
+        <peb-slide-toggle formControlName="hasShadow"></peb-slide-toggle>
+      </div>
+      <ng-container *ngIf="component.shadow.form.value.hasShadow">
+        <div class="group__row">
+          <label class="group__label">
+            Blur
+          </label>
+        </div>
+        <div class="group__row">
+          <div class="group__col combined-input-range">
+            <peb-range-input [min]="0" [max]="100" formControlName="shadowBlur"></peb-range-input>
+            <peb-number-input [min]="0" [max]="100" formControlName="shadowBlur" units="px"></peb-number-input>
+          </div>
+        </div>
+        <div class="group__row">
+          <label class="group__label">
+            Offset
+          </label>
+        </div>
+        <div class="group__row">
+          <div class="group__col combined-input-range">
+            <peb-range-input [min]="0" [max]="100" formControlName="shadowOffset"></peb-range-input>
+            <peb-number-input [min]="0" [max]="100" formControlName="shadowOffset" units="px"></peb-number-input>
+          </div>
+        </div>
+        <div class="group__row">
+          <label class="group__label">
+            Opacity
+          </label>
+        </div>
+        <div class="group__row">
+          <div class="group__col combined-input-range">
+            <peb-range-input [min]="0" [max]="100" formControlName="shadowOpacity"></peb-range-input>
+            <peb-number-input [min]="0" [max]="100" formControlName="shadowOpacity" units="px"></peb-number-input>
+          </div>
+        </div>
+        <div class="group__row" [style.marginTop.px]="20">
+          <div class="group__col fixed" [style.width.px]="40">Angle</div>
+          <div class="group__col fixed">
+            <peb-angle-picker formControlName="shadowAngle"></peb-angle-picker>
+          </div>
+          <div class="group__col">
+            <peb-number-input units="°" formControlName="shadowAngle"></peb-number-input>
+          </div>
+          <div class="group__col">
+            <div class="peb-fill" (click)="showShadowColorForm()">
+              <div class="peb-fill__thumbnail" [ngStyle]="shadowColor$ | async"></div>
+              <mat-icon
+                svgIcon="arrow"
+                class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"
+              ></mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form__row_border">
+      <peb-shape-border></peb-shape-border>
+    </div>
+
+    <div class="form__row_border">
+      <peb-shape-opacity></peb-shape-opacity>
+    </div>
+
+    <div *ngIf="!isCell && (showRadius$|async)" class="form__row_border">
+      <peb-border-radius-form></peb-border-radius-form>
+    </div>
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab title="Text" *ngIf="showTextForm">
+    <peb-text-form></peb-text-form>
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab title="Video" [hidden]="activeMediaType !== mediaType.Video">
+    <peb-studio-media-form
+      *ngIf="component?.video"
+      [formGroup]="component.video.form"
+      [type]="mediaType.Video"
+    ></peb-studio-media-form>
+    <peb-video-form
+      *ngIf="component.video?.form"
+      [formGroup]="component.video.form"
+      (fileChanged)="component.video.submit.next($event)"
+    ></peb-video-form>
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab
+    title="Image"
+    [hidden]="activeMediaType !== mediaType.Image && activeMediaType !== mediaType.Studio"
+    *ngIf="!isImageContext"
+  >
+    <div class="image-form">
+      <button class="image-form__studio" (click)="openStudio()">Choose media from payever Studio</button>
+
+      <div class="form__row">
+        <input
+          type="file"
+          accept="image/jpeg,image/png,image/gif,image/svg+xml"
+          #bgImageInput
+          hidden
+          (change)="changeBgInputHandler($event)"
+        />
+        <button class="image-from__replace" (click)="bgImageInput.click()">
+          {{ component.background.form.get('file').value ? 'Replace image' : 'Upload image' }}
+        </button>
+      </div>
+    </div>
+
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab *ngIf="!isCell" title="Arrange">
+
+    <peb-position-form></peb-position-form>
+    <peb-dimensions-form showConstrain="true"></peb-dimensions-form>
+
+    <peb-alignment-form
+      *ngIf="alignment?.form"
+      [formGroup]="alignment?.form"
+      (blurred)="alignment?.submit.next()"
+    ></peb-alignment-form>
+
+  </peb-editor-sidebar-tab>
+
+</peb-editor-sidebar-tabs>

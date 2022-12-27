@@ -1,0 +1,1335 @@
+id: liefer-payever-shop-page
+name: Liefer Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: liefer-payever-shop-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+            - id: header-cart
+              type: shop-cart
+
+    - id: hr-section1
+      type: section
+      children: []
+
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-title
+          type: text
+          data:
+            text: 'Liefer- und Versandbedingungen'
+
+    - id: second-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-block
+          type: block
+          children:
+            - id: second-section-desc
+              type: text
+              data:
+                text: 'Die auf den Produktseiten gezeigten Preise sind Endpreise inklusive der aktuell gültigen gesetzlichen Mehrwertsteuer zzgl. Versandkosten, sowie ggf. Nachnahmegebühren. Es gilt immer der Preis zum Zeitpunkt der Bestellung.'
+
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-desc
+              type: text
+              data:
+                text: 'Wir möchten, dass Sie Ihre Bestellung schnell und sicher erhalten. Wir arbeiten daher nur mit renommierten Kurierdiensten zusammen. Innerdeutsche Sendungen werden mit UPS oder Trans-O-Flex versendet.'
+
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-section-desc
+              type: text
+              data:
+                text: 'Von Schulen oder Sachaufwandsträgern ausgelöste Bestellung werden kostenfrei als Sammelbestellung an die Schule/Institution geliefert. Über die Schule ausgelöste Sammelbestellungen werden nach Eingang aller Einzelbestellungen als Sammelbestellung an die Schule übersendet. Für Einzel-Bestellungen mit Inland-Lieferungen wird - sofern nicht anders angegeben - eine Versandpauschale von Euro 6,90 inkl. USt erhoben. Ab Euro 800,- versenden wir innerhalb Deutschlands versandkostenfrei.'
+
+    - id: fifth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fifth-section-block
+          type: block
+          children:
+            - id: fifth-section-title
+              type: text
+              data:
+                text: 'Lieferzeiten:'
+            - id: fifth-section-desc
+              type: text
+              data:
+                text: "Der Versand erfolgt bei Verfügbarkeit der bestellten Ware nach Zahlungseingang innerhalb der im Auftrag angegebenen Zeit.
+<br>Bei Lieferverzögerungen werden wir Sie umgehend per E-Mail informieren. Sollte ein Produkt ausnahmsweise dauerhaft nicht lieferbar sein bzw. ausnahmsweise nur in analoger Version, so werden wir Ihnen unaufgefordert eine Alternative anbieten.
+<br>Sollte die Lieferbarkeit des Produktes als 'auf Bestellung' ausgewiesen sein, so können wir keine verbindlichen Aussagen zur Lieferbarkeit treffen. Generell sind wir aber von den mit uns kooperierenden Herstellern abhängig. Wir übernehmen deren Lagerbestände. Diese können teilweise nicht die tatsächliche Lieferbarkeit darstellen."
+
+    - id: sixth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: sixth-section-block
+          type: block
+          children:
+            - id: sixth-section-title
+              type: text
+              data:
+                text: 'Versicherung:'
+            - id: sixth-section-desc
+              type: text
+              data:
+                text: 'Unsere Sendungen sind selbstverständlich stets bis zum vollen Rechnungsbetrag versichert.'
+
+    - id: seventh-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: seventh-section-block
+          type: block
+          children:
+            - id: seventh-section-title
+              type: text
+              data:
+                text: 'Zahlung:'
+            - id: seventh-section-desc
+              type: text
+              data:
+                text: 'Wir bieten Ihnen verschiedene Zahlungsarten an: Kreditkarte, Lastschrift, Vorkasse oder Ratenkauf.'
+
+    - id: eighth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: eighth-section-block
+          type: block
+          children:
+            - id: eighth-section-title
+              type: text
+              data:
+                text: '6) Einräumung von Nutzungsrechten für Lizenzschlüssel'
+            - id: eighth-section-desc
+              type: text
+              data:
+                text: '6.1 Der überlassene Lizenzschlüssel berechtigt den Kunden zur Nutzung der aus der jeweiligen Produktbeschreibung ersichtlichen Software bzw. Inhalte in dem dort beschriebenen Umfang.
+<br>6.2 Die Rechtseinräumung wird erst wirksam, wenn der Kunde die geschuldete Vergütung vollständig geleistet hat.'
+
+    - id: ninth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: ninth-section-block
+          type: block
+          children:
+            - id: ninth-section-title
+              type: text
+              data:
+                text: 'Bankverbindung für die Vorkasse:'
+            - id: ninth-section-desc
+              type: text
+              data:
+                text: 'think RED West GmbH
+<br>Volksbank Sprockhövel
+<br>IBAN: DE77 4526 1547 0005 7293 00
+<br>BIC: GENODEM1SPO
+<br>Geben Sie bitte Ihre Auftragsnummer an, damit wir den Betrag umgehend zuordnen können.'
+
+    - id: tenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: tenth-section-block
+          type: block
+          children:
+            - id: tenth-section-title
+              type: text
+              data:
+                text: 'Bankverbindung für den Ratenkauf:'
+            - id: tenth-section-desc
+              type: text
+              data:
+                text: '<br>Empfänger: Santander Consumer Bank AG
+<br>IBAN: DE89 3101 0833 8810 0761 20
+<br>BIC: SCFBDE33XXX
+<br>Der Verwendungszweck wird Ihnen per Email von der Santander mitgeteilt. Bitte überweisen Sie nicht, bevor Sie diese Email erhalten haben.'
+
+    - id: eleventh-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: eleventh-section-block
+          type: block
+          children:
+            - id: eleventh-section-title
+              type: text
+              data:
+                text: 'Informationen bei Transportschäden:'
+            - id: eleventh-section-desc
+              type: text
+              data:
+                text: 'Wird bei Anlieferung der Ware offensichtliche Schäden an Inhalt oder Verpackung festgestellt, hat der Kunde unbeschadet der Gewährleistungsrechte unverzüglich die Annahme zu verweigern, den Schaden beim Spediteur/Frachtdienst anzugeben oder dies vom Fahrer quittieren zu lassen, sowie unverzüglich mit der ThinkRED West GmbH Kontakt (service@thinkred.de) aufzunehmen.'
+
+    - id: twelve-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: twelve-section-block
+          type: block
+          children:
+            - id: twelve-section-title
+              type: text
+              data:
+                text: 'Rückgabe:'
+            - id: twelve-section-desc
+              type: text
+              data:
+                text: 'In unserer Widerrufsbelehrung sind die allgemeinen Rückgaberechte erläutert.'
+
+    - id: footer1-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer1
+          type: block
+          children:
+            - id: footer1-block1
+              type: block
+              children:
+                - id: footer1-block1-title
+                  type: text
+                  data:
+                    text: "ThinkRED: <br>
+                           Beratung für Schulträger und Schulen"
+                - id: footer1-block1-desc
+                  type: text
+                  data:
+                    text: "IT-Ausstattungen für Bildungseinrichtungen sind unser Fachgebiet! Mit ThinkRED haben Sie einen starken Partner und Prozessbegleiter, der Sie auf dem Weg zu einer digitalen Schule begleitet. Als Wegbegleiter für den DigitalPakt Schule unterstützen wir Schulträger und Schulen ganzheitlich. Wir beraten Sie persönlich und individuell, gerne auch vor Ort. Unsere Zentrale befindet sich in Bochum. Darüber hinaus sind wir an weiteren Standorten in Deutschland vertreten. Für Ihren Erfolg!"
+            - id: footer1-block2
+              type: block
+              children:
+                - id: footer1-block2-title
+                  type: text
+                  data:
+                    text: "Kontakt"
+                - id: footer1-block2-desc
+                  type: text
+                  data:
+                    text: "ThinkRed <br>Gesellschaft für digitale Bildung mit beschränkter Haftung: Lise-Meitner-Allee 6, 44801 Bochum"
+                - id: footer1-block2-phone
+                  type: text
+                  data:
+                    text: "+49 234 333672170 00"
+                - id: footer1-block2-telegram
+                  type: text
+                  data:
+                    text: "education@thinkred.de"
+
+    - id: hr-section2
+      type: section
+      children: []
+
+    - id: footer2-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer2
+          type: block
+          children:
+            - id: footer2-block1
+              type: block
+              children:
+                - id: footer2-block1-title
+                  type: text
+                  data:
+                    text: "© ThinkRED 2019 - 2020"
+            - id: footer2-block2
+              type: block
+              children:
+                - id: footer2-block2-link1
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='impressum-payever-shop-page'>Impressum</a>"
+                - id: footer2-block2-link2
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='datenschutzerklarung-payever-shop-page'>Datenschutz</a>"
+                - id: footer2-block2-link3
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='agb-payever-shop-page'>AGB</a>"
+                - id: footer2-block2-link4
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='widerruf-payever-shop-page'>Widerruf</a>"
+                - id: footer2-block2-link5
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='liefer-payever-shop-page'>Lieferung & Versand</a>"
+stylesheets:
+  desktop:
+    liefer-payever-shop-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 100
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    header-logo:
+      width: 370
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      margin: 15 0 0 327
+    header-cart:
+      width: 24
+      height: 50
+      margin: 30 20 20 200
+      backgroundColor: '#000'
+    header-mobile-menu: {}
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      width: 1024
+    first-section-title:
+      width: 500
+      textAlign: center
+      marginTop: 40
+      fontSize: 30
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 262
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section-block:
+      width: 850
+    second-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    second-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section-block:
+      width: 850
+    third-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    third-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      width: 850
+    fourth-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      width: 850
+    fifth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      width: 850
+    sixth-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      width: 850
+    seventh-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      width: 850
+    eighth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      marginBottom: 40
+      width: 850
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      width: 850
+    ninth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      width: 850
+    tenth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      width: 850
+    eleventh-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      width: 850
+    twelve-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 512
+    footer1-block1-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 400
+      marginLeft: 50
+    footer1-block2-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 380
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 724
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+  tablet:
+    liefer-payever-shop-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 100 1fr 100
+      width: 768
+    header-logo:
+      width: 300
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      width: 768
+    first-section-title:
+      width: 500
+      textAlign: center
+      marginTop: 40
+      fontSize: 30
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 134
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    second-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    third-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fourth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fifth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    sixth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    seventh-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    eighth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    ninth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    tenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    eleventh-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    twelve-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 364
+      marginLeft: 20
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 364
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 364
+      marginLeft: 20
+    footer1-block2-title:
+      width: 364
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 364
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 235
+      marginLeft: 20
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 488
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+
+  mobile:
+    liefer-payever-shop-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 50 1fr 50
+      width: 360
+    header-logo:
+      width: 200
+      height: 80
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      width: 360
+    first-section-title:
+      width: 300
+      textAlign: center
+      marginTop: 40
+      fontSize: 24
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 30
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    second-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    third-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    fourth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    fifth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    sixth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    seventh-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    eighth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    ninth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    tenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    eleventh-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      marginTop: 20
+      marginBottom: 20
+      width: 340
+      marginLeft: 10
+    twelve-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1: {}
+    footer1-block1:
+      width: 350
+      marginLeft: 10
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 350
+      marginLeft: 10
+    footer1-block2-title:
+      width: 350
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2: {}
+    footer2-block1:
+      width: 360
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 280
+      marginLeft: 10
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 350
+      marginLeft: 10
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+context: {}

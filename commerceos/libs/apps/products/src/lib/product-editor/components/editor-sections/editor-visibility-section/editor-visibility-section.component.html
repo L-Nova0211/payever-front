@@ -1,0 +1,15 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+  <peb-button-toggle
+    formControlName="active"
+    class='toggle-button button-toggle'
+    [label]="'show_product' | translate"
+    labelPosition="before"
+  ></peb-button-toggle>
+</form>
+

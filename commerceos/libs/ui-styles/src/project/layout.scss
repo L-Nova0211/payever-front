@@ -1,0 +1,62 @@
+//
+// Layout
+// ----------------------------
+
+.pe-bootstrap {
+  .layout {
+
+    &-blur-middle {
+      &-box {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        margin-top: $grid-unit-y * 4;
+        transform: translateX(-50%);
+      }
+
+      &-bg {
+        @include payever_absolute();
+        overflow: hidden;
+        border-radius: $border-radius-base * 2;
+        z-index: -1;
+
+        .layout-blur-middle-blur {
+          position: absolute;
+          top: -$blur-radius * 3;
+          bottom: -$blur-radius * 3;
+          left: -$blur-radius * 3;
+          right: -$blur-radius * 3;
+          z-index: -1;
+          filter: blur($blur-radius * 2);
+          background-size: cover;
+          background-position: center;
+
+          @include browser(Chrome) {
+            transform: translateZ(0);
+          }
+
+          &::after {
+            content: '';
+            background-color: $color-grey-2;
+            position: absolute;
+            top: -$blur-radius * 2;
+            bottom: -$blur-radius * 2;
+            left: -$blur-radius * 2;
+            right: -$blur-radius * 2;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+
+  .blurry-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}

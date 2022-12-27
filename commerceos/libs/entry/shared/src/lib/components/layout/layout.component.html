@@ -1,0 +1,20 @@
+
+<div class="entry-layout">
+  <div class="layout_container" id='layout-container'>
+    <div class="content">
+      <div class="logo-wrapper" *ngIf="!hideLogo && logo">
+        <span class="logo-header" [style.height]="'inherit'">
+          <svg class="icon" [style.width]="logo?.width||100+'%'" [style.height.px]="logo?.height">
+            <use [attr.xlink:href]="logo.icon"></use>
+          </svg>
+        </span>
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+
+<cos-locales-switcher *ngIf="!hideLanguageSwitcher" class="lang-switcher" [reloadPageOnSwitch]="false" [dark]="true"
+  [allowedLocales]="allowedLocales" [class.entry-layout-register]="isEntryLayoutRegisterClass"
+  (localeChanged)="onLocaleChanged()">
+</cos-locales-switcher>

@@ -1,0 +1,59 @@
+elements:
+  id: '@cart'
+  type: shop-cart
+
+stylesheet:
+  all:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: '#00A2FF'
+  first:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: green
+      badgeColor: yellow
+      badgeTextColor: black
+  second:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: $00A2FF
+  third:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: black
+      badgeColor: red
+  fourth:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: orange
+      badgeColor: blue
+  fifth:
+    '@cart':
+      fontSize: 11
+      width: 49
+      height: 43
+      bagColor: yellow
+      badgeColor: orange
+
+context:
+  '@cart':
+    state: 'ready'
+    data:
+      - count: 50
+        product:
+          prices:
+            regular: 123
+      - count: 50
+        product:
+          prices:
+            regular: 11

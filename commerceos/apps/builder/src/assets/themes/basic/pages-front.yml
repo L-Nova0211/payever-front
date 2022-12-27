@@ -1,0 +1,876 @@
+id: pages-front
+type: document
+children:
+  - id: header
+    area: header
+    type: section
+    style:
+      background: rgba(0,0,0,0.8)
+      height: 45px
+    children:
+      - id: header-block
+        type: block
+        style:
+          display:
+            desktop: block
+            tablet: block
+            mobile: none
+          width: 100%
+          height: 45px
+          textAlign: center
+        children:
+          - id: header-link-1
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: ASDFASDFASDFADFAD
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Support
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+  
+  - id: hero1
+    area: hero
+    type: section
+    style:
+      backgroundImage: https://www.apple.com/v/home/d/images/heroes/iphone-11-pro/hero__dvsxv8smkkgi_largetall.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundRepeat: no-repeat
+      height: 700px
+      margin: 0 0 12px 0
+    children:
+      - id: hero1-title
+        type: text
+        fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+        text: iPhone 11 Pro
+        style:
+          width: 80%
+          padding: 50px 10% 0 10%
+          color: white
+          fontSize: 
+            desktop: 50
+            tablet: 40
+            mobile: 35
+          fontWeight: 500
+          textAlign: center
+      - id: hero1-subtitle
+        type: text
+        fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+        text: Pro Kameras. Pro Display. Pro Performance.
+        style:
+          width: 80%
+          padding: 0 10%
+          color: white
+          fontSize: 
+            desktop: 25
+            tablet: 23
+            mobile: 22
+          fontWeight: 400
+          textAlign: center
+      - id: hero1-links-block
+        type: block
+        style:
+          width: 100%
+          margin: 16px 0 0 0
+          textAlign: center
+        children:
+          - id: hero1-link1
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Weitere Infos
+            style:
+              display: inline-block
+              margin: 0 13px
+              color: "#2997ff"
+              fontSize: 20
+              fontWeight: 400
+          - id: hero1-link2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Kaufen
+            style:
+              display: inline-block
+              margin: 0 13px
+              color: "#2997ff"
+              fontSize: 20
+              fontWeight: 400
+  - id: products-1
+    type: block
+    style:
+      height:
+        desktop: 612px
+        tablet: 1224px
+        mobile: 1836px
+    children:
+      - id: product1
+        area: product
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://www.apple.com/v/home/d/images/promos/iphone-11/tile__cauwwcyyn9hy_large.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 12px 12px 0
+            tablet: 0 12px 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: product1-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone 11
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: black
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: product1-subtitle
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Genau, was du willst. Exact, was du brauchst.
+            style:
+              width: 80%
+              padding: 0 10%
+              color: black
+              fontSize: 20
+              fontWeight: 400
+              textAlign: center
+          - id: product1-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: product1-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Weitere Infos
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+              - id: product1-link2
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Kaufen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+      - id: product2
+        area: product
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://www.apple.com/de/home/images/promos/watch-series-5/tile__cauwwcyyn9hy_large.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 12px 12px 0
+            tablet: 0 0 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: product2-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: WATCH
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: black
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: product2-subtitle
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: So eine Uhr hast du noch nie gesehen.
+            style:
+              width: 80%
+              padding: 0 10%
+              color: black
+              fontSize: 20
+              fontWeight: 400
+              textAlign: center
+          - id: product2-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: product2-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Weitere Infos
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+              - id: product2-link2
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Kaufen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+      - id: product3
+        area: product
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://www.apple.com/v/home/d/images/promos/arcade-ultimate/tile__cauwwcyyn9hy_large.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 0 12px 0
+            tablet: 0 0 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: product3-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Arcade
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: white
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: product3-subtitle
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Spiele wie noch nie. Mehr als 100 neue Games.
+            style:
+              width: 80%
+              padding: 0 10%
+              color: white
+              fontSize: 20              
+              fontWeight: 400
+              textAlign: center
+          - id: product3-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: product3-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Weitere Infos
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+              - id: product3-link2
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Kostenlos testen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+  - id: hero2
+    area: hero
+    type: section
+    style:
+      backgroundImage: https://www.apple.com/v/home/d/images/heroes/ipad-pro/hero__dvsxv8smkkgi_largetall.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundRepeat: no-repeat
+      height: 700px
+      margin: 0 0 12px 0
+    children:
+      - id: hero2-title
+        type: text
+        fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+        text: iPhone 11 Pro
+        style:
+          width: 80%
+          padding: 50px 10% 0 10%
+          color: black
+          fontSize: 
+            desktop: 50
+            tablet: 40
+            mobile: 34
+          fontWeight: 500
+          textAlign: center
+      - id: hero2-subtitle
+        type: text
+        fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+        text: Pro Kameras. Pro Display. Pro Performance.
+        style:
+          width: 80%
+          padding: 0 10%
+          color: black
+          fontSize: 
+            desktop: 25
+            tablet: 23
+            mobile: 22
+          fontWeight: 400
+          textAlign: center
+      - id: hero2-links-block
+        type: block
+        style:
+          width: 100%
+          margin: 16px 0 0 0
+          textAlign: center
+        children:
+          - id: hero2-link1
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Weitere Infos
+            style:
+              display: inline-block
+              margin: 0 13px
+              color: "#2997ff"
+              fontSize: 20
+              fontWeight: 400
+          - id: hero2-link2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Kaufen
+            style:
+              display: inline-block
+              margin: 0 13px
+              color: "#2997ff"
+              fontSize: 20
+              fontWeight: 400
+  - id: categories-1
+    type: block
+    style:
+      height:
+        desktop: 612px
+        tablet: 1224px
+        mobile: 1836px
+    children:
+      - id: category1
+        area: category
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://www.apple.com/v/home/d/images/promos/tv-plus-visible/tile__cauwwcyyn9hy_large.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 12px 12px 0
+            tablet: 0 12px 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: category1-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple tv+
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: black
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: category1-subtitle
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Jetzt in der Apple TV App
+            style:
+              width: 80%
+              padding: 0 10%
+              color: black
+              fontSize: 20
+              fontWeight: 400
+              textAlign: center
+          - id: category1-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: category1-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Weitere Infos
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+              - id: category1-link2
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Jetzt ansehen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+      - id: category2
+        area: category
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://techandall.com/wp-content/uploads/2016/09/apple-airpods-1.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 12px 12px 0
+            tablet: 0 0 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: category2-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: AirPods
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: black
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: category2-subtitle
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Neue persönliche Gravuren - von A bis Emoji.
+            style:
+              width: 80%
+              padding: 0 10%
+              color: black
+              fontSize: 20
+              fontWeight: 400
+              textAlign: center
+          - id: category2-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: category2-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Weitere Infos
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+              - id: category2-link2
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Kaufen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+      - id: category3
+        area: category
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          backgroundImage: https://www.apple.com/v/home/d/images/promos/covid-19/tile__cauwwcyyn9hy_large.jpg
+          backgroundSize: cover
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 600px
+          margin: 
+            desktop: 0 0 12px 0
+            tablet: 0 0 12px 0
+            mobile: 0 0 12px 0
+          width:
+            desktop: calc(33.33% - 8px)
+            tablet: calc(50% - 12px)
+            mobile: 100%
+        children:
+          - id: category3-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apples Reaktion auf COVID-19
+            style:
+              width: 80%
+              padding: 50px 10% 4px 10%
+              color: black
+              fontSize: 37
+              fontWeight: 500
+              textAlign: center
+          - id: category3-links-block
+            type: block
+            style:
+              width: 100%
+              margin: 16px 0 0 0
+              textAlign: center
+            children:
+              - id: category3-link1
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Statement lesen
+                style:
+                  display: inline-block
+                  margin: 0 13px
+                  color: "#2997ff"
+                  fontSize: 18
+                  fontWeight: 400
+  - id: footer
+    area: footer
+    type: section
+    style:
+      background: "#f2f2f2"
+      padding: 30px 0
+    children:
+      - id: footer-col1
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 100px
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          verticalAlign: top
+          textAlign: left
+        children:
+          - id: footer-col1-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Einkaufen und mehr
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col1-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-6
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-7
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-8
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: AirPods
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-9
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: HomePod
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col2
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col2-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Services
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col2-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple TV+
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Arcade
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iCloud
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col3
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col3-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Store
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col3-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Store finden
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Genius Bar
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Today at Apple
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0

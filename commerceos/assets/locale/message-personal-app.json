@@ -1,0 +1,74 @@
+{
+  "message-app": {
+    "invitation": {
+      "joined" : "joined",
+      "hello": "Hello"
+    },
+    "chat": {
+      "attach_menu": {
+        "cancel": "Cancel",
+        "send": "Send",
+        "media": "Photo & Video",
+        "files": "Files",
+        "add_more": "Add more",
+        "compressed": "Compressed",
+        "optional_text": "Optional Text",
+        "url": "URL"
+      }
+    },
+    "connection": {
+      "add": "Add"
+    },
+    "sidebar": {
+      "message": "Message",
+      "all_messages": "All messages",
+      "chat": "Chat",
+      "bot": "Bot",
+      "sms": "SMS",
+      "mail": "Mail",
+      "group": "Group",
+      "contact": "Contact",
+      "channel": "Channel",
+      "options": "Options",
+      "move_to": "Move to",
+      "create": "Create",
+      "connect": "Connect",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "close": "Close",
+      "open": "Open",
+      "save": "Save",
+      "done": "Done",
+      "folder": "Folder",
+      "headline": "Headline",
+      "rules": "Rules",
+      "new_folder": "New folder",
+      "folder_name": "Folder name",
+      "new_chat_message": "New Chat Message",
+      "all_chat_boxes": "All chat boxes",
+      "contact_isnt_installed": "Contact app is not installed",
+      "empty_contact_list": "You don’t have any added contacts",
+      "add_new": "Add new",
+      "add": "Add",
+      "add_contacts": "Add Contacts"
+    },
+    "message-interface": {
+      "settings": "Settings",
+      "accounts": "Accounts",
+      "add_accounts": "Add accounts",
+      "notifications": "Notifications",
+      "embed": "Embed",
+      "cancel": "Cancel",
+      "done": "Done",
+      "connect": "Connect",
+      "integration": "Integration",
+      "language": "Language"
+    },
+    "permissions": {
+      "send-media": "You don't have permission to send media",
+      "change-group-info": "You don't have permission to send media",
+      "add-members": "You don't have permission to send media"
+    }
+  }
+}

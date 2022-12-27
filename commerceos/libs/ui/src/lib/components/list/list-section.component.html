@@ -1,0 +1,110 @@
+<span *ngIf="showGroupTitle" class="pe-list-section__group-header">
+  {{ (sectionTitle ? sectionTitle : (integrationCategory + 'title')) | translate | uppercase }}
+</span>
+<peb-form-background>
+  <div
+    [class.maxheight]="!!maxShowingFields"
+    [style.maxHeight]="maxShowingFields ? (44 * maxShowingFields).toString()+'px' : 'auto'"
+  >
+    <div
+      *ngFor="let integration of integrations"
+      class="pe-list-section__divider"
+      (mouseenter)="hoverIntegration(integration)"
+      (mouseleave)="hoverIntegration(null)"
+    >
+      <div
+        class="pe-list-section__item"
+        [class.form]="isInForm"
+        [class.hover]="showArrowButton"
+        [class.selected]="showArrowButton && integration.enabled"
+        [class.show-navigate-button]="showArrowButton || showOpenButton"
+      >
+        <div
+          *ngIf="showArrowButton"
+          class="pe-list-section__click-area"
+          (click)="navigateToConnect(integration)"
+        ></div>
+        <div class="pe-list-section__item-label">
+          <div class="pe-list-section__item-image">
+            <img
+              *ngIf="integration.icon && isIconImage(integration.icon)"
+              alt=""
+              class="pe-list-section__item-icon"
+              [src]="integration.icon"
+            />
+            <mat-icon
+              *ngIf="integration.icon && !isIconXlink(integration.icon) && !isIconImage(integration.icon)"
+              class="pe-list-section__item-icon"
+              [svgIcon]="integration.icon"
+            ></mat-icon>
+            <svg
+              *ngIf="integration.icon && isIconXlink(integration.icon)"
+              class="pe-list-section__item-icon"
+            >
+              <use [attr.xlink:href]="integration.icon"></use>
+            </svg>
+            <div
+              *ngIf="(!integration.icon || integration.icon === '') && integration.abbreviation"
+              class="pe-list-section__item-abbreviation"
+            >{{ integration.abbreviation | lowercase }}</div>
+          </div>
+          <div
+            class="pe-list-section__item-title"
+            [class.form]="isInForm"
+          >
+            <span
+              *ngIf="(
+                translateItemsTitle
+                  ? ((integrationCategory
+                    ? (integrationCategory + integration.title + '.title')
+                    : integration.title) | translate)
+                  : integration.title
+                ) as title"
+            >{{ upperCase ? (title | uppercase) : title }}</span>
+          </div>
+        </div>
+        <div class="pe-list-section__item-right-block">
+          <div
+            *ngIf="integration.description"
+            class="pe-list-section__item-description"
+            [class.show-description]="integration.showDescription"
+          >
+            {{ integration.description | translate }}
+          </div>
+          <peb-button-toggle
+            *ngIf="showToggleButton"
+            (changed)="switchConnect(integration)"
+            [checked]="integration.enabled"
+            [disabled]="integration.disabled"
+            [label]="showBeforeLabelOfToggle || showAfterLabelOfToggle ? integration.toggleLabel : null"
+            [labelPosition]="showAfterLabelOfToggle ? 'after' : 'before'"
+          ></peb-button-toggle>
+          <span
+            *ngIf="showOpenButton"
+            class="pe-list-section__item-button"
+            [class.form]="isInForm"
+            (click)="navigateToConnect(integration)"
+          >{{ toggleButtonLabel ? (toggleButtonLabel | translate) : 'Open' }}</span>
+          <mat-icon
+            *ngIf="showArrowButton"
+            class="pe-list-section__item-arrow-right"
+            svgIcon="settings-arrow-open"
+            (click)="navigateToConnect(integration)"
+          ></mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</peb-form-background>
+<div
+  *ngIf="showAddButton"
+  [style.margin-top.px]="16"
+>
+  <peb-form-background >
+    <button
+      class="pe-list-section__add-button"
+      [class.form]="isInForm"
+      (click)="navigateToConnect()"
+    >{{ addButtonLabel ? (addButtonLabel | translate) : 'Add' }}</button>
+  </peb-form-background>
+</div>

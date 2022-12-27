@@ -1,0 +1,61 @@
+//
+// Media Queries Breakpoints
+// Using: @include screen-xs {...}
+// --------------------------------------------------
+
+//# Extra small screen (phone)
+@mixin screen-xs {
+    @media (max-width: $screen-xs-max){
+      @content;
+    }
+  }
+  
+  //# Small screen (tablet)
+  @mixin screen-sm {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+      @content;
+    }
+  }
+  
+  // Small screen + > (phone + tablet)
+  @mixin screen-sm-less {
+    @media (max-width: $screen-sm-max){
+      @content;
+    }
+  }
+  
+  // Small screen + < (tablet + desktop + wide)
+  @mixin screen-sm-more {
+    @media (min-width: $screen-sm-min){
+      @content;
+    }
+  }
+  
+  //# Medium screen (desktop)
+  @mixin screen-md {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max){
+      @content;
+    }
+  }
+  
+  //# Medium screen + > (phone + tablet + desktop)
+  @mixin screen-md-less {
+    @media (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+  
+  //# Medium screen + < (desktop + wide)
+  @mixin screen-md-more {
+    @media (min-width: $screen-md-min){
+      @content;
+    }
+  }
+  
+  //# Large screen (wide desktop)
+  @mixin screen-lg {
+    @media (min-width: $screen-lg-min){
+      @content;
+    }
+  }
+  

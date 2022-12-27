@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to payever...</title>
+  <script type="text/javascript">
+    console.log("Closing current popup...");
+    try {
+      if (window && window.opener && window.opener.peClosePopUpOfTPM) {
+        window.opener.peClosePopUpOfTPM();
+      }
+    } catch (e) {}
+    window.close();
+  </script>
+</head>
+<body>
+  <p>Redirecting to payever...</p>
+</body>
+</html>

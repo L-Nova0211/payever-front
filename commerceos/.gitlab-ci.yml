@@ -1,0 +1,4 @@
+include:
+  - project: "infra/ci-config"
+    ref: "master"
+    file: "/frontend/commerceos.yml"

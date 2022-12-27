@@ -1,0 +1,17 @@
+.pe-bootstrap {
+  .ui-cards-container {
+    .dropdown-backdrop {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      background: $color-white;
+      opacity: .5;
+      margin: 0 5px;
+
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+}

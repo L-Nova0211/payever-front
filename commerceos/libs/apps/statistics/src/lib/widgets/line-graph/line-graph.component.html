@@ -1,0 +1,36 @@
+<div class="line-graph">
+  <div class="line-graph__top">
+    <div class="line-graph__name">
+      {{ config?.dataSource[0][0]?.text?.toUpperCase() || 'TRANSACTIONS' }}
+    </div>
+    <div class="line-graph__profit">
+      {{
+        config?.dataSource[1][0]?.text
+          ? config?.dataSource[1][0]?.text
+          : (config?.dataSource[1][0]?.value | number: '.0-2')
+      }}
+      {{ config?.dataSource[1][0]?.currency ? config?.dataSource[1][0]?.currency : config?.dataSource[1][0]?.percent }}
+    </div>
+  </div>
+  <div class="line-graph__period">{{ config?.dataSource[0][2]?.text }}</div>
+  <ngx-charts-line-chart
+    class="line-graph__chart"
+    [view]="view"
+    [scheme]="colorScheme"
+    [legend]="legend"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [results]="config?.dataSource[1][1] ? config?.dataSource[1][1]?.value : lineGraphData?.value"
+    [tooltipDisabled]="true"
+    [curve]="curve"
+  >
+  </ngx-charts-line-chart>
+  <div class="line-graph__number">
+    {{
+      config?.dataSource[1][2]?.text
+        ? config?.dataSource[1][2]?.text
+        : (config?.dataSource[1][2]?.value | number: '.0-2')
+    }}
+    {{ config?.dataSource[1][2]?.currency ? config?.dataSource[1][2]?.currency : config?.dataSource[1][2]?.percent }}
+  </div>
+</div>

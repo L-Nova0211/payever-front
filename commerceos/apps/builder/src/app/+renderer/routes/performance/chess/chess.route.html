@@ -1,0 +1,26 @@
+<peb-sandbox-performance-stats></peb-sandbox-performance-stats>
+
+<div *ngIf="!(startSubject$|async); else stopTemplate"  class="start">
+    row <input type="number"
+    (ngModelChange) = "content$.next(generateChessBoard(chessBoardParameters.cols, chessBoardParameters.rows))"
+    [(ngModel)]="chessBoardParameters.rows" placeholder="row" />
+    col <input type="number"
+    (ngModelChange) = "content$.next(generateChessBoard(chessBoardParameters.cols, chessBoardParameters.rows))"
+    [(ngModel)]="chessBoardParameters.cols" placeholder="col" />
+    interval<input type="number" [(ngModel)]="chessBoardParameters.interval" placeholder="ms" />
+    <button (click) = "startSubject$.next(true)">start</button>
+    <button (click) = "clearSubject$.next(true)">clear</button>
+</div>
+
+<ng-template #stopTemplate>
+  <div>
+    <button (click) = "startSubject$.next(false)">stop</button>
+  </div>
+</ng-template>
+
+<peb-renderer
+[element]="(content$ | async).element"
+[stylesheet]="(content$ | async).stylesheet.all"
+[context]="(content$ | async).context"
+[options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></peb-renderer>

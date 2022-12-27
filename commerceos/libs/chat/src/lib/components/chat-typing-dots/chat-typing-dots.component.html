@@ -1,0 +1,12 @@
+<div
+  *ngIf="userTyping && userTyping.length" (click)="clickOnAvatar()"
+  [style.background-color]="messageAppColor">
+  <div class="userTyping">
+    <div class="typing-dots-container">
+      <div class="typing-dots typing-dots-1"></div>
+      <div class="typing-dots typing-dots-2"></div>
+      <div class="typing-dots typing-dots-3"></div>
+    </div>
+    {{ userTyping | typing: truncateLength }}
+  </div>
+</div>

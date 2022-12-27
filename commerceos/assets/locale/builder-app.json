@@ -1,0 +1,41 @@
+{
+  "builder-app": {
+    "dashboard": {
+      "actions": {
+        "cancel": "Cancel",
+        "copy_link": "Copy link",
+        "done": "Done",
+        "download": "Download",
+        "edit": "Edit",
+        "get_qr": "QR",
+        "link_copied": "Link copied",
+        "open": "Open",
+        "print": "Print"
+      },
+      "navigation": {
+        "settings": "Settings"
+      },
+      "options": "Options",
+      "qr_dialog": {
+        "type": "Type"
+      },
+      "warnings": {
+        "no_plans_to_display": "No any published themes to display"
+      }
+    },
+    "header-menu": {
+      "edit": {
+        "title": "Edit"
+      },
+      "insert":  {
+        "title": "Insert"
+      },
+      "publish": {
+        "title": "Publish"
+      },
+      "view": {
+        "title": "View"
+      }
+    }
+  }
+}

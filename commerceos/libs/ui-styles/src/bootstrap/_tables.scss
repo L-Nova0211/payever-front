@@ -1,0 +1,180 @@
+.pe-bootstrap {
+  table td,
+  table th {
+    border: none;
+  }
+  .table {
+    margin-bottom: $grid-unit-y * 2;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: 18px $pe_hgrid_gutter/2;;
+          line-height: $grid-unit-y*2;
+          border-top: 0;
+          border-top: 1px solid $color-light-gray-2-rgba;
+          vertical-align: middle;
+          .form-control-toggle + label {
+            //display: block;
+          }
+        }
+        &:first-child {
+        > th,
+        > td {
+          border-color: transparent;
+        }
+        }
+      }
+    }
+    > thead > tr > th {
+      vertical-align: bottom;
+      border-bottom: none;
+      font-size: 12px;
+      font-weight: 400;
+      color: $color-gray-2;
+      &.sortable {
+        cursor: pointer;
+        &:hover, &.sort {
+          color: $color-black;
+        }
+        &.sort {
+          span, .icon {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+      > tr:first-child {
+        > th,
+        > td {
+          border-top: 0;
+        }
+      }
+    }
+    > tbody + tbody {
+      border-top: none;
+    }
+    .table {
+      background-color: $color-white;
+    }
+    &.no-margin {
+      margin-bottom: 0;
+    }
+  }
+  .table-bordered {
+    border: $border-light-gray-2;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          border: $border-light-gray-2;
+        }
+      }
+    }
+    > thead > tr {
+      > th,
+      > td {
+        border-bottom-width: 1px;
+      }
+    }
+  }
+  .table-striped {
+    > thead > tr {
+      > th,
+      > td {
+        background-color: $color-light-gray-2;
+        border: none;
+      }
+    }
+    > tbody > tr {
+      background-color: transparent;
+      &:nth-of-type(even) {
+        background-color: $color-very-light-gray;
+      }
+    }
+  }
+  .table-responsive {
+    @media screen and (max-width: $screen-xs-max) {
+      margin-bottom: $grid-unit-y * 2;
+      border: $border-light-gray-2;
+    }
+  }
+  .table-hover {
+    & > tbody {
+      & > tr {
+        &:hover {
+          > th,
+          > td {
+            border-color: transparent;
+          }
+          & + tr {
+            > th,
+            > td {
+              border-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  .table-padded {
+    & > tbody, & > thead, & > tfoot {
+      & > tr {
+        > th,
+        > td {
+          &:first-child {
+            padding-left: 36px;
+          }
+          &:last-child {
+            padding-right: 36px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $viewport-breakpoint-xs-2 - 1) {
+    .table-reorder {
+      table, tbody, tfoot, tr, th, td {
+        display: block;
+        padding: 0;
+      }
+      thead {
+        display: none;
+      }
+      .table > tbody > tr {
+        border: $border-light-gray-2;
+        padding: $grid-unit-y $pe_hgrid_gutter/2;
+        margin-bottom: $grid-unit-y;
+      }
+      .table > tbody > tr > td,
+      .table > tbody > tr > th,
+      .table > tfoot > tr > td,
+      .table > tfoot > tr > th {
+        padding: 0;
+      }
+      .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: transparent;
+      }
+      .table-bordered {
+        border: none;
+      }
+      .table-bordered > tbody > tr > th,
+      .table-bordered > tfoot > tr > th,
+      .table-bordered > tbody > tr > td,
+      .table-bordered > tfoot > tr > td {
+        border: none;
+      }
+      .table-bordered > thead > tr > th,
+      .table-bordered > thead > tr > td {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}

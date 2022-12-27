@@ -1,0 +1,67 @@
+<ng-container *ngIf="(listService.displayedColumns$ | async | columnsSort: true) as displayedColumns">
+  <div #elemItem *ngFor="let column of displayedColumns; let cellIndex = index;"
+    class="grid-table-body-cell {{theme}}"
+    [class.first-cell]="cellIndex === 0 && !peGridViewportService.selectable"
+    [class.last-cell]="cellIndex === (displayedColumns?.length - 1)"
+    [class.last-cell]="cellIndex === (displayedColumns?.length - 1)"
+    [class.is-more]="defaultShow < isAvailableColumnsLength(displayedColumns)"
+    [class.is-mobile]="isMobile"
+  >
+    <ng-container *ngIf="(cellIndex >= defaultShow && isMoreOpen) || cellIndex < defaultShow">
+      <ng-container *ngIf="isNotExcludeColumn(column.name)">
+        <span
+          *ngIf="getValue(item, column.name) && !(column?.cellComponent || column?.cellComponentFactory)"
+          [ngStyle]="getCustomStyles(item, column.name)"
+          [innerHTML]="getValue(item, column.name)"
+        >
+        </span>
+        <ng-container *ngIf="getValue(item, column.name) || (column?.cellComponent || column?.cellComponentFactory)">
+          <ng-container *ngIf="isGridItem">
+            <ng-container *ngIf="getLabel(item, column.name)">
+              <span
+                [ngStyle]="getCustomStyles(item, column.name)"
+                [innerHTML]="getLabel(item, column.name)"
+              >
+              </span>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="!getLabel(item, column.name)">
+            <pe-table-row-cell-component-host
+              [inputData]="{
+                item: item,
+                component: column.cellComponent,
+                componentFactory: column.cellComponentFactory,
+                key: column.name,
+                data: column.data,
+                isGridItem: isGridItem,
+                styles: getCustomStyles(item, column.name)
+              }"
+            >
+            </pe-table-row-cell-component-host>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!isGridItem">
+          <pe-table-row-cell-component-host
+            [inputData]="{
+              item: item,
+              component: column.cellComponent,
+              componentFactory: column.cellComponentFactory,
+              key: column.name,
+              data: column.data,
+              isGridItem: isGridItem,
+              styles: getCustomStyles(item, column.name)
+            }"
+          >
+          </pe-table-row-cell-component-host>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+  <button
+    *ngIf="defaultShow < isAvailableColumnsLength(displayedColumns)"
+    class="more-button"
+    (click)="onToggleMore($event)"
+  >{{(isMoreOpen ? 'transactions.columns.less' : 'transactions.columns.see_more') | translate}}</button>
+</ng-container>
+
+

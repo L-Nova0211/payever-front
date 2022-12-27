@@ -1,0 +1,12 @@
+<cdk-virtual-scroll-viewport
+  #cdkvirtualscrollviewport
+  [itemSize]="itemSize"
+  (scrolledIndexChange)="onScrolledIndexChange($event)"
+  >
+  <ng-content></ng-content>
+  <ng-template #content>
+    <ng-template let-item cdkVirtualFor [cdkVirtualForOf]="items">
+      <ng-template *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-template>
+    </ng-template>
+  </ng-template>
+</cdk-virtual-scroll-viewport>

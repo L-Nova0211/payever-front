@@ -1,0 +1,29 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.edit_reference.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.edit_reference.actions.change"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background>
+      <div class="note">{{ 'transactions.form.edit_reference.note' | translate }}</div>
+    </peb-form-background>
+    <peb-form-background>
+      <peb-form-field-input
+        [isFieldInvalid]="form.get('reference').errors?.invalid"
+        [errorMessage]="form.get('reference').errors?.invalid"
+        label="{{ 'transactions.form.edit_reference.labels.reference' | translate }}"
+        appearance="label"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ 'transactions.form.edit_reference.labels.reference' | translate }}"
+          formControlName="reference"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </form>
+</pe-action-container>

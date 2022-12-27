@@ -1,0 +1,267 @@
+//
+// Form Table Dark
+// ----------------------------
+
+.pe-bootstrap {
+
+  .form-table {
+
+    .dark.form-fieldset {
+      color: $color-secondary-0;
+      box-shadow: none;
+      font-family: $font-family-base;
+      background-color: transparent;
+
+      .row > [class*=col] {
+        border-color: transparent;
+
+        .mat-form-field-wrapper {
+          overflow: hidden;
+        }
+
+        &:first-child .mat-form-field-wrapper {
+          border-top-left-radius: $border-radius-base * 2;
+          border-top-right-radius: $border-radius-base * 2;
+        }
+
+        &:last-child .mat-form-field-wrapper {
+          border-bottom-left-radius: $border-radius-base * 2;
+          border-bottom-right-radius: $border-radius-base * 2;
+        }
+      }
+
+      .mat-datepicker-toggle-default-icon, .mat-select-value {
+        color: $color-secondary-8;
+      }
+
+      .image-picker {
+        &-container {
+          border-color: $color-secondary-2;
+
+          .icon {
+            color: $color-secondary-8;
+          }
+        }
+
+        &-empty-label {
+          font-size: $font-size-small;
+          margin-top: $grid-unit-y + 7px;
+          color: $color-secondary-7;
+        }
+
+        &-round {
+          .image-picker-empty-label {
+            margin: 0;
+          }
+        }
+      }
+
+      .mat-button.mat-fieldset-corner {
+        background-color: $color-grey-1;
+      }
+
+      .mat-fieldset-corner {
+        color: $color-secondary-6;
+
+        &-left {
+          width: $grid-unit-x * 5 - 2;
+        }
+
+        &-right {
+          width: $grid-unit-x * 2 - 2;
+          border-left: 1px solid $color-grey-5;
+        }
+      }
+
+      .mat-error {
+        font-size: $font-size-micro-2;
+        color: $color-dark-red;
+      }
+
+      // Form Field
+      // -----------------------
+
+      .mat-form-field, .mat-select-value {
+        font-family: $font-family-base;
+        font-weight: $font-weight-light;
+      }
+
+      .mat-form-field-wrapper {
+        background-color: $color-white-grey-1;
+
+        @media (max-width: $screen-xs-max) {
+          margin-left: ceil(-$grid-unit-x / 2);
+          margin-right: ceil(-$grid-unit-x / 2);
+        }
+      }
+
+      .mat-focused {
+
+        .mat-form-field-label {
+          color: $color-secondary-6;
+        }
+      }
+
+      .slider-wrapper-label, .slider-wrapper-value, .mat-menu-label,
+      .mat-slide-toggle-content, .colorpicker-wrapper.colorpicker-wrapper-light {
+        color: $color-secondary-5;
+        font-weight: $font-weight-light;
+      }
+
+      .mat-form-field.mat-focused .mat-form-field-ripple, // underline when focused
+      .mat-slider-horizontal .mat-slider-wrapper .mat-slider-track-background { // slider of colorpicker
+        background-color: $color-secondary-2;
+      }
+
+      .mat-form-field.mat-focused {
+        .mat-input-element {
+          caret-color: $color-secondary-2;
+        }
+
+        .mat-form-field-required-marker {
+          color: $color-secondary-2;
+        }
+      }
+
+      .mat-form-field-label {
+        color: $color-secondary-6;
+        font-weight: $font-weight-light;
+      }
+
+      .mat-form-field-label, .mat-select-value, .mat-input-element {
+        height: 20px;
+      }
+
+      .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+        background-color: $color-red;
+      }
+
+      .mat-form-field-empty,
+      .mat-form-field-infix input::placeholder {
+        color: $color-secondary-4;
+      }
+
+      .mat-select-content {
+        background-color: $color-primary-1;
+      }
+
+      .mat-select-panel {
+        .mat-option {
+          color: $color-secondary-0;
+        }
+        &:hover {
+          background-color: $color-primary-2;
+        }
+
+      }
+
+      .mat-select {
+        &-arrow {
+          border-width: 0;
+          &:before {
+            top: calc(50% - 5px);
+            opacity: 0.6;
+          }
+        }
+      }
+
+      // Checkbox And Radio
+      // -----------------------
+      .mat-checkbox-label {
+        font-family: $font-family-base;
+        font-weight: $font-weight-light;
+      }
+
+      .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+      .mat-checkbox-background,
+      .mat-radio-outer-circle {
+        background-color: $color-secondary;
+      }
+
+      .mat-radio-checked .mat-radio-container .mat-radio-outer-circle {
+        background-color: $color-blue;
+      }
+
+      .mat-checkbox-error .mat-checkbox-background,
+      .mat-radio-error .mat-radio-outer-circle {
+        background-color: rgba(192, 47, 29, 0.1);
+      }
+
+      .mat-checkbox-error .mat-checkbox-frame,
+      .mat-radio-error .mat-radio-outer-circle {
+        border-color: $color-dark-red;
+      }
+
+      // Button toggles
+      // -----------------------
+
+      .mat-button-toggle {
+        &-checked {
+          .mat-button-toggle-label {
+            &-content .icon {
+              color: $color-secondary-0;
+            }
+          }
+        }
+
+        &-label {
+          &-content .icon {
+            color: $color-secondary-2;
+          }
+        }
+      }
+
+
+      // Style Variations
+      // -----------------------
+
+      &-media-controls {
+        border-radius: unset;
+
+        .row > [class*=col] {
+          border:none;
+          background-color: transparent;
+          min-height: $grid-unit-y * 4;
+        }
+      }
+    }
+
+    .form-fieldset-space-between {
+      @include pe_flexbox;
+      @include pe_justify-content(space-between);
+
+      span {
+        font-weight: $font-weight-light;
+      }
+    }
+  }
+
+  // Cdk-overlay
+  // -----------------------
+
+  .mat-select-panel.mat-select-dark, .mat-autocomplete-panel {
+    background-color: $color-solid-header;
+
+    .mat-select-content {
+      background-color: $color-solid-header;
+    }
+
+    .mat-optgroup-label {
+      color: $color-white;
+    }
+
+    .mat-option:hover {
+      background-color: $color-secondary-1;
+    }
+
+    .mat-option-text {
+      color: $color-secondary-0;
+      font-family: $font-family-base;
+    }
+
+    .mat-option.mat-active.mat-selected:not(.mat-option-multiple) {
+      background-color: $color-secondary-2;
+    }
+  }
+}
+

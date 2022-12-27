@@ -1,0 +1,66 @@
+.snackbar-success {
+  font-size: 16px;
+  display: flex;
+
+  &__icon {
+    width: 22px;
+    height: 20px;
+    margin-right: 12px;
+  }
+
+  &__alert,
+  &__text,
+  &__main,
+  &__hide {
+    vertical-align: top;
+  }
+
+  &__delimiter {
+    width: 1px;
+    display: inline-block;
+    background: #606060;
+    height: 22px;
+    margin: 0 12px;
+  }
+
+  &__text {
+    margin-right: 24px;
+  }
+
+  &__alert {
+    font-weight: bold;
+    margin-right: 1em;
+  }
+
+  &__actions {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__main {
+    font-weight: bold;
+    color: #0091df;
+  }
+
+  &__hide {
+    color: #a6a6a8;
+  }
+
+  &__main:hover,
+  &__hide:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__btn:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+::ng-deep {
+  .snackbar-success {
+    .mat-progress-spinner circle, .mat-spinner circle {
+      stroke: #1767e1;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="group" *ngIf="formGroup">
+  <div class="group__row">
+    <label class="group__label">Image size</label>
+  </div>
+  <div class="group__row" (click)="openImageSizeForm()">
+    <div class="image-size__button">
+      <span>{{ title$ | async }}</span>
+      <mat-icon svgIcon="arrow" class="image-size__button-arrow"></mat-icon>
+    </div>
+  </div>
+</div>

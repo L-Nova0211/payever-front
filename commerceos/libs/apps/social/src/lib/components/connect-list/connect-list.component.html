@@ -1,0 +1,36 @@
+<!-- SOCIAL MEDIA ACCOUNTS -->
+<div
+  *ngIf="integrations$ | async as integrations" 
+  class="settings__section__content" 
+  [ngClass]="theme"
+>
+  <div
+    *ngFor="let integration of integrations"
+    class="settings__section__content-item"
+    [class.parent-overlay]="!notOverlay"
+  >
+    <div class="item-content" [class.not-overlay]="notOverlay">
+      <div class="item-icon" [style.background-color]="integration.iconColor.split('-')[0]">
+        <mat-icon [svgIcon]="integration.title"></mat-icon>
+      </div>
+      <span>{{ 'social-app.connect.accounts.'+integration.name | translate }}</span>
+      <peb-button-toggle
+        (changed)="switchChannel(integration, $event)"
+        [checked]="integration.enabled && integration.channelId"
+        labelPosition="before" 
+      ></peb-button-toggle>
+      <label
+        class="integration-config"
+        [class.not-overlay]="notOverlay"
+        (click)="confirmDialog(integration.name)"
+      >{{ 'social-app.actions.open' | translate }}</label>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="!notOverlay">
+  <div [style.margin-top.px]="16"></div>
+  <button peb-button
+    (click)="confirmDialog()"
+    [ngClass]="theme"
+  >{{ 'social-app.actions.add_integration' | translate }}</button>
+</ng-container>

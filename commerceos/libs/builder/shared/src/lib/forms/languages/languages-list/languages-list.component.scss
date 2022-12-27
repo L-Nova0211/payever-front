@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.group {
+  border-bottom: 1px solid #474747;
+  padding: 15px;
+  font-size: 1em;
+  font-weight: 500;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    min-height: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__option {
+    border-radius: 6px;
+    padding: 0 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0371e2;
+    }
+  }
+
+  &__style {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,41 @@
+<svg class="guidelines" [style.marginLeft.px]="spaceWidth$ | async" [style.marginRight.px]="spaceWidth$ | async" [style.width.px]="width">
+  <ng-container *ngFor="let guideline of (guidelines$ | async); let i = index">
+    <defs *ngIf="guideline.isDimension && getGuidelineWidth(guideline) > 30">
+      <marker 
+        id="start-{{i}}"
+        [attr.markerWidth]="marker.markerWidth"
+        [attr.markerHeight]="marker.markerHeight"
+        [attr.refX]="marker.refX"
+        [attr.refY]="marker.refY"
+        [attr.orient]="getMarkerOrient(guideline, markerPosition.Start)"
+        markerUnits="userSpaceOnUse"
+      >
+        <polyline [attr.points]="marker.points"/>
+      </marker>
+      <marker 
+        id="end-{{i}}"
+        [attr.markerWidth]="marker.markerWidth"
+        [attr.markerHeight]="marker.markerHeight"
+        [attr.refX]="marker.refX"
+        [attr.refY]="marker.refY"
+        [attr.orient]="getMarkerOrient(guideline, markerPosition.End)"
+        markerUnits="userSpaceOnUse"
+      >
+        <polyline [attr.points]="marker.points"/>
+      </marker>
+    </defs>
+    <path
+      *ngIf="guideline.isDimension"
+      [attr.d]="makeGuidelinePath(guideline, markerPosition.Start)"
+    ></path>
+    <path
+      [attr.d]="makeGuidelinePath(guideline)"
+      [attr.marker-start]="getMarkerUrl(i, markerPosition.Start)"
+      [attr.marker-end]="getMarkerUrl(i, markerPosition.End)"
+    ></path>
+    <path
+      *ngIf="guideline.isDimension"
+      [attr.d]="makeGuidelinePath(guideline, markerPosition.End)"
+    ></path>
+  </ng-container>
+</svg>

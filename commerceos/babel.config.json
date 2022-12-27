@@ -1,0 +1,4 @@
+{
+  "babelrcRoots": ["*", "apps/"],
+  "presets": ["@nrwl/web/babel"]
+}

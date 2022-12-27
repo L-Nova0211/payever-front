@@ -1,0 +1,84 @@
+<pe-refund-product-picker-styles></pe-refund-product-picker-styles>
+<div class="product-picker-container" #productPickerWrapper [attr.id]="inputId" [ngClass]="theme">
+  <div class="product-picker-container__controls-box">
+    <div class="input-with-label">
+      <span>{{ 'transactions.form.product_picker.heading' | translate }}</span>
+      <input
+        [placeholder]="placeholder"
+        #input
+        [disabled]="disabled"
+        (keyup)="onKey($event)"
+        [matAutocomplete]="productAuto"
+        [attr.id]="inputId"
+      />
+      <mat-autocomplete
+        (optionSelected)="optionSelect($event)"
+        [panelWidth]="productWidth"
+        class="product-autocomplete-panel"
+        #productAuto="matAutocomplete"
+        [displayWith]="displayFn">
+        <mat-option class="product-picker"
+          *ngFor="let option of filteredOptions;"
+          (click)="addSelectedProduct(option)"
+          [value]="option"
+        >
+          <div class="option-container">
+            <span class="option-container__image">
+              <img #imgOption [src]="option.image" (error)="imgOption.src = fallbackImage">
+            </span>
+            <span class="option-container__label">{{option.name}}</span>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+    <div class="button-container">
+      <button peb-text-button color="confirm" (click)="addProduct()"  [disabled]="disabled">
+        {{ 'transactions.form.product_picker.actions.add_product' | translate }}
+      </button>
+    </div>
+  </div>
+  <div class="products-container" [formGroup]="refundForm">
+    <ng-container formArrayName="refundItems">
+      <ng-container *ngFor="let item of refundItems.controls; trackBy: trackByFn; let i=index" [formGroupName]="i">
+        <div class="products-container__item">
+          <div>
+            <div class="product-image">
+              <img #img [src]="addedItems[i]?.image" (error)="setFallbackImage(i)">
+            </div>
+            <div class="product-data">
+              <span class="product-price">
+                {{addedItems[i].price | currency:addedItems[i].currency:undefined:undefined:locale}}
+              </span>
+              <span class="product-name">{{addedItems[i].name}}</span>
+            </div>
+            <div class="quantity">
+                <peb-select
+                  class="quantity-select"
+                  selectType="label"
+                  [label]="'transactions.form.product_picker.fields.quantity.label' | translate"
+                  formControlName="quantity"
+                  (changed)="emitChanges()"
+                >
+                  <peb-select-option *ngFor="let item of generateNumberOptions(addedItems[i].quantity)"
+                    [value]="item.value"
+                    [label]="item.label"
+                  >
+                  </peb-select-option>
+                </peb-select>
+            </div>
+          </div>
+
+          <button
+            class="delete-btn"
+            color="warn"
+            (click)="onRemoveProduct($event, i)"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+              <use xlink:href="#icon-basket"></use>
+            </svg>
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

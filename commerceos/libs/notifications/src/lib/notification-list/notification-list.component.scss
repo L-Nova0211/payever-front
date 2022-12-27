@@ -1,0 +1,70 @@
+dashboard-notification-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 0 8px;
+  box-sizing: border-box;
+  color: #ffffff;  
+  font-family: 'Roboto', sans-serif;
+  // width: 290px;
+  // margin-top: 53px;
+  margin-right: 15px;
+
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+  background-color: #1c1d1e;
+
+  .content {
+    padding-top: 8px;
+    padding-bottom: 5px;
+  }
+  
+  
+  .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    margin-bottom: 3px;
+  
+    .title {
+      font-family: Roboto, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+    
+    }
+    .close_btn{
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  
+  .notification-item {
+    font-size: 16px;
+    padding: 6px 8px;
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+  }
+  
+  .notification-empty {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+  }
+  
+  .scroll {
+    flex: 1;
+    max-height: 294px;
+    width: 100%;
+    contain: content;
+  
+    .cdk-virtual-scroll-content-wrapper {
+      position: relative;
+    }
+  }
+}
+

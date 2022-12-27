@@ -1,0 +1,630 @@
+//
+// Buttons
+// ----------------------------
+
+.pe-bootstrap {
+  .btn {
+    @include button-size(0, $grid-unit-x, $font-size-base, $btn-height-without-borders, $border-radius-base);
+
+    height: $btn-height;
+    font-weight: 400;
+    @include text-overflow;
+    @include payever_transition(all, $animation-transition-duration, linear);
+
+    img {
+      vertical-align: top;
+    }
+
+    .icon {
+      vertical-align: top;
+
+      &.icon-16 {
+        margin-top: floor(($grid-unit-y * 3  - $icon-size-16) / 2);
+      }
+
+      &.icon-24 {
+        margin-top: floor(($grid-unit-y * 3 - $icon-size-24) / 2);
+      }
+
+      & + span {
+        margin-left: $grid-unit-x;
+      }
+    }
+
+    span + .icon {
+      float: right;
+      margin-right: 0;
+      margin-left: $grid-unit-x;
+    }
+
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+        outline: none;
+        outline-offset: 0;
+      }
+    }
+
+    &:active,
+    &.active {
+      background-image: none;
+      outline: 0;
+      @include box-shadow(none);
+    }
+
+
+    //# Alignment
+
+    &.text-right {
+      text-align: right;
+    }
+
+    &.text-left {
+      text-align: left;
+    }
+
+
+    // Style Variations
+    // ------------------------------
+
+
+    //# Base Style Variations
+
+    &-default {
+      @include payever-button-variant($border-disabled: $color-light-gray-1);
+    }
+
+    &-blue {
+      @include payever-button-variant($color-blue, $color-white, $color-white, $color-white, $color-blue, $color-white,
+        $color-white, $color-blue, $color-blue, $color-blue, $color-light-blue, $color-dark-gray,
+        $color-blue, transparent, transparent, transparent, transparent);
+
+      &.btn-transparent {
+        &:hover {
+          background-color: $color-blue;
+        }
+      }
+
+      &.btn-semitransparent {
+        &:hover {
+          background-color: rgba(255, 255, 255, 1);
+          color: $color-gray;
+        }
+      }
+    }
+
+    &-success {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-green,
+        $color-green, $color-dark-green, $color-dark-green, $color-dark-green, $color-green, $color-white,
+        $color-green, $color-dark-green, $color-dark-green, $color-dark-green, $color-green, .5);
+    }
+
+    &-warning {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-orange,
+        $color-orange, $color-dark-orange, $color-dark-orange, $color-dark-orange, $color-orange, $color-white,
+        $color-orange, $color-dark-orange, $color-dark-orange, $color-dark-orange, $color-orange, .5);
+    }
+
+    &-danger {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-red,
+        $color-red, $color-dark-red, $color-dark-red, $color-dark-red, $color-red, $color-white,
+        $color-red, $color-dark-red, $color-dark-red, $color-dark-red, $color-red, .5);
+    }
+
+    &-primary {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-blue,
+        $color-blue, $color-dark-blue, $color-dark-blue, $color-dark-blue, $color-blue, $color-white,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+
+    //# Extra Color Variations
+
+    // Button Checkout
+    &-checkout {
+      $btn-checkout-background-image: linear-gradient(180deg, lighten($color-blue, 8%) 0%, darken($color-blue, 8%) 100%);
+      $btn-checkout-background-image-disabled: linear-gradient(180deg, lighten($color-blue, 8%) 0%, darken($color-blue, 8%) 100%);
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-blue,
+        $color-blue, $color-dark-blue, $color-dark-blue, $color-dark-blue, $color-blue, $color-white,
+        transparent, transparent, transparent, transparent, transparent, 0.65,
+        $btn-checkout-background-image, $btn-checkout-background-image-hover, $btn-checkout-background-image-hover,
+        $btn-checkout-background-image-active, $btn-checkout-background-image-disabled, 0);
+      height: $btn-height;
+    }
+
+    // Button Dark
+    &-dark {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-white,
+        $color-justblack, $color-gray-2, $color-gray-2, $color-gray-2, $color-dark-gray, $color-dark-gray,
+        transparent, $color-gray-2, $color-gray-2, $color-gray-2, transparent
+      );
+
+      &.btn-transparent {
+        &:hover {
+          background-color: $color-gray-2;
+        }
+      }
+    }
+
+
+    //# Transparent Buttons
+
+    // Button Transparent
+    &-transparent {
+
+      &, &:hover {
+        background-color: transparent;
+      }
+    }
+
+    // Button Semitransparent
+    &-semitransparent {
+      border-color: transparent;
+      background-color: rgba(255, 255, 255, .5);
+    }
+
+
+    //# Buttons like links
+
+    &-link {
+      font-weight: 400;
+      color: $color-blue;
+      background-color: transparent;
+      border: 0;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $color-gray-2;
+      }
+
+      &[disabled],
+      fieldset[disabled] & {
+        &:hover,
+        &:focus {
+          color: $color-blue;
+        }
+      }
+
+      .icon + span {
+        margin-left: 0;
+      }
+
+      span + .icon {
+        margin-left: 0;
+      }
+
+      // Default
+      &.btn-default {
+
+        &, &.dropdown-toggle {
+          color: $color-gray;
+
+          &.active,
+          &:active,
+          &:focus {
+            background: transparent;
+          }
+
+          &:hover {
+            color: $color-gray-2;
+            background: transparent;
+          }
+        }
+
+        &.dropdown-toggle {
+
+          .open > & {
+
+            &,
+            &.active,
+            &:active,
+            &:focus,
+            &:hover {
+              background-color: transparent;
+              color: inherit;
+            }
+          }
+        }
+      }
+
+      // Primary
+      &.btn-primary {
+        color: $color-blue;
+        font-weight: 600;
+
+        &.active,
+        &:active,
+        &:focus {
+          background: transparent;
+        }
+
+        &:hover {
+          color: $color-dark-gray;
+          background: transparent;
+        }
+
+        &:active {
+          background: transparent;
+        }
+      }
+
+      // White
+      &.btn-white {
+        @include payever-button-variant(
+            $color-gray-3,
+            $color-white,
+            $color-white,
+            $color-white,
+            $color-white,
+            $color-white,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent
+        );
+      }
+    }
+
+
+    //# Inline Button
+
+    &-inline {
+      line-height: inherit;
+      height: auto;
+      font-size: inherit;
+      vertical-align: baseline;
+      padding: 0 !important;;
+    }
+
+
+    //# Rounded Button
+
+    &-rounded {
+      border-radius: ceil($btn-height-without-borders / 2);
+    }
+
+
+    //# Button For Colorpicker
+
+    &-colorpicker {
+      border-color: $color-grey-4 !important;
+      color: transparent !important;
+      height: $btn-height-without-borders;
+    }
+
+
+    //# Button File Input
+
+    &-file {
+      position: relative;
+
+      input[type="file"] {
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        text-align: right;
+        opacity: 0;
+        background: none;
+        cursor: inherit;
+        position: absolute;
+      }
+    }
+
+
+    //# Button Glow
+
+    &-glow {
+      $bg_glow: rgba(34, 34, 34, .6);
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-white,
+        $bg_glow, $bg_glow, $bg_glow, $bg_glow, $bg_glow, $bg_glow,
+        transparent, transparent, transparent, transparent, transparent,
+        .5, none, none, none, none, none, 0);
+
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      padding: 0 $grid-unit-x;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: rgba(0, 0, 0, .75);
+
+        .icon {
+          opacity: .75;
+        }
+
+        span {
+          opacity: .75;
+        }
+      }
+
+      .btn-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0 $grid-unit-x;
+        vertical-align: middle;
+
+        .icon {
+          margin-top: 0;
+          vertical-align: middle;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 1px;
+          background: $color-white;
+          opacity: .2;
+        }
+      }
+
+      .btn-title {
+        position: relative;
+        text-align: center;
+        margin-left: $icon-size-24 + $grid-unit-x * 2;
+        display: block;
+      }
+
+      &-right {
+
+        .btn-icon {
+          left: auto;
+          right: 0;
+
+          &:before {
+            right: auto;
+            left: 0;
+          }
+        }
+
+        .btn-title {
+          margin-left: 0;
+          margin-right: $icon-size-24 + $grid-unit-x * 2;
+        }
+      }
+
+      &.btn-lg {
+
+        .btn-title {
+          margin-left: $icon-size-32 + $grid-unit-x * 2;
+        }
+
+        .btn-icon .icon {
+          margin-top: 0;
+        }
+
+        &.btn-glow-right {
+
+          .btn-title {
+            margin-left: 0;
+            margin-right: $icon-size-32 + $grid-unit-x * 2;
+          }
+        }
+      }
+    }
+
+
+    //# Social Buttons
+
+    &-facebook,
+    &-google,
+    &-twitter,
+    &-linkedin {
+      text-align: left;
+    }
+
+    &-facebook {
+      background-color: $color-facebook;
+      border-color: transparent;
+
+      &:hover, &:focus {
+        background-color: $color-white;
+        border-color: $color-facebook;
+        color: $color-facebook;
+      }
+    }
+
+    &-google {
+      background-color: $color-white;
+      border-color: $color-light-gray-1;
+      color: $color-dark-gray;
+
+      &:hover, &:focus {
+        background-color: $color-dark-gray;
+        border-color: transparent;
+        color: $color-white;
+      }
+    }
+
+    &-twitter {
+      background-color: $color-twitter;
+      border-color: transparent;
+
+      &:hover, &:focus {
+        background-color: $color-white;
+        border-color: $color-twitter;
+        color: $color-twitter;
+      }
+    }
+
+    &-linkedin {
+      background-color: $color-linkedin;
+      border-color: transparent;
+
+      &:hover, &:focus {
+        background-color: $color-white;
+        border-color: $color-linkedin;
+        color: $color-linkedin;
+      }
+    }
+
+
+    // Button Sizes
+    // ------------------------------
+
+    &-xl,
+    &-group-xl > .btn {
+      @include button-size(0, $grid-unit-x * 2, 16px, $btn-height-xl-without-borders, $border-radius-base);
+
+      height: $btn-height-xl;
+
+      &.btn-rounded {
+        border-radius: ceil($btn-height-xl / 2);
+      }
+
+      .icon {
+        &.icon-16 {
+          margin-top: floor(($btn-height-xl-without-borders - $icon-size-16) / 2);
+        }
+
+        &.icon-24 {
+          margin-top: floor(($btn-height-xl-without-borders - $icon-size-24) / 2);
+        }
+
+        &.icon-32 {
+          margin-top: floor(($btn-height-xl-without-borders - $icon-size-32) / 2);
+        }
+
+        &.icon-48 {
+          margin-top: floor(($btn-height-xl-without-borders - $icon-size-48) / 2);
+        }
+
+        & + span {
+          margin-left: $grid-unit-x * 2;
+        }
+      }
+
+      span + .icon {
+        margin-left: $grid-unit-x * 2;
+      }
+
+      &.btn-link {
+        padding: 0 $grid-unit-y;
+
+        .icon {
+          margin-right: $grid-unit-y;
+        }
+
+        span + .icon {
+          margin-left: $grid-unit-y;
+        }
+      }
+    }
+
+    &-lg,
+    &-group-lg > .btn {
+      @include button-size(0, $grid-unit-x * 2, 16px, $btn-height-lg-without-borders, $border-radius-base);
+
+      height: $btn-height-lg;
+
+      &.btn-rounded {
+        border-radius: ceil($btn-height-lg / 2);
+      }
+
+      .icon {
+        &.icon-16 {
+          margin-top: floor(($btn-height-lg-without-borders - $icon-size-16) / 2);
+        }
+
+        &.icon-24 {
+          margin-top: floor(($btn-height-lg-without-borders - $icon-size-24) / 2);
+        }
+
+        &.icon-32 {
+          margin-top: floor(($btn-height-lg-without-borders - $icon-size-32) / 2);
+        }
+
+        & + span {
+          margin-left: $grid-unit-x * 2;
+        }
+      }
+
+      span + .icon {
+        margin-left: $grid-unit-x * 2;
+      }
+
+      &.btn-link {
+        padding: 0 $grid-unit-x;
+
+        .icon {
+          margin-right: $grid-unit-x;
+        }
+
+        span + .icon {
+          margin-left: $grid-unit-x;
+        }
+      }
+    }
+
+    &-sm,
+    &-group-sm > .btn {
+      @include button-size(0, $grid-unit-x, 13px, $btn-height-sm-without-borders, $border-radius-base);
+
+      height: $btn-height-sm;
+
+      &.btn-rounded {
+        border-radius: ceil($btn-height-sm / 2);
+      }
+
+      .icon {
+        &.icon-16 {
+          margin-top: floor(($btn-height-sm-without-borders - $icon-size-16) / 2);
+        }
+
+        &.icon-24 {
+          margin-top: floor(($btn-height-sm-without-borders - $icon-size-24) / 2);
+        }
+      }
+    }
+
+    &-xs,
+    &-group-xs > .btn {
+      @include button-size(0, $grid-unit-x, 12px, $btn-height-xs-without-borders, $border-radius-base);
+
+      height: $btn-height-xs;
+
+      &.btn-rounded {
+        border-radius: ceil($btn-height-xs / 2);
+      }
+
+      .icon {
+        &.icon-16 {
+          margin-top: floor(($btn-height-xs-without-borders - $icon-size-16) / 2);
+        }
+      }
+    }
+  }
+}
+
+// TODO Remove if no problems
+// Deprecated
+//.pe-btn-link {
+//  padding: .5em .8em;
+//  background: $color-white;
+//  border: 1px solid $color-gray-2;
+//  display: inline-block;
+//  text-decoration: none;
+//  color: black;
+//  border-radius: 0;
+//  &:hover, &:focus, &:active {
+//    color: inherit;
+//    text-decoration: none;
+//  }
+//}

@@ -1,0 +1,60 @@
+.stars {
+  cursor: pointer;
+  vertical-align: middle;
+  display: initial;
+
+  &__item {
+    display: inline;
+    padding-right: 3px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.decimal-stars {
+  position:relative;
+  display: inline;
+  cursor: default;
+  vertical-align: middle;
+  overflow:hidden;
+
+  .foreground {
+    position: absolute;
+    left:0;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+
+  .background {
+    position: relative;
+    top:0;
+    left:0;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+}
+
+.rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  
+  li {
+    line-height: 1;
+    color: #ddd;
+    list-style-type: none;
+    display: inline-block;
+    &.filled {
+      color: white;
+    }
+  }
+  &.readonly li.filled {
+    color: #666;
+  }
+}
+
+.default-cursor {
+  cursor: default;
+}

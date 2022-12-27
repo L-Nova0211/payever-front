@@ -1,0 +1,92 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.form-container {
+  margin: 0 -12px -12px;
+  min-height: 70px;
+}
+
+.remove-button {
+  margin-top: 16px;
+}
+
+.form-margins {
+  margin-top: 16px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  .country-picker {
+    .picker-container {
+      &__controls {
+        .button-container {
+          .peb-text-button {
+            @media (max-width: 420px) {
+              line-height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .new-rate-button {
+    @media (max-width: 335px) {
+      margin-bottom: 40px;
+    }
+    margin-bottom: 5px;
+    height: 40px;
+    width: 100%;
+    color: #0091df;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  .remove-rate-button {
+    height: 40px;
+    width: 100%;
+    color: #eb4653;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    peb-messages {
+      margin-top: 4px;
+    }
+  }
+}
+
+.cdk-overlay-pane {
+  margin-top: 0;
+}
+
+.form-disclamer {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #7a7a7a;
+  }
+}
+
+.select-options {
+  span {
+    font-size: 12px;
+  }
+}

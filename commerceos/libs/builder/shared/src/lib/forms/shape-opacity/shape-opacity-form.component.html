@@ -1,0 +1,26 @@
+<div class="form" *ngIf="shapeOpacityService.shapeOpacityForm">
+  <form [formGroup]="shapeOpacityService.shapeOpacityForm">
+    <div class="group__row">
+      <label class="group__label">
+        Opacity
+      </label>
+    </div>
+    <div class="group__row">
+      <div class="group__col combined-input-range">
+        <peb-range-input
+          [min]="0"
+          [max]="100"
+          formControlName="opacity"
+          (change)="shapeOpacityService.submitForm$.next(true)"
+        ></peb-range-input>
+        <peb-number-input
+          [min]="0"
+          [max]="100"
+          formControlName="opacity"
+          (change)="shapeOpacityService.submitForm$.next(true)"
+          units="%"
+        ></peb-number-input>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,111 @@
+.pe-bootstrap {
+  $docker_height: 59px;
+  $docker_item_width: 160px;
+  $docker_item_width_mobile: 80px;
+  $docker_padding: 81px;
+  $mobile_checkpoint: $viewport-breakpoint-sm-2;
+  .docker-pos {
+    background-color: rgba($color-black, .8);
+    position: fixed;
+    z-index: $zindex-navbar-fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $docker_height;
+    padding: 0 $docker_padding;
+    @media(max-width: $mobile_checkpoint) {
+      padding: 0 $pe_hgrid_gutter/2;
+    }
+    .docker-menu {
+      font-size: 0;
+      justify-content: center;
+      display: flex;
+      .menu-item {
+        display: block;
+        max-width: $docker_item_width;
+        width: 100%;
+        height: $docker_height;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        vertical-align: middle;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding-top: 12px;
+          text-decoration: none;
+          color: $color-white;
+          font-size: 13px;
+          opacity: .3;
+          @media(max-width: $mobile_checkpoint) {
+            padding-top: 17px;
+          }
+          span {
+            display: block;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            @media(max-width: $mobile_checkpoint) {
+              display: none;
+            }
+          }
+          .icon {
+            width: $icon-size-24;
+            height: $icon-size-24;
+            margin-bottom: 2px;
+          }
+        }
+        &:hover, &:focus {
+          a {
+            opacity: .75;
+          }
+        }
+        &.current {
+          a {
+            color: $color-blue;
+            opacity: 1;
+            cursor: default;
+          }
+        }
+        &.disabled {
+          opacity: .1;
+          a {
+            opacity: 1;
+            cursor: default;
+          }
+        }
+      }
+      .mItem {
+        flex: 1 1 160px;
+        max-width: 160px;
+      }
+      .mItem:last-child {
+        .menu-item {
+          a {
+            .icon {
+              margin-top: 8px;
+            }
+          }
+        }
+        @media(min-width: $mobile_checkpoint + 1) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: $docker_padding;
+          .menu-item {
+            a {
+              span {
+                display: none;
+              }
+              .icon {
+                margin-top: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

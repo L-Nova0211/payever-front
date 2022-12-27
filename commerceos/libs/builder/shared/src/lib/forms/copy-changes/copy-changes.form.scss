@@ -1,0 +1,18 @@
+@import "../../../../../styles/src/lib/styles/spinner";
+
+.form {
+  padding: 12px;
+
+  &__row {
+    margin-top: 16px;
+
+    > span {
+      color: #7a7a7a;
+      display: block;
+      font-size: 11px;
+      font-family: Roboto, sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<pe-widget *ngIf="widget" [widget]="widget" [theme]="theme"></pe-widget>
+<!--TODO: Remove after approving WIDGET-1, COSF-343-->
+<!--<widget-card-->
+<!--  [appCode]="appName"-->
+<!--  [title]="'widgets.store.title' | translate"-->
+<!--  [iconSrc]="iconUrl | iconsPngUrl"-->
+<!--  [installIconSrc]="installIconUrl | iconsPngUrl"-->
+<!--  [learMoreUrl]="widget?.helpUrl"-->
+<!--  [showSpinner]="showSpinner$ | async"-->
+<!--  [showButtonSpinner]="showButtonSpinner$ | async"-->
+<!--  [installAppButtonText]="installAppButtonText | translate"-->
+<!--  (onClick)="onOpenButtonClick()"-->
+<!--&gt;-->
+
+<!--  <ng-container *ngIf="(shop$ | async) as shop">-->
+<!--    <store-info [title]="shop.name"-->
+<!--                [logo]="shop.logo | mediaUrl:'images'"-->
+<!--                [isShowEditButton]="false">-->
+<!--    </store-info>-->
+<!--    &lt;!&ndash;-->
+<!--    <div class="store-state">-->
+<!--      <span>-->
+<!--        <b>{{ 'widgets.store.live-status' | translate }} </b>-->
+<!--        {{ ((shop$ | async)?.live ? 'widgets.store.shop-on-live' : 'widgets.store.shop-disabled') | translate }}-->
+<!--      </span>-->
+<!--      <span class="domain-wrap">-->
+<!--        <b>{{ 'widgets.store.domain' | translate }} </b>-->
+<!--        <a [href]="'//' + domain + '.payever.shop'" target="_blank"-->
+<!--           *ngIf="domain$ | async as domain; else noContent">{{ domain }}.payever.shop</a>-->
+<!--        <ng-template #noContent>-->
+<!--          <span>{{ 'widgets.store.no-domain' | translate }}</span>-->
+<!--        </ng-template>-->
+<!--      </span>-->
+
+<!--      not used now:-->
+<!--      <span><b>Google Analytics </b>-->
+<!--          <button mat-button class="mat-button-link mat-button-xs mat-button-bold mat-button-no-padding">-->
+<!--          </button>-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <svg *ngIf="shops?.length > 1" class="icon icon-32 arrow-right" (click)="showNextShop()">-->
+<!--      <use xlink:href="#icon-arrow-right-32"></use>-->
+<!--    </svg>-->
+<!--    &ndash;&gt;-->
+
+<!--    <widget-action-button class="store-widget-button" [icon]="'#icon-edit-pencil-24'" [loading]="showEditButtonSpinner$ | async"-->
+<!--                          [title]="'widgets.store.actions.edit-store' | translate" (onClick)="openShop()"-->
+<!--    ></widget-action-button>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container *ngIf=" !(shop$ | async) ">-->
+<!--    {{ 'widgets.store.no-shops' | translate }}-->
+<!--  </ng-container>-->
+
+<!--  &lt;!&ndash;-->
+<!--  <ng-container more>-->
+<!--    <store-stats-->
+<!--      [statsTitle]="'widgets.store.last-7-days' | translate"-->
+<!--      [statsCounterSmaller]="true"-->
+<!--      [statsCounter]="transactionsAmount$ | async | currency:'EUR' : undefined : undefined : 'en-DE'"-->
+<!--      [productsTitle]="'widgets.store.top-products' | translate"-->
+<!--      [products]="products$ | async">-->
+<!--    </store-stats>-->
+<!--  </ng-container>&ndash;&gt;-->
+<!--</widget-card>-->

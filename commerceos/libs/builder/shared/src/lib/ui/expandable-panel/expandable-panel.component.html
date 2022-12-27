@@ -1,0 +1,14 @@
+<div
+  class="panel"
+  [class.panel--opened]="openedSubject$ | async"
+>
+  <div class="panel__header" (click)="toggle()">
+    <peb-editor-triangle-right-icon class="panel__icon"></peb-editor-triangle-right-icon>
+    <span class="panel__label">
+      <ng-content select="[slot=header]"></ng-content>
+    </span>
+  </div>
+  <div class="panel__content">
+    <ng-content select="[slot=body]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+$groupDelimiterColor: #525252;
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.75em 0;
+  border-bottom: 1px solid $groupDelimiterColor;
+
+  &.without-border {
+    border-bottom: none;
+  }
+}
+
+.input-group {
+  &__title {
+    width: 5em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

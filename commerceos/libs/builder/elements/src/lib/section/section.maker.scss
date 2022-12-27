@@ -1,0 +1,77 @@
+@import '../../../../styles/src/lib/styles/spinner';
+
+:host {
+  position: relative;
+  user-select: none;
+  // flex: 1;
+}
+
+#main-slot {
+  position: relative;
+  //height: 100%;
+  margin: 0 auto;
+  font-size: 0;
+
+  &:before { // prevent border collapsing for sections
+    content: '';
+    display: table;
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-wrapper {
+  margin: 0 auto;
+}
+
+.preview-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+
+  &.loaded {
+    display: inline;
+  }
+}
+
+.main-slot {
+  &__none-events {
+    pointer-events: none;
+
+    & > * {
+      pointer-events: auto;
+    }
+  }
+}
+
+.video-wrap {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  .video-player {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &.loaded {
+      display: inline;
+    }
+  }
+}
+
+.video {
+  box-sizing: border-box;
+}
+
+.video-container {
+  display: block;
+  margin: 0 auto;
+}

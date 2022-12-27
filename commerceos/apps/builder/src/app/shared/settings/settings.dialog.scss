@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input,
+button,
+.controls {
+  color: white;
+  background: transparent;
+  width: 100%;
+}
+
+button {
+  display: flex;
+  justify-content: space-between;
+
+  .hotkey {
+    opacity: 0.4;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+input,
+button {
+  border: 1px solid #373c41;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-size: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+button:hover:not([disabled]) {
+  background: #383838;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.3;
+}

@@ -1,0 +1,43 @@
+<div class="peb-datetime-picker-extended-wrapper" ngClass="{{theme + '-datepicker'}}">
+  <div class="peb-datepicker-calendar">
+    <div class="peb-datepicker-calendar__calendar">
+      <mat-calendar
+        #calendar
+        (selectedChange)="selectedChangeOn($event)"
+        [comparisonStart]="dateStart"
+        [comparisonEnd]="dateEnd"
+        [selected]="range"
+        [maxDate]="maxDate"
+        class="peb-datepicker"
+      ></mat-calendar>
+      <div class="peb-start-end">
+        <div class="peb-start-end__date">
+          <span class="date-label">Start</span>
+          <span class="date-value" [class.no-value]="dateStartLabel === null"
+            >{{dateStartLabel !== null ? dateStartLabel : 'DD-MMM-YYYY'}}</span
+          >
+        </div>
+        <div class="peb-start-end__date">
+          <span class="date-label">End</span>
+          <span class="date-value" [class.no-value]="dateEndLabel === null"
+            >{{dateEndLabel !== null ? dateEndLabel : 'DD-MMM-YYYY'}}</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="peb-datepicker-calendar__filters">
+      <ng-container *ngFor="let filter of dateFilters">
+        <button class="filter-button" (click)="onFilter(filter)">{{filter.label}}</button>
+      </ng-container>
+    </div>
+  </div>
+  <div class="peb-datepicker-actions">
+    <!-- <button class="peb-datepicker-actions__compare" (click)="onCompare()">Cancel</button> -->
+    <div class="checkbox-background">
+      <peb-checkbox (changed)="getCompare($event)" type="label">Compare</peb-checkbox>
+    </div>
+    <button class="peb-datepicker-actions__apply" [class.button-disabled]="dateStart === null" (click)="onApply()">
+      Apply
+    </button>
+  </div>
+</div>

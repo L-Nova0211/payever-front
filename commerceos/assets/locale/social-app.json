@@ -1,0 +1,176 @@
+{
+  "social-app": {
+    "actions": {
+      "add_integration": "Add integration",
+      "cancel": "Cancel",
+      "close": "Close",
+      "configure": "Configure",
+      "done": "Done",
+      "edit": "Edit",
+      "loading": "Loading...",
+      "open": "Open",
+      "publish": "Publish",
+      "remove": "Remove",
+      "save": "Save",
+      "shedule": "Schedule for later"
+    },
+    "apm_errors": {
+      "get_post": "Failed to get the social post",
+      "get_posts": "Failed to get list of posts",
+      "create_post": "Failed to create a post",
+      "delete_post": "Failed to delete post",
+      "update_post": "Failed to update the post",
+      "get_business_integrations": "Failed to get list of business integrations from Social app",
+      "get_channels_sets": "Failed to get list of channels sets from Social app",
+      "switch_integration": "Failed to switch the integration",
+      "get_products": "Failed to get product list from Social app"
+    },
+    "badges": {
+      "draft": "Draft",
+      "postnow": "Posted",
+      "schedule": "Scheduled",
+      "status": "Status"
+    },
+    "folders": {
+      "all_posts": "All Posts",
+      "title": "My posts"
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "post_editor": {
+          "creating": {
+            "title": "Creating post",
+            "subtitle": "Do you really want to close adding a post? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing post",
+            "subtitle": "Do you really want to close editing a post? All data will be lost and you will not be able to restore it"
+          },
+          "to_connect": {
+            "title": "Creating post",
+            "subtitle": "Do you really want to go to configure channel? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "post": {
+          "title": "Delete post",
+          "subtitle": "Are you sure you want to delete selected post?"
+        },
+        "posts": {
+          "title": "Delete posts",
+          "subtitle": "Are you sure you want to delete selected posts?"
+        }
+      }
+    },
+    "connect": {
+      "title": "Connect",
+      "accounts": {
+        "title": "SOCIAL MEDIA ACCOUNTS",
+        "facebook_posts": "Facebook posts",
+        "facebook-posts": "Facebook posts",
+        "instagram_posts": "Instagram posts",
+        "instagram-posts": "Instagram posts",
+        "linkedin": "LinkedIn",
+        "pinterest": "Pinterest",
+        "twitter": "Twitter",
+        "youtube": "YouTube"
+      },
+      "channels": {
+        "title": "CHANNELS",
+        "shop": "Shop",
+        "site": "Site",
+        "blog": "Blog"
+      }
+    },
+    "navigation": {
+      "title": "Navigation",
+      "my_posts": "My posts",
+      "connect": "Connect"
+    },
+    "notify": {
+      "all_selected_folders": "All selected folders",
+      "all_selected_items": "All selected items",
+      "all_selected_posts": "All selected posts",
+      "channels_off": "At least one channel must be activated",
+      "not_connected": "is not connected",
+      "post": "Post",
+      "draft": "Draft of post",
+      "post_published": "Post published",
+      "post_saved": "Post saved",
+      "post_scheduled": "The post will be published later",
+      "post_updated": "Post updated",
+      "switched_off": "is switched off",
+      "switched_on": "is switched on",
+      "successfuly_created": "successfuly created",
+      "successfuly_deleted": "successfuly deleted",
+      "successfuly_duplicated": "successfuly duplicated",
+      "successfuly_published": "successfuly published",
+      "successfuly_updated": "successfuly updated"
+    },
+    "post_editor": {
+      "create_post": "Create post",
+      "edit_post": "Edit post",
+      "general": "General",
+      "post_type": {
+        "label": "Post type",
+        "media": "Media",
+        "post": "Post",
+        "product": "Product",
+        "share": "Share"
+      },
+      "media": {
+
+      },
+      "product": {
+        "error": "At least one product must be added",
+        "label": "Product",
+        "placeholder": "Search product"
+      },
+      "content": {
+        "error": "You need to add media content or description to your post",
+        "label": "Text",
+        "placeholder": "Enter description to your post"
+      },
+      "channels": {
+        "errors": {
+          "channels_expected": "At least one channel must be choosen",
+          "no_connected_channels": "No connected channels"
+        },
+        "label": "Channels",
+        "warnings": {
+          "max_file_size": "File size exceeded",
+          "aspect_ratio": "Incorrect aspect ratio",
+          "min_duration": "File duration is insufficient",
+          "max_duration": "File duration exceeded",
+          "max_width": "Max width exceeded",
+          "max_height": "Max height exceeded",
+          "min_framerate": "Min framerate is insufficient",
+          "max_framerate": "Max framerate excedeed",
+          "max_bitrate": "Max bitrate excedeed",
+          "images_per_post": "No more than {maxImagesPerPost} images",
+          "letter_limit": "Letter limit exceeded by {exceededLetters}",
+          "only_video": "Only video is allowed",
+          "was_published": "Was published"
+        }
+      },
+      "campaign": "Post Campaign",
+      "set_schedule_date": "Set a schedule date",
+      "date": {
+        "error": "Invalid date",
+        "label": "Date",
+        "placeholder": "DD.MM.YYYY"
+      },
+      "time": {
+        "error": "Invalid time",
+        "label": "Time",
+        "placeholder": "HH:MM AM"
+      }
+    },
+    "title": "Social"
+  }
+}

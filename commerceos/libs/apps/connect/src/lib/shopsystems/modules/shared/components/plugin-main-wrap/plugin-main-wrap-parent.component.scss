@@ -1,0 +1,143 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .plugin-main-wrap-container {
+    min-width: 100%;
+    padding: 0;
+
+
+    .pe-info-box {
+      width: 100%;
+      padding: 0;
+
+      .info-box {
+        .mat-card {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .connect-payment-option-wrapper__api-keys .mat-accordion .mat-expansion-panel {
+      &:first-of-type {
+        border-top: 1px solid $menu-item-border-color;
+        border-bottom: none;
+      }
+    }
+
+    .mat-expansion-panel-header-title-no-logo.text-centered {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      .add-button {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.33;
+        background-color: transparent;
+        color: #0091df;
+      }
+    }
+
+    .mat-list-item-col.sections-step-buttons {
+      .mat-raised-button {
+        font-size: 12px;
+        line-height: 1.33;
+        background-color: transparent;
+      }
+
+      .icon.icon-16 {
+        color: $regular-text-color;
+        background-color: transparent;
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+    .key {
+      background-color: $table-content-background-color;
+      overflow: hidden;
+      border-radius: 12px;
+
+      &-info__title {
+        color: $regular-text-color;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.33;
+        font-family: Roboto, sans-serif;
+      }
+
+      &-value {
+        .btn-copy {
+          font-size: 12px;
+          line-height: 1.33;
+          background-color: transparent;
+          color: #0091df;
+          border: none;
+          -webkit-tap-highlight-color: transparent;
+
+          &:focus {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            -webkit-tap-highlight-color: transparent;
+            text-underline: none;
+          }
+        }
+      }
+
+      .row {
+        height: 40px;
+        padding: 0 12px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        border-bottom: 1px solid $menu-item-border-color;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .overlay-light {
+    .plugin-main-wrap-container {
+      .mat-list-item-col.sections-step-buttons {
+        .icon.icon-16 {
+          color: $regular-text-color;
+        }
+      }
+
+      .key {
+        background-color: $content-light-background-color;
+
+        &-info__title {
+          color: $regular-light-text-color;
+        }
+
+        &-value {
+          color: $regular-light-text-color;
+        }
+
+        .row {
+          border-bottom: 1px solid $content-light-border-color;
+        }
+      }
+    }
+  }
+
+  .overlay-transparent {
+    .plugin-main-wrap-container {
+      .key {
+        background-color: $content-transparent-background-color;
+
+        .row {
+          border-bottom: 1px solid $content-transparent-border-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $appName := printf "%s-%s" $chartName $values.issue | lower | replace "_" "-" | trimSuffix "-"  }}
+{{- if .Values.deployToExclusive -}}
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName}}
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: {{ $appName }}
+
+  ports:
+    - protocol: TCP
+      port: {{ $values.service.externalPort }}
+      targetPort: {{ $values.service.containerPort }}
+      name: http
+{{- end -}}

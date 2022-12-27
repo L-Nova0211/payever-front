@@ -1,0 +1,46 @@
+<div class="color-theme">
+  <div class="color-theme__color-mock-up">
+    <swiper
+      class="swiper"
+      [config]="{slidesPerView: 4, navigation: false, pagination: false}"
+    >
+      <ng-container *ngFor="let mockUp of mockUps">
+        <pe-message-appearance-color-mockup
+          [selected]="mockUp.isDefault || false"
+          [title]="mockUp.name || ''"
+          [bgChatColor]="mockUp.settings?.bgChatColor || ''"
+          [messagesTopColor]="mockUp.settings?.messagesTopColor || ''"
+          [messagesBottomColor]="mockUp.settings?.messagesBottomColor || ''"
+          (click)="selectMockUp(mockUp)"
+        ></pe-message-appearance-color-mockup>
+      </ng-container>
+    </swiper>
+  </div>
+  <div class="color-theme__color-layout">
+    <swiper #swiperColorBoxes
+            [config]="{slidesPerView: 8, spaceBetween: 18, navigation: false, pagination: false}"
+            *ngIf="swiperColorBoxes"
+            class="swiper"
+    >
+      <pe-message-appearance-color
+        [selected]="false"
+        [messagesBottomColor]="''"
+        [accentColor]="''"
+        [addNewColorSet]="true"
+        (click)="openColorPicker(null, -1)"
+      ></pe-message-appearance-color>
+      <pe-message-appearance-color
+        *ngFor="let boxColor of colorBoxes; let index=index;"
+        [class.first-item]="index === 0"
+        [selected]="index === defaultPresetColor"
+        [messagesBottomColor]="boxColor.messagesBottomColor || ''"
+        [accentColor]="boxColor.accentColor"
+        (click)="openColorPicker(boxColor, index)"
+      ></pe-message-appearance-color>
+    </swiper>
+  </div>
+  <pe-message-appearance-shadow
+    [shadowColor]="shadowColor"
+    (changed)="changeBoxShadow($event)"
+  ></pe-message-appearance-shadow>
+</div>

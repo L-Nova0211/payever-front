@@ -1,0 +1,31 @@
+@import 'pe_animation_variables.scss';
+@import 'pe_mixins.scss';
+
+.blurry-backdrop-wrap {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  bottom: -40px;
+  right: -40px;
+  z-index: 1;
+  @include payever_transition(all, $animation-duration-slide-out, $animation-effect-ease-in);
+  filter: blur(30px);
+  transform: translateZ(0);
+}
+.micro-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: none; // hide scroll in IE/Edge but allow to scroll
+
+  /* remove scrollbar space */
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}

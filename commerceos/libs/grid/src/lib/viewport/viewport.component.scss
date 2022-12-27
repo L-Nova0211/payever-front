@@ -1,0 +1,91 @@
+@import '../../../../ui-styles/src/pe_skeleton.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  margin-right: -16px;
+  margin-top: 16px;
+
+  &.light {
+    .pe-grid-viewport {
+      &__title {
+        p {
+          color: #000;
+        }
+
+        .skeleton-title {
+          background-color: $skeleton-color-light;
+        }
+      }
+    }
+  }
+
+  &.dark,
+  &.transparent {
+    .pe-grid-viewport {
+      &__title {
+        p {
+          color: #fff;
+        }
+        .skeleton-title {
+          background-color: $skeleton-color-dark;
+        }
+      }
+    }
+  }
+}
+
+.pe-grid-viewport {
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 16px;
+
+    &.loading {
+      height: 21px;
+    }
+
+    .sidebar-toggle {
+      width: 16px;
+      height: 16px;
+      display: block;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      cursor: pointer;
+      margin-right: 10px;
+
+      .mat-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      @media (min-width: 720px) {
+        display: none;
+      }
+    }
+
+    p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.3125;
+      margin: 0;
+    }
+
+    .skeleton-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 21px;
+      border-radius: 3px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+  }
+}

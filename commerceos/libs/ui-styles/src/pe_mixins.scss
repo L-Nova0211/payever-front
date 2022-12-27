@@ -1,0 +1,968 @@
+@charset "UTF-8";
+
+@import 'mixins/avatar';
+@import 'mixins/material';
+@import 'mixins/media-breakpoints';
+@import 'mixins/misc';
+@import 'mixins/forms';
+@import 'mixins/grid';
+@import 'mixins/type';
+
+@mixin payever_transition(
+    $property: all,
+    $duration: $animation-duration-slide-in,
+    $effect: $animation-effect-ease-in,
+    $delay: 0s) {
+  $transition-params: $property $duration $effect $delay;
+  -webkit-transition: $transition-params;
+  -moz-transition: $transition-params;
+  -o-transition: $transition-params;
+  transition: $transition-params;
+}
+
+@mixin payever_backface_visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin full_screen(
+    $top: 0,
+    $right: 0,
+    $bottom: 0,
+    $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+@mixin payever_animation(
+    $name: null,
+    $duration: null,
+    $timing-function: null,
+    $delay: null,
+    $iteration-count: null,
+    $direction: null,
+    $fill-mode: null,
+    $play-state: null) {
+  $animation-params: $name $duration $timing-function $delay $iteration-count $direction $fill-mode $play-state;
+  -webkit-animation: $animation-params;
+  -moz-animation: $animation-params;
+  -o-animation: $animation-params;
+  animation: $animation-params;
+}
+
+@mixin payever_animation_duration($duration) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin payever_animation_delay($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin payever_animation_name($name) {
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -o-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin payever_transition_property($property...) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+}
+
+@mixin payever_transition_transform(
+  $time: $animation-duration-slide-in,
+  $effect: $animation-effect-ease-in) {
+  -webkit-transition: -webkit-transform $time $effect;
+  -moz-transition: -moz-transform $time $effect;
+  -o-transition: -o-transform $time $effect;
+  transition: transform $time $effect;
+}
+
+@mixin payever_transform_translate($left, $top) {
+  -webkit-transform: translate($left,$top);
+  -moz-transform: translate($left,$top);
+  -o-transform: translate($left,$top);
+  -ms-transform: translate($left,$top);
+  transform: translate($left,$top);
+}
+
+@mixin payever_transform_translateX($left) {
+  -webkit-transform: translateX($left);
+  -moz-transform: translateX($left);
+  -o-transform: translateX($left);
+  -ms-transform: translateX($left);
+  transform: translateX($left);
+}
+
+@mixin payever_transform_translateY($top) {
+  -webkit-transform: translateY($top);
+  -moz-transform: translateY($top);
+  -o-transform: translateY($top);
+  -ms-transform: translateY($top);
+  transform: translateY($top);
+}
+
+@mixin payever_transform_translate3d($tx, $ty, $tz) {
+  -webkit-transform: translate3d($tx,$ty,$tz);
+  -moz-transform: translate3d($tx,$ty,$tz);
+  -o-transform: translate3d($tx,$ty,$tz);
+  -ms-transform: translate3d($tx,$ty,$tz);
+  transform: translate3d($tx,$ty,$tz);
+}
+
+@mixin payever_transform_translateZ($tz) {
+  -webkit-transform: translateZ($tz);
+  -moz-transform: translateZ($tz);
+  -o-transform: translateZ($tz);
+  -ms-transform: translateZ($tz);
+  transform: translateZ($tz);
+}
+
+@mixin payever_backface_visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin payever_perspective($perspective) {
+  -webkit-perspective: $perspective;
+  -moz-perspective: $perspective;
+  perspective: $perspective;
+}
+
+@mixin payever_backface_visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin payever_transform_rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin payever_transform_scale(
+  $x: 1,
+  $y: 1 ) {
+  -webkit-transform: scale($x, $y);
+  -moz-transform: scale($x, $y);
+  -o-transform: scale($x, $y);
+  -ms-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
+@mixin payever_radial_gradient(
+    $position: center,
+    $form: ellipse,
+    $color-start: $color-gray,
+    $color-stop: transparent ) {
+  background-image: -webkit-radial-gradient($position, $form, $color-start, $color-stop);
+  background-image: -ms-radial-gradient($position, $form, $color-start, $color-stop);
+  background-image: -moz-radial-gradient($position, $form, $color-start, $color-stop);
+  background-image: -o-radial-gradient($position, $form, $color-start, $color-stop);
+  background-image: radial-gradient($form at $position, $color-start, $color-stop);
+}
+
+@mixin payever_grayscale_image {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  -webkit-filter: grayscale(100%);
+}
+
+@mixin payever_grayscale_image_disabled {
+  filter: none;
+  -webkit-filter: none;
+}
+
+@mixin payever_image_covers {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin payever_absolute($size: 0){
+  position: absolute;
+  left: $size;
+  right: $size;
+  top: $size;
+  bottom: $size;
+}
+
+@mixin payever_vertical_align_middle {
+  &:before {
+    content: "";
+    display: inline-block;
+    margin: 0 0 0 -1px;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+@mixin payever_vertical_align_bottom {
+  &:before {
+    content: "";
+    display: inline-block;
+    margin: 0 0 0 -1px;
+    width: 1px;
+    height: 100%;
+    vertical-align: bottom;
+  }
+}
+
+@mixin payever_user_select($user_select_value: none) {
+  -moz-user-select: $user_select_value;
+  -webkit-user-select: $user_select_value;
+  user-select: $user_select_value;
+}
+
+@mixin payever_zoom(
+    $scale: 1,
+    $origin: top) {
+  -webkit-transform: scale($scale);
+  -webkit-transform-origin: $origin;
+
+  -moz-transform: scale($scale);
+  -moz-transform-origin: $origin;
+
+  -ms-transform: scale($scale);
+  -ms-transform-origin: $origin;
+
+  -o-transform: scale($scale);
+  -o-transform-origin: $origin;
+
+  transform: scale($scale);
+  transform-origin: $origin;
+}
+
+// Mixins from @compass
+@mixin reset-box-model {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+@mixin clearfix {
+  overflow: hidden;
+}
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin horizontal-list-container {
+  @include reset-box-model;
+  @include clearfix;
+}
+@mixin inline-block-list-container {
+  @include horizontal-list-container;
+}
+@mixin inline-block-list-item(
+  $padding: false) {
+  @include no-bullet;
+  @include inline-block;
+  white-space: nowrap;
+  @if $padding {
+    padding: {
+      left: $padding;
+      right: $padding;
+    };
+  }
+}
+@mixin inline-block-list($padding: false) {
+  @include inline-block-list-container;
+  li {
+    @include inline-block-list-item($padding);
+  }
+}
+@mixin no-bullet {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+@mixin inline-block(
+    $alignment: false,
+    $ie-alignment: auto) {
+  display: inline-block;
+  @if $alignment and $alignment != none {
+    vertical-align: $alignment;
+  }
+}
+
+@mixin filter($filters){
+  -webkit-filter: $filters;
+  filter: $filters;
+}
+
+@mixin border-radius(
+    $radius: $border-radius-base,
+    $vertical-radius: false) {
+  $legacy-radius: if($vertical-radius, #{$radius} / #{$vertical-radius}, $radius);
+  -moz-border-radius: $legacy-radius;
+  -webkit-border-radius: $legacy-radius;
+  border-radius: $legacy-radius;
+}
+
+@mixin border-bottom-left-radius($radius: $border-radius-base) {
+  -moz-border-radius-bottomleft: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius: $border-radius-base) {
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin loader_basis($name) {
+  [class^="#{$name}_"], [class*=" #{$name}_"] {
+    &, &:after, &:before {
+      background: rgba(0, 0, 0, .75);
+      @include payever_animation(loader-black, 3 * $animation-duration-complex, $animation-effect-ease-in, 0s, infinite, normal, both);
+      z-index: $zindex-dropdown;
+      border-radius: 50%;
+    }
+    &.loader-white, &.loader-white:after, &.loader-white:before,
+    .loader-container.loader-fade-dark &, .loader-container.loader-fade-dark &:after, .loader-container.loader-fade-dark &:before,
+    .btn-primary:not(.btn-link) &,.btn-primary:not(.btn-link) &:after, .btn-primary:not(.btn-link) &:before,
+    .btn-checkout &, .btn-checkout &:after, .btn-checkout &:before,
+    .btn-success &, .btn-success &:after, .btn-success &:before,
+    .btn-warning &, .btn-warning &:after, .btn-warning &:before,
+    .btn-danger &, .btn-danger &:after, .btn-danger &:before,
+    .btn-dark &, .btn-dark &:after, .btn-dark &:before {
+      background: rgba(255, 255, 255, .6);
+      -webkit-animation-name: loader-white;
+      -moz-animation-name: loader-white;
+      -o-animation-name: loader-white;
+      animation-name: loader-white;
+    }
+
+  }
+  [class^="#{$name}_"], [class*=" #{$name}_"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    animation-delay: $animation-duration-complex;
+  }
+  [class^="#{$name}_"]:after, [class*=" #{$name}_"]:after,
+  [class^="#{$name}_"]:before, [class*=" #{$name}_"]:before {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  [class^="#{$name}_"]:after, [class*=" #{$name}_"]:after {
+    animation-delay: 2 * $animation-duration-complex;
+  }
+}
+
+@mixin loader($size) {
+  &_#{$size},
+  &_#{$size}:before,
+  &_#{$size}:after {
+    @if $size == 24 {
+      width: 4px;
+      height: 4px;
+    } @else if $size == 32 {
+      width: 6px;
+      height: 6px;
+    } @else if $size == 48 {
+      width: 10px;
+      height: 10px;
+    } @else if $size == 64 {
+      width: 14px;
+      height: 14px;
+    } @else {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &_#{$size} {
+    @if $size == 24 {
+      margin-top: -2px;
+      margin-left: -2px;
+    } @else if $size == 32 {
+      margin-top: -3px;
+      margin-left: -3px;
+    } @else if $size == 48 {
+      margin-top: -5px;
+      margin-left: -5px;
+    } @else if $size == 64 {
+      margin-top: -7px;
+      margin-left: -7px;
+    } @else {
+      margin-top: -5px;
+      margin-left: -5px;
+    }
+  }
+  &_#{$size}:before {
+    @if $size == 24 {
+      left: -6px;
+    } @else if $size == 32 {
+      left: -8px;
+    } @else if $size == 48 {
+      left: -14px;
+    } @else if $size == 64 {
+      left: -20px;
+    } @else {
+      left: -14px;
+    }
+  }
+  &_#{$size}:after {
+    @if $size == 24 {
+      left: 6px;
+    } @else if $size == 32 {
+      left: 8px;
+    } @else if $size == 48 {
+      left: 14px;
+    } @else if $size == 64 {
+      left: 20px;
+    } @else {
+      left: 14px;
+    }
+  }
+}
+
+@mixin payever_spinner($size: 32px, $border-width: 1px) {
+  visibility: hidden;
+  position: relative;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &:after {
+    visibility: visible;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$size/2;
+    margin-left: -$size/2;
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    border: $border-width solid #e1e1e1;
+    border-top-color: #0084ff;
+    z-index: 101;
+    @include payever_animation($name: spin, $duration: 1s, $timing-function: linear, $iteration-count: infinite);
+  }
+}
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Contextual backgrounds
+// [converter] $parent hack
+@mixin payever-bg-variant($parent, $color, $color_hover) {
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    background-color: $color_hover;
+  }
+}
+
+// Typography
+// [converter] $parent hack
+@mixin payever-text-emphasis-variant($parent, $color, $color_hover) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    color: $color_hover;
+  }
+}
+
+@mixin payever-form-control-validation(
+    $text-color: #555,
+    $border-color: #ccc,
+    $addon-text-color: #555,
+    $addon-background-color: #f5f5f5,
+    $addon-border-color: #ccc) {
+  // Color the label and help text
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label  {
+    color: $text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .form-control {
+    border-color: $border-color;
+    box-shadow: none; // Redeclare so transitions work
+    &:focus {
+      border-color: darken($border-color, 10%);
+      box-shadow: none;
+    }
+  }
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $addon-text-color;
+    border-color: $addon-border-color;
+    background-color: $addon-background-color;
+  }
+  // Optional feedback icon
+  .form-control-feedback {
+    color: $text-color;
+  }
+}
+
+@mixin payever-button-variant(
+    $color-btn: $color-dark-gray,
+    $color-btn-hover: $color-dark-gray,
+    $color-btn-focus: $color-dark-gray,
+    $color-btn-active: $color-dark-gray,
+    $color-btn-disabled: $color-gray,
+    $color-btn-badge: $color-white,
+
+    $background: $color-white,
+    $background-hover: $color-white,
+    $background-focus: $color-white,
+    $background-active: $color-white,
+    $background-disabled: $color-light-gray-2,
+    $background-badge: $color-dark-gray,
+
+    $border-color: $color-light-gray-1,
+    $border-hover: $color-light-gray-1,
+    $border-focus: $color-light-gray-1,
+    $border-active: $color-light-gray-1,
+    $border-disabled: transparent,
+
+    $opacity-disabled: .65,
+    $background-image: none,
+    $background-image-hover: none,
+    $background-image-focus: none,
+    $background-image-active: none,
+    $background-image-disabled: none,
+    $border-width: 1px) {
+  color: $color-btn;
+  background-color: $background;
+  border-color: $border-color;
+  background-image: $background-image;
+  border-width: $border-width;
+  background-origin: border-box;
+
+  &:focus,
+  &.focus {
+    color: $color-btn-focus;
+    background-color: $background-focus;
+    border-color: $border-focus;
+    background-image: $background-image-focus;
+  }
+
+  &:hover {
+    color: $color-btn-hover;
+    background-color: $background-hover;
+    border-color: $border-hover;
+    background-image: $background-image-hover;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color-btn-active;
+    background-color: $background-active;
+    border-color: $border-active;
+    background-image: $background-image-active;
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color-btn-active;
+      background-color: $background-active;
+      border-color: $border-active;
+      background-image: $background-image-active;
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background-disabled;
+      border-color: $border-disabled;
+      color: $color-btn-disabled;
+      opacity: $opacity-disabled;
+      background-image: $background-image-disabled;
+    }
+  }
+
+  .badge {
+    color: $color-btn-badge;
+    background-color: $background-badge;
+  }
+}
+
+/**
+ * Retina media query
+ */
+@mixin retina(){
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      @content;
+  }
+}
+
+/**
+ * Respond to screen sizes
+ * @param  {string} $size [xs_1, xs_2, sm_1, sm_2, sm_3, md_1, lg_1, lg_2, xl_1]
+ */
+@mixin break($size) {
+  @media only screen and (min-width: map-get($breakpoints, $size) + 1px) {
+    @content;
+  }
+}
+
+/**
+ * Respond to screen sizes
+ * @param  {string} $size [xs_1, xs_2, sm_1, sm_2, sm_3, md_1, lg_1, lg_2, xl_1]
+ */
+@mixin break-down($size) {
+  @media only screen and (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+/**
+ * Break Retina
+ * @param  {string} $size [xs_1, xs_2, sm_1, sm_2, sm_3, md_1, lg_1, lg_2, xl_1]
+ */
+@mixin break-retina($size) {
+  @media only screen and (min-width: map-get($breakpoints, $size)) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: map-get($breakpoints, $size)) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: map-get($breakpoints, $size)) and (min-device-pixel-ratio: 1.5)  {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+// Flex Mixins
+@mixin pe_flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+%pe_flexbox { @include pe_flexbox; }
+
+@mixin pe_inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+%pe_inline-flex { @include pe_inline-flex; }
+
+@mixin pe_flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin pe_flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin pe_flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin pe_order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -moz-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+@mixin pe_flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+@mixin pe_flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+
+@mixin pe_flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+@mixin pe_flex($fg: 1, $fs: null, $fb: null) {
+
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin pe_justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin pe_align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+@mixin pe_align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin pe_align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
+
+@mixin last-row-flexbox($num-columns, $width-items) {
+
+  $filled-space: $width-items * $num-columns;
+  $margin: calc((100% - #{$filled-space}) / (#{$num-columns} - 1));
+  $num-cols-1 : $num-columns - 1;
+  width: $width-items;
+  &:nth-child(#{$num-columns}n+1):nth-last-child(-n+#{$num-cols-1}) ~ & {
+    margin-left: $margin;
+  }
+  @for $i from 1 through $num-columns - 2 {
+    $index: $num-columns - $i;
+    &:nth-child(#{$num-columns}n+#{$index}):last-child {
+      margin-right: auto;
+    }
+  }
+}
+
+@mixin pe-truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes initialize {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0 -2.6em 0 0 #fff, 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2), 2.5em 0 0 0 rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.2), 0 2.5em 0 0 rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.2), -2.6em 0 0 0 rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.7);
+  }
+  12.5% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0 #fff, 2.5em 0 0 0 rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.2), 0 2.5em 0 0 rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.2), -2.6 0 0 0 rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.7), 2.5em 0 0 0 #fff, 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.2), 0 2.5em 0 0 rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.2), -2.6em 0 0 0 rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2);
+  }
+  37.5% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.5), 2.5em 0 0 0 rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0 #fff, 0 2.5em 0 0 rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.2), -2.6em 0 0 0 rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2), 2.5em 0 0 0 rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.7), 0 2.5em 0 0 #fff, -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.2), -2.6em 0 0 0 rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2);
+  }
+  62.5% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2), 2.5em 0 0 0 rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.5), 0 2.5em 0 0 rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0 #fff, -2.6em 0 0 0 rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2), 2.5em 0 0 0 rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.2), 0 2.5em 0 0 rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.7), -2.6em 0 0 0 #fff, -1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2);
+  }
+  87.5% {
+    box-shadow: 0 -2.6em 0 0 rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0 rgba(255, 255, 255, 0.2), 2.5em 0 0 0 rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0 rgba(255, 255, 255, 0.2), 0 2.5em 0 0 rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0 rgba(255, 255, 255, 0.5), -2.6em 0 0 0 rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0 #fff;
+  }
+}
+
+@mixin hover-wrapper($important: '') {
+  @if $important != '' {
+    display: flex$important;
+    justify-content: center$important;
+    align-items: center$important;
+    width: 24px$important;
+    height: 24px$important;
+    border-radius: 9px$important;
+  }
+  @if $important == '' {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 9px;
+  }
+}

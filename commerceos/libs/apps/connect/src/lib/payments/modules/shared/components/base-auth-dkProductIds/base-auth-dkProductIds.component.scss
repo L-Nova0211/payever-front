@@ -1,0 +1,61 @@
+@import "../../../../../../assets/imports";
+@import "../base-auth/base-auth.component";
+
+// TODO Remove all 'Deep'
+
+.products {
+  ::ng-deep .mat-checkbox-frame {
+    border-color: $color-secondary-0;
+  }
+  .product {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    .product-checkbox {
+      margin-left: 12px;
+    }
+
+    @media (max-width: $viewport-breakpoint-ipad - 1) {
+      .product-checkbox {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: $viewport-breakpoint-sm-2 - 1) {
+      padding: 14px 6px;
+    }
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      padding: 14px 0;
+    }
+
+    .product-info {
+      margin-left: 12px;
+      .small-2 {
+        color: $color-secondary-0;
+      }
+      .row {
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .product:last-child {
+    border-bottom: none;
+  }
+}
+
+_:-ms-fullscreen, :root {
+  .mat-content {
+    .text-right {
+      .mat-raised-button {
+        margin: 5px 0 0;
+      }
+      .icon {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+
+::ng-deep pe-form-addon .mat-raised-button.mat-button-xs { // For Get Products button
+  line-height: 22px;
+}

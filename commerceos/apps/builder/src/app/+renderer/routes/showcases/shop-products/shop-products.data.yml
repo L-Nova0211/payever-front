@@ -1,0 +1,30 @@
+elements:
+  id: products
+  type: shop-products
+
+
+stylesheet:
+  all:
+    products:
+      itemWidth: 275
+      itemHeight: 400
+
+context:
+  products:
+    state: 'ready'
+    data:
+      -
+        title: 'iPhone 11 Silicone Case'
+        prices:
+          regular: '$39.00'
+        image: '/assets/showcase-images/products/1.jpg'
+      -
+        title: 'MacBook Pro 2019'
+        prices:
+          regular: '$39.00'
+        image: '/assets/showcase-images/products/2.jpg'
+      -
+        title: 'IPad Pro'
+        prices:
+          regular: '$39.00'
+        image: '/assets/showcase-images/products/3.jpg'

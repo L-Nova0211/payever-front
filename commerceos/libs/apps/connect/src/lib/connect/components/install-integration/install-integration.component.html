@@ -1,0 +1,142 @@
+<div class="pe-info-box-container-fixed">
+  <pe-info-box
+    *ngIf="integration && !isDone"
+    [title]="'installation.title' | translate"
+    [alignTitle]="'center'"
+    [withHeader]="false"
+    [withFooter]="false"
+    [fixed]="false"
+    (onClose)="handleClose()"
+    class="connect-popup-wrapper">
+    <ng-container content>
+      <div class="installation-content">
+        <div class="connect-popup-install">
+          <svg class="icon icon-install" [ngClass]="{'icon-shipping-dhl-42-colored': integration.installationOptions.optionIcon === '#icon-shipping-dhl-42-colored'}">
+            <use [attr.xlink:href]="integration.installationOptions.optionIcon"></use>
+          </svg>
+          <div class="install-view">
+            <div class="install-left">
+              <div class="install-header">
+                <div class="installation-title" [innerHtml]="integration.displayOptions.title | translate"></div>
+                <div class="connect-popup-price">{{ integration.installationOptions.price | translate }}</div>
+                <div *ngIf="error" class="text text-danger">{{ error }}</div>
+              </div>
+            </div>
+            <div class="install-right">
+              <button mat-raised-button
+                      type="button"
+                      class="install-button"
+                      color="muted-light"
+                      [class.mat-button-rounded]="true"
+                      [class.mat-button-xs]="true"
+                      (click)=toggleInstalled()>
+                <pe-progress-button-content [loading]="(isInstalling$ | async) || (isLoading$ | async)" [spinnerDiameter]="21">
+                  {{ installed ? ('actions.uninstall' | translate) : ('actions.install' | translate) }}
+                </pe-progress-button-content>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <img *ngFor="let link of integration.installationOptions.links" class="swiper-slide" [src]="link.url" />
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="connect-popup-description" [innerHtml]="integration.installationOptions.description | translate"></div>
+        <div class="installation-footer">
+          <div class="connect-popup-info-wrapper">
+            <div class="col-sm-4 connect-popup-info">
+              <p class="connect-popup-info-header" translate>installation.labels.category</p>
+              <p class="connect-popup-info-content">{{ integration.installationOptions.category | translate }}</p>
+            </div>
+            <div class="col-sm-4 connect-popup-info">
+              <p class="connect-popup-info-header" translate>installation.labels.developer</p>
+              <p class="connect-popup-info-content">{{ integration.installationOptions.developer | translate }}</p>
+            </div>
+            <div class="col-sm-4 connect-popup-info">
+              <p class="connect-popup-info-header" translate>installation.labels.languages</p>
+              <p class="connect-popup-info-content">{{ integration.installationOptions.languages | translate }}</p>
+            </div>
+          </div>
+          <div>
+            <!-- TODO use hasTranslation type to check -->
+            <div class="footer-button" *ngIf="integration.installationOptions.appSupport | translate">
+              <a [href]="integration.installationOptions.appSupport | translate"
+                 target="_blank"
+                 class="connect-installation-primary"
+                 mat-button color="primary"
+                 [class.mat-button-no-padding]="true"
+                 [class.mat-button-link]="true"
+                 translate>
+                installation.labels.app_support
+              </a>
+            </div>
+            <!-- TODO use hasTranslation type to check -->
+            <div class="footer-button" *ngIf="integration.installationOptions.website | translate">
+              <a class="connect-installation-primary"
+                 [href]="integration.installationOptions.website | translate"
+                 target="_blank"
+                 mat-button color="primary"
+                 [class.mat-button-no-padding]="true"
+                 [class.mat-button-link]="true"
+                 translate>
+                installation.labels.website
+              </a>
+            </div>
+            <!-- TODO use hasTranslation type to check -->
+            <div class="footer-button" *ngIf="integration.installationOptions.pricingLink | translate">
+              <a class="connect-installation-primary"
+                 [href]="integration.installationOptions.pricingLink | translate"
+                 target="_blank"
+                 mat-button color="primary"
+                 [class.mat-button-no-padding]="true"
+                 [class.mat-button-link]="true"
+                 translate>
+                installation.labels.pricing
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </pe-info-box>
+
+  <pe-info-box
+    *ngIf="integration && isDone"
+    class="payment-installed"
+    [notFullwidthOnMobile]="true"
+    [roundBorder]="true"
+    [withHeader]="false"
+    [withFooter]="false">
+    <ng-container content>
+      <div *ngIf="installed" class="payment-installed-box">
+        <svg class="icon icon-32 payment-installed-icon"><use xlink:href="#icon-check2-16"></use></svg>
+        <div class="payment-installed-title" translate>installation.installed.title</div>
+        <div class="payment-installed-message" [translate]="{ title: integration.displayOptions.title | translate }">installation.installed.description</div>
+        <button mat-raised-button
+                type="button"
+                class="payment-installed-open"
+                (click)="handleOpen()"
+                [class.mat-button-rounded]="true"
+                color="muted-light">
+          {{ 'actions.open' | translate }}
+        </button>
+      </div>
+      <div class="payment-installed-box" *ngIf="!installed">
+        <svg class="icon icon-32 payment-installed-icon"><use xlink:href="#icon-check2-16"></use></svg>
+        <div class="payment-installed-title" translate>installation.uninstalled.title</div>
+        <div class="payment-installed-message" [translate]="{ title: integration.displayOptions.title | translate }">installation.uninstalled.description</div>
+        <button mat-raised-button
+                type="button"
+                class="payment-installed-open"
+                (click)="handleClose()"
+                [class.mat-button-rounded]="true"
+                color="muted-light">
+          {{ 'actions.close' | translate }}
+        </button>
+      </div>
+    </ng-container>
+  </pe-info-box>
+</div>
+

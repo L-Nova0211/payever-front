@@ -1,0 +1,78 @@
+@mixin pe-input-picker-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+
+  .picker-container {
+    &__controls {
+      border-bottom: 1px solid $separator;
+      .input-with-label {
+        background-color: $primary;
+        span {
+          color: $label-color;
+        }
+        input {
+          color: $text-color;
+        }
+
+        &__button {
+          background-color: $accent;
+        }
+      }
+
+      .button-container {
+        background-color: $accent;
+      }
+    }
+
+    .picker-item-container {
+      &__item {
+        border-bottom: 1px solid $separator;
+        background-color: $accent;
+        color: $text-color;
+        :last-of-type {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .picker-autocomplete-panel {
+    background-color: $accent;
+
+    .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+      color: $text-color;
+
+      .mat-option-text {
+        color: $text-color;
+      }
+    }
+
+
+    .mat-option {
+      color: $text-color;
+
+      &:not(:first-of-type) {
+        &::before {
+          background-color: $separator;
+        }
+      }
+      &:hover {
+        color: $text-color;
+        .mat-option-text {
+          color: $text-color;
+        }
+      }
+      .mat-option-text {
+        color: $text-color;
+      }
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+  }
+}

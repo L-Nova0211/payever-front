@@ -1,0 +1,34 @@
+<div class="overlay-container" [class.not-fullwidth-mobile]="notFullwidthOnMobile" [class.full-height]="fullHeight">
+  <mat-card class="mat-card-transparent mat-card-transparent-lg"
+            [class.mat-card-transparent-container-based]="true"
+            [class.mat-card-transparent-card-scrollable]="contentScrollable"
+            [class.mat-card-with-header]="showHeader"
+            [class.with-margin]="true"
+            [class.mat-card-transparent-dark]="false"
+  >
+
+    <mat-card-header *ngIf="showHeader">
+      <pe-navbar class="colored-navbar" [controls]="controls" [classes]="withPadding ? 'mat-toolbar-padding-large' : ''"></pe-navbar>
+    </mat-card-header>
+    <mat-card-content class="scrollbar-dark" [class.mat-card-content-padding-sm]="withPadding" [class.mat-card-content-scrollable]="contentScrollable" [ngClass]="specialCardClass">
+      <div [class.absolute-scroll-wrapper]="contentScrollable" [class.scroll-wrapper]="contentScrollable" [class.full-height]="fullHeight">
+        <div class="mat-card-content-scroll-container" [class.full-height]="fullHeight" peScrollHide>
+          <div class="content-wrapper" [class.full-height]="fullHeight">
+            <div class="mat-card-content-spinner" *ngIf="showSpinner">
+              <mat-progress-spinner [strokeWidth]="strokeWidth"
+                                    [diameter]="diameter"
+                                    [mode]="'indeterminate'"
+              ></mat-progress-spinner>
+            </div>
+            <div [class.full-height]="fullHeight"
+                 [style.visibility]="showSpinner ? 'hidden' : 'visible'"
+                 [style.opacity]="showSpinner ? '0' : '1'">
+              <ng-content select="[content]"></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>

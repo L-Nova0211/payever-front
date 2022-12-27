@@ -1,0 +1,244 @@
+@import '../../../../ui-styles/src/pe_skeleton.scss';
+
+:host {
+  border-radius: 12px;
+  z-index: 1;
+
+  .hidden-icons {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.dark {
+    background-color: #1c1d1e;
+
+    .pe-grid-toolbar {
+      &__filters {
+        svg {
+          fill: white;
+        }
+      }
+      &__actions {
+        span {
+          color: #fff;
+        }
+        svg {
+          fill: white;
+        }
+      }
+      &__button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+    }
+  }
+
+  &.light {
+    background-color: #f7f7f7;
+
+    .pe-grid-toolbar {
+      &__filters {
+        svg {
+          fill: #000;
+        }
+      }
+      &__actions {
+        span {
+          color: #000;
+        }
+      }
+      &__button {
+        background-color: #e3e3e3;
+        color: #000;
+      }
+
+      &__chip {
+        background-color: #ededef;
+        span {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &.transparent {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .pe-grid-toolbar {
+      &__filters {
+        svg {
+          fill: white;
+        }
+      }
+      &__actions {
+        span {
+          color: #fff;
+        }
+      }
+      &__button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+    }
+  }
+
+  .custom-menu-title {
+    cursor: pointer;
+    text-transform: none !important;
+  }
+}
+
+.pe-grid-toolbar {
+  &__row {
+    align-items: center;
+    display: flex;
+    min-height: 32px;
+    justify-content: space-between;
+    padding: 4px;
+  }
+
+  &__filters,
+  &__actions {
+    align-items: center;
+    display: flex;
+  }
+
+  &__filters {
+    max-width: 610px;
+    width: 100%;
+
+    &.loading {
+      max-width: 50%;
+      @include skeleton-animation();
+    }
+
+    .mobile-filter {
+      cursor: pointer;
+      height: 23px;
+      margin: 0 4px;
+      width: 23px;
+      color: #969696;
+
+      @media (min-width: 720px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      pe-toolbar-filter {
+        display: none;
+      }
+    }
+
+    .create-item {
+      width: 16px;
+      margin: 0 12px;
+      cursor: pointer;
+    }
+
+    &.mobile-view {
+      .mobile-filter {
+        display: block;
+      }
+
+      pe-toolbar-filter {
+        display: none;
+      }
+    }
+  }
+
+  &__actions {
+    div {
+      align-items: center;
+      display: none;
+
+      @media (min-width: 720px) {
+        display: flex;
+      }
+    }
+
+    b {
+      display: inline-block;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 1.33;
+      margin-right: 8px;
+      margin-left: 8px;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    .mr-0 {
+      margin-right: 0;
+    }
+
+    .mat-icon {
+      cursor: pointer;
+      width: 23px;
+      height: 23px;
+      margin: 0 8px;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    appearance: none;
+    border-radius: 8px;
+    border-width: 0;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 6px;
+  }
+
+  &__chip-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__chip {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    padding: 4px;
+    margin: 4px;
+
+    span,
+    .mat-icon {
+      margin-right: 4px;
+      margin-left: 4px;
+    }
+
+    span {
+      font-family: Roboto,sans-serif;
+      font-size: 12px;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .mat-icon {
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+      display: flex;
+
+      svg {
+        fill: #969696;
+      }
+    }
+  }
+}

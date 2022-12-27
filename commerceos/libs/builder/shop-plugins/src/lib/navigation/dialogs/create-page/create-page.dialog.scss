@@ -1,0 +1,69 @@
+@import "../../../../../../styles/src/lib/styles/variables";
+@import '../../page-item';
+
+:host {
+  position: relative;
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  background-color: #4e4e4e;
+  color: #fff;
+  padding: 0;
+  border-radius: 0.5em;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+
+  &::-webkit-scrollbar {
+    position: static;
+    width: .5em;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid #4e4e4e;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    left: 44px;
+    bottom: -29px;
+  }
+}
+
+.label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+.pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.page {
+  padding: 10px;
+}

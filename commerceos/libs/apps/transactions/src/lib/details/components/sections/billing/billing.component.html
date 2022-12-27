@@ -1,0 +1,16 @@
+<div class="billing-section" *ngIf="order" [ngClass]="theme">
+  <div class="billing-section__row">
+    <div class="section-item col-6">
+      <div class="section-item__label">{{ 'transactions.sections.billing.name' | translate }}</div>
+      <div class="section-item__value">{{billingAddressName}}</div>
+    </div>
+    <div class="section-item col-6">
+      <div class="section-item__label">{{ 'transactions.sections.billing.email' | translate }}</div>
+      <div class="section-item__value">{{order?.billing_address?.email}}</div>
+    </div>
+  </div>
+  <div class="section-item">
+    <div class="section-item__label">{{ 'transactions.sections.billing.address' | translate }}</div>
+    <div class="section-item__value">{{billingAddress}}</div>
+  </div>
+</div>

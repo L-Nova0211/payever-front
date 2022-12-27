@@ -1,0 +1,32 @@
+<section class="sidebar">
+  <div class="sidebar__section">
+    <span class="sidebar__section__title">Showcase</span>
+
+    <a
+      *ngFor="let showcase of showcases"
+      class="sidebar__section__link"
+      [routerLink]="['showcases', showcase.id]"
+      routerLinkActive="sidebar__section__link--active"
+    >
+      {{ showcase.name }}
+    </a>
+  </div>
+
+  <div class="sidebar__section">
+    <span class="sidebar__section__title">Performance</span>
+
+    <a
+      *ngFor="let perf of performance"
+      class="sidebar__section__link"
+      [routerLink]="['performance', perf]"
+      routerLinkActive="sidebar__section__link--active"
+    >
+      {{ capitalize(perf) }}
+    </a>
+  </div>
+</section>
+
+<section class="content">
+  <router-outlet></router-outlet>
+</section>
+

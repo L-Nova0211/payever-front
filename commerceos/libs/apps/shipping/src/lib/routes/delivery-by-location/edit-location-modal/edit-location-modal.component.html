@@ -1,0 +1,91 @@
+<form [ngClass]="theme" [formGroup]="locationForm">
+  <div class="main-form">
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.name.label' | translate"
+                              appearance="label"
+                              [isFieldInvalid]="locationForm.get('name').invalid"
+                              [errorMessage]="'shipping-app.forms.location_dialog.errors.name' | translate"
+        >
+          <input [placeholder]="'shipping-app.forms.location_dialog.name.placeholder' | translate" formControlName="name" />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.address.label' | translate"
+                              appearance="label"
+        >
+          <input
+            matGoogleMapsAutocomplete
+            [type]="'address'"
+            (onAutocompleteSelected)="onAutocompleteSelected($event)"
+            (onLocationSelected)="onLocationSelected($event)"
+            placeholder="Enter address"
+            [value]="address"
+            formControlName="address"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.street_address.label' | translate"
+                              appearance="label"
+                              [isFieldInvalid]="locationForm.get('streetAddress').invalid || locationForm.get('streetAddress').hasError('pattern')"
+                              [errorMessage]="(locationForm.get('streetAddress').hasError('pattern')
+                                              ? 'shipping-app.forms.location_dialog.errors.address_pattern'
+                                              :  'shipping-app.forms.location_dialog.errors.address') | translate"
+        >
+          <input
+            type="text"
+            [placeholder]="'shipping-app.forms.location_dialog.street_address.placeholder' | translate"
+            formControlName="streetAddress"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.postal_code.label' | translate"
+                              appearance="label"
+                              [isFieldInvalid]="locationForm.get('zipCode').invalid"
+                              [errorMessage]="'shipping-app.forms.location_dialog.errors.postal' | translate"
+        >
+          <input
+            type="number"
+            [placeholder]="'shipping-app.forms.location_dialog.postal_code.placeholder' | translate"
+            formControlName="zipCode"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.city.label' | translate"
+                              appearance="label"
+                              [isFieldInvalid]="locationForm.get('city').invalid"
+                              [errorMessage]="'shipping-app.forms.location_dialog.errors.city' | translate"
+        >
+          <input [placeholder]="'shipping-app.forms.location_dialog.city.placeholder' | translate" formControlName="city" />
+        </peb-form-field-input>
+        <peb-select
+          selectType="label"
+          [label]="'shipping-app.forms.location_dialog.country.label' | translate"
+          formControlName="countryCode"
+          [isFieldInvalid]="locationForm.get('countryCode').invalid"
+          [errorMessage]="'shipping-app.forms.location_dialog.errors.country' | translate"
+        >
+          <peb-select-option class="select-options" *ngFor="let item of countries" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+        </peb-select>
+        <peb-form-field-input [label]="'shipping-app.forms.location_dialog.telephone.label' | translate"
+                              appearance="label"
+                              [isFieldInvalid]="locationForm.get('phone').invalid"
+                              [errorMessage]="'shipping-app.forms.location_dialog.errors.phone_pattern' | translate"
+        >
+          <span class="prefix">{{ locationForm.get('phonePrefix').value }}</span>
+          <input
+            pebInput
+            [placeholder]="'shipping-app.forms.location_dialog.telephone.placeholder' | translate"
+            formControlName="phone"
+            type="number"
+            (keypress)="numeric.transform($event)"
+          />
+          <div class="suffix">
+            <peb-select formControlName="phoneCountry">
+              <peb-select-option class="select-options" *ngFor="let item of countries" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+            </peb-select>
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+  </div>
+</form>

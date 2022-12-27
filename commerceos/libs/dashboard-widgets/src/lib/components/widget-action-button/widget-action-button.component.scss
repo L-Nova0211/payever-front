@@ -1,0 +1,22 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+:host {
+  text-align: right;
+  min-height: 100%;
+}
+
+.mat-button-rect-md {
+  width: 100%;
+  max-width: 240px;
+  min-height: 60px;
+}
+
+.button-title {
+  font-size: $font-size-large-1;
+  font-weight: $font-weight-regular;
+}
+
+.icon {
+  color: $color-secondary-0;
+}

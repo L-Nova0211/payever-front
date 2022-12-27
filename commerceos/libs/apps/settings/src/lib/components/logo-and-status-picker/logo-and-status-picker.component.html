@@ -1,0 +1,53 @@
+<div class="logo-picker-wrapper">
+  <div class="image">
+    <div class="image__spinner" [class.hide]="!isImageLoading">
+      <mat-spinner diameter="30"></mat-spinner>
+    </div>
+    <div class="image__background" [class.hide]="image">
+      <svg class="no-image-logo" *ngIf="!abbrevation" [class.hide]="isImageLoading">
+        <use xlink:href="#icon-ui-no-image"></use>
+      </svg>
+      <p *ngIf="abbrevation" [class.hide]="isImageLoading">{{abbrevation}}</p>
+    </div>
+    <img src="{{image}}" class="logo" [class.hide]="!image" alt="" />
+  </div>
+  <div class="picker-buttons">
+    <label class="picker-button" [attr.for]="inputId">
+      <svg class="picker-button__icon">
+        <use xlink:href="#icon-ui-add-media"></use>
+      </svg>
+      <span class="picker-button__label">{{addButtonLabel}}</span>
+    </label>
+
+    <div class="picker-select" [class.cdk-visually-hidden]="!selectList.length">
+      <span class="picker-select__text">{{selectedItem ? selectedItem.label : selectLabel}}</span>
+
+      <span class="picker-select__icon-wrapper">
+        <svg class="picker-select__icon" (click)="triggerSelect()">
+          <use xlink:href="#icon-ui-arrow-open"></use>
+        </svg>
+      </span>
+
+      <peb-select
+        #select
+        class="hidden-select cdk-visually-hidden"
+        selectType="full"
+        (changed)="setSelectedItem($event)"
+      >
+        <peb-select-option
+          *ngFor="let option of selectList"
+          [label]="option.label"
+          [value]="option.value">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <input
+      type="file"
+      [attr.id]="inputId"
+      [attr.name]="inputId"
+      class="cdk-visually-hidden"
+      accept="image/png, image/jpeg"
+      (change)="fileChangeEvent($event)"
+    />
+  </div>
+</div>

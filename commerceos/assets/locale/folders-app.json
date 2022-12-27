@@ -1,0 +1,102 @@
+{
+  "folders": {
+    "action": {
+      "create": {
+        "new_folder": "New folder",
+        "new_headline": "New headline"
+      },
+      "error": {
+        "duplicate_name": "already exists",
+        "duplicate_position": "cannot be moved to an occupied position",
+        "folder_intro_message": "Folder with name",
+        "headline_intro_message": "Headline with name",
+        "not_empty": "is not empty",
+        "not_found": "not found",
+        "unknown_error": "Unknown error!"
+      }
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "close": "Close",
+      "delete": "Delete",
+      "error": {
+        "folder_intro": "Folder with name",
+        "not_empty": "is not empty",
+        "not_found": "not found",
+        "duplicate_name": "have duplicate name",
+        "duplicate_position": "duplicate position"
+      },
+      "loading": "Loading...",
+      "save": "Save"
+    },
+    "apm_errors": {
+      "create_folder": "Failed to create a folder",
+      "delete_folder": "Failed to delete folder",
+      "get_default_folder": "Failed to get default folder",
+      "get_folder_items": "Failed to get folder items",
+      "get_folders": "Failed to get folders",
+      "get_folders_tree": "Failed to get folders tree",
+      "move_to_folder": "Failed to move an item to a folder",
+      "update_folder": "Failed to update the folder",
+      "update_positions": "Failed to update folders positions"
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "folder_editor": {
+          "creating": {
+            "title": "Creating folder",
+            "subtitle": "Do you really want to close creating a folder? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing folder",
+            "subtitle": "Do you really want to close editing a folder? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "folder": {
+          "title": "Delete folder",
+          "subtitle": "Are you sure you want to delete selected folder?"
+        },
+        "folders": {
+          "title": "Delete folders",
+          "subtitle": "Are you sure you want to delete selected folders?"
+        }
+      }
+    },
+    "context_menu": {
+      "add_folder": "Add Folder",
+      "add_headline": "Add Headline",
+      "copy": "Copy",
+      "delete": "Delete",
+      "duplicate": "Duplicate",
+      "edit": "Edit",
+      "options": "Options",
+      "paste": "Paste",
+      "rename": "Rename",
+      "rules": "Rules",
+      "open": "Open",
+      "title": "Category"
+    },
+    "document_action": {
+      "error": {
+        "document_intro_message": "Document with name",
+        "not_found": "not found",
+        "already_exists": "already exists"
+      }
+    },
+    "folder_editor": {
+      "folder_name": {
+        "error": "Folder name is required",
+        "placeholder": "Enter a folder name",
+        "title": "Folder name"
+      },
+      "title": "New folder",
+      "create_folder": "Create folder"
+    },
+    "messages": {
+      "approve_title": "Are you sure?",
+      "approve_subtitle": "Do you really want to delete this folder?"
+    }
+  }
+}

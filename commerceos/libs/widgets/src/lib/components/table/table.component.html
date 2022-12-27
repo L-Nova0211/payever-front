@@ -1,0 +1,35 @@
+<div [ngClass]="widgetTheme">
+  <div class="pe-widget-table">
+    <div class="pe-widget-table__rows">
+      <div class="pe-widget-table__row" *ngFor="let row of widget.data"
+           (click)="!row.isButton && clickItem($event, row)">
+        <svg class="pe-widget-table__icon icon icon-18" *ngIf="row.icon; else nonSvgIcon">
+          <use [attr.xlink:href]="row.icon"></use>
+        </svg>
+        <ng-template #nonSvgIcon>
+          <div class="widget__image"
+               [style.background-image]="'url(' + ( row.imgSrc | iconsPngUrl ) + ')' | safeStyle"
+          ></div>
+        </ng-template>
+        <div class="pe-widget-table__title">
+          {{ row.title | loadTranslate | async }}
+        </div>
+        <svg class="icon icon-18 margin-right" *ngIf="row.subIcon">
+          <use [attr.xlink:href]="row.subIcon"></use>
+        </svg>
+        <div class="pe-widget-table__sub-title" *ngIf="row.subtitle">
+          {{ row.subtitle | loadTranslate | async }}
+        </div>
+        <div class="pe-widget-table__button widget__open-button" *ngIf="row.isButton" (click)="clickItem($event, row)">
+          <svg class="icon icon-8  margin-right" *ngIf="row.buttonIcon">
+            <use [attr.xlink:href]="row.buttonIcon"></use>
+          </svg>
+          {{ (row.buttonText || 'widgets.actions.open' | loadTranslate | async )}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!widget.data.length">
+      {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+    </div>
+  </div>
+</div>

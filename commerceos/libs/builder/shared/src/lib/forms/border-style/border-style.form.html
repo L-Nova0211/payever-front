@@ -1,0 +1,12 @@
+<div class="group">
+  <div class="group__row group__option" (click)="patchValue('none')">
+    None
+  </div>
+  <div class="group__row group__option" *ngFor="let borderStyle of borderStyles" (click)="patchValue(borderStyle.value)">
+    <div
+      class="group__style"
+      [style.border-bottom-style]="borderStyle.value"
+      [style.border-bottom-width.px]="isSingleLineBorder(borderStyle.value) ? 1 : 4"
+    ></div>
+  </div>
+</div>

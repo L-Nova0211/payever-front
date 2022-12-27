@@ -1,0 +1,155 @@
+id: header-page
+variant: front
+data: {}
+template:
+  id: nike-main-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            text: LOGO
+        - id: header-menu
+          type: menu
+          data:
+            routes:
+              - title: HOME
+                route: /
+              - title: CATALOGUE
+                route: /category
+              - title: ABOUT US
+                route: /about
+              - title: CONTACT
+                route: /category
+        - id: header-cart
+          type: shop-cart
+
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#2d2d2d'
+      height: 64
+      position: sticky
+      top: 0
+      zIndex: 1
+      width: 1024
+      display: grid
+      gridTemplateColumns: 0fr 1fr 2fr
+    header-logo:
+      width: 100
+      display: grid
+      textAlign: left
+      fontSize: 30
+      fontWeight: 700
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      margin: 15 0 auto 0
+      color: '#fff'
+      gridArea: 1 / 1 / 1 / 1
+    header-menu:
+      width: 500
+      textAlign: left
+      display: grid
+      fontSize: 15
+      fontWeight: 700
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      color: '#fff'
+      margin: 0
+    header-cart:
+      width: 25
+      height: 25
+      margin: 15 0 0 350
+      backgroundColor: '#2d2d2d'
+      borderWidth: 3
+      borderColor: '#fff'
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#2d2d2d'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      width: 100
+      display: grid
+      textAlign: left
+      fontSize: 30
+      fontWeight: 700
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 5 15
+      color: '#fff'
+    header-menu:
+      fontSize: 20
+      fontWeight: 500
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      color: '#fff'
+      margin: 7 15
+      width: 30
+      height: 30
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 5 0 5 560
+      backgroundColor: '#2d2d2d'
+      borderWidth: 5
+      borderColor: '#fff'
+    #   gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+  mobile:
+    burberry-main-page: {}
+    upper-header:
+      display: none
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#2d2d2d'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      fontSize: 30
+      fontWeight: 700
+      width: 100
+      textAlign: left
+      display: grid
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 5 15
+      color: '#fff'
+    header-input:
+      display: none
+    header-menu:
+      fontSize: 20
+      fontWeight: 500
+      fontFamily: Futura-pt,Futura STD,Arial,Verdana,sans-serif
+      color: '#fff'
+      margin: auto 15
+      width: 30
+      height: 30
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 5 0 5 180
+      backgroundColor: '#2d2d2d'
+      borderWidth: 5
+      borderColor: '#fff'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+context: {}

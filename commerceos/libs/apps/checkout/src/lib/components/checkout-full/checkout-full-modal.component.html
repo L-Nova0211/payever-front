@@ -1,0 +1,87 @@
+<pe-overlay-container [showHeader]="false"
+                      [class.fixed]="true"
+                      [title]="'info_boxes.checkoutAppName' | translate"
+                      [contentScrollable]="true"
+                      [icon]="'icon-apps-payments'"
+                      [withPadding]="false"
+                      (onClose)="onCloseClick()">
+  <ng-container content>
+    <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+  </ng-container>
+</pe-overlay-container>
+
+<ng-template #contentTemplate>
+  <mat-accordion class="mat-accordion-xl content-accordion" [class.mat-accordion-xl-full-width]="true" *ngIf="currentCheckout$ | async">
+    <pe-subdashboard-header
+      height="120px"
+      [title]="(currentCheckout$ | async)?.name"
+      [logoSrc]="(currentCheckout$ | async)?.logo ? ((currentCheckout$ | async).logo | mediaUrl:'images') : ''"
+      [isLoading]="isShowCheckout$ | async"
+      [dropdownItems]="headerDropdownItems$ | async"
+    ></pe-subdashboard-header>
+
+    <ng-container *ngFor="let panel of panels">
+      <ng-container *ngIf="!panel.forceHidden">
+        <mat-expansion-panel hideToggle
+                             class="mat-expansion-panel-dark"
+                             #panelElem
+                             (click)="navigateToCategory(panel, panelElem)"
+                             [expanded]="panel.active"
+                             [disabled]="panel.disabled">
+          <!-- [expanded]="panel.active" (click)="!panel.disabled ? navigatePanel(panel.key) : null"-->
+          <mat-expansion-panel-header [collapsedHeight]="panelHeight$ | async"
+                                      [expandedHeight]="panelHeight$ | async"
+                                      class="mat-expansion-panel-header-app"
+                                      [class.mat-expansion-panel-header-padding-md]="true"
+                                      [class.mat-expansion-panel-header-cursor-default]="!panel.isHovered">
+            <div class="mat-panel-icon">
+              <svg class="icon icon-24">
+                <use [attr.xlink:href]="panel.icon"></use>
+              </svg>
+            </div>
+
+            <mat-panel-title>{{ panel.name | translate }}</mat-panel-title>
+
+            <div class="mat-expansion-panel-spacer"></div>
+
+            <div *ngIf="panel.key === 'settings' && (isTestingMode$ | async)" class="comment-text warning">
+              <svg class="icon icon-20 icon-testing-mode"><use xlink:href="#icon-warning-20"></use></svg>
+              {{ 'info_boxes.testingMode' | translate }}
+            </div>
+
+            <ng-container *ngIf="!panel.buttonText">
+              <svg class="icon icon-16 icon-plus">
+                <use xlink:href="#icon-plus-softy-16"></use>
+              </svg>
+              <svg class="icon icon-16 icon-minus">
+                <use xlink:href="#icon-minus-softy-16"></use>
+              </svg>
+            </ng-container>
+
+            <button *ngIf="panel.buttonText"
+                    class="mat-button-rounded mat-button-sm mat-button-action"
+                    (click)="onPanelButtonClick(panel.key)"
+                    mat-raised-button
+                    color="muted-light">
+              {{ panel.buttonText }}
+            </button>
+
+          </mat-expansion-panel-header>
+          <!-- TODO using title for this is terrible idea -->
+          <ng-container *ngIf="panel.key === 'payments'" [ngTemplateOutlet]="payment"></ng-container>
+          <ng-container *ngIf="panel.key === 'settings'" [ngTemplateOutlet]="settings"></ng-container>
+        </mat-expansion-panel>
+      </ng-container>
+    </ng-container>
+  </mat-accordion>
+
+  <ng-template #payment>
+    <panel-payment-options [onlyContent]="true"></panel-payment-options>
+  </ng-template>
+
+  <ng-template #settings>
+    <panel-settings [onlyContent]="true"></panel-settings>
+  </ng-template>
+</ng-template>
+
+<router-outlet></router-outlet>

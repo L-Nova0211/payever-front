@@ -1,0 +1,35 @@
+<form class="upload-text__form" [formGroup]="formGroup">
+  <peb-form-background class="upload-text__title">
+    <peb-form-field-input
+      appearance="label"
+      label="Title"
+      [animated]="true">
+      <input class="upload-text__input" type="text" formControlName="title"/>
+    </peb-form-field-input>
+  </peb-form-background>
+
+  <div class="upload-text__description">
+    <pe-text-editor-toolbar
+      #editorToolbar
+      [spreadButtons]="false"
+      [hideLink]="true"
+      [hideOpenNewTab]="true"
+      [hideColorPicker]="true"
+      [hideFontSize]="true"
+      [hideDecorations]="true"
+      [hideJustifies]="true"
+      (actionClicked)="onTextEditorAction($event)"
+      (click)="editorFocused = true">
+    </pe-text-editor-toolbar>
+    <pe-text-editor
+      class='text-editor'
+      #textEditor
+      [htmlText]="description"
+      [editable]="true"
+      [placeholder]="placeholder"
+      (contentChange)="onDescriptionChange($event)"
+      (editorFocus)="editorFocus()"
+      (editorClick)="$event.stopPropagation()">
+    </pe-text-editor>
+  </div>
+</form>

@@ -1,0 +1,26 @@
+
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+.dark {
+  @include peb-theme($theme-dark);
+}
+.light {
+  @include peb-theme($theme-light);
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+}
+
+entry-dynamic-business-form {
+  .suffix-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

@@ -1,0 +1,38 @@
+.theme-dark, .theme-default {
+	.widget__content {
+		background-color: #1C1D1E;
+		-webkit-backdrop-filter: blur(41.1856px);
+		backdrop-filter: blur(41.1856px);
+	}
+	.widget__sub-header {
+		.widget__open-button {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+	}
+}
+
+.theme-transparent, .theme-transparent-dark {
+	.widget__content {
+		background-color: rgba(28, 29, 30, 0.6);
+		-webkit-backdrop-filter: blur(75px);
+		backdrop-filter: blur(75px);
+	}
+	.widget__sub-header {
+		.widget__open-button {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+	}
+}
+
+.theme-light {
+	.widget__content {
+		background-color: rgba(255, 255, 255, 0.5);
+		-webkit-backdrop-filter: blur(75px);
+		backdrop-filter: blur(75px);
+	}
+	.widget__sub-header {
+		.widget__open-button {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+	}
+}

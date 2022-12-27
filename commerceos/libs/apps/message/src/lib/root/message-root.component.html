@@ -1,0 +1,16 @@
+<div [ngClass]="theme" class="cos-message-root">
+  <pe-new-platform-header  [isLoading]="isGlobalLoading"></pe-new-platform-header>
+  <div class="message-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<ng-template #settingsMenu>
+  <div class="settings-menu">
+    <span class="settings-menu__title">{{ 'message-app.message-interface.settings' | translate }}</span>
+    <div class="settings-menu__item" *ngFor="let item of settingsMenuItems" (click)="this.settingsMenuOverlayRef.dispose(); item.onClick();">
+      <svg><use [attr.xlink:href]="item.icon"></use></svg>
+      <span>{{ item.title }}</span>
+    </div>
+  </div>
+</ng-template>

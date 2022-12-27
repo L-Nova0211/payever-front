@@ -1,0 +1,108 @@
+<peb-products-styles></peb-products-styles>
+<pe-new-platform-header></pe-new-platform-header>
+<pe-data-grid
+  class="products-dialog__data-grid"
+  itemsTitle="title"
+  [filters]="[]"
+  [selectedItems]="selected$ | async"
+  [multipleSelectedActions]="multipleSelectedActions"
+  [sortByActions]="sortByActions"
+  [displayFilters]="true"
+  [isShowGridItemInfo]="true"
+  (multipleSelectedItemsChanged)="onSelectedItemsChanged($event)"
+  (searchChanged)="onSearchChanged($event)"
+  [defaultLayout]="PeDataGridLayoutType.Grid"
+>
+  <pe-sidebar-filters-wrapper>
+    <pe-sidebar-header title="{{ sidebarHeaderTitle }}" [allowClose]="false"></pe-sidebar-header>
+    <pe-sidebar-filter-wrapper
+      [active]="false"
+      title="{{ sidebarFilterWrapperTitle }}"
+      [expandable]="true"
+      [editable]="false"
+      (headerClick)="resetCollectionsTree()"
+    >
+      <pe-tree-sidebar-filter
+        #collectionTreeFilter
+        [formControl]="formGroup.get('collectionsTree')"
+        [multiple]="false"
+        [tree]="collectionsTreeData$ | async"
+        [refresh]="collectionRefresh$"
+      >
+        <ng-template #nodeImageTemplate let-node="node">
+          <pe-data-grid-node-icon></pe-data-grid-node-icon>
+        </ng-template>
+      </pe-tree-sidebar-filter>
+    </pe-sidebar-filter-wrapper>
+  </pe-sidebar-filters-wrapper>
+
+  <ng-container>
+    <pe-data-grid-item
+      [item]="{ id: null }"
+      [isShowGridItemInfo]="true"
+      [selectable]="false"
+      [actions]="[allProductsAction]"
+    >
+      <div class="item__wrapper item__wrapper_gray">
+        <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1">
+            <g id="10-Builder---Grid---Header-6" transform="translate(-508.000000, -279.000000)" fill="#000000" fill-rule="nonzero">
+              <g id="Cards-/-Dark-/-Grid-/-Affiliate-/-Create" transform="translate(421.000000, 211.000000)">
+                <g id="Icons-/-APPS-Main-/-CONNECT-3" transform="translate(87.000000, 68.000000)">
+                  <path d="M75.5555556,35.5555556 L44.4444444,35.5555556 L44.4444444,4.44444444 C44.4444444,1.98984556 42.4545989,0 40,0 C37.5454011,0 35.5555556,1.98984556 35.5555556,4.44444444 L35.5555556,35.5555556 L4.44444444,35.5555556 C1.98984556,35.5555556 0,37.5454011 0,40 C0,42.4545989 1.98984556,44.4444444 4.44444444,44.4444444 L35.5555556,44.4444444 L35.5555556,75.5555556 C35.5555556,78.0101544 37.5454011,80 40,80 C42.4545989,80 44.4444444,78.0101544 44.4444444,75.5555556 L44.4444444,44.4444444 L75.5555556,44.4444444 C78.0101544,44.4444444 80,42.4545989 80,40 C80,37.5454011 78.0101544,35.5555556 75.5555556,35.5555556 Z" id="Path"></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </pe-data-grid-item>
+  </ng-container>
+
+  <ng-container *ngIf="filteredCollectionsGridItems$ | async as collectionsGridItems">
+    <div class="products-dialog__section-header" *ngIf="collectionsGridItems?.length">
+      Collections
+    </div>
+    <pe-data-grid-item
+      *ngFor="let item of collectionsGridItems"
+      [item]="item"
+      [isShowGridItemInfo]="false"
+      [selectable]="false"
+      [isShowProjectedContentInfo]="true"
+    ></pe-data-grid-item>
+  </ng-container>
+
+  <ng-container *ngIf="filteredProductsGridItems$ | async as children">
+    <div class="products-dialog__section-header"  *ngIf="children?.length">
+      {{ sidebarHeaderTitle }}
+    </div>
+    <pe-data-grid-item
+      id="products-grid-item"
+      *ngFor="let item of children"
+      [item]="item"
+      [isShowGridItemInfo]="false"
+      [selectable]="true"
+      [isShowProjectedContentInfo]="true"
+    >
+    </pe-data-grid-item>
+  </ng-container>
+
+<!--  <pe-data-grid-item-->
+<!--    [item]="{ id: null }"-->
+<!--    [isShowGridItemInfo]="true"-->
+<!--    [selectable]="false"-->
+<!--    [actions]="[allProductsAction]"-->
+<!--  >-->
+<!--    <div class="item__wrapper item__wrapper_gray"  [style.backgroundImage]="theme === 'light' ? 'linear-gradient(to bottom, #ededf4, #aeb0b7)' : 'linear-gradient(to bottom, #474747, #000000)'">-->
+<!--    </div>-->
+<!--  </pe-data-grid-item>-->
+<!--  <pe-data-grid-item-->
+<!--    *ngFor="let item of dataGridItems$ | async"-->
+<!--    [item]="item"-->
+<!--    [isShowGridItemInfo]="true"-->
+<!--    [selectable]="true"-->
+<!--    [actions]="[singleSelectedAction]"-->
+<!--  ></pe-data-grid-item>-->
+
+</pe-data-grid>
+<canvas #canvas [hidden]="true"></canvas>

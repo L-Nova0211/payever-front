@@ -1,0 +1,61 @@
+@import "./palette";
+
+.button-group {
+  display: flex;
+
+  &--horizontal {
+    flex-direction: row;
+
+    .button {
+      border-right: none  !important;
+    }
+
+    .button:first-of-type {
+      border-top-left-radius: .5em;
+      border-bottom-left-radius: .5em;
+    }
+
+    .button:last-of-type {
+      border-top-right-radius: .5em;
+      border-bottom-right-radius: .5em;
+      border-right: 1px solid $border-color !important;;
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    .button {
+      border-bottom: none !important;
+    }
+
+    .button:first-of-type {
+      border-top-left-radius: .5em;
+      border-top-right-radius: .5em;
+    }
+
+    .button:last-of-type {
+      border-bottom-left-radius: .5em;
+      border-bottom-right-radius: .5em;
+      border-bottom: 1px solid $border-color !important;
+    }
+  }
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: transparent;
+  border: 1px solid $border-color;
+  padding: .5em 1em;
+  cursor: pointer;
+
+  &--active {
+    background: $background-highlight;
+    cursor: inherit;
+  }
+
+  &:hover:not(&--active) {
+    background: $background-light !important;
+  }
+}

@@ -1,0 +1,4292 @@
+id: nike-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: nike-main-page
+  type: document
+  children:
+    - id: nav-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: nav-section-text
+          type: text
+          data:
+            text: Accessibility
+        - id: nav-section-link1
+          type: text
+          data:
+            text: Mac
+        - id: nav-section-link2
+          type: text
+          data:
+            text: iPad
+        - id: nav-section-link3
+          type: text
+          data:
+            text: iPhone
+        - id: nav-section-link4
+          type: text
+          data:
+            text: Watch
+        - id: nav-section-link5
+          type: text
+          data:
+            text: TV
+        - id: nav-section-link6
+          type: text
+          data:
+            text: HomePod
+        - id: nav-section-link7
+          type: text
+          data:
+            text: Stories
+
+    - id: first-section-title
+      type: section
+      children:
+        - id: first-title-text
+          type: text
+          data:
+            text: "Technology is most powerful when it empowers everyone."
+
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-image
+          type: block
+          children: []
+    #            - id: first-image-play
+    #              type: block
+    #              children: []
+
+    - id: first-section-description
+      type: section
+      children:
+        - id: first-description-text
+          type: text
+          data:
+            text: "Taking a family portrait. Catching up over FaceTime. Raising the
+                    blinds to let in the morning light. We want everyone to enjoy
+                    the everyday moments that technology helps make possible, so we
+                    work to make every Apple product accessible from the very start.
+                    Because the true value of a device isn’t measured by how powerful
+                    it is, but by how much it empowers you."
+
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-text
+          type: text
+          data:
+            text: "Vision"
+        - id: second-section-title
+          type: text
+          data:
+            text: "Sometimes a word is worth a thousand pictures."
+        - id: second-section-description
+          type: text
+          data:
+            text: "Apple devices let you write a text or email without seeing the screen.
+                    You can take a perfect group selfie just by hearing how many faces are in the frame.
+                    Using these features may feel like magic, but it’s very much by design."
+    - id: second-wrapper
+      type: section
+      children:
+        - id: second-section-block1
+          type: block
+          children:
+            - id: second-block1-content
+              type: block
+              children:
+                - id: second-block1-text
+                  type: text
+                  data:
+                    text: "VoiceOver tells you what’s happening on your screen."
+                - id: second-block1-description
+                  type: text
+                  data:
+                    text: "VoiceOver describes exactly what’s happening
+                            on your iPhone, iPad, Mac, Apple Watch, or Apple TV,
+                            so you can navigate your device just by listening.
+                            Apple’s built-in apps support VoiceOver, which will
+                            talk you through tasks you do with them."
+
+            - id: second-block1-image
+              type: block
+              children: []
+
+        - id: second-section-block2
+          type: block
+          children:
+            - id: second-block2-image
+              type: block
+              children: []
+            - id: second-block2-content
+              type: block
+              children:
+                - id: second-block2-text
+                  type: text
+                  data:
+                    text: "Display Accommodations. Easy on the eyes."
+                - id: second-block2-description
+                  type: text
+                  data:
+                    text: "If you have color blindness or other vision challenges,
+                            you can adjust the view on your Mac, iPad, iPhone, Apple
+                            Watch, and Apple TV so it works better for you. Choose
+                            from a range of color filters or fine-tune them. And
+                            turn on Invert Colors on all your devices to instantly
+                            change the values and create more contrast."
+                - id: second-block2-link
+                  type: text
+                  data:
+                    text: "Replay"
+
+        - id: second-section-block3
+          type: block
+          children:
+            - id: second-block3-content
+              type: block
+              children:
+                - id: second-block3-text1
+                  type: text
+                  data:
+                    text: "Magnifier works like a digital magnifying glass."
+                - id: second-block3-description1
+                  type: text
+                  data:
+                    text: "It uses the camera on your iPad or iPhone to increase
+                            the size of anything you point it at, so you can see
+                            the details more clearly."
+
+            - id: second-block3-image
+              type: block
+              children:
+                - id: second-block3-play
+                  type: block
+                  children: []
+                - id: second-block3-text2
+                  type: text
+                  data:
+                    text: "Upsize the text in apps."
+                - id: second-block3-description2
+                  type: text
+                  data:
+                    text: "When you activate Larger Dynamic Type on iPhone,
+                            iPad, or Apple Watch, the text inside apps like Mail,
+                            Messages, and Settings is converted to a larger,
+                            easier-to-read size."
+
+        - id: second-section-block4
+          type: block
+          children:
+            - id: second-block4-image
+              type: block
+              children: []
+
+            - id: second-block4-content
+              type: block
+              children:
+                - id: second-block4-text
+                  type: text
+                  data:
+                    text: "Get a quick size boost of what you’re reading."
+                - id: second-block4-description
+                  type: text
+                  data:
+                    text: "Move your cursor over any text — a paragraph, a caption,
+                            a headline — then press Command for a bigger, high-resolution
+                            version of what you selected. Hover Text also lets you choose
+                            the fonts and colors that work best for you."
+                - id: second-block4-link
+                  type: text
+                  data:
+                    text: Replay
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-text
+          type: text
+          data:
+            text: "Hearing"
+        - id: third-section-title
+          type: text
+          data:
+            text: "We want to keep everyone in the conversation."
+        - id: third-section-description
+          type: text
+          data:
+            text: "When products are designed to be accessible, more people can
+                    do what they love. That’s why we build powerful features into
+                    every operating system and every device to help people who
+                    are deaf or hard of hearing."
+    - id: third-wrapper
+      type: section
+      children:
+        - id: third-section-block1
+          type: block
+          children:
+            - id: third-block1-content
+              type: block
+              children:
+                - id: third-block1-text
+                  type: text
+                  data:
+                    text: "Cut through the noise with Live Listen."
+                - id: third-block1-description
+                  type: text
+                  data:
+                    text: "Whether you’re having dinner in a loud restaurant or
+                    taking a class in a crowded lecture hall, Live Listen lets
+                    you fine-tune your Made for iPhone hearing aids and AirPods
+                    to help you hear more clearly. For quiet conversations, move
+                    your iPhone or iPad closer to the people who are speaking,
+                    and the built-in microphone will amplify what they’re saying."
+
+            - id: third-block1-image
+              type: block
+              children: []
+
+        - id: third-section-block2
+          type: block
+          children:
+            - id: third-block2-image
+              type: block
+              children: []
+            - id: third-block2-content
+              type: block
+              children:
+                - id: third-block2-text
+                  type: text
+                  data:
+                    text: "Catch every sign, gesture, and facial expression with FaceTime."
+                - id: third-block2-description
+                  type: text
+                  data:
+                    text: "With high-quality video and a fast frame rate, FaceTime is
+                        a great way for people who use sign language to communicate easily.
+                        And because Mac, iPhone, iPad, and iPod touch all come equipped with
+                        FaceTime, you can talk to iOS, iPadOS, and macOS users across the
+                        street or across the globe."
+
+        - id: third-section-block3
+          type: block
+          children:
+            - id: third-block3-content
+              type: block
+              children:
+                - id: third-block3-text1
+                  type: text
+                  data:
+                    text: "There’s a lot more to closed captioning than just reading dialogue."
+                - id: third-block3-description1
+                  type: text
+                  data:
+                    text: "You can also use it to display the music and sound
+                        effects while you watch movies and TV shows on any Apple
+                        device. So everyone can enjoy a true cinematic experience."
+
+            - id: third-block3-image
+              type: block
+              children:
+                - id: third-block3-play
+                  type: block
+                  children: []
+                - id: third-block3-text2
+                  type: text
+                  data:
+                    text: "Track your hearing health."
+                - id: third-block3-description2
+                  type: text
+                  data:
+                    text: "The Noise app tracks decibel levels of the ambient
+                        sounds around you, helping you identify when the levels
+                        could negatively impact your hearing. The information is
+                        stored in the Health app so you can refer to your data
+                        whenever you need it."
+
+        - id: third-section-block4
+          type: block
+          children:
+            - id: third-block4-image
+              type: block
+              children: []
+
+            - id: third-block4-content
+              type: block
+              children:
+                - id: third-block4-text
+                  type: text
+                  data:
+                    text: "Type a note to Siri."
+                - id: third-block4-description
+                  type: text
+                  data:
+                    text: "Siri helps you with the things you do every day on
+                        your iPhone, iPad, or Mac. But you can also use Siri without
+                        speaking commands. Just set Siri to “Type to Siri” mode and
+                        use either a physical or onscreen keyboard to ask questions,
+                        set reminders, and schedule meetings."
+                - id: third-block4-link
+                  type: text
+                  data:
+                    text: Replay
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-text
+          type: text
+          data:
+            text: "Mobility"
+        - id: fourth-section-title
+          type: text
+          data:
+            text: "A tap. A word. A million possibilities."
+        - id: fourth-section-description
+          type: text
+          data:
+            text: "We build powerful assistive features into Apple products to
+                give people with physical limitations greater control over their lives.
+                You can navigate your Mac, iOS, or iPadOS device using just your voice
+                or with a single tap through Switch Control. You can also customize
+                Multi-Touch gestures to work best for you, or control HomeKit-enabled
+                accessories by voicing simple commands."
+
+    - id: fourth-wrapper
+      type: section
+      children:
+        - id: fourth-section-block1
+          type: block
+          children:
+            - id: fourth-block1-image
+              type: block
+              children: []
+
+            - id: fourth-block1-content
+              type: block
+              children:
+                - id: fourth-block1-text
+                  type: text
+                  data:
+                    text: "Use your voice to make things happen."
+                - id: fourth-block1-description
+                  type: text
+                  data:
+                    text: "Voice Control opens up an intuitive new way to navigate
+                    iOS, iPadOS, and macOS — using only your voice. Improved
+                    dictation and richer text editing features help you write more
+                    efficiently, while simple vocal commands let you quickly open
+                    and interact with apps."
+
+        - id: fourth-section-block2
+          type: block
+          children:
+            - id: fourth-block2-content
+              type: block
+              children:
+                - id: fourth-block2-text
+                  type: text
+                  data:
+                    text: "With Switch Control, you’re in control."
+                - id: fourth-block2-description
+                  type: text
+                  data:
+                    text: "Switch Control is assistive technology that lets you
+                            use built-in features as well as switches, a joystick, or other
+                            adaptive devices to control what’s on your screen. So you can
+                            fully interact with your iPhone, iPad, Mac, or Apple TV without
+                            touching it."
+
+            - id: fourth-block2-image
+              type: block
+              children: []
+
+        - id: fourth-section-block3
+          type: block
+          children:
+            - id: fourth-block3-image
+              type: block
+              children: []
+            - id: fourth-block3-content
+              type: block
+              children:
+                - id: fourth-block3-text
+                  type: text
+                  data:
+                    text: "Manage your house and your music. With just your voice."
+                - id: fourth-block3-description
+                  type: text
+                  data:
+                    text: "Turn on the lights, start the coffee, open the blinds,
+                        or play the latest hit song just by speaking. HomePod is both
+                        a Siri-enabled intelligent assistant that works with your
+                        HomeKit-enabled accessories and an incredible music speaker.
+                        And with Siri Shortcuts for HomePod, iOS, iPadOS, and watchOS,
+                        you can run multi-action commands through simple phrases
+                        custom-designed to fit your needs."
+                - id: fourth-block3-link
+                  type: text
+                  data:
+                    text: "Replay"
+        - id: fourth-section-block4
+          type: block
+          children:
+            - id: fourth-block4-content
+              type: block
+              children:
+                - id: fourth-block4-text1
+                  type: text
+                  data:
+                    text: "If you have trouble using standard gestures, like pinch,
+                        you can use AssistiveTouch to change them. "
+                - id: fourth-block4-description1
+                  type: text
+                  data:
+                    text: "Customize gestures and make other features
+                        accessible with just a touch from the AssistiveTouch menu."
+
+            - id: fourth-block4-image
+              type: block
+              children:
+                - id: fourth-block4-play
+                  type: block
+                  children: []
+                - id: fourth-block4-text2
+                  type: text
+                  data:
+                    text: "Activity and Workout apps. Set a goal, then push yourself past it."
+                - id: fourth-block4-description2
+                  type: text
+                  data:
+                    text: "Apple Watch has fitness algorithms designed for wheelchair users.
+                        Instead of steps, the Workout and Activity apps track your pushes and
+                        keep you motivated. Close your rings with reminders like “time to roll,”
+                        and enjoy wheelchair-specific workouts."
+
+        - id: fourth-section-block5
+          type: block
+          children:
+            - id: fourth-block5-image
+              type: block
+              children: []
+
+            - id: fourth-block5-content
+              type: block
+              children:
+                - id: fourth-block5-text
+                  type: text
+                  data:
+                    text: "Accessibility Keyboard. Type what you see."
+                - id: fourth-block5-description
+                  type: text
+                  data:
+                    text: "You can navigate macOS with minimal use of a physical
+                        keyboard. The Accessibility Keyboard is fully customizable
+                        and gives users advanced typing and navigation capabilities.
+                        And it includes toolbar support, as well as improved typing,
+                        autocapitalization, and word suggestions."
+
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-text
+          type: text
+          data:
+            text: "Learning"
+        - id: fifth-section-title
+          type: text
+          data:
+            text: "Focus your attention. Unleash your imagination."
+        - id: fifth-section-description
+          type: text
+          data:
+            text: "Everyone learns differently. And our products are designed to
+                    support those differences. So they include innovative technologies
+                    that can read words or even whole pages aloud for auditory learners.
+                    Screen Time helps everyone better understand and manage device usage.
+                    Whether it’s for yourself or a family member, you can view the amount
+                    of time spent in apps and set specific limits for each one."
+    - id: fifth-wrapper
+      type: section
+      children:
+        - id: fifth-section-block1
+          type: block
+          children:
+            - id: fifth-block1-content
+              type: block
+              children:
+                - id: fifth-block1-text
+                  type: text
+                  data:
+                    text: "Powerful innovations come together to help you communicate."
+                - id: fifth-block1-description
+                  type: text
+                  data:
+                    text: "Every iPad, iPhone, and Mac has built-in communication
+                        features that support learning. FaceTime lets you communicate
+                        visually, whether you use sign language, gestures, or facial
+                        expressions. Speak Selection helps with language development
+                        by speaking words you’re reading. And Text to Speech can make
+                        learning easier by letting you hear what you’re reading and
+                        writing. There are also many third-party apps in the App Store,
+                        including TouchChat, to help you communicate more easily."
+            - id: fifth-block1-image
+              type: block
+              children: []
+
+        - id: fifth-section-block2
+          type: block
+          children:
+            - id: fifth-block2-image
+              type: block
+              children: []
+            - id: fifth-block2-content
+              type: block
+              children:
+                - id: fifth-block2-text
+                  type: text
+                  data:
+                    text: "With Speak Screen, a reading experience can be a listening experience."
+                - id: fifth-block2-description
+                  type: text
+                  data:
+                    text: "If it’s easier for you to read while hearing the words
+                            spoken aloud, Speak Screen can read text from newspapers, books,
+                            web pages, or email on your iPhone or iPad."
+                - id: fifth-block2-link
+                  type: text
+                  data:
+                    text: "Replay"
+        - id: fifth-section-block3
+          type: block
+          children:
+            - id: fifth-block3-content
+              type: block
+              children:
+                - id: fifth-block3-text1
+                  type: text
+                  data:
+                    text: "With Typing Feedback turned on, your iPad or iPhone can give you spoken feedback, including text corrections and word suggestions, as you type."
+                - id: fifth-block3-description1
+                  type: text
+                  data:
+                    text: "So you can stay focused on what you’re typing."
+
+            - id: fifth-block3-image
+              type: block
+              children:
+                - id: fifth-block3-play
+                  type: block
+                  children: []
+                - id: fifth-block3-text2
+                  type: text
+                  data:
+                    text: "Bring focus with Guided Access."
+                - id: fifth-block3-description2
+                  type: text
+                  data:
+                    text: "Guided Access lets parents, teachers, or therapists limit iPad
+                    or iPhone to one app at a time, and limit the amount of time spent in
+                    an app. So iPad and iPhone can be powerful tools for autistic people or
+                    those with attention and sensory challenges."
+
+        - id: fifth-section-block4
+          type: block
+          children:
+            - id: fifth-block4-image
+              type: block
+              children: []
+
+            - id: fifth-block4-content
+              type: block
+              children:
+                - id: fifth-block4-text
+                  type: text
+                  data:
+                    text: "Safari Reader puts the emphasis on content."
+                - id: fifth-block4-description
+                  type: text
+                  data:
+                    text: "For some students, navigating the web on iPad, iPhone, or Mac
+                          can be sensory overload. Safari Reader reduces the visual clutter.
+                          It strips away ads, buttons, and navigation bars, allowing you to focus
+                          on just the content you want. And on Mac, you can choose to use Reader
+                          automatically on websites where it’s available."
+                - id: fifth-block4-link
+                  type: text
+                  data:
+                    text: Replay
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-title
+          type: text
+          data:
+            text: Explore the accessibility features built into our products.
+
+    - id: sixth-section-content
+      type: section
+      children:
+        - id: sixth-section-block1
+          type: block
+          children:
+            - id: sixth-block1-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_mac__ciu9ti1wtuc2_large.png
+            - id: sixth-block1-text
+              type: text
+              data:
+                text: Mac
+        - id: sixth-section-block2
+          type: block
+          children:
+            - id: sixth-block2-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_ipad__cr3omdgyj10m_large.png
+            - id: sixth-block2-text
+              type: text
+              data:
+                text: iPad
+        - id: sixth-section-block3
+          type: block
+          children:
+            - id: sixth-block3-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_iphone__eaypp8h8c3ee_large.png
+            - id: sixth-block3-text
+              type: text
+              data:
+                text: iPhone
+        - id: sixth-section-block4
+          type: block
+          children:
+            - id: sixth-block4-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_watch__da0i1kh2ca0y_large.png
+            - id: sixth-block4-text
+              type: text
+              data:
+                text: Watch
+        - id: sixth-section-block5
+          type: block
+          children:
+            - id: sixth-block5-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_tv__fe6o4l01mo66_large.png
+            - id: sixth-block5-text
+              type: text
+              data:
+                text: TV
+        - id: sixth-section-block6
+          type: block
+          children:
+            - id: sixth-block6-image
+              type: image
+              data:
+                src: https://www.apple.com/v/accessibility/n/images/overview/nav_homepod__efpw9cu6cliu_large.png
+            - id: sixth-block6-text
+              type: text
+              data:
+                text: HomePod
+
+    - id: seventh-section
+      type: section
+      children:
+        - id: seventh-section-block
+          type: block
+          children:
+            - id: seventh-block-text
+              type: text
+              data:
+                text: Learn
+            - id: seventh-block-title
+              type: text
+              data:
+                text: "Discover accessibility features that work for you in a
+                       Today at Apple session."
+            - id: seventh-block-description
+              type: text
+              data:
+                text: "Every Apple Store offers in-person Today at Apple sessions
+                      designed to teach the basics of using the assistive technologies
+                      built into our products."
+            - id: seventh-block-link
+              type: text
+              data:
+                text: "Find an accessibility session near you >"
+
+    - id: seventh-section-content
+      type: section
+      children:
+        - id: seventh-section-block1
+          type: block
+          children:
+            - id: seventh-block1-text
+              type: text
+              data:
+                text: Shop
+            - id: seventh-block1-title
+              type: text
+              data:
+                text: "Accessibility Accessories"
+            - id: seventh-block1-link
+              type: text
+              data:
+                text: "Shop accessories >"
+        - id: seventh-section-block2
+          type: block
+          children:
+            - id: seventh-block2-text
+              type: text
+              data:
+                text: Build
+            - id: seventh-block2-title
+              type: text
+              data:
+                text: "Accessibility for Developers"
+            - id: seventh-block2-link
+              type: text
+              data:
+                text: "Learn more >"
+
+    - id: eighth-section
+      type: section
+      children:
+        - id: eighth-section-block1
+          type: block
+          children:
+            - id: eighth-block1-icon
+              type: image
+              data:
+                src: "https://www.apple.com/ac/globalfooter/6/en_US/assets/ac-buystrip/help/icon_large.svg"
+            - id: eighth-block1-title
+              type: text
+              data:
+                text: "Contact Us"
+            - id: eighth-block1-description
+              type: text
+              data:
+                text: "Apple Accessibility support is available over the phone or chat."
+            - id: eighth-block1-link
+              type: text
+              data:
+                text: "Learn more >"
+        - id: eighth-section-block2
+          type: block
+          children:
+            - id: eighth-block2-icon
+              type: image
+              data:
+                src: "https://www.apple.com/v/accessibility/n/images/buystrip/icon_user_vpat__e9k7440g5ueu_large.svg"
+            - id: eighth-block2-title
+              type: text
+              data:
+                text: "VPATs"
+            - id: eighth-block2-description
+              type: text
+              data:
+                text: "Download Voluntary Product Accessibility Templates (VPATs) in PDF format."
+            - id: eighth-block2-link
+              type: text
+              data:
+                text: "Shop accessories >"
+
+stylesheets:
+  desktop:
+    nike-main-page: {}
+    # ----------------------------------
+    # Desktop Nav Section
+    # ----------------------------------
+    nav-section:
+      height: 44
+      zIndex: 1
+      backgroundColor: '#f5f5f7'
+      position: sticky
+      display: grid
+      gridTemplateColumns: 3fr 60 60 60 60 60 85 60
+    nav-section-text:
+      fontWeight: 400
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 21
+      margin: 10 0
+      width: 150
+      textAlign: center
+    nav-section-link1:
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      margin: 15 0
+    nav-section-link2:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link3:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link4:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link5:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link6:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 80
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link7:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section-title: {}
+    first-title-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      margin: 45
+      width: 680
+      color: '#111'
+
+    first-section-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hero__birh09tjp7qu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 1024
+      height: 500
+
+    first-description-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 24
+      fontWeight: 700
+      margin: 50
+      width: 800
+      color: '#111'
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    second-section-text:
+      color: '#dd006d'
+      fontSize: 25
+      width: 80
+      marginTop: 50
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    second-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    second-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 600
+
+    second-wrapper:
+      backgroundColor: '#F3F3F3'
+    second-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-block1-content:
+      backgroundColor: '#fff'
+      width: 512
+    second-block1-text:
+      color: '#dd006d'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/voiceover__dvtyawl7l48y_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 512
+      height: 500
+
+    second-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    second-block2-text:
+      color: '#dd006d'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      width: 55
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 17
+    second-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 302
+      height: 450
+
+    second-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block3-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    second-block3-text1:
+      color: '#dd006d'
+      marginTop: 70
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    second-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_birthday__e21ukx2tnjma_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 250
+      height: 356
+    second-block3-text2:
+      color: '#dd006d'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    second-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      margin: auto
+      height: 500
+    second-block4-text:
+      color: '#dd006d'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      width: 55
+      fontSize: 17
+    second-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_hw__czjr8pozstme_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 320
+      height: 400
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    third-section-text:
+      color: '#073ca5'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    third-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    third-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 700
+
+    third-wrapper:
+      backgroundColor: '#F3F3F3'
+    third-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1-content:
+      backgroundColor: '#fff'
+      width: 512
+    third-block1-text:
+      color: '#073ca5'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/live_listen__ccmvgnb6npau_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 512
+      height: 500
+
+    third-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block2-content:
+      backgroundColor: '#fff'
+      width: 512
+      height: 500
+    third-block2-text:
+      color: '#073ca5'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/facetime__dtq2h95labgy_large.jpg
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 340
+      height: 450
+
+    third-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block3-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    third-block3-text1:
+      color: '#073ca5'
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    third-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    third-block3-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    third-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hearing_health__feyqbkp0qhea_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 184
+      height: 306
+    third-block3-text2:
+      color: '#073ca5'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    third-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    third-block4-text:
+      color: '#073ca5'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 30
+      fontSize: 17
+    third-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 302
+      height: 450
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fourth-section-text:
+      color: '#4f00ca'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fourth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    fourth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 700
+
+    fourth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fourth-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-block1-content:
+      backgroundColor: '#fff'
+      width: 512
+    fourth-block1-text:
+      color: '#4f00ca'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/use_your_voice__bewip66mkalu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 512
+      height: 500
+
+    fourth-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block2-content:
+      backgroundColor: '#fff'
+      width: 512
+    fourth-block2-text:
+      color: '#4f00ca'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 20
+      width: 350
+    fourth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/switch_control__f1edbwgfvt26_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 512
+      height: 500
+
+    fourth-section-block3:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block3-content:
+      width: 384
+      margin: 50 0 20 0
+      height: 500
+    fourth-block3-text:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block3-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block3-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/homepod__e3tmz1ljxvsm_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 317
+      height: 317
+      margin: 0 0 0 50
+    fourth-block3-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      width: 55
+      fontSize: 17
+
+    fourth-section-block4:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block4-content:
+      width: 384
+      margin: 40 0 20 0
+    fourth-block4-text1:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fourth-block4-description1:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 350
+    fourth-block4-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    fourth-block4-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/watch_activity__hwtli0884rqm_large.jpg
+      width: 184
+      height: 306
+      margin: 0 0 0 60
+    fourth-block4-text2:
+      color: '#4f00ca'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block4-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    fourth-section-block5:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block5-content:
+      width: 384
+      margin: 50 0 20 0
+    fourth-block5-text:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block5-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block5-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_screen_keyboard__tf9vqmf118qe_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 400
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fifth-section-text:
+      color: '#029d50'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fifth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    fifth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 700
+
+    fifth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fifth-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-block1-content:
+      backgroundColor: '#fff'
+      width: 512
+    fifth-block1-text:
+      color: '#029d50'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/speak_screen__sak5v3k2hmiy_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 512
+      height: 500
+
+    fifth-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    fifth-block2-text:
+      color: '#029d50'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 30
+      fontSize: 17
+    fifth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 302
+      height: 450
+
+    fifth-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fifth-block3-content:
+      backgroundColor: '#fff'
+      width: 512
+    fifth-block3-text1:
+      color: '#029d50'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-image:
+      display: grid
+      width: 512
+      backgroundColor: '#fff'
+    fifth-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/guided_access__dlb45tyn8dyu_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      margin: 0 0 0 50
+      width: 250
+      height: 300
+    fifth-block3-text2:
+      color: '#029d50'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    fifth-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    fifth-block4-text:
+      color: '#029d50'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 17
+      width: 55
+    fifth-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/ipad_hw_safari__gftz1bs6jtym_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      margin: 40 0
+      width: 384
+      height: 340
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    sixth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 40 0 36 20
+      textAlign: left
+      marginTop: 50
+      width: 500
+      color: '#111'
+
+    sixth-section-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      backgroundColor: '#F3F3F3'
+    sixth-section-block1:
+      width: 312
+      height: 271
+      margin: 20 0 30 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block1-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block1-text:
+      margin: 30 150
+      fontSize: 20
+      width: 40
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block2:
+      width: 312
+      height: 271
+      margin: 20 0 30 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block2-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block2-text:
+      margin: 30 150
+      fontSize: 20
+      color: '#111'
+      width: 42
+      fontWeight: 600
+    sixth-section-block3:
+      width: 312
+      height: 271
+      margin: 20 0 30 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block3-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block3-text:
+      margin: 30 150
+      fontSize: 20
+      width: 63
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block4:
+      width: 312
+      height: 271
+      margin: 20 0 60 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block4-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block4-text:
+      margin: 30 150
+      fontSize: 20
+      color: '#111'
+      width: 57
+      fontWeight: 600
+    sixth-section-block5:
+      width: 312
+      height: 271
+      margin: 20 0 60 20
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block5-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block5-text:
+      margin: 30 150
+      fontSize: 20
+      width: 27
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block6:
+      width: 312
+      height: 271
+      margin: 20 0 60 20
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block6-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginBottom: 0
+      marginTop: 80
+    sixth-block6-text:
+      margin: 30 130
+      fontSize: 20
+      width: 90
+      color: '#111'
+      fontWeight: 600
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section: {}
+    seventh-section-block:
+      display: grid
+      gridTemplateRows: 3fr
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/learn__fiwboycwuiaa_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 500
+    seventh-block-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      marginTop: 100
+      fontWeight: 600
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    seventh-block-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 450
+      color: '#fff'
+    seventh-block-description:
+      fontSize: 17
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 300
+      marginLeft: 50
+      color: '#fff'
+      width: 400
+    seventh-block-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      marginTop: 10
+      marginBottom: 50
+      fontSize: 17
+      width: 302
+      marginLeft: 50
+
+    seventh-section-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      width: 1024
+    seventh-section-block1:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/shop__bhck2d3smxg2_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 0 0 0
+      width: 512
+      gridTemplateRows: 1fr 0fr
+      height: 450
+    seventh-block1-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: 280 0 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      width: 150
+      fontSize: 17
+      margin: 0 10 20 20
+    seventh-section-block2:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/build__fu4mj77z72my_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 0 0 10
+      gridTemplateRows: 1fr 0fr
+      width: 512
+      height: 450
+    seventh-block2-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: 280 0 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#fff'
+      width: 120
+      fontSize: 17
+      margin: 0 0 20 20
+    # ----------------------------------
+    # Desktop Eighth Section
+    # ----------------------------------
+    eighth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    eighth-section-block1:
+      width: 512
+      display: grid
+      margin: 100 auto
+    eighth-block1-icon:
+      width: 100%
+      height: 56
+      margin: 0 0 10 0
+    eighth-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 0 0 10 200
+      width: 110
+      color: '#111'
+    eighth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 0 0 10 150
+      textAlign: center
+      width: 220
+      color: '#515154'
+    eighth-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 90
+      fontSize: 14
+      margin: 0 0 0 210
+    eighth-section-block2:
+      width: 512
+      display: grid
+      margin: 100 auto
+    eighth-block2-icon:
+      width: 100%
+      height: 56
+      margin: 0
+    eighth-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 0 0 5 230
+      width: 60
+      color: '#111'
+    eighth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 0 0 0 120
+      textAlign: center
+      width: 280
+      color: '#515154'
+    eighth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 123
+      fontSize: 14
+      margin: 0 0 0 210
+
+  tablet:
+    nike-main-page: {}
+    # ----------------------------------
+    # Tablet Nav Section
+    # ----------------------------------
+    nav-section:
+      height: 44
+      zIndex: 1
+      backgroundColor: '#f5f5f7'
+      position: sticky
+      display: grid
+      gridTemplateColumns: 3fr 80 60 60 60 40 85 60
+    nav-section-text:
+      fontWeight: 400
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 21
+      margin: 10 20
+      width: 130
+      textAlign: center
+    nav-section-link1:
+      color: '#707070'
+      display: grid
+      width: 130
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      margin: 15 0
+    nav-section-link2:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link3:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link4:
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      margin: 15 0
+    nav-section-link5:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 30
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link6:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 80
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link7:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section-title: {}
+    first-title-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      margin: 45
+      width: 680
+      color: '#111'
+
+    first-section-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hero__birh09tjp7qu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 100%
+      height: 500
+
+    first-description-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 24
+      fontWeight: 700
+      margin: 50
+      width: 680
+      color: '#111'
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    second-section-text:
+      color: '#dd006d'
+      fontSize: 25
+      width: 80
+      marginTop: 50
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    second-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    second-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 600
+
+    second-wrapper:
+      backgroundColor: '#F3F3F3'
+    second-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-block1-content:
+      backgroundColor: '#fff'
+      width: 384
+    second-block1-text:
+      color: '#dd006d'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/voiceover__dvtyawl7l48y_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 500
+
+    second-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    second-block2-text:
+      color: '#dd006d'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      width: 55
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 17
+    second-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 302
+      height: 450
+
+    second-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block3-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    second-block3-text1:
+      color: '#dd006d'
+      marginTop: 70
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    second-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_birthday__e21ukx2tnjma_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 250
+      height: 356
+    second-block3-text2:
+      color: '#dd006d'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    second-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    second-block4-text:
+      color: '#dd006d'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    second-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      width: 55
+      fontSize: 17
+    second-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_hw__czjr8pozstme_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 320
+      height: 400
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    third-section-text:
+      color: '#073ca5'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    third-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    third-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 600
+
+    third-wrapper:
+      backgroundColor: '#F3F3F3'
+    third-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1-content:
+      backgroundColor: '#fff'
+      width: 384
+    third-block1-text:
+      color: '#073ca5'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/live_listen__ccmvgnb6npau_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 500
+
+    third-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    third-block2-text:
+      color: '#073ca5'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/facetime__dtq2h95labgy_large.jpg
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 340
+      height: 450
+
+    third-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block3-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    third-block3-text1:
+      color: '#073ca5'
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    third-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    third-block3-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    third-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hearing_health__feyqbkp0qhea_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 184
+      height: 306
+    third-block3-text2:
+      color: '#073ca5'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    third-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    third-block4-text:
+      color: '#073ca5'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    third-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 30
+      fontSize: 17
+    third-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 50
+      width: 302
+      height: 450
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fourth-section-text:
+      color: '#4f00ca'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fourth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    fourth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 600
+
+    fourth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fourth-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-block1-content:
+      backgroundColor: '#fff'
+      width: 384
+    fourth-block1-text:
+      color: '#4f00ca'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/use_your_voice__bewip66mkalu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 500
+
+    fourth-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+    fourth-block2-text:
+      color: '#4f00ca'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 20
+      width: 350
+    fourth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/switch_control__f1edbwgfvt26_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 500
+
+    fourth-section-block3:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block3-content:
+      width: 384
+      margin: 50 0 20 0
+      height: 500
+    fourth-block3-text:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block3-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block3-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/homepod__e3tmz1ljxvsm_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 317
+      height: 317
+      margin: 0 0 0 50
+    fourth-block3-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      width: 55
+      fontSize: 17
+
+    fourth-section-block4:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block4-content:
+      width: 384
+      margin: 40 0 20 0
+    fourth-block4-text1:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fourth-block4-description1:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 350
+    fourth-block4-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    fourth-block4-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/watch_activity__hwtli0884rqm_large.jpg
+      width: 184
+      height: 306
+      margin: 0 0 0 50
+    fourth-block4-text2:
+      color: '#4f00ca'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block4-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    fourth-section-block5:
+      display: grid
+      backgroundColor: '#fff'
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fourth-block5-content:
+      width: 384
+      margin: 50 0 20 0
+    fourth-block5-text:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block5-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fourth-block5-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_screen_keyboard__tf9vqmf118qe_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 400
+      margin: 0 0 0 50
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fifth-section-text:
+      color: '#029d50'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fifth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 550
+      color: '#111'
+    fifth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 50
+      color: '#333'
+      width: 600
+
+    fifth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fifth-section-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-block1-content:
+      backgroundColor: '#fff'
+      width: 384
+    fifth-block1-text:
+      color: '#029d50'
+      marginTop: 60
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/speak_screen__sak5v3k2hmiy_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 500
+
+    fifth-section-block2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block2-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    fifth-block2-text:
+      color: '#029d50'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 30
+      fontSize: 17
+    fifth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: auto auto 0 auto
+      width: 302
+      height: 450
+
+    fifth-section-block3:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+    fifth-block3-content:
+      backgroundColor: '#fff'
+      width: 384
+    fifth-block3-text1:
+      color: '#029d50'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-description1:
+      marginLeft: 30
+      fontSize: 32
+      fontWeight: 600
+      width: 350
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-image:
+      display: grid
+      width: 384
+      backgroundColor: '#fff'
+    fifth-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/guided_access__dlb45tyn8dyu_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      margin: 0 50
+      width: 250
+      height: 300
+    fifth-block3-text2:
+      color: '#029d50'
+      marginTop: 20
+      marginLeft: 30
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+      marginBottom: 20
+
+    fifth-section-block4:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block4-content:
+      backgroundColor: '#fff'
+      width: 384
+      height: 500
+    fifth-block4-text:
+      color: '#029d50'
+      marginTop: 100
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 30
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 30
+      width: 350
+    fifth-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 30
+      fontSize: 17
+      width: 55
+    fifth-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/ipad_hw_safari__gftz1bs6jtym_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      margin: 0
+      width: 384
+      height: 340
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    sixth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      marginTop: 50
+      width: 550
+      color: '#111'
+
+    sixth-section-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#F3F3F3'
+    sixth-section-block1:
+      width: 312
+      height: 271
+      margin: 20 30 30 60
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block1-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block1-text:
+      margin: 30 150
+      fontSize: 20
+      width: 40
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block2:
+      width: 312
+      height: 271
+      marginBottom: 30
+      marginTop: 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block2-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block2-text:
+      margin: 30 auto
+      fontSize: 20
+      color: '#111'
+      width: 42
+      fontWeight: 600
+    sixth-section-block3:
+      width: 312
+      height: 271
+      margin: 20 30 30 60
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block3-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block3-text:
+      margin: 30 150
+      fontSize: 20
+      width: 63
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block4:
+      width: 312
+      height: 271
+      marginBottom: 30
+      marginTop: 20
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block4-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block4-text:
+      margin: 30 150
+      fontSize: 20
+      color: '#111'
+      width: 57
+      fontWeight: 600
+    sixth-section-block5:
+      width: 312
+      height: 271
+      margin: 20 30 60 60
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block5-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block5-text:
+      margin: 30 150
+      fontSize: 20
+      width: 27
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block6:
+      width: 312
+      height: 271
+      marginBottom: 60
+      marginTop: 20
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block6-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginBottom: 0
+      marginTop: 80
+    sixth-block6-text:
+      margin: 30 120
+      fontSize: 20
+      width: 90
+      color: '#111'
+      fontWeight: 600
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section: {}
+    seventh-section-block:
+      display: grid
+      gridTemplateRows: 3fr
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/learn__fiwboycwuiaa_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 500
+    seventh-block-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      marginTop: 100
+      fontWeight: 600
+      marginLeft: 50
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    seventh-block-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 50
+      width: 450
+      color: '#fff'
+    seventh-block-description:
+      fontSize: 17
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 300
+      marginLeft: 50
+      color: '#fff'
+      width: 400
+    seventh-block-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      marginTop: 10
+      marginBottom: 50
+      fontSize: 17
+      width: 302
+      marginLeft: 50
+
+    seventh-section-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    seventh-section-block1:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/shop__bhck2d3smxg2_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 10 0 10
+      width: 384
+      gridTemplateRows: 1fr 0fr
+      height: 450
+    seventh-block1-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: auto auto 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      width: 150
+      fontSize: 17
+      margin: 0 0 20 20
+    seventh-section-block2:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/build__fu4mj77z72my_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 0 0 10
+      gridTemplateRows: 1fr 0fr
+      width: 384
+      height: 450
+    seventh-block2-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: 280 0 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#fff'
+      width: 120
+      fontSize: 17
+      margin: 0 0 20 20
+    # ----------------------------------
+    # Tablet Eighth Section
+    # ----------------------------------
+    eighth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    eighth-section-block1:
+      width: 384
+      display: grid
+      margin: 100 auto
+    eighth-block1-icon:
+      width: 100%
+      height: 56
+      margin: auto auto 10 auto
+    eighth-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 0 0 10 130
+      width: 110
+      color: '#111'
+    eighth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 0 0 10 70
+      textAlign: center
+      width: 220
+      color: '#515154'
+    eighth-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 90
+      fontSize: 14
+      margin: 0 0 0 130
+    eighth-section-block2:
+      width: 384
+      display: grid
+      margin: 100 auto
+    eighth-block2-icon:
+      width: 100%
+      height: 56
+      margin: auto
+    eighth-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 0 0 5 150
+      width: 60
+      color: '#111'
+    eighth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 0 0 0 50
+      textAlign: center
+      width: 280
+      color: '#515154'
+    eighth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 123
+      fontSize: 14
+      margin: 0 0 0 130
+
+  mobile:
+    nike-main-page: {}
+    # ----------------------------------
+    # Mobile Nav Section
+    # ----------------------------------
+    nav-section:
+      height: 44
+      zIndex: 1
+      backgroundColor: '#f5f5f7'
+      position: sticky
+      display: grid
+      width: 360
+      gridTemplateColumns: 3fr 50 50 50 50
+    nav-section-text:
+      fontWeight: 400
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 21
+      margin: 10 0
+      width: 130
+      textAlign: center
+    nav-section-link1:
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      margin: 15 0
+    nav-section-link2:
+      margin: auto
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link3:
+      margin: 15 0
+      color: '#707070'
+      display: none
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link4:
+      color: '#707070'
+      display: grid
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      margin: 15 0
+    nav-section-link5:
+      margin: 15 0
+      color: '#707070'
+      display: grid
+      width: 30
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link6:
+      margin: auto
+      color: '#707070'
+      display: none
+      width: 80
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    nav-section-link7:
+      margin: 0
+      color: '#707070'
+      display: none
+      width: 50
+      textAlign: center
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section-title: {}
+    first-title-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 25
+      fontWeight: 700
+      margin: 45 0 45 5
+      width: 350
+      color: '#111'
+
+    first-section-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hero__birh09tjp7qu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 300
+
+    first-description-text:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 20
+      fontWeight: 700
+      margin: 50 0 50 15
+      width: 330
+      color: '#111'
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    second-section-text:
+      color: '#dd006d'
+      fontSize: 20
+      width: 80
+      marginTop: 50
+      marginLeft: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    second-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 23
+      fontWeight: 700
+      marginBottom: 25
+      marginLeft: 10
+      width: 300
+      color: '#111'
+    second-section-description:
+      fontSize: 17
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 10
+      color: '#333'
+      width: 320
+
+    second-wrapper:
+      backgroundColor: '#F3F3F3'
+    second-section-block1: {}
+    second-block1-content:
+      backgroundColor: '#fff'
+      width: 360
+    second-block1-text:
+      color: '#dd006d'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      margin: 10 0 15 10
+      width: 330
+    second-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/voiceover__dvtyawl7l48y_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 400
+
+    second-section-block2:
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block2-content:
+      backgroundColor: '#fff'
+      width: 360
+      margin: auto
+    second-block2-text:
+      color: '#dd006d'
+      marginTop: 60
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+    second-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      width: 55
+      fontSize: 17
+      margin: 10 0 20 10
+    second-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 30
+      width: 301
+      height: 400
+
+    second-section-block3:
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block3-content:
+      backgroundColor: '#fff'
+      width: 360
+      margin: auto
+    second-block3-text1:
+      color: '#dd006d'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-description1:
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      marginBottom: 10
+      width: 330
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    second-block3-image:
+      display: grid
+      width: 360
+      backgroundColor: '#fff'
+    second-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_birthday__e21ukx2tnjma_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 30
+      width: 250
+      height: 300
+    second-block3-text2:
+      color: '#dd006d'
+      marginTop: 20
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 20
+
+    second-section-block4:
+      marginTop: 40
+      backgroundColor: '#fff'
+    second-block4-content:
+      backgroundColor: '#fff'
+      width: 360
+    second-block4-text:
+      color: '#dd006d'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    second-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 10
+    second-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 10
+      width: 55
+      fontSize: 17
+      marginBottom: 10
+    second-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_hw__czjr8pozstme_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 20 0 0 0
+      width: 360
+      height: 300
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    third-section-text:
+      color: '#073ca5'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    third-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      marginBottom: 25
+      marginLeft: 10
+      width: 300
+      color: '#111'
+    third-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 10
+      color: '#333'
+      width: 330
+
+    third-wrapper:
+      backgroundColor: '#F3F3F3'
+    third-section-block1: {}
+    third-block1-content:
+      backgroundColor: '#fff'
+      width: 360
+    third-block1-text:
+      color: '#073ca5'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 10
+    third-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/live_listen__ccmvgnb6npau_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 400
+
+    third-section-block2:
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block2-content:
+      backgroundColor: '#fff'
+      width: 360
+    third-block2-text:
+      color: '#073ca5'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+    third-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/facetime__dtq2h95labgy_large.jpg
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 30
+      width: 340
+      height: 400
+
+    third-section-block3:
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block3-content:
+      backgroundColor: '#fff'
+      width: 360
+    third-block3-text1:
+      color: '#073ca5'
+      marginTop: 10
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    third-block3-description1:
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 330
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 10
+    third-block3-image:
+      display: grid
+      width: 360
+      backgroundColor: '#fff'
+    third-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/hearing_health__feyqbkp0qhea_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 30
+      width: 184
+      height: 306
+    third-block3-text2:
+      color: '#073ca5'
+      marginTop: 20
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 320
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 20
+
+    third-section-block4:
+      marginTop: 40
+      backgroundColor: '#fff'
+    third-block4-content:
+      backgroundColor: '#fff'
+      width: 100%
+      margin: auto
+    third-block4-text:
+      color: '#073ca5'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    third-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+    third-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 10
+      fontSize: 17
+      marginBottom: 10
+    third-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: auto auto 0 auto
+      width: 302
+      height: 300
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fourth-section-text:
+      color: '#4f00ca'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fourth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 25
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 10
+      width: 335
+      color: '#111'
+    fourth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 10
+      color: '#333'
+      width: 330
+
+    fourth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fourth-section-block1: {}
+    fourth-block1-content:
+      backgroundColor: '#fff'
+      width: 360
+    fourth-block1-text:
+      color: '#4f00ca'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+    fourth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/use_your_voice__bewip66mkalu_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 400
+
+    fourth-section-block2:
+      marginTop: 40
+    fourth-block2-content:
+      backgroundColor: '#fff'
+      width: 360
+    fourth-block2-text:
+      color: '#4f00ca'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 20
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 20
+      width: 330
+      marginBottom: 15
+    fourth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/switch_control__f1edbwgfvt26_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 400
+
+    fourth-section-block3:
+      backgroundColor: '#fff'
+      marginTop: 40
+    fourth-block3-content:
+      width: 360
+      margin: 50 0 20 0
+    fourth-block3-text:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block3-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 350
+    fourth-block3-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/homepod__e3tmz1ljxvsm_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 317
+      height: 317
+      margin: 0 0 0 30
+    fourth-block3-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 10
+      width: 55
+      fontSize: 17
+      marginBottom: 20
+
+    fourth-section-block4:
+      backgroundColor: '#fff'
+      marginTop: 40
+    fourth-block4-content:
+      width: 384
+      margin: 40 0 20 0
+    fourth-block4-text1:
+      color: '#4f00ca'
+      fontSize: 32
+      fontWeight: 600
+      marginTop: 15
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fourth-block4-description1:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 330
+    fourth-block4-image:
+      display: grid
+      width: 360
+      backgroundColor: '#fff'
+    fourth-block4-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/watch_activity__hwtli0884rqm_large.jpg
+      width: 184
+      height: 306
+      margin: 0 0 0 30
+    fourth-block4-text2:
+      color: '#4f00ca'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block4-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 20
+
+    fourth-section-block5:
+      backgroundColor: '#fff'
+      marginTop: 40
+    fourth-block5-content:
+      width: 360
+      margin: 50 0 20 0
+    fourth-block5-text:
+      color: '#4f00ca'
+      fontSize: 32
+      marginTop: 15
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fourth-block5-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+    fourth-block5-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/macbook_screen_keyboard__tf9vqmf118qe_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 400
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    fifth-section-text:
+      color: '#029d50'
+      fontSize: 25
+      width: 100
+      marginTop: 100
+      marginLeft: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    fifth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 25
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 10
+      width: 300
+      color: '#111'
+    fifth-section-description:
+      fontSize: 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 400
+      marginBottom: 50
+      marginLeft: 10
+      color: '#333'
+      width: 330
+
+    fifth-wrapper:
+      backgroundColor: '#F3F3F3'
+    fifth-section-block1:
+    fifth-block1-content:
+      backgroundColor: '#fff'
+      width: 360
+    fifth-block1-text:
+      color: '#029d50'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 32
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      marginBottom: 10
+      width: 330
+    fifth-block1-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/speak_screen__sak5v3k2hmiy_large.jpg
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 500
+
+    fifth-section-block2:
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block2-content:
+      backgroundColor: '#fff'
+      width: 360
+    fifth-block2-text:
+      color: '#029d50'
+      marginTop: 10
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 350
+    fifth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      width: 55
+      marginLeft: 10
+      fontSize: 17
+      marginBottom: 20
+    fifth-block2-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/iphonex_hw__d3ky9y5tq8gi_large.png
+      backgroundPosition: top
+      backgroundSize: cover
+      backgroundColor: '#fff'
+      margin: 0 0 0 30
+      width: 302
+      height: 300
+
+    fifth-section-block3:
+      marginTop: 40
+    fifth-block3-content:
+      backgroundColor: '#fff'
+      width: 360
+    fifth-block3-text1:
+      color: '#029d50'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-description1:
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 330
+      marginBottom: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    fifth-block3-image:
+      display: grid
+      width: 360
+      backgroundColor: '#fff'
+    fifth-block3-play:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/guided_access__dlb45tyn8dyu_large.jpg
+      backgroundPosition: bottom
+      backgroundSize: cover
+      width: 250
+      marginLeft: 30
+      height: 300
+    fifth-block3-text2:
+      color: '#029d50'
+      marginTop: 15
+      marginLeft: 10
+      fontSize: 28
+      fontWeight: 600
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block3-description2:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 330
+      marginBottom: 20
+
+    fifth-section-block4:
+      marginTop: 40
+      backgroundColor: '#fff'
+    fifth-block4-content:
+      backgroundColor: '#fff'
+      width: 360
+    fifth-block4-text:
+      color: '#029d50'
+      marginTop: 15
+      fontSize: 32
+      fontWeight: 600
+      marginLeft: 10
+      width: 300
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 15
+    fifth-block4-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#333'
+      fontSize: 17
+      marginLeft: 10
+      width: 350
+    fifth-block4-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#0070c9'
+      marginTop: 10
+      marginLeft: 10
+      fontSize: 17
+      width: 55
+    fifth-block4-image:
+      backgroundImage: https://www.apple.com/v/accessibility/n/images/overview/ipad_hw_safari__gftz1bs6jtym_large.jpg
+      backgroundPosition: right
+      backgroundSize: cover
+      margin: 20 0 30 0
+      width: 200
+      height: 340
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section:
+      backgroundColor: '#F3F3F3'
+      display: grid
+      gridTemplateRows: 3fr
+    sixth-section-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 28
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 10
+      marginTop: 50
+      width: 330
+      color: '#111'
+
+    sixth-section-content:
+      backgroundColor: '#F3F3F3'
+    sixth-section-block1:
+      width: 250
+      height: 250
+      margin: 0 0 30 55
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block1-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block1-text:
+      margin: 30 100
+      fontSize: 20
+      width: 40
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block2:
+      width: 250
+      height: 250
+      margin: 0 0 30 55
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block2-image:
+      width: 123
+      height: 80
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block2-text:
+      margin: 30 100
+      fontSize: 20
+      color: '#111'
+      width: 42
+      fontWeight: 600
+    sixth-section-block3:
+      width: 250
+      height: 250
+      margin: 0 0 30 55
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block3-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block3-text:
+      margin: 30 100
+      fontSize: 20
+      width: 63
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block4:
+      width: 250
+      height: 250
+      margin: 0 0 30 55
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateRows: 1fr 2fr
+    sixth-block4-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block4-text:
+      margin: 30 100
+      fontSize: 20
+      color: '#111'
+      width: 57
+      fontWeight: 600
+    sixth-section-block5:
+      width: 250
+      height: 250
+      margin: 0 0 30 55
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block5-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginTop: 80
+      marginBottom: 0
+    sixth-block5-text:
+      margin: 30 120
+      fontSize: 20
+      width: 27
+      color: '#111'
+      fontWeight: 600
+    sixth-section-block6:
+      width: 250
+      height: 250
+      margin: 0 0 0 55
+      display: grid
+      gridTemplateRows: 1fr 2fr
+      backgroundColor: '#fff'
+    sixth-block6-image:
+      width: 123
+      height: 65
+      padding: 76
+      marginBottom: 0
+      marginTop: 80
+    sixth-block6-text:
+      margin: 30 80
+      fontSize: 20
+      width: 90
+      color: '#111'
+      fontWeight: 600
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section:
+    seventh-section-block:
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/learn__fiwboycwuiaa_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      width: 360
+      height: 400
+      marginTop: 40
+    seventh-block-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      marginTop: 30
+      fontWeight: 600
+      marginLeft: 10
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      marginBottom: 20
+    seventh-block-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 28
+      fontWeight: 700
+      marginBottom: 36
+      marginLeft: 10
+      width: 300
+      color: '#fff'
+    seventh-block-description:
+      fontSize: 17
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 300
+      marginLeft: 10
+      color: '#fff'
+      width: 330
+    seventh-block-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      marginTop: 10
+      marginBottom: 50
+      fontSize: 17
+      width: 302
+      marginLeft: 10
+
+    seventh-section-content: {}
+    seventh-section-block1:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/shop__bhck2d3smxg2_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 10 0 0
+      width: 360
+      gridTemplateRows: 1fr 0fr
+      height: 400
+    seventh-block1-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: 240 0 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#6bf'
+      width: 150
+      fontSize: 17
+      margin: 0 0 20 20
+    seventh-section-block2:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/accessibility/n/images/overview/build__fu4mj77z72my_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 0 0 0
+      gridTemplateRows: 1fr 0fr
+      width: 360
+      height: 400
+    seventh-block2-text:
+      color: '#fff'
+      fontSize: 21
+      width: 100
+      fontWeight: 600
+      margin: 240 0 0 20
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    seventh-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 35
+      fontWeight: 700
+      margin: 10 0 10 20
+      width: 300
+      color: '#fff'
+    seventh-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#fff'
+      width: 120
+      fontSize: 17
+      margin: 0 0 20 20
+    # ----------------------------------
+    # Mobile Eighth Section
+    # ----------------------------------
+    eighth-section: {}
+    eighth-section-block1:
+      width: 100%
+      display: grid
+      margin: 100 0
+    eighth-block1-icon:
+      width: 100%
+      height: 56
+      margin: 0 0 10 0
+    eighth-block1-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 0 0 10 130
+      width: 110
+      color: '#111'
+    eighth-block1-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 0 0 10 70
+      textAlign: center
+      width: 220
+      color: '#515154'
+    eighth-block1-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 90
+      fontSize: 14
+      margin: 0 0 0 140
+    eighth-section-block2:
+      width: 360
+      display: grid
+      margin: 100 0
+    eighth-block2-icon:
+      width: 100%
+      height: 56
+      margin: 0
+    eighth-block2-title:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 19
+      fontWeight: 600
+      margin: 10 0 5 150
+      width: 60
+      color: '#111'
+    eighth-block2-description:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      margin: 10 0 0 50
+      textAlign: center
+      width: 280
+      color: '#515154'
+    eighth-block2-link:
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#06c'
+      width: 123
+      fontSize: 14
+      margin: 10 0 0 120
+
+context: {}

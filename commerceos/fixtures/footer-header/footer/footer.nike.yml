@@ -1,0 +1,184 @@
+id: footer-nike
+variant: footer
+data: {}
+template:
+  id: footer-nike
+  type: document
+  children:
+    - id: footer
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer-content
+          type: block
+          children:
+            - id: footer-content-title
+              type: text
+              data:
+                text: BUSINESS NAME
+            - id: footer-content-description
+              type: text
+              data:
+                text: Shop with love. ♡
+            - id: footer-content-copyright
+              type: text
+              data:
+                text: 'Made with <a href="#" peb-link-action="navigate.external-page" peb-link-payload="http://payever.org/" style="color: #8b8b8b">payever</a>'
+        - id: footer-links
+          type: block
+          children:
+            - id: footer-links-link1
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/category" style="color: #8b8b8b">Catalog</a>'
+            - id: footer-links-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/about" style="color: #8b8b8b">About</a>'
+            - id: footer-links-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/contacts" style="color: #8b8b8b">Contacts</a>'
+
+
+
+stylesheets:
+  desktop:
+    footer-nike: {}
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#121212'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-content:
+      display: grid
+      gridTemplateRows: 40 80 40
+      margin: 36 0
+      gridArea: 1 / 1 / 1 / 1
+    footer-content-title:
+      fontSize: 18
+      margin: 0
+      width: 150
+      color: '#bfbfbf'
+    footer-content-description:
+      fontSize: 36
+      width: 280
+      margin: 0
+      color: '#bfbfbf'
+    footer-content-copyright:
+      fontSize: 18
+      margin: 0
+      color: '#bfbfbf'
+      width: 150
+    footer-links:
+      display: grid
+      gridTemplateRows: 40 40 40
+      margin: 50 0 0 500
+      gridArea: 1 / 2 / 1 / 2
+    footer-links-link1:
+      width: 60
+    footer-links-link2:
+      width: 60
+    footer-links-link3:
+      width: 62
+
+  tablet:
+    footer-nike: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#121212'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-content:
+      display: grid
+      gridTemplateRows: 40 80 40
+      margin: 36 0 36 24
+    footer-content-title:
+      fontSize: 18
+      width: 150
+      margin: 0
+      color: '#bfbfbf'
+    footer-content-description:
+      fontSize: 36
+      margin: 0
+      width: 280
+      color: '#bfbfbf'
+    footer-content-copyright:
+      fontSize: 18
+      margin: 0
+      width: 150
+      color: '#bfbfbf'
+    footer-links:
+      display: grid
+      gridTemplateRows: 40 40 40
+      margin: 50 24 0 250
+    footer-links-link1:
+      width: 60
+    footer-links-link2:
+      width: 60
+    footer-links-link3:
+      width: 62
+
+  mobile:
+    footer-nike: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#121212'
+      display: grid
+    footer-content:
+      display: grid
+      gridTemplateRows: 40 80 40
+      margin: 36 0 36 24
+    footer-content-title:
+      fontSize: 18
+      margin: 0
+      color: '#bfbfbf'
+      width: 150
+    footer-content-description:
+      fontSize: 36
+      width: 280
+      margin: 0
+      color: '#bfbfbf'
+    footer-content-copyright:
+      fontSize: 18
+      width: 150
+      margin: 0
+      color: '#bfbfbf'
+    footer-links:
+      display: grid
+      gridTemplateRows: 40 40 40 40
+      margin: 0
+    footer-links-social:
+      display: grid
+      gridTemplateColumns: 40 40 40
+    footer-links-social-item1:
+      width: 20
+      margin: 0
+    footer-links-social-item2:
+      width: 20
+      margin: 0
+    footer-links-social-item3:
+      width: 20
+      margin: 0
+    footer-links-link1:
+      margin: 0 0 0 100
+      width: 50
+    footer-links-link2:
+      margin: 0 0 0 100
+      width: 50
+    footer-links-link3:
+      margin: 0 0 0 100
+      width: 63
+
+
+context: {}

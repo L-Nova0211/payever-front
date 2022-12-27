@@ -1,0 +1,21 @@
+<pe-header>
+  <div leftSectionItems>
+    <pe-business-switcher businessName="Personal" class="business-left"></pe-business-switcher>
+  </div>
+  <div rightSectionItems>
+    <button class="back-to-dashboard" (click)="navigateToDashboard()">
+      <svg class="icon icon-20">
+        <use xlink:href="#icon-dashboard-24"></use>
+      </svg>
+      <span>{{ 'header.back_to_dashboard' | translate }}</span>
+    </button>
+  </div>
+</pe-header>
+<base-dashboard
+  [loaded]="true"
+  (dockerItemsChange)="onDockerItemsChange($event)"
+  (profileButtonClicked)="navigateToSwitcher()"
+  [user]="user$ | async"
+>
+  <router-outlet></router-outlet>
+</base-dashboard>

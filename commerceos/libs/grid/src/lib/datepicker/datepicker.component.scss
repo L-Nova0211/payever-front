@@ -1,0 +1,35 @@
+:host {
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  width: 100%;
+  overflow-y: scroll;
+
+  &.dark,
+  &.transparent {
+    color: #fff;
+  }
+
+  &.dark {
+    background-color: rgba(36, 39, 46, 0.85);
+    border: solid 1px #3b3b3b;
+  }
+
+  &.light {
+    background-color: rgba(247, 247, 247, 0.85);
+    border: solid 1px #f7f7f7;
+    color: #000;
+  }
+
+  &.transparent {
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: solid 1px rgba(32, 32, 32, 0.3);
+
+    @supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+      background-color: rgba(36, 39, 46, 0.96) !important;
+    }
+  }
+}

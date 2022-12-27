@@ -1,0 +1,38 @@
+<div class="picker-container" [attr.id]="inputId">
+  <div class="picker-container__controls">
+    <div class="input-with-label" [class.is-invalid]="isFieldInvalid">
+      <span class="label-text">{{isFieldInvalid ? errorMessage : label}}</span>
+      <input
+        placeholder="{{placeholder}}"
+        #input
+        (keyup)="onKey($event)"
+        [matAutocomplete]="auto"
+        [attr.id]="inputId"
+      />
+      <mat-autocomplete class="country-autocomplete-panel" #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+    <div class="button-container">
+      <button peb-text-button color="confirm" (click)="addCountry()">
+        Add country
+      </button>
+    </div>
+  </div>
+  <div class="country-container">
+    <ng-container *ngFor="let country of addedCountries; let i = index">
+      <div class="country-container__item">
+        <span>{{country}}</span>
+        <button
+          peb-text-button
+          color="warn"
+          (click)="onRemoveCountry($event, i)"
+        >
+          Remove
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

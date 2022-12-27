@@ -1,0 +1,58 @@
+<div class="scripts-dialog">
+  <div class="scripts-dialog__header">
+    <div class="scripts-dialog__header-action" (click)="close()">Cancel</div>
+    <div class="scripts-dialog__title">
+      Scripts
+    </div>
+    <div class="scripts-dialog__header-action scripts-dialog__header-action--success" (click)="close()">Done</div>
+  </div>
+  <div class="scripts-dialog__content" *ngIf="pagesScripts$ | async as pagesScripts">
+    <div class="scripts-dialog__list" *ngIf="pagesScripts.length; else noScriptsTpl" [@.disabled]="disableAnimation">
+      <mat-accordion class="scripts-dialog__list-accordion">
+        <ng-container *ngFor="let pageScripts of pagesScripts; trackBy:trackById">
+          <mat-expansion-panel *ngIf="pageScripts.scripts.length" class="scripts-dialog__list-panel" hideToggle #scriptPanel [expanded]="false">
+            <mat-expansion-panel-header class="scripts-dialog__list-panel-header">
+              <span>{{ pageScripts.name }}</span>
+              <span class="scripts-dialog__list-panel-indicator">
+                <mat-icon svgIcon="plus" *ngIf="!scriptPanel.expanded"></mat-icon>
+                <mat-icon svgIcon="minus" *ngIf="scriptPanel.expanded"></mat-icon>
+              </span>
+            </mat-expansion-panel-header>
+            <div class="scripts-dialog__scripts">
+              <ng-container *ngFor="let script of pageScripts.scripts; trackBy:trackById">
+                <div class="scripts-dialog__script-item">
+                  <div class="scripts-dialog__script-title">
+                    {{ script.name }}
+                  </div>
+                  <div class="scripts-dialog__script-actions">
+                    <div class="scripts-dialog__script-action">
+                      <div
+                        class="scripts-dialog__script-toggle"
+                        [class.scripts-dialog__script-toggle--checked]="script.enabled"
+                        (click)="toggleScript(script, pageScripts.id)"
+                      ></div>
+                    </div>
+                    <div class="scripts-dialog__script-action" (click)="openScript({ script: script, pageId: pageScripts.id })">
+                      Open
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </mat-expansion-panel>
+        </ng-container>
+      </mat-accordion>
+    </div>
+    <ng-template #noScriptsTpl>
+      <div class="scripts-dialog__empty">
+        <mat-icon svgIcon="white-alert" class="scripts-dialog__empty-icon"></mat-icon>
+        <div class="scripts-dialog__empty-message">No scripts</div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="scripts-dialog__actions">
+    <div class="scripts-dialog__action" (click)="openScript()">
+      <span>Add script</span>
+    </div>
+  </div>
+</div>

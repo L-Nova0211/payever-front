@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/libs/apps/settings",
+  "assets": [
+    "assets",
+    "bin"
+  ],
+  "lib": {
+    "entryFile": "src/index.ts",
+
+    "umdModuleIds": {
+      "lodash": "lodash",
+      "@angular/material":  "@angular/material",
+      "@angular/cdk": "@angular/cdk",
+      "@pe/platform-header":  "@pe/platform-header"
+    }
+  }
+}

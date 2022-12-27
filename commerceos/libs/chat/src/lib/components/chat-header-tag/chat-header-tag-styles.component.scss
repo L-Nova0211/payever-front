@@ -1,0 +1,74 @@
+.pe-message-chat-room-list {
+    &__wrapper {
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 4px;
+      padding-left: 14px;
+      height: calc(100% - 48px);
+    }
+
+    &__icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .text__dark {
+        color: #131414;
+      }
+
+      .text__light {
+        color: white;
+      }
+    }
+
+    &__info{
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+    }
+
+    &__avatar {
+      &-img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
+
+    &__initials {
+      position: relative;
+      font-weight: normal;
+      background: linear-gradient(to bottom, #6E6D6C, #474747);
+      color: white;
+      z-index: 1;
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__title {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  }

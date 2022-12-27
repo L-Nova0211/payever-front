@@ -1,0 +1,179 @@
+@import '../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin publish-dialog($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $box-shadow-color: map-get($theme-config, box-shadow-color);
+  $hover-menu-item: map-get($theme-config, hover-menu-item);
+  $hover-text: map-get($theme-config, hover-text);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $x-button: map-get($theme-config, x-button);
+
+  background-color: $accent !important;
+  box-shadow: 0 2px 12px 0 $box-shadow-color;
+
+  .viewer__widget {
+    &__title,
+    &__close:hover {
+      color: $text-color !important;
+    }
+
+    &__body {
+      .publishing {
+        &__button {
+          span {
+            color: $text-color !important;
+          }
+  
+          &:hover {
+            background-color: $hover-menu-item !important;
+          }
+        }
+  
+        &__divider {
+          background-color: $separator !important;
+        }
+      }
+
+      .theme {
+        &__tags {
+          .mat-form-field-wrapper {
+            .mat-chip-list-wrapper {
+              input {
+                &::placeholder {
+                  color: $text-color !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.publish-dialog {
+  &__backdrop {
+    background-color: transparent;
+  }
+
+  &__panel {
+    margin-top: 48px !important;
+
+    .mat-dialog-container {
+      border-radius: 12px;
+      overflow: unset;
+      padding: 8px 0 0;
+    }
+
+    peb-publish-dialog .viewer__widget {
+      padding: 8px !important;
+
+      &.dark,
+      &.default {
+        @include publish-dialog($dark-theme);
+      }
+
+      &.light {
+        @include publish-dialog($light-theme);
+      }
+
+      &.transparent {
+        @include publish-dialog($transparent-theme);
+      }
+
+      &__title {
+        font-size: 16px !important;
+        font-weight: bold !important;
+      }
+
+      &__close {
+        .mat-icon {
+          height: 20px !important;
+          width: 20px !important;
+        }
+      }
+
+      &__body {
+        margin-top: 8px !important;
+        padding: unset !important;
+
+        .theme {
+          border-radius: unset !important;
+          margin-bottom: unset !important;
+          overflow: unset !important;
+          padding: 6px 8px !important;
+
+          &__image {
+            border-radius: 8px 8px 0 0 !important;
+
+            img,
+            .image__overlay {
+              border-radius: 8px 8px 0 0 !important;
+            }
+
+            img {
+              object-fit: cover !important;
+            }
+          }
+
+          &__body {
+            border-radius: 0 0 8px 8px !important;
+          }
+
+          &__tags {
+            .mat-form-field-underline {
+              display: none;
+            }
+
+            .mat-form-field-wrapper {
+              width: 100% !important;
+              padding-bottom: unset !important;
+            }
+          }
+
+          &__publish-btn {
+            border-radius: 8px !important;
+            margin-top: 8px !important;
+
+            &.radius__top {
+              border-top-left-radius: 8px !important;
+              border-top-right-radius: 8px !important;
+            }
+          }
+        }
+
+        .publishing {
+          &__divider {
+            margin: unset !important;
+
+            &:last-child {
+              display: none !important;
+            }
+          }
+
+          &__button {
+            border-radius: 6px !important;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            height: 32px !important;
+            margin: 8px 0 0 !important;
+            padding: 6px 8px !important;
+            transition: all 0.2s;
+
+            .mat-icon {
+              height: 20px !important;
+              width: 20px !important;
+              border-radius: 5px !important;
+              display: flex !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

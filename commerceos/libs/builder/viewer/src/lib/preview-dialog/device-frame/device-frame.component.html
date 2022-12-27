@@ -1,0 +1,44 @@
+<div
+  *ngIf="type === PebScreen.Desktop"
+  class="device device--desktop"
+  [@inOutAnimation]
+>
+  <div class="device__top">
+    <div class="device__controls">
+      <div class="device__control"></div>
+      <div class="device__control"></div>
+      <div class="device__control"></div>
+    </div>
+  </div>
+  <div class="device__content">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </div>
+</div>
+
+<div *ngIf="type === PebScreen.Tablet" class="device tablet" [@inOutAnimation]>
+  <div class="tablet__controls">
+    <div class="tablet__control"></div>
+  </div>
+  <div class="device__content tablet__content">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </div>
+</div>
+
+<div *ngIf="type === PebScreen.Mobile" class="device mobile" [@inOutAnimation]>
+  <div class="mobile__controls mobile__controls--top">
+    <div class="mobile__control--top"></div>
+    <div class="mobile__control--top"></div>
+  </div>
+  <div class="device__content mobile__content">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </div>
+  <div class="mobile__controls">
+    <div class="mobile__control--bottom"></div>
+  </div>
+</div>
+
+<ng-template #contentTpl>
+  <ng-scrollbar class="viewer-scrollbar" [visibility]="'always'">
+    <ng-content></ng-content>
+  </ng-scrollbar>
+</ng-template>

@@ -1,0 +1,5 @@
+<div class="user">
+  <div *ngIf="avatar" class="user__avatar" [style.backgroundImage]="'url('+avatar+')'"></div>
+  <ng-content select="[avatarSlot]"></ng-content>
+  <div class="user__name">{{ name }}</div>
+</div>

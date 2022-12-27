@@ -1,0 +1,27 @@
+<div class='settings__container' [ngClass]="theme">
+  <div class="page-header">{{'invoice-app.settings.title'|translate}}</div>
+  <div class="scrollbar">
+    <div class="content">
+      <section class="settings__section">
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.remindersSettings)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Reminders</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

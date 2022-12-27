@@ -1,0 +1,60 @@
+<ng-template #keyTemplate let-key="key">
+  <div class="key" template="#key">
+    <div class="key-info">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2"><strong translate>categories.shopsystems.api_keys.dandomain.titles.url</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <div class="small-2 key-value">{{ makeParamUrl(key) }}
+            <a (click)="clipboardCopy(makeParamUrl(key), getCopyText$(key, 'url'))"
+               class="btn-copy">{{ getCopyText$(key, 'url') | async | translate }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2"><strong
+              translate>categories.shopsystems.api_keys.dandomain.titles.key_secret</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <div class="small-2 key-value">{{ key.secret }}
+            <a (click)="clipboardCopy(key.secret, getCopyText$(key, 'secret'))"
+               class="btn-copy">{{ getCopyText$(key, 'secret') | async | translate }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2"><strong translate>categories.shopsystems.api_keys.dandomain.titles.key_created</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <span class="small-2 key-value">{{ key.createdAt | amDateFormat: 'DD.MM.YYYY HH:mm' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div class="shopify-container">
+  <plugin-main-wrap
+      #wrap
+      [name]="name"
+      [title]="(integrationInfo$ | async)?.displayOptions?.title"
+      [forceHideSectionDownloads]="!downloadLinks?.length"
+      *ngIf="pluginInfo$ && integrationInfo$ && (pluginInfo$ | async) && (integrationInfo$ | async)">
+    <div api-keys>
+      <plugin-api-keys-list [name]="name" [template]="keyTemplate"></plugin-api-keys-list>
+    </div>
+    <div api-key-add>
+      <plugin-api-key-add [name]="name" (created)="onKeyCreated()"></plugin-api-key-add>
+    </div>
+    <div downloads>
+      <plugin-downloads [downloadLinks]="downloadLinks"></plugin-downloads>
+    </div>
+  </plugin-main-wrap>
+</div>
+
+<div class="uninstall-button">
+  <button (click)="this.uninstallService.uninstall(integration, overlayData.isLoading)">{{ 'actions.uninstall' | translate }}</button>
+</div>

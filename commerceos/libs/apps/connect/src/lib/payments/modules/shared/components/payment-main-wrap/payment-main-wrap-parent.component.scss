@@ -1,0 +1,32 @@
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper .overlay-widget-container {
+  .payment-santander-installment__settings-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+
+    .form-table .form-fieldset .row {
+      &:first-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &:last-of-type {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      & > [class*=col]:first-child.col-xs-12 {
+        border-radius: 0;
+      }
+
+      & > [class*=col]:last-child.col-xs-12 {
+        border-radius: 0;
+      }
+    }
+
+    .rounded-bottom .form-table {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      overflow: hidden;
+    }
+  }
+}

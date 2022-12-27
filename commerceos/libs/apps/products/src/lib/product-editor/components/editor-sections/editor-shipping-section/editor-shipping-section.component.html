@@ -1,0 +1,64 @@
+<div *ngIf="!(isPhysicalProduct$ | async)">
+  <span>{{'shippingSection.available' | translate}}</span>
+</div>
+<form
+  *ngIf="form && (isPhysicalProduct$ | async)"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+
+  <div class="wrapper">
+    <peb-form-field-input
+      class='shipping-form-field'
+      label="{{ 'shippingSection.form.width.label' | translate }}"
+      appearance="label"
+      [animated]='true'
+      [isFieldInvalid]="isSubmitted && form.controls.width.errors?.required"
+      [errorMessage]="getMessage('width')">
+      <input placeholder="{{ 'shippingSection.form.width.label' | translate }}" formControlName="width" type="number">
+      <div class="suffix">
+        <p>{{ 'shippingSection.measure.cm' | translate }}</p>
+      </div>
+    </peb-form-field-input>
+
+    <peb-form-field-input
+      class='shipping-form-field'
+      label="{{ 'shippingSection.form.length.label' | translate }}"
+      appearance="label"
+      [animated]='true'
+      [isFieldInvalid]="isSubmitted && form.controls.length.errors?.required"
+      [errorMessage]="getMessage('length')">
+      <input placeholder="{{ 'shippingSection.form.length.label' | translate }}" formControlName="length" type="number">
+      <div class="suffix">
+        <p>{{ 'shippingSection.measure.cm' | translate }}</p>
+      </div>
+    </peb-form-field-input>
+
+    <peb-form-field-input
+      class='shipping-form-field'
+      label="{{ 'shippingSection.form.height.label' | translate }}"
+      appearance="label"
+      [animated]='true'
+      [isFieldInvalid]="isSubmitted && form.controls.height.errors?.required"
+      [errorMessage]="getMessage('height')">
+      <input placeholder="{{ 'shippingSection.form.height.label' | translate }}" formControlName="height" type="number">
+      <div class="suffix">
+        <p>{{ 'shippingSection.measure.cm' | translate }}</p>
+      </div>
+    </peb-form-field-input>
+
+    <peb-form-field-input
+      class='shipping-form-field'
+      label="{{ 'shippingSection.form.weight.label' | translate }}"
+      appearance="label"
+      [animated]='true'
+      [isFieldInvalid]="isSubmitted && form.controls.weight.errors?.required"
+      [errorMessage]="getMessage('weight')">
+      <input placeholder="{{ 'shippingSection.form.weight.label' | translate }}" formControlName="weight" type="number">
+      <div class="suffix">
+        <p>{{ 'shippingSection.measure.kg' | translate }}</p>
+      </div>
+    </peb-form-field-input>
+  </div>
+</form>

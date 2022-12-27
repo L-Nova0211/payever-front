@@ -1,0 +1,65 @@
+<peb-editor-material-style></peb-editor-material-style>
+
+<div class="post-toolbar">
+  <main class="container">
+    <section
+      class="sidebar sidebar--left"
+      [@openClose]="(state.sidebarsActivity$ | async).navigator ? 'openLeft' : 'closeLeft'"
+    >
+      <ng-container #leftSidebarSlot></ng-container>
+    </section>
+
+    <section
+      pebAutoHideScrollBar
+      class="sidebar sidebar--additional-left"
+      [@openClose]="(sidebarsActivityLayers$ | async) ? 'openLeft' : 'closeLeft'"
+    >
+      <pe-layers *ngIf="sidebarsActivityLayers$ | async"></pe-layers>
+    </section>
+
+    <div class="content-wrap">
+      <section class="toolbar">
+        <ng-container #toolbarSlot></ng-container>
+      </section>
+      <section #contentContainer id="content">
+        <peb-editor-renderer></peb-editor-renderer>
+        <peb-preview-renderer
+          class="preview-renderer"
+          [width]="previewOptions.width"
+          [height]="previewOptions.height"
+          [contentPadding]="previewOptions.padding[screen]"
+        ></peb-preview-renderer>
+        <ng-template #contentSpinner>
+          <div class="spinner"></div>
+        </ng-template>
+        <ng-container #contentContainerSlot></ng-container>
+      </section>
+    </div>
+
+    <section
+      class="sidebar sidebar--right"
+      [@openClose]="(state.sidebarsActivity$| async).inspector
+      ? (deviceService.isMobile && !deviceService.landscape) ? 'openBottom' : 'openRight'
+      : (deviceService.isMobile && !deviceService.landscape) ? 'closeBottom' : 'closeRight'"
+    >
+      <peb-editor-right-sidebar
+        [sidebarHidden]="sidebarHidden$ | async"
+        [isDetail]="isDetail$ | async"
+        [isOptionList]="isOptionList$ | async"
+        [detail]="detail"
+        [optionList]="optionList"
+        [tabs]="rightSidebarTabs"
+        (backToOn)="backTo($event)"
+      ></peb-editor-right-sidebar>
+    </section>
+  </main>
+</div>
+
+<ng-template #skeletonTemplate>
+  <div class="pages">
+    <div *ngFor="let i of skeletonPages" class="page page--skeleton" onclick="">
+      <div class="page__preview"></div>
+      <div class="page__name"></div>
+    </div>
+  </div>
+</ng-template>

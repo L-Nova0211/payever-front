@@ -1,0 +1,125 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+.upload-button {
+  width: 100%;
+  height: 40px;
+  margin: 12px 0;
+  padding: 0 15px;
+  border-radius: 12px;
+  background-color: #1c1d1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+  color: #0091df;
+  border: 0;
+  cursor: pointer;
+}
+
+.remove {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  top: 8px;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  outline: none;
+  background-color: rgb(239, 239, 239);
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 2px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: calc(50% - 5px);
+    display: block;
+    content: "";
+    width: 10px;
+    height: 1px;
+    background-color: rgba(17, 17, 17, 0.85);
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.hidden-select {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+
+  ::ng-deep {
+    .mat-form-field-flex {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 0;
+      height: calc(100% - 14px);
+    }
+  }
+}
+
+.mat-option {
+  background-color: rgba(36, 39, 46, 0.85) !important;
+
+  &:hover:not(.mat-option-disabled) {
+    background-color: #1785f6 !important;
+  }
+}
+
+
+.option-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+::ng-deep .cdk-overlay-container {
+  .mat-select-panel{
+    border-radius: 12px;
+  }
+
+  .pe-capture-image-modal-panel {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 50%);
+    overflow: auto;
+    background-color: rgba(36, 39, 46, 0.85);
+    color: #ffffff;
+
+    &.dialog-overlay-panel {
+      max-width: 640px + 24px !important;
+      position: relative !important;
+
+      .mat-dialog-container {
+        padding: 0;
+
+        .overlay__body {
+          padding: 0 12px 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px - 1px) {
+  .hide-for-small-resolution {
+    display: none;
+  }
+}

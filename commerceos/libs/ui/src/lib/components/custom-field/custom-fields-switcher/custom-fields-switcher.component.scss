@@ -1,0 +1,19 @@
+.pe-custom-fields-switcher {
+  .radio-wrapper {
+    padding: 12px;
+    & > *:not(:nth-last-child(1)) {
+      display: block;
+      padding-bottom: 8px;
+    }
+  }
+
+  .textarea-wrapper {
+    textarea {
+      flex: inherit;
+      overflow: hidden;
+      transition: height .2s ease;
+    }
+  }
+
+
+}

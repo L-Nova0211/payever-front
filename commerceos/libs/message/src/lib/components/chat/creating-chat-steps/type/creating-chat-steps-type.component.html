@@ -1,0 +1,22 @@
+<div
+  class="creating-channel-steps-type"
+  [formGroup]="typeGroup"
+>
+  <div class="creating-channel-steps-type__type-list">
+    <label *ngFor="let type of types">
+      <input hidden formControlName="subType" type="radio" [value]="type.value">
+      <span translate>{{ type.title }}</span>
+      <div class="creating-channel-steps-type__checkmark">
+        <svg width="8" height="6" viewBox="0 0 14 10" style="margin: auto">
+          <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g stroke="#FFF" stroke-width="1.4">
+              <g>
+                <path d="M8.4 14L12.6 18.2 19.6 9.8" transform="translate(-577 -373) translate(570 364)"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </label>
+  </div>
+</div>

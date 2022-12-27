@@ -1,0 +1,121 @@
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+@import "~@pe/ui-kit/scss/pe_variables";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.marketing-widget-button {
+  margin-left: auto;
+  width: 50%;
+}
+
+:host::ng-deep .no-icon-margin button span pe-progress-button-content .mat-button-rect-inner-horizontal svg:first-of-type {
+  margin-right: 0 !important;
+}
+
+.marketing-widget {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__data {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  &__small-title {
+    font-size: 14px;
+  }
+  &__big-title {
+    margin-top: 0.125em;
+    font-weight: 500;
+    font-size: 2.5em;
+  }
+
+  &__section {
+    width: 50%;
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-secondary-3;
+      padding-left: 0.5em;
+    }
+  }
+
+  &__button {
+    margin-left: auto;
+    border-radius: 0.75em;
+    font-size: 1.125em;
+    font-weight: 500;
+    text-align: center;
+    width: 50%;
+    box-sizing: content-box;
+    line-height: initial;
+    display: flex;
+    justify-content: center;
+    border: none;
+
+    &:not(:last-child) {
+      margin-right: 0.75em;
+    }
+  }
+}
+/*
+.marketing-title {
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $color-secondary;
+}
+.marketing-stats {
+  @include pe_flexbox;
+}
+
+.marketing-stats-item {
+  font-weight: 300;
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  margin-right: 24px;
+
+  .marketing-stats-item-heading {
+    color: $color-secondary-4;
+    font-size: $font-size-micro-1;
+  }
+
+  .marketing-stats-item-value {
+    font-size: $font-size-large-0;
+    color: $color-secondary;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+.add-campaign {
+  margin-left: auto;
+  .add-campaign-icon {
+    margin: $padding-base-vertical 0;
+  }
+}
+
+@media (max-width: $viewport-breakpoint-ipad - 1) {
+  .add-campaign {
+    width: 50px;
+  }
+
+  .marketing-stats-item {
+    margin-right: 24px;
+
+    .marketing-stats-item-heading {
+      font-size: $font-size-micro-3;
+    }
+
+    .marketing-stats-item-value {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: $viewport-breakpoint-xs-1 - 1) {
+  .marketing-stats-item {
+    margin-right: 10px;
+  }
+}
+*/

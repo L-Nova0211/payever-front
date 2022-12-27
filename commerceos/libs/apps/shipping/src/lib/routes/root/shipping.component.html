@@ -1,0 +1,27 @@
+<ng-container *ngIf="translationsReady$ | async">
+  <div class="nav-content" [ngClass]="theme">
+    <pe-grid [theme]="theme">
+      <pe-grid-sidenav
+        #sideNav
+        [sidenavTitle]="'shipping-app.main_nav.name' | translate"
+      >
+        <pe-folders
+          [sideNav]="sideNav"
+          [selectFolder]="activeFolder"
+          [folders]="treeData"
+          (selectedFolder)="navigateTolLink($event)"
+        ></pe-folders>
+      </pe-grid-sidenav>
+
+      <pe-grid-content
+        [showMobileFooter]="false"
+        [mobileTitle]="mobileTitle$ | async"
+        [showMobileTitle]="showMobileTitle$ | async"
+      >
+        <div class="router-styles">
+          <router-outlet></router-outlet>
+        </div>
+      </pe-grid-content>
+    </pe-grid>
+  </div>
+</ng-container>

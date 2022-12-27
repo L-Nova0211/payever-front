@@ -1,0 +1,97 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="contactForm">
+  <peb-form-background>
+    <div class="column-wrapper">
+      <peb-select
+        selectType="label"
+        label="{{ formTranslationsService.getFormControlLabel('salutation') }}"
+        formControlName="salutation"
+        [isFieldInvalid]="contactForm.get('salutation').invalid"
+        [errorMessage]="formTranslationsService.getFormControlErrorMessage('salutation')"
+      >
+        <peb-select-option
+          class="select-options"
+          *ngFor="let item of formTranslationsService.salutation"
+          value="{{ item.value }}"
+          label="{{ item.label }}"
+        ></peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        label="{{ formTranslationsService.getFormControlLabel('first_name') }}"
+        class="divider-border"
+        appearance="label"
+        [isFieldInvalid]="contactForm.get('firstName').invalid"
+        [errorMessage]="formTranslationsService.getFormControlErrorMessage('first_name')"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ formTranslationsService.getFormControlPlaceholder('first_name') }}"
+          formControlName="firstName"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        label="{{ formTranslationsService.getFormControlLabel('last_name') }}"
+        appearance="label"
+        [isFieldInvalid]="contactForm.get('lastName').invalid"
+        [errorMessage]="formTranslationsService.getFormControlErrorMessage('last_name')"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ formTranslationsService.getFormControlPlaceholder('last_name') }}"
+          formControlName="lastName"
+        />
+      </peb-form-field-input>
+    </div>
+    <peb-form-field-input
+      class="two-column-input"
+      label="{{ formTranslationsService.getFormControlLabel('phone') }}"
+      appearance="label"
+      [isFieldInvalid]="contactForm.get('phone').hasError('pattern')"
+      [errorMessage]="formTranslationsService.getFormControlErrorMessage('phone')"
+    >
+      <input
+        type="text"
+        pebInput
+        placeholder="{{ formTranslationsService.getFormControlPlaceholder('phone') }}"
+        formControlName="phone"
+      />
+    </peb-form-field-input>
+    <peb-form-field-input
+      class="two-column-input"
+      label="{{ formTranslationsService.getFormControlLabel('additional_phone') }}"
+      appearance="label"
+      [isFieldInvalid]="contactForm.get('additionalPhone').hasError('pattern')"
+      [errorMessage]="formTranslationsService.getFormControlErrorMessage('additional_phone')"
+    >
+      <input
+        type="text"
+        pebInput
+        placeholder="{{formTranslationsService.getFormControlPlaceholder('additional_phone')}}"
+        formControlName="additionalPhone"
+      />
+    </peb-form-field-input>
+    <peb-form-field-input label="{{ formTranslationsService.getFormControlLabel('fax') }}" appearance="label">
+      <input
+        type="text"
+        pebInput
+        placeholder="{{ formTranslationsService.getFormControlPlaceholder('fax') }}"
+        formControlName="fax"
+      />
+    </peb-form-field-input>
+    <pe-picker
+      class="email-picker"
+      #picker
+      type="email"
+      [label]="formTranslationsService.getFormControlLabel('email')"
+      [placeholder]="formTranslationsService.getFormControlPlaceholder('email')"
+      [buttonLabel]="'form.create_form.contact.email.button' | translate"
+      (buttonClick)="addEmail()"
+      formControlName="emails"
+      (onKeyUp)="onKeyUpPicker($event)"
+      [isFieldInvalid]="incorrectMail || sameMail"
+      [errorMessage]="emailErrorMessage"
+    >
+    </pe-picker>
+  </peb-form-background>
+</form>

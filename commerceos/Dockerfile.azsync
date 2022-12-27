@@ -1,0 +1,15 @@
+ARG BUILD_NODE_IMAGE
+
+FROM $BUILD_NODE_IMAGE AS build
+
+COPY ./package.json ./package-lock.json .npmrc /payever/
+RUN cd /payever && npm ci
+
+COPY ./ /payever
+RUN cd /payever && npm i && npm run build
+
+ARG CI_COMMIT_SHA
+
+RUN azcopy --help
+
+RUN mkdir /payever/api && echo $CI_COMMIT_SHA && echo $CI_COMMIT_SHA > /payever/api/status

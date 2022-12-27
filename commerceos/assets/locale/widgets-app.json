@@ -1,0 +1,221 @@
+{
+  "widgets": {
+    "BRANCHE_LUGGAGE": "luggage",
+    "apps": {
+      "title-business": "Business Apps",
+      "title-personal": "Personal Apps"
+    },
+    "actions": {
+      "less": "Less",
+      "more": "More",
+      "close": "Close",
+      "edit": "Edit",
+      "learn-more": "Learn more",
+      "get-started": "Get started",
+      "continue-setup": "Continue setup process",
+      "open": "Open"
+    },
+    "tutorial": {
+      "title": "Tutorial",
+      "quick-tour": "Take a quick tour",
+      "learn-more": "Learn more about payever Dashboard and how it works.",
+      "watch": "Watch",
+      "type": {
+        "apps":"payever Apps",
+        "tutorial": "payever Dashboard",
+        "transactions": "payever Transactions",
+        "connect": "payever Connect",
+        "products": "payever Products",
+        "checkout": "payever Checkout",
+        "shop": "payever Shop",
+        "marketing": "payever Marketing",
+        "contacts": "payever Contacts",
+        "pos": "payever Point of sale",
+        "settings": "payever Settings",
+        "subscriptions":"payever Subscriptions",
+        "sites":"payever Site",
+        "coupons": "payever Coupons",
+        "message": "payever Message"
+      }
+    },
+    "marketing": {
+      "title": "Marketing",
+      "new-campaign": "New<span class=\"hidden-xs\"> campaign</span>",
+      "users": "Users",
+      "views": "Views",
+      "sells": "Sells",
+      "install-app": "Send 14 days personal offers for free",
+      "actions": {
+        "new_campaign": "New Campaign"
+      },
+      "sections": {
+        "unread_campaigns.title": "Unread campaigns",
+        "all_campaigns.title": "All campaigns"
+      }
+    },
+    "transactions": {
+      "title": "Transactions",
+      "today-revenue": "Today revenue",
+      "this-month": "This month",
+      "1-month": "1M",
+      "3-months": "3M",
+      "6-months": "6M",
+      "1-year": "1Y"
+    },
+    "connect": {
+      "list-title": "Top rated",
+      "title": "Connect",
+      "install-app": "Add your first connect",
+      "subtitle": "",
+      "all_installed": "You have connected all apps",
+      "actions": {
+        "add-connect": "Connect"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "subtitle": "Start adding your first {{ industry }}",
+      "most-popular": "Most popular products",
+      "popular-lastWeek": "Last Week",
+      "popular-lastMonth": "Last Month",
+      "actions": {
+        "add-new": "Start adding your first product"
+      }
+    },
+    "checkout": {
+      "title": "Checkout",
+      "payment_methods": "Payment methods",
+      "subtitle": "",
+      "channels": "Channels",
+      "install": "Install",
+      "uninstall": "Installed",
+      "actions": {
+        "open-direct-link": "Link",
+        "edit-checkout": "Manage",
+        "add-new": "Create your First Checkout",
+        "add-checkout": "Add<span class=\"hidden-xs\"> checkout</span>"
+      }
+    },
+    "store": {
+      "title": "Store",
+      "subtitle": "",
+      "last-7-days": "Sale in 7 days",
+      "top-products": "Top viewed products",
+      "live-status": "Live status",
+      "shop-on-live": "On Live",
+      "shop-disabled": "Disabled",
+      "domain": "Domain",
+      "no-domain": "None",
+      "no-shops": "You have no shops",
+      "no-products": "You have no products here",
+      "product": {
+        "item": "item",
+        "items": "items"
+      },
+      "actions": {
+        "edit-store": "Edit"
+      },
+      "install-app": "Start selling online 14 days for free"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "last-added": "Last added",
+      "subtitle": "",
+      "sections": {
+        "contacts.title": "Contacts",
+        "groups.title": "Groups",
+        "businesses.title": "Businesses"
+      },
+      "actions": {
+        "add": "Add",
+        "add-contact": "Contact"
+      },
+      "install-app": "Try 14 days for free"
+    },
+    "settings": {
+      "title": "Settings",
+      "actions": {
+        "edit-wallpaper": "Edit Wallpaper",
+        "edit-language": "Edit Language",
+        "add-employee": "Add Employee"
+      }
+    },
+    "pos": {
+      "title": "Point of sale",
+      "subtitle": "",
+      "payment-methods": "Payment methods",
+      "sale-7-days": "Sale in 7 days",
+      "top-sale-products": "Top sale products",
+      "install-app": "Accept payments locally 14 days for free",
+      "no-payments": "No payments yet",
+      "actions": {
+        "edit-terminal": "Edit"
+      }
+    },
+    "studio": {
+      "title": "Studio",
+      "subtitle": "",
+      "install-app": "Buy Now",
+      "url": "https://studio.payever.shop/"
+    },
+    "ads": {
+      "title": "Advertising",
+      "subtitle": "",
+      "install-app": "Start your ad campaign",
+      "url": "https://ads.payever.shop/"
+    },
+    "site": {
+      "site": "Site",
+      "subtitle": "",
+      "install-app": "Start your site 14 days for free",
+      "actions": {
+        "edit-site": "Edit"
+      }
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "",
+      "install-app": "Start your blog, 14 days for free",
+      "url": "https://blog.payever.shop/"
+    },
+    "invoice": {
+      "title": "Invoice",
+      "subtitle": "",
+      "install-app": "Invoice your customers in seconds",
+      "today-revenue": "Today revenue",
+      "this-month": "This month",
+      "1-month": "1M",
+      "3-months": "3M",
+      "6-months": "6M",
+      "1-year": "1Y"
+    },
+    "subscription": {
+      "title": "Subscription",
+      "subtitle": "",
+      "subscribed-total": "Subscribed total",
+      "subscribed-this-month": "Subscribed this month",
+      "unsubscribed-this-month": "Unsubscribed this month"
+    },
+    "coupons": {
+      "title": "Coupons",
+      "install-app": "Try Coupons",
+      "subtitle": ""
+    },
+    "social": {
+      "title": "Social",
+      "subtitle": "",
+      "install-app": "Try Social"
+    },
+    "shipping": {
+      "title": "Shipping",
+      "subtitle": "",
+      "install-app": "Set up shipping address for your business",
+      "shipping-this-month": "Shipped this month",
+      "returned-this-month": "Returned this month",
+      "cancelled-this-month": "Cancelled this month"
+    },
+    "errors": {
+      "business_enable": "Error in business enable"
+    }
+  }
+}

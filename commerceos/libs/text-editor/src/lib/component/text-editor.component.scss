@@ -1,0 +1,68 @@
+:host {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+  min-height: 115px;
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    font-size: 11px;
+    color: #7a7a7a;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: -20px;
+    margin-left: 12px;
+    font-family: 'Roboto';
+  }
+
+  .editable-area {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    border-radius: 12px;
+    font-family: 'Roboto';
+    font-size: 12px;
+    line-height: 1.33;
+    outline: none;
+    padding: 0 0 10px 0;
+    border-radius: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    user-select: auto !important;
+    --webkit-user-select: auto !important;
+
+    &.active:hover {
+      cursor: text;
+    }
+
+    p, ul, ol {
+      margin: 0;
+    }
+  }
+  .outline-none {
+    outline: none !important;
+  }
+  .outline {
+    outline: -webkit-focus-ring-color auto 1px;
+    padding: 2px;
+  }
+  .selectionLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .placeholder-element {
+    font-size: 11px;
+    color: #7a7a7a !important;
+    line-height: 1.5;
+    display: block;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+  }
+}

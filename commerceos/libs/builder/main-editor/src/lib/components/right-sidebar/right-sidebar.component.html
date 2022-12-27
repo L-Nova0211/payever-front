@@ -1,0 +1,87 @@
+<div [hidden]="sidebarHidden" class="sidebar__wrap">
+  <div class="sidebar__header">
+    <button
+      class="sidebar__button"
+      *ngFor="let tab of tabs"
+      [class.sidebar__button_active]="tab.active"
+      (click)="selectTab(tab)"
+    >
+      <svg *ngIf="tab.title === 'Format'" width="21" height="20" viewBox="0 0 21 20">
+        <g fill="none" fill-rule="evenodd">
+          <g fill="#0371E2">
+            <path d="M1151 86c-.968 0-1.75-.782-1.75-1.75s.782-1.75 1.75-1.75 1.75.782 1.75 1.75-.782 1.75-1.75 1.75m-3.5-4c-.968 0-1.75-.782-1.75-1.75s.782-1.75 1.75-1.75 1.75.782 1.75 1.75-.782 1.75-1.75 1.75m-5.5 0c-.968 0-1.75-.782-1.75-1.75s.782-1.75 1.75-1.75 1.75.782 1.75 1.75-.782 1.75-1.75 1.75m-3.5 4c-.968 0-1.75-.782-1.75-1.75s.782-1.75 1.75-1.75 1.75.782 1.75 1.75-.782 1.75-1.75 1.75m6.25-10c-5.522 0-10 4.478-10 10s4.478 10 10 10c.922 0 1.667-.744 1.667-1.667 0-.433-.161-.822-.434-1.116-.26-.295-.416-.678-.416-1.106 0-.922.744-1.667 1.666-1.667h1.961c3.067 0 5.556-2.488 5.556-5.555 0-4.911-4.478-8.889-10-8.889" transform="translate(-1134 -76)"/>
+          </g>
+        </g>
+      </svg>
+      <svg *ngIf="tab.title === 'Animate'" width="25" height="20" viewBox="0 0 25 20">
+        <g fill="none" fill-rule="evenodd">
+          <g fill="#0371E2" fill-rule="nonzero">
+            <g>
+              <path d="M19.368 7.73v7.162c0 2.472-2.004 4.476-4.476 4.476H7.731c-2.097 0-3.857-1.443-4.343-3.39.349.088.713.135 1.088.135h.368c.455 1.073 1.492 1.841 2.715 1.907l.172.005h7.161c1.673 0 3.04-1.31 3.128-2.961l.005-.172V7.731c0-1.297-.788-2.41-1.912-2.886v-.37c0-.374-.047-.738-.133-1.086 1.945.485 3.388 2.245 3.388 4.342z" transform="translate(-1210 -77) rotate(-45 709.447 -1415.72)"/>
+              <path d="M11.637 0c2.472 0 4.476 2.004 4.476 4.476v7.16c0 2.473-2.004 4.477-4.476 4.477H4.476C2.004 16.113 0 14.109 0 11.637V4.476C0 2.004 2.004 0 4.476 0h7.16zm0 1.343H4.476c-1.673 0-3.04 1.31-3.129 2.96l-.004.173v7.16c0 1.673 1.31 3.04 2.96 3.13l.173.004h7.16c1.673 0 3.04-1.31 3.13-2.961l.004-.172V4.476c0-1.673-1.31-3.04-2.961-3.129l-.172-.004z" transform="translate(-1210 -77) rotate(-45 709.447 -1415.72)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg *ngIf="tab.title === 'Page'" width="21" height="20" viewBox="0 0 21 20">
+        <g fill="none" fill-rule="evenodd">
+          <g fill="#0371E2" fill-rule="nonzero">
+            <g>
+              <path d="M14.444 0C17.513 0 20 2.487 20 5.556v8.888C20 17.513 17.513 20 14.444 20H5.556C2.487 20 0 17.513 0 14.444V5.556C0 2.487 2.487 0 5.556 0h8.888zm0 1.667H5.556c-2.077 0-3.773 1.627-3.884 3.675l-.005.214v8.888c0 2.077 1.627 3.773 3.675 3.884l.214.005h8.888c2.077 0 3.773-1.627 3.884-3.675l.005-.214V5.556c0-2.077-1.627-3.773-3.675-3.884l-.214-.005z" transform="translate(-1290 -77) translate(1290.25 77)"/>
+              <path d="M14.444 4.444c.614 0 1.112.498 1.112 1.112v8.888c0 .614-.498 1.112-1.112 1.112H5.556c-.614 0-1.112-.498-1.112-1.112V5.556c0-.614.498-1.112 1.112-1.112h8.888z" transform="translate(-1290 -77) translate(1290.25 77)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span>{{ tab.title }}</span>
+    </button>
+  </div>
+  <div class="sidebar__content" [hidden]="getActiveTab().title === 'Page' || getActiveTab().title === 'Animate'">
+    <ng-container #formatSlot></ng-container>
+  </div>
+  <div class="sidebar__content" [hidden]="getActiveTab().title === 'Format' || getActiveTab().title === 'Page'">
+    <ng-container #motionSlot></ng-container>
+  </div>
+  <div class="sidebar__content sidebar__content-page" [hidden]="getActiveTab().title === 'Format' || getActiveTab().title === 'Animate'">
+    <ng-container #pageSlot></ng-container>
+  </div>
+</div>
+<div class="sidebar__detail" [hidden]="!isDetail">
+  <div class="sidebar__detail-header">
+    <button (click)="backTo('main')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11">
+        <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g fill-rule="nonzero" stroke="#0371E2" stroke-width="1.275">
+            <path d="M1114.75 75.25L1110.25 79.75 1110.25 79.75 1105.75 75.25" transform="translate(-1107 -72) scale(-1 1) rotate(-90 0 1187.75)"/>
+          </g>
+        </g>
+      </svg>
+      {{ detail?.back }}
+    </button>
+    <span>{{ detail?.title }}</span>
+  </div>
+  <ng-container #detailSlot></ng-container>
+</div>
+<div class="sidebar__option-list" [hidden]="!isOptionList">
+  <div class="sidebar__detail-header" #optionsHeaderTpl>
+    <button (click)="backTo('detail')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11">
+        <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g fill-rule="nonzero" stroke="#0371E2" stroke-width="1.275">
+            <path d="M1114.75 75.25L1110.25 79.75 1110.25 79.75 1105.75 75.25" transform="translate(-1107 -72) scale(-1 1) rotate(-90 0 1187.75)"/>
+          </g>
+        </g>
+      </svg>
+      {{ optionList?.back }}
+    </button>
+    <span>{{ optionList?.title }}</span>
+  </div>
+<!--  <div class="sidebar__option-list-content scrollbar" pebAutoHideScrollBar [ngStyle]="{ height: 'calc(100% - ' + optionsHeaderTpl.clientHeight + 'px)' }">-->
+<!--    <ng-container #optionListSlot></ng-container>-->
+<!--  </div>-->
+  <div class="sidebar__option-list-content">
+    <cdk-virtual-scroll-viewport itemSize="30" class="sidebar__option-list-scroll scrollbar" pebAutoHideScrollBar>
+      <ng-container #optionListSlot></ng-container>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

@@ -1,0 +1,734 @@
+{
+  "assets": {
+    "business_status": {
+      "REGISTERED_BUSINESS": "Registered Business",
+      "SOLO_ENTREPRENEUR": "Solo Entrepreneur"
+    },
+    "legal_form": {
+      "LEGAL_FORM_AG": "Public Limited Company",
+      "LEGAL_FORM_EG": "Registered Cooperative",
+      "LEGAL_FORM_EINZELUNTERN": "Individual Enterprise",
+      "LEGAL_FORM_EINZELUNTERNAHMER": "Individual Enterprise",
+      "LEGAL_FORM_EK": "Sole Trader",
+      "LEGAL_FORM_EV": "Registered Association",
+      "LEGAL_FORM_GBR": "Civil Law Partnership",
+      "LEGAL_FORM_GMBH": "Limited Liability Company",
+      "LEGAL_FORM_KG": "Limited Partnership",
+      "LEGAL_FORM_OHG": "General Partnership",
+      "LEGAL_FORM_SONSTIGES": "Other",
+      "LEGAL_FORM_UG": "Limited"
+    },
+    "product": {
+      "BUSINESS_PRODUCT_RETAIL_B2C": "Physical goods for private customers (Retail B2C)",
+      "BUSINESS_PRODUCT_RETAIL_B2B": "Physical goods for business customers (Retail B2B)",
+      "BUSINESS_PRODUCT_GIDITAL_GOODS": "Digital goods",
+      "BUSINESS_PRODUCT_SERVICES": "Services",
+      "BUSINESS_PRODUCT_OVERNIGHT_STAY": "Overnight stay",
+      "BUSINESS_PRODUCT_MEALS": "Meals",
+      "BUSINESS_PRODUCT_FOOD": "Food",
+      "BUSINESS_PRODUCT_DRINKS": "Drinks",
+      "BUSINESS_PRODUCT_OTHERS": "Others",
+      "SEASON": "Season",
+      "STYLE": "Style"
+    },
+    "status": {
+      "BUSINESS_STATUS_JUST_LOOKING": "Just looking around",
+      "BUSINESS_STATUS_HAVE_IDEA": "I have an idea want to get started",
+      "BUSINESS_STATUS_TURN_EXISTING": "Turning an existing project into a business",
+      "BUSINESS_STATUS_GROWING_BUSINESS": "Growing an existing business",
+      "BUSINESS_STATUS_REPLACE_BUSINESS": "Replace my business with payever"
+    },
+    "industry": {
+      "BRANCHE_ART_CRAFT": "Arts & Crafts",
+      "BRANCHE_AUTOMOTIVE": "Automotive",
+      "BRANCHE_BABY": "Baby",
+      "BRANCHE_CARE": "Beauty & Personal Care",
+      "BRANCHE_BOOKS": "Books",
+      "BRANCHE_COMPUTER": "Computers",
+      "BRANCHE_ELECTRONICS": "Electronics",
+      "BRANCHE_FASHION": "Fashion",
+      "BRANCHE_HEALTH_HOUSEHOLD": "Health & Household",
+      "BRANCHE_HOME_KITCHEN": "Home & Kitchen",
+      "BRANCHE_LUGGAGE": "Luggage",
+      "BRANCHE_TV": "Movies & TV",
+      "BRANCHE_MUSIC": "Music, CDs & Vinyl",
+      "BRANCHE_PET_SUPPLIES": "Pet Supplies",
+      "BRANCHE_SPORTS": "Sports & Outdoors",
+      "BRANCHE_TOOLS": "Tools & Home Improvement",
+      "BRANCHE_TOYS": "Toys & Games",
+      "BRANCHE_VIDEO_GAMES": "Video Games",
+      "BRANCHE_OTHER": "Others",
+      "BRANCHE_FINISHING_PRODUTS": "Abrasive & Finishing Products",
+      "BRANCHE_ADDITIVE_PRODUCTS": "Additive Manufacturing Products",
+      "BRANCHE_DOOR_PRODUTS": "Commercial Door Products",
+      "BRANCHE_CUTTING_TOOLS": "Cutting Tools",
+      "BRANCHE_FASTENERS": "Fasteners",
+      "BRANCHE_FILTRATION": "Filtration",
+      "BRANCHE_FOOD_SUPPLIES": "Food Service Equipment & Supplies",
+      "BRANCHE_PNEUMATICS": "Hydraulics, Pneumatics & Plumbing",
+      "BRANCHE_ELECTRICAL": "Industrial Electrical",
+      "BRANCHE_HARDWARE": "Industrial Hardware",
+      "BRANCHE_HAND_TOOLS": "Industrial Power & Hand Tools",
+      "BRANCHE_JANITORIAL_SUPPLIES": "Janitorial & Sanitation Supplies",
+      "BRANCHE_SCIENCE_PRODUTS": "Lab & Scientific Products",
+      "BRANCHE_MATERIAL_HANDLINGS": "Material Handling Products",
+      "BRANCHE_HEALTH": "Occupational Health & Safety Products",
+      "BRANCHE_SHIPPING_SUPPLIES": "Packaging & Shipping Supplies",
+      "BRANCHE_POWER_TRANSMISSION": "Power Transmission Products",
+      "BRANCHE_DENTAL_SUPPLIES": "Professional Dental Supplies",
+      "BRANCHE_MEDICAL_SUPPLIES": "Professional Medical Supplies",
+      "BRANCHE_RAW_MATERIALS": "Raw Materials",
+      "BRANCHE_RETAIL_STORE": "Retail Store Fixtures & Equipment",
+      "BRANCHE_ROBOTICS": "Robotics",
+      "BRANCHE_SCIENCE_EDUCATION": "Science Education",
+      "BRANCHE_ADHESIVES": "Tapes, Adhesives & Sealants",
+      "BRANCHE_MEASURE": "Test, Measure & Inspect",
+      "BRANCHE_DIGITAL_MUSIC": "Digital Music",
+      "BRANCHE_DIGITAL_VIDEOS": "Digital Videos",
+      "BRANCHE_SOFTWARE": "Software",
+      "BRANCHE_GAMES": "Games",
+      "BRANCHE_CONSULTING": "Consulting",
+      "BRANCHE_CAR_REPAIR": "Car Repair",
+      "BRANCHE_NAIL_STUDIO": "Nail Studio",
+      "BRANCHE_LOCKSMITH": "Locksmith",
+      "BRANCHE_HAIR_STYLIST": "Hair Stylist",
+      "BRANCHE_TOURISM": "Tourism",
+      "BRANCHE_HOTEL": "Hotel",
+      "BRANCHE_MOTEL": "Motel",
+      "BRANCHE_BED_BRAKFAST": "Bed & Breakfast",
+      "BRANCHE_RESTAURANT": "Restaurant",
+      "BRANCHE_FOOD_TRACK": "Food Truck",
+      "BRANCHE_SUPERMARKET": "Supermarket",
+      "BRANCHE_BAR": "Bar",
+      "BRANCHE_CAFE": "Cafe",
+      "BRANCHE_CLUB": "Club",
+      "WINTER": "Winter",
+      "SUMMER": "Summer",
+      "MODERN": "Modern",
+      "CLASSIC": "Classic"
+    },
+    "employees": {
+      "RANGE_1": "1-5 employees",
+      "RANGE_2": "6-18 employees",
+      "RANGE_3": "19-99 employees",
+      "RANGE_4": "100-349 employees",
+      "RANGE_5": "350-1499 employees",
+      "RANGE_6": "1500+ employees"
+    },
+    "sales": {
+      "RANGE_1": "€0 EUR (I just started)",
+      "RANGE_2": "up to €5000 EUR",
+      "RANGE_3": "€5000 EUR to €50.000 EUR",
+      "RANGE_4": "€50.000 EUR to $250.000 EUR",
+      "RANGE_5": "€250.000 EUR to $1.000.000 EUR",
+      "RANGE_6": "€1.000.000 EUR+"
+    }
+  },
+  "header": {
+    "left_section_items": {
+      "menu": "Menu",
+      "view": "View",
+      "publish": "Publish",
+      "edit": "Edit",
+      "insert": "Insert"
+    },
+    "unknown_publish_error": "Unknown Error. Please reopen the dialog",
+    "no_publish": "Could not be published",
+    "no_update_image": "Could not update image",
+    "menu": {
+      "switch_business": "Switch Business",
+      "personal_information": "Personal Information",
+      "add_business": "Add Business",
+      "contact": "Contact",
+      "feedback": "Feedback",
+      "help": "Help",
+      "log_out": "Log Out"
+    },
+    "back_to_dashboard": "Back to dashboard"
+  },
+  "info_boxes": {
+    "notifications": {
+      "header": {
+        "todo": "To do's",
+        "alerts": "Alerts"
+      },
+      "panels": {
+        "pos": {
+          "title": "Point of Sale"
+        },
+        "products": {
+          "title": "Products"
+        },
+        "transactions": {
+          "title": "Transactions"
+        },
+        "orders": {
+          "title": "Orders"
+        },
+        "shops": {
+          "title": "Shops"
+        },
+        "shop": {
+          "title": "Shops"
+        },
+        "choose-theme-aware": {
+          "title": "Shops"
+        },
+        "commerce_os": {
+          "title": "Commerce OS"
+        },
+        "settings": {
+          "title": "Settings"
+        },
+        "payments": {
+          "title": "Payments"
+        }
+      },
+      "messages": {
+        "legalDocuments.review": "Review legal documents",
+        "pos.theme.addTheme": "Add theme",
+        "pos.url.tour": "Get a quick tour around products",
+        "product": {
+          "newProduct": "New product",
+          "missingImage": "Missing image",
+          "url.tour": "Get a quick tour around products"
+        },
+        "checkout": {
+          "payment": {
+            "addOption": "Select payment option"
+          },
+          "settings": {
+            "setStyles": "Select color and styles"
+          },
+          "url.tour": "Get a quick tour around checkout"
+        },
+        "connect": {
+          "payment": {
+            "installPayment": "Install payment option"
+          },
+          "url.tour": "Get a quick tour around connect"
+        },
+        "products": {
+          "chooseProducts": "Choose products",
+          "url.tour": "Get a quick tour around products"
+        },
+        "shop": {
+          "theme": {
+            "addTheme": "Add theme",
+            "editTheme": "Edit theme"
+          },
+          "url": {
+            "setUrlName": "Set Url name",
+            "selectBilling": "Select a billing plan",
+            "reviewLegalDocs": "Review legal documents",
+            "addLogo": "Add a logo to your Shop",
+            "tour": "Get a quick tour around shop"
+          },
+          "live.goLive": "Go live"
+        },
+        "transactions": {
+          "title.new_transaction": "New transaction",
+          "url.tour": "Get a quick tour around transactions"
+        }
+      }
+    },
+    "settings": {
+      "heading": "Settings",
+      "panels": {
+        "notifications_list": {
+          "title": "Notifications"
+        },
+        "settings": {
+          "title": "Business Details"
+        },
+        "dashboard_skin": {
+          "title": "Dashboard skin"
+        },
+        "affiliates": {
+          "title": "Affiliates"
+        },
+        "staff": {
+          "title": "Employee"
+        },
+        "mailer": {
+          "title": "Mailer"
+        },
+        "notifications_builder": {
+          "title": "Notification builder"
+        }
+      }
+    },
+    "store": {
+      "panels": {
+        "notifications_list": {
+          "title": "Notifications"
+        },
+        "themes": {
+          "title": "Choose a theme"
+        },
+        "products": {
+          "title": "Add products"
+        },
+        "payment_options": {
+          "title": "Payment options"
+        },
+        "settings": {
+          "title": "Settings"
+        }
+      }
+    },
+    "pos": {
+      "panels": {
+        "notifications_list": {
+          "title": "Notifications"
+        },
+        "settings": {
+          "title": "Settings"
+        },
+        "self_terminal": {
+          "title": "Self Terminal"
+        },
+        "create_order": {
+          "title": "Create Order"
+        }
+      }
+    },
+    "shared": {
+      "contact_payever": "Contact payever",
+      "leave_feedback": "Leave Feedback",
+      "payever_business": "payever Business",
+      "payever_personal": "payever Personal"
+    }
+  },
+  "dashboard_docker": {
+    "items": {
+      "dashboard": "Dashboard",
+      "pos": "Point of Sale",
+      "products": "Products",
+      "store": "Store",
+      "transactions": "Transactions",
+      "customers": "Customers",
+      "statistics": "Statistics",
+      "coupons": "Coupons",
+      "shipping": "Shipping",
+      "settings": "Settings",
+      "search": "Search"
+    }
+  },
+  "forms": {
+    "business_verification": {
+      "please_login": "Please login to verify business",
+      "success": "Business successfully verified"
+    },
+    "business_create": {
+      "businessStatus": {
+        "label": "Business Type",
+        "placeholder": "Business Type"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Category"
+      },
+      "companyName": {
+        "label": "Company Name",
+        "placeholder": "Company Name"
+      },
+      "name": {
+        "label": "Business name & legal entitity",
+        "placeholder": "Business name & legal entitity"
+      },
+      "nameOnInvoice": {
+        "label": "Name on Invoice",
+        "placeholder": "Name on Invoice"
+      },
+      "legalForm": {
+        "label": "Legal form",
+        "placeholder": "Legal form"
+      },
+      "employees": {
+        "label": "Employee",
+        "placeholder": "Employee"
+      },
+      "sales": {
+        "label": "Sales",
+        "placeholder": "Sales"
+      },
+      "foundationYear": {
+        "label": "Foundation Year",
+        "placeholder": "Foundation Year"
+      },
+      "phoneNumber": {
+        "label": "Phone Number",
+        "placeholder": "Phone Number"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Country"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "City"
+      },
+      "street": {
+        "label": "Street Address",
+        "placeholder": "Street Address"
+      },
+      "zipCode": {
+        "label": "Postal code",
+        "placeholder": "Postal code"
+      },
+      "industry": {
+        "label": "Industry",
+        "placeholder": "Type to search industry"
+      },
+      "product": {
+        "label": "Product",
+        "placeholder": "Product"
+      },
+      "address": {
+        "label": "Address",
+        "placeholder": "Address"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Status"
+      },
+      "countryPhoneCode": {
+        "label": "Country Code",
+        "placeholder": "Country Code"
+      }
+    },
+    "registration": {
+      "terms_link": "https://getpayever.com/terms",
+      "privacy_link": "https://getpayever.com/about/privacy",
+      "errors": {
+        "required":"{{ field }} is required",
+        "INVALID_START": "{{ field }} must start with {{ prefix }}",
+        "INVALID_END": "{{ field }} must end with {{ suffix }}",
+        "INVALID_COUNTRY": "{{ field }} has an invalid country",
+        "NOT_A_NUMBER": "{{ field }} is invalid",
+        "TOO_SHORT": "{{ field }} is too short",
+        "TOO_LONG": "{{ field }} is too long",
+        "INVALID_LENGTH": "{{ field }} has incorrect length"
+      }
+    },
+    "login": {
+      "header": "Sign in to payever",
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "plainPassword": {
+        "label": "Password",
+        "placeholder": "Password"
+      },
+      "confirmPassword": {
+        "label": "Confirm Password",
+        "placeholder": "Password"
+      },
+      "twoFA": {
+        "title": "Two-Factor Authentication",
+        "incorrect_2fa_code": "Incorrect verification code",
+        "description": "A message with a verification code has been sent to {{email}}. Please enter the code to continue.",
+        "no_code": "Did not get a verification code?",
+        "send_code": "Resend Code",
+        "submit_code": "Send"
+      },
+      "error_reasons": {
+        "REASON_20_MINUTES_BAN": "Login failed, invalid User Name and Password. you cannot login for next 20 minutes. Please contact our customer support for more information.",
+        "REASON_3_HOURS_BAN": "Too many invalid login attempts, you can try again in 3 hours.",
+        "REASON_PERMANENT_BAN": "This account has been blocked due to security reasons. Please contact our customer care.",
+        "REASON_WRONG_PASSWORD": "Wrong Email or Password.",
+        "REASON_ACCOUNT_NOT_FOUND": "Please register! The account does not exist.",
+        "REASON_SOCIAL_ACCOUNT_BLOCKED": "This account is blocked! Please contact our customer care.",
+        "REASON_ACCOUNT_ALREADY_EXISTS": "This account already exists! Please login to continue."
+      },
+      "password_forgot_link": "Forgot password?"
+    },
+    "personal_create": {
+      "firstName": {
+        "label": "First name",
+        "placeholder": "First name"
+      },
+      "lastName": {
+        "label": "Last name",
+        "placeholder": "Last name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Password"
+      }
+    },
+    "reset_password": {
+      "password": {
+        "label": "New password",
+        "placeholder": "New password"
+      },
+      "confirm_password": {
+        "label": "Confirm new password",
+        "placeholder": "Confirm new password"
+      },
+      "errors": {
+        "confirm_password": "Passwords not same"
+      }
+    },
+    "error": {
+      "validator": {
+        "invalid": "Value invalid",
+        "required": "Field is required",
+        "email": {
+          "invalid": "Invalid email",
+          "not_unique": "Email should be unique"
+        },
+        "user": {
+          "not_unique": "Name should be unique"
+        },
+        "name": {
+          "not_unique": "Name should be unique"
+        },
+        "password": {
+          "invalid": "Invalid password",
+          "minlength": "Password length insufficient",
+          "pwned": "Blacklisted Password"
+        },
+        "confirm_pass": {
+          "invalid": "Those passwords didn’t match. Try again."
+        },
+        "tel": {
+          "minlength": "Phone Number is too short"
+        }
+      },
+      "token_expired": "Invite link is expired, contact your administrator",
+      "unknown_error": "Unknown error",
+      "unauthorized": {
+        "invalid_credentials": "Invalid credentials"
+      }
+    },
+    "separator": "or"
+  },
+  "actions": {
+    "open": "Open",
+    "done": "Done",
+    "login": "Login",
+    "signin-with-facebook": "Sign in with Facebook",
+    "signin-with-google": "Sign in with Google",
+    "signup-with-facebook": "Sign up with Facebook",
+    "signup-with-google": "Sign up with Google",
+    "register": "Register",
+    "next": "Next",
+    "next_step": "Next Step",
+    "sign_up": "Sign up",
+    "get_started": " Get started",
+    "send": "Send",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "save": "Save",
+    "create": "Create account",
+    "other": "Other account",
+    "close": "Close"
+  },
+  "login": {
+    "heading": "Login to your account",
+    "dont_have_account": "Don't have a payever account?",
+    "terms_registering": "By registering you agree to payever",
+    "terms_service": "Terms of Service",
+    "terms_read": "and have read the",
+    "terms_policy": "Privacy Policy"
+  },
+  "registration": {
+    "container": {
+      "heading": "Create your account",
+      "heading_personal": "Create your payever Personal account",
+      "heading_business": "Create your payever Business account",
+      "heading_mobile": "Create",
+      "setup_business_heading": "Setup your business",
+      "tell_us_more_heading": "Tell us more",
+      "payever_personal": "payever Personal",
+      "buttons": {
+        "personal": "Personal",
+        "business": "Business"
+      },
+      "features": {
+        "get_started": "Get started for free",
+        "grow_business": "Start, run and grow your business",
+        "no_credit_card": "No credit Card required",
+        "get_personal_offers": "Get personalized offers from businesses"
+      }
+    },
+    "business": {
+      "panels": {
+        "add_new_business": "Add a new business"
+      }
+    }
+  },
+  "password": {
+    "forgot": {
+      "reset_password": "Reset password to your account",
+      "success": "Success",
+      "message": "The message was sent to {{ email }}. Please check your email.",
+      "back": "Back to Login"
+    },
+    "reset": {
+      "reset_password": "Reset password to your account",
+      "success": "Success",
+      "message": "The password was reset successfully",
+      "back": "Back to Login"
+    },
+    "confirmation": {
+      "success": "Success",
+      "message": "Email verified",
+      "error": "Some error occured",
+      "back": "Go to Dashboard"
+    },
+    "tooltip": {
+      "title": "Your password must contain",
+      "min_length": "8 or more characters",
+      "letters": "Upper and lowercase letters",
+      "number": "At lease one number",
+      "spec_char": "At lease one special character"
+    }
+  },
+  "switcher": {
+    "create_business": "+ Add business",
+    "further_businesses": "Further businesses",
+    "logout": "Log out",
+    "personal_type": "PERSONAL",
+    "business_type": "BUSINESS",
+    "all": "All",
+    "business_types": {
+      "business": "Business",
+      "partner": "Partner",
+      "admin": "Admin"
+    }
+  },
+  "dashboard": {
+    "logo_title": "Business",
+    "personal_title": "Personal",
+    "header": {
+      "apps": "Apps",
+      "closeButtonText": "Back to apps",
+      "not_installed": "Not Installed"
+    },
+    "state": {
+      "opened": "Less",
+      "closed": "Show"
+    },
+    "apps": {
+      "ads": "Advertising",
+      "appointments": "Appointments",
+      "affiliate": "Affiliate",
+      "products": "Products",
+      "settings": "Settings",
+      "store": "Shop",
+      "studio": "Studio",
+      "coupons": "Coupons",
+      "shipping": "Shipping",
+      "checkout": "Checkout",
+      "connect": "Connect",
+      "pos": "Point of Sale",
+      "transactions": "Transactions",
+      "marketing": "Marketing",
+      "contacts": "Contacts",
+      "statistics": "Statistics",
+      "invoice": "Invoice",
+      "blog": "Blog",
+      "social": "Social",
+      "sms": "Sms",
+      "help": "Help",
+      "subscriptions": "Subscriptions",
+      "marketplace": "Marketplace",
+      "chat": "Chat",
+      "site": "Sites",
+      "message": "Message"
+    },
+    "profile_menu": {
+      "switch_profile": "Switch Profile",
+      "add_business": "Add Business",
+      "log_out": "Log Out",
+      "contact": "Contact",
+      "feedback": "Feedback",
+      "contact_link": "mailto:support@payever.de?subject=Contact%20payever",
+      "feedback_link": "mailto:support@payever.de?subject=Feedback%20for%20the%20payever-Team",
+      "personal_info": "Personal Information"
+    }
+  },
+  "edit_apps": {
+    "title": "Edit Apps",
+    "enter_button": "Edit",
+    "not_installed": "Not Installed",
+    "not_added": "Not Added",
+    "actions": {
+      "add": "Add",
+      "delete": "Delete",
+      "install": "Install",
+      "uninstall": "Uninstall"
+    },
+    "switcher": {
+      "apps": "Apps",
+      "widgets": "Widgets"
+    }
+  },
+  "active_business": {
+    "business": "business"
+  },
+  "tooltips": {
+    "apps": "Show apps (a)",
+    "close": "Close apps (esc)",
+    "search": "Search (f)",
+    "notifications": "Notifications (n)"
+  },
+  "search_box": {
+    "content": {
+      "details": "Input your keywords to search within any of the payever apps"
+    }
+  },
+  "stepper": {
+    "createShop": "Create Shop",
+    "chooseTheme": "Choose Theme",
+    "uploadProduct": "Upload Product",
+    "shopPreview": "Shop Preview",
+    "continue": "Continue",
+    "skip": "Skip",
+    "goBack": "Go back",
+    "edit": "Edit",
+    "open": "Open"
+  },
+  "custom_field": {
+    "cancel": "Cancel",
+    "title": "Custom Field",
+    "add": "Add",
+    "add_option": "Add Option",
+    "option_name": "Option name",
+    "messages": {
+      "title": "Title is required",
+      "option": "Option name is required",
+      "unknown": " is required"
+    },
+    "option": "Option",
+    "label": "Label",
+    "type": "Type",
+    "filterable": "Filterable",
+    "editable_by_admin": "Editable By Admin",
+    "show_default": "Show Default"
+  },
+  "greeting": {
+    "welcome": "Welcome",
+    "variant_1": "great having you.",
+    "variant_2": "enjoy your trial.",
+    "variant_3": "have a wonderful day.",
+    "variant_4": "grow your business.",
+    "variant_industry": "grow your",
+    "variant": {
+      "BRANCHE_LUGGAGE": "luggage."
+    }
+  },
+  "salutation": {
+    "SALUTATION_MR": "Mr",
+    "SALUTATION_MRS": "Mrs"
+  },
+  "loading": "Loading..."
+}

@@ -1,0 +1,49 @@
+<div [class.hidden]="isAddingKey$ | async">
+  <plugin-api-keys-list [name]="name" (removed)="onKeyRemoved()"></plugin-api-keys-list>
+  <div
+    *ngIf="(apiKeys$ | async)?.length < maxKeys"
+    class="plugin-main-wrap-container__api-keys"
+    (click)="isAddingKey$.next(true)">
+    <div class="add-button" translate>categories.shopsystems.api_keys.default.actions.key_add</div>
+  </div>
+</div>
+
+<div *ngIf="isAddingKey$ | async"
+     class="add-key__container">
+  <pe-info-box class="pe-info-box-header-padding"
+               [transparent]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [withPadding]="false"
+               [blurred]="false"
+               [fixed]="true"
+               [title]="'categories.shopsystems.api_keys.default.titles.create_key' | translate"
+               [notFullwidthOnMobile]="false"
+               [noBackgroundColor]="false"
+               [roundBorder]="true"
+               (onClose)="isAddingKey$.next(false)">
+    <ng-container content>
+      <plugin-api-key-add [name]="name" (created)="onKeyCreated()"></plugin-api-key-add>
+    </ng-container>
+  </pe-info-box>
+</div>
+
+<div *ngIf="isAddingKey$ | async"
+     class="add-key__container">
+  <pe-info-box class="pe-info-box-header-padding"
+               [transparent]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [withPadding]="false"
+               [blurred]="false"
+               [fixed]="true"
+               [title]="'categories.shopsystems.api_keys.default.titles.create_key' | translate"
+               [notFullwidthOnMobile]="false"
+               [noBackgroundColor]="false"
+               [roundBorder]="true"
+               (onClose)="isAddingKey$.next(false)">
+    <ng-container content>
+      <ng-content select="[api-key-add]"></ng-content>
+    </ng-container>
+  </pe-info-box>
+</div>

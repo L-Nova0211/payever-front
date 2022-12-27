@@ -1,0 +1,10 @@
+pe-table-row-cell-component-host {
+  display: contents;
+}
+
+.pe-cut-overflow-cell {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

@@ -1,0 +1,38 @@
+<peb-form-background>
+  <peb-expandable-panel
+    [headerLabel]="code | titlecase"
+    [description]="message"
+    [lightHeader]="true"
+  >
+    <peb-button-toggle
+      labelPosition="before"
+      [formControl]="getControl('full_access')"
+      [label]="'dialogs.new_employee.panels.app_items_rights.full_access' | translate"
+      [spacer]="true"
+    ></peb-button-toggle>
+    <peb-button-toggle
+      labelPosition="before"
+      [formControl]="getControl('reading')"
+      [label]="'dialogs.new_employee.panels.app_items_rights.reading' | translate"
+      [spacer]="true"
+    ></peb-button-toggle>
+    <peb-button-toggle
+      labelPosition="before"
+      [formControl]="getControl('creating')"
+      [label]="'dialogs.new_employee.panels.app_items_rights.creating' | translate"
+      [spacer]="true"
+    ></peb-button-toggle>
+    <peb-button-toggle
+      labelPosition="before"
+      [formControl]="getControl('editing')"
+      [label]="'dialogs.new_employee.panels.app_items_rights.editing' | translate"
+      [spacer]="true"
+    ></peb-button-toggle>
+    <peb-button-toggle
+      labelPosition="before"
+      [formControl]="getControl('deleting')"
+      [label]="'dialogs.new_employee.panels.app_items_rights.deleting' | translate"
+      [spacer]="true"
+    ></peb-button-toggle>
+  </peb-expandable-panel>
+</peb-form-background>

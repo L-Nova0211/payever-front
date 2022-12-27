@@ -1,0 +1,28 @@
+<div class="menu-list" *ngIf="menuList">
+  <mat-card-content>
+    <mat-list class="mat-list-transparent">
+      <mat-list-item *ngIf="menuList.length === 0" class="item-padding">
+        {{ titleForEmptyField }}
+      </mat-list-item>
+      <ng-container *ngFor="let item of menuList; let i = index">
+        <mat-divider *ngIf="i > 0"></mat-divider>
+        <mat-list-item class="item-padding">
+          <div class="mat-list-item-title mat-list-item-title-size-md">
+            {{ item.name }}
+          </div>
+          <div class="mat-expansion-panel-spacer"></div>
+          <mat-slide-toggle *ngIf="item.isToggled" [checked]="item.active" (change)="changedToggle.emit(item)"
+
+          ></mat-slide-toggle>
+          <button *ngIf="item.isButton"
+                  mat-raised-button
+                  class="mat-button-rounded mat-button-xs"
+                  (click)="clickedButton.emit(item.title)"
+                  color="muted-light">
+            {{ 'actions.read' | translate }}
+          </button>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+</div>

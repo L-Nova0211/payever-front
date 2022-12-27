@@ -1,0 +1,102 @@
+@mixin button-reset {
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+@mixin peb-base-button {
+  box-sizing: border-box;
+  position: relative;
+
+  @include button-reset();
+
+  border: 0;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 12px;
+  height: fit-content;
+
+  overflow: visible;
+
+  &.button-disabled {
+    cursor: default;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.pe-form-button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  display: block;
+  font-size: 12px;
+  height: 40px;
+  outline: 0;
+  width: 100%;
+
+  &.confirm {
+    color: #0091df;
+  }
+
+  &.warn {
+    color: #eb4653;
+  }
+}
+
+.peb-button {
+  @include peb-base-button;
+
+  background-color: #86868b;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  &.warn {
+    background-color: #eb4653;
+  }
+
+  &.confirm {
+    background-color: #0371e2;
+  }
+
+  &.form {
+    background-color: #111111;
+    color: #0091df;
+  }
+
+  &:hover:not(.peb-button-disabled) {
+    opacity: 0.9;
+  }
+}
+
+.peb-text-button {
+  @include peb-base-button;
+
+  color: #7a7a7a;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+
+  &.text-confirm {
+    color: #0091df;
+  }
+
+  &.text-warn {
+    color: #eb4653;
+  }
+
+  background-color: transparent;
+}

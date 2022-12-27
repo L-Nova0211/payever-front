@@ -1,0 +1,131 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+      "tslint:recommended",
+      "tslint-sonarts"
+  ],
+  "jsRules": {
+      "no-unused-expression": true
+  },
+  "rules": {
+      "whitespace": [
+          true,
+          "check-branch",
+          "check-decl",
+          "check-operator",
+          "check-separator",
+          "check-type",
+          "check-typecast",
+          "check-module"
+      ],
+      "import-spacing": true,
+      "indent": [
+          true,
+          "spaces",
+          2
+      ],
+      "linebreak-style": [
+          true,
+          "LF"
+      ],
+      "eofline": true,
+      "quotemark": [
+          true,
+          "single"
+      ],
+      "ordered-imports": [
+          false
+      ],
+      "max-line-length": [
+          true,
+          120
+      ],
+      "member-ordering": [
+          true,
+          {
+              "order": [
+                  "public-static-field",
+                  "private-static-field",
+                  "public-instance-field",
+                  "private-instance-field",
+                  "public-constructor",
+                  "private-constructor",
+                  "public-instance-method",
+                  "protected-instance-method",
+                  "private-instance-method"
+              ]
+          }
+      ],
+      "curly": true,
+      "interface-name": [
+          true,
+          "never-prefix"
+      ],
+      "array-type": [
+          true,
+          "array-simple"
+      ],
+      "member-access": [
+          true
+      ],
+      "no-empty-interface": false,
+      "no-empty": false,
+      "arrow-parens": false,
+      "object-literal-sort-keys": false,
+      "object-literal-shorthand": false,
+      "no-unused-expression": false,
+      "no-return-await": true,
+      "max-classes-per-file": [
+          true,
+          1
+      ],
+      "variable-name": [
+          true,
+          "ban-keywords",
+          "allow-leading-underscore"
+      ],
+      "one-line": [
+          true
+      ],
+      "one-variable-per-declaration": [
+          true
+      ],
+      "no-submodule-imports": false,
+      "triple-equals": [
+          true
+      ],
+      "no-duplicate-imports": true,
+      "no-require-imports": true,
+      "prefer-const": true,
+      "trailing-comma": [
+          true,
+          {
+              "multiline": "always",
+              "singleline": "never"
+          }
+      ],
+      "align": [
+          true,
+          "arguments",
+          "parameters",
+          "statements"
+      ],
+      "class-name": true,
+      "encoding": true,
+      "file-name-casing": [
+          true,
+          "kebab-case"
+      ],
+      "newline-before-return": true,
+      "no-console": [
+          false
+      ],
+      "no-duplicate-string": [true, 5],
+      "await-promise": [
+          true,
+          "DocumentQuery"
+      ],
+      "no-invalid-await": false
+  },
+  "rulesDirectory": []
+}

@@ -1,0 +1,75 @@
+pe-chat-autocomplete {
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  label {
+    align-items: center;
+    color: #eeeeee;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    position: absolute;
+    width: 100%;
+    transform: translateY(7px);
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform-origin: left top;
+    transition: 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    color: #eeeeee;
+    height: 100%;
+    font-family: Roboto, sans-serif;
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 1.14;
+    outline: none;
+    padding: 11px 0 0;
+    width: 100%;
+
+    &:focus ~ label,
+    &:valid ~ label {
+      transform: scale(.75);
+    } 
+  }
+}
+
+.mat-option[id^="pe-chat-autocomplete__option-"] {
+  background-color: #1c1d1e;
+  color: white;
+  font-size: 12px;
+  height: 41px;
+  line-height: 1.33;
+  padding: 4px 18px 5px;
+
+  &:hover:not(.mat-option-disabled), 
+  &:focus:not(.mat-option-disabled),
+  &.mat-active {
+    color: white;
+    background-color: #292929;
+  }
+
+  &.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+    color: white;
+  }
+
+  &.mat-selected:not(.mat-active):not(:hover),
+  &.mat-selected:not(.mat-active):hover {
+    background-color: #0371e2;
+  }
+
+  .pe-chat-autocomplete__option {
+    align-items: center;
+    display: flex;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<form [formGroup]="dimensionsForm">
+  <div>
+    <peb-number-input [min]="1" formControlName="width" units="W"></peb-number-input>
+    <peb-number-input [min]="1" formControlName="height" units="H"></peb-number-input>
+  </div>
+  <peb-slide-toggle formControlName="constrainProportions" *ngIf="showConstrain">Constrain proportions</peb-slide-toggle>
+</form>

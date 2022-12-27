@@ -1,0 +1,94 @@
+@import "../panels/page-container";
+
+pe-third-party-root-form.checkout-third-party-root-form-container {
+  width: 100%;
+
+  .tpm-outer-container.pe-info-box-container-fixed {
+    min-height: fit-content;
+    width: 100%;
+
+    .pe-info-box {
+      padding: 0;
+      width: 100%;
+      min-width: fit-content;
+
+      mat-card.mat-card {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+
+        .mat-card-content {
+          background-color: #24272e;
+
+          .content-wrapper {
+            background-color: transparent;
+
+            .mat-accordion .mat-expansion-panel {
+              .mat-expansion-panel-header {
+                border: none;
+                background-color: rgba(0, 0, 0, 0.3);
+
+                .mat-content mat-panel-title {
+                  font-family: Roboto, sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding-left: 0;
+                  text-transform: none;
+                  color: $regular-text-color;
+                }
+
+                .mat-expansion-indicator, svg {
+                  color: $regular-text-color;
+                }
+              }
+
+              mat-list.mat-list.mat-list-base mat-list-item.mat-list-item .mat-list-item-content {
+                height: fit-content !important;
+
+                .mat-list-item-flex {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.checkout-panel-modal + .cdk-global-overlay-wrapper {
+  .overlay-widget-container {
+    .overlay-light {
+      pe-third-party-root-form.third-party-root-form-container .mat-card-content {
+        background-color: transparent;
+
+        .content-wrapper .mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+          background-color: rgba(255, 255, 255, 0.7);
+
+          .mat-content mat-panel-title {
+            color: $regular-light-text-color;
+          }
+
+          .mat-expansion-indicator {
+            color: $regular-light-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.checkout-panel-modal + .cdk-global-overlay-wrapper {
+  .overlay-widget-container {
+    .overlay-transparent {
+      pe-third-party-root-form.third-party-root-form-container .mat-card-content {
+        background-color: $content-transparent-background-color;
+
+        .content-wrapper .mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+          background-color: $content-transparent-button-background-color;
+        }
+      }
+    }
+  }
+}

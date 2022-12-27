@@ -1,0 +1,212 @@
+<div style="width: 100%; height: 100%">
+
+
+<pe-shop-material-styles></pe-shop-material-styles>
+<div class='settings__container' [ngClass]="theme">
+  <div class="page-header">{{'shop-app.settings.title'|translate}}</div>
+  <div class="scrollbar">
+    <div class="content">
+      <section class="settings__section">
+        <div class="settings__section__header">{{'shop-app.settings.publishing'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item no-hover">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-livestatus'"></use>
+              </svg>
+            </div>
+            <div class="item-content"   style="padding-right: 8px;">
+              <div>{{'shop-app.settings.live_status'|translate}}</div>
+              <div style="margin: -10px;">
+                <peb-button-toggle [ngModel]="isLive" (ngModelChange)="toggleShopLive($event)"></peb-button-toggle>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'shop-app.settings.domains'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.payeverDomain)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'shop-app.settings.payever_domain'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="settings__section__content-item" (click)="openOverlay(components.personalDomain)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'shop-app.settings.personal_domain'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+          <div class="settings__section__content-item" (click)="openOverlay(components.connectExisting)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'shop-app.settings.connect_existing'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'shop-app.settings.safety'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.passwordProtection)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-lock'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'shop-app.settings.password_protection'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.cusomerPrivacy)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-lock'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Customer privacy</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.spamProtection)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Spam protection</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'shop-app.settings.social'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.socialImage)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-image'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'shop-app.settings.social_image'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.googleAnalytics)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-analytics'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Google Analytics</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.facebookPixel)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-pixel'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Facebook pixel</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'shop-app.settings.all_shops'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" *ngFor="let shop of shopList" [class.active]="shop.isDefault"
+          (click)="openOverlay(components.createApp,shop)"
+          >
+            <div class="item-icon">
+              <img [src]="shop.picture" alt="" *ngIf="shop.picture">
+              <div *ngIf="!shop.picture" class="abbreviation">
+                <span class="abbreviation__name">{{ shop.name | abbreviation }}</span>
+              </div>
+            </div>
+            <div class="item-content">
+              <div>{{shop.name}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="new-button" (click)="openOverlay(components.createApp,{})">{{'shop-app.actions.create_new'|translate}}</button>
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+</div>

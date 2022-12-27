@@ -1,0 +1,30 @@
+:host{
+    display: flex;
+}
+.container{
+    padding: 0 12px 6px;
+ 
+    .setting-info{
+        font-size: 12px;
+        color: #7a7a7a;
+        margin: 8px 12px 16px;
+    }
+
+    .setting-button{
+        padding: 12px 123px;
+        border-radius: 12px;
+        background-color: #1c1d1e;
+        width: 100%;
+        display: block;
+        border: 0;
+        outline: 0;
+        color: #0091df;
+        font-size: 12px;
+    }
+
+    .faceboock-info{
+        font-size: 12px;
+        color: white;
+        margin: 8px 12px 16px;
+    }
+}

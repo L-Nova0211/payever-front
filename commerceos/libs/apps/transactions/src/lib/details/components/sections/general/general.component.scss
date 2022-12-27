@@ -1,0 +1,80 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+.general-section {
+  margin-bottom: 24px;
+
+  &__top-line {
+    display: flex;
+    justify-content: space-between;
+
+    .general-item {
+      width: calc(100% / 3 - 3.5px);
+      height: 52px;
+      padding-top: 6px;
+      border-radius: 6px;
+      background-color: #111111;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: Roboto;
+
+      &__text {
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+
+        &.status-red {
+          color: $color-status-red;
+        }
+
+        &.status-yellow {
+          color: $color-status-yellow;
+        }
+
+        &.status-green {
+          color: $color-status-green;
+        }
+      }
+
+      &__hint {
+        font-family: Roboto;
+        font-size: 11px;
+        color: #7a7a7a;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+      }
+    }
+  }
+
+  &.light {
+    .general-item {
+      background: #fff;
+
+      &__text {
+        color: #000;
+      }
+    }
+
+    .cart-item {
+      background-color: #fff;
+
+      &__details {
+
+        &-price {
+          color: #000;
+        }
+      }
+    }
+
+  }
+}
+
+.transparent {
+  .general-section__item {
+    background: rgba(0,0,0,.3);;
+  }
+}

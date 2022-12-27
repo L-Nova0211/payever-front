@@ -1,0 +1,6 @@
+<button class="tool" (click)="!loading && openPublish(publish)" [class.tool-loading]="loading">
+  <div class="tool__icon">
+    <peb-editor-tool-publish-icon></peb-editor-tool-publish-icon>
+  </div>
+  <span class="tool__label" #publish>Publishing</span>
+</button>

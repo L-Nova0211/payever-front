@@ -1,0 +1,26 @@
+<div [ngClass]="theme" [formGroup]="formGroup">
+    <pe-edit-picture  [businessId]="businessId" [blob]="image" (changePictures)="onUpdatePicture($event)">
+    </pe-edit-picture>
+    <div class="container">
+      <peb-form-background>
+        <peb-form-field-input
+          [label]="'edit_folder.fields.name' | translate"
+          appearance="label"
+          [isFieldInvalid]="submited && formGroup.controls.title.errors ? true : false"
+          [errorMessage]="formGroup.controls.title.errors?.required ? ('edit_folder.errors.name_required' | translate) : null"
+        >
+          <input name="title" formControlName="title" pebInput/>
+        </peb-form-field-input>
+  
+      </peb-form-background>
+      <peb-form-background>
+        <peb-form-field-textarea
+          [label]="'edit_folder.fields.description' | translate"
+          appearance="label"
+        >
+          <textarea name="description" formControlName="description" rows="5"></textarea>
+        </peb-form-field-textarea>
+      </peb-form-background>
+    </div>
+  </div>
+  

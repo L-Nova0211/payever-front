@@ -1,0 +1,109 @@
+@mixin peb-select-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+  $dropdown-panel: map-get($theme-config, dropdown-panel);
+  $box-shadow-color: map-get($theme-config, box-shadow-color);
+
+  .input-wrapper {
+    .input {
+      color: $text-color;
+
+      .select-text {
+        color: $text-color;
+      }
+
+      @if $text-color == #000 {
+        .dropdown-arrow {
+          filter: brightness(0);
+        }
+      }
+
+      .select-input-text {
+        color: $text-color;
+      }
+    }
+  }
+
+  .peb-select-options-container {
+    box-shadow: 0 2px 12px 0 $box-shadow-color;
+    peb-select-option {
+      background-color: $dropdown-panel;
+      color: $text-color;
+    }
+
+    peb-select-group {
+      .pe-group-container {
+        background-color: $dropdown-panel;
+        .pe-select-label {
+          color: $text-color;
+        }
+      }
+    }
+
+    pe-select-virtual-options {
+      .pe-select-viewport {
+        background-color: $dropdown-panel;
+        color: $text-color;
+
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $primary;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          border-radius: 2px;
+          background: $dropdown-panel;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      background-color: $accent;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+  }
+
+  .label-select-wrapper {
+    .label-text {
+      color: $label-color;
+    }
+    .input {
+      .select-text {
+        color: $text-color;
+      }
+
+      @if $text-color == #000 {
+        .dropdown-arrow {
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+
+  .full-select-wrapper {
+    background-color: $accent;
+
+    .input {
+      background-color: $primary;
+      color: $text-color;
+
+      @if $text-color == #000 {
+        .dropdown-arrow {
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import '~@angular/cdk/_a11y';
+
+@include cdk-a11y();
+
+.button-toggle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  height: 44px;
+  box-sizing: border-box;
+
+  .label-before {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin-right: 8px;
+  }
+  .label-after {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin-left: 8px;
+  }
+}
+
+.button-toggle {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  width: 31px;
+  height: 20px;
+
+  .button-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #494a4b;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 30px;
+  }
+
+  .button-toggle-slider:before {
+    position: absolute;
+    content: '';
+    top: 10%;
+    background: #ffffff;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+  }
+}
+
+.toggle-focus .button-toggle-slider {
+  outline: 0 none;
+  outline-offset: 0;
+}
+.toggle-checked .button-toggle-slider {
+  background: #0087ff;
+}
+.toggle-checked .button-toggle-slider:before {
+  background: #ffffff;
+  left: 41%;
+}
+
+.toggle-label {
+  flex-direction: row-reverse;
+}
+
+.spacer {
+  flex-grow: 1;
+}

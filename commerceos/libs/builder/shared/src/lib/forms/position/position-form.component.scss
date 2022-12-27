@@ -1,0 +1,124 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 4px;
+}
+
+// @import '../../../styles/variables';
+
+// // TODO: Cleanup
+
+// $borderColor: #696c70;
+// $buttonBg: #6c6c6c;
+// $buttonBgHover: rgba(255, 255, 255, 0.35);
+// $groupDelimiterColor: #525252;
+// $groupBtnBg: #474747;
+// $inputBg: #3f3f3f;
+// $selectButtonBg: #1767e1;
+// $white: white;
+
+// :host {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   padding: 0.75em 0;
+//   border-bottom: 1px solid $groupDelimiterColor;
+// }
+
+// .input-group {
+//   &__title {
+//     width: 5em;
+//     flex-shrink: 0;
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: flex-start;
+//   }
+
+//   &__controls {
+//     display: flex;
+//   }
+
+//   &__row {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     margin-bottom: 1em;
+
+//     &:last-child {
+//       margin: 0;
+//     }
+
+//     .group-btn {
+//       margin: 0 0.5em;
+//       &:first-child {
+//         margin-left: 0;
+//       }
+//       &:last-child {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+
+//   &__control {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     padding-left: 0.3em;
+//     padding-right: 0.3em;
+
+//     &:first-child {
+//       padding-left: 0;
+//     }
+
+//     &:last-child {
+//       padding-right: 0;
+//     }
+
+//     input {
+//       text-align: right;
+//       height: 1.5em;
+//       width: 5em;
+//       color: $white;
+//       border-radius: 3px;
+//       border: solid 1px $borderColor;
+//       background-color: $inputBg;
+//     }
+//   }
+
+//   &__element {
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 0 0.3em;
+//     flex-direction: column;
+
+//     &:first-child {
+//       margin-left: 2em;
+//     }
+
+//     &:last-child {
+//       margin-right: 0;
+//     }
+
+//     .flip-buttons {
+//       display: flex;
+//       .flip-button {
+//         margin: 0 2px;
+//         background-color: $buttonBg;
+//         border: solid 1px $borderColor;
+//         color: $white;
+//         border-radius: 3px;
+//         width: 35px;
+//         height: 23px;
+//         cursor: pointer;
+//         outline: none;
+//       }
+//       &+.label {
+//         text-align: center;
+//         color: #ffffff;
+//         margin-top: 2px;
+//       }
+//     }
+//   }
+// }

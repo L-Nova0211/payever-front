@@ -1,0 +1,141 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.refund.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.refund.heading"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form">
+    <peb-form-background>
+      <peb-select
+        selectType="label"
+        [label]="'transactions.form.refund.fields.type.label' | translate"
+        formControlName="type"
+      >
+        <peb-select-option
+          [value]="RefundTypeEnum.Full"
+          [label]="
+            'transactions.form.refund.fields.type.values.full'
+              | translate
+                : {
+                    amount: refundFullTotal | currency: order.transaction.currency:undefined:undefined:locale
+                  }
+          "
+        >
+        </peb-select-option>
+        <peb-select-option
+          [value]="RefundTypeEnum.Partial"
+          [label]="'transactions.form.refund.fields.type.values.partial' | translate"
+        >
+        </peb-select-option>
+        <peb-select-option
+          *ngIf="order.cart.available_refund_items.length > 0"
+          [value]="RefundTypeEnum.Items"
+          [label]="'transactions.form.refund.fields.type.values.items' | translate"
+        >
+        </peb-select-option>
+      </peb-select>
+
+      <ng-container *ngIf="isCustomAmountEnabled">
+        <peb-form-field-input
+          [isFieldInvalid]="form.get('amount')?.invalid"
+          [errorMessage]="
+            'transactions.form.refund.fields.amount.errors.limits'
+              | translate
+                : {
+                    min: 0 | currency: order.transaction.currency:undefined:undefined:locale,
+                    max: refundTotal | currency: order.transaction.currency:undefined:undefined:locale
+                  }
+          "
+          [label]="'transactions.form.refund.fields.amount.placeholder' | translate"
+          appearance="label"
+        >
+          <input
+            type="text"
+            pebInput
+            [placeholder]="
+              'transactions.form.refund.fields.amount.label'
+                | translate
+                  : {
+                      amount: refundTotal | currency: order.transaction.currency:undefined:undefined:locale
+                    }
+            "
+            formControlName="amount"
+            (keypress)="onKeyPress($event)"
+          />
+        </peb-form-field-input>
+      </ng-container>
+
+      <div *ngIf="!hideProductPicker">
+        <pe-refund-product-picker
+          [theme]="theme"
+          [data]="products"
+          [placeholder]="'transactions.form.refund.fields.products.placeholder' | translate"
+        ></pe-refund-product-picker>
+      </div>
+    </peb-form-background>
+
+    <peb-form-background class="second-section" *ngIf="isShowSecondSection">
+      <peb-button-toggle
+        [class.hide]="!isItemsRestockedEnabled"
+        formControlName="itemsRestocked"
+        [label]="'transactions.form.refund.fields.itemsRestocked.label' | translate"
+        [spacer]="true"
+        labelPosition="before"
+      ></peb-button-toggle>
+      <peb-button-toggle
+        [class.hide]="deliveryFee == 0 || form.get('type').value === RefundTypeEnum.Full || order._isSantanderDeInvoice"
+        formControlName="refundDeliveryFee"
+        [label]="'transactions.form.refund.fields.refundDeliveryFee.label' | translate"
+        [spacer]="true"
+        labelPosition="before"
+      ></peb-button-toggle>
+      <peb-button-toggle
+        [class.hide]="paymentFee == 0 || form.get('type').value === RefundTypeEnum.Full"
+        formControlName="refundPaymentFee"
+        [label]="'transactions.form.refund.fields.refundPaymentFee.label' | translate"
+        [spacer]="true"
+        labelPosition="before"
+      ></peb-button-toggle>
+      <peb-button-toggle
+        *ngIf="order._isSantanderDe && refundGoodsReturned.enabled"
+        formControlName="refundGoodsReturned"
+        [label]="'transactions.form.refund.fields.refundGoodsReturned.label' | translate"
+        [spacer]="true"
+        labelPosition="before"
+      ></peb-button-toggle>
+    </peb-form-background>
+
+    <peb-form-background class="second-section">
+      <peb-form-field-input
+        [isFieldInvalid]="false"
+        errorMessage="''"
+        [label]="'transactions.form.refund.fields.reason.label' | translate"
+        appearance="label"
+      >
+        <input
+          type="text"
+          pebInput
+          [placeholder]="'transactions.form.refund.fields.reason.label' | translate"
+          formControlName="reason"
+        />
+      </peb-form-field-input>
+
+      <peb-form-field-input
+        *ngIf="order._isSantanderDe && refundInvoiceNumber.enabled"
+        [isFieldInvalid]="refundInvoiceNumber?.errors"
+        [errorMessage]="refundInvoiceNumber?.errors"
+        [label]="'transactions.form.refund.fields.refundInvoiceNumber.label' | translate"
+        appearance="label"
+      >
+        <input
+          type="text"
+          pebInput
+          [placeholder]="'transactions.form.refund.fields.refundInvoiceNumber.label' | translate"
+          formControlName="refundInvoiceNumber"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </form>
+</pe-action-container>

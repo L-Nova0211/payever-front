@@ -1,0 +1,749 @@
+//
+// Toolbar
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-toolbar {
+    font-family: $font-family-base;
+    line-height: $grid-unit-y * 2;
+    font-size: $font-size-large-2;
+    padding: 0 $grid-unit-x * 2;
+    font-weight: $font-weight-regular;
+
+    &-row {
+      padding: 0;
+      height: auto;
+    }
+
+    .mat-divider {
+      width: 2px;
+      height: $grid-unit-y * 2;
+
+      &-full-height {
+        height: 100%;
+      }
+    }
+
+
+    // Extra Elements
+    // -----------------------
+
+    &-spacer {
+      flex: 1 1 auto;
+    }
+
+    &-area {
+      position: relative;
+      &-backdrop {
+        @include full_screen();
+        z-index: 9000;
+      }
+    }
+
+    &-left, &-right, &-center {
+      @include pe_flexbox;
+      @include pe_align-items(center);
+      flex: 1;
+      height: 100%;
+    }
+
+    &.ie-flex-basis-auto {
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        /* IE10+ specific styles */
+        .mat-toolbar-left, .mat-toolbar-center, .mat-toolbar-right {
+          @include pe_flex-basis(auto);
+        }
+      }
+    }
+
+    &-left {
+      @include pe_justify-content(left);
+      @include pe_align-items(center);
+    }
+
+    &-center {
+      @include pe_justify-content(center);
+    }
+
+    &-right {
+      @include pe_flexbox;
+      @include pe_justify-content(flex-end);
+    }
+
+    &-text {
+      font-size: $font-size-base;
+      font-weight: $font-weight-light;
+    }
+
+    &-link-icon-prepend + .mat-toolbar-link-text,
+    &-link-icon-prepend + .mat-toolbar-text,
+    &-link-text + .mat-toolbar-link-icon-append {
+      margin-left: $caret-width-base * 2;
+    }
+
+    &-pseudo {
+      @include pe_flexbox;
+      @include pe_justify-content(center);
+      @include pe_align-items(center);
+      width: 100%;
+      position: relative;
+
+      &-left {
+        position: absolute;
+        margin-left: - $icon-size-48;
+      }
+
+      &-right{
+        position: absolute;
+        margin-left: $icon-size-48;
+      }
+    }
+
+
+    // Margin for elements
+    // -----------------------
+
+    &-margin-between > * {
+      margin-right: floor($grid-unit-x / 2);
+    }
+
+    &-margin-right {
+      margin-right: $grid-unit-x;
+
+      &-small {
+        margin-right: floor($grid-unit-x / 2);
+      }
+    }
+
+
+    // Style variations
+    // -----------------------
+
+    &-notification {
+      &-alert {
+        background-color: $color-red !important;
+      }
+    }
+
+    &-transparent {
+
+      background-color: transparent;
+
+      &-dark {
+        color: $color-white;
+        height: $grid-unit-y * 4;
+      }
+
+      &-light {
+        color: $color-grey-2;
+        margin: 0;
+      }
+    }
+
+    &-dusky {
+      background-color: $color-grey-1;
+      color: $color-white;
+      height: $grid-unit-y * 4;
+      left: 0; // for fixed modifier
+
+      .mat-toolbar-left {
+        .mat-button {
+          font-weight: $font-weight-medium;
+        }
+      }
+
+      .mat-toolbar-app-title {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+        .mat-toolbar-text {
+          font-weight: $font-weight-medium;
+          font-size: $font-size-large-3;
+          margin: 0 $padding-xs-horizontal * 2;
+        }
+      }
+
+      &-light {
+        background-color: $color-grey-4;;
+        color: $color-white;
+      }
+    }
+
+    &-micro {
+      background-color: $color-grey-4;
+      // @TODO: get rid of important
+      height: $platform-header-height !important;
+      padding: 0 $padding-large-vertical * 2 !important;
+      z-index: $zindex-overlay !important;
+
+      @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+        height: $platform-header-mobile-height !important;
+        padding: 0 $padding-large-horizontal/2 !important;
+      }
+
+      &.transparent {
+        background-color: transparent;
+      }
+
+      &.dark {
+        background-color: rgba($color-black, .95);
+      }
+
+      &-app-title {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+        line-height: $grid-unit-y * 2 + $padding-xs-vertical * 4;
+
+        span {
+          font-size: $font-size-regular-2;
+          font-weight: $font-weight-bold; // related to diff with fonts in design and kit
+          margin: 0 $padding-large-horizontal / 2;
+        }
+      }
+
+      &-empty {
+        &.mat-toolbar-micro {
+          background-color: $color-black !important;
+        }
+      }
+
+      &-subheader {
+        top: $platform-header-height !important;
+        @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+          top: $platform-header-mobile-height !important;
+        }
+        padding: 0 !important;
+      }
+
+      & .mat-toolbar-left,
+      & .mat-toolbar-right,
+      & .mat-toolbar-center {
+        // All browsers convert 'flex: 1' to 'flex: 1 1 auto' except IE, it converts to 'flex: 0 0 auto', so set manually
+        // By task UIK-468
+        flex: 1 1 auto;
+      }
+
+      .mat-button-link:not(.dashboard-btn) {
+        padding: 0 8px;
+        font-size: $font-size-regular-2;
+        line-height: $grid-unit-y * 2 + $padding-xs-vertical * 4;
+        font-weight: normal;
+        border-radius: 0;
+        height: 100%;
+        min-width: 32px;
+        &[aria-expanded="true"], &.selected {
+          background-color: $color-white-grey-2;
+        }
+        &:hover:not([disabled]) {
+          color: $color-white;
+        }
+        &.small-padding-left {
+          padding-left: $grid-unit-x / 3;
+        }
+        &.no-padding-left {
+          padding-left: 0;
+        }
+        @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+          &.mobile-icons-only {
+            min-width: 16px;
+            padding: 0 6px;
+
+            .mat-toolbar-link-text {
+              display: none;
+            }
+          }
+        }
+        @media(min-width: $viewport-breakpoint-xs-2) {
+          &.desktop-text-only {
+            .mat-toolbar-link-icon-prepend, .mat-toolbar-link-icon-append {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .save-button {
+        // special padding for save button
+        padding: 0 0 0 $grid-unit-x !important;
+
+        .mat-toolbar-link-icon-prepend {
+          display: none;
+        }
+
+        .mat-toolbar-link-text {
+          height: 18px;
+          background: $color-white-grey-2;
+          padding: 2px 14px;
+          border-radius: $border-radius-base;
+          font-size: 12px;
+          display: block;
+          line-height: 14px;
+
+          @include payever-transition();
+
+          &:hover {
+            background-color: $color-white-grey-3;
+          }
+        }
+      }
+
+      .close-button {
+        // special padding for close button
+        padding: 0 0 0 $grid-unit-x !important;
+
+        .mat-toolbar-link-icon-prepend {
+          display: none;
+
+          @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+            display: block;
+          }
+        }
+
+        .mat-toolbar-link-text {
+          background-color: rgba(255, 255, 255, 0.3);
+          height: 18px;
+          padding: 2px 14px;
+          border-radius: $border-radius-base;
+          font-size: 12px;
+          display: block;
+          line-height: 14px;
+
+          @include payever-transition();
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+
+          @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+            display: none;
+          }
+        }
+      }
+
+      .text-visited {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+        height: 100%;
+
+        .mat-toolbar-text {
+          line-height: normal;
+          font-size: 12px;
+          font-weight: 800;
+          margin: 0 8px;
+        }
+      }
+      .push {
+        &-left {
+          position: relative;
+          left: -20px;
+        }
+
+        &-right {
+          position: relative;
+          right: -20px;
+        }
+      }
+
+    }
+
+    &-apps {
+      @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+        padding: 0 $padding-large-horizontal/2 !important;
+      }
+
+
+      &.mat-toolbar-single-row {
+        background-color: transparent;
+      }
+
+      &.mat-toolbar-micro-subheader {
+        @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+          padding: 0 !important;
+        }
+      }
+
+      &-dark {
+        &.mat-toolbar-single-row {
+          color: $color-white-grey-4;
+          background-color: $color-solid-grey-1;
+        }
+
+        .mat-toolbar-divider {
+          color: $color-white-pe;
+        }
+      }
+
+      &-black {
+        &.mat-toolbar-single-row {
+          color: $color-white;
+          background-color: $color-black;
+
+          &.mat-toolbar-micro-subheader {
+            @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+              background-color: #171717;
+              overflow-x: scroll;
+
+              &::-webkit-scrollbar {
+                display: none;
+                -ms-overflow-style: none;
+              }
+            }
+          }
+        }
+
+        .mat-toolbar-divider {
+          color: $color-white;
+        }
+      }
+
+      &.transparent-mobile {
+        @media (min-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) and (max-width: $viewport-breakpoint-sm-4 - 1) {
+          background-color: $color-black;
+        }
+        @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+          background-color: $color-black;
+        }
+      }
+
+      .mat-button-link:not(.dashboard-btn) {
+        padding: 0 $padding-base-horizontal - $grid-unit-x * 2;
+      }
+    }
+
+    &-app {
+
+      @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+        height: $grid-unit-y * 4;
+
+        .mat-toolbar-text {
+          font-size: $font-size-large-3;
+          font-weight: $font-weight-medium;
+        }
+      }
+      .mat-toolbar-center {
+        .mat-toolbar-app-title {
+          @include pe_flexbox;
+          @include pe_align-items(center);
+        }
+      }
+    }
+
+    &-selectbar {
+      position: absolute;
+      width: 700px;
+      height: 54px;
+      top: 5px;
+      left: calc(50% - 350px);
+      background-color: #444;
+      border-radius: $border-radius-base * 2;
+      padding: $grid-unit-x;
+      @media (max-width: $viewport-breakpoint-sm-2) {
+        height: 48px;
+        width: 92%;
+        left: 4%;
+      }
+
+      &-quantity {
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: normal;
+        margin-left: 8px;
+      }
+
+      &-action {
+        color: $color-white-grey-6;
+        font-weight: 300;
+        font-size: 14px;
+        min-width: auto;
+        padding: 0;
+        margin: 0;
+        border-width: 0;
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 150px;
+        }
+      }
+
+      .mat-icon-button {
+        color: $color-white-grey-6;
+      }
+
+      .mat-toolbar-left {
+        flex: 0 0 auto;
+      }
+
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        .mat-divider-indented {
+          margin-left: $grid-unit-x / 2;
+          margin-right: $grid-unit-x / 2;
+        }
+      }
+
+    }
+
+
+    &-default {
+
+      &.mat-toolbar-single-row {
+        background-color: $color-white;
+      }
+
+      img {
+        max-height: $icon-size-48;
+      }
+
+      &-dark {
+
+        &.mat-toolbar-single-row {
+          color: $color-white-grey-4;
+          background-color: $color-solid-grey-1;
+        }
+
+        &-solid {
+          background-color: $color-solid-grey-3;
+        }
+
+        &-transparently {
+          background-color: $color-grey-5;
+          line-height: 0; // fix for: .pe-bootstrap has line-height 22 as default
+
+          &-active {
+            background-color: $color-grey-3;
+            line-height: 0; // fix for: .pe-bootstrap has line-height 22 as default
+          }
+        }
+
+        .mat-toolbar-divider {
+          color: $color-white-pe;
+        }
+      }
+
+      &-black {
+        &.mat-toolbar-single-row {
+          color: $color-white;
+          background-color: $color-black;
+        }
+
+        &-solid {
+          background-color: $color-black;
+        }
+
+        &-transparently {
+          background-color: $color-black-pe;
+          line-height: 0; // fix for: .pe-bootstrap has line-height 22 as default
+
+          &-active {
+            background-color: $color-grey-5;
+            line-height: 0; // fix for: .pe-bootstrap has line-height 22 as default
+          }
+        }
+
+        .mat-toolbar-divider {
+          color: $color-white;
+        }
+      }
+    }
+
+    &-disabled {
+      color: $color-white-grey-4;
+    }
+
+    &-bordered {
+      border-radius: $border-radius-base;
+    }
+
+    &-blur {
+      @include pe_flexbox();
+      @include pe_justify-content(center);
+      $height: $grid-unit-x * 6;
+      background-color: $color-grey-5;
+      height: 100%;
+
+      .swiper-helper {
+        display: inherit;
+      }
+
+      &-container {
+        overflow: visible;
+
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        bottom: calc(-100% + #{$height})!important;
+
+        z-index: $zindex-modal-background;
+
+        @include transition(bottom $animation-duration-slide-out $animation-effect-ease-out 0s);
+      }
+
+      &-wrapper {
+        position: relative;
+        height: $height;
+      }
+
+      &-bg {
+        position: fixed;
+        top: -$blur-background-margin;
+        bottom: -$blur-background-margin;
+        left: -$blur-background-margin;
+        right: -$blur-background-margin;
+        background-position: center;
+        background-size: cover;
+
+        @include filter(blur($blur-radius));
+
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+
+        &:after {
+          content: '';
+          background-color: $color-grey-4;
+          position: absolute;
+          top: -$blur-background-margin;
+          bottom: -$blur-background-margin;
+          left: -$blur-background-margin;
+          right: -$blur-background-margin;
+        }
+
+        &-container {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          overflow: visible;
+          clip: rect(0,auto,auto,0);
+        }
+      }
+
+      &-swiper {
+        justify-content: unset;
+        padding: 0;
+
+        .swiper-container {
+          overflow: visible;
+
+
+          .swiper-slide {
+            flex-shrink: 1;
+
+            &:hover {
+              background-color: transparent;
+            }
+
+            &:first-of-type {
+              left: ceil($grid-unit-x / 2)
+            }
+
+            &:last-of-type {
+              right: ceil($grid-unit-x / 2)
+            }
+          }
+        }
+      }
+    }
+
+    &-scrollable {
+      @include pe_align-items(flex-start);
+      overflow-y: hidden;
+    }
+
+    // Padding variations
+    // -----------------------
+
+    &-no-padding {
+      padding: 0;
+    }
+
+    &-padding {
+
+      &-small {
+        padding: 0 $grid-unit-x;
+      }
+
+      &-large {
+        padding: 0 $grid-unit-x * 2;
+      }
+
+      @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+        &-large {
+          padding: 0 $grid-unit-x;
+        }
+      }
+    }
+
+    // Size variations
+    // -----------------------
+
+    &-xs {
+      height: $grid-unit-y * 3;
+
+      &-larger {
+        height: $grid-unit-y * 3 + ceil($grid-unit-x / 3);
+      }
+    }
+
+    &-sm {
+      height: $grid-unit-y * 4;
+      width: 100%;
+    }
+
+    &-md {
+      height: $grid-unit-y * 5;
+    }
+
+    &-lg {
+      height: $grid-unit-y * 7;
+
+      .mat-toolbar-row {
+        height: $grid-unit-y * 7;
+      }
+    }
+
+    @mixin mat-toolbar-full-width() {
+      left: 0;
+      right: 0;
+    }
+
+    &-fixed {
+      @include mat-toolbar-full-width();
+      position: fixed;
+      z-index: $zindex-navbar-fixed;
+    }
+
+    &-absolute {
+      @include mat-toolbar-full-width();
+      position: absolute;
+    }
+
+    &-top {
+      top: 0;
+    }
+
+    &-bottom {
+      bottom: 0;
+    }
+
+    &-indents {
+      margin: 0 $grid-unit-x / 2;
+    }
+
+    .hide-sm {
+      @media (max-width: 668px) {
+        display: none !important;
+      }
+    }
+
+    .show-sm {
+      @media (min-width: 668px) {
+        display: none !important;
+      }
+    }
+
+  }
+}

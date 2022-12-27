@@ -1,0 +1,31 @@
+<div
+  class="checkout-container"
+  [class.light-checkout-theme]="theme === 'light'"
+  [class.transparent-checkout-theme]="theme === 'transparent'">
+
+  <div class="checkout-main">
+    <pe-grid [theme]="theme">
+      <pe-grid-sidenav
+        #sideNav
+        [sidenavTitle]="'info_boxes.checkoutAppName' | translate"
+      >
+        <pe-folders
+          [sideNav]="sideNav"
+          [selectFolder]="activeFolder"
+          [folders]="foldersData$ | async"
+          (selectedFolder)="navigateTolLink($event)"
+        ></pe-folders>
+      </pe-grid-sidenav>
+
+      <pe-grid-content
+        [showMobileFooter]="false"
+        [style.zIndex]="2"
+        [mobileTitle]="mobileTitle$ | async"
+      >
+        <div dataGridBodySlot class="checkout-content">
+          <router-outlet></router-outlet>
+        </div>
+      </pe-grid-content>
+    </pe-grid>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="form">
+  <div class="form__row fill">
+    <div class="group__row">
+      <label class="group__label">
+        Fill
+      </label>
+      <div class="peb-fill" (click)="showBackgroundForm()">
+        <div class="peb-fill__thumbnail" [ngStyle]="background$ | async"></div>
+        <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

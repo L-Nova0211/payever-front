@@ -1,0 +1,108 @@
+@import 'pe_skeleton.scss';
+
+:host {
+  height: 100%;
+  margin-right: 16px;
+  position: absolute;
+  width: 100%;
+}
+
+.chat-skeleton {
+  display: flex;
+  flex-flow: column;
+  font-family: Roboto,sans-serif;
+  height: 100%;
+  justify-content: space-between;
+  border-radius: 12px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  &__title {
+    height: 24px;
+    width: 50px;
+    border-radius: 6px;
+    background-color: $skeleton-color-transparent;
+    @include skeleton-animation();
+
+    &_mobile-view {
+      margin-left: 20px;
+      height: 16px;
+    }
+  }
+
+  &__avatar {
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    background-color: $skeleton-color-transparent;
+    @include skeleton-animation();
+
+    &_mobile-view {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__form {
+    margin-left: 12px;
+    height: 24px;
+    width: calc(100% - 36px);
+    border-radius: 6px;
+    background-color: $skeleton-color-transparent;
+    @include skeleton-animation();
+  }
+
+  &__body {
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+  }
+
+  &__footer {
+    display: flex;
+    padding: 12px;
+  }
+
+  &__logo-footer {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    height: 48px;
+  }
+
+  &__logo {
+    height: 24px;
+    width: 120px;
+    border-radius: 6px;
+    background-color: $skeleton-color-transparent;
+    @include skeleton-animation();
+  }
+
+  &.dark {
+    background-color: #1c1d1e;
+  }
+
+  &.dark &__footer,
+  &.dark &__logo-footer {
+    background-color: #1c1d1e;
+    border-top: 1px solid #131414;
+  }
+
+  &.light {
+    background-color: #ffffff;
+  }
+
+  &.light &__footer,
+  &.light &__logo-footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(19, 20, 20, 0.1);
+  }
+}
+
+.delete-everyone {
+  width: 100%;
+  margin-top: 16px;
+}

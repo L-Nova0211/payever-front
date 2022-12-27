@@ -1,0 +1,2119 @@
+id: matchesfashion-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: matchesfashion-main-page
+  type: document
+  children:
+    - id: header
+      type: block
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            text: MATCHESFASHION
+        - id: header-menu1
+          type: menu
+          data:
+            routes:
+              - title: USA
+              - title: 'UASD $'
+              - title: Display Local Currency m
+        - id: header-menu2
+          type: menu
+          data:
+            routes:
+              - title: Sign in
+                routeId: /intl/login
+              - title: Wishlist
+                routeId: /intl/wishlist
+              - title: Loyalty
+                routeId: /intl/loyalty
+
+        - id: header-cart
+          type: shop-cart
+
+    - id: nav-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: nav-section-link1
+          type: button
+          data:
+            text: MEN
+        - id: nav-section-logo
+          type: text
+          data:
+            text: MATHESFASHION
+            link:
+              type: internal
+              routeId: ''
+        - id: nav-section-link2
+          type: button
+          data:
+            text: WOMEN
+
+    - id: video-section
+      type: video
+      data:
+        source: https://videos.ctfassets.net/go1hlsu9ui7l/6XM8jt9IIbWeMBLNfF0n06/8e63478f2678d43f3a3c74b2b09a7109/EN_Pre-Home_Page_Banner_1725x266.mp4
+        preview: https://videos.ctfassets.net/go1hlsu9ui7l/6XM8jt9IIbWeMBLNfF0n06/8e63478f2678d43f3a3c74b2b09a7109/EN_Pre-Home_Page_Banner_1725x266.mp4
+        autoplay: true
+        loop: true
+        children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-block1
+          type: block
+          children: []
+        - id: first-block2
+          type: block
+          children:
+            - id: first-section-title
+              type: text
+              data:
+                text: UP TO 80% OFF
+            - id: first-section-block
+              type: block
+              children:
+                - id: first-section-button1
+                  type: button
+                  data:
+                    text: "SHOP MEN'S"
+                - id: first-section-button2
+                  type: button
+                  data:
+                    text: "SHOP WOMEN'S"
+
+    - id: second-section
+      type: block
+      children:
+        - id: second-section-block1
+          type: block
+          children:
+            - id: second-section-content-block1-title
+              type: button
+              data:
+                text: "SHOP MEN'S"
+                link:
+                  type: internal
+                  routeId: ''
+        - id: second-section-block2
+          type: block
+          children:
+            - id: second-section-content-block2-title
+              type: button
+              data:
+                text: "SHOP WOMEN'S"
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: third-section
+      type: block
+      children:
+        - id: third-section-content-title
+          type: text
+          data:
+            text: SHOP BY CATEGORY
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-block1
+              type: block
+              children:
+                - id: third-section-block1-image
+                  type: block
+                  children: []
+                - id: third-section-block1-title
+                  type: button
+                  data:
+                    text: "MEN'S JUST IN >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block2
+              type: block
+              children:
+                - id: third-section-block2-image
+                  type: block
+                  children: []
+                - id: third-section-block2-title
+                  type: button
+                  data:
+                    text: "MEN'S DESIGNER >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block3
+              type: block
+              children:
+                - id: third-section-block3-image
+                  type: block
+                  children: []
+                - id: third-section-block3-title
+                  type: button
+                  data:
+                    text: "WOMEN'S JUST IN >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block4
+              type: block
+              children:
+                - id: third-section-block4-image
+                  type: block
+                  children: []
+                - id: third-section-block4-title
+                  type: button
+                  data:
+                    text: "WOMEN'S DESIGNER >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block5
+              type: block
+              children:
+                - id: third-section-block5-image
+                  type: block
+                  children: []
+                - id: third-section-block5-title
+                  type: button
+                  data:
+                    text: "MEN'S CLOTHING >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block6
+              type: block
+              children:
+                - id: third-section-block6-image
+                  type: block
+                  children: []
+                - id: third-section-block6-title
+                  type: button
+                  data:
+                    text: "MEN'S SHOES >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block7
+              type: block
+              children:
+                - id: third-section-block7-image
+                  type: block
+                  children: []
+                - id: third-section-block7-title
+                  type: button
+                  data:
+                    text: "WOMEN'S CLOTHING >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block8
+              type: block
+              children:
+                - id: third-section-block8-image
+                  type: block
+                  children: []
+                - id: third-section-block8-title
+                  type: button
+                  data:
+                    text: "WOMEN'S SHOES >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block9
+              type: block
+              children:
+                - id: third-section-block9-image
+                  type: block
+                  children: []
+                - id: third-section-block9-title
+                  type: button
+                  data:
+                    text: "MEN'S BAGS >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block10
+              type: block
+              children:
+                - id: third-section-block10-image
+                  type: block
+                  children: []
+                - id: third-section-block10-title
+                  type: button
+                  data:
+                    text: "MEN'S ACCESSORIES >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block11
+              type: block
+              children:
+                - id: third-section-block11-image
+                  type: block
+                  children: []
+                - id: third-section-block11-title
+                  type: button
+                  data:
+                    text: "MEN'S BAGS >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block12
+              type: block
+              children:
+                - id: third-section-block12-image
+                  type: block
+                  children: []
+                - id: third-section-block12-title
+                  type: button
+                  data:
+                    text: "WOMEN'S ACCESSORIES >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block13
+              type: block
+              children:
+                - id: third-section-block13-image
+                  type: block
+                  children: []
+                - id: third-section-block13-title
+                  type: button
+                  data:
+                    text: "HOMEWARE >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block14
+              type: block
+              children:
+                - id: third-section-block14-image
+                  type: block
+                  children: []
+                - id: third-section-block14-title
+                  type: button
+                  data:
+                    text: "MEN'S STORIES >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block15
+              type: block
+              children:
+                - id: third-section-block15-image
+                  type: block
+                  children: []
+                - id: third-section-block15-title
+                  type: button
+                  data:
+                    text: "HOMEWARE >"
+                    link:
+                      type: internal
+                      routeId: ''
+            - id: third-section-block16
+              type: block
+              children:
+                - id: third-section-block16-image
+                  type: block
+                  children: []
+                - id: third-section-block16-title
+                  type: button
+                  data:
+                    text: "WOMEN'S STORIES >"
+                    link:
+                      type: internal
+                      routeId: ''
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-link1
+          type: button
+          data:
+            text: "MEN'S SALE >"
+            link:
+              type: internal
+              routeId: ''
+        - id: fourth-section-link2
+          type: button
+          data:
+            text: "WOMEN'S SALE >"
+            link:
+              type: internal
+              routeId: ''
+
+    - id: footer
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer-column1
+          type: block
+          children:
+            - id: footer-column1-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">MATCHESFASHION</span>
+            - id: footer-column1-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">About us</span>
+            - id: footer-column1-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Sustainability</span>
+            - id: footer-column1-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Careers</span>
+            - id: footer-column1-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Affiliates</span>
+
+            - id: footer-column2
+              type: block
+              children:
+                - id: footer-column2-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Help</span>
+                - id: footer-column2-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Contact us</span>
+                - id: footer-column2-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">FAQs</span>
+                - id: footer-column2-link3
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Delivery</span>
+                - id: footer-column2-link4
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596"Returns</span>
+
+        - id: footer-column3
+          type: block
+          children:
+            - id: footer-column3-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Services</span>
+            - id: footer-column3-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">MyStylist</span>
+            - id: footer-column3-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Private Shopping</span>
+            - id: footer-column3-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Loyalty</span>
+
+            - id: footer-column4
+              type: block
+              children:
+                - id: footer-column4-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Gifts</span>
+                - id: footer-column4-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Gift Cards</span>
+
+        - id: footer-column5
+          type: block
+          children:
+            - id: footer-column5-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Legal</span>
+            - id: footer-column5-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Terms and Conditions</span>
+            - id: footer-column5-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Privacy Policy</span>
+            - id: footer-column5-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Cookie Policy</span>
+            - id: footer-column5-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Modern Slavery Act</span>
+        - id: footer-column6
+          type: block
+          children:
+            - id: footer-column6-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Visit Us</span>
+            - id: footer-column6-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Marylebone</span>
+            - id: footer-column6-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Notting Hill</span>
+            - id: footer-column6-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Wimbledon</span>
+            - id: footer-column6-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">5 Carlos Place</span>
+        - id: footer-column7
+          type: block
+          children:
+            - id: footer-column7-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Our Apps</span>
+            - id: footer-column7-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Download our iOS app</span>
+            - id: footer-column7-button1
+              type: image
+              data:
+                src: https://assets.matchesfashion.com/images/app_icons/apple_app_store_icon-mobile-retina.jpg
+            - id: footer-column7-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Download our Android app</span>
+            - id: footer-column7-button2
+              type: image
+              data:
+                src: https://assets.matchesfashion.com/images/app_icons/google_play_store_icon.jpg
+
+stylesheets:
+  desktop:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 44
+      top: 0
+      display: grid
+      gridTemplateColumns: 2fr 2fr
+    header-logo:
+      display: none
+    header-menu1:
+      fontSize: 12
+      fontWeight: 500
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      margin: 5 auto 0 0
+    header-menu2:
+      fontSize: 12
+      fontWeight: 500
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      margin: 5 0 0 auto
+    header-cart:
+      display: none
+    header-mobile-menu:
+      display: none
+    # ----------------------------------
+    # Desktop Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: grid
+      position: sticky
+      zIndex: 1
+    nav-section-link1:
+      color: '#707070'
+      fontSize: 12
+      backgroundColor: 'transparent'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto 0 auto auto
+    nav-section-logo:
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 30
+    nav-section-link2:
+      margin: auto auto auto 0
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      gridArea: 1 / 3 / 1 / 3
+      backgroundColor: 'transparent'
+      fontSize: 12
+      color: '#707070'
+
+
+
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-block2:
+      margin: -150 auto
+    first-section-title:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 30
+      fontWeight: 700
+      margin: 20 auto 10 auto
+      gridArea: 1 / 3 / 1 / 3
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-button1:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 15
+      fontWeight: 700
+      margin: auto 30 10 auto
+      backgroundColor: 'transparent'
+    first-section-button2:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 15
+      fontWeight: 700
+      margin: auto auto 10 10
+      backgroundColor: 'transparent'
+
+    video-section:
+      width: 100%
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      display: flex
+      gridTemplateColumns: 0 0
+    second-section-block1:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/mens-desk.jpg?quality=60&'
+      width: 100%
+      height: 500
+      backgroundSize: cover
+      display: grid
+      margin: 0 auto
+    second-section-content-block1-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+    second-section-block2:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/womens-desk.jpg?quality=60&'
+      width: 100%
+      height: 500
+      backgroundSize: cover
+      display: grid
+      margin: auto auto 10
+    second-section-content-block2-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section: {}
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+    third-section-content-title:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      fontWeight: 500
+      margin: 20 auto 20 auto
+      backgroundColor: 'transparent'
+    third-section-block1-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-justin.jpg?width=500&quality=65&'
+      backgroundSize: cover
+      height: 300
+      display: grid
+      width: 90%
+      margin: auto auto auto 15
+    third-section-block1-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block2-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-designers.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block2-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block3-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-justin.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block3-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block4-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-designers.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block4-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block5-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-clothing.jpg?width=500&quality=65&'
+      width: 90%
+      margin: auto auto auto 15
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block5-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block6-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-shoes.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block6-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block7-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-clothing.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block7-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block8-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-shoes.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block8-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block9-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-bags.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block9-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block10-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-accessories.jpg?width=500&quality=65&'
+      width: 90%
+      margin: auto auto auto 15
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block10-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block11-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-bags.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block11-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block12-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-accessories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block12-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto 20 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block13-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-home.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block13-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto auto auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block14-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-stories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block14-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto auto auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block15-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-home.jpg?width=500&quality=65&'
+      width: 90%
+      margin: auto auto auto 15
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block15-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto auto auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block16-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-stories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block16-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 20 auto auto auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+    fourth-section-link1:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 20 20 auto
+      backgroundColor: 'transparent'
+    fourth-section-link2:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 auto 20  20
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30
+      margin: 0 0 0 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 60 30 60
+      margin: 0 0 0 12
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-button1:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+    footer-column7-button2:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+
+  tablet:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 1fr 1fr 75
+    header-logo:
+      fontSize: 16
+      fontWeight: 800
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: auto 10
+    header-menu1:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: auto 12
+      width: 20
+      height: 20
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: auto 0 0 auto
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Tablet Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: none
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-block2:
+      margin: -120 auto
+    first-section-title:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 20
+      fontWeight: 700
+      margin: 20 auto 10 auto
+      gridArea: 1 / 3 / 1 / 3
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-button1:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 14
+      fontWeight: 700
+      margin: auto 30 10 auto
+      backgroundColor: 'transparent'
+    first-section-button2:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 14
+      fontWeight: 700
+      margin: auto auto 10 10
+      backgroundColor: 'transparent'
+
+
+    video-section:
+      width: 100%
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-section-block1:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/mens-desk.jpg?quality=60&'
+      width: 100%
+      height: 400
+      backgroundSize: cover
+      display: grid
+      margin: 0 auto
+    second-section-content-block1-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+    second-section-block2:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/womens-desk.jpg?quality=60&'
+      width: 100%
+      height: 400
+      backgroundSize: cover
+      display: grid
+      margin: auto auto 10
+    second-section-content-block2-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section: {}
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+    third-section-content-title:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      fontWeight: 500
+      margin: 20 auto 20 auto
+      backgroundColor: 'transparent'
+    third-section-block1-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-justin.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block1-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block2-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-designers.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block2-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block3-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-justin.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block3-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block4-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-designers.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block4-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block5-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-clothing.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block5-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block6-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-shoes.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block6-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block7-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-clothing.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block7-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block8-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-shoes.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block8-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block9-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-bags.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block9-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block10-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-accessories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block10-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block11-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-bags.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      margin: auto auto auto 20
+      backgroundSize: cover
+      display: grid
+    third-section-block11-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block12-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-accessories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block12-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block13-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-home.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      backgroundSize: cover
+      display: grid
+      margin: auto auto auto 20
+    third-section-block13-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block14-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-stories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block14-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block15-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-home.jpg?width=500&quality=65&'
+      width: 90%
+      height: 300
+      margin: auto auto auto 20
+      backgroundSize: cover
+      display: grid
+    third-section-block15-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block16-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-stories.jpg?width=500&quality=65&'
+      width: 95%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block16-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+    fourth-section-link1:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 20 20 auto
+      backgroundColor: 'transparent'
+    fourth-section-link2:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 auto 20  20
+      backgroundColor: 'transparent'
+
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30
+      margin: 0 0 0 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 60 30 60
+      margin: 0 0 0 12
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-button1:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+    footer-column7-button2:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+
+
+  mobile:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 1fr 1fr 75
+    header-logo:
+      fontSize: 16
+      fontWeight: 800
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: auto 10
+    header-menu1:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: auto 12
+      width: 20
+      height: 20
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: auto 0 0 auto
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+    # ----------------------------------
+    # Mobile Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: none
+
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-block2:
+      margin: -70 auto
+    first-section-title:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      margin: 20 auto 10 auto
+      gridArea: 1 / 3 / 1 / 3
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-button1:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      margin: auto 30 10 auto
+      backgroundColor: 'transparent'
+    first-section-button2:
+      display: grid
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      margin: auto auto 10 10
+      backgroundColor: 'transparent'
+
+    video-section:
+      width: 100%
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-section-block1:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/mens-desk.jpg?quality=60&'
+      width: 100%
+      height: 500
+      backgroundSize: cover
+      backgroundPosition: center
+      display: grid
+      margin: 0 auto
+    second-section-content-block1-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+    second-section-block2:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/hero/womens-desk.jpg?quality=60&'
+      width: 100%
+      height: 500
+      backgroundSize: cover
+      backgroundPosition: center
+      display: grid
+      margin: auto auto 10
+    second-section-content-block2-title:
+      color: '#fff'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: auto
+      fontSize: 20
+      textAlign: left
+      backgroundColor: 'transparent'
+
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section: {}
+    third-section-content-title:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      fontWeight: 500
+      margin: 20 auto 20 auto
+      backgroundColor: 'transparent'
+    third-section-block:
+      gridTemplateRows: 1fr 1fr
+    third-section-block1-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-justin.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block1-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block2-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-designers.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block2-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block3-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-justin.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block3-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block4-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-designers.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block4-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block5-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-clothing.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block5-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block6-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-shoes.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block6-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block7-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-clothing.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block7-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block8-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-shoes.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block8-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block9-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-bags.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block9-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block10-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-accessories.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block10-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block11-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-bags.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block11-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block12-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-accessories.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block12-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block13-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-home.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block13-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block14-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/mens-stories.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block14-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block15-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-home.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block15-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-block16-image:
+      backgroundImage: 'https://assets.matchesfashion.com/devTest/translated/2019/pre-home/launch/qa/published/img/categories/womens-stories.jpg?width=500&quality=65&'
+      width: 100%
+      height: 300
+      backgroundSize: cover
+      display: grid
+    third-section-block16-title:
+      color: '#111'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: 12
+      display: grid
+      margin: 10 auto 10 auto
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+    fourth-section-link1:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 auto
+      backgroundColor: 'transparent'
+    fourth-section-link2:
+      display: grid
+      color: '#000'
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 50 auto
+      backgroundColor: 'transparent'
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30
+      margin: 0 0 0 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column5-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: -80 0 0 0
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column6-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 60 30 60
+      margin: 0 0 0 12
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+    footer-column7-button1:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+    footer-column7-button2:
+      width: 104
+      height: 38
+      margin: 0 auto auto 0
+context: {}

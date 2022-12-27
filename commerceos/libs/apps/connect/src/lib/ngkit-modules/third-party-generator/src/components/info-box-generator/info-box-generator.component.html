@@ -1,0 +1,279 @@
+<div class="connect-communication-container pe-info-box-container-fixed">
+  <pe-info-box *ngIf="settings?.type ==='info-box'"
+               [transparent]="true"
+               [title]="settings.title"
+               [roundBorder]="true"
+               [notFullwidthOnMobile]="false"
+               [withPadding]="false"
+               [withHeader]="withHeader"
+               [withFooter]="infoBoxSettings?.contentType !== 'accordion'"
+               [fixed]="false"
+               (onClose)="handleClose()"
+               class="connect-add-number">
+    <ng-container content>
+
+      <!-- ACCORDION -->
+      <mat-accordion *ngIf="infoBoxSettings?.contentType === 'accordion'">
+        <ng-content select="[before-accordion]"></ng-content>
+
+        <mat-expansion-panel *ngFor="let panel of infoBoxSettings?.content.accordion; let i = index;"
+                             #contentPanel
+                             [class.mat-expansion-panel-dark]="true"
+                             [class.mat-expansion-panel-no-border-radius]="true"
+                             [expanded]="i === getExpandedIndex()"
+                             [disabled]="panel.disabled"
+                             [hideToggle]="panel.hideToggle">
+
+          <!-- Accordion title -->
+          <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              class="mat-expansion-panel-header-no-logo"
+              [ngStyle]="panel.disabled && {'cursor': 'default'}">
+            <mat-panel-title [ngStyle]="panel.disabled && {'opacity': '0.25'}">{{ panel.title }}</mat-panel-title>
+            <mat-panel-description>
+              <svg>
+                <use [attr.xlink:href]="contentPanel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+              </svg>
+            </mat-panel-description>
+
+            <ng-container *ngIf="panel.headerButton && panel.headerButton?.httpMethod">
+              <div class="mat-expansion-panel-spacer"></div>
+              <div class="mat-list-item-col text-right sections-step-buttons">
+                <button mat-raised-button
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        color="muted-light"
+                        (click)="performRedirectClick($event, panel.headerButton)">
+                  <pe-progress-button-content [loading]="showSpinnerForAction === panel.headerButton?.apiUrl"
+                                              [spinnerDiameter]="14"
+                                              [spinnerStrokeWidth]="2">
+                    {{ panel.headerButton.text }} <span [innerHtml]="btnDebug('L')"></span>
+                  </pe-progress-button-content>
+                </button>
+              </div>
+            </ng-container>
+          </mat-expansion-panel-header>
+
+          <button *ngIf="panel?.action && panel?.action?.httpMethod == 'redirect'"
+                  mat-raised-button
+                  class="mat-button-block"
+                  type="button"
+                  (click)="performRedirectClick($event, panel?.action)">
+            <pe-progress-button-content [spinnerDiameter]="26"
+                                        [loading]="showSpinnerForAction === panel?.action.apiUrl"
+                                        [spinnerStrokeWidth]="2">
+              {{ panel.action.text }} <span [innerHtml]="btnDebug('A')"></span>
+            </pe-progress-button-content>
+          </button>
+
+          <a *ngIf="panel?.action && panel?.action?.httpMethod == 'openNewTab'"
+             mat-raised-button
+             class="mat-button-block"
+             type="button"
+             target="_blank"
+             [href]="panel?.action.apiUrl">
+            {{ panel.action.text }} <span [innerHtml]="btnDebug('B')"></span>
+          </a>
+
+          <div *ngIf="panel?.fieldset && panel?.fieldsetCaption" class="fieldset-caption">
+            <div [ngClass]="panel.fieldsetCaption?.classes">
+              {{ panel.fieldsetCaption.text }}
+            </div>
+          </div>
+
+          <!-- Form inside accordion -->
+          <pe-info-box-generator-form #infoBoxGeneratorForm="infoBoxGeneratorForm"
+                                      [action]="panel?.action"
+                                      [fieldset]="panel?.fieldset"
+                                      [fieldsetData]="prepareFieldsetData(panel?.fieldsetData)"
+                                      [loading]="formLoading"
+                                      [nestedElements]="panel?.nestedElements"
+                                      (change)="onFormChange($event, panel?.fieldset, i)"
+                                      (submit)="onFormSubmit($event, panel?.fieldset, i)">
+          </pe-info-box-generator-form>
+
+          <!-- Rows with data inside accordion -->
+          <mat-list *ngIf="panel.data && panel.data.length" class="mat-list-transparent">
+            <ng-container *ngFor="let row of panel.data;">
+              <mat-list-item>
+                <div class="mat-list-item-flex">
+                  <div *ngFor="let cell of row; let lastCell = last"
+                       class="mat-list-item-col"
+                       [class.mat-list-item-flex]="lastCell && (cell.type === listCelTypes.Button || cell.type === listCelTypes.Toggle)"
+                       [class.mat-list-item-flex-right]="lastCell && (cell.type === listCelTypes.Button || cell.type === listCelTypes.Toggle)"
+                  >
+                    <ng-container [ngSwitch]="cell.type">
+                      <div *ngSwitchCase="listCelTypes.Text" [ngClass]="cell.classes">
+                        {{ cell.value }}
+                      </div>
+                      <div *ngSwitchCase="listCelTypes.Toggle" class="button-col text-right">
+                        <pe-progress-button-content
+                            [loading]="showSpinnerForAction === cell.actionToggleOn.apiUrl || showSpinnerForAction === cell.actionToggleOff.apiUrl"
+                            [spinnerDiameter]="13"
+                            [spinnerStrokeWidth]="1">
+                        </pe-progress-button-content>
+                        <mat-slide-toggle [checked]="cell.checked"
+                                          (change)="performToggleAction(cell, panel?.fieldset)"
+                                          class="default-toggle"
+                        ></mat-slide-toggle>
+                      </div>
+                      <div *ngSwitchCase="listCelTypes.Button" class="button-col text-right">
+                        <button type="button" [ngClass]="cell.classes" [class.mat-button-rounded]="cell.rounded"
+                                [class.mat-button-xs]="cell.size === 'xs'" [class.mat-button-sm]="cell.size === 'sm'"
+                                [class.mat-button-md]="cell.size === 'md'" [class.mat-button-lg]="cell.size === 'lg'"
+                                [class.mat-button-xl]="cell.size === 'xl'" [color]="cell.color"
+                                (click)="performAction(cell, panel.fieldset)"
+                                mat-raised-button>
+                          <pe-progress-button-content [loading]="showSpinnerForAction === cell.apiUrl"
+                                                      [spinnerDiameter]="13"
+                                                      [spinnerStrokeWidth]="1">
+                            {{ cell.text || cell.value }} <span [innerHtml]="btnDebug('C')"></span>
+                          </pe-progress-button-content>
+                        </button>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-divider></mat-divider> <!-- hack to show  mat-divider inside last row -->
+            </ng-container>
+          </mat-list>
+
+          <!-- Actions in the bottom of accordion panel -->
+          <div *ngIf="panel.data && panel.action" class="connect-collection">
+            <button mat-button
+                    type="button"
+                    [class.mat-button-link]="true"
+                    [class.mat-button-no-padding]="true"
+                    [class.hover]="true"
+                    (click)="performAction(panel.action, panel.fieldset)"
+            >{{ panel.action.text }} <span [innerHtml]="btnDebug('D')"></span></button>
+          </div>
+        </mat-expansion-panel>
+
+        <ng-content select="[after-accordion]"></ng-content>
+      </mat-accordion>
+
+      <!-- View without accordion -->
+      <ng-container *ngIf="infoBoxSettings?.contentType !== 'accordion'">
+
+        <!-- Header with some text-->
+        <div *ngIf="infoBoxSettings.content.html" class="connect-status">
+          {{ infoBoxSettings.content.html.innerHtml }}
+          <svg class="icon icon-16 status-icon" *ngIf="infoBoxSettings.content.html.icon">
+            <use [attr.xlink:href]="infoBoxSettings.content.html.icon"></use>
+          </svg>
+        </div>
+
+        <!-- Form -->
+        <pe-info-box-generator-form *ngIf="showForm"
+                                    #infoBoxGeneratorForm="infoBoxGeneratorForm"
+                                    [fieldset]="fieldset"
+                                    [fieldsetData]="fieldsetData"
+                                    (change)="onFormChange($event, fieldset)"
+                                    (submit)="onFormSubmit($event, fieldset)">
+        </pe-info-box-generator-form>
+
+        <!-- Rows with data -->
+        <mat-list *ngIf="infoBoxSettings.content.data" class="mat-list-transparent">
+          <ng-container *ngFor="let collection of infoBoxSettings.content.data">
+            <mat-list-item>
+              <div class="mat-list-item-flex">
+                <div *ngFor="let item of collection; let last = last"
+                     class="mat-list-item-col"
+                     [class.mat-list-item-flex]="last && item.type === listCelTypes.Button"
+                     [class.mat-list-item-flex-right]="last && item.type === listCelTypes.Button"
+                >
+                  <ng-container [ngSwitch]="item.type">
+                    <div *ngSwitchCase="listCelTypes.Text" [ngClass]="item.classes">
+                      {{ item.value }}
+                    </div>
+                    <div *ngSwitchCase="listCelTypes.Button" class="button-col text-right">
+                      <button type="button" [ngClass]="item.classes"
+                              [class.mat-button-rounded]="item.rounded"
+                              [class.mat-button-xs]="item.size === 'xs'"
+                              [class.mat-button-sm]="item.size === 'sm'"
+                              [class.mat-button-md]="item.size === 'md'"
+                              [class.mat-button-lg]="item.size === 'lg'"
+                              [class.mat-button-xl]="item.size === 'xl'"
+                              [color]="item.color"
+                              (click)="performAction(item, fieldset)"
+                              mat-raised-button>
+                        <pe-progress-button-content [loading]="showSpinnerForAction === item.apiUrl"
+                                                    [spinnerDiameter]="13"
+                                                    [spinnerStrokeWidth]="1">
+                          {{ item.text || item.value }} <span [innerHtml]="btnDebug('E')"></span>
+                        </pe-progress-button-content>
+                      </button>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </ng-container>
+        </mat-list>
+      </ng-container>
+    </ng-container>
+
+    <!-- Bottom actions for non-accordion -->
+    <ng-container footer *ngIf="infoBoxSettings?.contentType !== 'accordion'">
+      <button *ngFor="let action of infoBoxSettings?.actions"
+              mat-button
+              type="button"
+              [ngClass]="action.classes"
+              [color]="action.color"
+              [disabled]="action.isSubmit && form?.invalid"
+              [class.mat-button-no-padding]="!action.hasPaddings"
+              [class.mat-button-link]="true"
+              (click)="performAction(action, fieldset)">
+        <pe-progress-button-content
+            [loading]="showSpinnerForAction === action.apiUrl || showSpinnerForAction === action.actionId"
+            [spinnerDiameter]="26"
+            [spinnerStrokeWidth]="2">
+          {{ action.text }} <span [innerHtml]="btnDebug('F')"></span>
+        </pe-progress-button-content>
+      </button>
+    </ng-container>
+  </pe-info-box>
+</div>
+
+
+<pe-info-box *ngIf="settings?.type === 'confirm'"
+             class="connect-verify"
+             [transparent]="true"
+             [roundBorder]="true"
+             [notFullwidthOnMobile]="false"
+             [withHeader]="false"
+             [withFooter]="true">
+  <!-- [light]="true" -->
+  <ng-container content>
+    <div class="connect-verify-box">
+      <svg class="icon icon-32 connect-verify-icon">
+        <use xlink:href="#icon-warning-20"></use>
+      </svg>
+      <div class="connect-verify-title">{{ confirmSettings.confirmContent.title }}</div>
+
+      <div class="connect-verify-message">
+        {{ confirmSettings.confirmContent.text }}<br><br>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container footer>
+    <button *ngFor="let item of confirmSettings.confirmContent.actions"
+            mat-button
+            type="button"
+            (click)="performAction(item, fieldset)">
+      <pe-progress-button-content
+          [loading]="showSpinnerForAction === item.apiUrl || showSpinnerForAction === item.actionId"
+          [spinnerDiameter]="13"
+          [spinnerStrokeWidth]="1">
+        {{ item.text }} <span [innerHtml]="btnDebug('G')"></span>
+      </pe-progress-button-content>
+    </button>
+  </ng-container>
+</pe-info-box>

@@ -1,0 +1,35 @@
+<div *ngIf="isMobileTitle" class="mobile-title">{{mobileTitle}}</div>
+<ng-content></ng-content>
+<ng-container *ngIf="showMobileFooter && !isOpenSidenav">
+  <div class="pe-grid-content__info" *ngIf="!isSelected">
+    <ng-container *ngIf="!isGlobalLoading">
+      <span class="menu__button__icon hidden" (click)="openFilter()">
+        <mat-icon svgIcon="sidebar-white-icon" class="mat-icon notranslate mat-icon-no-color"></mat-icon>
+      </span>
+      <div class="total-block">
+        <span *ngIf="totalData" class="total-block__data">
+          {{totalData?.label}} {{totalData?.value}}
+        </span>
+        <span class="total-block__items">
+          {{peGridService.items.length}}
+          {{'grid.content.info.of' | translate}}
+          {{peGridToolbarService.totalItems}}
+          {{'grid.content.info.items' | translate}}
+        </span>
+      </div>
+    </ng-container>
+  </div>
+  <div *ngIf="isSelected" class="pe-grid-content__toolbar">
+    <ng-container *ngIf="!isGlobalLoading">
+      <button class="toolbar-btn" (click)="toggleSelect()">
+        <span>
+          {{(allSelected ? 'grid.content.toolbar.deselect_all' : 'grid.content.toolbar.select_all') | translate}}
+        </span>
+      </button>
+      <button class="toolbar-btn" (click)="onMove()"><span>{{'grid.content.toolbar.move' | translate}}</span></button>
+      <button class="toolbar-btn" (click)="onDelete()">
+        <span>{{'grid.content.toolbar.delete' | translate}}</span>
+      </button>
+    </ng-container>
+  </div>
+</ng-container>

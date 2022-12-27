@@ -1,0 +1,131 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+:host {
+  &.is-mobile {
+    .status {
+      min-width: calc(100% - 8px) !important;
+    }
+  }
+
+  &.is-list-mobile {
+    font-weight: bold;
+
+    .status-loading-container {
+      display: none;
+    }
+
+    .status {
+      &.status-red {
+        color: $color-status-red;
+      }
+
+      &.status-yellow {
+        color: $color-status-yellow;
+      }
+
+      &.status-green {
+        color: $color-status-green;
+      }
+    }
+  }
+
+  &:not(.is-list-mobile) {
+    .status {
+      color: $color-white;
+      position: relative;
+      border-radius: 6px;
+      padding: 4px 8px;
+      width: fit-content;
+      height: 24px;
+      font-weight: 500;
+      box-sizing: border-box;
+      font-family: Roboto;
+      font-size: 12px;
+      text-align: center;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+
+      span {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .status-loading-container {
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .loader-white {
+          position: relative;
+          width: 6px;
+          height: 6px;
+          border-radius: 5px;
+          background-color: #747474;
+          animation: doLoding 1s infinite linear alternate;
+          animation-delay: 0.5s;
+        }
+
+        .loader-white::before,
+        .loader-white::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 0;
+        }
+
+        .loader-white::before {
+          left: -15px;
+          width: 6px;
+          height: 6px;
+          border-radius: 5px;
+          background-color: #747474;
+          animation: doLoding 1s infinite alternate;
+          animation-delay: 0s;
+        }
+
+        .loader-white::after {
+          left: 15px;
+          width: 6px;
+          height: 6px;
+          border-radius: 5px;
+          background-color: #747474;
+          animation: doLoding 1s infinite alternate;
+          animation-delay: 1s;
+        }
+
+        @keyframes doLoding {
+          0% {
+            background-color: #747474;
+          }
+          50%,
+          100% {
+            background-color: #ffffff;
+          }
+        }
+      }
+      &.status-red {
+        background-color: $color-status-red;
+      }
+
+      &.status-yellow {
+        background-color: $color-status-yellow;
+      }
+
+      &.status-green {
+        background-color: $color-status-green;
+      }
+    }
+  }
+}

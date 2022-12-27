@@ -1,0 +1,476 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "./../../panels/page-container";
+
+.overlay-widget {
+  &__content {
+    padding: 0 12px !important;
+  }
+}
+
+.overlay-widget .pe-info-box-container-fixed.callbacks-info-box {
+  min-width: calc(100% + 24px);
+  min-height: 0;
+  height: fit-content;
+  padding: 0;
+  margin-right: -12px;
+  margin-left: -12px;
+
+  .pe-info-box {
+    min-width: 100%;
+    max-width: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    .info-box {
+      .mat-card {
+        border-radius: 0;
+
+        .checkout-mat-accordion {
+          margin-top: 16px;
+
+          .mat-expansion-panel {
+            margin: 0;
+            border-radius: 0;
+            background-color: #24272e;
+
+            .mat-expansion-panel-header {
+              background-color: rgba(0, 0, 0, 0.3);
+              display: flex;
+              flex-wrap: nowrap;
+              align-items: center;
+
+              .mat-content {
+                mat-panel-title {
+                  font-family: Roboto, sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding-left: 0;
+                  text-transform: none;
+                  color: $regular-text-color;
+                }
+
+                mat-panel-description {
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                  padding-right: 0;
+                  margin-right: 0;
+                  color: $regular-text-color;
+
+                  svg {
+                    text-align: right;
+                    height: 12px;
+                    width: 12px;
+                    color: $regular-text-color;
+                  }
+                }
+              }
+            }
+          }
+
+          .mat-expansion-panel-content {
+            .mat-expansion-panel-body {
+              padding: 16px 12px;
+
+              .mat-list.mat-list-base {
+                margin: 0;
+                width: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+
+                &.mat-list-margin-top {
+                  margin-top: 16px;
+                }
+
+                .mat-list-item {
+                  .mat-list-item-flex {
+                    padding: 0;
+
+                    .mat-list-item-col {
+                      background-color: #111111;
+                      font-size: 12px;
+                      font-weight: 500;
+                      line-height: 1.33;
+                      display: flex;
+                      flex-wrap: nowrap;
+                      align-items: center;
+
+                      &.text-right {
+                        max-width: 105px;
+                        background-color: $content-background-color;
+
+                        button.expansion-list-button {
+                          width: 100%;
+                          background-color: transparent;
+                          text-align: right;
+                          font-weight: normal;
+                          font-size: 12px;
+                          line-height: 1.33;
+                        }
+                      }
+
+                      .btn-colorpicker {
+                        margin: 10px 8px 10px 10px;
+                        padding: 0;
+                        width: 20px;
+                        height: 20px;
+                      }
+
+                      &:first-child {
+                        max-width: fit-content;
+                        padding-right: 0;
+                      }
+
+                      .rectangular-input {
+                        max-width: 20px;
+                        margin: 0 8px 0 10px;
+                      }
+
+                      .form-fieldset {
+                        .mat-button-base {
+                          width: 20px;
+                          height: 20px;
+                          padding: 0;
+                          margin: 10px 8px 10px 10px;
+                          background-color: #585858;
+
+                          .mat-button-wrapper {
+                            color: $regular-text-color;
+                          }
+                        }
+                      }
+                    }
+
+                    .field-input {
+                      width: 100%;
+                      height: 39px;
+                      background-color: $content-background-color;
+
+                      .label-input-content-wrapper {
+                        height: 100%;
+
+                        .label-container.form-label {
+                          background-color: #111111;
+
+                          .label-text {
+                            color: #7a7a7a;
+                            line-height: normal;
+                            font-weight: normal
+                          }
+
+                          &.is-invalid {
+                            .label-text {
+                              color: #eb4653;
+                            }
+                          }
+                        }
+
+                        .suffix {
+                          text-align: end;
+                        }
+                      }
+                    }
+                  }
+
+                  &:last-child {
+                    .mat-list-item-flex {
+                      border-bottom: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.styles-active-form {
+  max-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 8px 0 16px;
+  border-radius: 12px;
+  padding: 10px 12px 10px 16px;
+  background-color: #111111;
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: flex-end;
+
+    mat-slide-toggle.mat-slide-toggle.mat-accent {
+      .mat-slide-toggle-label {
+        .mat-slide-toggle-bar {
+          height: 20px;
+          background-color: #494a4b !important;
+
+          .mat-slide-toggle-thumb-container {
+            left: 2px;
+
+            .mat-slide-toggle-thumb {
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
+      }
+
+      &.mat-checked:not(.mat-disabled) {
+        .mat-slide-toggle-label {
+          .mat-slide-toggle-bar {
+            background-color: #0087ff !important;
+
+            .mat-slide-toggle-thumb-container {
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkout-corner-button + * .cdk-overlay-pane {
+  margin-top: 8px;
+  width: 40px;
+
+  .mat-menu-panel {
+    min-width: 40px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: $content-background-color;
+
+    .mat-menu-content {
+      background: transparent;
+
+      .mat-menu-item {
+        padding: 0 12px;
+
+        .icon {
+          color: $regular-text-color;
+        }
+      }
+    }
+  }
+}
+
+.color-picker-form-block {
+  width: 100%;
+  height: 39px;
+  overflow: hidden;
+}
+
+.checkout-corner-button-light + * .cdk-overlay-pane {
+  margin-top: 8px;
+  width: 40px;
+
+  .mat-menu-panel {
+    min-width: 40px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: $content-light-background-color;
+
+    .mat-menu-content {
+      background: transparent;
+
+      .mat-menu-item {
+        padding: 0 12px;
+
+        .icon {
+          color: $regular-light-text-color;
+        }
+      }
+    }
+  }
+}
+
+.checkout-corner-button-transparent + * .cdk-overlay-pane {
+  margin-top: 8px;
+  width: 40px;
+
+  .mat-menu-panel {
+    min-width: 40px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    .mat-menu-content {
+      background: transparent;
+
+      .mat-menu-item {
+        padding: 0 12px;
+
+        .icon {
+          color: $regular-text-color;
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-light .overlay-widget__content {
+    .styles-active-form {
+      background-color: $content-light-background-color;
+
+      &__title {
+        color: $regular-light-text-color;
+      }
+    }
+
+    .pe-info-box-container-fixed.callbacks-info-box {
+      .content-wrapper {
+        background-color: transparent;
+
+        .checkout-mat-accordion {
+          .mat-expansion-panel {
+            border: none;
+            background-color: transparent;
+
+            .mat-expansion-panel-header {
+              border: none;
+              background-color: rgba(255, 255, 255, 0.7);
+
+              .mat-expansion-panel-header-title {
+                color: $regular-light-text-color;
+              }
+
+              .mat-expansion-panel-header-description {
+                svg {
+                  color: $regular-light-text-color;
+                }
+              }
+            }
+          }
+
+          .mat-expansion-panel-body .mat-list.mat-list-base .mat-list-item .mat-list-item-flex {
+            .mat-list-item-col {
+              background-color: $content-light-background-color;
+              color: $regular-light-text-color;
+
+              &.text-right {
+                background-color: $content-light-button-background-color;
+              }
+            }
+
+            .field-input {
+              background-color: $content-light-background-color;
+
+              .label-input-content-wrapper {
+                .label-container.form-label {
+                  background-color: $content-light-background-color;
+
+                  .label-text {
+                    color: $regular-light-secondary-text-color;
+                  }
+
+                  input {
+                    color: $regular-light-text-color;
+                  }
+                }
+
+                .suffix {
+                  color: $regular-light-text-color;
+                  background-color: $content-light-button-background-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-transparent {
+    .styles-active-form {
+      background-color: $content-transparent-background-color;
+    }
+
+    .pe-info-box-container-fixed.callbacks-info-box {
+      .content-wrapper {
+        background-color: transparent;
+
+        mat-accordion.checkout-mat-accordion {
+          .mat-expansion-panel {
+            border: none;
+            background-color: transparent;
+
+            .mat-expansion-panel-header {
+              border: none;
+              background-color: $content-transparent-button-background-color;
+            }
+          }
+
+          .mat-expansion-panel-body .mat-list.mat-list-base .mat-list-item .mat-list-item-flex {
+            .mat-list-item-col {
+              background-color: $content-transparent-background-color;
+              color: $regular-text-color;
+
+              &.text-right {
+                background-color: $content-transparent-button-background-color
+              }
+
+              .btn-colorpicker.btn::after {
+                background-color: transparent;
+              }
+            }
+
+            .field-input {
+              background-color: transparent;
+
+              .label-input-content-wrapper {
+                background-color: transparent;
+
+                .label-container.form-label {
+                  background-color: $content-transparent-background-color;
+
+                  .label-text {
+                    color: $regular-text-color;
+                  }
+                }
+
+                .suffix {
+                  background-color: $content-transparent-button-background-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-container .cdk-overlay-backdrop.color-picker-form-menu + .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane {
+  margin-left: 16px;
+}
+
+.cdk-overlay-container .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane .mat-menu-panel {
+  min-width: 278px;
+}
+
+@media (max-width: 720px) {
+  .pe-info-box-container-fixed.callbacks-info-box {
+    .pe-info-box .info-box .mat-card {
+      border-radius: 0;
+    }
+  }
+}
+

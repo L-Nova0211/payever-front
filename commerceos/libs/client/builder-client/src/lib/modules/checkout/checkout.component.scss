@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10000;
+}
+
+.wrapper {
+  display: inline-block;
+  width: 100%;
+  max-width: 768px;
+  border-radius: 0px 0px 8px 8px;
+  overflow: hidden;
+  transform: scale(1, 1);
+  box-shadow: 0 0 4px #bbb;
+}
+
+.hidden {
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: 0;
+  display: none;
+}
+
+.active {
+  height: 100%;
+}

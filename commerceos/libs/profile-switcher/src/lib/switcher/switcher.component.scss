@@ -1,0 +1,261 @@
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+@include peb-theme($theme-dark);
+
+.switcher-container {
+    background-color: rgba(36, 39, 46, 0.75);
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 520px) {
+        padding-top: 26px;
+    }
+
+    .business-items-container {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 19px 0 0;
+        border-radius: 20px;
+        -webkit-backdrop-filter: blur(50px);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+        background-color: rgba(36, 39, 46, 0.85);
+        height: 100%;
+        width: 100%;
+
+        @media (min-width: 521px) {
+            height: auto;
+            width: 436px;
+            max-height: 646px;
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 17px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+
+            @media (max-width: 520px) {
+                line-height: 36px;
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+            .expandable-panel {
+                &__header {
+                    background-color: rgba(0, 0, 0, 0.3);
+
+                    @media (max-width: 520px) {
+                        font-size: 18px;
+                        min-height: 54px;
+                    }
+                }
+
+                &__content {
+                    overflow: hidden;
+                }
+            }
+
+            .profile-card {
+                padding: 2px 0;
+                .card-image {
+                    cursor: pointer;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    background-image: linear-gradient(#a0a7aa, #808893);
+                    margin: auto;
+                    overflow: auto;
+                    .logo {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        object-fit: cover;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 100;
+                        font-size: 37px;
+                        font-family: sans-serif;
+                        color: white;
+                        &.img-circle {
+                            border-radius: 50%;
+                        }
+                        .abbreviation {
+                            height: 35px;
+                            line-height: 37px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+                .card-title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-align: center;
+                    color: #ffffff;
+                    margin-top: 12px;
+                }
+            }
+
+            .business-list-panel {
+                flex: 1;
+
+                .expandable-panel {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+
+                    &__body {
+                      display: flex;
+                      flex-direction: column;
+                      height: 100%;
+                    }
+
+                    &__content {
+                        height: 100%;
+                    }
+                }
+
+                .expanded-panel-body {
+                    height: calc(100% - 32px)
+                }
+            }
+
+            .business-list {
+                display: flex;
+                height: 100%;
+
+                @media (min-width: 521px) {
+                    height: 280px;
+                }
+                .scroll-viewport {
+                    height: 100%;
+                    width: 100%;
+                    overflow: overlay;
+                    border-radius: 13px;
+                    transform: unset;
+                    contain: unset;
+
+                        &::-webkit-scrollbar {
+                            width: 0.5em;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                          background: #444;
+                          margin-top: 10px;
+                          border-radius: 50px;
+                        }
+                        &::-webkit-scrollbar-track {
+                          background: transparent;
+                        }
+                    .cdk-virtual-scroll-content-wrapper {
+                        width: 100%;
+                    }
+                    .business-item {
+                        align-items: center;
+                        cursor: pointer;
+                        padding: 6px 12px;
+                        height: 54px;
+                        margin-bottom: 1px;
+                        background-color: #111111;
+                        display: flex;
+                        justify-content: space-between;
+                        &:hover {
+                            background-color: #0371e2;
+                        }
+                        &:first-child {
+                            border-top-left-radius: 13px;
+                            border-top-right-radius: 13px;
+                        }
+                        &:last-child {
+                            border-bottom-left-radius: 13px;
+                            border-bottom-right-radius: 13px;
+                            margin-bottom: 0;
+                        }
+
+                        @media (min-width: 521px) {
+                            height: 40px;
+                        }
+
+                        .business-logo {
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+                            position: relative;
+                            min-height: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            width: 40px;
+                            margin-right: 16px;
+                            border-radius: 6px;
+                            overflow: hidden;
+
+                            @media (min-width: 521px) {
+                                width: 28px;
+                                height: 28px;
+                                min-height: 28px;
+                                min-width: 28px;
+                            }
+
+                            pe-profile-card-spinner {
+                                border-radius: 6px;
+                            }
+                            background-image: linear-gradient(#a0a7aa, #808893);
+                            div {
+                                font-weight: bold;
+                                font-size: 17px;
+                                color: #ffffff;
+                                text-align: center;
+                                line-height: 1.6;
+                            }
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .business-title {
+                            font-size: 18px;
+                            font-weight: 500;
+                            color: #ffffff;
+                            line-height: 2;
+                            flex-grow: 1;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+                            @media (min-width: 521px) {
+                                font-size: 14px;
+                            }
+                        }
+                        .icon-arrow {
+                            margin-top: 6px;
+                            svg {
+                                color: #ffffff;
+                                width: 8px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.no-data {
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}

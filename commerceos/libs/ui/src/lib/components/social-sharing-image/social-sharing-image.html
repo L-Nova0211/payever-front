@@ -1,0 +1,33 @@
+<div class="social-sharing-image-wrapper">
+  <div class="image-upload">
+    <div class="image-upload__spinner" [class.hide]="!isImageLoading">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+    <div class="image-upload__image">
+      <div class="image-background" [class.hide]="image">
+        <svg class="no-image-logo" [class.hide]="isImageLoading">
+          <use xlink:href="#icon-ui-no-image"></use>
+        </svg>
+      </div>
+      <img src="{{image}}" class="logo-image" [class.hide]="!image" />
+    </div>
+    <div class="image-upload__button">
+      <label class="upload-button" [attr.for]="inputId">
+        <span class="upload-button__label">Upload</span>
+      </label>
+      <input
+        type="file"
+        [attr.id]="inputId"
+        [attr.name]="inputId"
+        class="cdk-visually-hidden"
+        accept="image/png, image/jpeg"
+        (change)="fileChangeEvent($event)"
+      />
+    </div>
+  </div>
+  <div class="data">
+    <span class="data-title">{{title}}</span>
+    <span class="data-link">{{link}}</span>
+    <span class="data-description">{{description}}</span>
+  </div>
+</div>

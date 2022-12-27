@@ -1,0 +1,53 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  [title]="'Basic renderer check: Video'"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  [title]="'Basic renderer check: Video'"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  [title]="'Basic renderer check: Video'"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.mobile"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop2"
+  [title]="'Basic renderer check: Full width'"
+  [element]="(content$ | async).fullwidth.element"
+  [stylesheet]="(content$ | async).fullwidth.stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet2"
+  [title]="'Basic renderer check: Full width'"
+  [element]="(content$ | async).fullwidth.element"
+  [stylesheet]="(content$ | async).fullwidth.stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile2"
+  [title]="'Basic renderer check: Full width'"
+  [element]="(content$ | async).fullwidth.element"
+  [stylesheet]="(content$ | async).fullwidth.stylesheet.mobile"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>

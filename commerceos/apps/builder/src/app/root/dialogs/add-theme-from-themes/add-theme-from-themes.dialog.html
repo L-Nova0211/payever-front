@@ -1,0 +1,46 @@
+<form [formGroup]="form">
+  <div>
+    <label>
+      <div>FROM:</div>
+      <select formControlName="apiPathFrom">
+        <option *ngFor="let path of fromApiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>TO:</div>
+      <select formControlName="apiPathTo">
+        <option *ngFor="let path of toApiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>TOKEN: </div>
+      <input placeholder="TOKEN" type="text" formControlName="token">
+    </label>
+  </div>
+  <div>
+    <div>THEME IDS:</div>
+    <div formArrayName="themeIds" *ngFor="let arrayItem of themeIds; let i=index">
+      <input placeholder="Theme id" type="text" [formControl]="themeIds[i]">
+    </div>
+    <div>
+      <button (click)="addItem()" [disabled]="form.disabled">Add control</button>
+    </div>
+  </div>
+  <label>
+    <div>NAME: </div>
+    <input placeholder="Next shop name" type="text" formControlName="nextName">
+  </label>
+  <label>
+    <div>MARK ALL PAGES AS MASTER: </div>
+    <input type="checkbox" formControlName="markAllPagesAsMaster">
+  </label>
+
+  <div>
+    <button (click)="onSubmit()" [disabled]="form.invalid || form.disabled">Copy</button>
+  </div>
+
+</form>

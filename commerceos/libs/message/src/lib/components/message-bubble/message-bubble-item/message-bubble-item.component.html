@@ -1,0 +1,23 @@
+<div class="bubble-wrapper">
+  <div
+    class="bubble {{item.style}}"
+    [style.background-color]="item.bgColor"
+    [style.box-shadow]="boxShadow"
+    [style.border-radius]="item.roundedValue"
+  >
+    <img class="bubble__logo"
+         *ngIf="img && showLogo.includes(layout)" [src]="img" alt="bubble">
+    <p class="bubble__placeholder"
+       *ngIf="((!img && item.layout === peMessageBubbleLayouts.Logo)
+      || (!item.text && !img && item.layout === peMessageBubbleLayouts.LogoText)
+      || (!item.text && item.layout === peMessageBubbleLayouts.Text)
+    ) && item.brand !== peMessageBubbleBrand.Payever"
+       [class.margin-left-0]="showOnlyText.includes(layout)"
+       [style.color]="item.textColor">{{companyName}}</p>
+    <p class="bubble__text-logo"
+       *ngIf="item.text && showText.includes(layout) && item.brand !== peMessageBubbleBrand.Payever"
+       [class.margin-left-0]="showOnlyText.includes(layout) || !img"
+       [style.color]="item.textColor">{{item.text}}</p>
+    <span class="bubble__notification" *ngIf="unreadMessages !== '0' && item.showNotifications">{{unreadMessages}}</span>
+  </div>
+</div>

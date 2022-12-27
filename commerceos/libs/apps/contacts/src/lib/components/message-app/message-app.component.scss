@@ -1,0 +1,121 @@
+@media (max-width: 720px) {
+  .message-dialog-wrapper {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+@media (max-height: 667px) {
+  .message-dialog-wrapper {
+    height: 496px;
+  }
+}
+@media (min-height: 667px) {
+  .message-dialog-wrapper {
+    height: 570px;
+  }
+}
+@media (min-width: 720px) {
+  .message-dialog-wrapper {
+    width: 720px;
+  }
+}
+
+@media (min-width: 1180px) {  
+  .message-dialog-wrapper {
+    width: 928px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .message-dialog-wrapper {
+    width: 1100px;
+  }
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  .mat-menu-content {
+    #import-menu {      
+      margin-top: calc(50vh - 320px) !important;
+      @media (min-width: 1400px) {
+        margin-left: calc(-50vw + 500px) !important;
+      }
+    }
+  }
+}
+.cdk-global-overlay-wrapper {
+  .mat-dialog-container {
+    border-radius: 20px;
+    background-color: rgba(36, 39, 46, 1) !important;
+    overflow: hidden;
+    padding: 0 0 26px 0 !important;
+  }  
+}
+
+.sidebar-menu__item {
+  padding: 0 !important;
+}
+.message-dialog-wrapper {
+  padding: 12px 4px;
+  &__header {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+    .header-buttons {
+      width: 51px;
+      height: 24px;
+      border-radius: 6px;
+      outline: 0;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .close-button {
+      background-color: #86868b;
+    }
+    .add-button {
+      background-color: #0371e2;
+      margin-left: 8px;
+    }
+  }
+  &__content {
+    height: calc(100% - 24px);
+    .data-grid-wrap {
+      height: 100%;
+
+      #products-data-grid {
+        .grid-content {
+          .data-grid-item-wrap {
+            .item-wrapper {
+              height: 100%;
+            }
+          }
+          .sidebar-wrap {
+            height: unset;
+            padding: 0 8px 0 0;
+          }
+
+          &__right {
+            padding: 0;
+          }
+        }
+      }
+      .section {
+        &__title {
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          margin: 14px 7px 7px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

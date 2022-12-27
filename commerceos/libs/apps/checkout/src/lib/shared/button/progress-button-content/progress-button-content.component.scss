@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+// required to prevent width changes of button
+.hidden-content {
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}

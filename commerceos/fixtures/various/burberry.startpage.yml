@@ -1,0 +1,648 @@
+id: burberry-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: burberry-main-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-title
+          type: text
+          data:
+            text: "DIE SOMMERLICHE TB-MONOGRAMM-<BR>KOLLEKTION"
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-button1
+              type: text
+              data:
+                text: FÃœR DAMEN
+                link:
+                  type: internal
+                  routeId: ''
+            - id: first-section-button2
+              type: text
+              data:
+                text: FÃœR HERREN
+                link:
+                  type: internal
+                  routeId: ''
+            - id: first-section-button3
+              type: text
+              data:
+                text: JETZT ENTDECKEN
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: second-section-title
+      type: section
+      children:
+        - id: second-section-text
+          type: text
+          data:
+            text: ATHLEISURE
+
+    - id: second-section
+      type: section
+      children: []
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-title
+          type: text
+          data:
+            text: "UNSER TASCHENDESIGN 'LOLA' IN LIMITIERTER AUFLAGE"
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-button1
+              type: text
+              data:
+                text: JETZT BESTELLEN
+                link:
+                  type: internal
+                  routeId: ''
+            - id: third-section-button2
+              type: text
+              data:
+                text: MEHR ENTDECKEN
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-title
+          type: text
+          data:
+            text: 'UNSERE AUSWAHL AN KINDERBEKLEIDUNG'
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-section-button1
+              type: text
+              data:
+                text: JETZT BESTELLEN
+                link:
+                  type: internal
+                  routeId: ''
+            - id: fourth-section-button2
+              type: text
+              data:
+                text: MEHR ENTDECKEN
+                link:
+                  type: internal
+                  routeId: ''
+
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 1fr 30 1fr
+      width: 1024
+      height: 700
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/737EE833-022E-4B13-A486-D43470C6AF30?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: auto
+    first-section-title:
+      width: 500
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 24
+      fontWeight: 700
+      margin: 220 250 30 250
+    first-section-block:
+      display: flex
+      margin: auto
+      gridTemplateColumns: 1fr 1fr 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      fontSize: auto
+      margin: 0 50 0 200
+      backgroundColor: 'transparent'
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontWeight: 700
+    first-section-button2:
+      color: '#fff'
+      width: 150
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      margin: 0
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      fontWeight: 700
+    first-section-button3:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      margin: 0 200 0 50
+      fontWeight: 700
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section-title:
+      display: grid
+    second-section:
+      display: grid
+      height: 700
+      backgroundImage: 'https://sun9-1.userapi.com/c858216/v858216667/229d16/CpUy76Gnsfw.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    second-section-text:
+      width: 1024
+      height: 20
+      textAlign: center
+      color: '#111'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 40 0
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      width: 1024
+      gridTemplateRows: 1fr 30 1fr
+      height: 700
+      backgroundImage: 'http://assets.burberry.com/is/image/Burberryltd/F5F7EBC5-343A-4F56-B7F7-028A2935C44B?$BBY_V2_BASIC$&wid=1500'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-title:
+      width: 700
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 24
+      fontWeight: 700
+      margin: 280 0 0 150
+    third-section-block:
+      display: flex
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+      width: 370
+      height: 55
+    third-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 10 10 0 0
+      fontWeight: 700
+    third-section-button2:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 10 0 0 10
+      fontWeight: 700
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateRows: 1fr 0 1fr
+      height: 700
+      width: 1024
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/013DC937-7376-45DA-A2F3-2225BE816790?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 auto 40
+    fourth-section-title:
+      width: 700
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 24
+      fontWeight: 700
+      margin: 280 0 0 200
+      backgroundColor: 'transparent'
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+      width: 370
+      height: 55
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      fontSize: auto
+      borderWidth: 3
+      borderStyle: solid
+      borderColor: '#fff'
+      margin: 0 10 0 0
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    fourth-section-button2:
+      color: '#fff'
+      backgroundColor: '#transparent'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      fontSize: auto
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      margin: 0 0 0 10
+      fontWeight: 700
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 1fr 30 1fr
+      height: 600
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/737EE833-022E-4B13-A486-D43470C6AF30?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-title:
+      width: 500
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      backgroundColor: 'transparent'
+      fontSize: 20
+      fontWeight: 700
+      margin: 250 150 20 150
+    first-section-block:
+      display: flex
+      margin: auto
+      gridTemplateColumns: 1fr 1fr 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      margin: 20 50 0 30
+      backgroundColor: 'transparent'
+      fontWeight: 700
+    first-section-button2:
+      color: '#fff'
+      width: 150
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      margin: 20 0 0 0
+      backgroundColor: 'transparent'
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontWeight: 700
+    first-section-button3:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      margin: 20 30 0 50
+      fontWeight: 700
+
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section-title:
+      display: grid
+    second-section:
+      display: grid
+      width: 768
+      height: 300
+      backgroundImage: 'https://sun9-1.userapi.com/c858216/v858216667/229d16/CpUy76Gnsfw.jpg'
+      backgroundSize: contain
+      backgroundPosition: center
+    second-section-text:
+      width: 768
+      height: 20
+      textAlign: center
+      color: '#111'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 40 0
+
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateRows: 1fr 30 1fr
+      height: 600
+      backgroundImage: 'http://assets.burberry.com/is/image/Burberryltd/F5F7EBC5-343A-4F56-B7F7-028A2935C44B?$BBY_V2_BASIC$&wid=1500'
+      backgroundSize: cover
+    third-section-title:
+      width: 500
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 20
+      fontWeight: 700
+      margin: 200 100 20 100
+      backgroundColor: 'transparent'
+    third-section-block:
+      display: flex
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+    third-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 10 10 0 80
+      fontWeight: 700
+    third-section-button2:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 10 200 0 10
+      fontWeight: 700
+
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateRows: 1fr 30 1fr
+      height: 500
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/013DC937-7376-45DA-A2F3-2225BE816790?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+    fourth-section-title:
+      width: 500
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 20
+      fontWeight: 700
+      margin: 200 150 20 150
+    fourth-section-block:
+      display: flex
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      margin: 10 10 0 150
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    fourth-section-button2:
+      color: '#fff'
+      backgroundColor: 'transparent'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      margin: 10 150 0 10
+      fontSize: auto
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontWeight: 700
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      width: 360
+      gridTemplateRows: 150 40 1fr
+      height: 350
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/737EE833-022E-4B13-A486-D43470C6AF30?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-title:
+      width: 300
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      backgroundColor: 'transparent'
+      fontSize: 15
+      fontWeight: 700
+      margin: 100 50 0 50
+    first-section-buttons:
+      display: flex
+      gridTemplateColumns: 1fr 1fr
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      fontSize: auto
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      margin: 10 10 10 30
+      backgroundColor: 'transparent'
+      fontWeight: 700
+    first-section-button2:
+      color: '#fff'
+      width: 150
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      margin: 10 30 10 10
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      fontWeight: 700
+    first-section-button3:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      borderWidth: 2
+      width: 150
+      textAlign: center
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      margin: 10 120 0 120
+      fontWeight: 700
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section-title:
+      display: grid
+      width: 360
+    second-section:
+      display: grid
+      width: 360
+      height: 150
+      backgroundImage: 'https://sun9-1.userapi.com/c858216/v858216667/229d16/CpUy76Gnsfw.jpg'
+      backgroundSize: contain
+      backgroundPosition: center
+    second-section-text:
+      width: 100
+      textAlign: center
+      color: '#111'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      fontWeight: 700
+      margin: 40 150
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      width: 360
+      gridTemplateRows: 1fr 30 1fr
+      height: 400
+      backgroundImage: 'http://assets.burberry.com/is/image/Burberryltd/F5F7EBC5-343A-4F56-B7F7-028A2935C44B?$BBY_V2_BASIC$&wid=1500'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-title:
+      width: 330
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 15
+      fontWeight: 700
+      margin: 100 0 0 30
+      backgroundColor: 'transparent'
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+      margin: auto
+    third-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      margin: 0 120 0 120
+      borderWidth: 2
+      width: 150
+      textAlign: center
+      borderStyle: solid
+      borderColor: '#fff'
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    third-section-button2:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      borderWidth: 2
+      width: 150
+      textAlign: center
+      borderStyle: solid
+      borderColor: '#fff'
+      backgroundColor: 'transparent'
+      margin: 10 120 0 120
+      fontWeight: 700
+    # -----------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      width: 360
+      gridTemplateRows: 1fr 30 1fr
+      height: 400
+      backgroundImage: 'https://assets.burberry.com/is/image/Burberryltd/013DC937-7376-45DA-A2F3-2225BE816790?$BBY_V2_BASIC$&wid=1349'
+      backgroundSize: cover
+      backgroundPosition: center
+    fourth-section-title:
+      width: 230
+      textAlign: center
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 15
+      fontWeight: 700
+      margin: 100 80 0 80
+      backgroundColor: 'transparent'
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: auto
+      margin: 10 120 0 120
+      borderWidth: 2
+      width: 150
+      textAlign: center
+      borderStyle: solid
+      borderColor: '#fff'
+      fontWeight: 700
+      backgroundColor: 'transparent'
+    fourth-section-button2:
+      color: '#fff'
+      backgroundColor: 'transparent'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      width: 150
+      textAlign: center
+      borderWidth: 2
+      borderStyle: solid
+      borderColor: '#fff'
+      fontSize: auto
+      margin: 10 120 0 120
+      fontWeight: 700
+
+context: {}

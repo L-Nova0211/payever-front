@@ -1,0 +1,107 @@
+@import "./../../panels/page-container.scss";
+
+.overlay-widget .pe-info-box-container-fixed.edit-settings {
+  width: 100%;
+  min-height: fit-content;
+
+  .pe-info-box {
+    min-width: 100%;
+  }
+}
+
+.edit-settings-form {
+  width: 100%;
+  padding: 0;
+
+  .edit-settings-select {
+    .label-select-wrapper {
+      background-color: #111111;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .input {
+        .label-container {
+          text-align: start;
+          padding: 0;
+          min-height: 39px;
+          color: $regular-text-color;
+
+          .select-text {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .edit-settings-input {
+    width: 100%;
+
+
+    .label-input-content-wrapper {
+      background-color: #111111;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .label-container.form-label {
+        color: $regular-text-color;
+
+        .label-text {
+          text-align: start;
+          padding: 0;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-light .pe-info-box-container-fixed.edit-settings .edit-settings-form {
+    .edit-settings-input .label-input-content-wrapper {
+      background-color: $content-light-background-color;
+
+      .label-container.form-label {
+        color: $regular-light-text-color;
+      }
+    }
+
+    .edit-settings-select {
+      .label-select-wrapper {
+        background-color: $content-light-background-color;
+
+        .input {
+          .label-container {
+            color: $regular-light-text-color;
+          }
+
+          .dropdown-arrow {
+            .mat-icon {
+              svg {
+                g {
+                  g {
+                    fill: $regular-light-text-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-transparent .pe-info-box-container-fixed.edit-settings .edit-settings-form {
+    .edit-settings-input .label-input-content-wrapper {
+      background-color: $content-transparent-background-color;
+    }
+
+    .edit-settings-select {
+      .label-select-wrapper {
+        background-color: $content-transparent-background-color;
+      }
+    }
+  }
+}

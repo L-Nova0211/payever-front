@@ -1,0 +1,15 @@
+<as-split unit="percent" direction="horizontal">
+  <as-split-area size="50">
+    <peb-viewer *ngIf="themeCompiled$ | async" [themeCompiled]="themeCompiled$ | async"></peb-viewer>
+  </as-split-area>
+  <as-split-area size="50">
+    <ace-editor
+      #sourceEditor
+      mode="yaml"
+      [text]="themeContent"
+      [options]="editorOptions"
+      [durationBeforeCallback]="1000"
+      (textChanged)="onChange($event)"
+    ></ace-editor>
+  </as-split-area>
+</as-split>

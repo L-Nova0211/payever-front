@@ -1,0 +1,151 @@
+@import 'pe_screen_variables.scss';
+
+
+// TODO Refactor that file, use color variables
+
+.welcome-screen {
+  font-family: Roboto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 260px;
+  height: 305px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #3b3b3b;
+  background-color: rgba(36, 39, 46, 0.85);
+
+  margin-left: -24px;
+  margin-right: -24px;
+  // padding-left: 24px;
+  // padding-right: 24px;
+
+  @media screen and (max-width: $viewport-breakpoint-xs-2) {
+    width: 342px;
+    height: 420px;
+  }
+}
+
+.welcome-screen-content {
+  max-width: 520px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 520px) {
+    max-width: 100%;
+  }
+}
+
+.welcome-screen-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 18px;
+
+  &:not(.commerceos) {
+    max-width: 86px;
+    max-height: 86px;
+    height: 65px;
+    width: 65px;
+  }
+
+  &.commerceos {
+    height: 32px;
+    width: 128px;
+  }
+}
+
+.welcome-screen-content-title {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.welcome-screen-content-description {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.welcome-screen-content-button {
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  width: 228px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #2482e7;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  &:not(.welcome-screen-content-button__dashboard):hover {
+    background-color: rgba(36, 130, 231, .8);
+  }
+
+  ::ng-deep mat-spinner {
+    margin: auto;
+
+    circle {
+      stroke: #ffffff;
+    }
+  }
+
+  &__dashboard {
+    background-image: none;
+    background-color: #6f7279;
+    &:hover{
+      background-color: rgba(111, 114, 121, 0.8) !important;
+    }
+  }
+}
+
+.welcome-screen-content-aclaration {
+
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px 8px 0 8px;
+
+  ::ng-deep a {
+    cursor: pointer;
+    color: #ffffff !important;
+    font-weight: 600;
+  }
+
+  ::ng-deep span {
+    text-transform: capitalize;
+  }
+}

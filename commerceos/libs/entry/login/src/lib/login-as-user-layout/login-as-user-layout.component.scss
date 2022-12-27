@@ -1,0 +1,39 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.mat-card-transparent {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+}
+.forgot-password-link {
+  display: block;
+  margin: $grid-unit-y * 2 auto 0;
+  color: $color-secondary-4;
+  text-decoration: underline;
+}
+.login-button {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+  font-weight: 500;
+  height: 54px;
+  margin: 8px auto 3px;
+  background-color: #383b42;
+  max-width: 328px;
+
+  &:hover{
+    background-color: rgb(66, 69, 76);
+  }
+
+  @media (min-width: 521px) {
+    height: 44px;
+  }
+}

@@ -1,0 +1,147 @@
+<div class="page" [ngClass]="theme">
+  <h1 class="page__title">{{ 'shipping-app.forms.local_delivery.title' | translate }}</h1>
+  <form [formGroup]="localDeliveryForm">
+    <div class="group">
+      <span class="group__label">{{ 'shipping-app.forms.local_delivery.location_status' | translate }}</span>
+      <div class="group__item" [ngClass]="localDeliveryForm.get('shippingOrigin').value ? 'content-top' : 'content-center'">
+        <div class="group__icon-wrapper">
+          <mat-icon class="group__icon-wrapper__item-icon" svgIcon="shipping-location-icon"></mat-icon>
+        </div>
+        <div class="group__item-label" *ngIf="localDeliveryForm.get('shippingOrigin').value">
+          {{ localDeliveryForm.get('shippingOrigin').value.name }},
+          {{ localDeliveryForm.get('shippingOrigin').value.streetName }}
+          {{ localDeliveryForm.get('shippingOrigin').value.streetNumber }},
+          {{ localDeliveryForm.get('shippingOrigin').value.zipCode }}
+          {{ localDeliveryForm.get('shippingOrigin').value.city }},
+          {{ localDeliveryForm.get('shippingOrigin').value.countryCode | country }}
+        </div>
+        <div class="group__item-label" *ngIf="!localDeliveryForm.get('shippingOrigin').value">
+          <span>{{ 'shipping-app.forms.add_shipping' | translate }}</span>
+        </div>
+        <div class="group__item-right-content">
+          <button peb-text-button color="confirm" (click)="openEditLocationModal()">
+            {{
+              localDeliveryForm.get('shippingOrigin').value
+                ? ('shipping-app.actions.edit' | translate)
+                : ('shipping-app.actions.add' | translate)
+            }}
+          </button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="group__item">
+        <peb-checkbox formControlName="hasLocalDelivery">{{
+          'shipping-app.forms.local_delivery.has_local_delivery' | translate
+        }}</peb-checkbox>
+      </div>
+      <span class="group__label-bottom">
+        {{ 'shipping-app.forms.local_delivery.delivery_prices' | translate }} {{ currency | currencySymbol: true }} ({{ currency }}).
+        <a class="link" (click)="nagivateToCurrency()">{{ 'shipping-app.forms.local_delivery.change_currency' | translate }}</a>
+      </span>
+    </div>
+    <ng-container *ngIf="localDeliveryForm.get('hasLocalDelivery').value">
+      <div class="group">
+        <span class="group__label">{{ 'shipping-app.forms.local_delivery.delivery_area' | translate }}</span>
+<!--        Needs for the future -->
+<!--        <div class="group__item">-->
+<!--          <peb-radio name="deliveryArea" [checked]="localDeliveryForm.controls.deliveryArea.value === 'radius'"-->
+<!--                     formControlName="deliveryArea" value="radius">-->
+<!--            {{ 'shipping-app.forms.local_delivery.delivery_area_label' | translate }}-->
+<!--          </peb-radio>-->
+<!--        </div>-->
+<!--        <div class="divider"></div>-->
+        <div class="group__item">
+          <peb-radio name="deliveryArea" [checked]="localDeliveryForm.controls.deliveryArea.value === 'postal_code'"
+                     formControlName="deliveryArea" value="postal_code">
+            {{ 'shipping-app.forms.local_delivery.delivery_area_postal' | translate }}
+          </peb-radio>
+        </div>
+        <span class="group__label-bottom">
+          {{ 'shipping-app.forms.local_delivery.delivery_area_label_bottom' | translate }}
+        </span>
+      </div>
+
+      <ng-container *ngIf="localDeliveryForm.get('deliveryArea').value !== 'postal_code'; else PostalCodeTemplate">
+        <div class="group">
+          <span class="group__label">{{ 'shipping-app.forms.local_delivery.delivery_radius' | translate }}</span>
+          <peb-form-field-input>
+            <input
+              type="number"
+              id="deliveryRadius"
+              formControlName="deliveryRadius"
+              [placeholder]="'shipping-app.forms.local_delivery.placeholder' | translate"
+              (blur)="updateLocalDelivery()"
+            />
+            <div class="suffix">
+              <peb-select formControlName="radiusMeasurementUnit">
+                <peb-select-option
+                  class="select-options"
+                  *ngFor="let item of distanceMeasurementUnits"
+                  label="{{ item.label }}"
+                  value="{{ item.value }}"
+                ></peb-select-option>
+              </peb-select>
+            </div>
+          </peb-form-field-input>
+        </div>
+      </ng-container>
+
+      <ng-template #PostalCodeTemplate>
+        <div class="group">
+          <span class="group__label">{{ 'shipping-app.forms.local_delivery.postal_codes' | translate }}</span>
+          <peb-chips-list
+            [placeholder]="'shipping-app.forms.local_delivery.placeholder_postal' | translate"
+            formControlName="postalCodes"
+          ></peb-chips-list>
+          <span class="group__label-bottom">{{ 'shipping-app.forms.local_delivery.postal_codes_label_bottom' | translate }}</span>
+        </div>
+      </ng-template>
+<!--       Needs for the future -->
+<!--      <ng-container *ngIf="localDeliveryForm.get('deliveryArea').value === 'radius' || localDeliveryForm.get('postalCodes').value?.length">-->
+<!--        <div class="group">-->
+<!--          <span class="group__label">{{ 'shipping-app.forms.local_delivery.minimum_price_label' | translate }}</span>-->
+<!--          <peb-form-field-input>-->
+<!--            <input-->
+<!--              id="minOrderPrice"-->
+<!--              formControlName="minOrderPrice"-->
+<!--              (blur)="updateLocalDelivery()"-->
+<!--              type="number"-->
+<!--              placeholder="{{ 'shipping-app.forms.local_delivery.placeholder' | translate }}"-->
+<!--            />-->
+<!--            <div class="suffix">-->
+<!--              <p>{{ currency | currencySymbol }}</p>-->
+<!--            </div>-->
+<!--          </peb-form-field-input>-->
+<!--        </div>-->
+<!--        <div class="group" *ngIf="!localDeliveryForm.get('conditionalDeliveryPricing').value">-->
+<!--          <span class="group__label">{{ 'shipping-app.forms.local_delivery.delivery_price' | translate }}</span>-->
+<!--          <peb-form-field-input>-->
+<!--            <input-->
+<!--              id="deliveryPrice"-->
+<!--              formControlName="deliveryPrice"-->
+<!--              (blur)="updateLocalDelivery()"-->
+<!--              type="number"-->
+<!--              placeholder="{{ 'shipping-app.forms.local_delivery.placeholder' | translate }}"-->
+<!--            />-->
+<!--            <div class="suffix">-->
+<!--              <p>{{ currency | currencySymbol }}</p>-->
+<!--            </div>-->
+<!--          </peb-form-field-input>-->
+<!--        </div>-->
+
+<!--        <div class="group">-->
+<!--          <span class="group__label">{{ 'shipping-app.forms.local_delivery.delivery_information' | translate }}</span>-->
+<!--          <peb-form-field-textarea>-->
+<!--            <textarea-->
+<!--              id="deliveryMessage"-->
+<!--              formControlName="deliveryMessage"-->
+<!--              (blur)="updateLocalDelivery()"-->
+<!--              placeholder="{{ 'shipping-app.forms.local_delivery.placeholder' | translate }}"-->
+<!--              rows="4"-->
+<!--            ></textarea>-->
+<!--          </peb-form-field-textarea>-->
+<!--        </div>-->
+<!--      </ng-container>-->
+    </ng-container>
+  </form>
+</div>

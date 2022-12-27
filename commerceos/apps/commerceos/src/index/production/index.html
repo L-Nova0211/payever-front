@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>payever</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="icon" type="image/x-icon" href="MICRO_URL_CUSTOM_CDN/favicon.ico">
+  <style>
+ .pe-root-loader {
+      width: 26px;
+      height: 26px;
+      animation: pe-root-loader-spin 2s linear infinite;
+
+      position: absolute;
+      left: calc(50% - 13px);
+      top: calc(50% - 13px);
+    }
+
+    
+    .pe-root-loader svg {
+      width: 26px;
+      height: 26px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .pe-root-loader circle {
+      animation-name: pe-root-loader-material-spinner-stroke-rotate-26;
+      stroke-dasharray: 50.2655px;
+      stroke-width: 7.69231%;
+      transition-property: stroke;
+      animation-duration: 4000ms;
+      animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+      animation-iteration-count: infinite;
+      fill: transparent;
+      transform-origin: center;
+      transition: stroke-dashoffset 225ms linear;
+      stroke: #fff;
+    }
+
+    @keyframes pe-root-loader-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pe-root-loader-material-spinner-stroke-rotate-26 {
+      0%      { stroke-dashoffset: 47.752208334564855;  transform: rotate(0); }
+      12.5%   { stroke-dashoffset: 10.053096491487338;    transform: rotate(0); }
+      12.5001%  { stroke-dashoffset: 10.053096491487338;    transform: rotateX(180deg) rotate(72.5deg); }
+      25%     { stroke-dashoffset: 47.752208334564855;  transform: rotateX(180deg) rotate(72.5deg); }
+
+      25.0001%   { stroke-dashoffset: 47.752208334564855;  transform: rotate(270deg); }
+      37.5%   { stroke-dashoffset: 10.053096491487338;    transform: rotate(270deg); }
+      37.5001%  { stroke-dashoffset: 10.053096491487338;    transform: rotateX(180deg) rotate(161.5deg); }
+      50%     { stroke-dashoffset: 47.752208334564855;  transform: rotateX(180deg) rotate(161.5deg); }
+
+      50.0001%  { stroke-dashoffset: 47.752208334564855;  transform: rotate(180deg); }
+      62.5%   { stroke-dashoffset: 10.053096491487338;    transform: rotate(180deg); }
+      62.5001%  { stroke-dashoffset: 10.053096491487338;    transform: rotateX(180deg) rotate(251.5deg); }
+      75%     { stroke-dashoffset: 47.752208334564855;  transform: rotateX(180deg) rotate(251.5deg); }
+
+      75.0001%  { stroke-dashoffset: 47.752208334564855;  transform: rotate(90deg); }
+      87.5%   { stroke-dashoffset: 10.053096491487338;    transform: rotate(90deg); }
+      87.5001%  { stroke-dashoffset: 10.053096491487338;    transform: rotateX(180deg) rotate(341.5deg); }
+      100%    { stroke-dashoffset: 47.752208334564855;  transform: rotateX(180deg) rotate(341.5deg); }
+    }
+
+
+    @font-face {
+    font-family: 'Roboto';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto-Regular';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto-Light';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Thin.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto-Thin';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Thin.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Thin.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto-Medium';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Medium.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Bold';
+    font-display: block;
+    src: url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('MICRO_URL_CUSTOM_CDN/fonts/roboto/Roboto-Bold.woff') format('woff');
+  }
+  </style>
+</head>
+<body class="pe-bootstrap" style="background-color: #6f6f6f;">
+  <div id="pe-root-loader" class="pe-root-loader">
+    <svg viewBox="0 0 18 18" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <circle cx="50%" cy="50%" r="8"></circle>
+    </svg>
+  </div>
+  <script type="text/javascript" src="MICRO_URL_CUSTOM_CDN/js/pe-static.js"></script>
+  <app-root></app-root>
+</body>
+</html>

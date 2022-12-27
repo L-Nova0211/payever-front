@@ -1,0 +1,16 @@
+<div *ngIf="ratingsArray" class="rating-lines">
+  <!-- Stars -->
+  <div class="stars">
+    <div *ngFor="let rating of ratingsArray.slice().reverse() ; let i = index" class="stars__line">
+        <div *ngFor="let star of [].constructor(ratingsArray.length - i)" class="stars__star">
+          {{ FILLED_STAR }}
+        </div>
+    </div>
+  </div>
+
+  <!-- Lines -->
+  <div class="lines">
+    <hr *ngFor="let rating of ratingsArray.slice().reverse()" [attr.style]="sanitizer.bypassSecurityTrustStyle('--custom: ' + getPercentFromTotal(rating))" class="lines__item">
+  </div>
+</div>
+

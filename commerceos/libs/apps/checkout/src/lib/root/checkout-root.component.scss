@@ -1,0 +1,187 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+
+.profile-list-layout .mat-card-transparent .card-content-center-align .profile-list-container {
+  color: white;
+}
+
+.pe-bootstrap cos-checkout-root .pe-info-box {
+  display: block;
+  transform: unset;
+}
+
+.pac-container {
+  z-index: 200100;
+}
+
+cos-checkout-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+
+  .mat-list-item-content .mat-list-item-flex .mat-list-item-col:not(:last-of-type) {
+    padding-right: 12px;
+  }
+
+  .page__title {
+    margin: 0 !important;
+  }
+
+  .checkout-app-container {
+    width: 100%;
+    height: 100%;
+    background-color: #24272e;
+
+    &.light {
+      background-color: #f3f2f8;
+    }
+
+    &.transparent {
+      background-color: rgba(36, 39, 46, 0.8);
+    }
+
+    pe-simple-welcome-stepper {
+      position: static;
+      display: flex;
+
+      .pe-simple-stepper {
+        position: static;
+        width: 100%;
+      }
+    }
+
+    .top-offset-fix {
+      transform: translateX(0);
+    }
+
+    .checkout-app-content {
+      position: relative;
+      flex: 1;
+      background-color: transparent;
+    }
+
+
+  }
+
+  .checkout-header .close-button.checkout-header-close {
+    cursor: pointer;
+  }
+
+  .cdk-overlay-container .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane {
+    margin-top: 3px;
+
+    .mat-menu-panel {
+      min-width: 64px;
+      max-width: 360px;
+      min-height: 0;
+      overflow: hidden;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      border-radius: 16px;
+      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
+      -webkit-mask-image: none;
+
+      &.mat-menu-dark {
+        background-color: rgba(28, 29, 30, 0.85) !important;
+
+        .mat-menu-item,
+        .mat-menu-item .icon {
+          color: white;
+        }
+      }
+
+      .mat-menu-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: transparent;
+
+        .mat-menu-item {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    .checkout-app-container {
+      display: flex;
+      flex-direction: column;
+
+      .grid-content__right-mobile {
+        position: relative !important;
+        width: 100% !important;
+      }
+
+      pe-new-platform-header.checkout-header.subheader-mode {
+        .header-container.subheader-mode {
+          padding: 16px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 721px) {
+    pe-new-platform-header.checkout-header{
+      padding: 0;
+    }
+    .header-container { padding: 16px !important; }
+  }
+
+  .checkout-app-container mat-list.mat-list.mat-list-base mat-list-item.mat-list-item .expansion-list-button.mat-raised-button.mat-muted-light {
+    padding-left: 0;
+    padding-right: 16px;
+  }
+
+  pe-checkout-modal {
+    .settings-container .actions-container .settings-container .settings-box .round-color-picker .dropdown.dropdown-alternate {
+      display: flex;
+
+      .btn-colorpicker {
+        border: 1px solid rgba(113, 133, 113, 0.5);
+        height: 24px;
+        width: 24px;
+      }
+
+      .pe-btn-colorpicker {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.pe-bootstrap .pe-info-box {
+  .mat-list-transparent .mat-list-item-content,
+  .pe-bootstrap .mat-nav-list-transparent .mat-list-item-content {
+    .mat-expansion-panel-spacer {
+      flex: 1;
+    }
+  }
+}
+
+.overlay-widget-container {
+  .overlay-widget__back {
+    margin-left: 24px !important;
+  }
+
+  .overlay-widget__done {
+    margin-right: 24px !important;
+  }
+}
+
+.cdk-overlay-backdrop.channels-modal+.cdk-global-overlay-wrapper,
+.cdk-overlay-backdrop.checkout-panel-modal+.cdk-global-overlay-wrapper,
+.cdk-overlay-backdrop.checkout-panel-short-modal+.cdk-global-overlay-wrapper {
+  .form-table .form-fieldset {
+    margin-right: 3px;
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -1px;
+
+      & > [class*=col] {
+        border-right: 1px solid #21252e !important;
+      }
+    }
+  }
+}

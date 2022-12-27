@@ -1,0 +1,22 @@
+<button class="tool" type="button" (click)="!loading && openZoom(zoomButton)" [class.tool-loading]="loading" #zoomButton>
+  <div class="tool__icon" *ngIf="!isMobile; else zoom">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16">
+      <g fill="none" fill-rule="evenodd" transform="translate(-226 -64) translate(163 56) translate(12 8) translate(51)">
+        <circle cx="6.8" cy="6.8" r="6.371" stroke="#0371E2" stroke-width=".857"/>
+        <path fill="#0371E2" fill-rule="nonzero" d="M6.8 3.2c.204 0 .372.149.397.34l.003.05V6.4h2.81c.215 0 .39.18.39.4 0 .204-.149.372-.34.397l-.05.003H7.2v2.81c0 .215-.18.39-.4.39-.204 0-.372-.149-.397-.34l-.003-.05V7.2H3.59c-.215 0-.39-.18-.39-.4 0-.204.149-.372.34-.397l.05-.003H6.4V3.59c0-.215.18-.39.4-.39z"/>
+        <path stroke="#0371E2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".856" d="M10.8 12.4L13.6 16"/>
+      </g>
+    </svg>
+  </div>
+  <ng-template #zoom>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="23" viewBox="0 0 20 23">
+      <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-98 -69) translate(28 69) translate(70.125)">
+          <circle cx="9.35" cy="9.35" r="8.761" stroke="#0371E2" stroke-width="1.179"/>
+          <path fill="#0371E2" fill-rule="nonzero" d="M9.35 4.4c.28 0 .512.204.546.469l.004.067v3.863l3.864.001c.296 0 .536.246.536.55 0 .28-.204.512-.469.546l-.067.004H9.9v3.864c0 .296-.246.536-.55.536-.28 0-.512-.204-.546-.469l-.004-.067V9.899L4.936 9.9c-.296 0-.536-.246-.536-.55 0-.28.204-.512.469-.546l.067-.004L8.8 8.799V4.936c0-.296.246-.536.55-.536z"/>
+          <path stroke="#0371E2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.177" d="M14.85 17.05L18.7 22"/>
+        </g>
+      </g>
+    </svg>
+  </ng-template>
+</button>

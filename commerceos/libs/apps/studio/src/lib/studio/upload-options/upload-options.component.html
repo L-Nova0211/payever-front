@@ -1,0 +1,26 @@
+<div class="options-dialog">
+  <div class="options-dialog__title">
+    Upload media
+  </div>
+  <div class="options-dialog__options">
+    <button *ngFor="let option of options"
+      class="options-dialog__options-button"
+      (click)="option.action()">
+      {{ option.title }}
+    </button>
+    <button
+      class="options-dialog__options-button button-cancel"
+      (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<input
+  #fileSelector
+  accept="image/*,video/*"
+  type="file"
+  style="display: none"
+  multiple
+  (change)="uploadMedia($event)"
+/>

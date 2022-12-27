@@ -1,0 +1,13 @@
+<peb-renderer
+  *ngIf="snapshot"
+  [context]="snapshot.context"
+  [element]="snapshot.template"
+  (interacted)="onInteraction($event, componentRef)"
+  [options.defaultLocale]="defaultLanguage"
+  [options.interactions]="true"
+  [options.locale]="language$ | async"
+  [options.readOnly]="true"
+  [options.scale]="scale$ | async"
+  [options.screen]="screen$ | async"
+  [stylesheet]="snapshot.stylesheets[screen$ | async]"
+></peb-renderer>

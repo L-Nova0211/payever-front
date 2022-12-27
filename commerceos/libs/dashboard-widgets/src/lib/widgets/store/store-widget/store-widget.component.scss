@@ -1,0 +1,68 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.store-widget-button {
+  margin-left: auto;
+  width: 50%;
+}
+/*
+:host {
+  store-info {
+    max-width: 50%;
+  }
+}
+
+.store-state {
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  margin-left: 18px;
+  max-width: calc(50% - 18px);
+
+  span {
+    font-weight: normal;
+    font-size: $font-size-micro-1;
+    color: #fff;
+  }
+  span b {
+    color: $color-secondary-4;
+    font-weight: normal;
+  }
+  .domain-wrap {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.arrow-right {
+  margin: auto 0 auto auto;
+  position: relative;
+  right: -8px;
+  color: $color-secondary-4;
+  cursor: pointer;
+}
+
+@media (max-width: $viewport-breakpoint-ipad - 1) {
+  .store-state {
+    margin-left: 6px;
+    span {
+      font-size: 10px;
+    }
+  }
+  .arrow-right {
+    display: none;
+  }
+}
+*/

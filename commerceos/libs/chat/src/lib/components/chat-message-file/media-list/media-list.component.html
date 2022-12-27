@@ -1,0 +1,38 @@
+<div
+  *ngIf="isSingleFile && files[0].url"
+  class="message-content-group__single-image"
+>
+  <pe-chat-message-file-loader
+    [file]="files[0]"
+    [theming]="theming"
+  ></pe-chat-message-file-loader>
+  <img
+    *ngIf="files[0].loaded$ | async as content"
+    alt=""
+    class="message-content-group__files_preview"
+    [src]="content"
+  />
+</div>
+
+<div
+  *ngIf="isFileList"
+  class="message-content-group__sub-1 message-content-group__sub-1_{{files.length}}"
+>
+  <ng-container *ngFor="let file of files; trackBy: trackBy">
+    <div
+      *ngIf="file.url"
+      class="message-content-group__image"
+    >
+      <pe-chat-message-file-loader
+        [file]="file"
+        [theming]="theming"
+      ></pe-chat-message-file-loader>
+      <img
+        *ngIf="file.loaded$ | async as content"
+        alt=""
+        class="message-content-group__files_preview"
+        [src]="content"
+      />
+    </div>
+  </ng-container>
+</div>

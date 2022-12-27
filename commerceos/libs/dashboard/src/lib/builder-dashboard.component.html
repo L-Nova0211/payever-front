@@ -1,0 +1,66 @@
+<div class="pe-dashboard" [ngClass]="theme">
+  <div class="pe-dashboard__header">
+    <div class="pe-dashboard__header-title">
+      <span *ngIf="(getAccessGonfig$ | async) as accessData">
+        {{ accessData.internalDomain
+            ? accessData.internalDomain + '.' + pePrimaryHost
+            : ('domains-lib.errors.not_connected' | translate)
+        }}
+      </span>
+    </div>
+    <button
+      class="pe-dashboard__open-button"
+      (click)="openUrl()"
+    >{{ 'builder-app.dashboard.actions.open' | translate }}</button>
+    <button class="pe-dashboard__menu-button" [matMenuTriggerFor]="itemMenu">
+      <svg>
+        <use [attr.xlink:href]="'#icon-dots-h-24'"></use>
+      </svg>
+    </button>
+
+    <mat-menu
+      #itemMenu="matMenu"
+      [class]="'pe-dashboard-menu ' + theme"
+      >
+      <div class="pe-dashboard-menu__header">
+        <div class="pe-dashboard-menu__title">{{ 'builder-app.dashboard.options' | translate | uppercase }}</div>
+        <svg class="pe-dashboard-menu__close-button">
+          <use xlink:href="#icon-ui-close-circle"></use>
+        </svg>
+      </div>
+      <button
+        *ngFor="let menuItem of dashboardMenuItems.slice(0, internalDomain ? 3 : 1)"
+        mat-menu-item
+        class="pe-dashboard-menu__item"
+        (click)="onMenuItemClick(menuItem.title)"
+      >
+        <svg class="pe-dashboard-menu__item-icon">
+          <use [attr.xlink:href]="menuItem.icon"></use>
+        </svg>
+        <div class="pe-dashboard-menu__item-title">
+          {{ ('builder-app.dashboard.actions.' + menuItem.title) | translate }}
+        </div>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="pe-dashboard__viewer-container">
+    <div *ngIf="(preview$ | async) as preview" class="pe-dashboard__scrollbar">
+      <h2 *ngIf="!preview.published && !preview.current">
+        {{ errorMessage ? errorMessage : ('builder-app.dashboard.warnings.no_plans_to_display' | translate) }}
+      </h2>
+      <peb-viewer
+        *ngIf="preview.published || preview.current"
+        class="pe-dashboard__viewer"
+        [themeCompiled]="preview.published?.id === preview.current?.id ? preview.published : preview.current"
+        [screen]="screen"
+      ></peb-viewer>
+    </div>
+    <mat-spinner
+      *ngIf="!(preview$ | async)"
+      class="pe-dashboard__spinner"
+      diameter="22"
+      strokeWidth="2"
+    ></mat-spinner>
+  </div>
+</div>

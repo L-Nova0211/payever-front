@@ -1,0 +1,17 @@
+<div [ngClass]="widgetTheme" class="flex">
+  <div class="icons">
+    <ng-container *ngFor="let icon of widget.data">
+      <ng-container *ngIf="icon.title">
+        <div class="icons__link" >
+          <svg class ="style_img">
+            <use xlink:href="'icons-social-' + icon?.title"></use>
+          </svg>
+          <div class="icons__title">{{icon?.title}}</div>
+        </div>
+      </ng-container>
+      </ng-container>
+      <div *ngIf="!widget.data?.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+      </div>
+  </div>
+</div>

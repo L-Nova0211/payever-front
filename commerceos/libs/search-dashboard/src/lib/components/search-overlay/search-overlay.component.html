@@ -1,0 +1,115 @@
+<div class="search_container" [ngClass]="theme">
+  <div class="header">
+      <div class="input-container" [ngClass]="theme">
+          <svg class="search-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search-16"></use>
+          </svg>
+          <input #input type="text" class="search-input" placeholder="Search" [(ngModel)]="searchText">
+          <button
+            mat-raised-button
+            class="widget-card-plus-button mat-button-rounded mat-button-xs search-widget-close "
+            (click)="searchText = null;"
+            type="button"
+            color="muted-white-themed"
+            *ngIf="searchText && searchText.length > 0"
+          >
+            <ng-container>
+              <svg height="10" width="10">
+                <use xlink:href="#icon-close-16"></use>
+              </svg>
+            </ng-container>
+          </button>
+      </div>
+      <div class="cancel-button" [ngClass]="theme" (click)="close()">
+          Cancel
+      </div>
+  </div>
+  <div class="content">
+    <div class="no_result" [ngClass]="theme" *ngIf="!searchText || isLoading || !groups.length">
+      <ng-container *ngIf="isLoading && searchText; else noResult">
+        <div class="loading">Searching...</div>
+        <div></div>
+      </ng-container>
+
+      <ng-template #noResult>
+        <ng-container *ngIf="!searchText || !groups.length">
+          <div>{{message.title}}</div>
+          <div>{{message.subtitle}}</div>
+        </ng-container>
+      </ng-template>
+    </div>
+    <ng-container *ngIf="(installedApps$ | async)?.length">
+      <div class="search-list-container" [ngClass]="theme" *ngIf="!searchText || !groups.length">
+          <div class="list-header">
+              SUGGESTED APPS
+          </div>
+          <div class="search-items" *ngFor ="let item of installedApps$ | async" (click)="openApp(item)">
+            <div>
+              <svg class="search-icon" [class]="theme">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" [attr.xlink:href]="item.icon"></use>
+              </svg>
+              <div [class]="theme">
+                  <div class="search-title">{{item.title}}</div>
+                  <div class="search-description" *ngIf="item.description">{{item.description}}</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="content" [ngClass]="theme" *ngIf="searchText && groups.length">
+    <ng-container *ngFor="let group of groups">
+      <ng-container *ngIf="group.heading === 'businesses'; else merchant">
+        <div class="search-list-container" [ngClass]="theme" *ngIf="group.items.length">
+          <div class="list-header">
+              {{group.heading|uppercase}}
+          </div>
+          <div class="search-items" *ngFor ="let item of group.items" (click)="onClickResultAsAdmin(item)">
+            <div>
+              <ng-container *ngIf="item?.logo; else noImage">
+                <img *ngIf="item?.logo" class="search-icon" [src]="item?.logo">
+              </ng-container>    
+              <ng-template #noImage>
+                <svg class="search-icon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-commerceos-contacts"></use>
+                </svg>
+              </ng-template>
+              <div>
+                <div class="search-title">
+                  {{item.name}}
+                </div>
+                <div class="search-description" *ngIf="item.description">{{item.email}}</div>
+              </div> 
+            </div>               
+            <mat-spinner *ngIf="item.navigating" class="mat-progress-spinner-light spiner-text" [strokeWidth]="spinerStrokeWidth" [diameter]="spinerDiameter"></mat-spinner>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #merchant>
+        <div class="search-list-container" [ngClass]="theme">
+          <div class="list-header">
+              {{group.heading|uppercase}}
+          </div>
+          <ng-container *ngFor ="let item of group.items">
+            <div class="search-items" *ngIf="item.title" (click)="onClickResult(item)">
+              <div>
+                <svg *ngIf="item.icon" class="search-icon">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" [attr.xlink:href]="item.icon"></use>
+                </svg>
+                <div>
+                  <div class="search-title">
+                    {{item.title}}              
+                  </div>
+                  <div class="search-description" *ngIf="item.description">
+                    {{ (item.description && item.description.length > 60) ? (item.description | slice:0:60)+'...':(item.description || '') }}
+                  </div>
+                </div>
+              </div>
+              <mat-spinner *ngIf="item.navigating" class="mat-progress-spinner-light" [strokeWidth]="spinerStrokeWidth" [diameter]="spinerDiameter"></mat-spinner>
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</div>

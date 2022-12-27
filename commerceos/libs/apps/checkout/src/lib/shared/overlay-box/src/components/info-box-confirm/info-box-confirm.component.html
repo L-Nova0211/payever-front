@@ -1,0 +1,28 @@
+<pe-info-box [withHeader]="false"
+             [withFooter]="false"
+             [blurred]="false"
+             [blurBackdrop]="true"
+             [notFullwidthOnMobile]="true"
+             [roundBorder]="true"
+>
+  <ng-container content>
+    <div class="content">
+      <svg class="icon icon-24"><use [attr.xlink:href]="'#' + icon"></use></svg>
+      <h2>{{ title }}</h2>
+      <p class="descriptions">{{ subtitle }}</p>
+      <div class="buttons" [class.one-button]="!cancelButtonTitle || !confirmButtonTitle">
+        <button *ngIf="cancelButtonTitle"
+                (click)="onCancelClick()" color="muted-light"
+                mat-raised-button
+                [class.mat-button-xs]="true"
+                [class.mat-button-rounded]="true">{{ cancelButtonTitle }}</button>
+        <button *ngIf="confirmButtonTitle"
+                (click)="onConfirmClick()"
+                color="muted-light"
+                mat-raised-button
+                [class.mat-button-xs]="true"
+                [class.mat-button-rounded]="true">{{ confirmButtonTitle }}</button>
+      </div>
+    </div>
+  </ng-container>
+</pe-info-box>

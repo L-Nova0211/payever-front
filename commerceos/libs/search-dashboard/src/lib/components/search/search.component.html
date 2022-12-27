@@ -1,0 +1,13 @@
+<div class="pe-input-search pe-input-search-dark">
+  <mat-form-field [floatLabel]="'never'" [ngClass]="{ 'no-label-input': !!searchString }">
+    <mat-icon matPrefix class="addon-icon-button">
+      <svg class="icon icon-24 icon-search">
+        <use xlink:href="#icon-search-16"></use>
+      </svg>
+    </mat-icon>
+    <input matInput type="search" autofocus [(ngModel)]="searchString" [placeholder]="placeholder" (input)="onInputChange($event)">
+    <mat-progress-spinner *ngIf="showSpinner" matSuffix class="search-spinner mat-progress-spinner-light"
+      [strokeWidth]="2" [diameter]="26" [mode]="'indeterminate'" [value]="50">
+    </mat-progress-spinner>
+  </mat-form-field>
+</div>

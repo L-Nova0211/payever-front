@@ -1,0 +1,16 @@
+<div class="media-context-menu">
+  <div class="media-context-menu__option" (click)="addMedia(mediaOptions.Picture)">
+    <peb-editor-picture-icon class="media-context-menu__icon"></peb-editor-picture-icon>
+    {{mediaOptions.Picture}}
+  </div>
+
+  <!-- <div class="media-context-menu__option" (click)="addMedia(mediaOptions.Gallery)">
+    <peb-editor-gallery-icon class="media-context-menu__icon"></peb-editor-gallery-icon>
+    {{mediaOptions.Gallery}}
+  </div> -->
+
+  <div class="media-context-menu__option" (click)="addMedia(mediaOptions.Video)">
+    <peb-editor-video-icon class="media-context-menu__icon"></peb-editor-video-icon>
+    {{mediaOptions.Video}}
+  </div>
+</div>

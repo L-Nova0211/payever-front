@@ -1,0 +1,22 @@
+<ng-container *ngFor="let product of productsSection.products">
+  <div class="product">
+    <div class="product__wrapper">
+      <div *ngIf="product.images && product.images.length; then image else placeholder"></div>
+
+      <ng-template #image>
+        <div class="product__image" [style.background-image]="'url('+ getImagePath(product.images[0]) +')'"></div>
+      </ng-template>
+
+      <ng-template #placeholder>
+        <div class="product__placeholder">
+          <svg class="icon icon-32" width="20" height="20">
+            <use xlink:href="#icon-images-128"></use>
+          </svg>
+        </div>
+      </ng-template>
+
+      <span>{{ product.title }}</span>
+    </div>
+    <button (click)="onDeleteProduct(product.id)">Remove</button>
+  </div>
+</ng-container>

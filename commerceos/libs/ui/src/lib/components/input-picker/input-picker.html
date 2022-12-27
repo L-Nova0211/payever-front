@@ -1,0 +1,28 @@
+<div class="picker-container theme-{{theme}}" [attr.id]="inputId">
+  <div class="picker-container__controls">
+    <div class="input-with-label" [class.is-invalid]="isFieldInvalid">
+    <span tabindex="-1" class="label-text">{{isFieldInvalid ? errorMessage : label}}</span>
+      <input
+        placeholder="{{placeholder}}"
+        #input
+        (keyup)="onKey($event)"
+        [matAutocomplete]="auto"
+        [attr.id]="inputId"
+      />
+      <mat-autocomplete class="picker-autocomplete-panel theme-{{theme}} {{panelClass}}"
+       #auto="matAutocomplete" [displayWith]="getOptionText">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option" (click)="onAddItem(option)">
+          <div class="picker-option-item">
+            <div *ngIf="option.image" class="picker-option-item__image">
+              <img alt="" [src]="option.image" />
+            </div>
+            <span class="picker-option-item__label"> {{option.label}} </span>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+    <div class="input-with-label__button" *ngIf="buttonLabel">
+      <button peb-text-button color="confirm" (click)="onButtonClick()">{{buttonLabel}}</button>
+    </div>
+  </div>
+</div>

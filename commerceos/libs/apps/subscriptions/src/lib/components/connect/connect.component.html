@@ -1,0 +1,15 @@
+<pe-list-container [title]="'connect-app.layout.title'" [hideTitleInMobile]="true">
+  <pe-list-section
+    [actionButtonType]="actionButtonType"
+    [addButtonLabel]="'connect-app.actions.add_integrations'"
+    [integrations]="paymentsIntegrations$ | async"
+    [isInForm]="false"
+    [sectionTitle]="'subscriptions-app.settings.payments'"
+    [showAddButton]="true"
+    [showGroupTitle]="true"
+    [toggleButtonLabel]="'connect-app.actions.open'"
+    [upperCase]="true"
+    (navigated)="navigateToConnect($event)"
+    (switched)="switchIntegration($event)"
+  ></pe-list-section>
+</pe-list-container>

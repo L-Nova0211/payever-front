@@ -1,0 +1,20 @@
+<div class="pe-info-box-container-fixed clipboard-copy-container">
+  <pe-info-box [withHeader]="false"
+               [withFooter]="false"
+               [fixed]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               (onClose)="handleClose()"
+  >
+    <ng-container content>
+      <div class="clipboard-copy-content">
+        {{ link }}
+      </div>
+    </ng-container>
+  </pe-info-box>
+  <div
+    class="add-button"
+    (click)="onCopyClick()">
+    {{ 'actions.copy_to_clipboard' | translate }}
+  </div>
+</div>

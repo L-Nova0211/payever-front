@@ -1,0 +1,70 @@
+<div class="message-dialog-wrapper">
+  <div class="message-dialog-wrapper__header">
+    <button class="close-button" (click)="close()">Close</button>
+  </div>
+</div>
+
+<pe-grid
+  [theme]="theme"
+  [items]="gridItems$ | async"
+>
+  <pe-grid-sidenav #sideNav
+    [sidenavTitle]="'Pages'"
+    [sidenavMenu]="foldersSidenavMenu"
+    (menuItemSelected)="menuItemSelected($event)"
+  >
+    <pe-folders
+      [sideNav]="sideNav"
+      [folders]="foldersTree$ | async"
+      [selectFolder]="selectedFolder"
+      (selectedDefaultFolder)="onSelectFolder($event)"
+      (selectedFolder)="onSelectFolder($event)"
+      (selectedRootFolder)="onSelectFolder($event)"
+      (createFolder)="folderAction($event, folderActions.Create)"
+      (updateFolder)="folderAction($event, folderActions.Update)"
+      (deleteFolder)="folderAction($event, folderActions.Delete)"
+      (createHeadline)="folderAction($event, folderActions.Create)"
+      (updateHeadline)="folderAction($event, folderActions.Update)"
+      (deleteHeadline)="folderAction($event, folderActions.Delete)"
+    >
+    </pe-folders>
+  </pe-grid-sidenav>
+
+  <pe-grid-content>
+    <pe-grid-toolbar
+      *ngIf="toolbar$ | async as toolbar"
+      [viewAdd]="false"
+      [viewMenu]="viewMenu"
+      [filterConfig]="toolbar.filterConfig"
+			[customMenus]="toolbar.customMenus"
+      [optionsMenu]="toolbar.optionsMenu"
+      [hideLayoutSwitcher]="true"
+      [sortMenu]="toolbar.sortMenu"
+      (create)="createByHand()"
+    ></pe-grid-toolbar>
+
+    <pe-grid-viewport
+      [selectable]="false"
+      [viewportTitle]="viewportTitle"
+      [defaultLayout]="gridLayout"
+      [allowSetQueryPArams]="false"
+    >
+
+      <pe-grid-list
+        [viewAdd]="!popupMode && showAddNewItem"
+        (create)="createByHand()"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            [item]="item"
+            [allowPreview]="false"
+            (actionClick)="actionClick($event)"
+            (moveToRootFolder)="moveToFolder($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          ></pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+
+    </pe-grid-viewport>
+  </pe-grid-content>
+</pe-grid>

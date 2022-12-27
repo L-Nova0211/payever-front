@@ -1,0 +1,24 @@
+<div class="viewer__widget">
+  <div class="viewer__widget__header">
+    <div class="viewer__widget__title">View</div>
+    <div class="viewer__widget__close" (click)="onCloseClick()">
+      <mat-icon svgIcon="close"></mat-icon>
+    </div>
+  </div>
+  <div class="viewer__widget__body">
+    <div
+      *ngFor="let item of options"
+      class="view-item"
+      [class.active]="item.active"
+      [class.disabled]="item.disabled"
+      (click)="setValue(item.option)"
+    >
+      <div class="view-item__icon">
+        <mat-icon
+          [svgIcon]="item.image">
+        </mat-icon>
+      </div>
+      <div class="view-item__title">{{ item.title }}</div>
+    </div>
+  </div>
+</div>

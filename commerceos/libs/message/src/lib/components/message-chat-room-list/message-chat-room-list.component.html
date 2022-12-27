@@ -1,0 +1,47 @@
+<div *ngIf="isGlobalLoading" class="skeleton-search"></div>
+<div
+  *ngIf="!isGlobalLoading"
+  class="pe-message-chat-room-list__search"
+  [ngClass]="theme"
+  [style.background-color]="messageAppColor"
+>
+  <svg class="icon-search-18">
+    <use xlink:href="#icon-search-18"></use>
+  </svg>
+  <peb-form-field-input>
+    <input pebInput placeholder="Search" [formControl]="searchControl"/>
+  </peb-form-field-input>
+</div>
+<pe-sidebar class="pe-sidebar" [ngClass]="theme" [style.background-color]="messageAppColor">
+  <pe-sidebar-filters-wrapper>
+    <pe-message-chat-room-list-header-styles></pe-message-chat-room-list-header-styles>
+    <pe-chat-list-skeleton *ngIf="isGlobalLoading"></pe-chat-list-skeleton>
+    <ng-container *ngIf="!isGlobalLoading && chatListStorage as chatList">
+      <div *ngIf="chatList.length" class="pe-message-chat-room-list__wrapper">
+        <pe-message-chat-room-list-header
+          *ngFor="let chat of chatList; let i = index; trackBy: trackOption"
+          [order]="i + 1"
+          [chat]="chat"
+          [accentColor]="accentColor"
+          class="pe-message-chat-room-list__row"
+          [class.pe-message-chat-room-list__row_active]="activeChat?._id === chat._id"
+          (click)="setChatAsActive(chat)"
+          draggable="true"
+          (dragstart)="dragStart(chat)"
+          (contextmenu)="openContextMenu($event, chat)"
+        ></pe-message-chat-room-list-header>
+      </div>
+      <div
+        *ngIf="!chatList.length && isNotChat"
+        class="pe-message-chat-room-list__no-chats"
+        [style.background-color]="messageAppColor"
+      >
+        <span>{{ 'message-app.sidebar.empty_contact_list' | translate }}</span>
+        <button (click)="openContactsApp()">{{ 'message-app.sidebar.add_contacts' | translate }}</button>
+      </div>
+    </ng-container>
+  </pe-sidebar-filters-wrapper>
+  <pe-sidebar-footer-wrapper *ngIf="menuData && !isGlobalLoading">
+    <pe-menu-sidebar-footer [menuData]="menuData" [theme]="theme + ' chat-room-list-menu'"></pe-menu-sidebar-footer>
+  </pe-sidebar-footer-wrapper>
+</pe-sidebar>

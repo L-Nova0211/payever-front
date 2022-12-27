@@ -1,0 +1,92 @@
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+.dark {
+  @include peb-theme($theme-dark);
+  &.root {
+    background-color: #24272e;
+  }
+}
+.light {
+  @include peb-theme($theme-light);
+  &.root {
+    background-color: #f3f2f8;
+  }
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+  }
+}
+
+cos-next-root {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+
+  mat-spinner {
+    z-index: 999 !important;
+    circle {
+      stroke: rgba(36, 39, 46, 0.85) !important;
+    }
+  }
+}
+
+div.navbar-container {
+  @media (min-width: 720px) {
+    padding-left: 0;
+  }
+}
+
+peb-editor.pe-builder-styles {
+  background-color: transparent;
+}
+
+.shop-app {
+  height: calc(100% - 60px);
+  @media (max-width: 720px) {
+    height: calc(100% - 56px);
+  }
+}
+
+.builder-dialog .mat-dialog-container {
+  border-radius: 12px;
+  img {
+    vertical-align: top;
+  }
+  @media (max-width: 720px) {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    .viewer__widget {
+      height: 100%;
+    }
+  }
+}
+
+.pe-context-menu ul li span {
+  font-weight: 400;
+}
+
+.nav-content {
+  padding-left: 4px !important;
+}
+.next-shop__header-button {
+  padding: 2px 6px !important;
+  margin-left: 8px !important;
+  border-radius: 5px !important;
+
+  &--active {
+    background-color: rgba(102, 104, 109, 0.4) !important;
+  }
+}

@@ -1,0 +1,4 @@
+Handle;Title;Description;Type;Hidden;Enabled;Option1 Name;Option1 Value;Option2 Name;Option2 Value;Option3 Name;Option3 Value;SKU;Bar Code;Inventory Stock;Inventory Reserved;Price;Sales Price;Currency;Images;VAT;Weight(Kg);Width(Cm);Length(Cm);Height(Cm)
+example-t-shirt-test;Example T-Shirt;Some product description;Physical;;TRUE;;;;;;;;;;;25;23;EUR;https://picsum.photos/200/300;10 %;;;;
+example-t-shirt-test;Example T-Shirt;Some product description;;FALSE;;Size;Small;Color;Yellow;Material;Cotton;example-shirt-s-test;Bar-code;100;30;19.99;24.99;EUR;https://picsum.photos/200/300;;1;1;1;1
+example-t-shirt-test;Example T-Shirt;Some product description;;FALSE;;Size;Medium;Color;Red;Material;Wool;example-shirt-m-test;Bar-code;50;20;19.99;24.99;EUR;https://picsum.photos/200/300;;1;1;1;1

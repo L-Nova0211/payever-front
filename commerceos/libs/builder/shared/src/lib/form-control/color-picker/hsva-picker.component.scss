@@ -1,0 +1,23 @@
+.hsva {
+  position: relative;
+  border-radius: inherit;
+
+  &__picker {
+    border-radius: inherit;
+    background: repeating-conic-gradient(#cbcbcb 0% 25%, #ffffff 0% 50%) 0 0 / 16px 16px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__cursor {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: -8px;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 5px 0 #000000;
+    border: solid 1px #ffffff;
+    box-sizing: border-box;
+  }
+}

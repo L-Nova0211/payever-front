@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+// Need for overriding user agent stylesheet for innerHTML
+p {
+  margin: unset;
+}

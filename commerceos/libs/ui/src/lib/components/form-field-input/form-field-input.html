@@ -1,0 +1,31 @@
+<div
+  [class.input-content-wrapper]="!isAppearanceLabel"
+  [class.input-content-wrapper_search]="isAppearanceSearch"
+  [class.label-input-content-wrapper]="isAppearanceLabel"
+>
+  <ng-container *ngIf="!isAppearanceSearch">
+    <ng-content select="img"></ng-content>
+    <ng-content select="mat-icon"></ng-content>
+  </ng-container>
+  <div
+    class="label-container"
+    [class.is-invalid]="isFieldInvalid"
+    [class.form-label]="isAppearanceLabel"
+    [class.form-search]="isAppearanceSearch"
+  >
+    <span
+      tabindex="-1"
+      class="label-text"
+      *ngIf="isAppearanceLabel"
+      [@isFocusedLabel]="shouldAnimate()"
+    >
+      {{ isFieldInvalid ? errorMessage : label }}
+    </span>
+    <div class="input-field" [@isFocuesText]="shouldAnimate()">
+      <ng-content *ngIf="isAppearanceLabel" select="span"></ng-content>
+      <ng-content *ngIf="isAppearanceSearch" select="[searchIcon]"></ng-content>
+      <ng-content select="input"></ng-content>
+    </div>
+  </div>
+  <ng-content select="div"></ng-content>
+</div>

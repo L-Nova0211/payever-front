@@ -1,0 +1,83 @@
+<p class="cron-interval-error" *ngIf="validationError$ | async">{{ validationError$ | async }}</p>
+<form [formGroup]="form" *ngIf="form" class="cron-interval-settings">
+  <div class="cron-interval-settings_container" [class.cron-interval-settings_container-invalid]="validationError$ | async">
+    <div class="cron-interval-settings_item">
+      <peb-select
+        selectType="label"
+        formControlName="startDayOfWeek"
+        label="{{'settings.notifications.settings.starts' | translate}}">
+        <peb-select-option
+          *ngFor="let option of daysOptions"
+          [value]="option.value"
+          [label]="option.label">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <div class="cron-interval-settings_item">
+      <peb-select
+        selectType="label"
+        formControlName="endDayOfWeek"
+        label="{{'settings.notifications.settings.ends' | translate}}">
+        <peb-select-option
+          *ngFor="let option of daysOptions"
+          [value]="option.value"
+          [label]="option.label">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <div class="cron-interval-settings_item">
+      <peb-select
+        selectType="label"
+        label="{{'settings.notifications.settings.startTime' | translate}}"
+        [selected]="getSelectedStartTime()">
+        <peb-select-option
+          *ngFor="let option of timeOptions"
+          [value]="option.value"
+          [label]="option.label"
+          (click)="selectStartTimeFieldValue(option.value)">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <div class="cron-interval-settings_item">
+      <peb-select
+        selectType="label"
+        label="{{'settings.notifications.settings.endTime' | translate}}"
+        [selected]="getSelectedEndTime()">
+        <peb-select-option
+          *ngFor="let option of timeOptions"
+          [value]="option.value"
+          [label]="option.label"
+          (click)="selectEndTimeFieldValue(option.value)">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <div class="cron-interval-settings_item cron-interval-settings_item_fullwidth">
+      <peb-select
+        selectType="label"
+        formControlName="sendEmailAfterInterval"
+        label="{{'settings.notifications.settings.sendEmailAfterInterval.label' | translate}}">
+        <peb-select-option
+          *ngFor="let option of sendEmailAfterIntervalOptions"
+          [value]="option.value"
+          [label]="option.label">
+        </peb-select-option>
+      </peb-select>
+    </div>
+    <div class="cron-interval-settings_item cron-interval-settings_item_fullwidth">
+      <peb-select
+        selectType="label"
+        formControlName="repeatFrequencyInterval"
+        label="{{'settings.notifications.settings.repeatFrequencyInterval.label' | translate}}">
+        <peb-select-option
+          *ngFor="let option of repeatFrequencyIntervalOptions"
+          [value]="option.value"
+          [label]="option.label">
+        </peb-select-option>
+      </peb-select>
+    </div>
+  </div>
+
+  <div class="cron-interval-settings_button" (click)="deleteTimeFrame.emit(true)">
+    <svg><use xlink:href="#icon-trashcan-20"></use></svg>
+  </div>
+</form>

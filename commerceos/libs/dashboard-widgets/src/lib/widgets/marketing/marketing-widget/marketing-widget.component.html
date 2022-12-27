@@ -1,0 +1,68 @@
+<!-- <pe-widget *ngIf="widget" [widget]="widget" [theme]="theme$ | async">
+  <div class="marketing-widget">
+    <div class="marketing-widget__data">
+      <div class="marketing-widget__section" *ngFor="let section of sections">
+        <div class="marketing-widget__small-title">{{ section.title | translate}}</div>
+        <div class="marketing-widget__big-title">{{ section.value }}</div>
+      </div>
+    </div>
+    <button mat-button class="mat-button-no-padding mat-button-rect-md marketing-widget__button widget__open-button">
+      <pe-progress-button-content [loading]="showNewCampaignButtonSpinner$ | async">
+        <div class="mat-button-rect-inner-horizontal">
+          <div class="button-title" (click)="openNewCampaign()" translate>widgets.marketing.actions.new_campaign</div>
+        </div>
+      </pe-progress-button-content>
+    </button>
+  </div>
+</pe-widget> -->
+<!--TODO: Remove after approving WIDGET-1, COSF-343-->
+<!--<widget-card-->
+<!--  [appCode]="appName"-->
+<!--  [title]="'widgets.marketing.title' | translate"-->
+<!--  [iconSrc]="iconUrl | iconsPngUrl"-->
+<!--  [installIconSrc]="installIconUrl | iconsPngUrl"-->
+<!--  [learMoreUrl]="widget?.helpUrl"-->
+<!--  [showSpinner]="showSpinner$ | async"-->
+<!--  [showButtonSpinner]="showButtonSpinner$ | async"-->
+<!--  [installAppButtonText]="installAppButtonText | translate"-->
+<!--  (onClick)="onOpenButtonClick()"-->
+<!--&gt;-->
+<!--  <widget-statistics [sections]="statistic$ | async"></widget-statistics>-->
+<!--  &lt;!&ndash;-->
+<!--  <div class="marketing-wrapper">-->
+<!--    <div class="marketing-info">-->
+<!--      <div class="marketing-title">-->
+<!--        {{ (activeCampaign$ | async)?.name }}-->
+<!--      </div>-->
+<!--      <div class="marketing-stats">-->
+<!--        <ng-container *ngFor="let stat of (statistic$ | async)">-->
+<!--          <div class="marketing-stats-item">-->
+<!--            <span class="marketing-stats-item-heading">{{ stat.heading | translate }}</span>-->
+<!--            <span class="marketing-stats-item-value">{{ stat.value }}</span>-->
+<!--          </div>-->
+<!--        </ng-container>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &ndash;&gt;-->
+<!--  <widget-action-button class="marketing-widget-button" [class.no-icon-margin]="(isMobile$ | async)"-->
+<!--                        [title]="(isMobile$ | async) ? '' : 'widgets.marketing.new-campaign' | translate" (onClick)="openNewCampaign()"-->
+<!--  ></widget-action-button>-->
+<!--  &lt;!&ndash;-->
+<!--  <button mat-raised-button-->
+<!--          color="muted-transparent"-->
+<!--          class="add-campaign mat-button-rect-md mat-button-no-padding"-->
+<!--          (click)="openNewCampaign()">-->
+<!--    <pe-progress-button-content [loading]="showNewCampaignButtonSpinner$ | async">-->
+<!--      <div class="mat-button-rect-inner-vertical">-->
+<!--        <svg class="icon icon-16 add-campaign-icon"><use xlink:href="#icon-plus-plushy-16"></use></svg>-->
+<!--        <span class="button-title" [innerHTML]="'widgets.marketing.new-campaign' | translate"></span>-->
+<!--      </div>-->
+<!--    </pe-progress-button-content>-->
+<!--  </button>-->
+<!--  <ng-container more>-->
+<!--    <marketing-campaign [campaigns]="campaigns$ | async"-->
+<!--                        [selectedCampaign]="activeCampaign$ | async"-->
+<!--                        (onClick)="onCampaignSelect($event)"></marketing-campaign>-->
+<!--  </ng-container>&ndash;&gt;-->
+<!--</widget-card>-->

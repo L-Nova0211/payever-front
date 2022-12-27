@@ -1,0 +1,49 @@
+<div class="search_container" [ngClass]="theme">
+  <div class="header">
+    <div class="input-container" [formGroup]="forwardConversationList">
+      <svg class="search-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search-16"></use>
+      </svg>
+      <input
+        class="search-input"
+        formControlName="searchFilter"
+        placeholder="Search"
+        type="text"
+      >
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content">
+      <div class="overflow-hidden">
+        <div class="search-list-container">
+          <ng-container *ngFor="let chat of filteredChatList$ | async">
+            <div class="search-items" (click)="forwardMessage(chat)">
+              <div class="pe-message-chat-room-list__icon avatar">
+                <div class="pe-message-chat-room-list__avatar" *ngIf="chat.avatar">
+                  <img
+                    alt="chat-avatar"
+                    class="pe-message-chat-room-list__avatar-img"
+                    loading="lazy"
+                    [src]="chat.avatar"
+                  />
+                </div>
+                <div class="pe-message-chat-room-list__initials" *ngIf="!chat.avatar">
+                  {{ chat.initials }}
+                </div>
+              </div>
+              <div class="item-details">
+                <div class="pe-message-chat-room-list__header">
+                  <span class="pe-message-chat-room-list__title">{{ chat.title }}</span>
+                </div>
+                <div class="line-item" [innerHTML]="chat.description"></div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="no-result">
+            {{ 'message-app.chat.forward.no-result' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

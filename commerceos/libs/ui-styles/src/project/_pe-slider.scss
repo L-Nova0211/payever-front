@@ -1,0 +1,133 @@
+.pe-bootstrap {
+  .pe-slider {
+    display: table;
+    width: 100%;
+    .value {
+      display: table-cell;
+      width: 1px;
+      white-space: nowrap;
+      vertical-align: middle;
+      &.value-left {
+        padding-right: 10px;
+      }
+      &.value-right {
+        padding-left: 10px;
+      }
+    }
+    .bar-container {
+      display: table-cell;
+      vertical-align: middle;
+      padding-top: 2px;
+      span {
+        display: block;
+      }
+      .bar-row {
+        width: 100%;
+        position: relative;
+        height: 2px;
+        background: $color-light-gray-1;
+        border-radius: 2px;
+        .bar {
+          position: absolute;
+          background: $color-blue;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: 2px;
+          .bar-point {
+            text-indent: -10000px;
+            position: absolute;
+            top: -3px;
+            background: $color-blue;
+            width: 8px;
+            height: 8px;
+            overflow: hidden;
+            border-radius: 50%;
+            cursor: pointer;
+            touch-action: none;
+            @include payever_transition($property: all, $duration: .1s, $effect: ease-out);
+            &.bar-right {
+              right: -4px;
+            }
+            &.bar-left {
+              left: -4px;
+            }
+            &:hover, &.dragging {
+              width: 16px;
+              height: 16px;
+              top: -7px;
+              &.bar-right {
+                right: -8px;
+              }
+              &.bar-left {
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: $viewport-breakpoint-sm-3 - 1) {
+      .value {
+        &.value-left {
+          padding-right: 22px;
+        }
+        &.value-right {
+          padding-left: 22px;
+        }
+      }
+      .bar-container {
+        .bar-row {
+          .bar {
+            .bar-point {
+              top: -11px;
+              width: 24px;
+              height: 24px;
+              &.bar-right {
+                right: -12px;
+              }
+              &.bar-left {
+                left: -12px;
+              }
+              &:hover {
+                width: 24px;
+                height: 24px;
+                top: -11px;
+                &.bar-right {
+                  right: -12px;
+                }
+                &.bar-left {
+                  left: -12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      display: block;
+      position: relative;
+      height: 47px;
+      .value {
+        display: block;
+        width: auto;
+        padding: 0;
+        position: absolute;
+        top: 25px;
+        &.value-left {
+          left: 0;
+        }
+        &.value-right {
+          right: 0;
+        }
+      }
+      .bar-container {
+        display: block;
+        height: $grid-unit-y * 2;
+        padding-top: 10px;
+      }
+    }
+  }
+}

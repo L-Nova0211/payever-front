@@ -1,0 +1,27 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <button
+    #submitTrigger
+    id="submitTrigger"
+    name="submitButton"
+    type="submit"
+    hidden>
+  </button>
+  <peb-select
+    formControlName="vatRate"
+    selectType="label"
+    class='form-field-select peb-select'
+    label="{{ 'taxesSection.form.tax.label' | translate }}"
+    selected="none"
+    [animated]='true'>
+    <peb-select-option
+      *ngFor="let rate of this.ratesOptions"
+      [label]="rate.label"
+      [value]="rate.value"
+      class='peb-select-option'>
+    </peb-select-option>
+  </peb-select>
+</form>

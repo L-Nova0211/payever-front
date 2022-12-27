@@ -1,0 +1,112 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <button
+    #submitTrigger
+    id="submitTrigger"
+    name="submitButton"
+    type="submit" hidden></button>
+  <div [ngClass]="{'has-pictures': blob}">
+    <editor-images-pane
+      [dragulaBag]="'product-pictures-bag'"
+      [(blobs)]="mainSection.image !== '' ? [mainSection.image] : mainSection.images"
+      (changePicture)="onChangePicture($event)"
+      (loadingStateChanged)="onPicturesLoadingChanged($event)">
+    </editor-images-pane>
+    <div class="main-fields">
+      <peb-form-field-input
+        label="{{ 'collections.mainSection.form.title.placeholder' | translate }}"
+        class='main-form-field'
+        appearance="label"
+        [animated]='true'
+        style="border-radius: 12px; overflow: hidden; margin-top: 16px;"
+        [isFieldInvalid]="isSubmitted && form.controls.name.errors?.required"
+        [errorMessage]="'mainSection.form.errors.name' | translate">
+        <input
+          placeholder="{{ 'collections.mainSection.form.title.placeholder' | translate }}"
+          formControlName="name"
+          type="text"/>
+      </peb-form-field-input>
+      <peb-select
+        formControlName="conditionsType"
+        selectType="label"
+        class='main-form-field peb-select'
+        [animated]='true'
+        label="{{ 'collections.mainSection.form.conditionsType.label' | translate }}"
+        selected="none">
+        <peb-select-option
+          *ngFor="let type of formScheme.fieldsets.conditionsType[0].selectSettings.options"
+          [label]="type.label"
+          [value]="type.value"
+          class='peb-select-option'
+        ></peb-select-option>
+      </peb-select>
+    </div>
+
+    <div
+      class="conditions__row"
+      formArrayName="conditions"
+      *ngFor="let condition of conditionsForm.controls; let i = index">
+      <div
+        class="conditions__wrapper"
+        [formGroupName]="i">
+        <peb-select
+          formControlName="key"
+          class='conditions__wrapper__field peb-select'
+          [animated]='true'
+          label="{{ 'collections.mainSection.form.key.label' | translate }}"
+          selectType="label">
+          <peb-select-option
+            *ngFor="let key of formScheme.fieldsets.condition[0].selectSettings.options"
+            [label]="key.label"
+            [value]="key.value"
+            class='peb-select-option'>
+          </peb-select-option>
+        </peb-select>
+        <peb-select
+          formControlName="condition"
+          class='conditions__wrapper__field peb-select'
+          [animated]='true'
+          label="{{ 'collections.mainSection.form.condition.label' | translate }}"
+          selectType="label">
+          <peb-select-option
+            *ngFor="let condition of formScheme.fieldsets.condition[1].selectSettings.options"
+            [label]="condition.label"
+            [value]="condition.value"
+            class='peb-select-option'>
+          </peb-select-option>
+        </peb-select>
+        <peb-form-field-input
+          class='conditions__wrapper__field'
+          label="{{ 'collections.mainSection.form.value.label' | translate }}"
+          appearance="label"
+          [animated]='true'>
+          <input formControlName="value" type="text"/>
+        </peb-form-field-input>
+      </div>
+
+      <button
+        type="button"
+        (click)="onDeleteCondition(i, $event)"
+        class="conditions__delete">
+        <svg width="17" height="20" viewBox="0 0 17 20">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#EB4653">
+              <path d="M12.791 17.834c-.041.445-.412.78-.858.78H5.009c-.446 0-.815-.335-.86-.786L2.754 4.68H14.19l-1.398 13.154zM5.543 1.928c.023-.236.218-.415.454-.415h4.946c.238 0 .434.18.455.388l.079 1.672h-6.01l.076-1.645zm10.844 1.645h-3.802l-.082-1.75c-.076-.807-.747-1.416-1.56-1.416H5.997c-.81 0-1.48.61-1.56 1.442l-.08 1.724H.554c-.306 0-.555.247-.555.554 0 .306.249.553.555.553H1.64l1.407 13.259c.097 1.018.94 1.783 1.962 1.783h6.924c1.021 0 1.865-.765 1.96-1.777l1.41-13.265h1.084c.307 0 .554-.247.554-.553 0-.307-.247-.554-.554-.554z" transform="translate(-861 -667) translate(861 667)"/>
+              <path d="M8.471 15.764c.306 0 .554-.247.554-.554V7.293c0-.305-.248-.552-.554-.552-.306 0-.554.247-.554.552v7.917c0 .307.248.554.554.554M10.79 15.762c.02.002.038.002.056.002.282 0 .522-.214.552-.497l.792-7.917c.028-.305-.192-.578-.497-.608-.318-.025-.577.195-.607.496l-.791 7.916c-.03.306.191.577.495.608M6.174 15.764c.02 0 .036 0 .055-.002.306-.031.528-.302.498-.608l-.792-7.916c-.03-.304-.304-.524-.606-.496-.306.03-.528.303-.498.608l.792 7.917c.029.285.27.497.551.497" transform="translate(-861 -667) translate(861 667)"/>
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <button
+      *ngIf="form.get('conditionsType').value !== ConditionsType.NoCondition"
+      class="conditions__add"
+      type="button"
+      (click)="onAddCondition()">
+      {{'collections.add_condition' | translate}}
+    </button>
+  </div>
+</form>

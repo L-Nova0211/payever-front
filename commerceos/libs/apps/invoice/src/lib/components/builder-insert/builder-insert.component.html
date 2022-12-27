@@ -1,0 +1,21 @@
+<div class="widget">
+  <div class="widget__header">
+    <div class="widget__title">Insert</div>
+    <div class="widget__close" (click)="onCloseClick()">
+      <mat-icon svgIcon="close"></mat-icon>
+    </div>
+  </div>
+  <div class="widget__body">
+    <ng-container *ngFor="let item of options">
+      <div
+        class="view-item"
+        [class.active]="item.active"
+        [class.disabled]="item.disabled"
+        (click)="setValue(item)"
+      >
+        <div class="view-item__title">{{ item.title | titlecase }}</div>
+      </div>
+      <div class="view-item__divider" *ngIf="item.lineAfter"></div>
+    </ng-container>
+  </div>
+</div>

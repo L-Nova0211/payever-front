@@ -1,0 +1,8 @@
+<base-dashboard *ngIf="!isLoading"
+                [backgroundImage]="backgroundImage"
+                [loaded]="true"
+                [withEditButton]="true"
+                (dockerItemsChange)="onDockerItemsChange($event)"
+                (profileButtonClicked)="navigateToSwitcher()">
+  <router-outlet></router-outlet>
+</base-dashboard>

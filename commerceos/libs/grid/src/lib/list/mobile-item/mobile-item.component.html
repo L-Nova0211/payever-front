@@ -1,0 +1,34 @@
+<div #rowRef
+  class="mobile-row-wrap {{theme}}"
+  [class.last-row]="isLastRow(item)"
+  (click)="actionClick.emit(item)"
+>
+  <div
+    *ngIf="item.thumbnail?.cellComponentFactory else defaultImageRef"
+    class="mobile-row-wrap__thumbnail"
+  >
+    <pe-list-mobile-item-component-host [inputData]="{
+      componentFactory: item.thumbnail?.cellComponentFactory,
+      item: item,
+      isThumbnail: true
+    }">
+    </pe-list-mobile-item-component-host>
+  </div>
+
+  <div class="mobile-row-wrap__content">
+    <pe-grid-vertical-columns
+      [item]="item"
+      [isGridItem]="true"
+      [displayColumns]="displayColumns"
+    ></pe-grid-vertical-columns>
+  </div>
+  <div class="dots-button" #moreButton (click)="clickedMore($event)">
+    <div class="dot-item"></div>
+  </div>
+</div>
+
+<ng-template #defaultImageRef>
+  <div class="mobile-row-wrap__thumbnail">
+    <img class="default" [src]="defaultImage">
+  </div>
+</ng-template>

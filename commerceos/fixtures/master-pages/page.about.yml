@@ -1,0 +1,53 @@
+id: apple-about-page
+name: About Page
+variant: about
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-about-page
+  type: document
+  children:
+    - id: body
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: body-text
+          type: text
+          data:
+            text: About Page
+
+
+stylesheets:
+  desktop:
+    apple-about-page: {}
+    # ----------------------------------
+    # Desktop Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text:
+
+  tablet:
+    apple-about-page: {}
+    # ----------------------------------
+    # Tablet Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text:
+
+  mobile:
+    apple-about-page: {}
+    # ----------------------------------
+    # Mobile Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text:
+
+context: {}

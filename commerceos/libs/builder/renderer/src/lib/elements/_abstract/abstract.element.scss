@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.element-caption {
+  position: absolute;
+  padding: 4px;
+  font-size: 11px;
+  background: #ccc;
+  color: #444;
+  right: 0;
+  top: 0;
+}
+
+.selected {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid rgba(0, 128, 255, 0.5);
+}
+
+@keyframes dissolve-in {
+  from  {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes dissolve-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes blur-in {
+  from {filter: blur(2.0rem);}
+  to {filter: blur(0);}
+}
+
+@keyframes blur-out {
+  from {filter: blur(0);}
+  to {filter: blur(2.0rem);}
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.0);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes move-in {
+  from {transform: translate(-300px, 0);}
+  to {transform: (0, 0);}
+}
+
+@keyframes opacity {
+  from {opacity: 1;}
+  to {opacity: 0.5;}
+}
+
+@keyframes drift {
+  from {margin-left: 0px;}
+  to {margin-left: 1200px;}
+}
+
+@keyframes pop {
+  0%  {transform: scale(0); opacity: 0;}
+  45%  {transform: scale(1.25); opacity: 0.5;}
+  70%  {transform: scale(0.9); opacity: 1;}
+}

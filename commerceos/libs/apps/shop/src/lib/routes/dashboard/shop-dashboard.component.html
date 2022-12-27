@@ -1,0 +1,77 @@
+<div style="height:calc(100% - 15px)">
+  <pe-shop-material-styles></pe-shop-material-styles>
+  <div class="dashboard-header" [ngClass]="theme">
+    <div class="dashboard-header__title">Shop - {{url}}</div>
+    <button class="dashboard-header__open" (click)="themeActiveVersion.isDeployed ? onOpenClick() : onEditClick()" *ngIf="themeActiveVersion">
+      {{ (themeActiveVersion.isDeployed ? 'shop-app.actions.open' : 'shop-app.actions.edit')  | translate}}
+    </button>
+    <button class="dashboard-header__menu" (click)="onOpenItemMenu()">
+      <svg>
+        <use [attr.xlink:href]="'#icon-dots-block-24'"></use>
+      </svg>
+    </button>
+    <div [matMenuTriggerFor]="itemMenu" #itemMenuTrigger></div>
+
+    <mat-menu #itemMenu="matMenu" backdropClass="dashboard__menu-backdrop" [classList]="'dashboard__menu ' + theme">
+      <div class="dashboard__menu-header">
+        <div class="dashboard__menu-title">Options</div>
+        <div class="close-button">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ui-close-circle"></use>
+          </svg>
+        </div>
+      </div>
+      <button
+        mat-menu-item
+        (click)="onEditClick()">
+        <svg class="icon">
+          <use xlink:href="#icon-edit-pencil-24"></use>
+        </svg>
+        {{'shop-app.actions.edit'|translate}}
+      </button>
+      <button
+        (click)="onLinkCopy()"
+        mat-menu-item
+      >
+        <svg class="icon">
+          <use xlink:href="#icon-link3-16"></use>
+        </svg>
+        {{'shop-app.actions.copy_link'|translate}}
+      </button>
+      <button
+        (click)="onDownloadQR()"
+        mat-menu-item
+      >
+        <svg class="icon">
+          <use xlink:href="#icon-communications-qr-white"></use>
+        </svg>
+        {{'shop-app.actions.download_qr'|translate}}
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="dashboard-viewer-container">
+    <mat-spinner
+      *ngIf="loading"
+      class="mat-spinner-themed dashboard-spinner"
+      [strokeWidth]="2"
+      [diameter]="22"
+    ></mat-spinner>
+
+    <div class="scrollbar" *ngIf="!loading">
+      <ng-container>
+        <div class="no-publish" *ngIf="!preview">
+          No published shop
+        </div>
+        <ng-container *ngIf="preview">
+          <peb-viewer
+            *ngIf="preview.published || preview.current"
+            class="dashboard-viewer"
+            [themeCompiled]="preview.published?.id === preview.current?.id ? preview.published : preview.current"
+            [screen]="screen"
+          ></peb-viewer>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

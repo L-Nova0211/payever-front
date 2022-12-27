@@ -1,0 +1,57 @@
+<pe-widget *ngIf="widget" [widget]="widget" [theme]="theme"></pe-widget>
+<!--TODO: Remove after approving WIDGET-1, COSF-343-->
+<!--<widget-card-->
+<!--  [appCode]="appName"-->
+<!--  [title]="'widgets.transactions.title' | translate"-->
+<!--  [iconSrc]="iconUrl | iconsPngUrl"-->
+<!--  [installIconSrc]="installIconUrl | iconsPngUrl"-->
+<!--  [learMoreUrl]="widget?.helpUrl"-->
+<!--  [showSpinner]="showSpinner$ | async"-->
+<!--  [showButtonSpinner]="showButtonSpinner$ | async"-->
+<!--  (onClick)="onOpenButtonClick()"-->
+<!--&gt;-->
+<!--  &lt;!&ndash;-->
+<!--  <transactions-chart [dailyAmountData]="dailyAmount$ | async"></transactions-chart>-->
+<!--  <chart-legend [values]="legendValues"></chart-legend>-->
+<!--  &ndash;&gt;-->
+<!--  <div class="transactions-revenue">-->
+<!--    <div class="transactions-revenue-today">-->
+<!--      <span>-->
+<!--        <svg class="icon icon-8" [class.rotate]="(compareWithPastMonth$ | async) < 0">-->
+<!--            <use xlink:href="#icon-widgets-arrow-8"></use>-->
+<!--        </svg> {{ 'widgets.transactions.this-month' | translate }}-->
+<!--      </span>-->
+
+<!--      <span class="transactions-revenue-today-value">-->
+<!--        {{currentMonthAmount$ | async | currency: (currency$ | async)  : 'symbol': '1.0' : 'en-DE'}}-->
+<!--      </span>-->
+<!--      &lt;!&ndash;-->
+<!--      <span>-->
+<!--        <svg class="icon icon-8" [class.rotate]="(compareWithPastDay$ | async) < 0">-->
+<!--            <use xlink:href="#icon-widgets-arrow-8"></use>-->
+<!--        </svg> {{ 'widgets.transactions.today-revenue' | translate }}-->
+<!--      </span>-->
+
+<!--      <span class="transactions-revenue-today-value">-->
+<!--        {{todayAmount$ | async | currency: amountCurrency  : 'symbol': '1.0' : 'en-DE'}}-->
+<!--      </span>-->
+
+<!--      <span class="transactions-revenue-mocurrentMonthAmount$nth">-->
+<!--        <svg class="icon icon-8" [class.rotate]="(compareWithPastMonth$ | async) < 0">-->
+<!--          <use xlink:href="#icon-widgets-arrow-8"></use>-->
+<!--        </svg> {{ 'widgets.transactions.this-month' | translate }}-->
+<!--        <b>{{currentMonthAmount$ | async | currency: amountCurrency : undefined : undefined : 'en-DE'}}</b>-->
+<!--      </span>-->
+<!--      &ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash;-->
+<!--  <div more>-->
+<!--    <div class="transactions-quarters">-->
+<!--      <div *ngFor="let periodData of periodData$ | async; let i = index">-->
+<!--        <span class="transactions-quarters-item">{{ periodLabels[i] | translate }}</span>-->
+<!--        <div class="transactions-quarters-value">{{periodData | currency: amountCurrency: 'symbol': '1.0-0' : 'en-DE'}}</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>&ndash;&gt;-->
+<!--</widget-card>-->

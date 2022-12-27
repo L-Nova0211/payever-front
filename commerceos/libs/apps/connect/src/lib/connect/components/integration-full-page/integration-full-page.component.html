@@ -1,0 +1,29 @@
+<div *ngIf="integration" class="integration-full-page">
+  <!-- Title -->
+  <connect-integration-title [integration]="integration">
+  </connect-integration-title>
+
+  <!-- App -->
+  <connect-integration-app [integration]="integration">
+  </connect-integration-app>
+
+  <!-- Ratings and Reviews -->
+  <connect-integration-ratings-reviews [integration]="integration">
+  </connect-integration-ratings-reviews>
+
+  <!-- What's New -->
+  <connect-integration-news [integration]="integration">
+  </connect-integration-news>
+
+  <!-- Information -->
+  <connect-integration-information [integration]="integration">
+  </connect-integration-information>
+
+  <!-- Supported -->
+  <connect-integration-supported [integration]="integration" *ngIf="false">
+  </connect-integration-supported>
+
+  <!-- More -->
+  <connect-integration-more [integration]="integration">
+  </connect-integration-more>
+</div>

@@ -1,0 +1,16 @@
+<form [formGroup]="borderRadiusForm" (change)="change()">
+  <label>Radius</label>
+  <div *ngIf="(max$ | async) as max">
+    <peb-range-input
+      formControlName="borderRadius"
+      [min]="0"
+      [max]="max"
+    ></peb-range-input>
+    <peb-number-input
+      formControlName="borderRadius"
+      [min]="0"
+      [max]="max"
+      units="px"
+    ></peb-number-input>
+  </div>
+</form>

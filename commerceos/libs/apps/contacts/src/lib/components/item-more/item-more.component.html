@@ -1,0 +1,16 @@
+<button
+  *ngIf="status !== contactStatusEnum.APPROVED"
+  class="btn-approve"
+  [style.backgroundColor]="approve?.backgroundColor"
+  [style.color]="approve?.color"
+>{{ approve?.label }}</button>
+<div
+  class="dots"
+  (click)="onMore($event.target)"
+>
+  <div class="dot-wrap" id="dots" >
+    <div class="dot"></div>
+    <div class="dot center-dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>

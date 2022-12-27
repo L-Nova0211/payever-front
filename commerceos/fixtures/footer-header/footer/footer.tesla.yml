@@ -1,0 +1,242 @@
+id: footer-page
+variant: footer
+data: {}
+template:
+  id: tesla-main-page
+  type: document
+  children:
+    - id: footer
+      type: section
+      children:
+        - id: footer-section-link1
+          type: button
+          data:
+            text: "Tesla © 2020"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link2
+          type: button
+          data:
+            text: "Privacy & Legal"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link3
+          type: button
+          data:
+            text: "Contact"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link4
+          type: button
+          data:
+            text: "Careers"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link5
+          type: button
+          data:
+            text: "Get Newsletter"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link6
+          type: button
+          data:
+            text: "Contact"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link7
+          type: button
+          data:
+            text: "Careers"
+            link:
+              type: internal
+              routeId: ''
+        - id: footer-section-link8
+          type: button
+          data:
+            text: "Get Newsletter"
+            link:
+              type: internal
+              routeId: ''
+
+stylesheets:
+  desktop:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 70
+      backgroundColor: '#fff'
+      display: grid
+      width: 70%
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+      margin: auto
+    footer-section-link1:
+      color: '#000'
+      margin: 20 0 0 50
+      fontSize: auto
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#000'
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 20 0 0 50
+    footer-section-link3:
+      margin: 20 0 0 50
+      textAlign: center
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link4:
+      color: '#000'
+      backgroundColor: 'transparent'
+      margin: 20 0 0 50
+      fontSize: auto
+    footer-section-link5:
+      margin: 20 0 0 50
+      backgroundColor: 'transparent'
+      color: '#000'
+      fontSize: auto
+    footer-section-link6:
+      margin: 20 0 0 50
+      textAlign: center
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link7:
+      color: '#000'
+      backgroundColor: 'transparent'
+      margin: 20 0 0 50
+      fontSize: auto
+    footer-section-link8:
+      margin: 20 0 0 50
+      backgroundColor: 'transparent'
+      color: '#000'
+      fontSize: auto
+
+  tablet:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+    footer-section-link1:
+      color: '#000'
+      margin: 20 0 0 20
+      textAlign: left
+      fontSize: auto
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#000'
+      fontSize: auto
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link4:
+      color: '#000'
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+      fontSize: auto
+      textAlign: left
+    footer-section-link5:
+      margin: 20 auto auto 20
+      backgroundColor: 'transparent'
+      color: '#000'
+      textAlign: left
+      fontSize: auto
+    footer-section-link6:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link7:
+      color: '#000'
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+      fontSize: auto
+      textAlign: left
+    footer-section-link8:
+      margin: 20 0 0 20
+      backgroundColor: 'transparent'
+      color: '#000'
+      fontSize: auto
+      textAlign: left
+
+  mobile:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+    footer-section-link1:
+      color: '#000'
+      margin: 20 0 0 20
+      textAlign: left
+      fontSize: auto
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#000'
+      textAlign: left
+      fontSize: auto
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link4:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link5:
+      margin: 20 0 0 20
+      backgroundColor: 'transparent'
+      color: '#000'
+      textAlign: left
+      fontSize: auto
+    footer-section-link6:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#000'
+      backgroundColor: 'transparent'
+      fontSize: auto
+    footer-section-link7:
+      color: '#000'
+      backgroundColor: 'transparent'
+      margin: 20 0 20 20
+      fontSize: auto
+      textAlign: left
+    footer-section-link8:
+      margin: 20 0 20 20
+      backgroundColor: 'transparent'
+      color: '#000'
+      fontSize: auto
+      textAlign: left
+
+context: {}

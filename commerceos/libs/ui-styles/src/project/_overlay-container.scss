@@ -1,0 +1,162 @@
+@mixin box-margin($vertical, $horizontal) {
+  bottom: $vertical;
+  top: $vertical;
+  right: $horizontal;
+  left: $horizontal;
+}
+
+$mat-card-header-height: $grid-unit-y * 5;
+
+.pe-bootstrap {
+  .info-box-background-blurred {
+    filter: blur($margin-adjust * 2);
+  }
+
+  .pe-info-box,
+  pe-overlay-container > .overlay-container, // <-- TODO this can be removed after NG-KIT version > 7.0.20
+  .pe-overlay-container > .overlay-container {
+    .mat-card-content {
+      background-color: $color-primary-8;
+      &-no-background-color {
+        background: transparent;
+      }
+
+      &.transactions-back {
+        overflow: scroll;
+        background-color: $color-transaction-background;
+      }
+    }
+  }
+
+  .pe-overlay-container,
+  pe-overlay-container // <-- TODO this can be removed after NG-KIT version > 7.0.20
+  {
+    &.fixed {
+      @include box-margin(8%, 12%);
+
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        @include box-margin(6%, 10%);
+      }
+      @media (max-width: $viewport-breakpoint-ipad) {
+        @include box-margin(1%, 1%);
+      }
+      @media (max-width: $viewport-breakpoint-xs-2) {
+        @include box-margin(2%, 0%);
+      }
+
+      &.fullsize {
+        @include box-margin(4%, 2%);
+        @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+          @include box-margin(1%, 2%);
+        }
+      }
+
+      &.full-screen {
+        @include box-margin(0, 0);
+        > .overlay-container > .mat-card {
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+
+      position: fixed;
+      @include pe_flexbox;
+      @include pe_align-items(center);
+      @include pe_justify-content(center);
+    }
+
+    &:not(.fixed) {
+      display: block;
+      margin: $padding-base-vertical * 8 12%;
+      height: 100%;
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        margin: $padding-base-vertical * 8 10%;
+      }
+      @media (max-width: $viewport-breakpoint-sm-1) {
+        margin: $padding-base-vertical * 4 5%;
+      }
+      @media (max-width: $viewport-breakpoint-xs-2) {
+        margin: 0;
+      }
+    }
+
+    &.reset-scroll-container {
+      .overlay-container {
+        & > .mat-card {
+          .mat-card-content {
+            .mat-card-content-scroll-container {
+              position: relative;
+              overflow: hidden;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    & > .overlay-container {
+      height: 100%;
+      width: 100%;
+
+      &.not-fullwidth-mobile {
+        padding: 0 $padding-base-horizontal;
+        @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+          padding: 0 $padding-small-horizontal;
+        }
+        @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+          padding: 0;
+        }
+      }
+
+      &.full-height {
+        .mat-card-content {
+          height: calc(100% - #{$grid-unit-y * 5});
+
+          .full-height {
+            height: 100%;
+          }
+        }
+      }
+
+      & > .mat-card {
+        height: 100%;
+        width: 95%;
+        margin: 0 auto;
+
+        @media (max-width: $viewport-breakpoint-xs-2) {
+          border-radius: 12px;
+        }
+
+        &.mat-card-transparent-lg {
+          .mat-card-header {
+            height: $mat-card-header-height;
+            @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+              height: $grid-unit-y * 4;
+            }
+            pe-navbar, // <-- TODO this can be removed after NG-KIT version > 7.0.20
+            .pe-navbar {
+              width: 100%;
+              button.mat-button {
+                color: $color-secondary-0;
+              }
+            }
+          }
+        }
+
+        .mat-card-content {
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+div.root-container > div {
+  > app-builder > tm-theme-root > tm-theme-container > tm-themes-list > pe-group-views-box > pe-overlay-container.full-screen {
+    top: 26px !important;
+  }
+}

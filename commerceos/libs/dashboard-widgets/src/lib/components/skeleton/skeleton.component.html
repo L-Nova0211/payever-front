@@ -1,0 +1,27 @@
+<div class="skeleton-container" [ngClass]="theme">
+	<div class="first-item widget-item">
+		<div class="skeleton-item box"></div>
+	</div>
+	<div class="second-item widget-item">
+		<div class="skeleton-item box"></div>
+		<div class="skeleton-item large-box"></div>
+		<div class="skeleton-item small-box"></div>
+		<div class="skeleton-item small-box"></div>
+	</div>
+	<div class="third-item widget-item">
+		<div class=" skeleton-item box"></div>
+		<div class="skeleton_grid">
+			<div *ngFor="let i of [].constructor(18)" class="app-skeleton">
+				<div class="icon-skeleton skeleton-item"></div>
+				<div class="title-skeleton skeleton-item"></div>
+			</div>
+		</div>
+	</div>
+	<div class="second-item widget-item">
+		<div class="skeleton-item box"></div>
+		<div class="skeleton-item large-box"></div>
+		<div class="skeleton-item small-box"></div>
+		<div class="skeleton-item small-box"></div>
+	</div>
+	<div class="space"></div>
+</div>

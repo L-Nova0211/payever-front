@@ -1,0 +1,117 @@
+<pe-new-platform-header class="studio-dialog__platform-header"></pe-new-platform-header>
+<ng-container>
+  <pe-data-grid
+    class="studio-dialog__data-grid"
+    [filters]="filters"
+    [theme]="theme"
+    [displayFilters]="true"
+    [isShowGridItemInfo]="true"
+    [hideLayoutSwitcher]="true"
+    (scrollEvent)="scrollBottomOn()"
+    [sortByActions]="sortByOptions"
+    [defaultLayout]="PeDataGridLayoutType.Grid"
+  >
+
+    <pe-sidebar-filters-wrapper>
+      <pe-sidebar-header title="Studio" [allowClose]="false"></pe-sidebar-header>
+      <pe-sidebar-filter-wrapper
+        [active]="false"
+        title="Categories"
+        [expandable]="true"
+      >
+        <pe-tree-sidebar-filter
+          #studioTreeFilter
+          [formControl]="formGroup.get('categoriesTree')"
+          [multiple]="false"
+          [tree]="categoriesTree$ | async"
+          [refresh]="refresh$"
+        >
+          <ng-template #nodeImageTemplate let-node="node">
+            <pe-data-grid-node-icon></pe-data-grid-node-icon>
+          </ng-template>
+        </pe-tree-sidebar-filter>
+      </pe-sidebar-filter-wrapper>
+      <pe-sidebar-filter-wrapper
+        [active]="false"
+        title="Styles"
+        [expandable]="true"
+      >
+        <pe-tree-sidebar-filter
+          #studioStylesTreeFilter
+          [formControl]="formGroup.get('stylesTree')"
+          [multiple]="true"
+          [tree]="stylesTree$ | async"
+        >
+          <ng-template #nodeImageTemplate let-node="node">
+            <pe-data-grid-node-icon></pe-data-grid-node-icon>
+          </ng-template>
+        </pe-tree-sidebar-filter>
+      </pe-sidebar-filter-wrapper>
+<!--      <pe-sidebar-filter-wrapper-->
+<!--        [active]="false"-->
+<!--        title="Orientation"-->
+<!--        [expandable]="true"-->
+<!--      >-->
+<!--        <pe-tree-sidebar-filter-->
+<!--          #studioStylesTreeFilter-->
+<!--          [formControl]="formGroup.get('formatsTree')"-->
+<!--          [multiple]="true"-->
+<!--          [tree]="formatsTree$ | async"-->
+<!--        >-->
+<!--          <ng-template #nodeImageTemplate let-node="node">-->
+<!--            <pe-data-grid-node-icon></pe-data-grid-node-icon>-->
+<!--          </ng-template>-->
+<!--        </pe-tree-sidebar-filter>-->
+<!--      </pe-sidebar-filter-wrapper>-->
+      <pe-sidebar-filter-wrapper
+        [active]="false"
+        title="Has People"
+        [expandable]="true"
+      >
+        <pe-tree-sidebar-filter
+          #studioStylesTreeFilter
+          [formControl]="formGroup.get('hasPeopleTree')"
+          [multiple]="true"
+          [tree]="hasPeopleTree"
+        >
+          <ng-template #nodeImageTemplate let-node="node">
+            <pe-data-grid-node-icon></pe-data-grid-node-icon>
+          </ng-template>
+        </pe-tree-sidebar-filter>
+      </pe-sidebar-filter-wrapper>
+    </pe-sidebar-filters-wrapper>
+<!--    <pe-sidebar-footer-wrapper>-->
+<!--      <pe-menu-sidebar-footer [menuData]="sidebarFooterData"></pe-menu-sidebar-footer>-->
+<!--    </pe-sidebar-footer-wrapper>-->
+
+    <ng-template #searchNavbar></ng-template>
+
+<!--    <ng-container *ngIf="categoriesItems$ | async as items">-->
+<!--      <div class="studio-dialog__section-header" *ngIf="items?.length">-->
+<!--        Categories-->
+<!--      </div>-->
+<!--      <pe-data-grid-item-->
+<!--        *ngFor="let item of items; trackBy: gridItemTrackBy"-->
+<!--        [item]="item"-->
+<!--        [isShowGridItemInfo]="false"-->
+<!--        [isShowProjectedContentInfo]="true"-->
+<!--        [selectable]="false"-->
+<!--      ></pe-data-grid-item>-->
+<!--    </ng-container>-->
+
+    <ng-container *ngIf="mediasItems$ | async as items">
+<!--      <div class="studio-dialog__section-header" *ngIf="items?.length">-->
+<!--        My images-->
+<!--      </div>-->
+      <pe-data-grid-item
+        id="studio-grid-item"
+        *ngFor="let item of items; trackBy: gridItemTrackBy"
+        [item]="item"
+        [isShowGridItemInfo]="false"
+        [selectable]="false"
+        [actions]="[itemSingleSelectedAction]"
+      >
+      </pe-data-grid-item>
+    </ng-container>
+  </pe-data-grid>
+</ng-container>

@@ -1,0 +1,33 @@
+.products-categories-dialog {
+  border-radius: 16px;
+  overflow: hidden;
+
+  mat-dialog-container {
+    overflow: hidden;
+  }
+
+  .item__content {
+    height: 100% !important;
+  }
+
+  .grid-content {
+    padding: 0 16px 10px !important;
+
+    &__right {
+      padding: 0 !important;
+    }
+  }
+
+  .grid-view-container {
+    overflow-x: hidden;
+    margin-right: 0 !important;
+  }
+
+  .items-list {
+    --gap-size: 0px;
+  }
+
+  pe-data-grid-item {
+    padding: 8px;
+  }
+}

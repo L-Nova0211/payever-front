@@ -1,0 +1,80 @@
+@import "../../../../../../styles/src/lib/styles/spinner";
+
+.form {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: #ffffff;
+  margin: 0 12px;
+
+  &__row {
+    margin-top: 16px;
+    > span {
+      color: #7a7a7a;
+      display: block;
+      font-size: 11px;
+      font-family: Roboto, sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    input {
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      box-sizing: border-box;
+      padding: 4px 20px 4px 8px;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      color: #ffffff;
+      height: 28px;
+      margin: 0;
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    border-radius: 12px;
+    padding-inline-start: 0;
+  }
+
+  li {
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    margin-top: 6px;
+    position: relative;
+    padding: 6px 8px;
+  }
+
+  li.disabled {
+    color: #7a7a7a;
+    cursor: default;
+  }
+
+  li:hover:not(.disabled) {
+    color: white;
+    background: #0371e2;
+  }
+
+  .remove {
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    margin-top: 12px;
+    position: relative;
+    padding: 6px 8px;
+    background-color: #37363b;
+  }
+}

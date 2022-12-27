@@ -1,0 +1,79 @@
+:host {
+    position: fixed;
+    z-index: 9999;
+    left: 33%;
+    top: 7%;
+    width: 348px;
+    height: 36px;
+    margin: 14px 511px 646px 237px;
+    padding: 10px 16px 10px 12px;
+    border-radius: 9px;
+    box-shadow: 3px 3px 30px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1c1d1e;
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    &.light {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    &.transparent {
+      -webkit-backdrop-filter: blur(37.5px);
+      backdrop-filter: blur(37.5px);
+      box-shadow: 3px 3px 30px 0 rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .row-uploader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  
+      .upload-items {
+        flex: 1;
+        .light p {
+          color: #000000;
+        }
+      }
+      .cancel {
+        width: 10%;
+        cursor: pointer;
+        letter-spacing: normal;
+        text-align: right;
+        color: #0371e2;
+      }
+    }
+    p {
+      color: #ffffff;
+      text-align: center;
+    }
+    .light p {
+      color: #000000;
+    }
+    mat-progress-spinner {
+      circle,
+      .mat-spinner circle {
+        stroke: #ffffff;
+      }
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    .light {
+      mat-progress-spinner {
+        circle,
+        .mat-spinner circle {
+          stroke: #3d3d3d;
+        }
+      }
+    }
+  }
+  

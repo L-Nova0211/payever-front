@@ -1,0 +1,61 @@
+@import "./variables";
+.overlay-widget .qr-print-modal {
+  width: 100%;
+
+  .tpm-outer-container.pe-info-box-container-fixed {
+    width: 100%;
+    min-height: fit-content;
+
+    .pe-info-box {
+      padding: 0;
+      width: 100%;
+      min-width: fit-content;
+
+      mat-card.mat-card {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 !important;
+
+        .mat-card-content {
+
+          .content-wrapper {
+            background-color: transparent;
+
+            .mat-accordion .mat-expansion-panel {
+              .mat-expansion-panel-header {
+                border: none;
+                background-color: rgba(0, 0, 0, 0.3);
+
+                .mat-content mat-panel-title {
+                  font-family: Roboto, sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding-left: 0;
+                  text-transform: none;
+                  color: $regular-text-color;
+                }
+
+                .mat-expansion-indicator {
+                  color: $regular-text-color;
+                }
+              }
+
+              .mat-expansion-panel-body {
+                padding: 0;
+              }
+
+              mat-list.mat-list.mat-list-base mat-list-item.mat-list-item .mat-list-item-content {
+                height: fit-content !important;
+
+                .mat-list-item-flex {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

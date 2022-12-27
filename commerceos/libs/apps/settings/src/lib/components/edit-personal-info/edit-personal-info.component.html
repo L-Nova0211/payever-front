@@ -1,0 +1,88 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="contactForm">
+  <div class="image">
+    <peb-logo-and-status-picker
+      [addButtonLabel]="'form.create_form.personal_information.logo.add_media' | translate"
+      [image]="previewImageUrl"
+      [isImageLoading]="false"
+      (file)="uploadImage($event)"
+    ></peb-logo-and-status-picker>
+  </div>
+  <peb-form-background>
+    <div class="column-wrapper">
+      <peb-select selectType="label" label="{{ formTranslationsService.getFormControlLabel('salutation') }}" formControlName="salutation">
+        <peb-select-option
+          class="select-options"
+          *ngFor="let item of formTranslationsService.salutation"
+          value="{{ item.value }}"
+          label="{{ item.label }}"
+        ></peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        label="{{ formTranslationsService.getFormControlLabel('first_name') }}"
+        class="divider-border"
+        appearance="label"
+        [isFieldInvalid]="contactForm.get('firstName').invalid"
+        [errorMessage]="formTranslationsService.getFormControlErrorMessage('first_name')"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ formTranslationsService.getFormControlPlaceholder('first_name') }}"
+          formControlName="firstName"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        label="{{ formTranslationsService.getFormControlLabel('last_name') }}"
+        appearance="label"
+        [isFieldInvalid]="contactForm.get('lastName').invalid"
+        [errorMessage]="formTranslationsService.getFormControlErrorMessage('last_name')"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ formTranslationsService.getFormControlPlaceholder('last_name') }}"
+          formControlName="lastName"
+        />
+      </peb-form-field-input>
+    </div>
+    <peb-form-field-input
+      class="two-column-input"
+      label="{{ formTranslationsService.getFormControlLabel('phone') }}"
+      appearance="label"
+      [isFieldInvalid]="contactForm.get('phone').hasError('pattern')"
+      [errorMessage]="formTranslationsService.getFormControlErrorMessage('phone')"
+    >
+      <input type="text" pebInput placeholder="{{ formTranslationsService.getFormControlPlaceholder('phone') }}" formControlName="phone" />
+    </peb-form-field-input>
+    <peb-form-field-input
+      class="two-column-input"
+      label="{{ formTranslationsService.getFormControlLabel('email') }}"
+      appearance="label"
+      [isFieldInvalid]="contactForm.get('email').hasError('pattern')"
+      [errorMessage]="formTranslationsService.getFormControlErrorMessage('email')"
+    >
+      <input type="text" pebInput placeholder="{{ formTranslationsService.getFormControlPlaceholder('email') }}" formControlName="email" />
+    </peb-form-field-input>
+    <peb-form-background>
+      <peb-form-field-input label="{{ formTranslationsService.getFormControlLabel('birthday') }}" appearance="label">
+        <input
+          type="datetime"
+          pebInput
+          disabled
+          placeholder="DD.MM.YYYY"
+          formControlName="birthday"
+          (click)="openDatepicker($event, 'birthday')"
+          #dateToInput
+        />
+        <div class="suffix-icon">
+          <svg class="calendar-image" (click)="openDatepicker({ target: dateToInput }, 'birthday')">
+            <use xlink:href="#icon-settings-datepicker"></use>
+          </svg>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-form-background>
+  <button peb-button class="remove-button" (click)="removeUser()">
+    {{ 'form.create_form.personal.delete_user' | translate }}
+  </button>
+</form>

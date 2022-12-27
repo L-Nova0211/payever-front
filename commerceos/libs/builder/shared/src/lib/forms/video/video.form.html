@@ -1,0 +1,134 @@
+<form [formGroup]="formGroup">
+  <!-- <div class="group">
+    <div class="inputs-group">
+      <div
+        *ngIf="videoSource"
+        class="inputs-group__row__title">
+        File Info
+      </div>
+      <div
+        class="inputs-group__row"
+        [class.inputs-group-center]="!videoSource"
+      >
+        <ng-container *ngIf="videoSource || isLoading; else defaultVideo">
+          <div class="preview-video">
+            <video
+              *ngIf="videoSource && !isLoading"
+              #video
+              class="preview-video__player"
+              [muted]="'muted'"
+              [src]="(videoSource + '?autoplay=false')"
+              (loadedmetadata)="onMetadata($event, video)"
+            ></video>
+            <img
+              *ngIf="videoPreview && !previewError && !isLoading; else errorPreview"
+              class="preview-video__image"
+              [src]="videoPreview"
+              [alt]="videoSource"
+              (error)="previewError = true"/>
+          </div>
+          <div
+            *ngIf="!isLoading; else loading"
+            class="preview-video__name">
+            <span class="preview-video__filename">{{ fileName }}</span>
+            <span class="preview-video__duration">{{ videoDuration }}</span>
+          </div>
+        </ng-container>
+        <ng-template #defaultVideo>
+          <div class="preview-video">
+            <peb-editor-picture-icon
+              class="preview-video__default-icon"
+              color="#C9C9C9"
+            ></peb-editor-picture-icon>
+          </div>
+        </ng-template>
+        <ng-template #errorPreview>
+          <div
+            *ngIf="!loading"
+            class="preview-video">
+            <peb-editor-video-icon
+              class="preview-video__error-icon"
+              color="#C9C9C9"
+            ></peb-editor-video-icon>
+          </div>
+        </ng-template>
+        <ng-template #loading>
+          <div class="preview-video__name">
+            <span class="preview-video__filename">Loading...</span>
+          </div>
+        </ng-template>
+        <ng-template #spinner>
+          <mat-progress-spinner
+            class="mat-spinner-themed video-preview__progress-spinner"
+            [strokeWidth]="2"
+            [diameter]="22"
+            [value]="uploadProgress"
+            [color]="'white'"
+          >
+          </mat-progress-spinner>
+        </ng-template>
+      </div>
+    </div>
+  </div> -->
+  <div class="form__row">
+    <input
+      #fileInput
+      hidden
+      type="file"
+      accept="video/mp4,video/x-m4v,video/*"
+      (change)="fileChanged.emit($event)"
+    />
+    <button class="replace-file-button" (click)="fileInput.click()" [disabled]="isLoading">
+      <ng-container *ngIf="isLoading">
+        Loading...
+      </ng-container>
+      <ng-container *ngIf="!isLoading">
+        {{ videoSource ? 'Replace video' : 'Upload video' }}
+      </ng-container>
+    </button>
+  </div>
+  <div class="form__row" style="margin-bottom: 10px;">
+    <peb-slide-toggle formControlName="sound">Sound</peb-slide-toggle>
+  </div>
+  <div class="form__row_border">
+    <peb-slide-toggle formControlName="controls">Controls</peb-slide-toggle>
+  </div>
+  <div class="form__row_border">
+    <peb-slide-toggle formControlName="autoplay">Autoplay</peb-slide-toggle>
+  </div>
+  <div class="form__row_border">
+    <peb-slide-toggle formControlName="loop">Loop</peb-slide-toggle>
+  </div>
+  <!-- <div class="group">
+    <div class="group__row">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="autoplay"/>
+        <span>Autoplays</span>
+      </label>
+    </div>
+  </div> -->
+  <!-- <div class="group">
+    <div class="group__row">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="loop"/>
+        <span>Plays in a loop</span>
+      </label>
+    </div>
+  </div> -->
+  <!-- <div class="group">
+    <div class="group__row">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="controls"/>
+        <span>Controls</span>
+      </label>
+    </div>
+  </div> -->
+  <!-- <div class="group">
+    <div class="group__row">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="sound"/>
+        <span>Sound</span>
+      </label>
+    </div>
+  </div> -->
+</form>

@@ -1,0 +1,168 @@
+<div class="pe-info-box-container-fixed notifications-content">
+  <pe-info-box [withHeader]="false"
+               [withFooter]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               [fixed]="false">
+    <ng-container content>
+      <mat-accordion class="checkout-mat-accordion" multi>
+        <mat-expansion-panel
+          *ngFor="let settings of groupedBusinessSettings"
+          #panel
+          hideToggle="true">
+          <mat-expansion-panel-header
+            collapsedHeight="40px"
+            expandedHeight="40px"
+            class="mat-expansion-panel-header-no-logo">
+            <mat-panel-title>
+              <div *ngIf="settings.key" class="notifications-content_accordion-header">
+                <div class="notifications-content_accordion-icon">
+                  <svg>
+                    <use [attr.xlink:href]="settings.integrationInfo?.integration?.displayOptions?.icon"></use>
+                  </svg>
+                </div>
+                <div class="notifications-content_accordion-name">
+                  <div
+                    class="notifications-content_accordion-label"
+                    translate>
+                    {{'payment_methods.' + settings.key}}
+                  </div>
+                  <div class="notifications-content_accordion-status">
+                    {{ settings.integrationInfo?.enabled ?
+                        ('settings.notifications.settings.status.on' | translate) :
+                        ('settings.notifications.settings.status.off' | translate)
+                    }}
+                  </div>
+                </div>
+              </div>
+              <div
+                *ngIf="!settings.key"
+                class="notifications-content_accordion-header__general"
+                translate>
+                settings.notifications.general
+              </div>
+            </mat-panel-title>
+            <mat-panel-description>
+              <svg>
+                <use
+                  [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+              </svg>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="payment-notification-failed-container">
+            <ng-container>
+              <div class="payment-notification-failed-container_integration">
+                <div *ngIf="settings.apiKeysInvalid" class="payment-notification-failed-container_integration-item checkbox-setting">
+                  <div
+                    class="checkbox-setting_title"
+                    translate>
+                    settings.notifications.settings.apiKeysInvalid
+                  </div>
+                  <div class="checkbox-setting_checkbox">
+                    <mat-slide-toggle
+                      [checked]="settings.apiKeysInvalid.isEnabled" (change)="settings.apiKeysInvalid.isEnabled = $event.checked">
+                    </mat-slide-toggle>
+                  </div>
+                </div>
+                <div *ngIf="settings.paymentOptionCredentialsInvalid" class="payment-notification-failed-container_integration-item checkbox-setting">
+                  <div
+                    class="checkbox-setting_title"
+                    translate>
+                    settings.notifications.settings.paymentOptionCredentialsInvalid
+                  </div>
+                  <div class="checkbox-setting_checkbox">
+                    <mat-slide-toggle
+                      [checked]="settings.paymentOptionCredentialsInvalid.isEnabled" (change)="settings.paymentOptionCredentialsInvalid.isEnabled = $event.checked">
+                    </mat-slide-toggle>
+                  </div>
+                </div>
+                <div *ngIf="settings.pspApiFailed" class="payment-notification-failed-container_integration-item checkbox-setting">
+                  <div
+                    class="checkbox-setting_title"
+                    translate>
+                    settings.notifications.settings.pspApiFailed
+                  </div>
+                  <div class="checkbox-setting_checkbox">
+                    <mat-slide-toggle
+                      [checked]="settings.pspApiFailed.isEnabled" (change)="settings.pspApiFailed.isEnabled = $event.checked">
+                    </mat-slide-toggle>
+                  </div>
+                </div>
+                <ng-container *ngIf="settings.lastTransactionTime">
+                  <div class="payment-notification-failed-container_integration-item checkbox-setting">
+                    <div
+                      class="checkbox-setting_title"
+                      translate>
+                      settings.notifications.settings.lastTransactionTime
+                    </div>
+                    <div class="checkbox-setting_checkbox">
+                      <mat-slide-toggle
+                        [checked]="settings.lastTransactionTime.isEnabled" (change)="settings.lastTransactionTime.isEnabled = $event.checked">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                  <div
+                    class="send-by-cron-interval-container">
+                    <time-frame-settings
+                      *ngFor="let timeFrame of settings.lastTransactionTime?.timeFrames; index as i"
+                      [timeFrame]="timeFrame"
+                      [repeatFrequencyIntervalOptions]="repeatFrequencyIntervalOptions"
+                      (deleteTimeFrame)="deleteFrame(settings.lastTransactionTime?.timeFrames, i)"
+                      (updateTimeFrame)="updateFrame(settings.lastTransactionTime?.timeFrames, i, $event)">
+                    </time-frame-settings>
+                  </div>
+                  <div
+                    class="add-button notifications-add-button"
+                    (click)="addTimeFrame(settings.lastTransactionTime)"
+                    translate>
+                    settings.notifications.settings.addFrame
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="settings.paymentNotificationFailed">
+                  <div class="payment-notification-failed-container_integration-item checkbox-setting">
+                    <div
+                      class="checkbox-setting_title"
+                      translate>
+                      settings.notifications.settings.paymentNotificationFailed
+                    </div>
+                    <div class="checkbox-setting_checkbox">
+                      <mat-slide-toggle
+                        [checked]="settings.paymentNotificationFailed.isEnabled" (change)="settings.paymentNotificationFailed.isEnabled = $event.checked">
+                      </mat-slide-toggle>
+                    </div>
+                  </div>
+                  <div class="payment-notification-failed-container_general-item select-setting select-setting-first">
+                    <peb-select
+                      selectType="label"
+                      label="{{'settings.notifications.settings.updateInterval.label' | translate}}"
+                      [selected]="settings.paymentNotificationFailed.updateInterval">
+                      <peb-select-option
+                        *ngFor="let option of updateIntervalOptions"
+                        [value]="option.value"
+                        [label]="option.label"
+                        (click)="settings.paymentNotificationFailed.updateInterval = option.value">
+                      </peb-select-option>
+                    </peb-select>
+                  </div>
+                  <div class="payment-notification-failed-container_general-item select-setting select-setting-last">
+                    <peb-select
+                      selectType="label"
+                      label="{{'settings.notifications.settings.repeatFrequencyInterval.label' | translate}}"
+                      [selected]="settings.paymentNotificationFailed.repeatFrequencyInterval">
+                      <peb-select-option
+                        *ngFor="let option of repeatFrequencyIntervalOptions"
+                        [value]="option.value"
+                        [label]="option.label"
+                        (click)="settings.paymentNotificationFailed.repeatFrequencyInterval = option.value">
+                      </peb-select-option>
+                    </peb-select>
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
+  </pe-info-box>
+</div>

@@ -1,0 +1,153 @@
+.forward-by {
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.message-header {
+  position: relative;
+  font-size: 12px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  font-weight: 500;
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__from {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  &__forwarded-from {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0091df;
+  }
+
+  &__message-info {
+    display: flex;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+
+    & > svg {
+      display: none;
+    }
+
+    & > svg:nth-last-child(1) {
+      margin-left: -5px;
+    }
+
+    &.sent > svg:nth-last-child(1) {
+      display: block;
+    }
+
+    &.read > svg {
+      display: block;
+    }
+  }
+
+  &__corner {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__edited {
+    margin-right: 6px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #cccccc;
+  }
+
+  span {
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #cccccc;
+  }
+
+  &__reply {
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #cccccc;
+    opacity: 0;
+    margin-right: -33px;
+    margin-top: -5px;
+    cursor: pointer;
+    transition: 0.2s opacity ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__corner {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__sender {
+    margin-right: 10px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .checkbox-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 6px;
+    cursor: pointer;
+
+    &__background {
+      width: 16px;
+      height: 16px;
+      border-radius: 20px;
+      background-color: #0091df;
+    }
+
+    &__check {
+      position: absolute;
+      height: 100%;
+      width: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

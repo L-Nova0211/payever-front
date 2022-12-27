@@ -1,0 +1,197 @@
+@mixin picker-container-them($containerColor, $itemColor, $buttonColor) {
+  .product-picker-container__controls-box {
+    background-color: $containerColor;
+
+    .input-with-label {
+      background-color: $itemColor;
+    }
+
+    .button-container {
+      background-color: $buttonColor
+    }
+  }
+
+  .products-container {
+    &__item {
+      background-color: $containerColor;
+
+      .product-data, .quantity, .delete-btn {
+        background-color: $itemColor;
+      }
+    }
+  }
+}
+
+.product-picker-container {
+  overflow: hidden;
+
+  &.transparent {
+    @include picker-container-them(
+      rgba(36, 39, 46, 0.85),
+      rgba(0, 0, 0, 0.3),
+      #202020
+    );
+  }
+
+  &.dark {
+    @include picker-container-them(
+      rgba(36, 39, 46, 0.85),
+      #111111,
+      #1c1d1e
+    );
+  }
+
+  &.light {
+    @include picker-container-them(
+      rgb(231 231 233),
+      #ffffff,
+      #f5f5f5
+    );
+  }
+
+  &__controls-box {
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+
+    .input-with-label {
+      display: inherit;
+      flex-direction: column;
+      flex: 1;
+      padding: 4px 12px;
+      border-radius: 0 0 0 8px;
+
+      span {
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        height: 16px;
+      }
+
+      input {
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.33;
+        height: 16px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        padding: 0;
+      }
+    }
+
+    .button-container {
+      display: inherit;
+      width: 105px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0 0 8px 0;
+
+      .peb-text-button {
+        font-size: 12px;
+        line-height: 130%;
+      }
+    }
+  }
+
+  .products-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &__item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding-top: 12px;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        width: calc(100% - 48px);
+
+        .product-image {
+          width: 40px;
+          min-width: 40px;
+          height: 40px;
+          border-radius: 9px;
+          margin-right: 12px;
+          overflow: hidden;
+          background-color: #fff;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .product-data {
+          border-radius: 12px 0 0 12px;
+          width: 50%;
+          height: 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          padding: 0 12px;
+          box-sizing: border-box;
+          overflow: hidden;
+
+          .product-price {
+            font-family: Roboto;
+            font-size: 11px;
+            color: #7a7a7a;
+          }
+
+          .product-name {
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: #ffffff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+
+        .quantity {
+          width: 50%;
+          height: 40px;
+          border-radius: 0 12px 12px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          box-sizing: border-box;
+          border-left: 1px solid rgba(36, 39, 46, 0.85);
+
+          .quantity-select {
+            width: 100%;
+          }
+        }
+      }
+
+      .delete-btn {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-left: 8px;
+        border-radius: 12px;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 16px;
+          height: 18px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<div class="pe-info-box-container-fixed language-content">
+  <div *ngIf="(hasDefault$ | async) !== true">
+    <span class="default-error-message">{{ 'settings.languages.selectDefault' | translate }}</span>
+  </div>
+  <pe-info-box [withHeader]="false"
+               [withFooter]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               [fixed]="false"
+               (onClose)="goBack()"
+  >
+    <ng-container content>
+      <mat-list class="mat-list-transparent mat-list-transparent-no-padding">
+        <ng-container *ngIf="!languagePanel?.length">
+          <mat-list-item class="item-padding mat-list-item-padding-2x">
+            <div class="mat-list-item-flex">
+              <div class="mat-list-item-col">
+                <div class="mat-list-item-title mat-list-item-title-size-md">
+                  {{ 'settings.languages.noLanguages' | translate }}
+                </div>
+              </div>
+            </div>
+          </mat-list-item>
+        </ng-container>
+        <ng-container *ngFor="let languageItem of languagePanel">
+          <mat-list-item class="item-padding mat-list-item-padding-2x">
+            <div class="mat-list-item-flex">
+              <div class="mat-list-item-col">
+                <div class="mat-list-item-title mat-list-item-title-size-md">
+                  {{ languageItem.name }}
+                </div>
+              </div>
+              <div class="mat-list-item-col default-block">
+                <div *ngIf="languageItem?.isDefault && languageItem.active"
+                     class="mat-list-item-subtitle text-right"
+                     translate
+                >
+                  settings.languages.default
+                </div>
+                <button *ngIf="languageItem.active && !languageItem.isDefault"
+                        mat-raised-button
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        class="set-as-default-button"
+                        color="muted-light"
+                        (click)="setDefaultLanguage(languageItem)">
+                  <span translate>
+                    settings.languages.setAsDefault
+                  </span>
+                </button>
+                <mat-slide-toggle [checked]="languageItem.active"
+                                  (change)="toggleClick(languageItem.name)"
+                                  class="default-toggle"
+                ></mat-slide-toggle>
+              </div>
+
+            </div>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-list>
+    </ng-container>
+  </pe-info-box>
+</div>

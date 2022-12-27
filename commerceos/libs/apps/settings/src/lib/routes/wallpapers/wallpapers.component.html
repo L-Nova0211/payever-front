@@ -1,0 +1,88 @@
+<div class="loader" *ngIf="isLoading$ | async">
+  <mat-spinner [strokeWidth]="2" [diameter]="26"></mat-spinner>
+</div>
+
+<pe-uploader
+  [files]="files"
+  cdkDrag
+  [ngClass]="theme"
+  [progress]="uploadProgress"
+  *ngIf="uploadingInProgress"
+  (cancelUploadEmitter)="cancelUpload($event)">
+</pe-uploader>
+
+
+<div class="wallpaper-wrapper" [ngClass]="theme" [class.loading]="(isLoading$ | async) || uploadingInProgress">
+  <pe-grid
+    [theme]="theme"
+    [items]="items$ | async"
+    [embedMod]="true"
+  >
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'pages.wallpaper.sidebar.title' | translate"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [rootFolder]="rootFolderData"
+        [folders]="sidebarCategories"
+        [selectFolder]="selectedFolder"
+        (selectedRootFolder)="onSelectRootFolder()"
+        (selectedFolder)="selectFolder($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+    <pe-grid-content
+      [mobileTitle]="mobileTitle$ | async"
+    >
+      <pe-grid-toolbar
+        [totalItems]="paginator.total"
+        [filterConfig]="toolbar.filterConfig"
+        (filtersChange)="filtersChange($event)"
+        [optionsMenu]="toolbar.optionsMenu"
+        (optionsChange)="optionsChange($event)"
+        [sortMenu]="toolbar.sortMenu"
+        (sortChange)="sortChange($event)"
+        (viewChange)="viewChange($event)"
+        (create)="createByHand()"
+      ></pe-grid-toolbar>
+      <pe-grid-viewport
+        [selectable]="selectable"
+        [defaultLayout]="gridLayout"
+      >
+        <pe-grid-list
+          [viewAdd]="viewAdd"
+          [scrollBottomOffset]="200"
+          (create)="createByHand()"
+          (scrolledToEnd)="scrollBottom()"
+        >
+          <ng-template let-item="item">
+            <pe-grid-item
+              [peDropIntoFolder]="itemsToMove(item)"
+              [item]="item"
+              [itemContextMenu]="getContextMenu(item)"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+            ></pe-grid-item>
+          </ng-template>
+        </pe-grid-list>
+        <pe-grid-table
+          [isLoading]="isLoading$ | async"
+          [displayedColumns]="displayedColumns"
+          [scrollBottomOffset]="50"
+        >
+          <ng-template let-item="item">
+            <pe-table-row
+              [peDropIntoFolder]="itemsToMove(item)"
+              [item]="item"
+              [itemContextMenu]="getContextMenu(item)"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+            >
+            </pe-table-row>
+          </ng-template>
+
+        </pe-grid-table>
+      </pe-grid-viewport>
+    </pe-grid-content>
+  </pe-grid>
+</div>
+
+<input #fileSelector accept="image/*" type="file" class="hidden" (change)="uploadImage($event)">

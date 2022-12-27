@@ -1,0 +1,361 @@
+@import "../../../../assets/imports";
+
+.connect-popup-wrapper {
+
+  .connect-popup-header {
+    display: flex;
+    justify-content: center;
+    margin-top: $margin-adjust*4;
+  }
+
+  .mat-card-title {
+    position: relative;
+    width: $pe_hgrid_gutter*17.75;
+  }
+
+  .installation-title {
+    font-size: $font-size-h4;
+    font-weight: bold;
+  }
+
+  .connect-card-title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon-connect-popup {
+    margin: auto $margin-adjust*3 auto 0;
+    padding-bottom: $margin-adjust*3;
+  }
+
+  .connect-popup-title {
+    font-weight: bold;
+    font-size: $font-size-base;
+  }
+
+  .connect-popup-price {
+    min-height: $pe_hgrid_gutter * 0.75;
+    font-size: $font-size-base;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: $margin-adjust;
+  }
+
+  .connect-popup-install {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: $margin-adjust * 9;
+  }
+
+  .connect-popup-info-wrapper {
+    width: $pe_vgrid_height * 33;
+  }
+  .connect-popup-info {
+    padding: 0;
+  }
+
+  .connect-popup-description {
+    padding: $margin-adjust * 6 0;
+    border-bottom: 1px solid $color-white-grey-2;
+  }
+
+  .installation-content {
+    padding: 0 $margin-adjust * 5.5;
+  }
+
+  .installation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $margin-adjust * 6 0;
+  }
+
+  .install-view {
+    width: 100%;
+    @include pe_flexbox;
+    @include pe_justify-content(space-between);
+
+    .install-left,
+    .install-right {
+      @include pe_flexbox;
+      @include pe_align-items(center);
+
+      .install-header {
+        @include pe_flexbox;
+        @include pe_justify-content(space-between);
+        @include pe_flex-direction(column);
+        width: 100%;
+        min-height: $pe_hgrid_gutter * 1.75;
+        padding-left: $margin-adjust * 5;
+      }
+    }
+
+    .install-left {
+      @include pe_justify-content(space-between);
+    }
+
+    .install-right {
+      @include pe_justify-content(flex-end);
+      .install-button {
+        min-width: $pe_vgrid_height * 8;
+      }
+    }
+  }
+
+  .icon-install {
+    height: $pe_hgrid_gutter * 1.75;
+    width: $pe_hgrid_gutter * 1.75;
+  }
+  .price-value {
+    font-size: $font-size-large-0;
+    padding-right: $margin-adjust * 2.5;
+  }
+
+  .swiper-container {
+    height: $pe_hgrid_gutter*64/6;
+    margin-top: $margin-adjust*5.5;
+  }
+
+  .swiper-container-horizontal > .swiper-scrollbar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: $pe_hgrid_gutter/8;
+    color: $color-white;
+    background: $color-white-grey-2;
+  }
+
+  .swiper-slide {
+    height: $pe_hgrid_gutter*10;
+    border-radius: $border-radius-base*2;
+  }
+
+  .swiper-scrollbar-drag {
+    background: $color-white-pe;
+  }
+
+  .connect-popup-info-header {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0;
+    font-size: $font-size-micro-1;
+  }
+
+  .connect-popup-info-content {
+    font-size: $font-size-micro-1;
+    line-height: $font-size-micro-1;
+    margin-bottom: $margin-adjust*1.5;
+  }
+
+  .connect-installation-primary {
+    height: $margin-adjust * 4;
+    display: block;
+    font-size: $font-size-small;
+    &:focus {
+      outline: none;
+    }
+  }
+  .footer-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .mat-list-spacer {
+    white-space: normal;
+    line-height: $line-height-small;
+    margin: $margin-adjust*3 $margin-adjust*8 $margin-adjust*3 0;
+  }
+
+  .mat-expansion-panel-dark .mat-expansion-panel-header {
+    padding-left: $margin-adjust*6;
+  }
+  .mat-card-transparent {
+    width: 90vw !important;
+    max-width:468px;
+  }
+  .info-box {
+    height: 100vh !important;
+  }
+}
+
+.pe-bootstrap {
+  .pe-info-box {
+    min-width: 100%;
+  }
+  .mat-card-border-md {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .mat-button-block {
+    border-radius: 0;
+  }
+}
+
+.connect-payment-option-wrapper {
+  width: 95%;
+}
+
+svg.icon-shipping-dhl-42-colored {
+  color: #d0131d;
+}
+
+.form-table {
+  .mat-form-field {
+    padding-left: 11px!important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+@media(max-width: $viewport-breakpoint-ipad - 1) {
+  .connect-popup-wrapper {
+    .mat-card-transparent {
+      max-width: $pe_hgrid_gutter * 20;
+    }
+    .install-view {
+      display: block;
+    }
+    .install-right {
+      padding: $margin-adjust 0 0 $margin-adjust * 5;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+    .price-value {
+      padding-left: $margin-adjust * 2;
+    }
+    .installation-footer {
+      display: block;
+    }
+    .connect-popup-info {
+      height: $pe_hgrid_gutter * 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $color-white-grey-2;
+    }
+    .connect-popup-info-wrapper {
+      width: 100%;
+    }
+    .connect-popup-install {
+      padding-top: $margin-adjust * 5;
+    }
+    .connect-popup-description {
+      padding: $margin-adjust * 4 0;
+    }
+    .installation-footer {
+      padding-top: 0;
+      padding-bottom: $margin-adjust * 4;
+    }
+    .footer-button {
+      justify-content: flex-start;
+      height: $pe_hgrid_gutter * 2;
+      margin-bottom: 0;
+      border-bottom: 1px solid $color-white-grey-2;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+
+@media(max-width: $viewport-breakpoint-ipad - 1) {
+  .pe-info-box-container-fixed {
+    position: relative;
+  }
+
+  .connect-popup-wrapper {
+    left: 0 !important;
+    transform: unset !important;
+    padding-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    & > .info-box {
+      margin-top: 0;
+    }
+
+    .mat-card-transparent {
+      overflow: scroll;
+      height: 100% !important;
+      width: 100vw !important;
+      margin: 0px auto;
+    }
+
+    .layout-blur-middle-bg {
+      border-radius: 0;
+    }
+
+    .installation-footer {
+      margin-bottom: 0px;
+    }
+  }
+
+  .pe-bootstrap {
+    padding: 0px !important;
+
+    .mat-card-border-md {
+      margin-bottom: 0px;
+      border-radius: 0;
+    }
+
+    .connect-popup-wrapper {
+      .info-box {
+        margin-top: 0px !important;
+
+        .mat-card-border-md {
+          border-radius: 0px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.payment-installed-message {
+  white-space: normal;
+}
+
+.payment-installed {
+  &-box {
+    padding: $grid-unit-y $grid-unit-x;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-icon {
+    margin-top: $pe_vgrid_height*5;
+  }
+
+  &-title {
+    margin-top: $margin-adjust*6.5;
+    font-size: $font-size-h3;
+    color: $color-secondary-0;
+  }
+
+  &-message {
+    margin-top: $margin-adjust*4;
+    text-align: center;
+  }
+
+  &-open {
+    margin-top: $margin-adjust*15;
+    margin-bottom: $margin-adjust*8.75;
+    width: $pe_hgrid_gutter*4.75;
+  }
+  .mat-card-transparent {
+    box-shadow: none !important;
+    background: transparent;
+  }
+}

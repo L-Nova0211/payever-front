@@ -1,0 +1,209 @@
+id: template-front-page
+name: General elements
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: template-front-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: title-html
+          type: text
+          data:
+            text: 'HTML elements:'
+        - id: html
+          type: html
+          data:
+            innerHTML: '<h3>Inserted html element</h3><h1>Another header</h1>'
+        - id: title-button
+          type: text
+          data:
+            text: 'Button:'
+        - id: button
+          type: button
+          data:
+            text: 'Button text'
+        - id: title-line
+          type: text
+          data:
+            text: 'Line:'
+        - id: line
+          type: line
+          data:
+            stroking: true
+            shadowing: true
+        - id: title-image
+          type: text
+          data:
+            text: 'Image:'
+        - id: image
+          type: image
+          data:
+            src: https://payeverproduction.blob.core.windows.net/builder/ce8be1f1-50c8-4fc4-ba0e-7cd9875b1fb1-ThinkRedLogo.jpg
+        - id: title-image
+          type: text
+          data:
+            text: 'Logo:'
+        - id: logo
+          type: logo
+          data:
+            src: https://payeverproduction.blob.core.windows.net/builder/ce8be1f1-50c8-4fc4-ba0e-7cd9875b1fb1-ThinkRedLogo.jpg
+        - id: title-video
+          type: text
+          data:
+            text: 'Video:'
+        - id: video
+          type: video
+          data:
+            source: https://payevertesting.blob.core.windows.net/builder-video/818dcc5f-13e3-45b1-8bf9-066bee0c5f6f-media
+            preview: https://payevertesting.blob.core.windows.net/builder-video/818dcc5f-13e3-45b1-8bf9-066bee0c5f6f-media_preview
+            autoplay: true
+            loop: true
+        - id: title-shapes
+          type: text
+          data:
+            text: 'Shapes:'
+        - id: grid-shapes
+          type: grid
+          children:
+            - id: square
+              type: shape
+              data:
+                text: Text inside shape
+                variant: square
+            - id: circle
+              type: shape
+              data:
+                text: Text inside shape
+                variant: circle
+            - id: triangle
+              type: shape
+              data:
+                text: Text inside shape
+                variant: triangle
+        - id: title-navbar
+          type: text
+          data:
+            text: 'Navbar:'
+        - id: menu
+          type: menu
+          data:
+            routes:
+            - title: Home
+              routeId: template-front-page-route
+            - title: Products List
+              children:
+              - title: IMac
+                routes:
+                - title: IMac 27
+                  routeId: template-front-page-route
+                - title: IMac 21
+                  routeId: template-front-page-route
+            - title: About us
+              routeId: /about-us
+            - title: Next Page
+              routeId: template-front-page-route
+              children:
+              - title: test
+                routes:
+                - title: test
+                  routeId: template-front-page-route
+        - id: title-carousel
+          type: text
+          data:
+            text: 'Carousel:'
+    - id: second-section
+      type: carousel
+      data:
+        images:
+        - 'https://payevertesting.blob.core.windows.net/wallpapers/54eb39a4-9de0-417d-8039-c02f8f5f5d3a-louis-reed-747361-unsplash.jpg'
+        - 'https://payevertesting.blob.core.windows.net/wallpapers/e865d763-f906-4eb9-b4b7-4420267a0242-engine-3248750.jpg'
+
+stylesheets:
+  desktop:
+    first-section:
+      height: 1600
+    title-html:
+      fontSize: 32
+      margin: 32 0 0
+    html:
+      width: 400
+      height: 200
+    title-button:
+      fontSize: 32
+      margin: 32 0 0
+    button:
+      width: 120
+      height: 40
+      backgroundColor: '#c3c3c3'
+      padding: 5
+      color: blue
+      borderRadius: 20
+      display: block
+    title-line:
+      fontSize: 32
+      margin: 32 0 0
+    line:
+      width: 100
+      height: 10
+      backgroundColor: blue
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#0000ff'
+      shadowAngle: 60
+    title-image:
+      fontSize: 32
+      margin: 32 0 0
+    image:
+      width: 369
+      height: 100
+    title-video:
+      fontSize: 32
+      margin: 32 0 0
+    video:
+      width: 600
+      height: 300
+    title-shapes:
+      fontSize: 32
+      margin: 32 0 0
+    grid-shapes:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    square:
+      slot: left
+      width: 256
+      height: 256
+    circle:
+      slot: center
+      width: 256
+      height: 256
+    triangle:
+      slot: right
+      width: 256
+      height: 256
+    title-navbar:
+      fontSize: 32
+      margin: 32 0 0
+    topnav-navigation:
+      slot: center
+      height: 45
+      color: white
+      fontSize: 16
+      background: rgb(58, 58, 58)
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: white
+      mobileButtonElementHeight: 4
+    title-carousel:
+      fontSize: 32
+      margin: 32 0 0
+    second-section:
+      height: 300
+
+context: {}

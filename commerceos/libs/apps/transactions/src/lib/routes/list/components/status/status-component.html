@@ -1,0 +1,11 @@
+<div
+  #statusRef
+  class="status status-{{ getStatusColor$(item) | async }}"
+  [class.status-loading]="getStatusLoading$(item) | async"
+  [style.minWidth.px]="minWidth || getWidth$() | async"
+>
+  <div *ngIf="getStatusLoading$(item) | async" class="status-loading-container">
+    <div class="loader-white"></div>
+  </div>
+  <span>{{ ('transactions.' + (getStatus$(item) | async) | translate) || '-'}}</span>
+</div>

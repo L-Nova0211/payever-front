@@ -1,0 +1,16 @@
+<div class="chat-message-template" *ngFor="let component of components">
+  <div class="chat-message-template__header" *ngIf="component.type === 'header'">
+    <ng-container *ngFor="let parameter of component.parameters">
+      <ng-container *ngIf="parameter.type === 'image'">
+        <a 
+          class="chat-message-template__app"
+          target="_blank"
+          [href]="parameter.action"
+          (click)="templateActivate($event, parameter)"
+        >
+          <img [src]="parameter.image.link" alt="app"/>
+        </a>  
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

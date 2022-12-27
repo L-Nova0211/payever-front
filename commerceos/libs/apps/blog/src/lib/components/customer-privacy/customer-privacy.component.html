@@ -1,0 +1,14 @@
+<div class="container">
+    <peb-expandable-panel headerLabel="GDPR">
+        <div class="toggle-container">
+            <div>Limit tracking for customers in Europe</div>
+            <peb-button-toggle [(ngModel)]="toggleValue"></peb-button-toggle>
+        </div>
+    </peb-expandable-panel>
+    <peb-expandable-panel headerLabel="CCPA">
+        <div class="toggle-container">
+            <div>Limit the third-party sale of your California customers’ data</div>
+            <peb-button-toggle [(ngModel)]="toggleValue"></peb-button-toggle>
+        </div>
+    </peb-expandable-panel>
+</div>

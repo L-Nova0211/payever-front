@@ -1,0 +1,60 @@
+.hsva-picker {
+  border-radius: 6px;
+}
+
+.controls {
+  display: grid;
+  grid-auto-rows: 30px;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.hue {
+  --unfilled: linear-gradient(90deg, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+}
+
+.form-row {
+  padding: 10px 0;
+  position: relative;
+
+  &.opacity {
+    margin-top: 16px;
+    padding-top: 20px;
+  }
+
+  &::before {
+    background-color: #37363b;
+    content: '';
+    height: 1px;
+    width: calc(100% + 15px);
+    display: block;
+    top: 0;
+    position: absolute;
+  }
+
+  .form-row-label {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.combined-input-range {
+  display: grid;
+  grid-template-columns: auto 62px;
+  grid-column-gap: 10px;
+  align-items: center;
+}
+
+.rgba {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 32px auto 36px 36px 36px;
+  column-gap: 2px;
+
+  .hex-input {
+    width: 70px;
+  }
+}

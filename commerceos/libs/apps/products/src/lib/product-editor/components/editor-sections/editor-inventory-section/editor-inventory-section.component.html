@@ -1,0 +1,65 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden class="native-submit"></button>
+  <div class="sku-barcode__row">
+    <peb-form-field-input label="{{ 'price.placeholders.skucode' | translate }}"
+                          appearance="label"
+                          [animated]='true'
+                          [isFieldInvalid]="isSubmitted &&
+                           form?.controls?.sku?.errors?.required ||
+                           form?.controls?.sku?.errors?.external ||
+                           form?.controls?.sku?.errors?.SKU === '' ||
+                           form?.controls?.sku?.errors?.exist"
+                          [errorMessage]="skuError">
+      <input placeholder="{{ 'price.placeholders.skucode' | translate }}" formControlName="sku" type="text">
+    </peb-form-field-input>
+
+    <peb-form-field-input label="{{ 'price.placeholders.barcode' | translate }}" appearance="label" [animated]='true'>
+      <input placeholder="{{ 'price.placeholders.barcode' | translate }}" formControlName="barcode" type="text">
+    </peb-form-field-input>
+  </div>
+
+  <peb-button-toggle
+    formControlName="inventoryTrackingEnabled"
+    class="toggle-button button-toggle"
+    label="{{ 'info.placeholders.inventoryTrackingEnabled' | translate }}"
+    labelPosition="before">
+  </peb-button-toggle>
+
+  <peb-form-field-input
+    label="{{ 'info.placeholders.inventory' | translate }}"
+    appearance="label"
+    [animated]='true'
+    [isFieldInvalid]="isSubmitted &&
+     form.controls.inventory.errors?.min &&
+     !form.controls.inventory.errors?.max"
+    [errorMessage]="'Must be 0 or higher'">
+    <input placeholder="{{ 'info.placeholders.inventory' | translate }}" formControlName="inventory" type="number">
+  </peb-form-field-input>
+  <peb-form-field-input
+    label="{{ 'info.placeholders.low_inventory' | translate }}"
+    appearance="label"
+    [animated]='true'
+    [isFieldInvalid]="isSubmitted &&
+     form.controls.lowInventory.errors?.min &&
+     !form.controls.lowInventory.errors?.max"
+    [errorMessage]="'Must be 0 or higher'">
+    <input placeholder="{{ 'info.placeholders.low_inventory' | translate }}" formControlName="lowInventory" type="number">
+  </peb-form-field-input>
+  <peb-button-toggle
+    formControlName="emailLowStock"
+    class="toggle-button button-toggle"
+    label="{{ 'info.placeholders.email_low_stock' | translate }}"
+    labelPosition="before">
+  </peb-button-toggle>
+</form>
+
+<peb-messages
+  *ngIf="isSubmitted && form.errors?.lowInventoryGreater"
+  class="overlay__body-messages"
+  [message]="'inventorySection.errors.low_inventory_greater' | translate"
+>
+</peb-messages>

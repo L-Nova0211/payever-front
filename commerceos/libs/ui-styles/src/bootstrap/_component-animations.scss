@@ -1,0 +1,5 @@
+.pe-bootstrap {
+  .fade {
+    @include transition(all $animation-duration-slide-in $animation-effect-ease-in);
+  }
+}

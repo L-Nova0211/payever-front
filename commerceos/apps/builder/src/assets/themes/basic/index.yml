@@ -1,0 +1,35 @@
+routing:
+  - id: "pages-front"
+    url: "a"
+    pageId: pages-front
+  - id: "pages-category"
+    #url: "fruits"
+    url: ""
+    pageId: pages-category
+  - id: "pages-apple"
+    url: "products/apple"
+    pageId: pages-apple
+  - id: "pages-pear"
+    url: "products/pear"
+    pageId: pages-pear
+  - id: "pages-about"
+    url: "about"
+    pageId: pages-about
+  - id: "pages-accesories"
+    url: "accesories"
+    pageId: pages-accesories
+  - id: "pages-contact"
+    url: "contact"
+    pageId: pages-contact
+  - id: "pages-legal"
+    url: "legal"
+    pageId: pages-legal
+  - id: "template-front-page"
+    url: "template-front-page"
+    pageId: template-front-page
+  - id: "template-product-page"
+    url: "template-product-page"
+    pageId: template-product-page
+  - id: "nike-home-page"
+    url: "nike-home-page"
+    pageId: nike-home-page

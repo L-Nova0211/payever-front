@@ -1,0 +1,225 @@
+id: header-page
+variant: front
+data: {}
+template:
+  id: apple-environment-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            text: LOGO
+        - id: header-menu1
+          type: menu
+          data:
+            routes:
+              - title: Home
+                variant: default
+                value: page-id-here
+                type: internal
+              - title: Catalog
+                variant: default
+                value: page-id-here
+                type: internal
+        - id: header-cart
+          type: shop-cart
+        - id: header-menu2
+          type: menu
+          data:
+            routes:
+              - title: About
+                route: /about
+                type: internal
+                variant: default
+              - title: Contacts
+                route: /contact
+                type: internal
+                variant: default
+
+    - id: nav-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: nav-section-link1
+          type: text
+          data:
+            text: MEN
+        - id: nav-section-logo
+          type: text
+          data:
+            text: MATHESFASHION
+            link:
+              type: internal
+              routeId: ''
+        - id: nav-section-link2
+          type: text
+          data:
+            text: WOMEN
+
+stylesheets:
+  desktop:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 42
+      top: 0
+      display: grid
+      gridTemplateColumns: 2fr 2fr
+    header-logo:
+      display: none
+    header-menu1:
+      fontSize: 12
+      fontWeight: 500
+      width: 340
+      height: 24
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      margin: 10 0 0 -30
+    header-menu2:
+      fontSize: 12
+      fontWeight: 500
+      width: 150
+      height: 24
+      fontFamily: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      margin: 10 0 0 330
+    header-cart:
+      width: 20
+      margin: 0 20 0 0
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+    header-mobile-menu:
+      display: none
+    # ----------------------------------
+    # Desktop Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: grid
+      position: sticky
+      zIndex: 1
+    nav-section-link1:
+      color: '#707070'
+      fontSize: 12
+      width: 150
+      textAlign: center
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: 15 -30 0 100
+    nav-section-logo:
+      color: '#000'
+      width: 300
+      textAlign: center
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      margin: 5 10 0 10
+      fontSize: 30
+    nav-section-link2:
+      margin: 15 0 0 -30
+      width: 150
+      textAlign: center
+      fontFamily: Group2,Helvetica,Arial,sans-serif
+      gridArea: 1 / 3 / 1 / 3
+      fontSize: 12
+      color: '#707070'
+
+  tablet:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 1fr 1fr 75
+    header-logo:
+      fontSize: 16
+      width: 200
+      fontWeight: 800
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 10
+    header-menu1:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: 10 12 0 20
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 0 0 0 450
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Tablet Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: none
+
+
+  mobile:
+    apple-environment-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 1fr 1fr 75
+    header-logo:
+      fontSize: 16
+      fontWeight: 800
+      width: 200
+      textAlign: left
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: auto 10
+    header-menu1:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: 12 0 0 0
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 5 30 5 50
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+    # ----------------------------------
+    # Mobile Sub-Header
+    # ----------------------------------
+    nav-section:
+      height: 44
+      backgroundColor: '#fff'
+      display: none
+
+context: {}

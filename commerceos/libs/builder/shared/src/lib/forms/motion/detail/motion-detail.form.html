@@ -1,0 +1,11 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" class="form">
+  <div class="form__row">
+    <input type="text" placeholder="Search" formControlName="type" #search
+    (keydown.enter)="searchInputEnterHandler($event)">
+  </div>
+
+  <span class="remove" (click)="selectAnimation()">Remove motion</span>
+  <ul>
+    <li *ngFor="let animation of animationTypes" (click)="selectAnimation(animation)">{{ animation }}</li>
+  </ul>
+</form>

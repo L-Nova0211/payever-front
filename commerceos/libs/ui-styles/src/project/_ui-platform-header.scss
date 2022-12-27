@@ -1,0 +1,40 @@
+.pe-bootstrap {
+  .pe-platform-header {
+    &.with-notification {
+      .pe-navbar {
+        &.notification-header {
+          .mat-toolbar-text {
+            font-size: $font-size-small;
+          }
+        }
+
+        &.main-header {
+          .mat-toolbar {
+            top: $platform-header-notification-height;
+          }
+        }
+      }
+
+      .mat-toolbar-micro-subheader {
+        top: $platform-header-height + $platform-header-notification-height !important;
+
+        @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+          top: $platform-header-mobile-height + $platform-header-notification-height !important;
+        }
+      }
+    }
+
+    .pe-navbar {
+      .mat-toolbar-micro {
+        .mat-button-link.mat-toolbar-micro-app-title {
+          padding-left: 0;
+          padding-right: 0;
+          .mat-button-wrapper {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

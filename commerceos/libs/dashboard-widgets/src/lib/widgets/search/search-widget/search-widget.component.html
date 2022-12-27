@@ -1,0 +1,43 @@
+<div class="widget-wrapper" [ngClass]="theme">
+  <mat-card class="widget-card">
+    <mat-icon matPrefix class="addon-icon-button search-widget-icon">
+      <svg class="icon icon-18 icon-search">
+        <use xlink:href="#icon-search-16"></use>
+      </svg>
+    </mat-icon>
+
+    <input
+      class="search-text"
+      (keyup.enter)="goToSearch()"
+      [(ngModel)]="searchText"
+      type="text"
+      [attr.placeholder]="'dashboard_docker.items.search' | translate"
+    />
+    <div *ngIf="searchText" class="widget-card-header-buttons search-widget-buttons">
+      <button
+        mat-raised-button
+        class="widget-card-plus-button mat-button-rounded mat-button-xs search-widget-close"
+        (click)="clearSearch()"
+        type="button"
+        color="muted-white-themed"
+      >
+        <ng-container>
+          <!-- &#43; -->
+          <svg height="10" width="10" style="transform: rotate(45deg);">
+            <use xlink:href="#icon-plus-softy-16"></use>
+          </svg>
+        </ng-container>
+      </button>
+      <button
+        mat-raised-button
+        class="open-button mat-button-rounded mat-button-xs search-widget-button"
+        color="muted-white-themed"
+        (click)="goToSearch()"
+      >
+        <pe-progress-button-content [spinnerStrokeWidth]="2" [spinnerDiameter]="15" [loading]="false">
+          {{ 'dashboard_docker.items.search' | translate }}
+        </pe-progress-button-content>
+      </button>
+    </div>
+  </mat-card>
+</div>

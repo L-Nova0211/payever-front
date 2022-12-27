@@ -1,0 +1,717 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="couponForm"
+  [ngClass]="theme"
+>
+  <div
+    *ngIf="couponForm.controls.errorMsg.value"
+    class="pe-coupons-error-message"
+  >
+    <peb-messages
+      [color]="'warning'"
+      [message]="couponForm.controls.errorMsg.value"
+      [showIcon]="true"
+    ></peb-messages>
+  </div>
+
+  <peb-expandable-panel
+    [headerLabel]="'coupons-app.coupon_editor.code.label' | translate"
+    [isContentOpen]="isDiscountOpen"
+    (opened)="isDiscountOpen = true"
+    (closed)="isDiscountOpen = false"
+  >
+    <!-- DISCOUNT CODE START -->
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="(couponForm.controls.code.errors?.isNotUnique
+          ? 'coupons-app.coupon_editor.errors.not_unique'
+          : 'coupons-app.coupon_editor.code.error') | translate"
+        [isFieldInvalid]="couponForm.controls.code.invalid"
+        [label]="'coupons-app.coupon_editor.code.label' | translate"
+      >
+        <input
+          formControlName="code"
+          [placeholder]="'coupons-app.coupon_editor.code.placeholder' | translate"
+          type="text"
+        />
+        <div class="pe-coupons-form-field__suffix">
+          <button
+            class="suffix__button"
+            (click)="generateCode()"
+            [disabled]="couponForm.controls.code.disabled"
+          >
+            {{ 'coupons-app.coupon_editor.code.generate' | translate }}
+          </button>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+    <div [style.margin-top.px]="16"></div>
+    <pe-subscript
+      [content]="'coupons-app.coupon_editor.code.helper' | translate"
+    ></pe-subscript>
+    <!-- DISCOUNT CODE END -->
+
+    <!-- DISCOUNT DESCRIPTION START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'coupons-app.coupon_editor.errors.description_value' | translate"
+        [isFieldInvalid]="couponForm.controls.description.invalid"
+        [label]="'coupons-app.coupon_editor.description.label' | translate"
+      >
+        <input
+          formControlName="description"
+          [placeholder]="'coupons-app.coupon_editor.description.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <!-- DISCOUNT DESCRIPTION END -->
+
+    <!-- COUPON TYPE START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background formGroupName="type">
+      <!-- TYPES START -->
+      <peb-select
+        formControlName="type"
+        [label]="'coupons-app.coupon_editor.discount_types.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let type of types"
+          [label]="('coupons-app.coupon_editor.discount_types.' + type.label) | translate"
+          [value]="type.value"
+        ></peb-select-option>
+      </peb-select>
+      <!-- TYPES END -->
+
+      <!-- DISCOUNT VALUE START -->
+      <peb-form-field-input
+        *ngIf="type.controls.type.value === 'PERCENTAGE' || type.controls.type.value === 'FIXED_AMOUNT'"
+        appearance="label"
+        [errorMessage]="(type.controls.discountValue.errors?.max
+          ? 'coupons-app.coupon_editor.errors.max_percentage_value'
+          : type.controls.discountValue.errors?.required
+            ? 'coupons-app.coupon_editor.errors.discount_value.required'
+            : 'coupons-app.coupon_editor.errors.discount_value.positive_number') | translate"
+        [isFieldInvalid]="type.controls.discountValue.invalid"
+        [label]="'coupons-app.coupon_editor.value.label' | translate"
+      >
+        <input
+          formControlName="discountValue"
+          [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+          type="text"
+        />
+        <div class="pe-coupons-form-field__suffix">
+          <span class="suffix__span" *ngIf="couponForm.value.type.type === 'PERCENTAGE'">
+            {{ 'coupons-app.coupon_editor.discount_types.percentage' | translate }} (%)
+          </span>
+          <span class="suffix__span" *ngIf="couponForm.value.type.type === 'FIXED_AMOUNT'">
+            {{ 'coupons-app.coupon_editor.discount_currency.usd' | translate }} ($)
+          </span>
+        </div>
+      </peb-form-field-input>
+      <!-- DISCOUNT VALUE END -->
+    </peb-form-background>
+    <!-- COUPON TYPE END -->
+
+    <!-- APPLIES TO START -->
+    <ng-container *ngIf="type.controls.type.value === 'PERCENTAGE' || type.controls.type.value === 'FIXED_AMOUNT'">
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background formGroupName="type">
+        <!-- APPLIES TO TYPE START -->
+        <peb-select
+          formControlName="appliesTo"
+          [label]="'coupons-app.coupon_editor.discount_applies_to.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of appliesTo"
+            [label]="('coupons-app.coupon_editor.discount_applies_to.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <ng-container [ngSwitch]="type.controls.appliesTo.value">
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_CATEGORIES'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Categories,
+              control: type.controls.appliesToCategories
+            }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_PRODUCTS'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Products,
+              control: type.controls.appliesToProducts
+            }"
+          ></ng-template>
+        </ng-container>
+        <!-- APPLIES TO TYPE END -->
+      </peb-form-background>
+    </ng-container>
+    <!-- APPLIES TO END -->
+
+    <!-- FREE SHIPPING START -->
+    <ng-container *ngIf="type.controls.type.value === 'FREE_SHIPPING'">
+      <!-- COUNTRIES START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background formGroupName="type">
+        <peb-select
+          formControlName="freeShippingType"
+          [label]="'coupons-app.coupon_editor.free_shipping_type.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of freeShippingType"
+            [label]="('coupons-app.coupon_editor.free_shipping_type.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <ng-container [ngSwitch]="type.controls.freeShippingType.value">
+          <ng-template
+            *ngSwitchCase="'SELECTED_COUNTRIES'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Countries,
+              control: type.controls.freeShippingToCountries
+            }"
+          ></ng-template>
+        </ng-container>
+      </peb-form-background>
+      <!-- COUNTRIES END -->
+
+      <!-- EXCLUDE SHIPPING RATES START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background formGroupName="type">
+        <peb-checkbox
+          formControlName="excludeShippingRatesOverCertainAmount"
+          type="label"
+        >{{ 'coupons-app.coupon_editor.free_shipping_type.exclude_shipping_rates' | translate }}</peb-checkbox>
+        <peb-form-field-input
+          *ngIf="type.controls.excludeShippingRatesOverCertainAmount.value"
+          appearance="label"
+          [errorMessage]="(type.controls.excludeShippingRatesOverCertainAmountValue.errors?.required
+            ? 'coupons-app.coupon_editor.errors.over_amount_value.required'
+            : 'coupons-app.coupon_editor.errors.over_amount_value.positive_number') | translate"
+          [isFieldInvalid]="type.controls.excludeShippingRatesOverCertainAmountValue.invalid"
+          [label]="'coupons-app.coupon_editor.free_shipping_type.over_amount' | translate"
+        >
+          <input
+            formControlName="excludeShippingRatesOverCertainAmountValue"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+          <div class="pe-coupons-form-field__suffix">
+            <span class="suffix__span">
+              {{ 'coupons-app.coupon_editor.discount_currency.usd' | translate }} ($)
+            </span>
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+      <!-- EXCLUDE SHIPPING RATES END -->
+    </ng-container>
+    <!-- FREE SHIPPING END -->
+
+    <!-- MINIMUM REQUIREMENTS START -->
+    <ng-container *ngIf="type.controls.type.value !== 'BUY_X_GET_Y'">
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background formGroupName="type">
+        <!-- MINIMUM REQUIREMENTS TYPE START -->
+        <peb-select
+          formControlName="minimumRequirements"
+          [label]="'coupons-app.coupon_editor.min_requirements.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of minimumRequirements"
+            [label]="('coupons-app.coupon_editor.min_requirements.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <!-- MINIMUM REQUIREMENTS TYPE END -->
+
+        <!-- MINIMUM PURCHASE AMOUNT START -->
+        <peb-form-field-input
+          *ngIf="type.controls.minimumRequirements.value === 'MINIMUM_PURCHASE_AMOUNT'"
+          appearance="label"
+          [errorMessage]="(type.controls.minimumRequirementsPurchaseAmount.errors?.required
+            ? 'coupons-app.coupon_editor.errors.minimum_purchase_amount.required'
+            : 'coupons-app.coupon_editor.errors.minimum_purchase_amount.positive_number') | translate"
+          [isFieldInvalid]="type.controls.minimumRequirementsPurchaseAmount.invalid"
+          [label]="'coupons-app.coupon_editor.discount_amount' | translate"
+        >
+          <input
+            formControlName="minimumRequirementsPurchaseAmount"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+          <div class="pe-coupons-form-field__suffix">
+            <span class="suffix__span">
+              {{ 'coupons-app.coupon_editor.discount_currency.usd' | translate }} ($)
+            </span>
+          </div>
+        </peb-form-field-input>
+        <!-- MINIMUM PURCHASE AMOUNT END -->
+
+        <!-- MINIMUM QUANTITY OF ITEMS START -->
+        <peb-form-field-input
+          *ngIf="type.controls.minimumRequirements.value === 'MINIMUM_QUANTITY_OF_ITEMS'"
+          appearance="label"
+          [errorMessage]="(type.controls.minimumRequirementsQuantityOfItems.errors?.required
+            ? 'coupons-app.coupon_editor.errors.minimum_quantity_of_items.required'
+            : 'coupons-app.coupon_editor.errors.minimum_quantity_of_items.positive_number') | translate"
+          [isFieldInvalid]="type.controls.minimumRequirementsQuantityOfItems.invalid"
+          [label]="'coupons-app.coupon_editor.discount_quantity' | translate"
+        >
+          <input
+            formControlName="minimumRequirementsQuantityOfItems"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+        <!-- MINIMUM QUANTITY OF ITEMS END -->
+      </peb-form-background>
+    </ng-container>
+    <!-- MINIMUM REQUIREMENTS END -->
+
+    <!-- TYPE BUY X GET Y START -->
+    <ng-container *ngIf="type.controls.type.value === 'BUY_X_GET_Y'" formGroupName="type">
+      <!-- CUSTOMER BUYS START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background>
+        <peb-select
+          formControlName="buyRequirementType"
+          [label]="type.controls.buyRequirementType.value === 'MINIMUM_QUANTITY_OF_ITEMS'
+            ? ('coupons-app.coupon_editor.buy_requirement_type.customer_buys' | translate)
+            : ('coupons-app.coupon_editor.buy_requirement_type.customer_spends' | translate)"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of buyRequirementType"
+            [label]="('coupons-app.coupon_editor.buy_requirement_type.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="(type.controls.buyRequirementType.value === 'MINIMUM_PURCHASE_AMOUNT'
+            ? type.controls.buyQuantity.errors?.required
+              ? 'coupons-app.coupon_editor.errors.minimum_purchase_amount.required'
+              : 'coupons-app.coupon_editor.errors.minimum_purchase_amount.positive_number'
+            : type.controls.buyQuantity.errors?.required
+              ? 'coupons-app.coupon_editor.errors.minimum_quantity_of_items.required'
+              : 'coupons-app.coupon_editor.errors.minimum_quantity_of_items.positive_number') | translate"
+          [isFieldInvalid]="type.controls.buyQuantity.invalid"
+          [label]="(type.controls.buyRequirementType.value === 'MINIMUM_QUANTITY_OF_ITEMS'
+            ? 'coupons-app.coupon_editor.buy_requirement_type.quantity'
+            : 'coupons-app.coupon_editor.buy_requirement_type.amount') | translate"
+        >
+          <input
+            formControlName="buyQuantity"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+          <div
+            *ngIf="type.controls.buyRequirementType.value === 'MINIMUM_PURCHASE_AMOUNT'"
+            class="pe-coupons-form-field__suffix">
+            <span class="suffix__span">
+              {{ 'coupons-app.coupon_editor.discount_currency.usd' | translate }} ($)
+            </span>
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background>
+        <peb-select
+          formControlName="buyType"
+          [label]="(type.controls.buyRequirementType.value === 'MINIMUM_QUANTITY_OF_ITEMS'
+            ? 'coupons-app.coupon_editor.buy_requirement_type.customer_buys_specific'
+            : 'coupons-app.coupon_editor.buy_requirement_type.customer_spends_specific') | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of buyOrGetType"
+            [label]="('coupons-app.coupon_editor.buy_or_get_type.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <ng-container [ngSwitch]="type.controls.buyType.value">
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_CATEGORIES'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Categories,
+              control: type.controls.buyCategories
+            }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_PRODUCTS'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Products,
+              control: type.controls.buyProducts
+            }"
+          ></ng-template>
+        </ng-container>
+      </peb-form-background>
+      <!-- CUSTOMER BUYS END -->
+
+      <!-- CUSTOMER GETS START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background>
+        <peb-select
+          formControlName="getType"
+          [label]="'coupons-app.coupon_editor.buy_requirement_type.customer_gets' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of buyOrGetType"
+            [label]="('coupons-app.coupon_editor.buy_or_get_type.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="(type.controls.getQuantity.errors?.required
+            ? 'coupons-app.coupon_editor.errors.get_quantity.required'
+            : 'coupons-app.coupon_editor.errors.get_quantity.positive_number') | translate"
+          [isFieldInvalid]="type.controls.getQuantity.invalid"
+          [label]="'coupons-app.coupon_editor.buy_requirement_type.quantity' | translate"
+        >
+          <input
+            formControlName="getQuantity"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+        <ng-container [ngSwitch]="type.controls.getType.value">
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_CATEGORIES'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Categories,
+              control: type.controls.getCategories
+            }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="'SPECIFIC_PRODUCTS'"
+            [ngTemplateOutlet]="searchItems"
+            [ngTemplateOutletContext]="{
+              arrayName: arrayNames.Products,
+              control: type.controls.getProducts
+            }"
+          ></ng-template>
+        </ng-container>
+      </peb-form-background>
+      <!-- CUSTOMER GETS END -->
+
+      <!-- AT A DISCOUNT START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background>
+        <!-- AT A DISCOUNT TYPE START -->
+        <peb-select
+          formControlName="getDiscountType"
+          [label]="'coupons-app.coupon_editor.at_a_discounted_value.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let option of atADiscountedValue"
+            [label]="('coupons-app.coupon_editor.at_a_discounted_value.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <!-- AT A DISCOUNT TYPE END -->
+
+        <!-- AT A DISCOUNT VALUE START -->
+        <peb-form-field-input
+          *ngIf="type.controls.getDiscountType.value === 'PERCENTAGE'"
+          appearance="label"
+          [errorMessage]="(type.controls.getDiscountValue.errors?.max
+            ? 'coupons-app.coupon_editor.errors.max_percentage_value'
+            : type.controls.getDiscountValue.errors?.required
+              ? 'coupons-app.coupon_editor.errors.discount_value.required'
+              : 'coupons-app.coupon_editor.errors.discount_value.positive_number') | translate"
+          [isFieldInvalid]="type.controls.getDiscountValue.invalid"
+          [label]="'coupons-app.coupon_editor.at_a_discounted_value.set_percentage' | translate"
+        >
+          <input
+            formControlName="getDiscountValue"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+          <div class="pe-coupons-form-field__suffix">
+            <span class="suffix__span">
+              {{ 'coupons-app.coupon_editor.discount_types.percentage' | translate }} (%)
+            </span>
+          </div>
+        </peb-form-field-input>
+        <!-- AT A DISCOUNT VALUE END -->
+      </peb-form-background>
+      <!-- AT A DISCOUNT END -->
+
+      <!-- MAX USES PER ORDER START -->
+      <div [style.margin-top.px]="16"></div>
+      <peb-form-background>
+        <peb-checkbox
+          formControlName="maxUsesPerOrder"
+          type="label"
+        >{{ 'coupons-app.coupon_editor.max_uses_rep_order.label' | translate }}</peb-checkbox>
+        <peb-form-field-input
+          *ngIf="type.controls.maxUsesPerOrder.value"
+          appearance="label"
+          [errorMessage]="(type.controls.maxUsesPerOrderValue.errors?.required
+            ? 'coupons-app.coupon_editor.errors.max_uses_per_order.required'
+            : 'coupons-app.coupon_editor.errors.max_uses_per_order.positive_integer') | translate"
+          [isFieldInvalid]="type.controls.maxUsesPerOrderValue.invalid"
+          [label]="'coupons-app.coupon_editor.max_uses_rep_order.max_number_of_uses' | translate"
+        >
+          <input
+            formControlName="maxUsesPerOrderValue"
+            [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+      </peb-form-background>
+      <!-- MAX USES PER ORDER END -->
+    </ng-container>
+    <!-- TYPE BUY X GET Y END -->
+
+    <!-- CUSTOMERS START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <peb-select
+        formControlName="customerEligibility"
+        [label]="'coupons-app.coupon_editor.customer_eligibility.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of customerEligibility"
+          [label]="('coupons-app.coupon_editor.customer_eligibility.' + option.label) | translate"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+      <ng-container [ngSwitch]="couponForm.controls.customerEligibility.value">
+        <ng-template
+          *ngSwitchCase="'SPECIFIC_GROUPS_OF_CUSTOMERS'"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.GroupsOfCustomers,
+            control: couponForm.controls.customerEligibilityCustomerGroups
+          }"
+        ></ng-template>
+        <ng-template
+          *ngSwitchCase="'SPECIFIC_CUSTOMERS'"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Customers,
+            control: couponForm.controls.customerEligibilitySpecificCustomers
+          }"
+        ></ng-template>
+      </ng-container>
+    </peb-form-background>
+    <!-- CUSTOMERS END -->
+
+    <!-- USAGE LIMITS START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background formGroupName="limits">
+      <peb-checkbox
+        formControlName="limitOneUsePerCustomer"
+        type="label"
+      >{{ 'coupons-app.coupon_editor.usage_limit.one_use_per_customer' | translate }}</peb-checkbox>
+    </peb-form-background>
+
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background formGroupName="limits">
+      <peb-checkbox
+        formControlName="limitUsage"
+        type="label"
+      >{{ 'coupons-app.coupon_editor.usage_limit.total_number_of_times' | translate }}</peb-checkbox>
+      <peb-form-field-input
+        *ngIf="couponForm.value.limits.limitUsage"
+        appearance="label"
+        [errorMessage]="(couponForm.controls.limits.controls.limitUsageAmount.errors?.required
+          ? 'coupons-app.coupon_editor.errors.usage_limit.required'
+          : 'coupons-app.coupon_editor.errors.usage_limit.positive_integer') | translate"
+        [isFieldInvalid]="couponForm.controls.limits.controls.limitUsageAmount.invalid"
+        [label]="'coupons-app.coupon_editor.usage_limit.max_number_of_times' | translate"
+      >
+        <input
+          formControlName="limitUsageAmount"
+          [placeholder]="'coupons-app.coupon_editor.value.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <!-- USAGE LIMITS END -->
+  </peb-expandable-panel>
+
+  <!-- DATES START -->
+  <peb-expandable-panel
+    [headerLabel]="'coupons-app.coupon_editor.activate_dates' | translate"
+    [isContentOpen]="isDateOpen"
+    (opened)="isDateOpen = true"
+    (closed)="isDateOpen = false"
+  >
+    <!-- START DATE START -->
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        (click)="openDatepicker(couponForm.controls.startDateDate)"
+        [errorMessage]="'coupons-app.coupon_editor.errors.start_date' | translate"
+        [isFieldInvalid]="couponForm.controls.startDateDate.invalid"
+        [label]="'coupons-app.coupon_editor.datetime.start_date' | translate"
+      >
+        <input readonly
+          formControlName="startDateDate"
+          [placeholder]="'coupons-app.coupon_editor.datetime.date_placeholder' | translate"
+          [textMask]="maskRule(dateMask)"
+          type="text"
+        />
+        <div class="suffix-icon">
+          <mat-icon svgIcon="calendar"></mat-icon>
+        </div>
+      </peb-form-field-input>
+      <!-- START DATE END -->
+      <!-- START TIME START -->
+      <peb-form-field-input
+        appearance="label"
+        (click)="openTimepicker($event, couponForm.controls.startDateTime)"
+        [errorMessage]="'coupons-app.coupon_editor.errors.start_time' | translate"
+        [isFieldInvalid]="couponForm.controls.startDateTime.invalid"
+        [label]="'coupons-app.coupon_editor.datetime.start_time' | translate"
+      >
+        <input pe-input-time
+          formControlName="startDateTime"
+          [placeholder]="'coupons-app.coupon_editor.datetime.time_placeholder' | translate"
+          [textMask]="maskRule(timeMask)"
+          type="text"
+        />
+        <div class="suffix-icon">
+          <mat-icon svgIcon="settimeicon"></mat-icon>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+    <!-- START TIME END -->
+
+    <!-- END DATE START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <!-- SET END DATE START -->
+      <peb-checkbox
+        formControlName="setEndDate"
+        [disabled]="!isStartDateValid"
+        type="label"
+      >{{ 'coupons-app.coupon_editor.datetime.set_end_datetime' | translate }}</peb-checkbox>
+      <!-- SET END DATE END -->
+      <ng-container *ngIf="couponForm.value.setEndDate">
+        <!-- END DATE START -->
+        <peb-form-field-input
+          appearance="label"
+          (click)="openDatepicker(couponForm.controls.endDateDate)"
+          [errorMessage]="(couponForm.controls.endDateDate.errors?.isBefore
+            ? 'coupons-app.coupon_editor.errors.end_date_before'
+            : 'coupons-app.coupon_editor.errors.end_date') | translate"
+          [isFieldInvalid]="couponForm.controls.endDateDate.invalid"
+          [label]="'coupons-app.coupon_editor.datetime.end_date' | translate"
+        >
+          <input
+            formControlName="endDateDate"
+            [placeholder]="'coupons-app.coupon_editor.datetime.date_placeholder' | translate"
+            [textMask]="maskRule(dateMask)"
+            type="text"
+            readonly
+          />
+          <div class="pe-coupons-form-field__suffix">
+            <mat-icon class="icon" svgIcon="calendar"></mat-icon>
+          </div>
+        </peb-form-field-input>
+        <!-- END DATE END -->
+        <!-- END TIME START -->
+        <peb-form-field-input
+          appearance="label"
+          (click)="openTimepicker($event, couponForm.controls.endDateTime)"
+          [errorMessage]="(couponForm.controls.endDateTime.errors?.isBefore
+            ? 'coupons-app.coupon_editor.errors.end_time_before'
+            : 'coupons-app.coupon_editor.errors.end_time') | translate"
+          [isFieldInvalid]="couponForm.controls.endDateTime.invalid"
+          [label]="'coupons-app.coupon_editor.datetime.end_time' | translate"
+        >
+          <input pe-input-time
+            formControlName="endDateTime"
+            [placeholder]="'coupons-app.coupon_editor.datetime.time_placeholder' | translate"
+            [textMask]="maskRule(timeMask)"
+            type="text"
+          />
+          <div class="pe-coupons-form-field__suffix">
+            <mat-icon class="icon" svgIcon="settimeicon"></mat-icon>
+          </div>
+        </peb-form-field-input>
+        <!-- END TIME END -->
+      </ng-container>
+    </peb-form-background>
+    <div
+      *ngIf="!couponForm.controls.setEndDate.value"
+      [style.margin-top.px]="16"
+    >
+      <pe-subscript
+        [content]="'coupons-app.coupon_editor.datetime.end_date_subscript' | translate"
+      ></pe-subscript>
+    </div>
+    <!-- END DATE END -->
+  </peb-expandable-panel>
+  <!-- DATES END -->
+
+  <!-- CHANNELS START -->
+  <peb-expandable-panel
+    [headerLabel]="'coupons-app.coupon_editor.channels' | translate"
+    [isContentOpen]="true"
+  >
+    <pe-list-section
+      [actionButtonType]="toggleButtonType"
+      [category]="paymentsCategory"
+      [integrations]="channelSets$ | async"
+      [isInForm]="true"
+      [listType]="integrationList"
+      (switched)="switchChannel($event)"
+      [translateItemsTitle]="false"
+      [upperCase]="true"
+    ></pe-list-section>
+    <peb-messages
+      *ngIf="!(channelSets$ | async).length"
+      [color]="'warning'"
+      [message]="'No connected channels' | translate"
+      [showIcon]="true"
+    ></peb-messages>
+  </peb-expandable-panel>
+  <!-- CHANNELS END -->
+</form>
+
+<ng-template #searchItems
+  let-arrayName="arrayName"
+  let-control="control"
+>
+  <pe-search
+    [errorMessage]="('coupons-app.coupon_editor.' + arrayName + '.error')| translate"
+    (filterChanged)="setFilter($event, arrayName)"
+    [isFieldInvalid]="control.invalid"
+    [items]="filteredItems(control) | async"
+    [label]="('coupons-app.coupon_editor.' + arrayName + '.label') | translate"
+    [placeholder]="('coupons-app.coupon_editor.' + arrayName + '.placeholder') | translate"
+    (selected)="addToArray($event, control)"
+  ></pe-search>
+  <pe-search-list>
+    <pe-search-list-item
+      *ngFor="let item of control.value; let i = index; trackBy: trackItem"
+      [image]="item?.image"
+      [removeButtonLabel]="'coupons-app.actions.remove'"
+      (remove)="removeFromArray(control, i)"
+    >{{ item.title }}</pe-search-list-item>
+  </pe-search-list>
+</ng-template>

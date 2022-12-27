@@ -1,0 +1,35 @@
+<div class="shape-dropdown__wrapper" #wrapperRef (click)="openMenu()">
+  <span>
+    <ng-container *ngIf="!options.readOnly; else client">
+      <ng-container *ngIf="dropdownIcon">
+        <img [src]="dropdownIcon">
+      </ng-container>
+      {{ dropdownLabel || ('renderer.shape-input.choose' | rendererTranslate:options) }}
+    </ng-container>
+    <ng-template #client>
+      <img [src]="chosenOption.icon" *ngIf="chosenOption?.icon" class="shape-dropdown__option-icon">
+      {{ chosenOption?.title || dropdownLabel || ('renderer.shape-input.choose' | rendererTranslate: options) }}
+    </ng-template>
+  </span>
+  <div class="shape-dropdown__arrow-down" #arrowDownRef>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 8">
+      <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g fill-rule="nonzero" stroke="#000" stroke-width="1.5">
+          <path d="M1063 403L1056.5 409 1056.5 409 1050 403" transform="translate(-1049 -402) matrix(-1 0 0 1 2113 0)"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="shape-dropdown__trigger" [matMenuTriggerFor]="menuRef" #menuTriggerRef></div>
+<mat-menu #menuRef="matMenu" class="shape-dropdown__menu">
+  <div class="shape-dropdown__menu-options" [style.width.px]="hostClientWidth">
+    <ng-container *ngFor="let option of dropdownOptions">
+      <div class="shape-dropdown__menu-option" (click)="updateValue($event, option.value)">
+        <span *ngIf="option.icon" class="shape-dropdown__option-icon"><img [src]="option.icon"></span>
+        <span class="shape-dropdown__option-title">{{ option.title }}</span>
+      </div>
+    </ng-container>
+  </div>
+</mat-menu>

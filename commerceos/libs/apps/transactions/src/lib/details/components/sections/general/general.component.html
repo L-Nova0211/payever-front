@@ -1,0 +1,22 @@
+<div class="general-section" [ngClass]="theme">
+  <div class="general-section__top-line">
+    <div class="general-item">
+      <div class="general-item__text">
+        {{quantity}}
+      </div>
+      <div class="general-item__hint">{{'transactions.sections.general.quantity' | translate}}</div>
+    </div>
+    <div class="general-item">
+      <div class="general-item__text">
+        {{(transaction?.total_left || 0) | currency: transaction?.currency:undefined:undefined:locale}}
+      </div>
+      <div class="general-item__hint">{{'transactions.sections.general.price' | translate}}</div>
+    </div>
+    <div class="general-item">
+      <div class="general-item__text status-{{listService.getStatusColor(getStatus$() | async)}}">
+        {{ ('transactions.' + (getStatus$() | async) | translate) || '-'}}
+      </div>
+      <div class="general-item__hint">{{'transactions.sections.general.status' | translate}}</div>
+    </div>
+  </div>
+</div>

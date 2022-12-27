@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.5 0 20 20">
+    <g fill="currentColor">
+      <g transform="translate(-1217 -601) translate(1217 601)">
+        <rect width="9" height="1.125" x=".75" y="9.412" rx=".563" transform="matrix(1 0 0 -1 0 19.95)"/>
+        <g>
+          <g transform="translate(0 .375)">
+            <g transform="translate(0 3.75)">
+              <rect width="6.75" height="1.125" x="3.909" y="2.25" rx=".563" transform="scale(1 -1) rotate(45 14.074 0)"/>
+              <rect width="6.75" height="1.125" x="-.141" y="2.25" rx=".563" transform="rotate(-135 3.234 2.813)"/>
+            </g>
+            <rect width="9" height="1.125" x=".75" y="4.125" rx=".563" transform="matrix(0 1 1 0 .563 -.563)"/>
+          </g>
+          <g transform="matrix(1 0 0 -1 0 19.5)">
+            <g transform="translate(0 3.75)">
+              <rect width="6.75" height="1.125" x="3.909" y="2.25" rx=".563" transform="scale(1 -1) rotate(45 14.074 0)"/>
+              <rect width="6.75" height="1.125" x="-.141" y="2.25" rx=".563" transform="rotate(-135 3.234 2.813)"/>
+            </g>
+            <rect width="9" height="1.125" x=".75" y="4.125" rx=".563" transform="matrix(0 1 1 0 .563 -.563)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+</svg>

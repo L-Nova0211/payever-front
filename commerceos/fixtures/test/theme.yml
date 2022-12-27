@@ -1,0 +1,36 @@
+name: Test
+
+data:
+  productPages: /products/:productId
+  categoryPages: /category/:categoryId
+
+routing:
+  - routeId: apple-environment-page-route
+    url: /
+    pageId: apple-environment-page
+  - routeId: asos-environment-page-route
+    url: /1
+    pageId: asos-environment-page
+  - routeId: burberry-main-page-route
+    url: /2
+    pageId: burberry-main-page
+  - routeId: matchesfashion-main-page-route
+    url: /3
+    pageId: matchesfashion-main-page
+  - routeId: tesla-main-page-route
+    url: /4
+    pageId: tesla-main-page
+
+context:
+  '#logo':
+    service: company
+    method: getLogo
+    params: []
+    usedBy: []
+
+pages:
+  - apple
+  - asos
+  - burberry
+  - matchesfashion
+  - tesla

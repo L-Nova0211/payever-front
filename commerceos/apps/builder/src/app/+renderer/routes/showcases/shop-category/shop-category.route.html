@@ -1,0 +1,71 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  title="Basic renderer check: Desktop"
+  [element]="(content$ | async).variant1.layout"
+  [stylesheet]="(content$ | async).variant1.stylesheet.all"
+  [context]="(content$ | async).variant1.context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  title="Basic renderer check: Tablet"
+  [element]="(content$ | async).variant2.layout"
+  [stylesheet]="(content$ | async).variant2.stylesheet.all"
+  [context]="(content$ | async).variant2.context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  title="Basic renderer check: Mobile"
+  [element]="(content$ | async).variant3.layout"
+  [stylesheet]="(content$ | async).variant3.stylesheet.all"
+  [context]="(content$ | async).variant3.context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop2"
+  title="Basic renderer check: Desktop dark"
+  [element]="(content$ | async).variant4.layout"
+  [stylesheet]="(content$ | async).variant4.stylesheet.all"
+  [context]="(content$ | async).variant4.context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet2"
+  title="Basic renderer check: Tablet dark"
+  [element]="(content$ | async).variant5.layout"
+  [stylesheet]="(content$ | async).variant5.stylesheet.all"
+  [context]="(content$ | async).variant5.context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile2"
+  title="Basic renderer check: Mobile dark"
+  [element]="(content$ | async).variant6.layout"
+  [stylesheet]="(content$ | async).variant6.stylesheet.all"
+  [context]="(content$ | async).variant6.context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop3"
+  title="Basic renderer check: Desktop dark"
+  [element]="(content$ | async).variant7.layout"
+  [stylesheet]="(content$ | async).variant7.stylesheet.all"
+  [context]="(content$ | async).variant7.context"
+  [options]="{ screen: 'desktop', scale: 0.5, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop4"
+  title="Basic renderer check: Desktop scaled"
+  [element]="(content$ | async).variant4.layout"
+  [stylesheet]="(content$ | async).variant4.stylesheet.all"
+  [context]="(content$ | async).variant4.context"
+  [options]="{ screen: 'desktop', scale: 0.5, locale: 'en' }"
+></sandbox-renderer-preview>

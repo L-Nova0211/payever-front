@@ -1,0 +1,53 @@
+.pe-bootstrap {
+  .color-option-checkbox {
+    margin-right: $padding-small-horizontal;
+
+    .mat-checkbox-inner-container {
+      margin-top: $padding-large-vertical;
+    }
+  }
+
+  .color-option-preview {
+    border-radius: 50%;
+    width: $icon-size-16;
+    height: $icon-size-16;
+    align-self: center;
+    border: 1px solid $color-secondary-0;
+    margin-right: $padding-xs-horizontal;
+  }
+
+  .color-option-name {
+    line-height: 1;
+    align-self: center;
+  }
+
+  .badge-checkbox {
+    .mat-checkbox-frame {
+      border-color: $color-secondary-0 !important;
+    }
+    &.mat-checkbox-checked {
+      .mat-checkbox-background {
+        .mat-checkbox-checkmark {
+          .mat-checkbox-checkmark-path {
+            stroke: $color-secondary-0 !important;
+          }
+        }
+      }
+    }
+    .mat-option-pseudo-checkbox {
+      background: transparent;
+      border: 1px solid $color-secondary-0;
+      width: $font-size-base;
+      height: $font-size-base;
+
+      &.mat-pseudo-checkbox-checked {
+        background: transparent;
+        border: 1px solid $color-secondary-0;
+      }
+    }
+  }
+
+  .autocomplete-panel-non-scrollable {
+    max-height: none;
+  }
+}

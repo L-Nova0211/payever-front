@@ -1,0 +1,10 @@
+<div #wrapper>
+  <mat-calendar
+    #calendar
+    id="datepicker-calendar"
+    [minDate]="minDate"
+    [selected]="currentDate"
+    (selectedChange)="selectedChangeOn($event)"
+    [startAt]="currentDate"
+  ></mat-calendar>
+</div>

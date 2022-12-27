@@ -1,0 +1,114 @@
+{
+  "welcome": {
+    "affiliates": {
+      "title": "Welcome to Affiliates App!",
+      "message": "Make your own sales networks!",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "checkout": {
+      "title": "Welcome to Checkout App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "commerceos": {
+      "title": "payever CommerceOS",
+      "message": "Start, run and grow your business",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "connect": {
+      "title": "Welcome to Connect App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "contacts": {
+      "title": "Welcome to Contacts App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "coupons": {
+      "title": "Welcome to Coupons App!",
+      "message": "Make your own sales!",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "marketing": {
+      "title": "Welcome to Marketing App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "message": {
+      "title": "Welcome to Message App!",
+      "message": "Make your own channel.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "pos": {
+      "title": "Welcome to POS App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "products": {
+      "title": "Welcome to Products App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "settings": {
+      "title": "Welcome to Settings App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "shipping": {
+      "title": "Welcome to Shipping App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "shop": {
+      "title": "Welcome to Shop App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "sites": {
+      "title": "Welcome to Sites App!",
+      "message": "Make your own website.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "statistics": {
+      "title": "Welcome to payever Statistics",
+      "message": "Get all your business insights.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "studio": {
+      "title": "payever Studio",
+      "message": "Manage your products photos and videos.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "subscriptions": {
+      "title": "Welcome to Subscriptions App!",
+      "message": "Make your own subscribes.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "transactions": {
+      "title": "Welcome to Transactions App!",
+      "message": "Here you can check transactions.",
+      "pricing_link": "https://getpayever.com/",
+      "terms_link": "https://getpayever.com/"
+    },
+    "get-started": "Get Started",
+    "hereby-confirm": "Hereby I confirm the <a href='{{pricingLink}}' target='_blank'>terms</a> and <a href='{{termsLink}}' target='_blank'>pricing</a> <br> of the payever <span>{{appName}}</span>"
+  }
+}

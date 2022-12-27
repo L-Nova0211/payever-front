@@ -1,0 +1,10 @@
+@mixin peb-background-theme($theme-config) {
+  $background: map-get(
+    $map: $theme-config,
+    $key: background,
+  );
+
+  .sandbox-container {
+    background-color: $background;
+  }
+}

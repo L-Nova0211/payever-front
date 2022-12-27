@@ -1,0 +1,136 @@
+:host {
+  background-color: #24272e;
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.studio-dialog {
+  &__platform-header {
+    margin-bottom: 5px;
+    padding-right: 18px !important;
+  }
+
+  &__section-header {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 7px 17px;
+  }
+}
+
+.item {
+  &__content {
+    height: 100%;
+    min-height: 144px;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    &_gray {
+      background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+      height: 100%;
+    }
+
+    peb-renderer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      background: transparent;
+    }
+  }
+
+  &__info {
+    padding: 12px;
+    position: relative;
+    bottom: 75px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+
+    input {
+      appearance: none;
+      background-color: rgba(3, 113, 226, 0.1);
+      border: solid 1px #0371e2;
+      box-sizing: border-box;
+      color: white;
+      height: 18px;
+      outline: none;
+      margin: 0 -5px;
+      padding: 0 5px;
+      width: calc(100% + 5px);
+    }
+  }
+
+  &__description {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    margin-top: 3px;
+    min-height: 30px;
+
+    textarea {
+      appearance: none;
+      background-color: rgba(3, 113, 226, 0.1);
+      border: solid 1px #0371e2;
+      box-sizing: border-box;
+      color: white;
+      height: 36px;
+      outline: none;
+      margin: 1px -5px 0;
+      padding: 0 5px;
+      width: calc(100% + 5px);
+      resize: none;
+    }
+  }
+
+  &__buttons {
+    height: 40px;
+  }
+}
+
+::ng-deep {
+  .studio-dialog {
+    border-radius: 16px;
+    overflow: hidden;
+
+    mat-dialog-container {
+      overflow: hidden;
+    }
+
+    &__data-grid {
+
+      height: calc(100% - 42px) !important;
+
+      pe-data-grid-view {
+        display: block !important;
+      }
+
+      .scrollbar {
+        padding: 6px 16px 0 0 !important;
+      }
+    }
+
+    &__platform-header {
+      .header-container {
+        padding-right: 0 !important;
+      }
+    }
+  }
+}

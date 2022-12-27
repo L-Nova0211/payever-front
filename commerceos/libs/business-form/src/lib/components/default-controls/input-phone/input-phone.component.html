@@ -1,0 +1,12 @@
+<peb-form-field-input
+  *ngIf="!useShortNumber || (useShortNumber && form.get(shortPhoneFieldName))"
+  class="d-block"
+  [label]="controlScheme.title | translate"
+  [isFieldInvalid]="isSubmitted && control.invalid"
+  [errorMessage]="errorMessage[controlScheme.name]"
+  animated="true"
+  appearance="label"
+>
+  <input *ngIf="!useShortNumber" pePhoneInputFilter [formControl]="control" type="text" />
+  <input *ngIf="useShortNumber" pePhoneInputFilter [formControl]="form.get(shortPhoneFieldName)" type="text" />
+</peb-form-field-input>

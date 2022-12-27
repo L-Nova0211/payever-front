@@ -1,0 +1,200 @@
+basic:
+  element:
+    id: carousel-doc
+    type: document
+    children:
+      - id: main-carousel
+        type: carousel
+        data:
+          images:
+          - https://payevertesting.blob.core.windows.net/wallpapers/54eb39a4-9de0-417d-8039-c02f8f5f5d3a-louis-reed-747361-unsplash.jpg
+          - https://payevertesting.blob.core.windows.net/wallpapers/e865d763-f906-4eb9-b4b7-4420267a0242-engine-3248750.jpg
+        children:
+        - slideId: 0
+          id: 01-logo
+          type: logo
+        - slideId: 0
+          id: 01-text
+          type: text
+          text: Just Do It
+        - slideId: 1
+          id: 02-text
+          type: text
+          text: be concentrated
+  stylesheet:
+    all:
+      carousel-doc:
+      main:
+        height: 500
+      main-carousel:
+        height: 500
+      01-logo:
+        slot: 0-mid-left
+        color: white
+        fontSize: 22
+        left: 8
+      01-text:
+        color: black
+        width: 100%
+        slot: 0-center
+        fontSize: 50
+        textAlign: center
+      02-text:
+        width: 100%
+        color: white
+        fontSize: 35
+        slot: 1-bottom-right
+        textAlign: right
+    tablet:
+      carousel-doc:
+      main:
+        height: 500
+      main-carousel:
+        height: 500
+      01-logo:
+        slot: 0-mid-left
+        color: white
+        fontSize: 22
+        left: 8
+      01-text:
+        color: black
+        width: 100%
+        slot: 0-center
+        fontSize: 50
+        textAlign: center
+      02-text:
+        width: 100%
+        color: white
+        fontSize: 35
+        slot: 1-bottom-right
+        textAlign: right
+    mobile:
+      main:
+        height: 250
+      main-carousel:
+        height: 250
+      01-logo:
+        slot: 0-center
+        color: white
+        fontSize: 22
+        left: 8
+      02-text:
+        width: 100%
+        color: white
+        fontSize: 15
+        slot: 1-bottom-right
+        textAlign: right
+  context:
+    01-logo:
+      state: ready
+      data:
+        logoUrl: https://i.ya-webdesign.com/images/transparent-nike-icon-6.png
+
+allElements:
+  element:
+    id: carousel-doc
+    type: document
+    children:
+    - id: main-carousel
+      type: carousel
+      data:
+        images:
+        - https://payevertesting.blob.core.windows.net/wallpapers/54eb39a4-9de0-417d-8039-c02f8f5f5d3a-louis-reed-747361-unsplash.jpg
+        - https://payevertesting.blob.core.windows.net/wallpapers/e865d763-f906-4eb9-b4b7-4420267a0242-engine-3248750.jpg
+      children:
+      - slideId: 0
+        id: all-top-left-text
+        type: text
+        text: top-left
+      - slideId: 0
+        id: all-bottom-text
+        type: text
+        text: bottom
+      - slideId: 0
+        id: all-bottom-right-text
+        type: text
+        text: bottom-right
+      - slideId: 0
+        id: all-top-text
+        type: text
+        text: top
+      - slideId: 0
+        id: all-top-right-text
+        type: text
+        text: top-right
+      - slideId: 0
+        id: all-left-text
+        type: text
+        text: left
+      - slideId: 0
+        id: all-center-text
+        type: text
+        text: center
+      - slideId: 0
+        id: all-right-text
+        type: text
+        text: right
+      - slideId: 0
+        id: all-bottom-left-text
+        type: text
+        text: left-bottom
+  stylesheet:
+    main:
+      height: 500
+    main-carousel:
+      height: 500
+    all-top-left-text:
+      color: black
+      width: 100%
+      slot: 0-top-left
+      fontSize: 35
+      textAlign: center
+    all-top-text:
+      color: black
+      width: 100%
+      slot: 0-top
+      fontSize: 35
+      textAlign: center
+    all-top-right-text:
+      color: black
+      width: 100%
+      slot: 0-top-right
+      fontSize: 35
+      textAlign: center
+    all-left-text:
+      color: black
+      width: 100%
+      slot: 0-mid-left
+      fontSize: 35
+      textAlign: center
+    all-center-text:
+      color: black
+      width: 100%
+      slot: 0-center
+      fontSize: 35
+      textAlign: center
+    all-right-text:
+      color: black
+      width: 100%
+      slot: 0-mid-right
+      fontSize: 35
+      textAlign: center
+    all-bottom-left-text:
+      color: black
+      width: 100%
+      slot: 0-bottom-left
+      fontSize: 35
+      textAlign: center
+    all-bottom-text:
+      color: black
+      width: 100%
+      slot: 0-bottom
+      fontSize: 35
+      textAlign: center
+    all-bottom-right-text:
+      color: black
+      width: 100%
+      slot: 0-bottom-right
+      fontSize: 35
+      textAlign: center
+  context: {}

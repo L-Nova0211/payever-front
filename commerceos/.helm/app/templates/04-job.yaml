@@ -1,0 +1,62 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $appName := printf "%s-job-%s" $chartName $values.issue | lower | replace "_" "-" | trimSuffix "-"   }}
+{{ $urlMapConfigName:= printf "micro-url-map" }}
+
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: frontend
+    type: job
+
+  annotations:
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+spec:
+  backoffLimit: 1
+
+  template:
+    metadata:
+      labels:
+        app: {{ $appName }}
+        tier: frontend
+        type: job
+
+    spec:
+      priorityClassName: {{ $values.priorityClass }}
+      restartPolicy: Never
+
+      imagePullSecrets:
+        - name: {{ $values.image.pullSecretName }}
+
+      containers:
+        - name: nginx
+          image: {{ $values.image.nginx }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/job.sh" ]
+
+          resources:
+{{ toYaml $values.job.resources | indent 12 }}
+
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: {{ $urlMapConfigName }}
+            - secretRef:
+                name: {{ $chartName }}
+
+          env:
+            - name: KUBERNETES_DEPLOYED
+              value: "{{ now }}"
+            - name: MICRO_CHECKOUT_VERSION
+              value: "{{ $values.microCheckoutVersion }}"
+            - name: MICRO_COMMERCEOS_VERSION
+              value: "{{ $values.microUrlCommerceosVersion }}"
+            - name: DEPLOY_TO_EXCLUSIVE
+              value: "{{ $values.deployToExclusive }}"

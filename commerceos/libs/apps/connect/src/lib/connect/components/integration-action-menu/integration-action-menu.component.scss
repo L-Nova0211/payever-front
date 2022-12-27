@@ -1,0 +1,17 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+:host {
+  display: flex;
+}
+
+button.mat-raised-button {
+  border: none;
+  color: $color-secondary-0;
+  background-color: $color-secondary-1;
+  &:hover, &:active, &:focus {
+    color: $color-secondary-0;
+    background-color: $color-secondary-2;
+  }
+}

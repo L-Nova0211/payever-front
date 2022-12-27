@@ -1,0 +1,185 @@
+<svg
+  class="container"
+  overflow="visible"
+  *ngIf="data$ | async as data"
+  [attr.viewBox]="'0 0 ' + this.width + ' ' + this.height"
+  xmlns:svg="http://www.w3.org/2000/svg"
+>
+  <svg:defs *ngIf="data.masks">
+    <svg:clipPath id="cut-off">
+      <svg:path [attr.d]="data.masks[0]" />
+    </svg:clipPath>
+  </svg:defs>
+  <svg:g *ngFor="let ctrl of data.controls" [attr.clip-path]="ctrl.anchorType === type.Grid ? 'url(#cut-off)' : null">
+    <svg:rect
+      vector-effect="non-scaling-stroke"
+      fill="none"
+      [attr.stroke-width]="ctrl.anchorType === type.Section ? 2 : 1"
+      [attr.x]="ctrl.x"
+      [attr.y]="ctrl.y"
+      [attr.width]="ctrl.width"
+      [attr.height]="ctrl.height"
+      [attr.stroke]="ctrl.color"
+    />
+    <svg:g
+      *ngIf="ctrl.anchorType === type.Section"
+      [style.transform]="'scale(' + data.scale + ')'"
+    >
+      <svg:defs>
+        <svg:filter x="0" y="0" width="1" height="1.15" id="sectionLabelBgColor">
+          <svg:feFlood [attr.flood-color]="ctrl.color" />
+          <svg:feComposite operator="over" in="SourceGraphic" />
+        </svg:filter>
+      </svg:defs>
+      <svg:text
+        class="section-label"
+        filter="url(#sectionLabelBgColor)"
+        x="0"
+        [attr.y]="ctrl.y / data.scale + 12"
+      >{{ '&nbsp;&nbsp;' + (ctrl.label | titlecase) + '&nbsp;&nbsp;' }}</svg:text>
+    </svg:g>
+
+    <ng-container *ngFor="let anchor of ctrl.anchors;">
+      <ng-container [ngSwitch]="ctrl.anchorType">
+
+        <svg:g *ngSwitchCase="type.Section" [attr.transform]="'translate(' + anchor.x + ',' + anchor.y + ')'">
+          <svg:g [attr.transform]="'scale(' + data.scale + ')'">
+            <svg:g transform="translate(-19, -9)">
+              <svg:g class="section-anchor" [attr.stroke]="ctrl.color">
+                <svg:rect x="0" y="0" width="36" height="18" rx="9" />
+                <svg:polyline points="23 10.5 19 14.2 15 10.5" />
+                <svg:polyline points="23 7.5 19 3.8 15 7.5" />
+              </svg:g>
+            </svg:g>
+          </svg:g>
+        </svg:g>
+
+        <ng-container *ngSwitchCase="type.Grid">
+          <svg:g
+            [attr.transform]="'scale(' + data.scale + ') translate(' + (ctrl.x - ruler) + ' ' + (ctrl.y - ruler) + ')'"
+            [attr.transform-origin]="ctrl.x + ' ' + ctrl.y"
+          >
+            <svg:path
+              [attr.d]="'M ' + ruler + ' 0 V ' + ruler + ' H 0 V 3 A 3 3 0 0 1 3 0 Z'"
+              fill="#1c1c1e"
+              stroke="#7a7a7a"
+              style="vector-effect: non-scaling-stroke;"
+            />
+            <svg:g [attr.transform]="'translate(' + ((ruler - 9) / 2 - 3.5) + ' ' + ((ruler - 9) / 2 - 3.5) + ')'">
+              <ng-container *ngFor="let x of [3.5, 6.8, 10.1]">
+                <svg:rect
+                  *ngFor="let y of [3.5, 6.8, 10.1]"
+                  [attr.x]="x"
+                  [attr.y]="y"
+                  height="2.4"
+                  width="2.4"
+                  fill="#fff"
+                  rx="0.7"
+                  ry="0.7"
+                />
+              </ng-container>
+            </svg:g>
+          </svg:g>
+
+          <svg:g
+            [attr.transform]="'scale(' + data.scale + ') '
+              + 'translate(' + (ctrl.x + ctrl.width) + ' ' + (ctrl.y - ruler) + ')'"
+            [attr.transform-origin]="(ctrl.x + ctrl.width) + ' ' + ctrl.y">
+            <path
+              [attr.d]="'M 0 0 V ' + ruler
+                    + ' H ' + (ruler - 6) + ' A 3 3 0 0 0 ' + (ruler - 3) + ' ' + (ruler - 3)
+                    + ' V 3 A 3 3 0 0 0 ' + (ruler - 6) + ' 0 Z'"
+              fill="#1c1c1e"
+              stroke="#7a7a7a"
+              style="vector-effect: non-scaling-stroke;"
+            />
+            <svg:g [attr.transform]="'translate(' + ((ruler - 9) / 2 - 3.5) + ' ' + ((ruler - 9) / 2 - 3.5) + ')'">
+              <ng-container *ngFor="let x of [3.5, 6.8]">
+                <rect
+                  *ngFor="let y of [3.5, 6.8, 10.1]"
+                  [attr.x]="x"
+                  [attr.y]="y"
+                  height="2.4"
+                  width="2.4"
+                  fill="#fff"
+                  rx="0.7"
+                  ry="0.7"
+                />
+              </ng-container>
+            </svg:g>
+          </svg:g>
+
+          <svg:g
+            [attr.transform]="'scale(' + data.scale + ') '
+              + 'translate(' + (ctrl.x - ruler) + ' ' + (ctrl.y + ctrl.height) + ')'"
+            [attr.transform-origin]="ctrl.x + ' ' + (ctrl.y + ctrl.height)">
+            <svg:path
+              [attr.d]="'M 0 0 H ' + ruler
+                    + ' V ' + (ruler - 6) + ' A 3 3 0 0 1 ' + (ruler - 3) + ' ' + (ruler - 3)
+                    + ' H 3 A 3 3 0 0 1 0 ' + (ruler - 6) + ' Z'"
+              fill="#1c1c1e"
+              stroke="#7a7a7a"
+              style="vector-effect: non-scaling-stroke;"
+            />
+            <svg:g [attr.transform]="'translate(' + ((ruler - 9) / 2 - 3.5) + ' ' + ((ruler - 9) / 2 - 3.5) + ')'">
+              <ng-container *ngFor="let x of [3.5, 6.8, 10.1]">
+                <rect *ngFor="let y of [3.5, 6.8]" [attr.x]="x" [attr.y]="y" height="2.4" width="2.4" fill="#fff"
+                      rx="0.7" ry="0.7" />
+              </ng-container>
+            </svg:g>
+          </svg:g>
+
+          <svg:rect
+            [attr.x]="anchor.x"
+            [attr.y]="anchor.y"
+            [attr.width]="anchor.width"
+            [attr.height]="anchor.height"
+            [attr.fill]="anchor.color"
+            stroke="#7a7a7a"
+            style="vector-effect: non-scaling-stroke;"
+          />
+          <svg:text
+            class="grid-text"
+            text-anchor="middle"
+            dominant-baseline="central"
+            [attr.x]="anchor.x + anchor.width / 2"
+            [attr.y]="anchor.y + anchor.height / 2"
+            [attr.transform]="'scale(' + data.scale + ')'"
+            [attr.transform-origin]="(anchor.x + anchor.width / 2) + ' ' + (anchor.y + anchor.height / 2)"
+          >
+            {{ anchor.label }}
+          </svg:text>
+
+          <ng-container *ngIf="ctrl.gridColor">
+            <svg:line
+              *ngIf="anchor.y < ctrl.y && anchor.x + anchor.width < ctrl.x + ctrl.width"
+              [attr.x1]="anchor.x + anchor.width"
+              [attr.y1]="ctrl.y"
+              [attr.x2]="anchor.x + anchor.width"
+              [attr.y2]="ctrl.y + ctrl.height"
+              [attr.stroke]="ctrl.gridColor"
+            />
+            <svg:line
+              *ngIf="anchor.x < ctrl.x && anchor.y + anchor.height < ctrl.y + ctrl.height"
+              [attr.x1]="ctrl.x"
+              [attr.y1]="anchor.y + anchor.height"
+              [attr.x2]="ctrl.x + ctrl.width"
+              [attr.y2]="anchor.y + anchor.height"
+              [attr.stroke]="ctrl.gridColor"
+            />
+          </ng-container>
+        </ng-container>
+
+        <svg:circle
+          *ngSwitchDefault
+          class="anchor"
+          [attr.cx]="anchor.x"
+          [attr.cy]="anchor.y"
+          [attr.r]="anchor.width / 2"
+          [attr.fill]="anchor.color"
+        />
+      </ng-container>
+    </ng-container>
+
+  </svg:g>
+</svg>

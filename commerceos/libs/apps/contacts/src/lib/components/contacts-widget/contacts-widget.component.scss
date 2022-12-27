@@ -1,0 +1,86 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.contacts {
+  &__widgets {
+    display: grid;
+    grid-row-gap: 1em;
+    position: relative;
+  }
+
+  &__loader {
+    position: absolute;
+    top: calc(50% - 13px);
+    left: calc(50% - 13px);
+    z-index: 100;
+  }
+
+  &__default-image {
+    position: relative;
+    text-align: center;
+  }
+
+  &__image {
+    width: 100%;
+    display: grid;
+
+    img, svg {
+      margin: 0 auto;
+    }
+
+    img, .default-avatar {
+      height: 80px;
+      width: 80px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__tools {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__tool-icon {
+    border-radius: 29px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    width: 51px;
+    height: 51px;
+    text-align: center;
+
+    .icon-mat {
+      margin-top: 12px;
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-top: 12px;
+      color: var(--color-secondary-0, rgba($color-white, 1));
+    }
+  }
+
+  &__tool-label {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: var(--color-secondary-0, rgba($color-white, 1));
+    width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+}

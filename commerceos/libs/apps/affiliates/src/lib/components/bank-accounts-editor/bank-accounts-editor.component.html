@@ -1,0 +1,94 @@
+<div
+  [class.form__loading]="loading"
+  [ngClass]="theme"
+>
+  <ng-container *ngIf="!edit; else accountEditor">
+    <pe-list-section
+      [actionButtonType]="actionButtonType"
+      [addButtonLabel]="'affiliates-app.actions.add_account'"
+      [integrations]="accountsList"
+      [isInForm]="true"
+      [maxShowingFields]="7"
+      [showAddButton]="true"
+      [translateItemsTitle]="false"
+      (navigated)="editAccount($event)"
+    ></pe-list-section>
+  </ng-container>
+</div>
+
+<ng-template #accountEditor>
+  <form [formGroup]="accountForm">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.bank_account_editor.account_holder.error' | translate"
+        [isFieldInvalid]="accountForm.controls.accountHolder.invalid"
+        [label]="'affiliates-app.bank_account_editor.account_holder.label' | translate"
+      >
+        <input
+          formControlName="accountHolder"
+          [placeholder]="'affiliates-app.bank_account_editor.account_holder.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-select
+        formControlName="country"
+        [label]="'affiliates-app.bank_account_editor.country' | translate"
+        [selected]="accountForm.controls.country.value"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let country of countries"
+          [label]="country.label"
+          [value]="country.value"
+        ></peb-select-option>
+      </peb-select>
+      <peb-select
+        formControlName="city"
+        [label]="'affiliates-app.bank_account_editor.city' | translate"
+        [selected]="accountForm.controls.city.value"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let city of cities"
+          [label]="city.label"
+          [value]="city.value"
+        ></peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.bank_account_editor.bank_name.error' | translate"
+        [isFieldInvalid]="accountForm.controls.bankName.invalid"
+        [label]="'affiliates-app.bank_account_editor.bank_name.label' | translate"
+      >
+        <input
+          formControlName="bankName"
+          [placeholder]="'affiliates-app.bank_account_editor.bank_name.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'affiliates-app.bank_account_editor.account_number.error' | translate"
+        [isFieldInvalid]="accountForm.controls.accountNumber.invalid"
+        [label]="'affiliates-app.bank_account_editor.account_number.label' | translate"
+      >
+        <input
+          formControlName="accountNumber"
+          [placeholder]="'affiliates-app.bank_account_editor.account_number.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <div *ngIf="accountForm.controls._id.value" [style.margin-top.px]="16">
+      <peb-form-background>
+        <button pe-form-button
+          (click)="removeAccount(accountForm.controls._id.value)"
+          color="warn"
+        >
+          {{ 'affiliates-app.actions.delete_account' | translate }}
+        </button>
+      </peb-form-background>
+    </div>
+  </form>
+</ng-template>

@@ -1,0 +1,19 @@
+<div [ngClass]="this.peOverlayData?.theme">
+  <pe-chat-list-skeleton *ngIf="loading"></pe-chat-list-skeleton>
+  <ng-container *ngIf="!loading && chatList">
+    <div *ngIf="chatList.length" class="pe-message-chat-room-list__wrapper">
+      <pe-message-chat-room-list-header
+        *ngFor="let chat of chatList; let i = index; trackBy: trackOption"
+        [chat]="chat"
+        [accentColor]="accentColor"
+        class="pe-message-chat-room-list__row"
+        [class.pe-message-chat-room-list__row_active]="activeChat?._id === chat._id"
+        (click)="setChatAsActive(chat)"
+        [draggable]="draggable"
+        (dragstart)="dragStart(chat)"
+        (contextmenu)="openContextMenu($event, chat)"
+      ></pe-message-chat-room-list-header>
+    </div>
+    <ng-content></ng-content>
+  </ng-container>
+</div>

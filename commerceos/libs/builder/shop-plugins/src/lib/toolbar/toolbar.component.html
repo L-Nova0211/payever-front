@@ -1,0 +1,73 @@
+<div class="tools-container">
+
+  <!-- <peb-editor-view-tool [loading]="loading" (execCommand)="execCommand.emit($event)"></peb-editor-view-tool> -->
+
+  <peb-editor-actions-history-tool (execCommand)="execCommand.emit($event)"></peb-editor-actions-history-tool>
+
+  <peb-editor-zoom-tool (execCommand)="execCommand.emit($event)"></peb-editor-zoom-tool>
+</div>
+
+<div class="tools-container">
+
+<!--  <button class="tool">-->
+<!--    <div class="tool__icon">-->
+<!--      <peb-editor-tool-table-icon></peb-editor-tool-table-icon>-->
+<!--    </div>-->
+<!--    <span class="tool__label">Table</span>-->
+<!--  </button>-->
+
+  <!-- <peb-editor-media-tool (execCommand)="execCommand.emit($event)"></peb-editor-media-tool> -->
+
+  <peb-editor-shapes-tool
+    (execCommand)="execCommand.emit($event)"
+  ></peb-editor-shapes-tool>
+
+<!--  <peb-editor-language-tool-->
+<!--    (execCommand)="execCommand.emit($event)"-->
+<!--  ></peb-editor-language-tool>-->
+
+  <!--<button #section class="tool" (click)="openSections(section)">-->
+  <!--  <div class="tool__icon">-->
+  <!--    <peb-editor-tool-sections-icon></peb-editor-tool-sections-icon>-->
+  <!--  </div>-->
+  <!--  <span class="tool__label">Sections</span>-->
+  <!--</button>-->
+
+</div>
+
+<div class="tools-container">
+  <!-- <div class="tools-group">
+
+    <peb-editor-validator-tool
+      class="tools-group__item"
+      (execCommand)="execCommand.emit($event)"
+    ></peb-editor-validator-tool>
+
+    <peb-editor-seo-tool
+      class="tools-group__item"
+      (execCommand)="execCommand.emit($event)"
+    ></peb-editor-seo-tool>
+
+    <peb-editor-preview-tool
+      class="tools-group__item"
+      (execCommand)="execCommand.emit($event)"
+    ></peb-editor-preview-tool>
+  </div> -->
+
+<!--  <peb-editor-publish-tool-->
+<!--    (execCommand)="execCommand.emit($event)"-->
+<!--  ></peb-editor-publish-tool>-->
+
+  <peb-editor-screen-tool
+    class="tools-brush"
+    [hidden]="isMobile"
+    (execCommand)="execCommand.emit($event)"
+  ></peb-editor-screen-tool>
+
+  <peb-editor-brush-tool
+    class="tools-brush"
+    [hidden]="!isMobile"
+    (execCommand)="execCommand.emit($event)"
+  ></peb-editor-brush-tool>
+
+</div>

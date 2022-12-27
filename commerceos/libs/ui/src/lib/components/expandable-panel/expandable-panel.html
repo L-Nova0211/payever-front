@@ -1,0 +1,36 @@
+<div class="expandable-panel">
+  <div
+    class="expandable-panel__header"
+    [class.light-header]="lightHeader"
+    (click)="toggleContent()"
+  >
+    <span> {{ headerLabel }} </span>
+    <span class="expandable-panel__spacer"></span>
+    <span
+      *ngIf="description.length"
+      class="expandable-panel__description"
+    >{{ description }}</span>
+    <span class="expandable-panel__header-icon">
+      <svg
+        *ngIf="isContentOpen"
+        class="expandable-panel__expand-icon"
+      >
+        <use xlink:href="#icon-ui-close"></use>
+      </svg>
+      <svg
+        *ngIf="!isContentOpen"
+        class="expandable-panel__expand-icon"
+      >
+        <use xlink:href="#icon-ui-expand"></use>
+      </svg>
+    </span>
+  </div>
+  <div
+    class="expandable-panel__content"
+    [@panelBody]="{value: isContentOpen ? 'visible' : 'hidden', params: {transitionParams: transitionOptions}}"
+  >
+    <div class="expandable-panel__body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

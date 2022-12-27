@@ -1,0 +1,11 @@
+<div #languageList class="screen-list">
+  <div
+    *ngFor="let screen of screens; trackBy: trackByFn"
+    class="screen-list__item"
+    (click)="onSelect(screen)">
+    <span translate>{{'settings.colorAndStyle.screen.values.' + screen}}</span>
+    <svg *ngIf="screen === selected" viewBox="0 0 16 16" class="active">
+      <path d="M4.8 8L7.2 10.4 11.2 5.6"></path>
+    </svg>
+  </div>
+</div>

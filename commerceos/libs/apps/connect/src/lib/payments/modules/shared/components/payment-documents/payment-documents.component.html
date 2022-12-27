@@ -1,0 +1,80 @@
+<mat-accordion class="mat-accordion-xl payment-documents-container" *ngIf="paymentPayload$">
+  <mat-expansion-panel *ngFor="let step of steps" class="mat-list-transparent" hideToggle>
+    <mat-expansion-panel-header
+        collapsedHeight="40px"
+        expandedHeight="40px">
+
+      <mat-panel-title>
+
+        <ng-container [ngSwitch]="step.filled || (getStepUploadProgress(step) | async) >= 100">
+
+          <div *ngSwitchCase="true"
+               class="mat-panel-icon upload-success-icon">
+            <svg class="icon icon-16">
+              <use xlink:href="#icon-check-rounded-16"></use>
+            </svg>
+          </div>
+
+          <ng-container *ngSwitchCase="false">
+            <div *ngIf="getStepDownload(step)"
+                 (click)="runStepDownload(step)"
+                 class="mat-panel-icon upload-success-icon">
+              <svg class="icon icon-16">
+                <use xlink:href="#icon-download-file-16"></use>
+              </svg>
+            </div>
+          </ng-container>
+
+        </ng-container>
+
+        <span class="small" (click)="runStepDownload(step)"
+              [style.margin-right.px]="6"
+              [class.cursor-pointer]="getStepDownload(step)">
+
+          {{ getStepTilte(step) }}
+        </span>
+      </mat-panel-title>
+
+      <div class="upload-actions">
+
+        <span
+            *ngIf="(getStepUploadProgress(step) | async) >= 0 && (getStepUploadProgress(step) | async) <= 100 && !(paymentPayload$ | async)?.application_sent"
+            class="upload-progress small">
+          {{ (getStepUploadProgress(step) | async) * 0.01 | percent }}
+        </span>
+
+        <ng-container *ngIf="!(paymentPayload$ | async)?.application_sent">
+          <button mat-raised-button
+                  type="button"
+                  *ngIf="(getStepUploadProgress(step) | async) < 0"
+                  class="upload-button"
+                  [class.mat-button-rounded]="true"
+                  [class.mat-button-xs]="true"
+                  (click)="file.click()"
+                  color="muted-light">
+            <input (change)="runStepUpload(step, $event)" type="file" accept="image/*,application/pdf" class="hidden"
+                   #file>
+            {{ 'actions.upload' | translate }}
+          </button>
+        </ng-container>
+        <ng-container *ngIf="(paymentPayload$ | async)?.application_sent">
+          <button mat-raised-button
+                  type="button"
+                  class="upload-button"
+                  [class.mat-button-rounded]="true"
+                  [class.mat-button-xs]="true"
+                  (click)="downloadUploaded(step)"
+                  color="muted-light">
+            {{ 'actions.download' | translate }}
+          </button>
+        </ng-container>
+
+      </div>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  <button [disabled]="submitDisabled" mat-raised-button type="button" class="no-border" (click)="onSubmit()"
+          [class.mat-button-block]="true">
+    <pe-progress-button-content
+        [loading]="isLoading$ | async">{{ 'actions.submit' | translate }}</pe-progress-button-content>
+  </button>
+</mat-accordion>

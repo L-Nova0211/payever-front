@@ -1,0 +1,26 @@
+  <div [ngClass]="widgetTheme" class="flex">
+  <div class="icons flex count-style">
+    <ng-container *ngFor="let icon of widget.data | slice:0:5; let i = index">
+      <ng-container *ngIf="!icon.imgSrc">
+        <span class="style_div" (click)="openChat(widget, icon.id)">
+          {{ icon.title | abbreviation }}
+        </span>
+      </ng-container>
+      <ng-container *ngIf="icon.imgSrc">
+        <div class="icons__link" >
+          <img (click)="openChat(widget, icon.id)" [src]="icon?.imgSrc" class="style_img">
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i >= 4">
+        <div class="icons__link" (click)="openApplication(widget)">
+          <div class="style_div">
+            {{"+" + (widget.data.length - 5)}}
+          </div>
+        </div>
+      </ng-container>
+      </ng-container>
+      <div *ngIf="!widget.data?.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+      </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+@import "./_palette";
+
+.sidebar {
+  background: $background-dark;
+  color: white;
+
+  &__section {
+    &__title, &__link {
+      display: block;
+      height: 2rem;
+      color: $dark-text-main;
+      line-height: 2rem;
+      padding: 0 1rem;
+      font-size: .875em;
+    }
+
+    &__title {
+      background: $background-light;
+      font-size: 1.125em;
+      border-bottom: 1px solid #666;
+      text-align: center;
+    }
+
+    &__link {
+      border-bottom: 1px solid #444;
+      text-decoration: none;
+
+      &:last-of-type {
+        border-bottom: 1px solid #666;
+      }
+
+      &--active {
+        background: #37a;
+        cursor: inherit;
+        border-bottom: 1px solid #6ae;
+      }
+
+      &:hover:not(&--active) {
+        background: rgba(60, 170, 255, .3);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.content {
+  overflow: auto;
+  background-color: white;
+  background-image:
+    linear-gradient(to right, rgba(194, 194, 194, .2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 194, 194, .2) 1px, transparent 1px),
+    linear-gradient(to right, rgba(194, 194, 194, .2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 194, 194, .2) 1px, transparent 1px)
+  ;
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  box-shadow: inset 0 0 .25em $background-dark;
+}

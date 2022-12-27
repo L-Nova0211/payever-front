@@ -1,0 +1,45 @@
+@import "../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .plugin-api-key-add-form {
+    padding: 0 12px 16px;
+
+    .form-fieldset {
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+
+    .mat-button-block.plugin-api-key-button {
+      height: 40px;
+      font-size: 16px;
+      line-height: 1.33;
+      border-radius: 12px !important;
+      margin-top: 16px;
+      background-color: $content-background-color;
+      color: #0091df;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+      &-cancel {
+        margin-top: 8px;
+        // height: 30px;
+        // font-size: 12px;
+      }
+    }
+  }
+
+  .overlay-light {
+    .plugin-api-key-add-form {
+      .mat-button-block {
+        background-color: $content-light-background-color;
+      }
+    }
+  }
+
+  .overlay-transparent {
+    .plugin-api-key-add-form {
+      .mat-button-block {
+        background-color: $content-transparent-border-color;
+      }
+    }
+  }
+}

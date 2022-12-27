@@ -1,0 +1,199 @@
+//@import "theming/theming";
+//@import "theming/all-theme";
+
+//$theme-dark: peb-theme-choose("dark");
+//$theme-light: peb-theme-choose("light");
+//$theme-transparent: peb-theme-choose("transparent");
+
+.pe-custom-field {
+  width: 436px;
+  @media all and (max-width: 474px) {
+    width: 100%;
+  }
+
+  .overlay-widget {
+    padding: 12px;
+    border-radius: 12px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      & peb-form-background {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+
+    &.dark,
+    &.default {
+      //@include peb-theme($theme-dark);
+      background-color: #24272e;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+    }
+
+    &.light {
+      //@include peb-theme($theme-light);
+      background-color: rgba(255, 255, 255, 0.7);
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+    }
+
+    &.transparent {
+      //@include peb-theme($theme-transparent);
+      background-color: rgba(36, 39, 46, 0.3);
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+    }
+
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+    }
+
+    &__back,
+    &__done {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      padding: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__back {
+      color: #ffffff;
+    }
+
+    &__title {
+      color: #fff;
+      font-family: Roboto,sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &__done {
+      color: #0091df;
+    }
+  } 
+}
+
+.option {
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & .cdk-drag-placeholder {
+      display: flex !important;
+      flex-direction: row !important;
+      visibility: hidden !important;
+      height: 100%;
+      & div {
+        visibility: hidden !important;
+      }
+    }
+
+    & .cdk-drag-animating {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+
+  }
+
+  &__list.cdk-drop-list-dragging &__item:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &__select {
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    peb-form-background {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    & > div {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__handle,
+  &__fields,
+  &__remove {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 40px;
+  }
+
+  &__select {
+    .form-background-wrapper {
+      min-width: unset !important;
+    }
+  }
+
+  &__fields {
+    .label-input-content-wrapper, .label-container {
+      height: 100%;
+    }
+  }
+
+  &__handle,
+  &__remove {
+    box-sizing: border-box;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    width: 40px;
+
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.8;
+    }
+  }
+
+  &__handle {
+    background-color: #111111;
+    .drag {
+      height: 9px;
+      width: 16px;
+    }
+  }
+
+  &__remove {
+    background-color: #111111;
+    .remove {
+      width: 16px;
+      height: 18px;
+    }
+  }
+  
+  &__add {
+    margin: 8px 0;
+    width: 100%;
+    height: 44px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0371e2;
+    background-color: #1c1d1e;
+  }
+}

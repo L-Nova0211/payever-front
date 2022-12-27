@@ -1,0 +1,1693 @@
+id: agb-payever-shop-page
+name: AGB Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: agb-payever-shop-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+            - id: header-cart
+              type: shop-cart
+
+    - id: hr-section1
+      type: section
+      children: []
+
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-title
+          type: text
+          data:
+            text: 'Allgemeine Geschäftsbedingungen mit Kundeninformationen'
+
+    - id: second-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-block
+          type: block
+          children:
+            - id: second-section-title
+              type: text
+              data:
+                text: 'Inhaltsverzeichnis'
+            - id: second-section-desc
+              type: text
+              data:
+                text: '1. Geltungsbereich<br>2. Vertragsschluss<br>3. Widerrufsrecht<br>4. Preise und Zahlungsbedingungen<br>5. Liefer- und Versandbedingungen<br>6. Einräumung von Nutzungsrechten für Lizenzschlüssel<br>7. Vertragsdauer und Vertragsbeendigung bei Abonnementverträgen<br>8. Eigentumsvorbehalt<br>9. Mängelhaftung (Gewährleistung) <br>10. Besondere Bedingungen für die Verarbeitung von Waren nach bestimmten Vorgaben des Kunden<br>11. Besondere Bedingungen für Reparaturleistungen<br>12. Anwendbares Recht<br>13. Gerichtsstand<br>14. Alternative Streitbeilegung'
+
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-title
+              type: text
+              data:
+                text: '1) Geltungsbereich'
+            - id: third-section-desc
+              type: text
+              data:
+                text: "1.1 Diese Allgemeinen Geschäftsbedingungen (nachfolgend 'AGB') der ThinkRed West GmbH (nachfolgend 'Verkäufer'), gelten für alle Verträge über die Lieferung von Waren, die ein Verbraucher oder Unternehmer (nachfolgend ‚“Kunde“) mit dem Verkäufer hinsichtlich der vom Verkäufer in seinem Online-Shop dargestellten Waren abschließt. Hiermit wird der Einbeziehung von eigenen Bedingungen des Kunden widersprochen, es sei denn, es ist etwas anderes vereinbart.
+<br>1.2 Für Verträge über die Lieferung von Lizenzschlüsseln gelten diese AGB entsprechend, sofern insoweit nicht ausdrücklich etwas Abweichendes geregelt ist. Dabei schuldet der Verkäufer die Überlassung eines Lizenzschlüssels zur Nutzung der von ihm beschriebenen Software bzw. Inhalte sowie die Einräumung der vertraglich vereinbarten Rechte zur Nutzung der jeweiligen Software bzw. Inhalte. Der Kunde erwirbt kein geistiges Eigentum an der Software bzw. an den Inhalten. Für die Beschaffenheit der Software bzw. Inhalte ist die jeweilige Produktbeschreibung im Online-Shop des Verkäufers maßgeblich.
+<br>1.3 Verbraucher im Sinne dieser AGB ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können. Unternehmer im Sinne dieser AGB ist eine natürliche oder juristische Person oder eine rechtsfähige Personengesellschaft, die bei Abschluss eines Rechtsgeschäfts in Ausübung ihrer gewerblichen oder selbständigen beruflichen Tätigkeit handelt.
+<br>1.4 Gegenstand des Vertrages kann - je nach Produktbeschreibung des Verkäufers - sowohl der Bezug von Waren im Wege einer Einmallieferung als auch der Bezug von Waren im Wege einer dauerhaften Lieferung (nachfolgend “Abonnementvertrag“) sein. Beim Abonnementvertrag verpflichtet sich der Verkäufer, dem Kunden die vertraglich geschuldete Ware für die Dauer der vereinbarten Vertragslaufzeit in den vertraglich geschuldeten Zeitintervallen zu liefern."
+
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-section-title
+              type: text
+              data:
+                text: '2) Vertragsschluss'
+            - id: fourth-section-desc
+              type: text
+              data:
+                text: '2.1 Die im Online-Shop des Verkäufers enthaltenen Produktbeschreibungen stellen keine verbindlichen Angebote seitens des Verkäufers dar, sondern dienen zur Abgabe eines verbindlichen Angebots durch den Kunden.
+<br>2.2 Der Kunde kann das Angebot über das in den Online-Shop des Verkäufers integrierte Online-Bestellformular abgeben. Dabei gibt der Kunde, nachdem er die ausgewählten Waren in den virtuellen Warenkorb gelegt und den elektronischen Bestellprozess durchlaufen hat, durch Klicken des den Bestellvorgang abschließenden Buttons ein rechtlich verbindliches Vertragsangebot in Bezug auf die im Warenkorb enthaltenen Waren ab. Ferner kann der Kunde das Angebot auch telefonisch oder per E-Mail gegenüber dem Verkäufer abgeben.
+<br>2.3 Der Verkäufer kann das Angebot des Kunden innerhalb von fünf Tagen annehmen,
+<br>- indem er dem Kunden eine schriftliche Auftragsbestätigung oder eine Auftragsbestätigung in Textform (Fax oder E-Mail) übermittelt, wobei insoweit der Zugang der Auftragsbestätigung beim Kunden maßgeblich ist, oder
+<br>- indem er dem Kunden die bestellte Ware liefert, wobei insoweit der Zugang der Ware beim Kunden maßgeblich ist, oder
+<br>- indem er den Kunden nach Abgabe von dessen Bestellung zur Zahlung auffordert.
+<br>Liegen mehrere der vorgenannten Alternativen vor, kommt der Vertrag in dem Zeitpunkt zustande, in dem eine der vorgenannten Alternativen zuerst eintritt. Die Frist zur Annahme des Angebots beginnt am Tag nach der Absendung des Angebots durch den Kunden zu laufen und endet mit dem Ablauf des fünften Tages, welcher auf die Absendung des Angebots folgt. Nimmt der Verkäufer das Angebot des Kunden innerhalb vorgenannter Frist nicht an, so gilt dies als Ablehnung des Angebots mit der Folge, dass der Kunde nicht mehr an seine Willenserklärung gebunden ist.
+<br>2.4 Bei der Abgabe eines Angebots über das Online-Bestellformular des Verkäufers wird der Vertragstext nach dem Vertragsschluss vom Verkäufer gespeichert und dem Kunden nach Absendung von dessen Bestellung in Textform (z. B. E-Mail, Fax oder Brief) übermittelt. Eine darüber hinausgehende Zugänglichmachung des Vertragstextes durch den Verkäufer erfolgt nicht.
+<br>2.5 Vor verbindlicher Abgabe der Bestellung über das Online-Bestellformular des Verkäufers kann der Kunde mögliche Eingabefehler durch aufmerksames Lesen der auf dem Bildschirm dargestellten Informationen erkennen. Ein wirksames technisches Mittel zur besseren Erkennung von Eingabefehlern kann dabei die Vergrößerungsfunktion des Browsers sein, mit deren Hilfe die Darstellung auf dem Bildschirm vergrößert wird. Seine Eingaben kann der Kunde im Rahmen des elektronischen Bestellprozesses so lange über die üblichen Tastatur- und Mausfunktionen korrigieren, bis er den den Bestellvorgang abschließenden Button anklickt.
+<br>2.6 Für den Vertragsschluss steht ausschließlich die deutsche Sprache zur Verfügung.
+<br>2.7 Die Bestellabwicklung und Kontaktaufnahme finden in der Regel per E-Mail und automatisierter Bestellabwicklung statt. Der Kunde hat sicherzustellen, dass die von ihm zur Bestellabwicklung angegebene E-Mail-Adresse zutreffend ist, so dass unter dieser Adresse die vom Verkäufer versandten E-Mails empfangen werden können. Insbesondere hat der Kunde bei dem Einsatz von SPAM-Filtern sicherzustellen, dass alle vom Verkäufer oder von diesem mit der Bestellabwicklung beauftragten Dritten versandten E-Mails zugestellt werden können.'
+
+    - id: fifth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fifth-section-block
+          type: block
+          children:
+            - id: fifth-section-title
+              type: text
+              data:
+                text: '3) Widerrufsrecht'
+            - id: fifth-section-desc
+              type: text
+              data:
+                text: '3.1 Verbrauchern steht grundsätzlich ein Widerrufsrecht zu.
+<br>3.2 Nähere Informationen zum Widerrufsrecht ergeben sich aus der Widerrufsbelehrung des Verkäufers.'
+
+    - id: sixth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: sixth-section-block
+          type: block
+          children:
+            - id: sixth-section-title
+              type: text
+              data:
+                text: '4) Preise und Zahlungsbedingungen'
+            - id: sixth-section-desc
+              type: text
+              data:
+                text: '4.1 Sofern sich aus der Produktbeschreibung des Verkäufers nichts anderes ergibt, handelt es sich bei den angegebenen Preisen um Gesamtpreise, die die gesetzliche Umsatzsteuer enthalten. Gegebenenfalls zusätzlich anfallende Liefer- und Versandkosten werden in der jeweiligen Produktbeschreibung gesondert angegeben.
+<br>4.2 Die Zahlungsmöglichkeit/en wird/werden dem Kunden im Online-Shop des Verkäufers mitgeteilt.
+<br>4.3 Ist Vorauskasse per Banküberweisung vereinbart, ist die Zahlung sofort nach Vertragsabschluss fällig, sofern die Parteien keinen späteren Fälligkeitstermin vereinbart haben. Die bestellte Ware wird für Sie 7 Tage ab Kaufdatum reserviert. Sollte ein Zahlungseingang innerhalb dieser Frist nicht zu verbuchen sein, können wir die Auslieferung der Bestellung möglicherweise nicht mehr gewährleisten.
+<br>Bei der Zahlungsmethode Vorkasse überweisen Sie bitte den Gesamtbetrag Ihrer Bestellung unter Angabe der Auftragsnummer auf unser Konto:
+<br>think RED West GmbH
+<br>Volksbank Sprockhövel
+<br>IBAN: DE77452615470005729300
+<br>BIC: GENODEM1SPO
+<br>Geben Sie bitte Ihre Auftragsnummer an, damit wir den Betrag umgehend zuordnen können.
+<br>4.4 Bei Auswahl der Zahlungsart Lastschrift via Stripe erfolgt die Zahlungsabwicklung über den Zahlungsdienstleister Stripe Payments Europe Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland (im Folgenden: “Stripe“). In diesem Fall zieht Stripe den Rechnungsbetrag nach Erteilung eines SEPA-Lastschriftmandats, nicht jedoch vor Ablauf der Frist für die Vorabinformation im Auftrag des Verkäufers vom Bankkonto des Kunden ein. Vorabinformation ("Pre-Notification") ist jede Mitteilung (z.B. Rechnung, Police, Vertrag) an den Kunden, die eine Belastung mittels SEPA-Lastschrift ankündigt. Wird die Lastschrift mangels ausreichender Kontodeckung oder aufgrund der Angabe einer falschen Bankverbindung nicht eingelöst oder widerspricht der Kunde der Abbuchung, obwohl er hierzu nicht berechtigt ist, hat der Kunde die durch die Rückbuchung des jeweiligen Kreditinstituts entstehenden Gebühren zu tragen, wenn er dies zu vertreten hat. Der Verkäufer behält sich vor, bei Auswahl der Zahlungsart SEPA-Lastschrift eine Bonitätsprüfung durchzuführen und diese Zahlungsart bei negativer Bonitätsprüfung abzulehnen.
+<br>4.5 Bei Auswahl der Zahlungsart Kreditkarte via Stripe ist der Rechnungsbetrag mit Vertragsschluss sofort fällig. Die Zahlungsabwicklung erfolgt über den Zahlungsdienstleister Stripe Payments Europe Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland (im Folgenden: “Stripe“). Stripe behält sich vor, eine Bonitätsprüfung durchzuführen und diese Zahlungsart bei negativer Bonitätsprüfung abzulehnen.'
+
+    - id: seventh-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: seventh-section-block
+          type: block
+          children:
+            - id: seventh-section-title
+              type: text
+              data:
+                text: '5) Liefer- und Versandbedingungen'
+            - id: seventh-section-desc
+              type: text
+              data:
+                text: '5.1 Die Lieferung von Waren erfolgt auf dem Versandweg an die vom Kunden angegebene Lieferanschrift, sofern nichts anderes vereinbart ist. Bei der Abwicklung der Transaktion ist die in der Bestellabwicklung des Verkäufers angegebene Lieferanschrift maßgeblich.
+<br>5.2 Scheitert die Zustellung der Ware aus Gründen, die der Kunde zu vertreten hat, trägt der Kunde die dem Verkäufer hierdurch entstehenden angemessenen Kosten. Dies gilt im Hinblick auf die Kosten für die Hinsendung nicht, wenn der Kunde sein Widerrufsrecht wirksam ausübt. Für die Rücksendekosten gilt bei wirksamer Ausübung des Widerrufsrechts durch den Kunden die in der Widerrufsbelehrung des Verkäufers hierzu getroffene Regelung.
+<br>5.3 Bei Selbstabholung informiert der Verkäufer den Kunden zunächst per E-Mail darüber, dass die von ihm bestellte Ware zur Abholung bereit steht. Nach Erhalt dieser E-Mail kann der Kunde die Ware nach Absprache mit dem Verkäufer am Sitz des Verkäufers abholen. In diesem Fall werden keine Versandkosten berechnet.
+<br>5.4 Lizenzschlüssel werden dem Kunden wie folgt überlassen:
+<br>- per E-Mail'
+
+    - id: eighth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: eighth-section-block
+          type: block
+          children:
+            - id: eighth-section-title
+              type: text
+              data:
+                text: '6) Einräumung von Nutzungsrechten für Lizenzschlüssel'
+            - id: eighth-section-desc
+              type: text
+              data:
+                text: '6.1 Der überlassene Lizenzschlüssel berechtigt den Kunden zur Nutzung der aus der jeweiligen Produktbeschreibung ersichtlichen Software bzw. Inhalte in dem dort beschriebenen Umfang.
+<br>6.2 Die Rechtseinräumung wird erst wirksam, wenn der Kunde die geschuldete Vergütung vollständig geleistet hat.'
+
+    - id: ninth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: ninth-section-block
+          type: block
+          children:
+            - id: ninth-section-title
+              type: text
+              data:
+                text: '7) Vertragsdauer und Vertragsbeendigung bei Abonnementverträgen'
+            - id: ninth-section-desc
+              type: text
+              data:
+                text: '7.1 Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt vor, wenn dem kündigenden Teil unter Berücksichtigung aller Umstände des Einzelfalls und unter Abwägung der beiderseitigen Interessen die Fortsetzung des Vertragsverhältnisses bis zur vereinbarten Beendigung oder bis zum Ablauf einer Kündigungsfrist nicht zugemutet werden kann.
+<br>7.2 Kündigungen haben schriftlich oder in Textform (z. B. per E-Mail) zu erfolgen.'
+
+    - id: tenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: tenth-section-block
+          type: block
+          children:
+            - id: tenth-section-title
+              type: text
+              data:
+                text: '8) Eigentumsvorbehalt'
+            - id: tenth-section-desc
+              type: text
+              data:
+                text: 'Tritt der Verkäufer in Vorleistung, behält er sich bis zur vollständigen Bezahlung des geschuldeten Kaufpreises das Eigentum an der gelieferten Ware vor.'
+
+    - id: eleventh-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: eleventh-section-block
+          type: block
+          children:
+            - id: eleventh-section-title
+              type: text
+              data:
+                text: '9) Mängelhaftung (Gewährleistung)'
+            - id: eleventh-section-desc
+              type: text
+              data:
+                text: '9.1 Ist die Kaufsache mangelhaft, gelten die Vorschriften der gesetzlichen Mängelhaftung.
+<br>9.2 Der Kunde wird gebeten, angelieferte Waren mit offensichtlichen Transportschäden bei dem Zusteller zu reklamieren und den Verkäufer hiervon in Kenntnis zu setzen. Kommt der Kunde dem nicht nach, hat dies keinerlei Auswirkungen auf seine gesetzlichen oder vertraglichen Mängelansprüche.'
+
+    - id: twelve-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: twelve-section-block
+          type: block
+          children:
+            - id: twelve-section-title
+              type: text
+              data:
+                text: '10) Besondere Bedingungen für die Verarbeitung von Waren nach bestimmten Vorgaben des Kunden'
+            - id: twelve-section-desc
+              type: text
+              data:
+                text: '10.1 Schuldet der Verkäufer nach dem Inhalt des Vertrages neben der Warenlieferung auch die Verarbeitung der Ware nach bestimmten Vorgaben des Kunden, hat der Kunde dem Verkäufer alle für die Verarbeitung erforderlichen Inhalte wie Texte, Bilder oder Grafiken in den vom Verkäufer vorgegebenen Dateiformaten, Formatierungen, Bild- und Dateigrößen zur Verfügung zu stellen und ihm die hierfür erforderlichen Nutzungsrechte einzuräumen. Für die Beschaffung und den Rechteerwerb an diesen Inhalten ist allein der Kunde verantwortlich. Der Kunde erklärt und übernimmt die Verantwortung dafür, dass er das Recht besitzt, die dem Verkäufer überlassenen Inhalte zu nutzen. Er trägt insbesondere dafür Sorge, dass hierdurch keine Rechte Dritter verletzt werden, insbesondere Urheber-, Marken- und Persönlichkeitsrechte.
+<br>10.2 Der Kunde stellt den Verkäufer von Ansprüchen Dritter frei, die diese im Zusammenhang mit einer Verletzung ihrer Rechte durch die vertragsgemäße Nutzung der Inhalte des Kunden durch den Verkäufer diesem gegenüber geltend machen können. Der Kunde übernimmt hierbei auch die angemessenen Kosten der notwendigen Rechtsverteidigung einschließlich aller Gerichts- und Anwaltskosten in gesetzlicher Höhe. Dies gilt nicht, wenn die Rechtsverletzung vom Kunden nicht zu vertreten ist. Der Kunde ist verpflichtet, dem Verkäufer im Falle einer Inanspruchnahme durch Dritte unverzüglich, wahrheitsgemäß und vollständig alle Informationen zur Verfügung zu stellen, die für die Prüfung der Ansprüche und eine Verteidigung erforderlich sind.
+<br>10.3 Der Verkäufer behält sich vor, Verarbeitungsaufträge abzulehnen, wenn die vom Kunden hierfür überlassenen Inhalte gegen gesetzliche oder behördliche Verbote oder gegen die guten Sitten verstoßen. Dies gilt insbesondere bei Überlassung verfassungsfeindlicher, rassistischer, fremdenfeindlicher, diskriminierender, beleidigender, Jugend gefährdender und/oder Gewalt verherrlichender Inhalte.'
+
+    - id: thirteenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: thirteenth-section-block
+          type: block
+          children:
+            - id: thirteenth-section-title
+              type: text
+              data:
+                text: '11) Besondere Bedingungen für Reparaturleistungen'
+            - id: thirteenth-section-desc
+              type: text
+              data:
+                text: 'Schuldet der Verkäufer nach dem Inhalt des Vertrages die Reparatur einer Sache des Kunden, so gilt hierfür Folgendes:
+<br>11.1 Reparaturleistungen werden am Sitz des Verkäufers erbracht.
+<br>11.2 Der Verkäufer erbringt seine Leistungen nach seiner Wahl in eigener Person oder durch qualifiziertes, von ihm ausgewähltes Personal. Dabei kann sich der Verkäufer auch der Leistungen Dritter (Subunternehmer) bedienen, die in seinem Auftrag tätig werden. Sofern sich aus der Leistungsbeschreibung des Verkäufers nichts anderes ergibt, hat der Kunde keinen Anspruch auf Auswahl einer bestimmten Person zur Durchführung der gewünschten Dienstleistung.
+<br>11.3 Der Kunde hat dem Verkäufer alle für die Reparatur der Sache erforderlichen Informationen zur Verfügung zu stellen, sofern deren Beschaffung nach dem Inhalt des Vertrages nicht in den Pflichtenkreis des Verkäufers fällt. Insbesondere hat der Kunde dem Verkäufer eine umfassende Fehlerbeschreibung zu übermitteln und ihm sämtliche Umstände mitzuteilen, die ursächlich für den festgestellten Fehler sein können.
+<br>11.4 Sofern nicht anders vereinbart, hat der Kunde die zu reparierende Sache auf eigene Kosten und Gefahr an den Sitz des Verkäufers zu versenden. Der Verkäufer empfiehlt dem Kunden hierfür den Abschluss einer Transportversicherung. Ferner empfiehlt der Verkäufer dem Kunden, die Sache in einer geeigneten Transportverpackung zu versenden, um das Risiko von Transportschäden zu reduzieren und den Inhalt der Verpackung zu verbergen. Über offensichtliche Transportschäden wird der Verkäufer den Kunden unverzüglich informieren, damit dieser seine ggf. gegenüber dem Transporteur bestehenden Rechte geltend machen kann.
+<br>11.5 Die Rücksendung der Sache erfolgt auf Kosten des Kunden. Die Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung der Sache geht mit der Übergabe der Sache an eine geeignete Transportperson am Geschäftssitz des Verkäufers auf den Kunden über. Auf Wunsch des Kunden wird der Verkäufer für die Sache eine Transportversicherung abschließen.
+<br>11.6 Der Kunde kann die zu reparierende Sache auch selbst an den Sitz des Verkäufers verbringen und wieder von diesem abholen, wenn sich dies aus der Leistungsbeschreibung des Verkäufers ergibt oder wenn die Parteien hierüber eine entsprechende Vereinbarung getroffen haben. In diesem Fall gelten die vorstehenden Regelungen zur Kosten- und Gefahrtragung bei Versand und Rückversand der Sache entsprechend.
+<br>11.7 Die vorgenannten Regelungen beschränken nicht die gesetzlichen Mängelrechte des Kunden im Falle des Kaufs einer Ware vom Verkäufer.
+<br>11.8 Für Mängel der erbrachten Reparaturleistung haftet der Verkäufer nach den Vorschriften der gesetzlichen Mängelhaftung.'
+
+    - id: fourteenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourteenth-section-block
+          type: block
+          children:
+            - id: fourteenth-section-title
+              type: text
+              data:
+                text: '12) Anwendbares Recht'
+            - id: fourteenth-section-desc
+              type: text
+              data:
+                text: 'Für sämtliche Rechtsbeziehungen der Parteien gilt das Recht der Bundesrepublik Deutschland unter Ausschluss der Gesetze über den internationalen Kauf beweglicher Waren. Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als nicht der gewährte Schutz durch zwingende Bestimmungen des Rechts des Staates, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat, entzogen wird.'
+    - id: fifteenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fifteenth-section-block
+          type: block
+          children:
+            - id: fifteenth-section-title
+              type: text
+              data:
+                text: '13) Gerichtsstand'
+            - id: fifteenth-section-desc
+              type: text
+              data:
+                text: 'Handelt der Kunde als Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen mit Sitz im Hoheitsgebiet der Bundesrepublik Deutschland, ist ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag der Geschäftssitz des Verkäufers. Hat der Kunde seinen Sitz außerhalb des Hoheitsgebiets der Bundesrepublik Deutschland, so ist der Geschäftssitz des Verkäufers ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag, wenn der Vertrag oder Ansprüche aus dem Vertrag der beruflichen oder gewerblichen Tätigkeit des Kunden zugerechnet werden können. Der Verkäufer ist in den vorstehenden Fällen jedoch in jedem Fall berechtigt, das Gericht am Sitz des Kunden anzurufen.'
+
+    - id: sixteenth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: sixteenth-section-block
+          type: block
+          children:
+            - id: sixteenth-section-title
+              type: text
+              data:
+                text: '14) Alternative Streitbeilegung'
+            - id: sixteenth-section-desc
+              type: text
+              data:
+                text: '14.1 Die EU-Kommission stellt im Internet unter folgendem Link eine Plattform zur Online-Streitbeilegung bereit: https://ec.europa.eu/consumers/odr
+<br>Diese Plattform dient als Anlaufstelle zur außergerichtlichen Beilegung von Streitigkeiten aus Online-Kauf- oder Dienstleistungsverträgen, an denen ein Verbraucher beteiligt ist.
+<br>14.2 Der Verkäufer ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.'
+
+    - id: footer1-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer1
+          type: block
+          children:
+            - id: footer1-block1
+              type: block
+              children:
+                - id: footer1-block1-title
+                  type: text
+                  data:
+                    text: "ThinkRED: <br>
+                           Beratung für Schulträger und Schulen"
+                - id: footer1-block1-desc
+                  type: text
+                  data:
+                    text: "IT-Ausstattungen für Bildungseinrichtungen sind unser Fachgebiet! Mit ThinkRED haben Sie einen starken Partner und Prozessbegleiter, der Sie auf dem Weg zu einer digitalen Schule begleitet. Als Wegbegleiter für den DigitalPakt Schule unterstützen wir Schulträger und Schulen ganzheitlich. Wir beraten Sie persönlich und individuell, gerne auch vor Ort. Unsere Zentrale befindet sich in Bochum. Darüber hinaus sind wir an weiteren Standorten in Deutschland vertreten. Für Ihren Erfolg!"
+            - id: footer1-block2
+              type: block
+              children:
+                - id: footer1-block2-title
+                  type: text
+                  data:
+                    text: "Kontakt"
+                - id: footer1-block2-desc
+                  type: text
+                  data:
+                    text: "ThinkRed <br>Gesellschaft für digitale Bildung mit beschränkter Haftung: Lise-Meitner-Allee 6, 44801 Bochum"
+                - id: footer1-block2-phone
+                  type: text
+                  data:
+                    text: "+49 234 333672170 00"
+                - id: footer1-block2-telegram
+                  type: text
+                  data:
+                    text: "education@thinkred.de"
+
+    - id: hr-section2
+      type: section
+      children: []
+
+    - id: footer2-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer2
+          type: block
+          children:
+            - id: footer2-block1
+              type: block
+              children:
+                - id: footer2-block1-title
+                  type: text
+                  data:
+                    text: "© ThinkRED 2019 - 2020"
+            - id: footer2-block2
+              type: block
+              children:
+                - id: footer2-block2-link1
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='impressum-payever-shop-page'>Impressum</a>"
+                - id: footer2-block2-link2
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='datenschutzerklarung-payever-shop-page'>Datenschutz</a>"
+                - id: footer2-block2-link3
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='agb-payever-shop-page'>AGB</a>"
+                - id: footer2-block2-link4
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='widerruf-payever-shop-page'>Widerruf</a>"
+                - id: footer2-block2-link5
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='liefer-payever-shop-page'>Lieferung & Versand</a>"
+stylesheets:
+  desktop:
+    agb-payever-shop-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 100
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    header-logo:
+      width: 370
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      margin: 15 0 0 327
+    header-cart:
+      width: 24
+      height: 50
+      margin: 30 20 20 200
+      backgroundColor: '#000'
+    header-mobile-menu: {}
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      width: 1024
+    first-section-title:
+      width: 500
+      textAlign: center
+      marginTop: 40
+      fontSize: 30
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 262
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section-block:
+      width: 850
+    second-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    second-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section-block:
+      width: 850
+    third-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    third-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      width: 850
+    fourth-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      width: 850
+    fifth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      width: 850
+    sixth-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      width: 850
+    seventh-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      width: 850
+    eighth-section-title:
+      width: 850
+      marginTop: 40
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      width: 850
+    ninth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      width: 850
+    tenth-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      width: 850
+    eleventh-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      width: 850
+    twelve-section-title:
+      width: 850
+      fontSize: 14
+      marginTop: 40
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Thirteenth Section
+    # ----------------------------------
+    thirteenth-section-block:
+      width: 850
+    thirteenth-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    thirteenth-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fourteenth Section
+    # ----------------------------------
+    fourteenth-section-block:
+      width: 850
+    fourteenth-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    fourteenth-section-desc:
+      width: 850
+      marginBottom: 40
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Fifteenth Section
+    # ----------------------------------
+    fifteenth-section-block:
+      width: 850
+    fifteenth-section-title:
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      marginTop: 40
+      fontFamily: Roboto, sans-serif
+    fifteenth-section-desc:
+      width: 850
+      fontSize: 14
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Desktop Sixteenth Section
+    # ----------------------------------
+    sixteenth-section-block:
+      width: 850
+    sixteenth-section-title:
+      marginTop: 40
+      width: 850
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixteenth-section-desc:
+      marginBottom: 40
+      width: 850
+      fontSize: 14
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 512
+    footer1-block1-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 400
+      marginLeft: 50
+    footer1-block2-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 380
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 724
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+  tablet:
+    agb-payever-shop-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 100 1fr 100
+      width: 768
+    header-logo:
+      width: 300
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      width: 768
+    first-section-title:
+      width: 500
+      textAlign: center
+      marginTop: 40
+      fontSize: 30
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 134
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    second-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    second-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    third-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    third-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fourth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fifth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    sixth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    seventh-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    eighth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      width: 748
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    ninth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    tenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    eleventh-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    twelve-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet thirteenth Section
+    # ----------------------------------
+    thirteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    thirteenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    thirteenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet fourteenth Section
+    # ----------------------------------
+    fourteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fourteenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourteenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet fifteenth Section
+    # ----------------------------------
+    fifteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    fifteenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifteenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Tablet sixteenth Section
+    # ----------------------------------
+    sixteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 700
+      marginLeft: 20
+    sixteenth-section-title:
+      width: 700
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixteenth-section-desc:
+      width: 700
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Tablet Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 364
+      marginLeft: 20
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 364
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 364
+      marginLeft: 20
+    footer1-block2-title:
+      width: 364
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 316
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 235
+      marginLeft: 20
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 488
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+
+  mobile:
+    agb-payever-shop-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 50 1fr 50
+      width: 360
+    header-logo:
+      width: 200
+      height: 80
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      width: 360
+    first-section-title:
+      width: 300
+      textAlign: center
+      marginTop: 40
+      fontSize: 24
+      fontWeight: 400
+      marginBottom: 40
+      marginLeft: 30
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    second-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    second-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    third-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    third-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    fourth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    fifth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    sixth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    seventh-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    seventh-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile eighth Section
+    # ----------------------------------
+    eighth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    eighth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eighth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile ninth Section
+    # ----------------------------------
+    ninth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    ninth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    ninth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Tenth Section
+    # ----------------------------------
+    tenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    tenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    tenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile eleventh Section
+    # ----------------------------------
+    eleventh-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    eleventh-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    eleventh-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile Twelve Section
+    # ----------------------------------
+    twelve-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    twelve-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    twelve-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile thirteenth Section
+    # ----------------------------------
+    thirteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    thirteenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    thirteenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile fourteenth Section
+    # ----------------------------------
+    fourteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    fourteenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fourteenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile fifteenth Section
+    # ----------------------------------
+    fifteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    fifteenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    fifteenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+
+    # ----------------------------------
+    # Mobile sixteenth Section
+    # ----------------------------------
+    sixteenth-section-block:
+      marginTop: 30
+      marginBottom: 30
+      width: 340
+      marginLeft: 10
+    sixteenth-section-title:
+      width: 340
+      fontSize: 14
+      fontWeight: 600
+      fontFamily: Roboto, sans-serif
+    sixteenth-section-desc:
+      width: 340
+      fontSize: 14
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Mobile Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1: {}
+    footer1-block1:
+      width: 350
+      marginLeft: 10
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 350
+      marginLeft: 10
+    footer1-block2-title:
+      width: 350
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2: {}
+    footer2-block1:
+      width: 360
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 280
+      marginLeft: 10
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 350
+      marginLeft: 10
+    footer2-block2-link1:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      color: '#fff'
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      color: '#fff'
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      color: '#fff'
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      color: '#fff'
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+context: {}

@@ -1,0 +1,71 @@
+:host {
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.icons {
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 18px;
+    @media(max-width: 600px - 1) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media(max-width: 480px - 1) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__link {
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 4em;
+    min-width: 4em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    position: relative;
+    border-radius: .86em;
+    padding: 1em;
+
+    .widget__spinner {
+      position: absolute;
+      left: calc(50% - 13px);
+      top: calc(50% - 13px);
+      z-index: 2;
+    }
+
+    &.theme {
+      &-dark, &-default {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      &-transparent, &-transparent-dark {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      &-light {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &__thumb {
+    min-height: 2.86em;
+    min-width: 2.86em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+}

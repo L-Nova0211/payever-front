@@ -1,0 +1,7 @@
+<ng-container *ngFor="let item of conversationList$ | async">
+  <ng-container
+    *ngIf="conversationTemplate"
+    [ngTemplateOutlet]="conversationTemplate"
+    [ngTemplateOutletContext]="{ item: item }"
+  ></ng-container>
+</ng-container>

@@ -1,0 +1,28 @@
+<ng-container *ngIf="translationsReady$|async">
+  <pe-grid [theme]="theme">
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'shop-app.sidebar.title' | translate"
+      [disableSkeleton]="true"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [selectFolder]="selectedFolder"
+        [folders]="treeData"
+        [disableSkeleton]="true"
+        (selectedFolder)="navigateTolLink($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+
+    <pe-grid-content
+      [showMobileFooter]="false"
+      [style.overflow]="selectedFolder?.data?.link === 'settings' ? 'hidden' : 'inherit'"
+      [mobileTitle]="mobileTitle$ | async"
+      [showMobileTitle]="showMobileTitle$ | async"
+    >
+      <div style="position: relative; height: 100%">
+        <router-outlet></router-outlet>
+      </div>
+    </pe-grid-content>
+  </pe-grid>
+</ng-container>

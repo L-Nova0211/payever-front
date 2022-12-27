@@ -1,0 +1,194 @@
+<form class="dialog" [ngClass]="theme" [formGroup]="form" (ngSubmit)="createEmployee()">
+  <div [ngClass]="theme" class="dialog__body">
+    <peb-expandable-panel
+      class="employee-panel"
+      [headerLabel]="'dialogs.new_employee.panels.general.title' | translate"
+      [isContentOpen]="true"
+      [lightHeader]="true"
+    >
+      <peb-logo-and-status-picker
+        selectLabel="Status"
+        [addButtonLabel]="'dialogs.new_employee.panels.general.logo.add_media' | translate"
+        [image]="employeeLogo"
+        [selectedItem]="selectedStatus"
+        [selectList]="statuses"
+        [isImageLoading]="showImageLoader"
+        (selectChanged)="logoPickerSelectChanged($event)"
+        (file)="onFileChange($event)"
+      ></peb-logo-and-status-picker>
+
+      <peb-form-background class="form-group">
+        <div [ngClass]="theme" class="form-group__row">
+          <peb-select
+            class="form-group__input position-picker"
+            formControlName="position"
+            selectType="label"
+            [label]="'dialogs.new_employee.panels.general.position.label' | translate"
+            [placeholder]="'dialogs.new_employee.panels.general.position.label' | translate"
+            [isFieldInvalid]="getFieldValidity('position')"
+            [errorMessage]="getFieldErrorText('position')"
+            [selected]="selectedPosition"
+          >
+            <peb-select-option
+              *ngFor="let position of userPositions"
+              [label]="position.label"
+              [value]="position.value"
+            ></peb-select-option>
+          </peb-select>
+        </div>
+
+        <two-column-form>
+          <peb-form-field-input
+            class="form-group__input"
+            appearance="label"
+            [label]="'dialogs.new_employee.panels.general.first_name.label' | translate"
+            [isFieldInvalid]="getFieldValidity('first_name')"
+            [errorMessage]="getFieldErrorText('first_name')"
+          >
+            <input
+              [placeholder]="'dialogs.new_employee.panels.general.first_name.label' | translate"
+              formControlName="first_name"
+            />
+          </peb-form-field-input>
+          <peb-form-field-input
+            class="form-group__input"
+            appearance="label"
+            [label]="'dialogs.new_employee.panels.general.last_name.label' | translate"
+            [isFieldInvalid]="getFieldValidity('last_name')"
+            [errorMessage]="getFieldErrorText('last_name')"
+          >
+            <input
+              [placeholder]="'dialogs.new_employee.panels.general.last_name.label' | translate"
+              formControlName="last_name"
+            />
+          </peb-form-field-input>
+        </two-column-form>
+
+        <two-column-form>
+          <peb-form-field-input
+            class="form-group__input"
+            appearance="label"
+            [label]="'dialogs.new_employee.panels.general.mobile_phone.label' | translate"
+            [isFieldInvalid]="getFieldValidity('phoneNumber')"
+            [errorMessage]="getFieldErrorText('phoneNumber')"
+          >
+            <input
+              [placeholder]="'dialogs.new_employee.panels.general.mobile_phone.label' | translate"
+              formControlName="phoneNumber"
+            />
+          </peb-form-field-input>
+          <peb-form-field-input
+            class="form-group__input"
+            appearance="label"
+            [label]="'dialogs.new_employee.panels.general.email.label' | translate"
+            [isFieldInvalid]="getFieldValidity('email')"
+            [errorMessage]="getFieldErrorText('email')"
+          >
+            <input
+              [placeholder]="'dialogs.new_employee.panels.general.email.label' | translate"
+              formControlName="email"
+            />
+          </peb-form-field-input>
+        </two-column-form>
+
+        <div class="form-group__row">
+          <peb-form-field-input
+            class="form-group__input"
+            appearance="label"
+            [label]="'dialogs.new_employee.panels.general.company.label' | translate"
+          >
+            <input
+              [placeholder]="'dialogs.new_employee.panels.general.company.label' | translate"
+              formControlName="companyName"
+            />
+          </peb-form-field-input>
+        </div>
+
+        <div formGroupName="address">
+          <div class="form-group__row">
+            <peb-form-field-input
+              class="form-group__input"
+              appearance="label"
+              [label]="'dialogs.new_employee.panels.general.address.label' | translate"
+            >
+              <input
+                matGoogleMapsAutocomplete
+                class="form-group__input"
+                [type]="'address'"
+                (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                placeholder="{{ 'dialogs.new_employee.panels.general.address.label' | translate }}"
+                [value]="address"
+              />
+            </peb-form-field-input>
+          </div>
+          <div>
+            <two-column-form>
+              <peb-form-field-input
+                class="form-group__input"
+                appearance="label"
+                [label]="'dialogs.new_employee.panels.general.city.label' | translate"
+              >
+                <input
+                  [placeholder]="'common.forms.placeholders.enter_value' | translate"
+                  formControlName="city"
+                  (ngModelChange)="setAddressValue()"
+                />
+              </peb-form-field-input>
+              <peb-form-field-input
+                class="form-group__input"
+                appearance="label"
+                [label]="'dialogs.new_employee.panels.general.state.label' | translate"
+              >
+                <input
+                  [placeholder]="'dialogs.new_employee.panels.general.state.label' | translate"
+                  formControlName="street"
+                  (ngModelChange)="setAddressValue()"
+                />
+              </peb-form-field-input>
+            </two-column-form>
+          </div>
+          <two-column-form>
+            <peb-form-field-input
+              class="form-group__input form-group__small-field"
+              appearance="label"
+              [label]="'dialogs.new_employee.panels.general.zip.label' | translate"
+            >
+              <input
+                [placeholder]="'dialogs.new_employee.panels.general.zip.label' | translate"
+                formControlName="zipCode"
+                (ngModelChange)="setAddressValue()"
+              />
+            </peb-form-field-input>
+            <div class="form-group__input form-group__small-field">
+              <pe-input-picker
+                class="country-picker"
+                formControlName="country"
+                [selectedItem]="selectedCountry"
+                [label]="'dialogs.new_employee.panels.general.country.label' | translate"
+                [placeholder]="'dialogs.new_employee.panels.general.country.label' | translate"
+                [data]="countries"
+                (changed)="setAddressValue()"
+                [theme]="theme"
+              ></pe-input-picker>
+            </div>
+          </two-column-form>
+        </div>
+        <!-- This empty div somehow adds a border below address input -->
+        <div></div>
+      </peb-form-background>
+    </peb-expandable-panel>
+
+    <peb-expandable-panel
+      class="employee-panel"
+      [headerLabel]="'dialogs.new_employee.panels.app_items_rights.title' | translate"
+      [lightHeader]="true"
+    >
+      <peb-employee-app-access-setter
+        class="employee-panel__app"
+        *ngFor="let appControlItem of aclsGroup.controls | keyvalue"
+        [code]="appControlItem.key"
+        [message]="aclsService.getAccessMessage(appControlItem.value)"
+      ></peb-employee-app-access-setter>
+    </peb-expandable-panel>
+  </div>
+</form>

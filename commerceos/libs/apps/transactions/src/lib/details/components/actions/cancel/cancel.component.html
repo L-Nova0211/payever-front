@@ -1,0 +1,85 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.cancel.actions.cancel"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.actions.done"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background *ngIf="form.get('type')">
+      <peb-select
+        selectType="label"
+        [label]="'transactions.form.cancel.fields.type.label' | translate"
+        formControlName="type"
+      >
+        <peb-select-option
+          [value]="CancelTypeEnum.Full"
+          [label]="
+            'transactions.form.cancel.fields.type.values.full'
+              | translate
+                : {
+                    amount: maxAmount | currency: order.transaction.currency:undefined:undefined:locale
+                  }
+          "
+        >
+        </peb-select-option>
+        <peb-select-option
+          *ngIf="actionData?.partialAllowed"
+          [value]="CancelTypeEnum.Partial"
+          [label]="'transactions.form.cancel.fields.type.values.partial' | translate"
+        >
+        </peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        *ngIf="form.get('type').value == CancelTypeEnum.Partial"
+        [isFieldInvalid]="form.get('amount')?.invalid"
+        [errorMessage]="
+          'transactions.form.cancel.fields.amount.errors.limits'
+            | translate
+              : {
+                  min: 0 | currency: order.transaction.currency:undefined:undefined:locale,
+                  max:
+                    order.transaction.amount_cancel_rest || 0
+                    | currency: order.transaction.currency:undefined:undefined:locale
+                }
+        "
+        label="{{
+          'transactions.form.cancel.fields.amount.label'
+            | translate
+              : {
+                  amount:
+                    order.transaction.amount_cancel_rest || 0
+                    | currency: order.transaction.currency:undefined:undefined:locale
+                }
+        }}"
+        appearance="label"
+      >
+        <input
+          type="text"
+          pebInput
+          placeholder="{{ 'transactions.form.cancel.fields.amount.placeholder' | translate }}"
+          [formControlName]="'amount'"
+          [attr.max]="order.transaction.amount_left || 0"
+          [attr.min]="0"
+          (keypress)="amountChanged($event)"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <peb-form-background class="second-section">
+      <peb-form-field-input
+        [isFieldInvalid]="false"
+        errorMessage="''"
+        label="{{ 'transactions.form.cancel.labels.reason' | translate }}"
+        appearance="label"
+      >
+        <input
+          pebInput
+          placeholder="{{ 'transactions.form.cancel.labels.reason' | translate }}"
+          [formControlName]="'reason'"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class="hint-text" [innerHtml]="'transactions.form.cancel.note' | translate"></div>
+  </form>
+</pe-action-container>

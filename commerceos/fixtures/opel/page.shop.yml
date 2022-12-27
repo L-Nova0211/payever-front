@@ -1,0 +1,1166 @@
+id: shop-tesla-page
+name: Main
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: shop-tesla-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+
+            - id: header-menu
+              type: menu
+              data:
+                routes:
+                  - title: "SHOP"
+                    route: /category
+                  - title: "CHARGING"
+                    route: /category/charging
+                  - title: "VEHICLE ACCESSORIES"
+                    route: /category/vehicle
+                  - title: "PARTS"
+                    route: /category/parts
+                  - title: "APPAREL"
+                    route: /category/apparel
+                  - title: "LIFESTYLE"
+                    route: /category/lifestyle
+
+            - id: header-cart
+              type: shop-cart
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-title
+              type: text
+              data:
+                text: 'THE NEW MOKKA'
+            - id: first-section-desc
+              type: text
+              data:
+                text: 'Bold design. Pure driving pleasure'
+            - id: first-section-button
+              type: button
+              data:
+                text: Discover More
+                action:
+                  type: navigate.internal-page
+                  payload: '/category'
+
+    - id: second-section-title
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-text
+          type: text
+          data:
+            text: 'BEST SELLERS'
+
+    - id: second-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-block
+          type: block
+          children:
+            - id: second-block1
+              type: shop-products
+            - id: second-block2
+              type: shop-products
+            - id: second-block3
+              type: shop-products
+
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-block1
+              type: block
+              children:
+                - id: third-block1-background
+                  type: block
+                  children:
+                    - id: third-block1-title
+                      type: text
+                      data:
+                        text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/find-us" style="color: #000; text-decoration: none;">OPELCONNECT</a>'
+            - id: third-block2
+              type: block
+              children:
+                - id: third-block2-background
+                  type: block
+                  children:
+                    - id: third-block2-title
+                      type: text
+                      data:
+                        text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/find-us" style="color: #000; text-decoration: none;">OPELSERVICE</a>'
+
+
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-section-title
+              type: text
+              data:
+                text: 'THE NEW MOKKA-E'
+            - id: fourth-section-desc
+              type: text
+              data:
+                text: 'Clear. Brave. Electric. Discover a whole new era in German design & technology'
+            - id: fourth-section-button
+              type: button
+              data:
+                text: Discover More
+                action:
+                  type: navigate.internal-page
+                  payload: '/category'
+
+    - id: fifth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fifth-section-block
+          type: block
+          children:
+            - id: fifth-block1
+              type: block
+              children:
+                - id: fifth-block1-background
+                  type: block
+                  children:
+                    - id: fifth-block1-title
+                      type: text
+                      data:
+                        text: 'CHARGING'
+            - id: fifth-block2
+              type: block
+              children:
+                - id: fifth-block2-block1
+                  type: block
+                  children:
+                    - id: fifth-block2-block1-background
+                      type: block
+                      children:
+                        - id: fifth-block2-block1-title
+                          type: text
+                          data:
+                            text:  LEASING
+                - id: fifth-block2-block2
+                  type: block
+                  children:
+                    - id: fifth-block2-block2-background
+                      type: block
+                      children:
+                        - id: fifth-block2-block2-title
+                          type: text
+                          data:
+                            text:  OPEL FLEXCARE
+    - id: footer
+      type: section
+      children:
+        - id: footer-block
+          type: block
+          children:
+            - id: footer-section-link1
+              type: text
+              data:
+                text: "Opel © 2020"
+            - id: footer-section-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/privacy" style="color: #fff; text-decoration: none;">Privacy & Legal</a>'
+            - id: footer-section-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/find-us" style="color: #fff; text-decoration: none;">Contact</a>'
+            - id: footer-section-payever
+              type: image
+              data:
+                src: 'https://payeverproduction.blob.core.windows.net/builder/e7af555f-c086-4150-af78-5ea2971d1b8d-Whitepowered.png'
+
+stylesheets:
+  desktop:
+    shop-tesla-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    header-logo:
+      width: 150
+      height: 80
+    header-menu:
+      fontFamily: Gillsans, sans-serif
+      color: '#000'
+      fontWeight: bold
+      margin: 5 20 0 80
+    header-cart:
+      width: 20
+      height: 46
+      margin: 15 20 0 40
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      width: 1024
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka_exterior_homepage_16x9_mok21_e01_038.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 10 0 10
+      width: 500
+      height: 150
+      backgroundColor: '#ffffffb0'
+    first-section-title:
+      width: 450
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    first-section-desc:
+      width: 450
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    first-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      height: 420
+    second-section-text:
+      width: 200
+      fontSize: 13
+      fontFamily: Roboto, Helvetica Neue
+      margin: 30 0 30 0
+      fontWeight: 700
+    second-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      marginBottom: 25
+    second-block1:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: 0 auto 0 0
+    second-block2:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    second-block3:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: 0 0 0 auto
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1:
+      display: grid
+      width: 500
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/we-mobility/16x9/opel_simply_electric_header_16x9_co20_e01_011.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 500
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+    third-block2:
+      display: grid
+      width: 500
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/germany/service/angebote/fruehling-sommer/DE_opel-service__Urlaubs-Check_16x9_470021_300620.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 0 auto
+    third-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 500
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      width: 1024
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka-e_exterior_16x9_mok21_e01_002.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    fourth-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 10 0 10
+      width: 500
+      height: 150
+      backgroundColor: '#ffffffb0'
+    fourth-section-title:
+      width: 450
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    fourth-section-desc:
+      width: 450
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    fourth-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-block1:
+      display: grid
+      backgroundImage: https://www.passion4wheels.nl/wp-content/uploads/2020/06/04-Opel-Zafira-e-Life-nieuw-emissievrij-topmodel-voor-eersteklasreizen.jpg
+      backgroundSize: cover
+      backgroundPosition: left
+      width: 500
+      height: 610
+      marginTop: 30
+      marginBottom: 50
+    fifth-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 500
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2:
+      width: 500
+      height: 610
+      margin: 30 0 0 auto
+    fifth-block2-block1:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/c4a1e14e-9f26-45a7-83fa-14f828cbe34f-Screenshot2020-09-08at11.45.03.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 500
+      height: 300
+    fifth-block2-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 500
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2-block2:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/93826bb3-7ad4-4fdf-bad1-6e61a4b464f1-Screenshot2020-09-08at11.45.58.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 500
+      height: 300
+      marginTop: 10
+    fifth-block2-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 500
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+      width: 1024
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      color: '#fff'
+      fontSize: auto
+      width: 90
+    footer-section-link2:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 100
+    footer-section-link3:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 90
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+
+
+  tablet:
+    shop-tesla-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      width: 768
+      display: grid
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      width: 80
+      height: 50
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 0 0 0 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 12 0 10 10
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 3 0 0 590
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      width: 1024
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka_exterior_homepage_16x9_mok21_e01_038.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 auto 0 auto
+      width: 500
+      height: 150
+      backgroundColor: '#ffffffb0'
+    first-section-title:
+      width: 450
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    first-section-desc:
+      width: 450
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    first-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section-text:
+      width: 200
+      fontSize: 13
+      fontFamily: Roboto, Helvetica Neue
+      margin: 30 0 30 25
+      fontWeight: 700
+    second-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+      marginBottom: 25
+    second-block1:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    second-block2:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    second-block3:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1:
+      display: grid
+      width: 384
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/we-mobility/16x9/opel_simply_electric_header_16x9_co20_e01_011.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 384
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+    third-block2:
+      display: grid
+      width: 384
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/germany/service/angebote/fruehling-sommer/DE_opel-service__Urlaubs-Check_16x9_470021_300620.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 384
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      width: 768
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka-e_exterior_16x9_mok21_e01_002.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    fourth-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 auto 0 auto
+      width: 384
+      height: 150
+      backgroundColor: '#ffffffb0'
+    fourth-section-title:
+      width: 384
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    fourth-section-desc:
+      width: 384
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    fourth-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-block1:
+      display: grid
+      backgroundImage: https://www.passion4wheels.nl/wp-content/uploads/2020/06/04-Opel-Zafira-e-Life-nieuw-emissievrij-topmodel-voor-eersteklasreizen.jpg
+      backgroundSize: cover
+      backgroundPosition: left
+      width: 384
+      height: 600
+      marginTop: 30
+      marginBottom: 50
+    fifth-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 384
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2:
+      width: 384
+      height: 600
+      marginTop: 30
+    fifth-block2-block1:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/c4a1e14e-9f26-45a7-83fa-14f828cbe34f-Screenshot2020-09-08at11.45.03.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 300
+    fifth-block2-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 384
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2-block2:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/93826bb3-7ad4-4fdf-bad1-6e61a4b464f1-Screenshot2020-09-08at11.45.58.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 384
+      height: 300
+    fifth-block2-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 384
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+  mobile:
+    shop-tesla-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      width: 80
+      height: 50
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 0 0 0 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 12 0 10 10
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 3 0 0 180
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      width: 360
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka_exterior_homepage_16x9_mok21_e01_038.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 auto 0 auto
+      width: 340
+      height: 150
+      backgroundColor: '#ffffffb0'
+    first-section-title:
+      width: 300
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    first-section-desc:
+      width: 300
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    first-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section-text:
+      width: 200
+      fontSize: 13
+      fontFamily: Roboto, Helvetica Neue
+      margin: 30 0 30 20
+      fontWeight: 700
+    second-section-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+      marginBottom: 25
+    second-block1:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    second-block2:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    second-block3:
+      width: 330
+      height: 400
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 330
+      itemHeight: 400
+      margin: auto
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 1fr 1fr
+    third-block1:
+      display: grid
+      width: 360
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/we-mobility/16x9/opel_simply_electric_header_16x9_co20_e01_011.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 360
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+    third-block2:
+      display: grid
+      width: 360
+      height: 400
+      marginBottom: 30
+      backgroundImage: 'https://www.opel.de/content/dam/opel/germany/service/angebote/fruehling-sommer/DE_opel-service__Urlaubs-Check_16x9_470021_300620.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    third-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 360
+      margin: auto
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      width: 360
+      height: 700
+      backgroundImage: 'https://www.opel.de/content/dam/opel/master/vehicles/mokka/16x9/opel_mokka-e_exterior_16x9_mok21_e01_002.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    fourth-section-block:
+      display: grid
+      gridTemplateRows: 50 30 70
+      margin: 200 auto 0 auto
+      width: 340
+      height: 150
+      backgroundColor: '#ffffffb0'
+    fourth-section-title:
+      width: 300
+      fontSize: 26
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: auto auto 0 15
+    fourth-section-desc:
+      width: 300
+      fontSize: 16
+      color: '#000'
+      fontWeight: 600
+      fontFamily: Roboto, Helvetica Neue
+      textAlign: left
+      margin: 5 auto auto 15
+    fourth-section-button:
+      backgroundColor: '#000'
+      margin: auto auto auto 15
+      padding: 10 15
+
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 1fr 1fr
+    fifth-block1:
+      display: grid
+      backgroundImage: https://www.passion4wheels.nl/wp-content/uploads/2020/06/04-Opel-Zafira-e-Life-nieuw-emissievrij-topmodel-voor-eersteklasreizen.jpg
+      backgroundSize: cover
+      backgroundPosition: left
+      width: 360
+      height: 610
+      marginTop: 30
+      marginBottom: 50
+    fifth-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 360
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2:
+      width: 360
+      height: 399
+      marginTop: 30
+    fifth-block2-block1:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/c4a1e14e-9f26-45a7-83fa-14f828cbe34f-Screenshot2020-09-08at11.45.03.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 300
+    fifth-block2-block1-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 360
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    fifth-block2-block2:
+      display: grid
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/93826bb3-7ad4-4fdf-bad1-6e61a4b464f1-Screenshot2020-09-08at11.45.58.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 300
+      marginTop: 10
+    fifth-block2-block2-background:
+      display: grid
+      margin: auto 0 0 0
+      height: 50
+      backgroundColor: '#f7d900'
+    fifth-block2-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontWeight: 600
+      width: 360
+      textAlign: center
+      fontFamily: Roboto, Helvetica Neue
+      margin: auto
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      width: 360
+      backgroundColor: '#000'
+    footer-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 0
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      margin: 20 0 0 20
+      textAlign: left
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+    footer-section-link5:
+      margin: 20 0 0 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link6:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link7:
+      backgroundColor: 'transparent'
+      margin: 20 0 20 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link8:
+      margin: 20 0 20 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 2 / 2 / 2 / 2
+
+context: {}

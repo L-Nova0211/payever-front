@@ -1,0 +1,11 @@
+<peb-select
+  class="d-block"
+  selectType="label"
+  [isFieldInvalid]="isSubmitted && control.invalid"
+  [errorMessage]="errorMessage[controlScheme.name]"
+  [animated]="true"
+  [formControl]="control"
+  [label]="'forms.business_create.countryPhoneCode.label' | translate"
+>
+  <peb-select-option *ngFor="let item of countryPhones" [value]="item.value" [label]="item.label"> </peb-select-option>
+</peb-select>

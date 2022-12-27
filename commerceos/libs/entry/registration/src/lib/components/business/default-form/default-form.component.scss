@@ -1,0 +1,22 @@
+@import "pe_variables.scss";
+
+.signup-button {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #0371e2;
+  color: white;
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+  margin-top: 12px;
+  height: 54px;
+  font-weight: 500;
+  &:hover {
+    background-color: rgb(23, 133, 246);
+  }
+
+  @media (min-width: 521px) {
+    height: 44px;
+  }
+}

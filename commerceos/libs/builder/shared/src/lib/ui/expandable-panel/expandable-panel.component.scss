@@ -1,0 +1,47 @@
+.panel {
+  &--opened & {
+    &__icon {
+      transform: rotate(90deg);
+    }
+
+    &__content {
+      max-height: initial;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__header {
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+
+    &:hover {
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    span {
+      margin-left: 10px;
+      user-select: none;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  &__icon {
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform .1s;
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #474747;
+  }
+}

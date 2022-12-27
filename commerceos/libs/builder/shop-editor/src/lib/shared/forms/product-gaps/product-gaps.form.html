@@ -1,0 +1,32 @@
+<form class="input-group__row" [formGroup]="formGroup">
+  <div class="input-group__title">
+    <span>Gaps</span>
+  </div>
+  <div style="display: flex">
+    <div class="input-group__control">
+      <peb-number-input
+        *ngIf="colDisplay"
+        formControlName="columnGap"
+        label="Column"
+        units="px"
+        [min]="0"
+        [max]="maxColGap"
+        (focusin)="focused.emit()"
+        (focusout)="blurred.emit()"
+      ></peb-number-input>
+    </div>
+
+    <div class="input-group__control">
+      <peb-number-input
+        *ngIf="rowDisplay"
+        formControlName="rowGap"
+        label="Row"
+        unit="px"
+        [min]="0"
+        [max]="400"
+        (focusin)="focused.emit()"
+        (focusout)="blurred.emit()"
+      ></peb-number-input>
+    </div>
+  </div>
+</form>

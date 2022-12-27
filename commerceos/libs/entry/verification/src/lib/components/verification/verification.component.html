@@ -1,0 +1,32 @@
+<entry-layout *ngIf="(mode$ | async) !== ModeEnum.loading" [entryLogo]="entryLogo">
+  <div class="verification" [ngSwitch]="mode$ | async">
+    <ng-container *ngSwitchCase="ModeEnum.none">
+      <peb-messages [message]="errorText" *ngIf="errorText"></peb-messages>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="ModeEnum.register">
+
+        <entry-error [errorText]="errorText"></entry-error>
+
+        <entry-create-personal-form
+          [email]="email"
+          type="personal"
+          [employee]="true"
+          [tokenData]="tokenData"
+          (eventOn)="onFormEvent($event)"
+        ></entry-create-personal-form>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="ModeEnum.login">
+      <div class="login-header">{{ 'forms.business_verification.please_login' | translate }}</div>
+      <div class="login-mail">{{ email }}</div>
+      <entry-login
+        [username]="email"
+        [employee]="true"
+        (onSuccessLogin)="onSuccessLogin()"
+        (onSecondFactorCode)="onSecondFactorCode()">
+      </entry-login>
+    </ng-container>
+  </div>
+
+</entry-layout>

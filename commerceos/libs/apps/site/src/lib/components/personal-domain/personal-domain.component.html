@@ -1,0 +1,40 @@
+<div class="container" [ngClass]="config.theme">
+    <div *ngIf="!domainList?.length&&!isloading" class="no-domain">
+            <peb-messages  [showIcon]="true" [message]="'No domains connected'"></peb-messages>
+            <button class="setting-button confirm" (click)="addDomain()">{{'site-app.actions.create_domain'|translate}}</button>
+
+    </div>
+
+    <peb-expandable-panel [headerLabel]="domain.name" [isContentOpen]="!i" *ngFor="let domain of domainList, let i =index">
+        <div style="margin-bottom: 11px;">
+            <peb-form-background >
+                <peb-form-field-input [label]="'site-app.settings.domain_label'|translate" appearance="label">
+                    <input [value]="domain.name" [placeholder]="'site-app.settings.domain_placeholder'|translate"  disabled/>
+                  </peb-form-field-input>
+            </peb-form-background>
+        </div>
+
+
+        <peb-form-background >
+            <peb-form-field-input [label]="'site-app.settings.date_label'|translate" appearance="label">
+                <input [value]="domain.createdAt|date:'longDate'" disabled
+                       [placeholder]="'site-app.settings.date_placeholder'|translate" />
+              </peb-form-field-input>
+              <peb-form-field-input [label]="'site-app.settings.provider_label'|translate" appearance="label">
+                <input [value]="domain.provider ? domain.provider : 'unknown'"  disabled
+                       [placeholder]="'site-app.settings.provider_placeholder'|translate" />
+              </peb-form-field-input>
+        </peb-form-background>
+       <div style="margin-top:16px">
+        <peb-messages
+        [showIcon]="!domain.isConnected"
+        [message]="(domain.isConnected
+        ? 'site-app.messages.domain_connected'
+        : 'site-app.messages.domain_disconnected') | translate"
+        [color]="domain.isConnected?'confirm':'warning'"
+        ></peb-messages>
+       </div>
+
+        <button class="setting-button" (click)="removeDomain(domain,i)">{{'site-app.actions.remove_domain'|translate}}</button>
+    </peb-expandable-panel>
+</div>

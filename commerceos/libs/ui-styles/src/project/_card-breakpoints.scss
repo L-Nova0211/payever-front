@@ -1,0 +1,59 @@
+// max-width(599px)
+// ----------------------
+
+@media (max-width: $viewport-breakpoint-sm-1 - 1) {
+  .mat-card-transparent:not(.mat-card-transparent-sm) {
+    .mat-card-content-padding-sm {
+      padding: $grid-unit-y $grid-unit-x;
+    }
+  }
+}
+
+// max-width(479px)
+// ----------------------
+
+@media(max-width: $viewport-breakpoint-xs-2 - 1) {
+  .pe-bootstrap {
+
+    .mat-card-transparent:not(.mat-card-transparent-sm) {
+
+      .mat-card-header {
+        height: $grid-unit-y * 5;
+        margin: 0;
+      }
+      .mat-card-content-padding-sm {
+        .form-table {
+          .mat-button-block {
+            height: $grid-unit-y * 4;
+          }
+        }
+      }
+    }
+
+    .mat-card-transparent.mat-card-transparent-border-round {
+      border-radius: $border-radius-large;
+    }
+
+    .mat-card-transparent-lg {
+      .mat-card-header {
+
+        .mat-card-header-text {
+          width: 100%;
+
+          .mat-card-title {
+            > p {
+              margin-left: $grid-unit-x + 4;
+              text-align: left;
+              position: relative;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .mat-card-transparent-sm {
+      width: $grid-unit-x * 18;
+    }
+  }
+}

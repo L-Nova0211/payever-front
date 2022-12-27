@@ -1,0 +1,105 @@
+login-second-factor-code {
+  .login-second-factor-code {
+
+    &__container {
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+
+    &__description,
+    &__invalid {
+      font-size: 14px;
+      text-align: center;
+      line-height: normal;
+      margin: 16px auto 0;
+      max-width: 250px;
+    }
+
+    &__description {
+      color: #ffffff;
+    }
+
+    &__invalid {
+      color: #ff3c30;
+    }
+
+    &__skip {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    &__form {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-column-gap: 4px;
+      margin: 16px auto 16px;
+      max-width: 216px;
+
+      pe-input {
+        background-color: #111111;
+        border-radius: 8px;
+        height: 44px;
+        width: 100%;
+
+        mat-form-field {
+          height: 44px;
+          width: 32px;
+
+          .mat-form-field-wrapper {
+            padding-bottom: 0;
+          }
+
+          .mat-form-field-infix {
+            border-top: 0;
+            padding: 0;
+          }
+
+          .mat-form-field-underline {
+            display: none;
+          }
+
+          input {
+            font-size: 14px;
+            font-weight: 500;
+            height: 44px;
+            text-align: center;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            &[type=number] {
+              -moz-appearance: textfield;
+            }
+          }
+        }
+      }
+    }
+
+    &__button {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      background-color: #0371e2;
+      font-weight: 500;
+      color: white;
+      font-size: 14px;
+      outline: 0;
+      border: 0;
+      margin: 12px auto 0;
+      height: 54px;
+      max-width: 250px;
+
+      &_gray {
+        background-color: #383b42;
+      }
+
+      @media (min-width: 521px) {
+        height: 44px;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+:host {
+  .forward-svg {
+    display: flex;
+    align-items: center;
+  }
+  
+  .line-svg {
+    margin-right: 4px;
+  }
+  
+  .forward-message-details {
+    border-left: 2px solid #0371e2;
+    width: 100%;
+    padding-left: 10px;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  
+    .title {
+      font-size: 16px;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      font-weight: 500;
+      color: #ffffff;
+    }
+  
+    .details {
+      font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-right: 45px;
+    }
+  }
+  
+  .forward-message-menu {
+    padding: 0 12px 8px;
+    max-height: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1c1d1e;
+    overflow: hidden;
+    transition: 0.4s all ease;
+    
+    &.show {
+      display: flex;
+      max-height: 500px;
+      color: #fff;
+      padding: 10px 18px;
+      justify-content: space-between;
+      border-radius: 0px;
+      cursor: pointer;
+    }
+  
+    .forward-svg {
+      display: flex;
+      align-items: center;
+    }
+  
+    .line-svg {
+      margin-right: 4px;
+    }
+  
+    .forward-message-details {
+      border-left: 2px solid #0371e2;
+      width: 100%;
+      padding-left: 10px;
+      margin-left: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+  
+      .title {
+        font-size: 16px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        font-weight: 500;
+        color: #ffffff;
+      }
+  
+      .details {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-right: 45px;
+      }
+    }
+  
+    button {
+      outline: none;
+      border: none;
+      box-shadow: none;
+  
+      background: transparent;
+      cursor: pointer;
+  
+      &:focus,
+      &:active,
+      &:hover {
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  
+  }
+  
+  .m-0 {
+    margin: 0;
+  }
+}

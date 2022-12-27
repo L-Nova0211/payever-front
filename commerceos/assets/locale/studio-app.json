@@ -1,0 +1,37 @@
+{
+  "studio-app": {
+    "grid": {
+      "all_media": "All media",
+      "all_folders": "All folders",
+      "media": "Media",
+      "new_album": "New Album",
+      "options_actions": "Choose action",
+      "options_select_all": "Select All",
+      "options_deselect_all": "Deselect All",
+      "options_delete": "Delete",
+      "sort_by": "Sort by",
+      "sort_oldest": "Oldest",
+      "sort_newest": "Newest",
+      "options": "Options",
+      "options_get": "Get",
+      "options_edit": "Edit",
+      "album_name": "Album name",
+      "studio": "Album name",
+      "action_open": "Open",
+      "sample_title": "Sample title",
+      "this_media_file": "this media file",
+      "these_media_files": "these media files",
+      "are_you_sure": "Are you sure?",
+      "delete_message": "Do you want to delete",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "filter_name": "Name"
+    },
+    "folder": {
+      "already_exist_1": "Name ",
+      "already_exist_2": " of album is already exist.",
+      "folder_is_not_empty_1": "The album",
+      "folder_is_not_empty_2": "is not empty."
+    }
+  }
+}

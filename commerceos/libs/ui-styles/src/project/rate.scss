@@ -1,0 +1,264 @@
+//
+// Rate
+// ----------------------------
+
+.pe-bootstrap {
+  .rate {
+    cursor: pointer;
+    margin-bottom: $margin-base-y;
+
+    &:not(.selected):hover {
+      .rate-amount {
+        border-top-color: $color-blue;
+        border-left-color: $color-blue;
+        border-right-color: $color-blue;
+
+        &:last-child {
+          border-color: $color-blue;
+        }
+      }
+      .rate-options {
+        border-color: $color-blue;
+      }
+    }
+
+
+    // Elements
+    // -----------------
+
+    &-amount {
+      border-radius: $border-radius-base $border-radius-base 0 0;
+      border: $color-grey-5 1px solid;
+      font-size: $font-size-h3;
+      line-height: $grid-unit-y * 3;
+      padding: $grid-unit-y;
+      font-weight: $font-weight-light;
+      color: $color-blue;
+      position: relative;
+      @include payever_transition($property: border, $duration: .15s);
+      [class*="col"] {
+        min-height: 0!important;
+      }
+
+      &:last-child {
+        border-radius: $border-radius-base $border-radius-base 0 0;
+      }
+
+      &-item-single-line {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      &-item-single-line.rate-amount-item-has-edit {
+        margin-right: $grid-unit-x*1.5;
+      }
+    }
+
+    &-options {
+      font-size: $font-size-micro-2;
+      line-height: $rate-option-line-height;
+      border-radius: 0 0 $border-radius-base $border-radius-base;
+      border: $color-grey-5 1px solid;
+      border-top: none;
+      padding: 8px $grid-unit-x;
+      color: $color-grey-2;
+
+      .text-secondary {
+        color: $color-grey-4;
+      }
+
+      @include payever_transition($property: border, $duration: .15s);
+      [class*="col"] {
+        @include text-overflow;
+        min-height: 0!important;
+      }
+    }
+
+    &-edit {
+      position: absolute;
+      right: $grid-unit-y;
+      top: 50%;
+      cursor: pointer;
+      @include payever_transform_translate(0, -50%);
+      svg {
+        vertical-align: 0;
+      }
+    }
+
+    // Style Variations
+    // -----------------------
+
+    &-simple {
+
+      .header {
+        padding: $margin_adjust * 4 $margin_adjust * 3;
+        @include pe_flexbox;
+        @include pe_justify-content(space-between);
+        @include pe_align-items(center);
+
+        .rate-title {
+          color: $color-dark-gray;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+
+      .options {
+        padding: $margin_adjust * 1.5 $margin_adjust * 3;
+        @include pe_flexbox;
+        @include pe_flex-wrap(wrap);
+
+        .rate-option {
+          @include pe_flex-grow(1);
+        }
+      }
+
+      &.selected {
+        .header .rate-title{
+          color: $color-white;
+        }
+      }
+    }
+
+    &.selected {
+      cursor: default;
+
+      .rate-amount {
+        border-color: $color-blue;
+        background-image: linear-gradient(180deg, lighten($color-blue, 8%) 0%, darken($color-blue, 8%) 100%);
+        color: $color-white;
+      }
+    }
+
+    &-loading, &-loading.selected {
+
+      &:not(.selected):hover {
+        .rate-amount {
+          border-top-color: $color-grey-5;
+          border-left-color: $color-grey-5;
+          border-right-color: $color-grey-5;
+
+          &:last-child {
+            border-color: $color-grey-5;
+          }
+        }
+        .rate-options {
+          border-color: $color-grey-5;
+        }
+      }
+
+      .rate-amount-item {
+        background: $color-grey-6;
+        text-indent: -999px;
+        border-radius: $border-radius-base;
+      }
+
+      .rate-amount {
+        background: transparent;
+        background-image: none;
+        border-color: $color-grey-5;
+      }
+
+      .rate-option {
+        $rate-loading-option-margin: ceil($grid-unit-y / 6);
+
+        line-height: $rate-option-line-height;
+        text-indent: -999px;
+        position: relative;
+
+        .text-right {
+          text-align: left;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: $rate-loading-option-margin;
+          bottom: $rate-loading-option-margin;
+          left: 0;
+          right: 0;
+          background: $color-grey-6;
+          border-radius: $border-radius-base;
+        }
+      }
+    }
+
+
+    // Mobile view
+    // ---------------------
+
+    @media(max-device-width: $viewport-breakpoint-sm-2 - 1) {
+      margin-bottom: $grid-unit-y;
+      padding: 15px 20px 15px 44px;
+      border: $border-light-gray-2;
+      border-radius: $border-radius-base;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border: $border-light-gray-1;
+        border-radius: 50%;
+        position: absolute;
+        top: 17px;
+        left: 12px;
+      }
+
+      .rate-amount {
+        border-radius: 0;
+        border: none;
+        font-size: 16px;
+        line-height: $grid-unit-y * 2;
+        padding: 0;
+        font-weight: 400;
+        color: $color-gray;
+        text-align: left;
+      }
+
+      .rate-options {
+        font-size: 12px;
+        line-height: 16px;
+        border-radius: 0;
+        border: none;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        .row {
+          margin: 0;
+          [class*="col"] {
+            color: $color-gray-3;
+            display: inline;
+            width: auto;
+            padding: 0;
+            white-space: normal;
+            &:first-child {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      &.selected {
+        background: $color-blue;
+
+        &:before {
+          border: none;
+          background: $color-blue url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gZmlsbD0iI2ZmZmZmZiIgcG9pbnRzPSI2Ljk4NTcxNDI5IDEwLjQ0Mjg1NzEgMTIuMTU3MTQyOSAzIDEzLjUgMy45Mjg1NzE0MyA3LjI4NTcxNDI5IDEyLjg4NTcxNDMgMyA5LjA3MTQyODU3IDQuMDg1NzE0MjkgNy44NTcxNDI4NiI+PC9wb2x5Z29uPjwvc3ZnPg==) no-repeat center;
+        }
+
+        .rate-amount {
+          background: none;
+        }
+
+        .rate-options {
+          .row {
+            [class*="col"] {
+              color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "contentType":"accordion",
+  "title":"Shopify",
+  "closeUrl":"https://twilio-connect.test.devpayever.com/api/flow/close-app",
+  "type":"info-box",
+  "content":{
+    "accordion":[
+      {
+        "title":"Connect",
+        "icon":"#icon-plus-24",
+        "hideToggle": true,
+        "headerButton":{
+          "text":"Open",
+          "httpMethod":"redirect",
+          "apiUrl":"https://test.com/test"
+        },
+      },
+      {
+        "title":"Integrated payments",
+        "icon":"#icon-credit-cards-24",
+        "data":[
+          [
+            {
+              "type":"text",
+              "value":"Santander Installments"
+            } as PeListCellValueInterface,
+            {
+              "type":"toggle",
+              "httpMethod":"post",
+              "checked":true,
+              "actionToggleOn": {
+                "httpMethod":"post",
+                "apiUrl":"https://twilio-connect.test.devpayever.com/api/flow/twillio-enable?sid=PNc1d3291c3e41823ee7f30ae2c7bc0d08",
+              },
+              "actionToggleOff": {
+                "httpMethod":"post",
+                "apiUrl":"https://twilio-connect.test.devpayever.com/api/flow/twillio-disable?sid=PNc1d3291c3e41823ee7f30ae2c7bc0d08",
+              }
+            } as PeListCellToggleInterface
+          ],
+          [
+            {
+              "type":"text",
+              "value":"Direct Debit"
+            } as PeListCellValueInterface,
+            {
+              "type":PeListCellType.Button,
+              "text":"Integrate",
+              "httpMethod":"post",
+              "apiUrl":"https://twilio-connect.test.devpayever.com/api/flow/twillio-phone-remove-confirm?sid=PNc1d3291c3e41823ee7f30ae2c7bc0d08",
+              "rounded":true,
+              "size":"xs",
+              "color":"muted-light"
+            } as PeListCellButtonInterface
+          ],
+        ]
+      },
+    ]
+  }
+}

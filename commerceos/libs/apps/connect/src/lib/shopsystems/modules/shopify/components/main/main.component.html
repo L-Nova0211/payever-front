@@ -1,0 +1,93 @@
+<div class="shopify-container">
+  <pe-info-box-generator
+      [class.hidden]="isAddingKey$ | async"
+      *ngIf="(integrationInfo$ | async) && (paymentIntegrations$ | async)"
+      [baseApiUrl]="baseApiUrl"
+      [baseApiData]="baseApiData"
+      [withHeader]="false"
+      [expandedIndex]="-1">
+    <mat-expansion-panel
+        *ngIf="!forceHideSectionDownloads"
+        #beforeAccordionPanel
+        before-accordion
+        class="no-top-border"
+        [class.mat-expansion-panel-dark]="true">
+      <mat-expansion-panel-header
+          collapsedHeight="40px"
+          expandedHeight="40px"
+          class="mat-expansion-panel-header-no-logo">
+        <mat-panel-description>
+          <svg>
+            <use [attr.xlink:href]="beforeAccordionPanel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+          </svg>
+        </mat-panel-description>
+        <mat-panel-title translate>categories.shopsystems.main.titles.downloads</mat-panel-title>
+      </mat-expansion-panel-header>
+      <plugin-downloads [downloadLinks]="downloadLinks"></plugin-downloads>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+        *ngIf="!forceHideSectionApiKeys"
+        #panel
+        after-accordion
+        [class.mat-expansion-panel-dark]="true">
+      <mat-expansion-panel-header
+          collapsedHeight="40px"
+          expandedHeight="40px"
+          class="mat-expansion-panel-header-no-logo">
+        <mat-panel-title translate>categories.shopsystems.main.titles.api_keys</mat-panel-title>
+        <mat-panel-description>
+          <svg>
+            <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+          </svg>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <plugin-api-keys-list [name]="integrationName"></plugin-api-keys-list>
+
+      <div
+          *ngIf="(apiKeys$ | async)?.length < maxKeys"
+      class="shopify-container__api-keys">
+        <mat-accordion multi="true">
+          <mat-expansion-panel class="mat-expansion-panel-dark mat-expansion-panel-no-border-radius mat-expansion-panel-no-body"
+                               hideToggle>
+            <mat-expansion-panel-header
+                collapsedHeight="40px"
+                expandedHeight="40px"
+                (click)="isAddingKey$.next(true)"
+                class="mat-expansion-panel-header-no-logo">
+
+              <mat-panel-title class="mat-expansion-panel-header-title-no-logo text-centered">
+                <span class="add-button" translate>categories.shopsystems.api_keys.default.actions.key_add</span>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-expansion-panel>
+
+  </pe-info-box-generator>
+
+  <div *ngIf="isAddingKey$ | async">
+    <pe-info-box class="pe-info-box-header-padding"
+                 [transparent]="true"
+                 [withHeader]="false"
+                 [withFooter]="false"
+                 [withPadding]="false"
+                 [blurred]="false"
+                 [fixed]="true"
+                 [title]="'categories.shopsystems.api_keys.default.titles.create_key' | translate"
+                 [notFullwidthOnMobile]="false"
+                 [noBackgroundColor]="false"
+                 [roundBorder]="true"
+                 (onClose)="isAddingKey$.next(false)">
+      <ng-container content>
+        <plugin-api-key-add [name]="integrationName" (created)="onKeyCreated()"></plugin-api-key-add>
+      </ng-container>
+    </pe-info-box>
+  </div>
+
+  <div class="uninstall-button">
+    <button (click)="this.uninstallService.uninstall(integration, overlayData.isLoading)">{{ 'actions.uninstall' | translate }}</button>
+  </div>
+</div>

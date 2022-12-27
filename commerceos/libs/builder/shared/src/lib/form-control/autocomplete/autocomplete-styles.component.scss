@@ -1,0 +1,21 @@
+.autocomplete {
+  &__options {
+    background-color: rgba(36,39,46);
+    border-radius: 12px !important;
+
+    .mat-option {
+      font-size: 12px;
+      height: 36px;
+      color: #fff;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(36,39,46,.85);
+      }
+
+      &:hover {
+        background-color: #1785f6;
+      }
+    }
+  }
+}

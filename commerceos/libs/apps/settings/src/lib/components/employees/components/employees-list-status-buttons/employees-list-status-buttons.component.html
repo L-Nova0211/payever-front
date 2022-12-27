@@ -1,0 +1,15 @@
+<div class="status-pane">
+  <button class="status-pane__button status-pane__status-button" [ngClass]="active">
+    {{buttonLocale | translate }}
+  </button>
+
+  <button *ngIf="item.data.status !== EmployeeStatusEnum.invited; else resendButton" class="status-pane__button status-pane__edit-button" (click)="editEmployee()">
+    {{ 'pages.employees.datagrid.list.edit' | translate }}
+  </button>
+
+  <ng-template  #resendButton>
+    <button class="status-pane__button status-pane__resend-button" (click)="resendInvitation()">
+      {{ 'pages.employees.datagrid.list.resend' | translate }}
+    </button>
+  </ng-template>
+</div>

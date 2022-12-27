@@ -1,0 +1,15 @@
+<pe-header class="dashboard-header" [menuItems]="headerMenuItems">
+  <div class="business-switcher-container" leftSectionItems>
+    <pe-business-switcher businessName="Business" class="business-left"></pe-business-switcher>
+  </div>
+</pe-header>
+
+<base-dashboard
+  class="dashboard-container"
+  *ngIf="!(loading$ | async)"
+  [theme]="theme"
+  [loaded]="true"
+  [user]="user$ | async"
+>
+  <router-outlet></router-outlet>
+</base-dashboard>

@@ -1,0 +1,844 @@
+id: nike-about-page
+name: About Page
+variant: about
+type: replica
+master: ~
+data: {}
+template:
+  id: nike-about-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-background
+          type: block
+          children:
+            - id: first-section-background-title
+              type: text
+              data:
+                text: 'OUR MISSION:'
+            - id: first-section-background-description
+              type: text
+              data:
+                text: '<div>BRING INSPIRATION</div><div>ADD INNOVATION</div><div>TO EVERY ATHLETE *</div><div>IN THE WORLD</div>'
+            - id: first-section-background-mark
+              type: text
+              data:
+                text: '* IF YOU HAVE A BODY, YOU ARE AN ATHLETE.'
+
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-title
+          type: text
+          data:
+            text: ABOUT NIKE
+        - id: second-section-description
+          type: text
+          data:
+            text: Our mission is what drives us to do everything possible to expand <br> human potential. We do that by creating  groundbreaking sport <br> innovations, by making our products more sustainably, by building <br> a creative and diverse global team and by making a positive <br> impact in communities where we live and work.
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-image
+          type: block
+          children: []
+        - id: third-section-content
+          type: block
+          children:
+            - id: third-section-content-label
+              type: text
+              data:
+                text: INNOVATION
+            - id: third-section-content-line
+              type: line
+            - id: third-section-content-title
+              type: text
+              data:
+                text: WE DARE TO DESIGN THE FUTURE OF SPORT
+            - id: third-section-content-description
+              type: text
+              data:
+                text: "To make big leaps, we take big risks. <br><a href='#' style='color: #8b8b8b'>Learn more</a> about Nike's innovation team,<br> platforms and partnerships."
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-content
+          type: block
+          children:
+            - id: fourth-section-content-label
+              type: text
+              data:
+                text: OUR TEAM
+            - id: fourth-section-content-line
+              type: line
+            - id: fourth-section-content-title
+              type: text
+              data:
+                text: A TEAM THAT'S EMPOWERED
+            - id: fourth-section-content-description
+              type: text
+              data:
+                text: "A love of sport unites us. <br><a href='#' style='color: #8b8b8b'>Learn more</a> about Nike's global team."
+        - id: fourth-section-image
+          type: block
+          children: []
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-image
+          type: block
+          children: []
+        - id: fifth-section-content
+          type: block
+          children:
+            - id: fifth-section-content-label
+              type: text
+              data:
+                text: SOCIAL & COMMUNITY IMPACT
+            - id: fifth-section-content-line
+              type: line
+            - id: fifth-section-content-title
+              type: text
+              data:
+                text: THE WORLD IS OUR COMMUNITY
+            - id: fifth-section-content-description
+              type: text
+              data:
+                text: "We believe in the power of sport to move the world. <br><a href='#' style='color: #8b8b8b'>Learn more</a> Nike makes an impact in local communities."
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-content
+          type: block
+          children:
+            - id: sixth-section-content-label
+              type: text
+              data:
+                text: SUSTAINABLE BUSINESS INNOVATION
+            - id: sixth-section-content-line
+              type: line
+            - id: sixth-section-content-title
+              type: text
+              data:
+                text: PROTECTING THE FUTURE OF SPORT
+            - id: sixth-section-content-description
+              type: text
+              data:
+                text: We believe in a fair, sustainable future—one where everyone <br> thrives on a healthy planet and level playing field.
+        - id: sixth-section-image
+          type: block
+          children: []
+
+
+stylesheets:
+  desktop:
+    nike-about-page: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section: {}
+    first-section-background:
+      display: grid
+      gridTemplateRows: 1fr 1fr 1fr
+      width: 1024
+      height: 700
+      backgroundImage: 'https://payeverproduction.blob.core.windows.net/builder/59d42b44-c350-432d-9e5c-4ca609023ce0-nike-just-do-it_2.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: auto
+    first-section-background-title:
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      fontWeight: 500
+      margin: 50 0 0 50
+    first-section-background-description:
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 90
+      fontWeight: 700
+      margin: 0 0 0 50
+    first-section-background-mark:
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      fontWeight: 500
+      margin: 0 0 0 400
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-title:
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 42
+      fontWeight: 700
+      margin: 100 0 24 0
+    second-section-description:
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 20
+      fontWeight: 300
+      margin: 0 0 100 0
+      textAlign: left
+      width: 100%
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f7f7f7'
+    third-section-image:
+      width: 490
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82532/Nike-Eliud-About-Innovation_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 22 40 0
+    third-section-content:
+      display: grid
+      gridTemplateRows: 180 60 40 200
+      width: 490
+      height: 490
+      margin: 80 0 40 22
+    third-section-content-label:
+      margin: 0 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    third-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 0
+    third-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    third-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f7f7f7'
+    fourth-section-image:
+      width: 490
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82826/About-Nike-Team_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40 0
+    fourth-section-content:
+      display: grid
+      gridTemplateRows: 180 60 40 200
+      width: 490
+      height: 490
+      margin: 80 0 40 22
+    fourth-section-content-label:
+      margin: 0 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    fourth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 0
+    fourth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    fourth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f7f7f7'
+    fifth-section-image:
+      width: 490
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82841/About-Nike-Community-Made-to-Play_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 22 40 auto
+    fifth-section-content:
+      display: grid
+      gridTemplateRows: 180 60 40 200
+      width: 490
+      height: 490
+      margin: 80 0 40 22
+    fifth-section-content-label:
+      margin: 0 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    fifth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 0
+    fifth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    fifth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f7f7f7'
+    sixth-section-image:
+      width: 490
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82827/About-Nike-Sustainability_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40 auto
+    sixth-section-content:
+      display: grid
+      gridTemplateRows: 180 60 40 200
+      width: 490
+      height: 490
+      margin: 80 0 40 22
+    sixth-section-content-label:
+      margin: 0 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    sixth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 auto 0 0
+    sixth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    sixth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+
+  tablet:
+    nike-about-page: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section: {}
+    first-section-background:
+      display: grid
+      gridTemplateRows: 1fr 1fr 1fr
+      height: 500
+      backgroundImage: 'https://payeverproduction.blob.core.windows.net/builder/59d42b44-c350-432d-9e5c-4ca609023ce0-nike-just-do-it_2.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: auto
+    first-section-background-title:
+      width: 400
+      textAlign: center
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      fontWeight: 500
+      margin: 30 0 0 0
+    first-section-background-description:
+      width: 640
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 62
+      fontWeight: 700
+    first-section-background-mark:
+      width: 540
+      textAlign: center
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      fontWeight: 500
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-title:
+      width: 616
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 42
+      fontWeight: 700
+      margin: 100 12 24 12
+    second-section-description:
+      width: 616 # 640 - 12 *2
+      margin: 0 12 100 12
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 20
+      fontWeight: 300
+      textAlign: left
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    third-section-image:
+      width: 768
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82532/Nike-Eliud-About-Innovation_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      margin: 0 0 40 0
+    third-section-content:
+      width: 616
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      height: 190
+      margin: 0 auto 40 12
+    third-section-content-label:
+      width: 616
+      margin: 0 0 0 0
+      textAlign: left
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    third-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 0
+    third-section-content-title:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    third-section-content-description:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    fourth-section-image:
+      width: 768
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82826/About-Nike-Team_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    fourth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 616 # 640 - 12 *2
+      height: 190
+      margin: 0 auto 40 12
+    fourth-section-content-label:
+      width: 616
+      margin: 0 0 0 0
+      textAlign: left
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    fourth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 auto 0 0
+    fourth-section-content-title:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    fourth-section-content-description:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    fifth-section-image:
+      width: 768
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82841/About-Nike-Community-Made-to-Play_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+    fifth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 616 # 640 - 12 *2
+      height: 190
+      margin: 0 auto 40 12
+    fifth-section-content-label:
+      width: 616
+      textAlign: left
+      margin: 0 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    fifth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 auto 0 0
+    fifth-section-content-title:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    fifth-section-content-description:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    sixth-section-image:
+      width: 768
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82827/About-Nike-Sustainability_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    sixth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 616 # 640 - 12 *2
+      height: 190
+      margin: 0 0 40 12
+    sixth-section-content-label:
+      width: 616
+      margin: auto 0 0 0
+      textAlign: left
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    sixth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 auto 0 0
+    sixth-section-content-title:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+    sixth-section-content-description:
+      width: 616
+      fontFamily: 'Helvetica Neue'
+      fontSize: 12
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+
+  mobile:
+    nike-about-page: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section: {}
+    first-section-background:
+      display: grid
+      gridTemplateRows: 1fr 1fr 1fr
+      height: 350
+      backgroundImage: 'https://payeverproduction.blob.core.windows.net/builder/59d42b44-c350-432d-9e5c-4ca609023ce0-nike-just-do-it_2.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: auto
+    first-section-background-title:
+      width: 296
+      #      textAlign: center
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 500
+      margin: auto 12 auto 12
+    first-section-background-description:
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      fontWeight: 700
+      margin: auto
+    first-section-background-mark:
+      width: 320
+      textAlign: center
+      color: '#fff'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 500
+      margin: auto
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-title:
+      width: 296
+      textAlign: left
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 700
+      margin: 50 12 24 12
+    second-section-description:
+      width: 296
+      textAlign: left
+      color: '#000'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 11
+      fontWeight: 300
+      margin: 0 12 50 12
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    third-section-image:
+      width: 360
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82532/Nike-Eliud-About-Innovation_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+    third-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 360
+      height: 190
+      margin: 0 0 40 0
+    third-section-content-label:
+      width: 296
+      margin: 0 0 0 12
+      fontFamily: 'Helvetica Neue'
+      textAlign: left
+      fontSize: 14
+      fontWeight: 400
+    third-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 12
+    third-section-content-title:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+      margin: 0 0 0 12
+    third-section-content-description:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 11
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+      margin: auto 0 0 12
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    fourth-section-image:
+      width: 360
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82826/About-Nike-Team_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    fourth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 360
+      height: 190
+      margin: 0 0 40 0
+    fourth-section-content-label:
+      width: 296
+      margin: auto 0 0 12
+      fontFamily: 'Helvetica Neue'
+      textAlign: left
+      fontSize: 14
+      fontWeight: 400
+    fourth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 12
+    fourth-section-content-title:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+      margin: 0 0 0 12
+    fourth-section-content-description:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 11
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+      margin: 0 0 0 12
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    fifth-section-image:
+      width: 360
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82841/About-Nike-Community-Made-to-Play_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0
+    fifth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 360
+      height: 190
+      margin: 0 0 40 0
+    fifth-section-content-label:
+      width: 296
+      margin: 0 0 0 12
+      fontFamily: 'Helvetica Neue'
+      textAlign: left
+      fontSize: 14
+      fontWeight: 400
+    fifth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 12
+    fifth-section-content-title:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+      margin: 0 0 0 12
+    fifth-section-content-description:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 11
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+      margin: 0 0 0 12
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    sixth-section-image:
+      width: 360
+      height: 490
+      backgroundImage: 'https://s3.amazonaws.com/nikeinc/assets/82827/About-Nike-Sustainability_original.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 0 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    sixth-section-content:
+      display: grid
+      gridTemplateRows: 24 60 40 60
+      width: 360
+      height: 190
+      margin: 0 0 40 0
+    sixth-section-content-label:
+      textAlign: left
+      width: 296
+      margin: 0 0 0 12
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      fontWeight: 400
+    sixth-section-content-line:
+      width: 30
+      height: 2
+      background: '#000'
+      margin: 12 0 0 12
+    sixth-section-content-title:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 14
+      color: '#000'
+      textAlign: left
+      fontWidth: 700
+      margin: 0 0 0 12
+    sixth-section-content-description:
+      width: 296
+      fontFamily: 'Helvetica Neue'
+      fontSize: 11
+      color: '#8a8a8a'
+      textAlign: left
+      fontWeight: 400
+      margin: 0 0 0 12
+
+context: {}

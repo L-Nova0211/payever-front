@@ -1,0 +1,26 @@
+.chip {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 6px;
+  color: #fff;
+  height: 30px;
+  background-color: #86868b;
+  padding: 5px 7.5px;
+  margin: 0 6px 6px 0;
+  margin-top: 4.5px;
+
+  &__close-icon {
+    margin: 0 5px;
+    display: flex;
+    padding-top: 3px ;
+    align-items: center;
+  }
+}
+
+.chip-icon {
+  width: 16px;
+  height: 100%;
+}

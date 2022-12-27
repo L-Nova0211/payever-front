@@ -1,0 +1,15 @@
+export enum PeAffiliatesProgramChannelsTypesEnum {
+  Pos = 'pos',
+  Shop = 'shop',
+  Market = 'market',
+  Facebook = 'facebook',
+  Mobilede = 'mobilede',
+  Ebay = 'ebay',
+  Autoscout24 = 'autoscout24',
+  Amazon = 'amazon',
+  Marketing = 'marketing',
+  Instagram = 'instagram',
+  FinanceExpress = 'finance_express',
+  Link = 'link',
+  Dropshipping = 'dropshipping',
+}

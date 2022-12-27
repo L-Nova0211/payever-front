@@ -1,0 +1,102 @@
+<div class="page__container">
+
+  <div class="page__main-title" translate="">info_boxes.panels.channels</div>
+
+  <ng-container *ngIf="onlyContent" [ngTemplateOutlet]="body"></ng-container>
+
+  <div class="pe-info-box-container-fixed pe-checkout-channels" *ngIf="!onlyContent">
+    <pe-info-box
+      class="pe-info-box-header-padding"
+      [fixed]="false"
+      [transparent]="true"
+      [withHeader]="false"
+      [withFooter]="false"
+      [withPadding]="false"
+      [notFullwidthOnMobile]="true"
+      [roundBorder]="true">
+      <ng-container content>
+        <ng-container [ngTemplateOutlet]="body"></ng-container>
+      </ng-container>
+    </pe-info-box>
+  </div>
+
+  <div
+    class="add-button"
+    (click)="clickedIntegrationAddButton(categories.ShopSystems)">
+    <pe-progress-button-content
+      [loading]="loadingConnect | async"
+      [spinnerDiameter]="15"
+      [spinnerStrokeWidth]="2"
+      [spinnerLight]="true">
+      {{ 'actions.add' | translate }}
+    </pe-progress-button-content>
+  </div>
+</div>
+
+<ng-template #body>
+
+  <mat-list class="mat-list-transparent" [class.mat-list-padding-md]="!onlyContent">
+
+    <ng-container *ngFor="let customChannel of customChannelList$ | async">
+      <ng-container *ngIf="channelsReady">
+        <mat-list-item
+          class="action-item"
+          [class.mat-list-item-no-padding-left]="onlyContent"
+          (click)="onCustomChannelListClickButton(customChannel)">
+          <div class="mat-list-item-col">
+            <div class="icon-menu-wrapper">
+              <svg class="icon icon-16 icon-menu-item icon-margin-fixed">
+                <use [attr.xlink:href]="customChannel.icon"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mat-list-item-flex no-left-padding">
+            <div class="mat-list-item-content expansion-list-title">
+              <span class="pe-truncate-text">{{ customChannel.title | translate }}</span>
+            </div>
+          </div>
+          <div class="mat-list-item-flex aligned-right no-right-padding">
+            <div class="mat-list-item-open-icon">
+              <svg>
+                <use xlink:href="#icon-arrow-right-2-16"></use>
+              </svg>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider class="mat-divider-full-width"></mat-divider>
+      </ng-container>
+    </ng-container>
+
+
+    <ng-container *ngFor="let integration of (channels$ | async)">
+      <ng-container *ngIf="channelsReady">
+        <mat-list-item
+          class="action-item"
+          [class.mat-list-item-no-padding-left]="onlyContent"
+          (click)="onOpenChannelSet(integration)">
+          <div class="mat-list-item-col">
+            <div class="icon-menu-wrapper">
+              <svg class="icon icon-16 icon-menu-item">
+                <use [attr.xlink:href]="integration.integration.displayOptions.icon"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mat-list-item-flex no-left-padding">
+            <div class="mat-list-item-content expansion-list-title">
+              <span class="pe-truncate-text">{{ integration.integration.displayOptions.title | translate }}</span>
+            </div>
+          </div>
+          <div class="mat-list-item-flex aligned-right no-right-padding">
+            <div class="mat-list-item-open-icon">
+              <svg>
+                <use xlink:href="#icon-arrow-right-2-16"></use>
+              </svg>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider class="mat-divider-full-width"></mat-divider>
+      </ng-container>
+    </ng-container>
+  </mat-list>
+
+</ng-template>

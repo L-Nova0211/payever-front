@@ -1,0 +1,48 @@
+:host {
+  padding: 24px;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: "1fr 1fr 1fr";
+  grid-auto-rows: "auto";
+  grid-template-areas:
+    "desktop desktop desktop"
+    "tablet  tablet  mobile"
+    "desktop2 desktop2 desktop2"
+    "tablet2  tablet2  mobile2"
+    "desktop3 desktop3 desktop3"
+    "tablet3  tablet3  mobile3"
+    "desktop4 desktop4 desktop4"
+    "tablet4  tablet4  mobile4";
+}
+
+#preview-desktop {
+  grid-area: desktop;
+}
+
+#preview-tablet {
+  grid-area: tablet;
+}
+
+#preview-mobile {
+  grid-area: mobile;
+}
+
+#preview-desktop2 {
+  grid-area: desktop2;
+}
+
+#preview-tablet2 {
+  grid-area: tablet2;
+}
+
+#preview-mobile2 {
+  grid-area: mobile2;
+}
+
+#preview-desktop3 {
+  grid-area: desktop3;
+}
+
+#preview-desktop4 {
+  grid-area: desktop4;
+}

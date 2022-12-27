@@ -1,0 +1,11 @@
+<div class="label">{{ label }}</div>
+<div class="pages">
+  <div class="page" (click)="select({})">
+    <div class="page__preview"></div>
+    <div class="page__name">Empty</div>
+  </div>
+  <div *ngFor="let page of pages" class="page" (click)="select(page)">
+    <div class="page__preview"></div>
+    <div class="page__name">{{ page.name }}</div>
+  </div>
+</div>

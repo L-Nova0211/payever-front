@@ -1,0 +1,42 @@
+:host {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+
+  &__name {
+    max-width: 316px;
+    width: 316px;
+    height: 44px;
+    text-align: left;
+    border-radius: 12px;
+    background-color: #111111;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 12px;
+  }
+
+  &__action {
+    cursor: pointer;
+    max-width: 44px;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

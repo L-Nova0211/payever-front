@@ -1,0 +1,62 @@
+@import 'pe_skeleton.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-container {
+  padding: 12px;
+  width: 100%;
+
+  .chat {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 180px;
+    height: 40px;
+
+    &__avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    &__title {
+      width: calc(100% - 24px);
+      height: 24px;
+      border-radius: 3px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+      margin-left: 8px;
+    }
+  }
+
+  &.transparent{
+    .chat {
+
+      &__avatar {
+        background-color: $skeleton-color-transparent;
+      }
+
+      &__title {
+        background-color: $skeleton-color-transparent;
+      }
+    }
+  }
+
+  &.light {
+    .chat {
+
+      &__avatar {
+        background-color: $skeleton-color-light;
+      }
+
+      &__title {
+        background-color: $skeleton-color-light;
+      }
+    }
+  }
+}

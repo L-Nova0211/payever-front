@@ -1,0 +1,10 @@
+<div class="pe-info-box-container-fixed pe-info-box-container-stepper-fixed welcome-details">
+  <old-checkout-create-form
+    [submit]="submit$ | async"
+    [createMode]="!(checkoutUuid && checkoutUuid !== 'none')"
+    [isModal]="false"
+    (onLoading)="onLoadingSubject.next($event)"
+    (onValid)="onInvalidSubject.next(!$event)"
+    (onSaved)="onSuccess($event)"
+  ></old-checkout-create-form>
+</div>

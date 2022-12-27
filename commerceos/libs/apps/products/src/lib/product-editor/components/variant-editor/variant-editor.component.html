@@ -1,0 +1,196 @@
+<div class='variant-editor-modal'>
+  <div class="backdrop" (click)="close()"></div>
+  <div class="overlay">
+
+    <div class="overlay__header">
+      <button class="overlay__button overlay__button_grey" (click)="close()">{{ 'cancel' | translate }}</button>
+      <span class="overlay__title">{{ (isVariantEdit ? 'variantEditor.edit_variant' : 'variantEditor.add_variant') | translate }}</span>
+      <button class="overlay__button" (click)="done()">{{ 'variantEditor.done' | translate }}</button>
+    </div>
+    <div class="overlay__body">
+      <ng-container content>
+        <form
+          *ngIf="form"
+          novalidate
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()">
+          <button
+            #submitTrigger
+            [attr.qa-products]="'save-variant'"
+            id="submitTrigger"
+            name="submitButton"
+            type="submit" hidden></button>
+          <div [ngClass]="{'has-pictures': (variant$ | async)?.images.length}">
+            <editor-pictures
+              [dragulaBag]="'product-variant-pictures-bag'"
+              [blobs]="(variant$ | async)?.images"
+              (changePictures)="onChangePictures($event)"
+              *ngIf="isVariantEdit"></editor-pictures>
+            <div
+              formArrayName="options"
+              id="options-drag-boundary"
+              cdkDropList
+              cdkDropListOrientation="vertical"
+              (cdkDropListDropped)="onDropSortImg($event)"
+              class="option__list">
+              <div
+                *ngFor="let option of form.controls.options?.controls; let i = index"
+                cdkDrag
+                cdkDragLockAxis="y"
+                cdkDragBoundary="#options-drag-boundary"
+                class="option__item-container"
+                [ngClass]="theme"
+                [formGroupName]="i">
+                <div class="option__item">
+                  <div cdkDragHandle class="option__handle" [ngClass]="theme">
+                    <mat-icon svgIcon="drag-icon"></mat-icon>
+                  </div>
+                  <pe-form-fieldset
+                    class="option__fields"
+                    [isSubmitted]="isSubmitted"
+                    [fields]="getOptionFieldScheme(option)"
+                    [formGroup]="option"
+                    [translationScope]="formTranslationsScope"
+                    [errors]="errors$ | async"
+                    [formStyle]="'default'">
+                  </pe-form-fieldset>
+                  <button
+                    class="option__remove"
+                    [ngClass]="theme"
+                    type="button"
+                    [disabled]="form.controls.options?.controls?.length === 1"
+                    (click)="onDeleteOption(i)"
+                  >
+                    <mat-icon svgIcon="remove-icon"></mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="option__add" type="button" (click)="onAddOption()">
+              {{'variantEditor.add_option' | translate}}
+            </button>
+            <div *ngIf="isVariantEdit" class="variant__fields">
+              <peb-form-field-input label="{{ 'variantEditor.labels.price' | translate }}" appearance="label"
+                                    [animated]='true'
+                                    [isFieldInvalid]="isSubmitted && form?.controls?.price?.errors?.required"
+                                    [errorMessage]="'mainSection.form.errors.price_required' | translate">
+                <input placeholder="{{ 'variantEditor.labels.price' | translate }}" formControlName="price" type="number">
+                <div class="suffix">
+                  <p>{{ this.currency || 'EUR' }}</p>
+                </div>
+              </peb-form-field-input>
+              <div class="variant__sale">
+                <peb-form-field-input
+                  label="{{ 'variantEditor.placeholders.sale_price' | translate }}"
+                  appearance="label"
+                  class='variant__sale-form-field-input'
+                  [isFieldInvalid]="isSubmitted &&
+                  (form.errors?.salePriceGreater || form?.controls?.salePrice?.errors?.required)"
+                  [errorMessage]="(form.errors?.salePriceGreater
+                   ? 'mainSection.form.errors.sale_price' : 'mainSection.form.errors.sale_price_required') | translate"
+                  [animated]="true">
+                  <input placeholder="{{ 'variantEditor.placeholders.sale_price' | translate }}" formControlName="salePrice" type="number">
+                </peb-form-field-input>
+                <peb-button-toggle
+                  formControlName="onSales"
+                  class='button-toggle'
+                  [ngClass]="theme"
+                  (changed)='onToggleSale($event)'
+                ></peb-button-toggle>
+              </div>
+
+              <peb-form-field-input
+                label="{{ 'placeholders.saleStartDate' | translate }}" appearance='label'
+                [isFieldInvalid]="saleStartDateInvalid"
+                [errorMessage]="saleStartDateErrorMessage"
+                [animated]='true'
+                (click)="openDatepicker({ target: saleStartDate }, 'saleStartDate')">
+                <input
+                  type='text'
+                  pebInput
+                  placeholder='DD.MM.YYYY'
+                  formControlName='saleStartDate'
+                  #saleStartDate
+                  (blur)='onSaleDateChange()'
+                />
+                <div class='suffix-icon'>
+                  <svg class='calendar-image'>
+                    <use xlink:href='#icon-settings-datepicker'></use>
+                  </svg>
+                </div>
+              </peb-form-field-input>
+
+              <peb-form-field-input
+                label="{{ 'placeholders.saleEndDate' | translate }}" appearance='label'
+                [isFieldInvalid]="saleEndDateInvalid"
+                [errorMessage]="saleEndDateErrorMessage"
+                [animated]='true'
+                (click)="openDatepicker({ target: saleEndDate }, 'saleEndDate')">
+                <input
+                  type='text'
+                  pebInput
+                  placeholder='DD.MM.YYYY'
+                  formControlName='saleEndDate'
+                  #saleEndDate
+                  (blur)='onSaleDateChange()'
+                />
+                <div class='suffix-icon'>
+                  <svg class='calendar-image'>
+                    <use xlink:href='#icon-settings-datepicker'></use>
+                  </svg>
+                </div>
+              </peb-form-field-input>
+
+              <div class="variant__sku-barcode">
+                <peb-form-field-input
+                  label="{{ 'variantEditor.placeholders.sku' | translate }}"
+                  appearance="label"
+                  [animated]="true"
+                  [isFieldInvalid]="isSubmitted && (
+                    form?.controls?.sku?.errors?.required ||
+                    form?.controls?.sku?.errors?.external ||
+                    form?.controls?.sku?.errors?.SKU === '' ||
+                    form?.controls?.sku?.errors?.existingSKU
+                  )"
+                  [errorMessage]="skuError"
+                >
+                  <input placeholder="{{ 'variantEditor.placeholders.sku' | translate }}" formControlName="sku" type="text">
+                </peb-form-field-input>
+                <peb-form-field-input label="{{ 'variantEditor.placeholders.barcode' | translate }}" appearance="label" [animated]='true'>
+                  <input placeholder="{{ 'variantEditor.placeholders.barcode' | translate }}" formControlName="barcode" type="text">
+                </peb-form-field-input>
+              </div>
+              <peb-form-field-input
+                label="{{ 'variantEditor.placeholders.inventory' | translate }}"
+                [isFieldInvalid]="isSubmitted &&
+                form.controls.inventory.errors?.min"
+                [errorMessage]="'Must be 0 or higher'"
+                appearance="label" [animated]='true'>
+                <input placeholder="{{ 'variantEditor.placeholders.inventory' | translate }}" formControlName="inventory" type="number" min="0">
+              </peb-form-field-input>
+              <peb-button-toggle
+                class='variant__fields-button-toggle button-toggle'
+                formControlName="inventoryTrackingEnabled"
+                label="{{ 'variantEditor.placeholders.inventoryTrackingEnabled' | translate }}"
+                labelPosition="before">
+              </peb-button-toggle>
+            </div>
+
+            <peb-expandable-panel
+              *ngIf="isVariantEdit"
+              class='expandable-panel'
+              headerLabel="{{ 'sections.content' | translate }}">
+              <editor-description
+                [description]="(variant$ | async)?.description"
+                [invalid]="descriptionInvalid"
+                [compactSize]="!(variant$ | async)?.images.length"
+                [placeholder]="'variantEditor.placeholders.description'"
+                (valueChanged)="onDescriptionChange($event)">
+              </editor-description>
+            </peb-expandable-panel>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+  </div>
+</div>

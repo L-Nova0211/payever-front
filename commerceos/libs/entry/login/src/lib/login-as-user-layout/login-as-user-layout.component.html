@@ -1,0 +1,20 @@
+<entry-layout>
+  <ng-container content>
+    <div>
+      <active-business
+        [logo]="logo | mediaUrl: 'images'"
+        [name]="name"
+        [email]="email"
+        [city]="city"
+        [firstName]="firstName"
+        [lastName]="lastName"
+      >
+      </active-business>
+      <div>
+        <entry-login [withoutCreds]="true" (onSuccessLogin)="onSuccessLogin()" [withoutRegister]="true" [disableSignUp]="true" [disableSocialLogin]="true"
+        ></entry-login>
+      </div>
+      <button type="button" class="login-button gray" translate (click)="onBack()">Back to Search</button>
+    </div>
+  </ng-container>
+</entry-layout>

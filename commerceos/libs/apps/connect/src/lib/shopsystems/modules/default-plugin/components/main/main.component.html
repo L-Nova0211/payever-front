@@ -1,0 +1,19 @@
+<plugin-main-wrap
+  #wrap
+  [name]="name"
+  [title]="(integrationInfo$ | async)?.displayOptions?.title"
+  [forceHideSectionDownloads]="!downloadLinks?.length"
+  *ngIf="pluginInfo$ && integrationInfo$ && (pluginInfo$ | async) && (integrationInfo$ | async)">
+<div api-keys>
+  <plugin-api-keys-list [name]="name"></plugin-api-keys-list>
+</div>
+<div api-key-add>
+  <plugin-api-key-add [name]="name" (created)="onKeyCreated()"></plugin-api-key-add>
+</div>
+<div downloads>
+  <plugin-downloads [downloadLinks]="downloadLinks"></plugin-downloads>
+</div>
+</plugin-main-wrap>
+<div class="uninstall-button">
+  <button (click)="this.uninstallService.uninstall(integration, overlayData.isLoading)">{{ 'actions.uninstall' | translate }}</button>
+</div>

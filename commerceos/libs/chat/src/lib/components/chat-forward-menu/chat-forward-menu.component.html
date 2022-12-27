@@ -1,0 +1,33 @@
+<div
+  class="forward-message-menu"
+  [class.show]="true"
+  (click)="openForwardSenderFormOverlay()"
+  [style.width]="'auto'"
+>
+  <div class="forward-svg">
+    <mat-icon svgIcon="forward"></mat-icon>
+  </div>
+  <div class="forward-message-details">
+    <div class="title">
+      <ng-container *ngIf="showNameOnForwardMessage else noName">
+        {{ forwardMessage[0].senderTitle }}
+      </ng-container>
+      <ng-template  #noName>
+        {{ forwardMessage[0].name }}
+      </ng-template>
+    </div>
+    <div class="details">
+      <ng-container *ngIf="(forwardMessage.length > 1 || forwardMessage[0].content.length == 0) else noforwardMessage">
+        {{ forwardMessage.length }} {{ 'message-app.chat.forward-message' | translate }}
+      </ng-container>
+      <ng-template  #noforwardMessage>
+        <p class="m-0" [innerHTML]="forwardMessage[0].content"></p>
+      </ng-template>
+    </div>
+  </div>
+  <div class="forward-svg line-svg">
+    <svg  (click)="closeForwardMessageMenu()" height="20" width="20">
+      <use xlink:href="#icon-apps-overlay-close"></use>
+    </svg>
+  </div>
+</div>

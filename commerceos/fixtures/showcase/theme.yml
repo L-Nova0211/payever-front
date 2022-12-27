@@ -1,0 +1,15 @@
+name: Showcase
+data:
+    productPages: /products/:productId
+    categoryPages: /category/:categoryId
+routing:
+  - routeId: 'template-front-page-route'
+    url: /
+    pageId: template-front-page
+  - routeId: 'template-shop-page-route'
+    url: /shop
+    pageId: template-shop-page
+context: {}
+pages:
+  - front
+  - shop

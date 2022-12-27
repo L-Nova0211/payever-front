@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+pe-grid-vertical-columns {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.grid-table-body-cell {
+  width: 100%;
+  font-size: 12px;
+  line-height: 17px;
+
+  &.light {
+    color: #000;
+  }
+
+  &.is-mobile {
+    font-family: 'Inter', sans-serif;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: break-spaces;
+  }
+
+  &.light {
+    color: black;
+  }
+
+  &.is-more {
+    max-width: calc(100% - 60px);
+  }
+}
+
+
+.more-button {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  color: #0371e2;
+  font-size: 12px;
+  line-height: 1.17;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}

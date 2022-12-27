@@ -1,0 +1,36 @@
+id: media-markt-product-page
+name: Product Page
+variant: product
+type: replica
+master: ~
+data: {}
+template:
+  id: media-markt-product-page
+  type: document
+  children:
+    - id: content
+      type: section
+      children:
+        - id: content-product
+          type: shop-product-details
+
+stylesheets:
+  desktop:
+    content:
+      padding: 80 0
+    content-product:
+      width: 980
+
+
+  tablet:
+    content:
+      padding: 80 12
+    content-product:
+      width: 750
+
+
+  mobile:
+    content:
+      padding: 0 0 170 0
+
+context: {}

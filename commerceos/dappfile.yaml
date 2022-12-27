@@ -1,0 +1,2 @@
+dimg: {{ env "IMAGE_NAME" }}
+from: {{ env "PROD_NGINX_IMAGE" }}

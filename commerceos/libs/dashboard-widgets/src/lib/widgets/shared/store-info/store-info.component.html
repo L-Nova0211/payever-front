@@ -1,0 +1,24 @@
+<div class="wrapper-flex">
+  <div #logoWrapper *ngIf="isShowLogo" class="store-logo img-circle">
+    <img #logo [class.large-then-parent]="isLargeThenParent" [src]="logoUrl" (load)="onLoad()"/>
+  </div>
+  <div *ngIf=" !isShowLogo " class="store-logo img-circle">
+    <h2>{{ title | abbreviation }}</h2>
+  </div>
+  <div class="store-info">
+    <div class="store-title">
+      {{ title }}
+    </div>
+    <button mat-raised-button
+            *ngIf="isShowEditButton"
+            [class.mat-button-rounded]="true"
+            [class.mat-button-xs]="true"
+            color="muted-white"
+            (click)="onEdit.emit($event)"
+    >
+      <pe-progress-button-content [loading]="showEditButtonSpinner" [spinnerDiameter]="15">
+        {{ 'widgets.actions.edit' | translate }}
+      </pe-progress-button-content>
+    </button>
+  </div>
+</div>

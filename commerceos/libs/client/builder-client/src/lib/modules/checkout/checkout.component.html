@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <pe-checkout-wrapper-by-channel-set-id
+    #checkoutWrapper
+    [class.hidden]="hidden$ | async"
+    [class.active]="!(hidden$ | async)"
+    [attr.checkouthidden]="hidden$ | async"
+    [attr.hidecreateflowerrors]="true"
+    [attr.createflowparams]="createFlowParams"
+    [attr.params]="params$ | async"
+    [attr.recreateflowandresetcart]="recreateFlow"
+    [attr.openorderstep]="openOrderStep"
+    [attr.cart]="cartService.updateCartItems$ | async"
+    (layoutshown)="initAmountCheckout()"
+    (eventemitted)="checkoutWrapperEventHandler($event)"
+  ></pe-checkout-wrapper-by-channel-set-id>
+  <pe-checkout-wrapper-by-channel-set-id
+    *ngIf="showAmountCheckout$ | async"
+    #amountCheckoutWrapper
+    [class.hidden]="amountHidden$ | async"
+    [class.active]="!(amountHidden$ | async)"
+    [attr.hidecreateflowerrors]="true"
+    [attr.checkouthidden]="amountHidden$ | async"
+    [attr.createflowparams]="amountCreateFlowParams"
+    [attr.params]="amountParams$ | async"
+    [attr.recreateflow]="recreateFlow"
+    [attr.openorderstep]="openOrderStep"
+    (eventemitted)="amountCheckoutWrapperEventHandler($event)"
+  ></pe-checkout-wrapper-by-channel-set-id>
+</div>

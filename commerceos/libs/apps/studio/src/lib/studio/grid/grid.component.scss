@@ -1,0 +1,102 @@
+.uploading-grid-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex-basis: calc(20% - 14px);
+  height: auto;
+  margin: 10px 7px;
+  max-height: 329px;
+  min-height: 329px;
+  overflow: hidden;
+  position: relative;
+  &__body {
+    background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 99%), linear-gradient(to bottom, #474747, #000000);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+  }
+  &__drag {
+    color: #000;
+    opacity: 0.2;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 40px;
+  }
+  &__icon {
+    padding-top: 40px;
+  }
+}
+.uploading-grid-item__add.dark {
+  background-color: #24272e;
+}
+.uploading-grid-item__add.light {
+  background-color: #fafafa;
+  color: inherit;
+}
+.uploading-grid-item__add.transparent {
+  background-color: rgba(36, 39, 46, 0.8);
+}
+:host {
+  .studio-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  color: #ffffff;
+}
+.uploading-grid-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 5px 7px 5px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 720px) {
+    margin: 10px 0 10px 15px;
+    min-height: 235px;
+    max-height: 235px;
+  }
+
+  &__loader {
+    display: flex;
+  }
+
+  &__svg {
+    flex-grow: 1;
+  }
+
+  &__add {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+}
+@media (max-width: 1600px) {
+  .uploading-grid-item {
+    flex-basis: calc(25% - 14px);
+  }
+}
+@media (max-width: 1440px) {
+  .uploading-grid-item {
+    flex-basis: calc(33.3% - 14px);
+  }
+}
+@media (max-width: 1024px) {
+  .uploading-grid-item {
+    flex-basis: calc(50% - 14px);
+  }
+}

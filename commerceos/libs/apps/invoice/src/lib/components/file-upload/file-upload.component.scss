@@ -1,0 +1,42 @@
+:host {
+  display: grid;
+  gap: 10px;
+  .attachments-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 330px;
+    display: block;
+    text-align: left;
+    flex-grow: 1;
+    color: #7a7a7a!important;
+    cursor: auto;
+  }
+  .attachment-button {
+    border-radius: 12px;
+    background-color: #1c1d1e;
+    width: 100%;
+    display: block;
+    border: 0;
+    outline: 0;
+    color: #0091df;
+    font-size: 12px;
+    margin: 0;
+  }
+  .delete-icon {
+    background-color: #111;
+    border-radius: 12px;
+    height: 36px;
+    width: 36px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    mat-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+}

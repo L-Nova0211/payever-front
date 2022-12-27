@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "paths": {}
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

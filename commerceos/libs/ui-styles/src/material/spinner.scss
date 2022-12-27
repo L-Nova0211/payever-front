@@ -1,0 +1,30 @@
+//
+// Spinner
+// ----------------------------
+
+.pe-bootstrap {
+  .mat-progress-spinner {
+    circle {
+      stroke: $spinner-default-color;
+    }
+
+    &.mat-blue {
+      circle {
+        stroke: $color-blue;
+      }
+    }
+
+    &.mat-black {
+      circle {
+        stroke: #000;
+      }
+    }
+
+    // deprecated
+    &-light {
+      circle {
+        stroke: $color-white;
+      }
+    }
+  }
+}

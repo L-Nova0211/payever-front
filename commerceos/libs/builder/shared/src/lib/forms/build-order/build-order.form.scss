@@ -1,0 +1,46 @@
+
+form{
+  margin: 4px 12px;
+}
+
+.orders {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  display: flex;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  background-color: #37363b;;
+  margin-bottom: 16px;
+  position: relative;
+  padding: 6px 8px;
+  justify-content: space-around;
+}
+
+li.disabled {
+  color: #7a7a7a;
+  cursor: default;
+}
+
+li, .order:hover:not(.disabled) {
+  color: white;
+  background: #0371e2;
+}
+
+.type {
+  margin-top: 6px;
+}

@@ -1,0 +1,141 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="appointmentForm"
+  [ngClass]="theme"
+>
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.appointment_editor.client_info' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-product-picker
+        [buttonFunction]="openContactsFun"
+        [data]="contacts$ | async"
+        (filtered)="filterContacts$.next($event)"
+        formControlName="contacts"
+        [label]="'appointments-app.appointment_editor.contacts.label' | translate"
+        [placeholder]="'appointments-app.appointment_editor.contacts.placeholder' | translate"
+      ></peb-product-picker>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.appointment_editor.details' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <two-column-form>
+        <peb-button-toggle
+          formControlName="allDay"
+          [label]="'appointments-app.appointment_editor.all_day' | translate"
+          labelPosition="before"
+          [spacer]="true"
+        ></peb-button-toggle>
+        <peb-button-toggle
+          formControlName="repeat"
+          [label]="'appointments-app.appointment_editor.repeat' | translate"
+          labelPosition="before"
+          [spacer]="true"
+        ></peb-button-toggle>
+      </two-column-form>
+      <two-column-form>
+        <peb-form-field-input
+          appearance="label"
+          (click)="openDatepicker($event, appointmentForm.controls.date)"
+          [errorMessage]="'appointments-app.appointment_editor.date.error' | translate"
+          [isFieldInvalid]="appointmentForm.controls.date.invalid"
+          [label]="'appointments-app.appointment_editor.date.label' | translate"
+        >
+          <input readonly
+            formControlName="date"
+            [placeholder]="'appointments-app.appointment_editor.date.placeholder' | translate"
+            [textMask]="maskRule(dateMask)"
+            type="text"
+          />
+          <div class="suffix-icon">
+            <mat-icon svgIcon="calendar"></mat-icon>
+          </div>
+        </peb-form-field-input>
+        <peb-form-field-input
+          appearance="label"
+          (click)="openTimepicker($event, appointmentForm.controls.time)"
+          [errorMessage]="'appointments-app.appointment_editor.time.error' | translate"
+          [isFieldInvalid]="appointmentForm.controls.time.invalid"
+          [label]="'appointments-app.appointment_editor.time.label' | translate"
+        >
+          <input pe-input-time
+            formControlName="time"
+            [placeholder]="'appointments-app.appointment_editor.time.placeholder' | translate"
+            [textMask]="maskRule(timeMask)"
+            type="text"
+          />
+          <div class="suffix-icon">
+            <mat-icon svgIcon="time"></mat-icon>
+          </div>
+        </peb-form-field-input>
+      </two-column-form>
+      <two-column-form *ngIf="!appointmentForm.controls.allDay.value">
+        <peb-form-field-input
+          appearance="label"
+          [errorMessage]="durationError | translate"
+          [isFieldInvalid]="appointmentForm.controls.duration.invalid"
+          [label]="'appointments-app.appointment_editor.duration.label' | translate"
+        >
+          <input
+            formControlName="duration"
+            [placeholder]="'appointments-app.appointment_editor.duration.placeholder' | translate"
+            type="text"
+          />
+        </peb-form-field-input>
+        <peb-select
+          formControlName="measuring"
+          [label]="'appointments-app.appointment_editor.measuring.label' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let measuring of measurements"
+            [label]="measuring.label"
+            [value]="measuring.value"
+          ></peb-select-option>
+        </peb-select>
+      </two-column-form>
+    </peb-form-background>
+
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background *ngIf="appointmentForm.controls.customFields.value.length > 0">
+      <pe-custom-fields-switcher
+        *ngFor="let customField of appointmentForm.controls.customFields.value; let i = index"
+        [animated]="animatedFields"
+        (edit)="openCustomFieldEditor(i)"
+        [field]="customField"
+        (remove)="removeCustomField(i)"
+      ></pe-custom-fields-switcher>
+    </peb-form-background>
+
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <button pe-form-button
+        (click)="openCustomFieldEditor()"
+        color="confirm"
+      >
+        {{ 'appointments-app.actions.add_new_field' | translate }}
+      </button>
+    </peb-form-background>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel
+    [headerLabel]="'appointments-app.appointment_editor.offer' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-product-picker
+        formControlName="products"
+        [data]="products$ | async"
+        [buttonFunction]="openProductsFun"
+        (filtered)="filterProducts$.next($event)"
+        [label]="'appointments-app.appointment_editor.products.label' | translate"
+        [placeholder]="'appointments-app.appointment_editor.products.placeholder' | translate"
+      ></peb-product-picker>
+    </peb-form-background>
+  </peb-expandable-panel>
+</form>

@@ -1,0 +1,9 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" class="form">
+<!--  <div class="form__row">-->
+<!--    <input type="text" placeholder="Search" [formControlName]="effectType" #search-->
+<!--    (keydown.enter)="searchInputEnterHandler($event)">-->
+<!--  </div>-->
+  <ul>
+    <li *ngFor="let effect of effectTypes" (click)="selectMotion(effect)">{{ effect }}</li>
+  </ul>
+</form>

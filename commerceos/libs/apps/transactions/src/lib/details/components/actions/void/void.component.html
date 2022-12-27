@@ -1,0 +1,12 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.void.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.actions.confirm"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <peb-form-background>
+    <div class="note">{{ 'transactions.form.void.heading' | translate }}</div>
+  </peb-form-background>
+</pe-action-container>

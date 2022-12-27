@@ -1,0 +1,13 @@
+{
+  "name": "@pe/invoice",
+  "version": "0.0.6-COSF-1578.1",
+  "description": "Invoice",
+  "repository": "https://gitlab.devpayever.com/frontend/invoice",
+  "peerDependencies": {
+    "@angular/common": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "tslib": "^1.10.0",
+    "@angular/material": "latest",
+    "@angular/cdk": "latest"
+  }
+}

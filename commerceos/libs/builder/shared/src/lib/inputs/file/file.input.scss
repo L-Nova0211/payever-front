@@ -1,0 +1,17 @@
+:host {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  border-radius: 3px;
+  background-color: #6c6c6c;
+  font-size: 12px;
+  text-align: center;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 4px 26px;
+}

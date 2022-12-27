@@ -1,0 +1,38 @@
+.style-container {
+  border-radius: 12px;
+
+}
+
+.headline {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  span {
+    font-size: 12px;
+    margin-top: 0;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.dark {
+  .headline {
+    span {
+      color: #ffffff;
+    }
+  }
+}
+.transparent {
+  .headline {
+    span {
+      color: #ffffff;
+    }
+  }
+}
+.light {
+  .headline {
+    span {
+      color: #000000;
+    }
+  }
+}

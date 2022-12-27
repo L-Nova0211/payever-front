@@ -1,0 +1,35 @@
+.editor-renderer {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: max-content;
+  height: max-content;
+  min-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.renderer-wrap {
+  pointer-events: none;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  will-change: width, height;
+}
+
+.peb-renderer {
+  transform-origin: center top;
+}
+
+.renderer-wrap .peb-renderer {
+  border: none;
+  height: max-content;
+  transform-origin: left top;
+  will-change: width;
+}

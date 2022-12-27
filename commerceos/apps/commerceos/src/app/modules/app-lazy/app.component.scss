@@ -1,0 +1,35 @@
+
+@import 'pe_animation_variables.scss';
+@import 'pe_mixins.scss';
+
+
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+.root-bg-container {
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+
+  &.hide-dashboard-bg {
+    @include payever_animation(close, $animation-duration-complex, both);
+    opacity: 0;
+  }
+
+  &.animation {
+    @include translate3d(0, 0, 0);
+    @include payever_animation(initialize, $animation-duration-complex * 4, both);
+  }
+
+  &::after {
+    content: '';
+    @include full_screen();
+  }
+}

@@ -1,0 +1,90 @@
+@function peb-theme-choose($theme) {
+  $result: $theme;
+  $active-text: #fff;
+  $button-text: #0091df;
+  $hover: rgb(23, 133, 246);
+  $hover-text: #D3D3D3;
+  $toggle-button: #0087ff;
+  $x-button: #636363;
+
+  @if $theme == 'dark' {
+    $result: (
+      accent: #1c1d1e,
+      active-text: $active-text,
+      background: #24272e,
+      box-shadow-color: rgba(0, 0, 0, 0.5),
+      button-text: $button-text,
+      content: rgba(0, 0, 0, 0.5),
+      dropdown-panel: rgba(36, 39, 46, 0.85),
+      hover: $hover,
+      hover-menu-item: rgba(255, 255, 255, 0.05),
+      hover-text: $hover-text,
+      is-dark: true,
+      label-color: #7a7a7a,
+      primary: #111111,
+      separator: rgba(36, 39, 46, 0.85),
+      spinner: #fff,
+      text-color: #fff,
+      toggle-button: $toggle-button,
+      x-button: $x-button,
+      dashboard-menu-bg-color: rgba(36, 39, 46, 0.85), // dashboard
+      dashboard-menu-blur: blur(25px), // dashboard
+      dashboard-menu-border: 1px solid #3B3B3B, // dashboard
+      dashboard-menu-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5), // dashboard
+    );
+  }
+  @if $theme == 'light' {
+    $result: (
+      accent: #f9f9f9,
+      active-text: $active-text,
+      background: #f3f2f8,
+      box-shadow-color: rgba(0, 0, 0, 0.1),
+      button-text: $button-text,
+      content: #ffffff,
+      dropdown-panel: rgba(255, 255, 255, 0.85),
+      hover: $hover,
+      hover-menu-item: #D3D3D3,
+      hover-text: $hover-text,
+      is-dark: true,
+      label-color: #7a7a7a,
+      primary: #ffffff,
+      separator: rgba(155, 155, 155, 0.2),
+      spinner: #010101,
+      text-color: #000,
+      toggle-button: $toggle-button,
+      x-button: $x-button,
+      dashboard-menu-bg-color: rgba(255, 255, 255, 0.3), // dashboard
+      dashboard-menu-blur: blur(25px), // dashboard
+      dashboard-menu-border: 1px solid rgba(255, 255, 255, 0.2), // dashboard
+      dashboard-menu-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5), // dashboard
+    );
+  }
+  @if $theme == 'transparent' {
+    $result: (
+      accent: rgba(0, 0, 0, 0.6),
+      active-text: $active-text,
+      background: rgba(36, 39, 46, 0.8),
+      box-shadow-color: rgba(0, 0, 0, 0.5),
+      button-text: $button-text,
+      content: rgba(0, 0, 0, 0.5),
+      dropdown-panel: rgba(36, 39, 46, 0.3),
+      hover: $hover,
+      hover-menu-item: rgba(255, 255, 255, 0.05),
+      hover-text: $hover-text,
+      is-dark: true,
+      label-color: #d1d1d1,
+      primary: rgba(0, 0, 0, 0.3),
+      separator: rgba(255, 255, 255, 0.2),
+      spinner: #fff,
+      text-color: #fff,
+      toggle-button: $toggle-button,
+      x-button: $x-button,
+      dashboard-menu-bg-color: rgba(28, 29, 30, 0.6), // dashboard
+      dashboard-menu-blur: blur(25px), // dashboard
+      dashboard-menu-border: 1px solid #3B3B3B, // dashboard
+      dashboard-menu-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5), // dashboard
+    );
+  }
+
+  @return $result;
+}

@@ -1,0 +1,16 @@
+<ng-container *ngIf="(config$ | async) as config">
+  <ng-container *ngIf="!config.isHidden">
+    <div class="skeleton-container">
+      <div class="section-left">
+        <div *ngIf="config.isShowDataGridToggleComponent" class="toggle-skeleton"></div>
+        <div *ngFor="let item of config.leftSectionItems" class="item-menu-skeleton"></div>
+      </div>
+
+      <div class="section-right">
+        <div *ngIf="config.isShowBusinessItem" class="avatar-skeleton"></div>
+        <div *ngFor="let item of config.rightSectionItems" class="item-menu-skeleton"></div>
+        <div *ngIf="config.isShowCloseItem" class="close-skeleton"></div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

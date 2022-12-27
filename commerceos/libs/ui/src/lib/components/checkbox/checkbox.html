@@ -1,0 +1,39 @@
+<label
+  role="checkbox"
+  [attr.aria-label]="ariaLabel || null"
+  [attr.aria-labelledby]="ariaLabelledby"
+  [attr.aria-checked]="getAriaChecked()"
+  [attr.aria-describedby]="ariaDescribedby"
+  class="checkbox-label-aria"
+  [for]="inputId"
+>
+  <span
+    class="peb-checkbox-wrapper"
+    [attr.id]="inputId"
+    [class.label-checkbox]="type === 'label'"
+    (click)="onClick($event)"
+  >
+    <div class="checkbox-frame">
+      <!-- background -->
+      <svg class="check-background" *ngIf="!checked && !disabled">
+        <use xlink:href="#icon-ui-grid-dark-deselected"></use>
+      </svg>
+      <svg class="check-background" *ngIf="checked && !disabled">
+        <use xlink:href="#icon-ui-checkbox"></use>
+      </svg>
+      <svg class="check-background" *ngIf="disabled">
+        <use xlink:href="#icon-ui-check-disabled-background"></use>
+      </svg>
+      <!-- check -->
+      <svg class="check" *ngIf="checked && !disabled">
+        <use xlink:href="#icon-ui-check"></use>
+      </svg>
+      <svg class="check" *ngIf="checked && disabled">
+        <use xlink:href="#icon-ui-check-disabled"></use>
+      </svg>
+    </div>
+    <span class="label-text" [class.small-label-text]="type === 'label'" [class.is-invalid]="isFieldInvalid">
+      <ng-content></ng-content>
+    </span>
+  </span>
+</label>

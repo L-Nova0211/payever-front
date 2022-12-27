@@ -1,0 +1,640 @@
+{
+  "app": {
+    "permission.insufficient.error": "Insufficient program permission error"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "title_list": "payever Transactions",
+    "total_transaction": "Total Transaction",
+    "my_transactions": "My transactions",
+    "all_transactions": "All Transactions",
+    "all_folders": "All folders",
+    "order_details": "Order details",
+
+    "errors": {
+      "unknown": "Unknown error"
+    },
+    "action-errors": {
+      "refund": "The payment could not be refunded.",
+      "cancel": "The payment could not be canceled.",
+      "capture": "The payment could not be captured.",
+      "shipping_goods": "The payment could not be captured.",
+      "update": "The payment could not be updated.",
+      "edit_reference": "The payment could not be edit reference",
+      "upload": "The payment could not be upload document",
+      "verify": {
+        "digit_code": "The PIN code don't match",
+        "by_id": "The ID numbers don't match",
+        "simple": "The transaction could not be activate"
+      },
+      "contract": "The contract could not be download",
+      "edit": "The payment could not be edit",
+      "cancel-signing-request": "Cancel current signature failed",
+      "remove-signed-status": "Overwrite current contract failed",
+      "send_signing_link":"Send signing link failed",
+      "mark_paid":"Mark paid failed"
+    },
+    "context_menu": {
+      "options": "Options",
+      "rename": "Rename",
+      "delete": "Delete"
+    },
+    "sidebar_footer": {
+      "add_folder": "Add Folder",
+      "rules": "Rules"
+    },
+    "move_to_root": "-- Root folder --",
+    "actions": {
+      "back": "Back",
+      "back_to": "Back to {{ app }}",
+      "cancel_order": "Cancel order",
+      "check_status": "Update status",
+      "credit_answer": "Credit answer",
+      "edit_delivery": "Edit delivery",
+      "mark_paid": "Mark paid",
+      "contract": "Contract",
+      "create_label_ship": "Create label & ship",
+      "details": "Order details",
+      "edit": "Edit",
+      "done": "Done",
+      "open": "Open",
+      "cancel": "Cancel",
+      "close": "Close",
+      "print_invoice": "Print invoice",
+      "confirm": "Confirm",
+      "save": "Save",
+      "remove": "Remove"
+    },
+    "filter": {
+      "actions": {
+        "add": "Add filters",
+        "apply": "Add",
+        "close": "Close"
+      },
+      "labels": {
+        "amount": "Amount",
+        "channel": "Channel",
+        "currency": "Currency",
+        "original_id": "Id",
+        "reference": "Reference",
+        "total": "Total",
+        "type": "Payment type",
+        "customer_name": "Customer name",
+        "customer_email": "Customer email",
+        "merchant_email": "Merchant email",
+        "merchant_name": "Merchant name",
+        "seller_email": "Seller email",
+        "seller_name": "Seller name",
+        "seller_id": "Seller id",
+        "created_at": "Date",
+        "status": "Status",
+        "specific_status": "Specific status",
+        "channel_set_uuid": "Channel set id",
+        "search": "Search"
+      },
+      "condition": {
+        "is": "Is",
+        "isNot": "Is not",
+        "startsWith": "Starts with",
+        "endsWith": "Ends with",
+        "contains": "Contains",
+        "doesNotContain": "Does not contain",
+        "greaterThan": "Greater than",
+        "lessThan": "Less than",
+        "between": "Between",
+        "isDate": "Is",
+        "isNotDate": "Is not",
+        "afterDate": "After",
+        "beforeDate": "Before",
+        "betweenDates": "Between"
+      }
+    },
+    "sort": {
+      "title": "Sort by",
+      "customer_name": "Customer name",
+      "total_high": "Total high",
+      "total_low": "Total low",
+      "date": "Date",
+      "date_late": "Date late",
+      "date_early": "Date early"
+    },
+    "columns": {
+      "title": "Show columns",
+      "less": "Less",
+      "see_more": "See more"
+    },
+    "export": {
+      "title": "Export",
+      "preparing_was_started": "Preparing file...",
+      "preparing_was_queued":"Export was started. Exported file will be sent to your email.",
+      "errors": {
+        "unknown": "Not possible to perform export!"
+      }
+    },
+    "form": {
+      "cancel": {
+        "actions": {
+          "cancel": "Cancel order"
+        },
+        "labels": {
+          "reason": "Write a reason to cancel (optional)",
+          "amount": "Write an amount (optional)"
+        },
+        "fields": {
+          "type": {
+            "label": "Cancel Option",
+            "values": {
+              "full": "Cancel full amount of order {{ amount }}",
+              "partial": "Cancel the partial amount of the order"
+            }
+          },
+          "amount": {
+            "label": "Total available for cancel {{ amount }}",
+            "placeholder": "Amount",
+            "errors": {
+              "limits": "Amount should be between {{ min }} and {{ max }}"
+            }
+          }
+        },
+        "note": "You can re issue this order at any time in the future."
+      },
+      "refund": {
+        "actions": {
+          "refund": "Refund {{ amount }}"
+        },
+        "heading": "Refund",
+        "fields": {
+          "products": {
+            "placeholder": "Search"
+          },
+          "amount": {
+            "label": "Total available for refund {{ amount }}",
+            "placeholder": "Amount",
+            "errors": {
+              "limits": "Amount should be between {{ min }} and {{ max }}"
+            }
+          },
+          "itemsRestocked": {
+            "label": "Restock items"
+          },
+          "reason": {
+            "label": "Write a reason to refund (optional)"
+          },
+          "refundCollectedBySepa": {
+            "label": "I wish, that the (partial) cancellation amount should be collected by SEPA direct debit."
+          },
+          "refundDeliveryFee": {
+            "label": "Refund delivery fee"
+          },
+          "refundGoodsReturned": {
+            "label": "The goods have been returned by the customer."
+          },
+          "refundInvoiceNumber": {
+            "label": "Invoice number"
+          },
+          "refundPaymentFee": {
+            "label": "Refund payment fee"
+          },
+          "type": {
+            "label": "Refund Option",
+            "values": {
+              "full": "Refund full amount of order {{ amount }}",
+              "partial": "Refund the partial amount of the order",
+              "items": "Select items to refund"
+            }
+          }
+        }
+      },
+      "product_picker":{
+        "heading": "Add products",
+        "actions": {
+          "add_product": "Add product"
+        },
+        "fields": {
+          "quantity": {
+            "label": "Quantity"
+          }
+        }
+      },
+      "mark_paid": {
+        "headings": {
+          "title": "Are you sure?",
+          "subtitle": "Do you really want the transaction mark to be paid?",
+          "confirm": "Yes",
+          "decline": "No"
+        }
+      },
+      "shipping_goods": {
+        "actions": {
+          "send": "Send",
+          "download_label": "Download label",
+          "download_shipping_slip": "Download shipping slip"
+        },
+        "labels": {
+          "amount": "Total available for capture {{ amount }}",
+          "amount_placeholder": "Write an amount (optional)",
+          "birthday": "Birthday",
+          "capture_option": "Capture Option",
+          "full": "Full amount capture",
+          "full_items": "All items",
+          "select_items": "Select items to capture",
+          "select_amount": "Select amount to capture",
+          "otp_label": "Enter the security code",
+          "confirm": "Ich bestätige hiermit die Richtigkeit und Vollständigkeit der Kundendaten anhand des Ausweisdokuments überprüft zu haben.",
+          "shipping_options": "Shipping options",
+          "return_options": "Return options",
+          "verify": "Verify",
+          "tracking_number": "Tracking number",
+          "shipping_carrier": "Shipping carrier",
+          "shipping_method": "Shipping method",
+          "tracking_url": "Tracking URL (optional)",
+          "amount_title": "Amount",
+          "items_title": "Items"
+        },
+        "heading": "Send goods",
+        "errors": {
+          "unknown": "Unknown error",
+          "limits": "Amount should be between {{ min }} and {{ max }}"
+        },
+        "note": "Customer has signed contract with bank. Goods can be shipped.",
+        "shipped": "The goods have been shipped."
+      },
+      "change_amount": {
+        "actions": {
+          "change": "Change"
+        },
+        "heading": "Change amount",
+        "labels": {
+          "amount": "Insert new amount"
+        },
+        "errors": {
+          "must_be_positibe_number": "This value must be positive number",
+          "must_be_less_than": "This value must be less than {{ amount }}"
+        },
+        "note": "Do you want to change purchased amount?"
+      },
+      "edit_delivery": {
+        "actions": {
+          "change": "Change"
+        },
+        "heading": "Edit Delivery",
+        "labels": {
+          "weekOfDelivery": {
+            "label": "Woche auswanien"
+          },
+          "_weekOfDelivery_view": {
+            "label": "Lieferwoche",
+            "value": {
+              "this_week": "Diese Woche",
+              "next_week": "Nächste Woche",
+              "other_week": "Andere Woche"
+            }
+          }
+        },
+        "errors": {
+          "must_be_positibe_number": "This value must be positive number",
+          "must_be_less_than": "This value must be less than {{ amount }}"
+        },
+        "note": "Do you want to change purchased amount?"
+      },
+      "edit_reference": {
+        "actions": {
+          "change": "Change"
+        },
+        "heading": "Edit reference",
+        "labels": {
+          "reference": "Insert new reference"
+        },
+        "errors": {
+          "must_be_not_empty": "This value can't be empty"
+        },
+        "note": "Do you want to change reference?"
+      },
+      "capture": {
+        "heading": "Capture order",
+        "actions": {
+          "capture": "Capture"
+        },
+        "fields": {
+          "amount": {
+            "label": "Total available for refund {{ amount }}",
+            "placeholder": "Write an amount (optional)",
+            "errors": {
+              "limits": "Amount should be between {{ min }} and {{ max }}"
+            }
+          }
+        },
+        "labels": {
+          "birthday": "Birthday",
+          "capture_option": "Capture Option",
+          "full": "Full amount capture",
+          "select_items": "Select items to capture",
+          "select_amount": "Select amount to capture"
+        },
+        "errors": {
+          "unknown": "Unknown error",
+          "limits": "Amount should be between {{ min }} and {{ max }}"
+        }
+      },
+      "invoice": {
+        "actions": {
+          "transfer": "Transfer"
+        },
+        "heading": "Invoice",
+        "labels": {
+          "customer_id": "Customer ID",
+          "invoice_date": "Invoice date",
+          "invoice_id": "Invoice ID"
+        },
+        "note": "To protect your payment, you have to transfer your invoice data."
+      },
+      "paid": {
+        "actions": {
+          "confirm": "Confirm"
+        },
+        "heading": "Payment confirmation",
+        "note": "Please confirm this payment if you have already accepted it."
+      },
+      "remind": {
+        "actions": {
+          "remind": "Remind"
+        },
+        "heading": "Send remind",
+        "labels": {
+          "dunning_costs": "Insert new amount"
+        },
+        "note": "Customer did not paid you yet? Remind him to pay."
+      },
+      "verify": {
+        "actions": {
+          "verify": "Verify",
+          "decline": "Decline"
+        },
+        "labels": {
+          "borrower": "Darlehensnehmer {{personNumber}}",
+          "paid": "Paid",
+          "idNumber": "Letzte 5 Stellen der Ausweisnummer des Kunden:",
+          "confirm": "Ich bestätige hiermit die Richtigkeit und Vollständigkeit der Kundendaten anhand des Ausweisdokuments überprüft zu haben.",
+          "signed": "Der Kunde hat die Zahlungsvereinbarung Für die Ratenzahlung unterschrieben",
+          "approved": "Hiermit bestätigte ich die Richtigkeit und Vollständigkeit der Kundendaten anhand eines Ausweisdokuments überprüft zu haben. Bitte bedenken Sie, dass Sie verpflichtet sind jeden Kunden zu legitimieren und eine nicht erfolgte oder fehlerhafte Legitimation zu Ihren Lasten geht.",
+          "enter_digit_code": "Please enter confirmation code"
+        },
+        "heading": "Verification",
+        "errors": {
+          "must_confirm_verified_customer_data": "You must confirm customer data is verified and accurate",
+          "unknown": "Unknown error",
+          "required": "Required field"
+        }
+      },
+      "void": {
+        "heading": "Void"
+      },
+      "upload": {
+        "actions": {
+          "verify": "Upload",
+          "decline": "Decline",
+          "takePhoto": "Take Photo",
+          "chooseFile": "Choose file"
+        },
+        "labels": {
+          "upload_document": "Upload Document",
+          "drag_title": "Drag and drop files (PDF, JPEG, PNG)",
+          "document_type": "Document type",
+          "EARNING_SHEET": "Earning Sheet",
+          "IDENTIFICATION": "Identification",
+          "FREELANCER_SHEET": "Freelancer Sheet",
+          "CONTRACT": "Contract",
+          "OTHERS": "Others"
+        },
+        "heading": "Upload Documents",
+        "errors": {
+          "unknown": "Unknown error",
+          "required": "Required field",
+          "tooBigFile": "File \"{{fileName}}\" is too big. Limit is {{fileSize}}mb.",
+          "tooBigFiles": "The overall limit has been reached. Limit is {{fileSize}}mb.",
+          "max_files": "Maximum number of files",
+          "noCameraAccess": "Camera access was not allowed by user!"
+        }
+      },
+      "edit": {
+        "heading_error": "Error",
+        "errors": {
+          "not_implemented_payment": "Not implemented payment",
+          "cant_load_data": "Cant load data"
+        }
+      }
+    },
+    "details": {
+      "actions": {
+        "more": "More",
+        "confirmation": {
+          "contract": {
+            "title": "Vertrag manuell unterschreiben?",
+            "subtitle": "Möchten Sie auf die digitale Signatur verzichten und den Vertrag stattdessen ausdrucken, nass unterschreiben lassen und postalisch an die Bank senden (Auszahlung erst nach Ankunft der vollständigen Original-Verträge, keine Gewähr der Bank für auf dem Postweg verlorene Dokumente)?",
+            "confirmBtnText": "Ja",
+            "declineBtnText": "Nein"
+          },
+          "cancelSignature": {
+            "title": "Laufende Unterschrift abbrechen?",
+            "subtitle": "Für diese Transaktion haben Sie bereits eine digitale Signatur angestoßen. Wenn Sie den Antrag jetzt nochmal beapeiten möchten, müssen wir zunächst den laufenden Signatur-Vorgang stornieren. Sind Sie damit einverstanden und möchten fortfahren?",
+            "confirmBtnText": "Ja",
+            "declineBtnText": "Nein"
+          },
+          "overwriteContract": {
+            "title": "Aktuellen Vertrag überschreiben?",
+            "subtitle": "'Für diese Transaktion liegt bereits ein Vertrag vor, der nach einer Bearbeitung ungültig wird, sodass Sie anschließend einen neuen Vertrag unterschreiben lassen müssen. Pro Transaktion ist nur eine digitale Unterschrift möglich, sodass der aktualisierte Vertrag ausgedruckt, nass unterschrieben und postalisch eingereicht werden muss. Möchten Sie trotzdem fortfahren?",
+            "confirmBtnText": "Ja",
+            "declineBtnText": "Nein"
+          }
+        },
+        "labels": {
+          "download_shipping_label": "Download label",
+          "download_shipping_slip": "Download shipping slip",
+          "download_return_label": "Download return label",
+          "download_contract": "Download contract",
+          "resend_shipping_order_template": "Resend shipping order confirmation",
+          "reauthorize": "Reauthorize",
+          "cancel": "Cancel",
+          "capture":"Capture",
+          "credit_response": "Credit answered",
+          "change_amount": "Change amount",
+          "return": "Refund",
+          "refund": "Refund",
+          "shipping_goods": "Shipping goods",
+          "send_signing_link": "Send signing link",
+          "signing_link_qr": "Signing link QR",
+          "upload": "Upload",
+          "edit": "Edit",
+          "verify": "Verify",
+          "edit_delivery": "Edit delivery",
+          "edit_reference": "Edit reference",
+          "mark_paid": "Mark paid",
+          "update_status": "Update status"
+        }
+      },
+      "credit_answer": {
+        "header": "Credit answer",
+        "not_available": "Credit answer not available at the moment.",
+        "print": "Print"
+      },
+      "billing": {
+        "header": "Bills to",
+        "name": "Name",
+        "email": "E-mail",
+        "address": "Address"
+      },
+      "order_details": {
+        "birthday": "Birthday"
+      }
+    },
+    "sections": {
+      "general": {
+        "quantity": "Quantity",
+        "price": "Price",
+        "status": "Status"
+      },
+      "products": {
+        "title": "Products",
+        "subtitle": "Amount: {{amount}}",
+        "quantity": "Quantity",
+        "price": "Price",
+        "status": "Status",
+        "list_is_empty": "This list is empty"
+      },
+      "order": {
+        "title": "Order #",
+        "subtitle": "payever ID: {{id}}",
+        "channel": "Channel",
+        "payever_id": "payever ID",
+        "payeverId": "Payever ID",
+        "santanderApplicationId": "Santander Application ID",
+        "applicationNo": "Application No",
+        "panId": "PAN ID",
+        "paymentId": "Payment ID",
+        "invoiceId": "Invoice ID",
+        "editInvoiceId": "Edit invoice",
+        "reference": "Reference"
+      },
+      "shipping": {
+        "title": "Shipping",
+        "shipping_carrier": "Shipping carrier",
+        "shipping_address": "Shipping address is same as billing address",
+        "address": "Address",
+        "name": "Name"
+      },
+      "billing": {
+        "title": "Billing",
+        "name": "Name",
+        "email": "Email",
+        "address": "Address"
+      },
+      "seller": {
+        "title": "Seller",
+        "name": "Name",
+        "email": "Email"
+      },
+      "payment": {
+        "title": "Payment",
+        "payment_method": "Payment method"
+      },
+      "timeline": {
+        "title": "Timeline",
+        "by": "by",
+        "reason": "Reason",
+        "requirements": {
+          "NO_REQUIREMENTS": "ohne Auflagen",
+          "REQUIREMENTS_NOT_FULFILLED": "mit harten Auflagen",
+          "REQUIREMENTS_FULFILLED": "auflagen erfüllt",
+          "HARD_REQUIREMENTS": "harte Auflagen"
+        },
+        "statuses": {
+          "psp": {
+            "IN_BEARBEITUNG": "In progress",
+            "IN_ENTSCHEIDUNG": "In decision",
+            "ENTSCHEIDUNG_NAECHSTER_WERKTAG": "Decision next day",
+            "GENEHMIGT": "Approved",
+            "KONTOEROEFFNUNG_AUSZAHLUNG": "Account opened",
+            "ABGELEHNT": "Declined",
+            "ZURUECKGESTELLT": "Decision unclear",
+            "STORNIERT": "Canceled",
+            "KUENDIGUNG": "Cancellation",
+            "BESTAETIGUNG_HAENDLER_STORNIERUNG": "Dealer cancellation",
+            "VERSENDET": "Submitted",
+            "CCP_VORHANDEN": "Unknown",
+            "SIGNED": "Signed",
+            "VERIFIED": "Verified"
+          },
+          "general": {
+            "STATUS_NEW": "New",
+            "STATUS_IN_PROCESS": "In progress",
+            "STATUS_ACCEPTED": "Accepted",
+            "STATUS_PAID": "Paid",
+            "STATUS_DECLINED": "Declined",
+            "STATUS_REFUNDED": "Refunded",
+            "STATUS_FAILED": "Failed",
+            "STATUS_CANCELLED": "Cancelled"
+          }
+        },
+        "action": {
+          "application_sent": "Application sent {{ byUser }}",
+          "application_updated": "Application updated {{ byUser }}",
+          "create": "Create {{ byUser }}",
+          "edit": "Application edit {{ byUser }}",
+          "change_amount": "Amount changed to {{amount}} {{ byUser }}",
+          "change_reference": "Reference changed to {{ reference }} {{ byUser }}",
+          "remind": "Remind {{ byUser }}",
+          "latepayment": "Late payment {{ byUser }}",
+          "collection": "Collection {{ byUser }}",
+          "paid": "Paid {{ byUser }}",
+          "return": "Return {{ byUser }}",
+          "cancel": "Cancel {{ reason }} {{ byUser }}",
+          "email_sent": "Email sent",
+          "statuschanged": "Status changed to {{ payment_status }} {{ byUser }}",
+          "status_changed": "Status changed to {{ payment_status }} {{ byUser }}",
+          "changeamount": "Amount changed to {{ amount }} {{ byUser }}",
+          "upload": "Upload {{ byUser }}",
+          "verify": "Verification completed {{ byUser }}",
+          "transfer": "Goods sent {{ byUser }}",
+          "refund": {
+            "amount": "Refund of {{ amount }}{{ reason }} {{ byUser }}",
+            "items": "Refunded {{ count }} \"{{ item }}\"{{ reason }} {{ byUser }}"
+          },
+          "preauthorize": "Preauthorize {{ byUser }}",
+          "preauthorize_submit": "Preauthorize submit {{ byUser }}",
+          "capture": "Capture {{ byUser }}",
+          "capture_with_amount": "{{ amount }} captured {{ byUser }}",
+          "update": "Update {{ byUser }}",
+          "shipping_goods": "Shipping goods of {{amount}} {{ byUser }}",
+          "edit_delivery": "Delivery date changed {{ byUser }}",
+          "send_signing_link": "Send signing link",
+          "contract_signed": "Status changed to Signed {{ byUser }}",
+          "contract_downloaded": "Contract downloaded {{ byUser }}",
+          "psp_status_changed": "PSP Status changed to {{ pspStatus }} {{requirementsState}}",
+          "signature_withdrawn": "Signature withdrawn {{ byUser }}"
+        }
+      },
+      "details": {
+        "title": "Details",
+        "subtitle": "Order total: {{total}}",
+        "subtotal": "Subtotal",
+        "shipping_fee": "Shipping fee",
+        "order_total": "Order total",
+        "down_payment": "Down payment"
+      }
+    },
+    "folder": {
+      "title": "Category",
+      "new_folder": "New Folder",
+      "new_headline": "New Headline",
+      "rules": "Rules",
+      "delete_folder": "Delete Folder",
+      "select_folder": "Select Folder",
+      "move_to_folder": "Move To Folder",
+      "delete_text": "Are you sure you want to delete the folder {{ name }}"
+    }
+  },
+  "salutation": {
+    "SALUTATION_MR": "Mr",
+    "SALUTATION_MRS": "Mrs"
+  }
+}

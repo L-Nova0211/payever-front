@@ -1,0 +1,206 @@
+.product-picker-container {
+  overflow: hidden;
+  &__controls {
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    .input-with-label {
+      display: inherit;
+      flex-direction: column;
+      flex: 1;
+      padding: 4px 12px;
+      
+      &.is-invalid {
+        position: relative;
+        transition: border-bottom 500ms;
+
+        &:after {
+          background-color: #ff3c30;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 100%;
+        }
+
+        .label-text {
+          color: #ff3c30 !important;
+          transition: color 500ms;
+          white-space: nowrap;
+        }
+      }
+
+      span {
+        font-family: 'Roboto', sans-serif;
+        font-size: 11px;
+        height: 16px;
+      }
+
+      input {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.33;
+        height: 16px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        padding: 0;
+      }
+    }
+
+    .button-container {
+      display: inherit;
+      flex-direction: row;
+      width: 105px;
+      align-items: center;
+      justify-content: flex-end;
+      .peb-text-button {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &__item {
+      padding: 0 12px;
+      height: 100%;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+
+      div {
+        display: flex;
+        align-items: center;
+        .product-image {
+          height: 32px;
+          width: 32px;
+          border-radius: 6.7px;
+          margin-right: 12px;
+          overflow: hidden;
+          background-image: linear-gradient(#474747,#000);
+
+          img {
+            height: 32px;
+            width: 32px;
+          }
+        }
+
+        span {
+          height: 16px;
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1.33;
+        }
+      }
+
+      .peb-text-button {
+        font-size: 12px;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.product-autocomplete-panel {
+  border-radius: 12px !important;
+  margin-top: 8px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.27);
+  margin-left: -12px;
+
+  .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+    background-color: inherit;
+
+    .mat-option-text {
+      background-color: inherit;
+    }
+  }
+
+  .mat-option {
+    height: 40px !important;
+    padding: 0 12px;
+    margin: 0;
+    border-radius: unset;
+
+    &:hover {
+      background-color: #0091df;
+    }
+
+    &:not(:first-of-type) {
+      &::before {
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    .mat-option-text {
+      height: inherit;
+      display: flex;
+      align-items: center;
+      .option-container {
+        display: flex;
+        align-items: center;
+
+        &__image {
+          height: 32px;
+          width: 32px;
+          border-radius: 6.7px;
+          margin-right: 12px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            height: 32px;
+            width: 32px;
+          }
+        }
+
+        &__label {
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.33;
+          letter-spacing: normal;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+
+.remove-btn {
+  width: unset !important;
+  padding: unset !important;
+  margin: unset !important;
+  padding-right: 18px !important;
+}

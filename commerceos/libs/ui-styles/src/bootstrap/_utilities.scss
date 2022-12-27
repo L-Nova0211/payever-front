@@ -1,0 +1,44 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+.pe-bootstrap {
+  .dl-horizontal,
+  .form-horizontal,
+  .btn-group-vertical {
+    @include clearfix;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .transparent-content *:not(.loader-container):not([class*="loader_"]) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  // Margins and Paddings
+  // ----------------------------
+
+  $spaceamounts: (0, $grid-unit-y, $grid-unit-y * 2);
+
+  @include generate-padding($spaceamounts);
+  @include generate-padding-top($spaceamounts);
+
+  @include generate-margin($spaceamounts);
+  @include generate-margin-bottom($spaceamounts);
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .no-user-select .pe-input-spinner-dec.app-icon, .no-user-select .pe-input-spinner-inc.app-icon {
+    @include payever_user_select;
+
+    svg {
+      @include payever_user_select;
+    }
+  }
+}

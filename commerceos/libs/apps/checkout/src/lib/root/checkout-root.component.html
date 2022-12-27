@@ -1,0 +1,18 @@
+<div
+  class="checkout-app-container"
+  [ngClass]="theme">
+
+  <pe-new-platform-header
+    (resized)="onPlatformHeaderResized($event)"
+    class="checkout-header"
+    [class.no-z-index]="hideHeader"
+    [class.b-dark]="this.theme === PeThemeEnum.DARK || this.theme === 'default'"
+    [class.b-light]="this.theme === PeThemeEnum.LIGHT" [class.b-transparent]="this.theme === PeThemeEnum.TRANSPARENT">
+  </pe-new-platform-header>
+
+  <pe-simple-welcome-stepper (resized)="onWelcomeStepperResized($event)"></pe-simple-welcome-stepper>
+
+  <div class="checkout-app-content data-grid-scroll-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

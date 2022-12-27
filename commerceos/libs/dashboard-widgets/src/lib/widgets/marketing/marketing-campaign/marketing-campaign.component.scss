@@ -1,0 +1,23 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+.pe-bootstrap {
+  :host {
+    .campaign-row {
+      padding: $padding-base-vertical 0;
+      .campaign-title {
+        font-weight: 500;
+        color: $color-secondary-5;
+        &.selected {
+          color: $color-secondary;
+        }
+      }
+    }
+
+    .mat-list-item:last-child {
+      margin-bottom: -16px;
+    }
+    .mat-list-item-col {
+      white-space: nowrap !important;
+    }
+  }
+}

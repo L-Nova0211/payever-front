@@ -1,0 +1,205 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.connect-apps-wrapper {
+  @include pe_flexbox;
+  width: 50%;
+  flex-direction: column;
+  .connect-apps-title {
+    color: $color-secondary-8;
+    font-size: $font-size-regular-2;
+  }
+  .connect-apps-list {
+    width: 100%;
+    padding-top: 12px;
+    @media (max-width: 1141px) {
+      padding-right: 0;
+    }
+    // TODO WHY 1141 ??
+    @include pe_flexbox;
+    @include pe_justify-content(space-between);
+
+    color: $color-secondary-0;
+
+    .integration.shopware svg {
+      height: 27px;
+      margin-top: -2px;
+    }
+    .integration.ebay svg {
+      width: 39px;
+      height: 41px;
+      margin-top: -21px;
+    }
+  }
+}
+
+.connect-widget-button {
+  margin-left: auto;
+  width: 50%;
+}
+
+/*
+.img-circle {
+  background-color: rgba(255, 255, 255, 0.2);
+  @include pe_inline-flex;
+  @include pe_align-items(center);
+  @include pe_justify-content(center);
+}
+.connect-apps-wrapper {
+  @media (max-width: 1141px) { padding-right: 0; } // TODO WHY 1141 ??
+  @include pe_flexbox;
+  @include pe_justify-content(space-between);
+  width: 100%;
+
+  &.short {
+    @include pe_justify-content(flex-start);
+  }
+
+  &.more {
+    padding-top: 21px;
+    padding-bottom: 6px;
+
+    .img-circle {
+      margin-left: 12px;
+    }
+    .connect-apps-item {
+      display: inline-flex;
+      min-width: 20%;
+      max-width: 30%;
+
+      &-spinner {
+        position: absolute;
+        top: 0%;  // these styles to show spinner
+        left: 0%; // over the icon
+      }
+
+      .mat-button-wrapper {
+        display: inline-flex;
+      }
+
+      .connect-apps-item-wrapper {
+        min-height: 24px;
+
+        .connect-apps-item-title {
+          display: block;
+          margin-left: 0;
+          margin-top: 11px;
+          text-align: left;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .connect-apps-item {
+    @include pe_flexbox;
+    @include pe_flex-direction(column);
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    min-width: 25%;
+    position: relative;
+    padding-right: $padding-xs-horizontal;
+
+    &-spinner {
+      position: absolute;
+      top: 5%;  // these styles to show spinner
+      left: 4%; // over the icon
+    }
+
+    &:hover {
+      .mat-button-focus-overlay {
+        background-color: transparent;
+        opacity: 0;
+      }
+    }
+
+    &-wrapper {
+      text-align: left;
+      &.disabled {
+        opacity: 0.2;
+      }
+
+      .connect-apps-item-install {
+        @include pe_flexbox;
+        margin-top: 11px;
+      }
+
+      .connect-apps-item-title {
+        font-size: $font-size-micro-1;
+        line-height: 1.83;
+        color: $color-secondary;
+        font-weight: normal;
+        margin-left: $padding-small-horizontal / 2;
+        width: calc(100% - #{$padding-large-horizontal});
+      }
+    }
+
+    .mat-button-focus-overlay {
+      background-color: transparent;
+      opacity: 0;
+    }
+  }
+
+  button.connect-app-button {
+    width: 100%;
+    cursor: default;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-secondary-9;
+    &:hover {
+      color: $color-secondary-9;
+    }
+  }
+}
+
+@media (max-width: $viewport-breakpoint-ipad - 1) {
+  .img-circle {
+    margin-left: 0;
+    width: $grid-unit-x;
+    height: $grid-unit-x;
+  }
+
+  .connect-apps-item-title {
+    font-size: $font-size-micro-3;
+    margin-left: 1px;
+  }
+
+  .connect-apps-wrapper.more {
+    .img-circle {
+      margin-left: $padding-small-horizontal / 2;
+    }
+  }
+}
+// @media (max-width: $viewport-breakpoint-xs-1 - 1) {
+//   font-size: $font-size-micro-3;
+// }
+
+// icons normalize
+.connect-apps-item-wrapper {
+  .santander {
+    width: 35px;
+  }
+
+  .ups {
+    width: 29px;
+  }
+
+  .shopify {
+    width: 31px;
+  }
+
+  .shop {
+    width: 30px;
+  }
+
+  .sofort {
+    width: 16px;
+  }
+}
+*/

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  width: 456px;
+}
+
+.widget-style {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .widget {
+    flex: 1 0 26%;
+    max-width: 142px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  :host {
+    width: auto;
+  }
+  .widget-style {
+    justify-content: space-evenly;
+
+    .widget:last-child {
+      margin-right: calc(100% - 188px);
+    }
+  }
+}

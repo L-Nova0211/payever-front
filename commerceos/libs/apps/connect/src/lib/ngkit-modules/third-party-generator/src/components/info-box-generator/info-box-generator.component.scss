@@ -1,0 +1,154 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+// TODO Rewrite styles
+
+.pe-bootstrap {
+  .connect-communication-container {
+
+    .fieldset-caption {
+      padding: $padding-base-vertical $padding-base-horizontal*2;
+      line-height: 1.3em;
+      font-size: $font-size-micro-1;
+      color: $color-gray-4;
+    }
+
+    .mat-accordion {
+      .mat-list {
+        margin-left: 0;
+        .mat-list-item {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .mat-divider {
+      color: $color-white-grey-1;
+    }
+
+    // TODO hack for spinner inside small buttons
+    .button-col {
+      @include pe_flexbox; // fix for spinner inside button
+      @include pe_justify-content(flex-end);
+
+      .mat-raised-button.mat-button-base {
+        margin-top: 0;
+      }
+    }
+
+    button.mat-button-link:not(.hover):hover {
+      color: inherit;
+    }
+  }
+}
+
+.connect-add-number {
+  .connect-status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: $pe_vgrid_height*4;
+    border-bottom: 1px solid $color-white-grey-2;
+    padding: 0 $margin-adjust*3 0 $margin-adjust*6;
+  }
+  .status-icon {
+    margin-left: $margin-adjust*2;
+  }
+
+  .form-table {
+    //padding: $margin-adjust*5.5 $margin-adjust*6 0;
+  }
+
+  .connect-checkbox {
+    background-color: transparent !important;
+    padding: 0;
+  }
+
+  .connect-collection {
+    height: $pe_vgrid_height*5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $margin-adjust*6;
+  }
+
+  .connect-collection:not(:first-of-type) {
+    border-top: 1px solid $color-white-grey-2;
+  }
+  .mat-checkbox-checked.mat-accent .mat-checkbox-label, .mat-checkbox-label{
+    color: $color-secondary-0;
+  }
+
+  .mat-checkbox-checked.mat-accent .mat-checkbox-frame, .mat-checkbox-frame {
+    border-color: $color-secondary-0;
+  }
+
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background .mat-checkbox-checkmark-path {
+    stroke: $color-secondary-0 !important;
+  }
+
+  .mat-list-item-content {
+    padding: 0 16px !important;
+
+    .mat-list-item-flex {
+      .mat-list-item-col {
+        //flex: initial !important;
+        display: flex;
+        height: 55px;
+        align-items: center !important;
+      }
+    }
+  }
+}
+
+.connect-verify {
+  &-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-icon {
+    margin-top: $pe_vgrid_height*5;
+  }
+
+  &-title {
+    margin-top: $margin-adjust*6.5;
+    font-size: $font-size-h3;
+    color: $color-white;
+  }
+
+  &-message {
+    margin-top: $margin-adjust*4;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: $pe_hgrid_gutter*7;
+    margin-top: $pe_hgrid_gutter*2;
+    margin-bottom: $pe_hgrid_gutter*2.25;
+  }
+
+  &-decline {
+    width: $pe_hgrid_gutter*3;
+  }
+
+  &-accept {
+    width: $pe_hgrid_gutter*3;
+  }
+}
+
+.btn-wide {
+  width: $pe_hgrid_gutter*3;
+}
+
+.bg-grey.mat-raised-button {
+  background-color: $color-white-grey-1;
+}
+
+.text-grey {
+  color: $color-white-grey-4;
+}

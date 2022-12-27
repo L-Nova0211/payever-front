@@ -1,0 +1,10 @@
+<mat-accordion class="mat-accordion-xl" *ngIf="!isVariantStatusConnected(paymentIndex)">
+  <form novalidate (ngSubmit)="onSubmit()">
+    <button #submitTriggerAuth id="submitTriggerAuth" name="submitButton" type="submit" class="native-submit"></button>
+    <div class="create-account-btn">
+      <button mat-raised-button type="button" class="no-border" (click)="submitTriggerAuth.click()" [class.mat-button-block]="true">
+        <pe-progress-button-content [loading]="isLoading$ | async">{{ isVariantStatusConnected(paymentIndex) ? ('actions.reset_creds' | translate) : ('actions.connect' | translate) }}</pe-progress-button-content>
+      </button>
+    </div>
+  </form>
+</mat-accordion>

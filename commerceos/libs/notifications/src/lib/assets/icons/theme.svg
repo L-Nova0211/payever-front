@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 28 28">
+  <defs>
+    <filter id="tsmry8uewa" width="160%" height="160%" x="-30%" y="-30%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1"
+                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill-rule="evenodd" fill="currentColor">
+    <g filter="url(#tsmry8uewa)">
+      <path
+        d="M20.111 14c-.922 0-1.667-.744-1.667-1.667 0-.922.745-1.666 1.667-1.666s1.667.744 1.667 1.666c0 .923-.745 1.667-1.667 1.667m-3.287-4.12c-.922 0-1.667-.745-1.667-1.667s.745-1.667 1.667-1.667 1.667.745 1.667 1.667-.745 1.666-1.667 1.666m-5.37.047c-.922 0-1.667-.744-1.667-1.667 0-.922.745-1.666 1.667-1.666s1.667.744 1.667 1.666c0 .923-.745 1.667-1.667 1.667M7.889 14c-.922 0-1.667-.744-1.667-1.667 0-.922.745-1.666 1.667-1.666s1.667.744 1.667 1.666c0 .923-.745 1.667-1.667 1.667M14 4C8.478 4 4 8.478 4 14s4.478 10 10 10c.922 0 1.667-.744 1.667-1.667 0-.433-.161-.822-.434-1.116-.26-.295-.416-.678-.416-1.106 0-.922.744-1.667 1.666-1.667h1.961c3.067 0 5.556-2.488 5.556-5.555C24 7.978 19.522 4 14 4"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,247 @@
+{
+  "user_business_form": {
+    "titles": {
+      "companyDetails": "Company",
+      "companyAddress": "Address",
+      "bankAccount": "Bank account",
+      "taxes": "Taxes",
+      "contactDetails": "Contact"
+    },
+    "form": {
+      "companyDetails": {
+        "legalForm": {
+          "label": "Legal Form",
+          "placeholder": "Legal Form",
+          "options": {
+            "LEGAL_FORM_AG": "Public Limited Company",
+            "LEGAL_FORM_EINZELUNTERN": "Individual Enterprise",
+            "LEGAL_FORM_GBR": "Civil Law Partnership",
+            "LEGAL_FORM_GMBH": "Limited Liability Company",
+            "LEGAL_FORM_KG": "Limited Partnership",
+            "LEGAL_FORM_OHG": "General Partnership",
+            "LEGAL_FORM_SONSTIGES": "Other",
+            "LEGAL_FORM_UG": "Limited",
+            "LEGAL_FORM_EK": "Sole Trader",
+            "LEGAL_FORM_EV": "Registered Association",
+            "LEGAL_FORM_EG": "Registered Cooperativ"
+          }
+        },
+        "product": {
+          "label": "Product",
+          "placeholder": "Product",
+          "options": {
+            "BUSINESS_PRODUCT_RETAIL_B2C": "Physical goods for private customers (Retail B2C)",
+            "BUSINESS_PRODUCT_RETAIL_B2B": "Physical goods for business customers (Retail B2B)",
+            "BUSINESS_PRODUCT_GIDITAL_GOODS": "Digital goods",
+            "BUSINESS_PRODUCT_SERVICES": "Services",
+            "BUSINESS_PRODUCT_OVERNIGHT_STAY": "Overnight stay",
+            "BUSINESS_PRODUCT_MEALS": "Meals",
+            "BUSINESS_PRODUCT_FOOD": "Food",
+            "BUSINESS_PRODUCT_DRINKS": "Drinks",
+            "BUSINESS_PRODUCT_OTHERS": "Others"
+          }
+        },
+        "industry": {
+          "label": "Industry",
+          "placeholder": "Industry",
+          "options": {
+            "BRANCHE_COMPUTER_ELECTORNIC": "Computers & Electronics",
+            "BRANCHE_SPIELWAREN": "Toys",
+            "BRANCHE_MUSIK": "Music",
+            "BRANCHE_GESUNDEIT_PFLEGE": "Healthcare",
+            "BRANCHE_NOBLE_ACCESSORIES": "Furniture",
+            "BRANCHE_HAUSHALTSGARATE_TECHNIK": "Appliances",
+            "BRANCHE_MODE_TEXTILIEN": "Clothing",
+            "BRANCHE_UHREN_SCHMUCK": "Jewelry",
+            "BRANCHE_EROTIC": "Erotic",
+            "BRANCHE_DIGITAL_GOODS": "Digital Goods",
+            "BRANCHE_SONSTIGES": "Other",
+
+            "BRANCHE_ART_CRAFT": "Arts & Crafts",
+            "BRANCHE_AUTOMOTIVE": "Automotive",
+            "BRANCHE_BABY": "Baby",
+            "BRANCHE_CARE": "Beauty & Personal Care",
+            "BRANCHE_BOOKS": "Books",
+            "BRANCHE_COMPUTER": "Computers",
+            "BRANCHE_ELECTRONICS": "Electronics",
+            "BRANCHE_FASHION": "Fashion",
+            "BRANCHE_HEALTH_HOUSEHOLD": "Health & Household",
+            "BRANCHE_HOME_KITCHEN": "Home & Kitchen",
+            "BRANCHE_LUGGAGE": "Luggage",
+            "BRANCHE_TV": "Movies & TV",
+            "BRANCHE_MUSIC": "Music, CDs & Vinyl",
+            "BRANCHE_PET_SUPPLIES": "Pet Supplies",
+            "BRANCHE_SPORTS": "Sports & Outdoors",
+            "BRANCHE_TOOLS": "Tools & Home Improvement",
+            "BRANCHE_TOYS": "Toys & Games",
+            "BRANCHE_VIDEO_GAMES": "Video Games",
+            "BRANCHE_OTHER": "Others",
+
+            "BRANCHE_FINISHING_PRODUTS": "Abrasive & Finishing Products",
+            "BRANCHE_ADDITIVE_PRODUCTS": "Additive Manufacturing Products",
+            "BRANCHE_DOOR_PRODUTS": "Commercial Door Products",
+            "BRANCHE_CUTTING_TOOLS": "Cutting Tools",
+            "BRANCHE_FASTENERS": "Fasteners",
+            "BRANCHE_FILTRATION": "Filtration",
+            "BRANCHE_FOOD_SUPPLIES": "Food Service Equipment & Supplies",
+            "BRANCHE_PNEUMATICS": "Hydraulics, Pneumatics & Plumbing",
+            "BRANCHE_ELECTRICAL": "Industrial Electrical",
+            "BRANCHE_HARDWARE": "Industrial Hardware",
+            "BRANCHE_HAND_TOOLS": "Industrial Power & Hand Tools",
+            "BRANCHE_JANITORIAL_SUPPLIES": "Janitorial & Sanitation Supplies",
+            "BRANCHE_SCIENCE_PRODUTS": "Lab & Scientific Products",
+            "BRANCHE_MATERIAL_HANDLINGS": "Material Handling Products",
+            "BRANCHE_HEALTH": "Occupational Health & Safety Products",
+            "BRANCHE_SHIPPING_SUPPLIES": "Packaging & Shipping Supplies",
+            "BRANCHE_POWER_TRANSMISSION": "Power Transmission Products",
+            "BRANCHE_DENTAL_SUPPLIES": "Professional Dental Supplies",
+            "BRANCHE_MEDICAL_SUPPLIES": "Professional Medical Supplies",
+            "BRANCHE_RAW_MATERIALS": "Raw Materials",
+            "BRANCHE_RETAIL_STORE": "Retail Store Fixtures & Equipment",
+            "BRANCHE_ROBOTICS": "Robotics",
+            "BRANCHE_SCIENCE_EDUCATION": "Science Education",
+            "BRANCHE_ADHESIVES": "Tapes, Adhesives & Sealants",
+            "BRANCHE_MEASURE": "Test, Measure & Inspect",
+
+            "BRANCHE_DIGITAL_MUSIC": "Digital Music",
+            "BRANCHE_DIGITAL_VIDEOS": "Digital Videos",
+            "BRANCHE_SOFTWARE": "Software",
+            "BRANCHE_GAMES": "Games",
+
+            "BRANCHE_CONSULTING": "Consulting",
+            "BRANCHE_CAR_REPAIR": "Car Repair",
+            "BRANCHE_NAIL_STUDIO": "Nail Studio",
+            "BRANCHE_LOCKSMITH": "Locksmith",
+            "BRANCHE_HAIR_STYLIST": "Hair Stylist",
+            "BRANCHE_TOURISM": "Tourism",
+
+            "BRANCHE_HOTEL": "Hotel",
+            "BRANCHE_MOTEL": "Motel",
+            "BRANCHE_BED_BRAKFAST": "Bed & Breakfast",
+
+            "BRANCHE_RESTAURANT": "Restaurant",
+            "BRANCHE_FOOD_TRACK": "Food Truck",
+
+            "BRANCHE_SUPERMARKET": "Supermarket",
+
+            "BRANCHE_BAR": "Bar",
+            "BRANCHE_CAFE": "Cafe",
+            "BRANCHE_CLUB": "Club"
+          }
+        },
+        "urlWebsite": {
+          "label": "URL to your website",
+          "placeholder": "URL to your website"
+        },
+        "foundationYear": {
+          "label": "Foundation year",
+          "placeholder": "Foundation year"
+        }
+      },
+      "companyAddress": {
+        "country": {
+          "label": "Country",
+          "placeholder": "Country"
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "City"
+        },
+        "street": {
+          "label": "Street",
+          "placeholder": "Street"
+        },
+        "zipCode": {
+          "label": "ZIP Code",
+          "placeholder": "ZIP Code"
+        }
+      },
+      "bankAccount": {
+        "owner": {
+          "label": "Account name",
+          "placeholder": "Account name"
+        },
+        "bankName": {
+          "label": "Bank name",
+          "placeholder": "Bank name"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Country"
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "City"
+        },
+        "bic": {
+          "label": "BIC",
+          "placeholder": "BIC"
+        },
+        "iban": {
+          "label": "IBAN",
+          "placeholder": "IBAN"
+        },
+        "bankCode": {
+          "label": "Bank code",
+          "placeholder": "Bank code"
+        },
+        "routingNumber": {
+          "label": "Routing number",
+          "placeholder": "Routing number"
+        },
+        "accountNumber": {
+          "label": "Account number",
+          "placeholder": "Account number"
+        }
+      },
+      "taxes": {
+        "companyRegisterNumber": {
+          "label": "Company register number",
+          "placeholder": "Company register number"
+        },
+        "taxId": {
+          "label": "Tax ID",
+          "placeholder": "Tax ID"
+        },
+        "taxNumber": {
+          "label": "Tax number",
+          "placeholder": "Tax number"
+        },
+        "turnoverTaxAct": {
+          "label": "Turnover tax act",
+          "placeholder": "Turnover tax act"
+        }
+      },
+      "contactDetails": {
+        "salutation": {
+          "label": "Salutation",
+          "placeholder": "Salutation",
+          "options": {
+            "SALUTATION_MR": "Mr.",
+            "SALUTATION_MRS": "Mrs."
+          }
+        },
+        "firstName": {
+          "label": "First Name",
+          "placeholder": "First Name"
+        },
+        "lastName": {
+          "label": "Last Name",
+          "placeholder": "Last Name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Phone"
+        },
+        "fax": {
+          "label": "Fax",
+          "placeholder": "Fax"
+        },
+        "additionalPhone": {
+          "label": "Additional phone",
+          "placeholder": "Additional phone"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@import 'pe_skeleton.scss';
+
+.pe-message-chat-room-list {
+  .pe-sidebar {
+    height: calc(100% - 40px)!important;
+    border-radius: 0 0 12px 12px!important;
+  }
+
+  &__search {
+    position: sticky;
+    top: 0;
+    height: 40px;
+    color: #ffffff;
+    border-radius: 12px 12px 0 0;
+    background-color: #1c1d1e;
+
+    .icon-search-18 {
+      margin: 5px 4px 5px 0;
+      position: absolute;
+      left: 14px;
+      top: 9px;
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+
+      path {
+        fill: #7a7a7a;
+      }
+    }
+
+    .input-content-wrapper {
+      background-color: unset;
+      height: 40px;
+
+      .label-container {
+        margin: 0;
+        padding: 4px 8px;
+        height: 40px;
+
+        .input-field {
+          height: 24px;
+        }
+
+        input {
+          padding: 4px 6px 4px 24px;
+          height: 32px;
+          border-radius: 7px;
+          font-size: 12px;
+          font-weight: 500;
+          background-color: #131414;
+
+          &::placeholder {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    input {
+      background: #131414;
+      height: 24px;
+      display: block;
+      box-sizing: border-box;
+      width: 100% !important;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__notification {
+    width: 12px;
+    height: 12px;
+    color: #7a7a7a;
+  }
+
+  &__integration {
+    color: white;
+    height: 12px;
+    margin-left: 4px;
+    width: 12px;
+  }
+
+  &__no-chats {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.13;
+      text-align: center;
+      color: #ffffff;
+      max-width: 140px;
+    }
+
+    button {
+      appearance: none;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      height: 32px;
+      padding: 0;
+      outline: none;
+      margin-top: 16px;
+      width: 132px;
+      color: white;
+    }
+  }
+}
+
+.skeleton-search {
+  height: 40px;
+  border-radius: 12px 12px 0 0;
+  background-color: $skeleton-color-transparent;
+  @include skeleton-animation();
+}
+
+.light {
+  &.pe-message-chat-room-list__search {
+    background-color: #ffffff;
+
+    .input-content-wrapper .label-container input {
+      background-color: rgb(19, 20, 20, 0.2);
+    }
+  }
+
+  &.pe-message-chat-room-list__integration {
+    color: #6E6D6C;
+  }
+
+  &.pe-message-chat-room-list__row_active {
+    .pe-message-chat-room-list__integration {
+      color: #ffffff;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  title="Basic renderer check: Desktop"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.all"
+  [context]="(content$ | async).basic.context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  title="Basic renderer check: Tablet"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.tablet"
+  [context]="(content$ | async).basic.context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  title="Basic renderer check: Mobile"
+  [element]="(content$ | async).basic.element"
+  [stylesheet]="(content$ | async).basic.stylesheet.mobile"
+  [context]="(content$ | async).basic.context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-all-children"
+  title= "Basic renderer check: All possible children places"
+  [element]="(content$ | async).allElements.element"
+  [stylesheet]="(content$ | async).allElements.stylesheet"
+  [context]="(content$ | async).allElements.context"
+  [options]="{ screen: 'desktop', scale: 2, locale: 'en' }"
+></sandbox-renderer-preview>

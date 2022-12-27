@@ -1,0 +1,48 @@
+basic:
+  element:
+    id: document
+    type: document
+    children:
+    - id: section-1
+      type: section
+      children:
+      - id: video-1
+        type: video
+        data:
+          sources:
+          - https://www.kj.com/sites/default/files/video/530262769.mp4
+          settings:
+            autoplay: false
+            controls: true
+            loop: false
+  stylesheet:
+    all:
+      video-1:
+        width: 500
+        height: 200
+    mobile:
+      video-1:
+        width: 400
+        height: 200
+fullwidth:
+  element:
+    id: document
+    type: document
+    children:
+    - id: section-1
+      type: section
+      children:
+      - id: video-1
+        type: video
+        data:
+          sources:
+          - https://www.kj.com/sites/default/files/video/530262769.mp4
+          settings:
+            autoplay: true
+            controls: false
+            loop: true
+  stylesheet:
+    all:
+      section-1:
+        height: 400
+    mobile: {}

@@ -1,0 +1,31 @@
+name: Testcases
+data:
+    productPages: /products/:productId
+    categoryPages: /category/:categoryId
+routing:
+  - url: /
+    pageId: testcases-first
+    routeId: route-1
+  - url: /second
+    pageId: testcases-second
+    routeId: route-2
+  - url: /third
+    pageId: testcases-third
+    routeId: route-3
+  - url: /transforms
+    pageId: testcases-transforms
+    routeId: route-4
+  - url: /resize
+    pageId: testcases-resize
+    routeId: route-5
+  - url: /repaints
+    pageId: testcases-repaints
+    routeId: route-6
+pages:
+  - first
+  - second
+  - third
+  - transforms
+  - resize
+  - repaints
+context: {}

@@ -1,0 +1,25 @@
+<div class="nav-content">
+  <pe-grid [theme]="theme">
+    <pe-grid-sidenav #sideNav
+      [disableSkeleton]="true"
+      [sidenavTitle]="'subscriptions-app.title' | translate"
+    >
+      <pe-folders
+        [disableSkeleton]="true"
+        [selectFolder]="selectFolder"
+        [folders]="sidebarTree"
+        (selectedFolder)="navigateTo($event)"
+        [sideNav]="sideNav"
+      ></pe-folders>
+    </pe-grid-sidenav>
+    <pe-grid-content
+      [mobileTitle]="mobileTitle$ | async"
+      [showMobileTitle]="showMobileTitle$ | async"
+      [showMobileFooter]="false"
+    >
+      <div style="position: relative; height: 100%; width: 100%">
+        <router-outlet></router-outlet>
+      </div>
+    </pe-grid-content>
+  </pe-grid>
+</div>

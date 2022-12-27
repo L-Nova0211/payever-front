@@ -1,0 +1,8 @@
+<div class="container" [title]="item.columns | transactionLabel:'type'">
+  <div class="payment-icon" [title]="('integrations.payments.' + item?.data.type + '.title') | translate">
+    <svg class="abbreviation">
+      <use [attr.xlink:href]="getIcon"></use>
+    </svg>
+  </div>
+  <span class="label">{{ item.columns | transactionLabel:'type' }}</span>
+</div>

@@ -1,0 +1,40 @@
+<ng-container *ngFor="let variant of variantsSection">
+  <div class="variant">
+    <div *ngIf="variant.images && variant.images.length; then image else placeholder"></div>
+    <ng-template #image>
+      <div class="image" [style.background-image]="'url('+ getImagePath(variant.images[0]) +')'">
+      </div>
+    </ng-template>
+    <ng-template #placeholder>
+      <div class="placeholder">
+        <mat-icon svgIcon="img-placeholder"></mat-icon>
+      </div>
+    </ng-template>
+    <div class="form">
+      <peb-form-field-input
+        [label]="'sections.variant' | translate"
+        appearance="label"
+        class="disabled form-field-input">
+        <input [value]="getVariant(variant.options)" type="text" disabled/>
+      </peb-form-field-input>
+      <peb-form-field-input
+        label="SKU"
+        appearance="label"
+        class="disabled form-field-input"
+        [isFieldInvalid]='errors && !variant.sku'
+        [errorMessage]="'variantEditor.errors.sku_is_required' | translate">
+        <input [value]="variant.sku || ''" type="text" disabled/>
+      </peb-form-field-input>
+    </div>
+    <button class="edit" (click)="onEdit(variant.id)">
+      <mat-icon svgIcon="edit-variant-icon"></mat-icon>
+    </button>
+    <button class="remove" (click)="onDelete(variant.id)">
+      <mat-icon svgIcon="remove-icon"></mat-icon>
+    </button>
+  </div>
+</ng-container>
+
+<button (click)="onCreateNew()" [attr.qa-products]="'add-variant'" class="add">
+  {{'variantEditor.add_variant' | translate}}
+</button>

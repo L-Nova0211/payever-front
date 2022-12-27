@@ -1,0 +1,21 @@
+<div class="snackbar-error">
+  <svg class="snackbar-error__icon" xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20">
+    <path fill="#FFBE00" d="M14.331 4.196L21.8 17.638c.715 1.288.251 2.911-1.036 3.626-.396.22-.842.336-1.295.336H4.532c-1.473
+      0-2.667-1.194-2.667-2.667 0-.453.116-.899.336-1.295L9.669 4.196c.715-1.287 2.339-1.751 3.626-1.036.435.242.794.6 1.036 1.036z"
+      transform="translate(-413 -84) translate(389 71) translate(23 11)"
+    />
+    <path fill="#000" fill-rule="nonzero" d="M12.85 15.912l.153-7.512h-2.126l.142 7.512h1.83zm-.855 3.288c.394 0
+      .694-.105.898-.314.205-.209.307-.473.307-.792 0-.319-.102-.587-.307-.803-.204-.216-.504-.324-.898-.324-.395
+      0-.693.108-.894.324-.2.216-.301.484-.301.803 0 .32.1.583.301.792.201.21.499.314.894.314z"
+      transform="translate(-413 -84) translate(389 71) translate(23 11)"
+    />
+  </svg>
+  <span class="snackbar-error__no">{{ data.errorText || 'Oh no!' }} </span>
+  <span [ngStyle]="data.textStyles" class="snackbar-error__text" [innerHTML]="data.text || 'Something went wrong'"></span>
+  <span [ngStyle]="data.actionStyles" class="snackbar-error__actions">
+    <span *ngIf="data?.retryAction" class="snackbar-error__retry snackbar-error__btn" (click)="onRetryClick()">{{ data.retryBtnCaption || 'Try Again' }}</span>
+    <span class="snackbar-error__hide snackbar-error__btn" (click)="onHideClick()">{{ data.hideBtnCaption || 'Hide' }}</span>
+  </span>
+</div>
+
+

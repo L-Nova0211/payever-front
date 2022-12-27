@@ -1,0 +1,23 @@
+<div class="general-section" [ngClass]="theme">
+  <div class="general-section__cart">
+    <ng-container *ngIf="cart?.items?.length; else empty">
+      <div class="cart-item" *ngFor="let item of cart?.items;">
+        <div class="cart-item__thumbnail">
+          <img #img [src]="productImage(item.thumbnail)" (error)="img.src = fallbackImage">
+        </div>
+        <div class="cart-item__details">
+          <div class="cart-item__details-name">{{item.name}}</div>
+          <div class="cart-item__details-price">
+            {{item.quantity}} x {{item.price | currency: transaction.currency:undefined:undefined:locale}}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #empty>
+  <peb-form-background>
+    <div class="empty-data">{{ 'transactions.sections.products.list_is_empty' | translate }}</div>
+  </peb-form-background>
+</ng-template>

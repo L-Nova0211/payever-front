@@ -1,0 +1,45 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="networkForm"
+  [ngClass]="theme"
+>
+  <peb-logo-picker
+    [abbrevation]="networkForm.controls.name.value | abbreviation"
+    [buttonLabel]="'appointments-app.actions.add_logo' | translate"
+    (deleteLogo)="removeImage()"
+    (file)="setImage($event, networkForm.controls.logo)"
+    [image]="networkForm.controls.logo.value"
+    [isImageLoading]="imageLoading"
+  ></peb-logo-picker>
+
+  <div [style.margin-top.px]="16"></div>
+  <peb-form-background>
+    <peb-form-field-input
+      animated="true" 
+      appearance="label"
+      [errorMessage]="getErrorMessage"
+      [isFieldInvalid]="!isUnique || networkForm.controls.name.invalid"
+      [label]="'appointments-app.network_editor.network_name.label' | translate"
+    >
+      <input
+        formControlName="name"
+        (input)="validateName($event)"
+        [placeholder]="'appointments-app.network_editor.network_name.placeholder' | translate"
+      />
+    </peb-form-field-input>
+  </peb-form-background>
+  
+  <div
+    *ngIf="peOverlayData?._id && !peOverlayData?.enabled"
+    [style.margin-top.px]="16"
+  >
+    <peb-form-background>
+      <button pe-form-button
+        (click)="removeNetwork(networkForm.controls._id.value)"
+        color="warn"
+      >
+        {{ 'appointments-app.actions.delete_calendar' | translate }}
+      </button>
+    </peb-form-background>
+  </div>
+</form>

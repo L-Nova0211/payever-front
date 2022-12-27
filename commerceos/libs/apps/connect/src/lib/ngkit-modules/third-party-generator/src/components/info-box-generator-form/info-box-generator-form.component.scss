@@ -1,0 +1,13 @@
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .info-box-generator-form {
+    &__button.mat-button-block {
+      margin-top: 16px;
+      border-radius: 12px !important;
+    }
+
+    .info-box-generator-form__fieldset {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  }
+}

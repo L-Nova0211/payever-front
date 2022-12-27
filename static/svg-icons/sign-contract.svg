@@ -1,0 +1,8 @@
+<svg width="64px" height="46" viewBox="0 0 64 46" fill="none">
+  <rect x="25.0412" y="11.6797" width="14.5164" height="6.51339" transform="rotate(-45 25.0412 11.6797)" stroke="black"
+    stroke-width="2"></rect>
+  <path d="M55.073 13.1233L40.3362 6.4707L30.0625 16.4918L36.2941 31.397L62.4836 39.397L55.073 13.1233Z" stroke="black"
+    stroke-width="2"></path>
+  <path d="M43.6211 20.6172L62.5685 39.5646" stroke="black" stroke-width="2"></path>
+  <line y1="44.7109" x2="64" y2="44.7109" stroke="black" stroke-width="2"></line>
+</svg>

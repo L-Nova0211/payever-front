@@ -1,0 +1,13 @@
+<div class="testing-mode">
+  <pe-info-box [roundBorder]="true"
+               [notFullwidthOnMobile]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [title]="'settings.testingMode.title' | translate"
+               (onClose)="goBack()"
+  >
+    <ng-container content>
+      <menu-list [menuList]="testingPanel"></menu-list>
+    </ng-container>
+  </pe-info-box>
+</div>

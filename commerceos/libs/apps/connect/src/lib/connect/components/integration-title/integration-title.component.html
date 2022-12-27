@@ -1,0 +1,53 @@
+<div class="title" *ngIf="integration">
+
+  <!-- Integration icon -->
+  <div class="title__icon">
+      <svg class="icon icon-128">
+        <use [attr.xlink:href]="integration.displayOptions.icon"></use>
+      </svg>
+  </div>
+
+  <div class="title__text">
+
+    <!-- Upper title -->
+    <div class="upper-title">
+      <div class="upper-title__text-container">
+        <div class="upper-title__main-title">
+          {{ integration.displayOptions.title | translate }}
+        </div>
+        <div class="upper-title__description">
+            {{ integration.installationOptions.price | translate }}
+        </div>
+        <div class="upper-title__author">
+            {{ integration.installationOptions.developer | translate }}
+        </div>
+      </div>
+      <div class="upper-title__buttons">
+          <integration-button [integration]="integration">
+          </integration-button>
+          <integration-action-menu *ngIf="installed" [integration]="integration">
+          </integration-action-menu>
+      </div>
+    </div>
+
+    <!-- Subline title -->
+    <div class="lower-title">
+        <div *ngIf="integration.avgRating" class="lower-title__rating-container">
+          <div class="lower-title__rating-inline">
+              <div class="lower-title__rating-count">{{ integration.avgRating | number : '1.1-1' }}</div>
+              <connect-integration-rating-stars *ngIf="displayRating" [iconClass]="'icon-20'" [decimalMode]="true" [currentRating]="integration.avgRating"></connect-integration-rating-stars>
+          </div>
+          <div class="lower-title__rating-subline">
+            {{ integration.ratingsCount }} {{ 'integration_full_page.title.rating' | translate }}
+          </div>
+        </div>
+        <div *ngIf="!integration.avgRating" class="lower-title__rating-container">
+          {{ 'integration_full_page.title.no_rating' | translate }}
+        </div>
+        <div class="lower-title__downloads">
+          <div class="lower-title__downloads-count">{{ integration.timesInstalled ? integration.timesInstalled : 0 }}</div>
+          <div class="lower-title__downloads-title">{{ 'integration_full_page.title.times_downloaded' | translate }}</div>
+        </div>
+    </div>
+  </div>
+</div>

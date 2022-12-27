@@ -1,0 +1,289 @@
+@import '../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin scripts-dialog($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $box-shadow-color: map-get($theme-config, box-shadow-color);
+  $button-text: map-get($theme-config, button-text);
+  $dropdown-panel: map-get($theme-config, dropdown-panel);
+  $primary: map-get($theme-config, primary);
+  $text-color: map-get($theme-config, text-color);
+  $toggle-button: map-get($theme-config, toggle-button);
+
+  background-color: $dropdown-panel !important;
+  box-shadow: 0 2px 12px 0 $box-shadow-color !important;
+
+  .scripts-dialog {
+    &__header-action {
+      color: #78787d;
+    }
+    &__header-action--success {
+      color: $button-text !important;
+    }
+    &__title {
+      color: $text-color !important;
+    }
+    &__script-item,
+    &__list-panel-header,
+    &__list-panel-header:hover {
+      background-color: $primary !important;
+      color: $text-color !important;
+    }
+    &__script-toggle--checked {
+      background-color: $toggle-button !important;
+    }
+    &__script-action {
+      color: $button-text !important;
+    }
+    &__action {
+      background-color: $accent !important;
+      color: $button-text !important;
+
+      span {
+        color: $button-text !important;
+      }
+    }
+  }
+
+  .script-dialog {
+    &__field {
+      background-color: $primary !important;
+    }
+    &__title,
+    &__confirm,
+    &__confirm-title,
+    &__confirm-subtitle {
+      color: $text-color !important;
+    }
+  }
+}
+
+.script-dialog,
+.scripts-dialog {
+  width: 436px;
+
+  &__panel {
+    border-radius: 20px;
+    max-width: unset !important;
+
+    &.dark,
+    &.default {
+      @include scripts-dialog($dark-theme);
+    }
+
+    &.light {
+      @include scripts-dialog($light-theme);
+    }
+
+    &.transparent {
+      @include scripts-dialog($transparent-theme);
+    }
+
+    .mat-dialog-container {
+      background-color: unset !important;
+      height: 100%;
+      outline: 0;
+      overflow: auto;
+      padding: unset;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 71px;
+    justify-content: space-between;
+    padding: 19px 12px 16px;
+    width: 100%;
+  }
+
+  &__header-action {
+    cursor: pointer;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 12px;
+    text-align: center;
+  }
+
+  &__list {
+
+  }
+
+  &__list-accordion {
+  }
+
+  // analog PebExpandablePanel
+  &__list-panel {
+    background: transparent;
+    border-radius: 0 !important;
+    box-shadow: none;
+    margin: unset !important;
+
+    &.mat-expansion-panel-spacing {
+      margin-bottom: 16px !important;
+    }
+
+    &:not(:first-child) {
+      margin-top: 0 !important;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 16px 12px 0;
+    }
+  }
+
+  &__list-panel-header {
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 40px;
+    padding: 9px 24px !important;
+    text-transform: none;
+  }
+
+  // analog UI/PebFormGroupBackground
+
+  // analog UI/list <pe-list-section> with toggle and open
+  &__scripts {
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+
+  &__script-item {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 48px;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+
+  &__script-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+  }
+
+  &__script-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  // analog UI/message
+  &__empty {
+    border-radius: 12px;
+    background-color: #eb4653;
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
+    padding: 2px 16px;
+    height: 32px;
+    box-sizing: border-box;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 12px !important;
+  }
+
+  // analog UI/PebFormFieldInput
+  &__action {
+    border-radius: 8px !important;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 12px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+
+    span {
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}
+
+.script-dialog {
+  width: 436px;
+
+  &__content {
+    margin: 0 !important;
+    padding: 0 12px 16px !important;
+  }
+  &__fields {
+    overflow: hidden;
+    border-radius: 8px !important;
+    &:not(:last-child) {
+      margin-bottom: 16px !important;
+    }
+  }
+  &__field {
+    width: 100%;
+  }
+
+
+
+  &__confirm {
+    width: 260px;
+    padding: 16px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__confirm-icon {
+    height: 65px !important;
+    width: 65px !important;
+    margin-bottom: 18px !important;
+  }
+
+  &__confirm-title {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    line-height: 1.21 !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+    
+  }
+
+  &__confirm-subtitle {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px !important;
+    margin-bottom: 18px !important;
+  }
+
+  &__confirm-actions {
+    
+  }
+  &__confirm-action {
+    &--confirm {
+
+    }
+    &--reject {
+
+    }
+  }
+}

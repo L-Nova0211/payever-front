@@ -1,0 +1,58 @@
+<form [formGroup]="form" class="form" [ngClass]="theme">
+  <h3 class="page-title">{{ 'pages.business_info.title' | translate }}</h3>
+
+  <div class="fieldset">
+    <p class="fieldset__description logo-description">
+      {{ 'pages.business_info.fields.logo.label' | translate | uppercase }}
+    </p>
+
+    <peb-form-background>
+      <div class="business-logo-picker">
+        <span class="logo-preview" *ngIf="form.value.logo; else emptyLogo;">
+          <img class="logo-preview__image" [src]="previewImageUrl" alt="">
+          <span class="logo-preview__name">{{filename | slice: 0 : 40}}</span>
+        </span>
+
+        <ng-template #emptyLogo>
+          <span class="logo-preview">
+            <svg  class="logo-preview__image">
+              <use xlink:href="#icon-settings-appearance"></use>
+            </svg>
+            <span class="logo-preview__name">{{'pages.business_info.fields.logo.empty'| translate}}</span>
+          </span>
+        </ng-template>
+
+        <span class="logo-picker">
+          <mat-spinner class="custom-spinner" diameter="20" *ngIf="loading"></mat-spinner>
+          <button peb-text-button color="confirm">
+            <label class="logo-picker__action" [attr.for]="uniqueId">
+              {{ 'pages.business_info.fields.logo.action' | translate}}
+            </label>
+          </button>
+          <input [attr.id]="uniqueId" [attr.name]="uniqueId" accept="image/*" type="file" class="hidden" (change)="uploadImage($event)">
+        </span>
+      </div>
+    </peb-form-background>
+  </div>
+
+  <div class="fieldset name-field">
+    <p class="fieldset__description name-description">
+      {{ 'pages.business_info.fields.business_name.label' | translate | uppercase }}
+    </p>
+    <peb-form-background>
+      <peb-form-field-input>
+        <input class="business-name" formControlName="name">
+      </peb-form-field-input>
+    </peb-form-background>
+  </div>
+
+  <div class="fieldset remove-field">
+    <peb-form-background>
+      <div class="remove-button">
+        <button peb-text-button color="warn" (click)="onDeleteBusiness()">
+          <span class="remove-button__text">{{ 'pages.business_info.action' | translate}}</span>
+        </button>
+      </div>
+    </peb-form-background>
+  </div>
+</form>

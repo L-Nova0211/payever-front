@@ -1,0 +1,9 @@
+<ng-template>
+  <div class="contacts-dialog-wrapper">
+    <div class="contacts-dialog-wrapper__header">
+      <button class="header-buttons close-button" (click)="closeContactDialog()">Cancel</button>
+      <button class="header-buttons add-button" (click)="addContactDialog()">Add</button>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>

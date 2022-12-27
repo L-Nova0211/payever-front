@@ -1,0 +1,12 @@
+<div class="move-to-folder" [ngClass]="theme">
+  <form action="">
+    <peb-form-background>
+      <peb-select label="{{'transactions.folder.select_folder' | translate}}" selectType="label"
+        (changed)="onSelected($event)">
+        <peb-select-option [value]="null" [label]="'transactions.move_to_root' | translate"></peb-select-option>
+        <peb-select-option *ngFor="let option of folders" [value]="option._id" [label]="option.name">
+        </peb-select-option>
+      </peb-select>
+    </peb-form-background>
+  </form>
+</div>

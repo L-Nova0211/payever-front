@@ -1,0 +1,111 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.tutorial-icon {
+  width: 48px;
+  height: 48px;
+  background-size: 48px 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto 0;
+}
+.tutorial-info {
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  width: 230px;
+  margin-left: 16px;
+}
+.tutorial-title {
+  font-style: normal;
+  line-height: 1.05;
+  color: $color-secondary;
+}
+.tutorial-description {
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.46;
+  color: $color-secondary;
+  font-weight: 300;
+}
+.icon-play {
+  margin: auto 0 auto auto;
+}
+
+@media (max-width: $viewport-breakpoint-sm-1 - 1) {
+  .tutorial-icon {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+  }
+
+  .icon-play {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: $viewport-breakpoint-xs-1) {
+  .tutorial-info {
+    width: 150px;
+  }
+
+  .tutorial-description {
+    font-size: 11px;
+  }
+}
+
+:host {
+  .mat-list-transparent {
+    width: 100%;
+
+    .mat-list-item-content {
+      padding: 0;
+    }
+  }
+  .mat-list .mat-list-item .mat-list-item-content {
+    padding: 0;
+  }
+  .app-uninstalled {
+    background-color: var(--color-primary-4) !important;
+  }
+  .mat-raised-button.install-button {
+    min-width: 77px;
+  }
+  .icon {
+    color: $color-secondary-0;
+    display: block;
+    width: $icon-size-20;
+    height: $icon-size-20;
+    &.watch-icon {
+      width: $icon-size-10;
+      height: $icon-size-10;
+      margin-right: $margin-adjust * 2;
+    }
+    &.icon-play-tutorial {
+      color: $color-secondary-0;
+    }
+  }
+  .tutorial-title {
+    margin-left: $margin-adjust * 3;
+    white-space: nowrap;
+  }
+  .mat-list-item-col {
+    display: flex;
+    align-items: center;
+  }
+  .tutorial-item {
+    .text-right {
+      @include pe_flexbox; // fix vertical alignment in IE11
+      &.tutorial-watched {
+        opacity: 0.25;
+        width: 50px;
+        svg.icon {
+          width: $icon-size-20;
+          height: $icon-size-20;
+        }
+      }
+    }
+  }
+}

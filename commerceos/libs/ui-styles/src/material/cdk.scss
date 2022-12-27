@@ -1,0 +1,23 @@
+//
+// CDK
+// ----------------------------
+
+.pe-bootstrap {
+
+  .cdk-overlay {
+
+    &-container {
+      z-index: $zindex-top-overlay;
+    }
+
+
+    // Style variations
+    // ---------------------------
+
+    &-micro {
+      margin-top: 0;
+      margin-bottom: $grid-unit-y * 2;
+      height: calc(100% - #{$grid-unit-y} * 2);
+    }
+  }
+}

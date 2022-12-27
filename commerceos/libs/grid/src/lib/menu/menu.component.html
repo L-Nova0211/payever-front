@@ -1,0 +1,42 @@
+<div *ngIf="menu?.title" class="pe-grid-menu__headline" [class.is-search]="isSearchMenu">
+  <span>{{ menu.title | translate }}</span>
+  <mat-icon
+    *ngIf="menu.showCloseButton !== false"
+    svgIcon="small-close-icon"
+    aria-hidden="false"
+    (click)="closeMenu.emit()"
+  ></mat-icon>
+</div>
+<ul class="pe-grid-menu__list" *ngIf="menu?.items?.length">
+  <li
+    class="pe-grid-menu__item icon-position__{{getIconPosition(item.iconPosition)}}"
+    [class.disable]="item.disabled"
+    [ngClass]="getDividers(item)"
+    [style.color]="item.color"
+    *ngFor="let item of menuItems"
+    [class.active]="item.active && !item.checkbox"
+    (click)="!item.checkbox ? selected(item) : onChange(item, !item.checked$?.value)"
+  >
+    <div class="pe-grid-menu__item-box">
+      <div class="menu__checkbox" *ngIf="item.checkbox && item.checked$">
+        <peb-checkbox
+          [disabled]="isDisabled(item)"
+          class="item-radio"
+          [checked]="item.checked$ | async"
+          (changed)="onChange(item, $event.checked)"
+          (click)="$event.stopPropagation();"
+        ></peb-checkbox>
+      </div>
+      <div class="menu__icon" *ngIf="item.svgIcon || item.defaultIcon">
+        <mat-icon *ngIf="item.defaultIcon" [svgIcon]="item.defaultIcon"></mat-icon>
+        <svg *ngIf="item.svgIcon && !item.defaultIcon"><use [attr.xlink:href]="item.svgIcon"></use></svg>
+      </div>
+      <span [style.color]="item.color">{{ item.label | translate }}</span>
+    </div>
+  </li>
+</ul>
+<div *ngIf="menu?.templateRef">
+  <ng-container [ngTemplateOutlet]="menu.templateRef" [ngTemplateOutletContext]="{
+    menuRef: this
+  }"></ng-container>
+</div>

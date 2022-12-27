@@ -1,0 +1,111 @@
+<peb-editor-sidebar-tabs [activeTabIndex]="activeTabIndex$ | async">
+
+  <peb-editor-sidebar-tab [title]="getPebMotionTypeConfig(PebMotionType.BuildIn)?.title || PebMotionType.BuildIn">
+    <ng-container *ngIf="hasMotion(PebMotionType.BuildIn)" [ngTemplateOutlet]="motionActionsView"
+      [ngTemplateOutletContext]="{motionType:PebMotionType.BuildIn}">
+    </ng-container>
+    <ng-container
+      [ngTemplateOutlet]="selectTpl"
+      [ngTemplateOutletContext]="{ label: 'MOTION', options: getAnimationTypeOptions(PebMotionType.BuildIn), formControl: component?.buildIn.form.get('type') }"
+    ></ng-container>
+
+    <ng-container *ngIf="hasMotion(PebMotionType.BuildIn)">
+      <ng-container
+        [ngTemplateOutlet]="selectTpl"
+        [ngTemplateOutletContext]="{ label: 'EVENT', options: getEventOptions(PebMotionType.BuildIn), formControl: component?.buildIn.form.get('event') }"
+      ></ng-container>
+      <ng-container
+        [ngTemplateOutlet]="effectFormsTpl"
+        [ngTemplateOutletContext]="{ motionType: PebMotionType.BuildIn }"
+      ></ng-container>
+    </ng-container>
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab [title]="getPebMotionTypeConfig(PebMotionType.Action)?.title || PebMotionType.Action" *ngIf="getEventOptions(PebMotionType.Action).length">
+
+    <ng-container *ngIf="hasMotion(PebMotionType.Action)" [ngTemplateOutlet]="motionActionsView"
+      [ngTemplateOutletContext]="{motionType:PebMotionType.Action}">
+    </ng-container>
+
+    <ng-container
+      [ngTemplateOutlet]="selectTpl"
+      [ngTemplateOutletContext]="{ label: 'EVENT', options: getEventOptions(PebMotionType.Action), formControl: component?.action.form.get('event') }"
+    ></ng-container>
+
+    <div class="group">
+      <peb-select
+        *ngIf="component?.action.form.get('eventType') && component?.action.form.get('event').value === PebMotionEvent.OnDataPoint"
+        label="EVENT"
+        [options]="getMotionEventTypeOptions()"
+        [formControl]="component.action.form.get('eventType')"
+      ></peb-select>
+    </div>
+
+    <ng-container *ngIf="component?.action.form.get('event').value !== PebMotionEvent.None">
+      <ng-container
+        [ngTemplateOutlet]="selectTpl"
+        [ngTemplateOutletContext]="{ label: 'MOTION', options: getAnimationTypeOptions(PebMotionType.Action), formControl: component?.action.form.get('type') }"
+      ></ng-container>
+
+      <ng-container
+        *ngIf="hasMotion(PebMotionType.Action)"
+        [ngTemplateOutlet]="effectFormsTpl"
+        [ngTemplateOutletContext]="{ motionType: PebMotionType.Action }"
+      ></ng-container>
+    </ng-container>
+  </peb-editor-sidebar-tab>
+
+  <peb-editor-sidebar-tab [title]="getPebMotionTypeConfig(PebMotionType.BuildOut)?.title || PebMotionType.BuildOut">
+    <ng-container *ngIf="hasMotion(PebMotionType.BuildOut)" [ngTemplateOutlet]="motionActionsView"
+      [ngTemplateOutletContext]="{motionType:PebMotionType.BuildOut}">
+    </ng-container>
+
+    <ng-container
+      [ngTemplateOutlet]="selectTpl"
+      [ngTemplateOutletContext]="{ label: 'MOTION', options: getAnimationTypeOptions(PebMotionType.BuildOut), formControl: component?.buildOut.form.get('type') }"
+    ></ng-container>
+
+    <ng-container
+      *ngIf="hasMotion(PebMotionType.BuildOut)"
+      [ngTemplateOutlet]="effectFormsTpl"
+      [ngTemplateOutletContext]="{ motionType: PebMotionType.BuildIn }"
+    ></ng-container>
+  </peb-editor-sidebar-tab>
+
+</peb-editor-sidebar-tabs>
+
+<ng-template #selectTpl let-formControl="formControl" let-options="options" let-label="label">
+  <div class="group" *ngIf="formControl">
+    <div class="group__select-label">
+      <span>{{ label }}</span>
+    </div>
+    <peb-select
+      [formControl]="formControl"
+      [label]="label"
+      [options]="options"
+    ></peb-select>
+    <ng-content></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #motionActionsView let-motionType="motionType">
+  <li *ngFor="let action of motionActions(motionType)" (click)="selectAction(action, motionType)">{{ action }}</li>
+</ng-template>
+
+<ng-template #effectFormsTpl let-motionType='motionType'>
+
+  <ng-container
+    *ngIf="hasDirection(motionType)"
+    [ngTemplateOutlet]="selectTpl"
+    [ngTemplateOutletContext]="{ label: 'DIRECTION', formControl: getFormGroup(motionType).get('direction'), options: getMotionDirectionOptions() }"
+  ></ng-container>
+
+  <div class="effects" *ngFor="let effect of motionEffects">
+    <span>{{ effect }}</span>
+    <peb-number-input
+      [units]="unit(effect)"
+      [formControl]="getFormControl(effect, motionType)"
+      [min]="0"
+    ></peb-number-input>
+  </div>
+</ng-template>

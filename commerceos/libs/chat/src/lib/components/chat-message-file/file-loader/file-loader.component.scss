@@ -1,0 +1,74 @@
+@import '../../../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin getMessageFileLoaderTheme($theme-config) {
+  .message-attachment-loader__spinner {
+    stroke: map-get($theme-config, active-text);
+  }
+
+  .message-attachment-loader {
+    &__loading {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &__abort-loading,
+    &__download,
+    &__preloader,
+    &__spinner {
+      color: map-get($theme-config, active-text);
+    }
+  }
+}
+
+:host {
+  &.dark {
+    @include getMessageFileLoaderTheme($dark-theme);
+  }
+  &.light {
+    @include getMessageFileLoaderTheme($light-theme);
+  }
+  &.transparent {
+    @include getMessageFileLoaderTheme($transparent-theme);
+  }
+}
+
+.message-attachment-loader {
+  &__preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(50px);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  &__loading {
+    position: relative;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+  }
+
+  &__abort-loading,
+  &__download,
+  &__preloader,
+  &__spinner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__abort-loading,
+  &__download,
+  &__spinner {
+    margin: 2px;
+    height: 40px;
+    width: 40px;
+  }
+}

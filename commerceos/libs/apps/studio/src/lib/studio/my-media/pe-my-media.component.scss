@@ -1,0 +1,119 @@
+.pe-my-media {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .preview {
+    display: flex;
+    flex: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+  }
+  .container-fluid {
+    padding: 0 20px 20px;
+    display: flex;
+    flex: 1;
+    &.dark {
+      background-color: #24272e;
+    }
+    &.transparent {
+      -webkit-backdrop-filter: blur(37.5px);
+      backdrop-filter: blur(37.5px);
+      box-shadow: 3px 3px 30px 0 rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    &.light {
+      background-color: #ffffff;
+    }
+  }
+  .bg-preview {
+    display: flex;
+    flex: 1;
+  }
+  .navbar-detail {
+    display: flex;
+    height: 5%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    &.dark {
+      background-color: #24272e;
+    }
+    &.transparent {
+      -webkit-backdrop-filter: blur(37.5px);
+      backdrop-filter: blur(37.5px);
+      box-shadow: 3px 3px 30px 0 rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    &.light {
+      background-color: #ffffff;
+      svg {
+        g {
+          fill: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+    div {
+      display: flex;
+    }
+    .actions-detail {
+      width: 20%;
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 85px;
+      div {
+        min-width: 20px;
+        cursor: pointer;
+      }
+      .mat-icon {
+        height: 16px;
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+          background: none;
+          border: none;
+          outline: none;
+          box-shadow: none;
+        }
+        svg {
+          height: 16px;
+        }
+      }
+    }
+
+    &__close {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.preview-modal-overlay {
+  .mat-dialog-container {
+    padding: 0;
+  }
+}

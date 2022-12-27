@@ -1,0 +1,24 @@
+.products-dialog {
+  border-radius: 16px;
+  overflow: hidden;
+
+  mat-dialog-container {
+    overflow: hidden;
+  }
+
+  .item__content {
+    height: 100% !important;
+  }
+
+  .grid-view-container {
+    overflow-x: hidden;
+  }
+
+  .items-list {
+    --gap-size: 0px;
+  }
+
+  pe-data-grid-item {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .plugin-main-wrap-container {
+    min-width: 100%;
+    padding: 0;
+
+
+    .pe-info-box {
+      width: 100%;
+      padding: 0;
+
+      .info-box {
+        .mat-card {
+          border-radius: 0;
+        }
+      }
+    }
+
+    &__api-keys {
+      .add-button {
+        height: 40px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 12px;
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        color: #0091df;
+        cursor: pointer;
+        background-color: $content-background-color;
+      }
+    }
+  }
+
+  .plugin-main-wrap .mat-card-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    //need for safari 10.1+
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      margin-right: -4px;
+      overflow: scroll;
+      overflow-x: hidden;
+    }}
+  }
+
+  .overlay-light {
+    .plugin-main-wrap-container {
+
+      &__api-keys {
+        background-color: $content-light-button-background-color;
+      }
+    }
+  }
+
+  .overlay-transparent {
+    .plugin-main-wrap-container {
+
+      &__api-keys {
+        background-color: $content-transparent-button-background-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+:host {
+  display: inline-block;
+  .business-switcher {
+    display: flex;
+    align-items: center;
+    &__business-name {
+      font-size: 15px;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    .switch-icon {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}
+
+.light {
+  .business-switcher__business-name {
+    color: black;
+  }
+}
+
+.dark , .transparent{
+  .business-switcher__business-name {
+    color: #fff;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

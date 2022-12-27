@@ -1,0 +1,230 @@
+.channel-member-permission {
+  &__switch {
+    border-bottom: solid 1px  #1c1d1e;
+    background-color: #111111;
+
+    &:nth-child(1) {
+      border-radius: 12px 12px 0 0;
+    }
+
+    &:nth-last-child(1) {
+      border-radius: 0 0 12px 12px;
+      border-bottom: none;
+    }
+  }
+
+  &__danger-button {
+    margin-top: 12px;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 40px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #eb4653;
+    border-radius: 12px;
+    background-color: #1c1d1e;
+    margin-bottom: 23px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover,
+    &:active {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &_owner {
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.chat-room-settings {
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 80px;
+      font-size: 32px;
+      font-weight: 600;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &__avatar {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  &__initials {
+    position: relative;
+    font-weight: normal;
+    background: linear-gradient(to bottom, #6E6D6C, #474747);
+    z-index: 1;
+  }
+
+  &__members-wrapper {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  &__action-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+
+      svg {
+        color: white;
+        height: 28px;
+        width: 28px;
+      }
+    }
+
+    span {
+      color: #ffffff;
+      display: block;
+      font-size: 14px;
+      line-height: 1.57;
+      margin-top: 8px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+
+  &__members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      flex: 1;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #eeeeee;
+      text-transform: uppercase;
+    }
+
+    button {
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 12px;
+      height: 20px;
+      justify-content: center;
+      line-height: 1.83;
+      margin-left: 8px;
+      min-width: 45px;
+      padding: 0 8px;
+      text-align: center;
+
+      &:last-of-type {
+        justify-content: space-between;
+      }
+
+      span {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        height: 20px;
+        margin-right: -8px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__members-list {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 58px 58px 58px 58px;
+  }
+
+  &__members-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+
+    span {
+      color: #eeeeee;
+      font-size: 14px;
+      margin-top: 8px;
+      opacity: 0.6;
+      text-align: center;
+    }
+  }
+
+  &__member-icon {
+    align-items: center;
+    background: linear-gradient(to bottom, #6E6D6C, #474747);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    width: 58px;
+    overflow: hidden;
+  }
+
+  &__member-avatar {
+    height: 100%;
+  }
+
+  &__member-initials {
+    color: white;
+    font-size: 24px;
+  }
+}

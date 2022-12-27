@@ -1,0 +1,10 @@
+div {
+  column-gap: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+peb-slide-toggle {
+  display: block;
+  margin-top: 16px;
+}

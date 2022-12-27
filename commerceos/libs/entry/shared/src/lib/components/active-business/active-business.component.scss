@@ -1,0 +1,58 @@
+@import "pe_variables.scss";
+@import "pe_mixins.scss";
+
+.logo.img-circle {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.logo-container {
+  @include pe_flexbox;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -10px;
+}
+.no-margin {
+  margin-bottom: 0;
+}
+.logo-placeholder {
+  position: relative;
+  background-image: $default-logo-gradient;
+
+  h2 {
+    color: $color-white;
+    font-size: 37px;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    margin: 0;
+    font-weight: 500;
+    line-height: 1;
+    height: 35px;
+  }
+}
+.business-title {
+  color: $color-white;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+.business-owner {
+  color: $color-white;
+  font-size: $font-size-micro-1;
+}
+.business-industry {
+  text-align: center;
+  color: $color-white;
+  line-height: normal;
+  font-size: 14px;
+}
+.business-info {
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  @include pe_justify-content(center);
+  margin: 12px 0 32px;
+}

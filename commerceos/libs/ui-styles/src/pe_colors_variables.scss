@@ -1,0 +1,217 @@
+$color-blue:                                      #0084ff !default;
+$color-dark-blue:                                 #0063c7 !default;
+$color-light-blue:                                #d9ecff;
+
+$color-green:                                     #75b636;
+$color-dark-green:                                #057b05;
+
+$color-red:                                       #ff3c30;
+$color-red-1:                                     #ff665d;
+$color-red-2:                                     #fededd;
+$color-red-light:                                 #f8eae9;
+$color-dark-red:                                  #c02f1d;
+
+$color-orange:                                    #ffa115;
+$color-dark-orange:                               #ff8500;
+
+$color-light-yellow:                              #fbe9a7;
+
+$color-toast-error:                               #fd6554;
+
+$color-status-red:                                #ff393c;
+$color-status-green:                              #65c466;
+$color-status-yellow:                             rgb(244, 176, 62);
+
+//# Bootstrap Brand Colors
+$brand-primary:                                   $color-blue; // darken(#428bca, 6.5%) !default;
+$brand-success:                                   $color-green; //#5cb85c !default;
+$brand-info:                                      cyan; // !default;
+$brand-danger:                                    $color-red; //#d9534f !default;
+$brand-warning:                                   $color-orange; //#f0ad4e !default;
+
+$color-white:                                     #ffffff;
+$color-black:                                     #111111;
+
+// Black Shades Colors
+$color-black-pe:                                  rgba($color-black, .85);
+$color-grey-1:                                    rgba($color-black, .8);
+$color-grey-2:                                    rgba($color-black, .6);
+$color-grey-3:                                    rgba($color-black, .45);
+$color-grey-4:                                    rgba($color-black, .3);
+$color-grey-5:                                    rgba($color-black, .15);
+$color-grey-6:                                    rgba($color-black, .07);
+$color-grey-7:                                    rgba($color-black, .03);
+$color-grey-8-light:                              rgba(67, 67, 67, 0.6);
+$color-grey-8-dark:                               rgba(67, 67, 67, 0.8);
+$color-grey-9-light:                              rgba(67, 67, 67, 0.45);
+$color-grey-dark:                                 rgba(35, 35, 35, 0.6);
+
+// White Shades Colors
+$color-white-grey-1:                              rgba($color-white, .07);
+$color-white-grey-2:                              rgba($color-white, .2);
+$color-white-grey-3:                              rgba($color-white, .45);
+$color-white-grey-4:                              rgba($color-white, .6);
+$color-white-grey-5:                              rgba($color-white, .7);
+$color-white-grey-6:                              rgba($color-white, .75);
+$color-white-grey-7:                              rgba($color-white, .8);
+$color-white-grey-8:                              rgba($color-white, .85);
+$color-white-grey-9:                              rgba($color-white, .9);
+$color-white-pe:                                  rgba($color-white, .95);
+
+// Black Solid Colors
+$color-solid-grey-0:                              #1c1c1e;
+$color-solid-grey-1:                              #202020;
+$color-solid-grey-2:                              #343434;
+$color-solid-grey-3:                              #606060;
+
+// Deprecated
+// Do not use
+//# Payever Gray Colors
+$color-justblack:                                 $color-black;
+$color-dark-gray:                                 $color-grey-1;
+$color-gray:                                      $color-grey-2;
+$color-gray-2:                                    #8e8e93;
+$color-gray-3:                                    $color-grey-4;
+$color-gray-4:                                    #cccccc;
+$color-gray-5:                                    #242424;
+$color-light-gray-1:                              $color-grey-5;
+$color-light-gray-1-rgba:                         rgba($color-grey-1,.2);
+$color-light-gray-2:                              $color-white-grey-9;
+$color-light-gray-2-rgba:                         rgba($color-grey-1,.1);
+$color-light-gray-3:                              #f2f2f2;
+$color-light-gray-hover-rgba:                     rgba($color-grey-3,.1);
+$color-very-light-gray:                           $color-grey-7;
+
+//# Bootstrap Gray Colors
+// Need for bootstrap only
+// Do not use
+$gray-base:                                       $color-black; //#000 !default;
+$gray-darker:                                     $color-black; // lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:                                       $color-black; // lighten($gray-base, 20%) !default;   // #333
+$gray:                                            $color-grey-2; // lighten($gray-base, 33.5%) !default; // #555
+$gray-light:                                      $color-gray-2; // lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:                                    $color-gray-3; // lighten($gray-base, 93.5%) !default; // #eee
+
+//# Social Network Colors
+$color-facebook:                                  #45619d;
+$color-twitter:                                   #50abf1;
+$color-linkedin:                                  #0077b5;
+$color-santander:                                 #FF0000;
+$color-paypal:                                    #179BD7;
+$color-sofort:                                    #EE7F00;
+$color-paymill:                                   #F05000;
+
+$default-logo-gradient:                           linear-gradient(#a0a7aa,#808893);
+
+// Theme dependent variables. Use these variables if the color needs to change depending on theme.
+// By default uses the exsting colors
+
+$color-primary:                                   var(--color-primary, $color-black);
+$color-primary-0:                                 var(--color-primary-0, $color-black-pe);
+$color-primary-1:                                 var(--color-primary-1, $color-grey-1);
+$color-primary-2:                                 var(--color-primary-2, $color-grey-2);
+$color-primary-3:                                 var(--color-primary-3, $color-grey-9-light);
+$color-primary-4:                                 var(--color-primary-4, $color-grey-4);
+$color-primary-5:                                 var(--color-primary-5, $color-grey-5);
+$color-primary-6:                                 var(--color-primary-6, $color-grey-6);
+$color-primary-7:                                 var(--color-primary-7, $color-grey-7);
+$color-primary-8:                                 var(--color-primary-8, $color-grey-8-light);
+$color-primary-8-dark:                            var(--color-primary-8-dark, $color-grey-8-dark);
+$color-primary-8-inverse:                         var(--color-primary-8-inverse, rgba(240, 240, 240, 0.15));
+$color-primary-9:                                 var(--color-primary-9, $color-grey-9-light);
+$color-primary-overlap:                           var(--color-primary-overlap, #616161);
+$color-primary-light-overlap:                     var(--color-primary-light-overlap, rgba(113, 113, 113, 0.2));
+$color-secondary:                                 var(--color-secondary, $color-white);
+$color-secondary-0:                               var(--color-secondary-0, $color-white-pe);
+$color-secondary-1:                               var(--color-secondary-1, $color-white-grey-1);
+$color-secondary-2:                               var(--color-secondary-2, $color-white-grey-2);
+$color-secondary-3:                               var(--color-secondary-3, $color-white-grey-3);
+$color-secondary-4:                               var(--color-secondary-4, $color-white-grey-4);
+$color-secondary-5:                               var(--color-secondary-5, $color-white-grey-5);
+$color-secondary-6:                               var(--color-secondary-6, $color-white-grey-6);
+$color-secondary-7:                               var(--color-secondary-7, $color-white-grey-7);
+$color-secondary-8:                               var(--color-secondary-8, $color-white-grey-8);
+$color-secondary-9:                               var(--color-secondary-9, $color-white-grey-9);
+$color-background:                                var(--color-background, $color-white-grey-2);
+$color-background-hover:                          var(--color-background, $color-white-grey-3);
+$color-green-status:                              var(--color-green-status, $color-green);
+$color-solid-header:                              var(--color-solid-header, #1e1f22);
+$color-solid-header-hover:                        var(--color-solid-header-hover, #26272a);
+$color-solid-header-1:                            var(--color-solid-header-1, #2a2a2a);
+$color-solid-header-2:                            var(--color-solid-header-2, rgb(100, 100, 100));
+$color-solid-header-3:                            var(--color-solid-header-3, #525151);
+$color-invert-filter:                             var(--color-invert-filter, invert(0));
+$brightness-filter:                               var(--brightness-filter, brightness(1));
+$color-solid-border:                              var(--color-solid-border, #111111);
+$color-search-panel:                              var(--color-search-panel, #565656);
+$color-search-panel-input:                        var(--color-search-panel-input, #434343);
+$color-expansion-panel:                           var(--color-expansion-panel, #0e0e0e6b);
+$color-expansion-panel-hover:                     var(--color-expansion-panel-hover);
+$color-expansion-panel-border:                    var(--color-expansion-panel-border);
+$color-transaction-background:                    var(--color-transaction-background);
+$color-expansion-panel-body:                      var(--color-expansion-panel-body);
+$color-transactions-table-row:                    var(--color-transactions-table-row);
+$color-transactions-table-row-hover:              var(--color-transactions-table-row-hover);
+$color-transactions-datagrid-toolbar:             var(--color-transactions-datagrid-toolbar);
+$color-notifications-background:                  var(--color-notifications-background);
+$color-notifications-button:                      var(--color-notifications-button);
+$color-pe-data-grid-layout:                       var(--color-pe-data-grid-layout);
+$color-instead-blur-bg:                           var(--color-instead-blur-bg, #4d4d4d);
+$color-dashboard-button1:                         var(--color-dashboard-button1, rgba(0, 0, 0, .3));
+$color-dashboard-button2:                         var(--color-dashboard-button2, rgba(0, 0, 0, .3));
+$color-dashboard-button3:                         var(--color-dashboard-button2, rgba(255, 255, 255, .1));
+
+// $color-primary:                                   var(--color-primary, $color-white);
+// $color-primary-0:                                 var(--color-primary-0, $color-white-pe);
+// $color-primary-1:                                 var(--color-primary-1, $color-white-grey-7);
+// $color-primary-2:                                 var(--color-primary-2, $color-white-grey-4);
+// $color-primary-3:                                 var(--color-primary-3, rgba(233, 233, 233, 0.45));
+// $color-primary-4:                                 var(--color-primary-4, $color-white-grey-4);
+// $color-primary-5:                                 var(--color-primary-5, $color-white-grey-5);
+// $color-primary-6:                                 var(--color-primary-6, $color-white-grey-6);
+// $color-primary-7:                                 var(--color-primary-7, $color-white-grey-7);
+// $color-primary-8:                                 var(--color-primary-8, rgba(245, 245, 245, 0.5));
+// $color-primary-8-dark:                            var(--color-primary-8-dark, rgba(240, 240, 240, 0.8));
+// $color-primary-8-inverse:                         var(--color-primary-8-inverse, rgba(245, 245, 245, 0.5));
+// $color-primary-9:                                 var(--color-primary-9, $color-white-grey-9);
+// $color-primary-overlap:                           var(--color-primary-overlap, rgba(240, 240, 240, 0.8));
+// $color-primary-light-overlap:                     var(--color-primary-light-overlap, rgba(240, 240, 240, 0.6));
+// $color-secondary:                                 var(--color-secondary, $color-black);
+// $color-secondary-0:                               var(--color-secondary-0, $color-black-pe);
+// $color-secondary-1:                               var(--color-secondary-1, rgba($color-black, 0.1));
+// $color-secondary-2:                               var(--color-secondary-2, rgba($color-black, 0.2));
+// $color-secondary-3:                               var(--color-secondary-3, rgba($color-black, 0.25));
+// $color-secondary-4:                               var(--color-secondary-4, $color-grey-4);
+// $color-secondary-5:                               var(--color-secondary-5, rgba(17, 17, 17, 0.35));
+// $color-secondary-6:                               var(--color-secondary-6, rgba(17, 17, 17, 0.4));
+// $color-secondary-7:                               var(--color-secondary-7, $color-grey-3);
+// $color-secondary-8:                               var(--color-secondary-8, $color-grey-2);
+// $color-secondary-9:                               var(--color-secondary-9, rgba(17, 17, 17, 0.7));
+// $color-background:                                var(--color-background, $color-white-grey-4);
+// $color-background-hover:                          var(--color-background-hover, $color-white-grey-6);
+// $color-green-status:                              var(--color-green-status, $color-dark-green);
+// $color-solid-header:                              var(--color-solid-border, #bdbdc2);
+// $color-solid-header-hover:                        var(--color-solid-header, #ececec);
+// $color-solid-header-1:                            var(--color-solid-header-hover, $color-white);
+// $color-solid-header-2:                            var(--color-solid-header-1, $color-white-grey-4);
+// $color-solid-header-3:                            var(--color-solid-header-2, $color-white-grey-3);
+// $color-invert-filter:                             var(--color-solid-header-3, #fefefe);
+// $brightness-filter:                               var(--color-search-panel, #D4D4D4);
+// $color-solid-border:                              var(--color-search-panel-input, #BFBFBF);
+// $color-search-panel:                              var(--color-invert-filter, invert(1));
+// $color-search-panel-input:                        var(--brightness-filter, brightness(0.6));
+// $color-expansion-panel:                           var(--color-expansion-panel, #f2f2f6);
+// $color-expansion-panel-hover:                     var(--color-expansion-panel-hover, #d2d1d7);
+// $color-expansion-panel-border:                    var(--color-expansion-panel-border, #bdbdc2);
+// $color-transaction-background:                    var(--color-expansion-panel-body, $color-white);
+// $color-expansion-panel-body:                      var(--color-transaction-background, #f2f2f6bf);
+// $color-transactions-table-row:                    var(--color-transactions-table-row, $color-white-grey-9);
+// $color-transactions-table-row-hover:              var(--color-transactions-table-row-hover, rgba(222, 222, 222, 0.8));
+// $color-transactions-datagrid-toolbar:             var(--color-transactions-datagrid-toolbar, #f0f0f7);
+// $color-notifications-background:                  var(--color-notifications-background, rgba(210, 210, 210, 0.9));
+// $color-notifications-button:                      var(--color-notifications-button, $color-white-grey-9);
+// $color-pe-data-grid-layout:                       var(--color-pe-data-grid-layout, rgba(245, 245, 245, 0.9));
+// $color-instead-blur-bg:                           var(--color-instead-blur-bg, #ececec);
+// $color-dashboard-button1:                         var(--color-dashboard-button1, rgba($color-white, 0.55));
+// $color-dashboard-button2:                         var(--color-dashboard-button2, rgba($color-white, 0.55));
+// $color-dashboard-button3:                         var(--color-dashboard-button3, rgba($color-white, 0.3));

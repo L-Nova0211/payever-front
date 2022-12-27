@@ -1,0 +1,32 @@
+
+.image-size {
+
+  padding: 8px;
+
+  &__option {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__option-name {
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  &__option-icon {
+    width: 22px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  &__option-checkmark {
+    margin-left: auto;
+    width: 14px;
+    height: 14px;
+  }
+
+  &__scale-label {
+    margin-top: 8px;
+  }
+}

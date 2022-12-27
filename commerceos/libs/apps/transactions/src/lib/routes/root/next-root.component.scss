@@ -1,0 +1,377 @@
+@import "theming/theming";
+@import "theming/all-theme";
+@import "~@pe/ui-kit/scss/pe_variables";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+$regular-text-color: darken(#ffffff, 10%);
+$regular-light-text-color: #111111;
+$content-transparent-background-color: rgba(0, 0, 0, 0.3);
+$content-transparent-button-background-color: rgba(0, 0, 0, 0.5);
+$content-transparent-border-color: rgba(255, 255, 255, 0.1);
+
+.transactions-app {
+  .backdrop {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .overlay {
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    max-height: 95vh;
+    max-width: calc(100% - 32px);
+    width: 100%;
+
+    @media (min-width: 460px) {
+      width: 436px;
+    }
+
+    &__header {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      height: 71px;
+      justify-content: space-between;
+      padding: 19px 12px 16px;
+    }
+
+    &__button {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      box-sizing: border-box;
+      color: #0091df;
+      cursor: pointer;
+      font-family: "Roboto";
+      font-size: 14px;
+      padding: 0 12px;
+      outline: none;
+
+      &_grey {
+        color: #7a7a7a;
+      }
+      &_loading {
+        color: #7a7a7a;
+        font-style: italic;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &__title {
+      font-family: "Roboto";
+      font-size: 14px;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+      width: max-content;
+    }
+
+    &__body {
+      .mat-expansion-panel {
+        &-header {
+          .mat-content {
+            align-items: center;
+          }
+        }
+
+        &-body {
+          padding: 0 12px 16px;
+        }
+      }
+
+      .form-background-wrapper {
+        peb-button-toggle {
+          .button-toggle-container {
+            .toggle-checked.toggle-disabled {
+              .button-toggle-slider {
+                background: #7a7a7a !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pe-transactions-overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .pe-transactions-overlay-panel {
+    background-color: #24272e;
+    border-radius: 1em;
+    box-shadow: 0 0.125em 0.75em 0 rgba(0, 0, 0, 0.5);
+    height: 100%;
+    overflow: auto;
+    margin-top: 3.9375em;
+    margin-bottom: 5.625em;
+    max-height: calc(100% - 105px);
+    max-width: 414px;
+    width: 100%;
+  }
+
+  /* #pe-transactions-data-grid {
+    .grid-content {
+      .scrollbar {
+        height: calc(100% - 50px);
+        padding: 6px 12px 0px 0;
+      }
+
+      pe-sidebar-header-wrapper,
+      pe-sidebar-folders-wrapper {
+        display: none;
+      }
+
+      pe-data-grid-list-view {
+        height: calc(100% - 50px) !important;
+
+        .list-wrapper {
+          height: 100%;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+ */
+  .overlay-widget-container {
+    .overlay-widget {
+      .overlay-widget__header {
+        .header-container {
+          .overlay-widget__title {
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .dark {
+    @include peb-theme($theme-dark);
+    &.root {
+      background-color: #24272e;
+    }
+
+    .backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay {
+      background-color: rgba(36, 39, 46, 0.85);
+      color: #ffffff;
+
+      @supports (-moz-appearance: none) {
+        background-color: rgba(36, 39, 46, 0.98);
+      }
+
+      &__title {
+        color: #ffffff;
+      }
+
+      &__body {
+        .mat-expansion-panel {
+          &-header,
+          &-header:focus {
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+
+          &-header {
+            cursor: pointer;
+            padding: 9px 24px;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.2);
+            }
+
+            &-title {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .light {
+    @include peb-theme($theme-light);
+    &.root {
+      background-color: #f3f2f8;
+    }
+
+    .backdrop {
+      background-color: rgba(120, 120, 125, 0.5);
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.7);
+
+      @supports (-moz-appearance: none) {
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      color: #000000;
+
+      &__title {
+        color: #000000;
+      }
+
+      &__body {
+        .mat-expansion-panel {
+          &-header,
+          &-header:focus {
+            background-color: white;
+          }
+
+          &-header {
+            cursor: pointer;
+            padding: 9px 24px;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.7);
+            }
+
+            &-title {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .transparent {
+    @include peb-theme($theme-transparent);
+    &.root {
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      background-color: rgba(36, 39, 46, 0.8);
+    }
+
+    .backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay {
+      background-color: rgba(36, 39, 46, 0.85);
+      color: #ffffff;
+
+      @supports (-moz-appearance: none) {
+        background-color: rgba(36, 39, 46, 0.98);
+      }
+
+      &__title {
+        color: #ffffff;
+      }
+
+      &__body {
+        .mat-expansion-panel {
+          &-header,
+          &-header:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+          }
+
+          &-header {
+            cursor: pointer;
+            padding: 9px 24px;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            &-title {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  pe-cos-next-root {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .transaction-app {
+    height: calc(100% - 60px);
+    @media (max-width: 720px) {
+      height: calc(100% - 57px);
+    }
+  }
+
+  pe-verify-action, pe-shipping-goods-transaction {
+    peb-checkbox {
+      &.verify-checkbox .checkbox-label-aria {
+        .peb-checkbox-wrapper {
+          align-items: flex-start;
+          height: auto;
+          padding-top: 7.5px;
+          padding-bottom: 9.5px;
+          border-bottom: none;
+
+          .label-text {
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.33;
+            color: #ffffff;
+            padding-top: 2px;
+          }
+        }
+      }
+
+      .checkbox-frame {
+        margin-top: 5px;
+      }
+    }
+
+    peb-form-field-input {
+      .label-container {
+        width: 100%;
+      }
+    }
+  }
+
+  .more-widget-panel {
+    .overlay-widget-container {
+      .overlay-widget__content {
+        height: calc(100% - 71px);
+        padding: 0 12px 12px !important;
+      }
+    }
+  }
+
+  .add-rule-overlay-panel {
+    .overlay-widget-container {
+      .overlay-widget__content {
+        height: calc(100% - 71px);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .overlay-widget-container {
+        max-width: 436px;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    .welcome_panel {
+      width: auto;
+      height: auto;
+    }
+  }
+}

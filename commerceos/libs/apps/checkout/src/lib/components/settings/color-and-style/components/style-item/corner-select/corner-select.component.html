@@ -1,0 +1,40 @@
+<mat-list-item class="mat-list-item-no-padding-left">
+  <div class="mat-list-item-flex">
+    <div class="mat-list-item-col">
+      <div class="form-fieldset">
+        <button #buttonMenuAlignmentTrigger mat-raised-button [matMenuTriggerFor]="menuAlignment">
+          <svg class="icon icon-18">
+            <use [attr.xlink:href]="cornersIcons[selectedCorner]"></use>
+          </svg>
+        </button>
+        <mat-menu
+          #menuAlignment="matMenu"
+          class="mat-menu-dark"
+          [backdropClass]="theme !== 'dark' ? 'checkout-corner-button-' + theme : 'checkout-corner-button'"
+        >
+          <button *ngFor="let corner of corners" mat-menu-item (click)="setSelectedCorner(corner)">
+            <svg class="icon icon-18">
+              <use [attr.xlink:href]="cornersIcons[corner]"></use>
+            </svg>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="mat-list-item-col">
+      <span translate>{{ labelTranslateKey }}</span>
+    </div>
+    <div class="mat-list-item-col text-right">
+      <button
+        mat-raised-button
+        type="button"
+        color="muted-light"
+        class="expansion-list-button"
+        [class.mat-button-xs]="true"
+        [class.mat-button-rounded]="true"
+        (click)="buttonMenuAlignmentTrigger._elementRef.nativeElement.click()"
+      >
+        {{ 'settings.colorAndStyle.actions.changeCorner' | translate }}
+      </button>
+    </div>
+  </div>
+</mat-list-item>

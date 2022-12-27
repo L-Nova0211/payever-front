@@ -1,0 +1,452 @@
+{
+  "appointments-app": {
+    "actions": {
+      "add": "Add",
+      "add_logo": "Add logo",
+      "add_new_field": "Add new field",
+      "add_option": "Add option",
+      "add_condition": "Add condition",
+      "back": "Back",
+      "cancel": "Cancel",
+      "close": "Close",
+      "create": "Create",
+      "create_new": "Create new",
+      "delete": "Delete",
+      "delete_account": "Delete account",
+      "delete_calendar": "Delete calendar",
+      "done": "Done",
+      "edit": "Edit",
+      "loading": "Loading...",
+      "open": "Open",
+      "remove": "Remove",
+      "save": "Save",
+      "update": "Update",
+      "upload_new": "Upload new"
+    },
+    "apm_errors": {
+      "get_calendar": "Failed to get the calendar",
+      "get_calendars": "Failed to get list of calendars",
+      "create_calendar": "Failed to create a calendar",
+      "delete_calendar": "Failed to delete calendar",
+      "update_calendar": "Failed to update the calendar",
+      "get_default_calendar": "Failed to get a default calendar",
+      "set_default_calendar": "Failed to set the calendar as default",
+
+      "get_all_appointments": "Failed to get list of appointments",
+      "get_appointments_by_calendar": "Failed to get list of appointments",
+      "get_appointment": "Failed to get the appointment",
+      "create_appointment": "Failed to create a appointment",
+      "delete_appointment": "Failed to delete appointment",
+      "update_appointment": "Failed to update the appointment",
+
+      "get_appointment_type": "Failed to get the appointment type",
+      "get_appointment_types": "Failed to get list of appointment types",
+      "create_appointment_type": "Failed to create a appointment type",
+      "delete_appointment_type": "Failed to delete the appointment type",
+      "update_appointment_type": "Failed to update the appointment type",
+      "get_default_appointment_type": "Failed to get a default appointment type",
+      "set_default_appointment_type": "Failed to set the appointment type as default",
+
+      "get_appointment_availability": "Failed to get the appointment availability",
+      "get_appointment_availabilities": "Failed to get list of appointment availabilities",
+      "create_appointment_availability": "Failed to create a appointment availability",
+      "delete_appointment_availability": "Failed to delete the appointment availability",
+      "update_appointment_availability": "Failed to update the appointment availability",
+      "get_default_appointment_availability": "Failed to get a default appointment availability",
+      "set_default_appointment_availability": "Failed to set the appointment availability as default",
+
+      "get_categories": "Failed to get list of products categories",
+      "get_products": "Failed to get list of products",
+
+      "get_contact_groups": "Failed to get list of contact groups",
+      "get_contacts": "Failed to get list of contacts",
+
+      "get_channels": "Failed to get list of channels",
+      "get_connections": "Failed to get list of connections",
+      "install_connection": "Failed to install connection",
+      "uninstall_connection": "Failed to uninstall connection",
+
+      "get_access_config": "Failed to get access configuration",
+      "get_live_status": "Failed to get live status",
+      "update_access_config": "Failed to update access configuration",
+
+      "get_shop_active_theme": "Failed to get active theme of application",
+      "no_application_id": "There is no application ID in the url path"
+    },
+    "appointment": {
+      "title": {
+        "all_day": "All Day",
+        "starting_from": "Starting from {time}"
+      }
+    },
+    "appointment_editor": {
+      "all_day": "All Day",
+      "client_info": "Client Information",
+      "contacts": {
+        "label": "Contacts",
+        "placeholder": "Search contacts"
+      },
+      "customer_info": "Customer Info",
+      "date": {
+        "error": "Invalid date",
+        "label": "Date",
+        "placeholder": "DD.MM.YYYY"
+      },
+      "details": "Details",
+      "duration": {
+        "error": {
+          "max_hours": "Max 12 hours",
+          "max_minutes": "Max 720 minutes",
+          "not_positive_integer": "Must be a positive integer",
+          "required": "Duration is required"
+        },
+        "label": "Duration",
+        "placeholder": "Enter duration"
+      },
+      "measuring": {
+        "label": "Unit",
+        "hour": "Hour",
+        "min": "Min"
+      },
+      "offer": "Offer",
+      "options": "Options",
+      "products": {
+        "label": "Products",
+        "placeholder": "Search products"
+      },
+      "repeat": "Repeat",
+      "time": {
+        "error": "Invalid time",
+        "label": "Time",
+        "placeholder": "HH:MM AM"
+      },
+      "title": {
+        "create_appointment": "Create appointment",
+        "edit_appointment": "Edit appointment"
+      },
+      "custom_fields": {
+        "text": {
+          "error": "Text is required",
+          "label": "Text",
+          "placeholder": "Enter text"
+        },
+        "textarea": {
+          "error": "Text is required",
+          "label": "Text",
+          "placeholder": "Enter text"
+        }
+      },
+      "appointment-item": {
+        "title": "Appointment"
+      }
+    },
+    "availability_editor": {
+      "time-zone": "Time zone",
+      "day": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      },
+      "time": {
+        "error": "Error",
+        "from": "From",
+        "to": "To",
+        "placeholder": "HH:MM AM"
+      },
+      "title": {
+        "edit_availability": "Edit availability",
+        "create_availability": "Create availability"
+      },
+      "time-zones": {
+        "gmt+0": "Dublin, Edinburgh, Lisbon, London",
+        "gmt+1": "Amsterdam, Berlin, Bern",
+        "gmt+2": "Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius",
+        "gmt+3": "Baghdad, Minsk, Kuwait, Riyadh, Nairobi",
+        "gmt+4": "Tbilisi, Yerevan, Abu Dhabi, Muscat",
+        "gmt+5": "Tashkent, Islamabad, Karachi",
+        "gmt+6": "Astana, Dhaka, Yekaterinburg",
+        "gmt+7": "Bangkok, Hanoi, Jakarta",
+        "gmt+8": "Beijing, Chongqing, Hong Kong, Urumqi",
+        "gmt+9": "Irkutsk, Seoul, Osaka, Sapporo, Tokyo",
+        "gmt+10": "Hobart, Yakutsk, Brisbane",
+        "gmt+11": "Solomon Islands, New Caledonia",
+        "gmt+12": "Fiji, Marshall Islands, Magadan",
+        "gmt-1": "Azores, Cape Verde",
+        "gmt-3": "Brasilia, Buenos Aires, Greenland",
+        "gmt-4": "Santiago, Cuiaba",
+        "gmt-5": "Eastern Time (US and Canada)",
+        "gmt-6": "Central Time (US and Canada)",
+        "gmt-7": "Arizona, Chihuahua, La Paz, Mazatlan",
+        "gmt-8": "Pacific Time (US and Canada)",
+        "gmt-9": "Alaska",
+        "gmt-10": "Hawaii"
+      },
+      "set_default": "Set as default profile"
+    },
+    "field_editor": {
+      "editable_by_admin": "Value editable only by admin",
+      "field_title": {
+        "error": "Field name is required",
+        "label": "Field name",
+        "placeholder": "Enter field name"
+      },
+      "field_type": {
+        "checkbox": "Checkbox",
+        "label": "Field type",
+        "multiselect": "Multi select",
+        "radiobutton": "Radio button",
+        "select": "Select",
+        "text": "Text",
+        "textarea": "Text area"
+      },
+      "filterable": "Filterable",
+      "option": {
+        "error": "Option name is required",
+        "label": "Option name",
+        "placeholder": "Enter option name"
+      },
+      "show_default": "Show on Appointmnet",
+      "title": {
+        "create": "Create custom field",
+        "edit": "Edit custom field"
+      }
+    },
+    "network_editor": {
+      "network_name": {
+        "error": {
+          "incorrect": "Name of calendar is not correct",
+          "min_name_length": "Name should have at least three characters",
+          "not_unique": "Calendar with name \"{calendarName}\" already exists",
+          "required": "Name of calendar is required"
+        },
+        "label": "Calendar name",
+        "placeholder": "Enter calendar name"
+      },
+      "title": "Create calendar"
+    },
+    "badge": {
+      "default_type": "Default"
+    },
+    "type_editor": {
+      "date_range": "Date range",
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter description"
+      },
+      "details": "Details",
+      "duration": {
+        "errors": {
+          "max": "Max 12 hours",
+          "not_positive_integer": "Must be a positive integer",
+          "required": "Duration is required"
+        },
+        "label": "Duration",
+        "placeholder": "Enter duration"
+      },
+      "event_link": {
+        "errors": {
+          "incorrect_segment_name": "Segment name is incorrect",
+          "max_segment_length": "Character limit exceeded",
+          "required": "Event link is required"
+        },
+        "label": "Event link",
+        "placeholder": "{typeName}"
+      },
+      "general": "General",
+      "indefinitely": "Indefinitely into the future",
+      "max_invitees": {
+        "errors": {
+          "max": "Max 50 invitees",
+          "min": "Max invitees must not be zero",
+          "not_positive_integer": "Max invitees value must be a positive integer",
+          "required": "Max invitees is required"
+        },
+        "label": "Max invitees in a spot",
+        "placeholder": "Enter max invitees"
+
+      },
+      "name": {
+        "errors": {
+          "max_length": "Character limit exceeded",
+          "required": "Name is required"
+        },
+        "label": "Name",
+        "placeholder": "Enter name"
+      },
+      "range": {
+        "errors": {
+          "max": "Number is too large",
+          "min": "Range must not be zero days",
+          "not_positive_integer": "Range value must be a positive integer",
+          "required": "Range is required"
+        },
+        "label": "Calendar days into the future",
+        "placeholder": "Enter range in days"
+      },
+      "schedule": {
+        "label": "Schedule",
+        "working_hours": "Working hours"
+      },
+      "set_as_default": "Set type as default",
+      "time_after": {
+        "errors": {
+          "max": "Max 180 minutes",
+          "min": "Time must not be zero minutes",
+          "not_positive_integer": "Time value must be a positive integer",
+          "required": "Time after is required"
+        },
+        "label": "Time after appointment",
+        "placeholder": "Enter time in minutes"
+      },
+      "time_before": {
+        "errors": {
+          "max": "Max 180 minutes",
+          "min": "Time must not be zero minutes",
+          "not_positive_integer": "Time value must be a positive integer",
+          "required": "Time before is required"
+        },
+        "label": "Time before appointment",
+        "placeholder": "Enter time in minutes"
+      },
+      "title": {
+        "create_type": "Create appointment type",
+        "edit_type":"Edit appointment type"
+      },
+      "type": {
+        "label": "Type",
+        "one_on_one": "One-on-One",
+        "group": "Group"
+      },
+      "unit": {
+        "label": "Unit",
+        "hrs": "Hrs",
+        "min": "Min"
+      }
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "appointment_editor": {
+          "creating": {
+            "title": "Creating appointment",
+            "subtitle": "Do you really want to close creating a appointment? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing appointment",
+            "subtitle": "Do you really want to close editing the appointment? All data will be lost and you will not be able to restore it"
+          }
+        },
+        "network_editor": {
+          "creating": {
+            "title": "Creating calendar",
+            "subtitle": "Do you really want to close creating a calendar?"
+          },
+          "editing": {
+            "title": "Editing calendar",
+            "subtitle": "Do you really want to close editing the calendar?"
+          }
+        },
+        "type_editor": {
+          "creating": {
+            "title": "Creating appointment type",
+            "subtitle": "Do you really want to close creating a appointment type? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing appointment type",
+            "subtitle": "Do you really want to close editing the appointment type? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "appointment": {
+          "title": "Delete appointment",
+          "subtitle": "Are you sure you want to delete selected appointment?"
+        },
+        "appointment_type": {
+          "title": "Delete appointment type",
+          "subtitle": "Are you sure you want to delete selected appointment type?"
+        },
+        "appointment_types": {
+          "title": "Delete appointment types",
+          "subtitle": "Are you sure you want to delete selected appointment types?"
+        },
+        "appointments": {
+          "title": "Delete appointments",
+          "subtitle": "Are you sure you want to delete selected appointments?"
+        },
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "network": {
+          "title": "Delete calendar",
+          "subtitle": "Are you sure you want to delete the calendar? All appointments and themes will also be deleted!"
+        }
+      }
+    },
+    "folders": {
+      "all_appointments": "All appointments",
+      "all_types": "All types",
+      "scheduler": "Scheduler"
+    },
+    "grid_table_columns": {
+      "date": "Date",
+      "days_into_the_future": "Calendar days into the future",
+      "details": "Details",
+      "duration": "Duration",
+      "time": "Time",
+      "type": "Type"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "navigation": {
+      "calendar": "Calendar",
+      "connect": "Connect",
+      "dashboard": "Dashboard",
+      "edit": "Edit",
+      "settings": "Settings",
+      "themes": "Themes",
+      "title": "Navigation",
+      "types": "Types",
+      "availability": "Availability"
+    },
+    "notify": {
+      "all_selected_folders": "All selected folders",
+      "all_selected_items": "All selected items",
+      "all_selected_appointments": "All selected appointments",
+      "all_selected_availabilities": "All selected availabilities",
+      "default_selected_availabilities_delete": "You can't delete default schedule",
+      "selected_availability": "Selected availability",
+      "appointment": "Appointment",
+      "appointment_type": "Appointment type",
+      "appointment_availability": "Appointment availability",
+      "network_created": "Calendar \"{calendarName}\" successfuly created",
+      "network_deleted": "Calendar \"{calendarName}\" successfuly deleted",
+      "network_updated": "Calendar \"{calendarName}\" successfuly updated",
+      "firstly_connect_domain": "Firstly you should connect a domain!",
+      "firstly_create_calendar": "Firstly you should create a calendar!",
+      "successfuly_created": "successfuly created",
+      "successfuly_deleted": "successfuly deleted",
+      "successfuly_duplicated": "successfuly duplicated",
+      "successfuly_updated": "successfuly updated"
+    },
+    "settings": {
+      "networks": "All calendars",
+      "publishing": {
+        "livestatus": "Live status",
+        "title": "Publishing"
+      },
+      "social_sharing": {
+        "info":{
+          "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px"
+        }
+      },
+      "title": "Settings"
+    },
+    "title": "Appointments"
+  }
+}

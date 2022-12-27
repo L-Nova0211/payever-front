@@ -1,0 +1,42 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.settings-widget-button {
+  width: 50%;
+  &:first-of-type {
+    margin-right: 12px;
+    text-align: left;
+  }
+}
+/*
+.button-title {
+  font-size: 16px;
+  color: $color-secondary-0;
+  font-weight: $font-weight-regular;
+}
+
+.icon {
+  color: $color-secondary-0;
+}
+
+.mat-button-rect-md {
+  width: 50%;
+
+  &:first-of-type {
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: $viewport-breakpoint-sm-1 - 1) {
+  .mat-button-rect-md {
+    &:first-of-type {
+      margin-right: 6px;
+    }
+    .icon-48 {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}*/

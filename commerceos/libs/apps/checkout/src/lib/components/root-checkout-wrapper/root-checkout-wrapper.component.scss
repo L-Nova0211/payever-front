@@ -1,0 +1,35 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+// :host
+.hidden {
+  position: absolute;
+  left: -100000px;
+  width: 0;
+}
+/*
+checkout-wrapper-by-channel-set-id {
+  .pe-checkout-wrapper-layout.layout-with-paddings {
+    .ui-layout-app.fill-viewport {
+      top: 0; // 32px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  checkout-wrapper-by-channel-set-id {
+    .pe-checkout-wrapper-layout.layout-with-paddings {
+      .ui-layout-app.fill-viewport {
+        left: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
+*/

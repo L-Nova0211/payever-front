@@ -1,0 +1,20 @@
+<ng-container *ngIf="member">
+  <div class="chat-room-settings__icon">
+    <img
+      *ngIf="member?.avatar"
+      class="chat-room-settings__avatar"
+      [src]="member?.avatar"
+    />
+    <div class="chat-room-settings__initials" *ngIf="!member?.avatar">{{ member.initials }}</div>
+  </div>
+  <div class="chat-room-settings__action-list">
+    <div *ngFor="let action of actions" class="chat-room-settings__action-item">
+      <div class="chat-room-settings__action-icon" (click)="pushAction(action)">
+        <svg [ngSwitch]="action">
+          <use *ngSwitchCase="peMessageMemberAction.Delete" xlink:href="#icon-apps-delete"></use>
+        </svg>
+      </div>
+      <span>{{ action }}</span>
+    </div>
+  </div>
+</ng-container>

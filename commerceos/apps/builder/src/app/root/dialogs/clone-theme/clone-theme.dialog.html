@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+  <div>
+    <label>
+      <div>FROM:</div>
+      <select formControlName="apiPathFrom">
+        <option *ngFor="let path of fromApiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>TO:</div>
+      <select formControlName="apiPathTo">
+        <option *ngFor="let path of toApiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>TOKEN: </div>
+      <input placeholder="TOKEN" type="text" formControlName="token">
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>THEME ID:</div>
+      <input placeholder="Theme id" type="text" formControlName="themeId">
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>NAME: </div>
+      <input placeholder="Next theme name" type="text" formControlName="nextName">
+    </label>
+  </div>
+
+  <div>
+    <button (click)="onSubmit()" [disabled]="form.invalid || form.disabled">Copy</button>
+  </div>
+
+</form>

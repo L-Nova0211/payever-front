@@ -1,0 +1,13 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="form">
+  <peb-form-background>
+    <peb-form-field-input
+      animated="true"
+      [label]="'form.create_form.email.label' | translate"
+      [isFieldInvalid]="(isSubmitted$ | async) && form.get('email').invalid"
+      [errorMessage]="errorMessage$ | async"
+      appearance="label"
+    >
+      <input formControlName="email" />
+    </peb-form-field-input>
+  </peb-form-background>
+</form>

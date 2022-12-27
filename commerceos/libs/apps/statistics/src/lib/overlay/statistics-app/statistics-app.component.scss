@@ -1,0 +1,55 @@
+.widget-apps-container {
+  display: flex;
+  min-height: 340px;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+.app {
+  margin: 0px 6px;
+  margin-bottom: 12px;
+  height: fit-content;
+  width: 56px;
+  &__icon {
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-sizing: border-box;
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+    margin: auto;
+
+    img {
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-sizing: border-box;
+      height: 52px;
+      width: 52px;
+      cursor: pointer;
+      margin: auto;
+    }
+  }
+  &__name {
+    color: #ffffff;
+    font-size: 10px;
+    margin-top: 4px;
+    text-align: center;
+
+    &.dark {
+      color: #ffffff;
+    }
+    &.light {
+      color: #000;
+    }
+    &.transparent {
+      color: #ffffff;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .app {
+    width: 61px;
+  }
+}

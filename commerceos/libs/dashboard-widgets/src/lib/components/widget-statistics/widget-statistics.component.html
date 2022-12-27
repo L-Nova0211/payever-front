@@ -1,0 +1,9 @@
+<div class="sections-wrapper">
+  <ng-container *ngFor="let section of sections; last as asLast">
+    <div class="section-info">
+      <div class="section-title" translate>{{section.title}}</div>
+      <div class="section-value">{{section.value}}</div>
+    </div>
+    <mat-divider *ngIf="!asLast" [vertical]="true"></mat-divider>
+  </ng-container>
+</div>

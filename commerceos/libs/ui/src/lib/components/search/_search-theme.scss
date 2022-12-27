@@ -1,0 +1,21 @@
+@mixin pe-search-theme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+
+  .pe-search-list {
+    &__item {
+      border-top: 1px solid $separator;
+      background-color: $accent;
+    }
+
+    &__item-icon,
+    &__item-content span {
+      color: $text-color;
+    }
+
+    &__item-remove {
+      color: #eb4653;
+    }
+  }
+}

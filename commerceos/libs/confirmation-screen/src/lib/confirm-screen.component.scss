@@ -1,0 +1,149 @@
+@import '../../../ui-styles/src/pe_screen_variables';
+// TODO Refactor that file, use color variables
+
+.confirmation-screen {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: solid 1px #3b3b3b;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 17px 0;
+  width: 260px;
+
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  background-color: rgba(36, 39, 46, 0.85);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+
+  @media screen and (max-width: $viewport-breakpoint-xs-2) {
+    width: 342px;
+    height: 420px;
+  }
+
+  &__content,
+  &__image,
+  &__abbreviation,
+  &__content-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    max-width: 228px;
+  
+    @media (max-width: 228px) {
+      max-width: 100%;
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 18px;
+  
+    &.commerceos {
+      height: 32px;
+      width: 128px;
+    }
+  }
+
+  &__abbreviation,
+  &__icon,
+  &__image:not(.commerceos),
+  &__warning-icon {
+    max-height: 86px;
+    max-width: 86px;
+  }
+
+  &__warning-icon {
+    height: 65px;
+    width: 65px;
+  }
+
+  &__abbreviation,
+  &__icon {
+    border-radius: 50%;
+  }
+
+  &__abbreviation {
+    align-items: center;
+    background: linear-gradient(to bottom, #6E6D6C, #474747);
+    font-size: 28px;
+    font-weight: 600;
+    height: 86px;
+    width: 86px;
+  }
+
+  &__content-title {
+    margin-bottom: 8px;
+    width: 228px;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.21;
+    text-align: center;
+  }
+
+  &__content-description {
+    margin-bottom: 18px;
+    width: 228px;
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__content-button {
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    padding: 8px 0;
+    height: 36px;
+    width: 228px;
+    
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.21;
+    text-align: center;
+
+    &_cancel {
+      background-color: #6f7279;
+    }
+  
+    &_confirm {
+      background-color: #2482e7;
+    }
+
+    &_warn {
+      background-color: #eb4653;
+    }
+  
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+
+    &:hover{
+      opacity: .9;
+    }
+  
+    ::ng-deep mat-spinner {
+      margin: auto;
+  
+      circle {
+        stroke: #fff;
+      }
+    }
+  }
+}

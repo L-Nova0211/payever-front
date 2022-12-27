@@ -1,0 +1,12 @@
+<ng-template>
+  <div class="products-dialog-wrapper b-dark">
+    <div class="products-dialog-wrapper__header">
+      <button class="header-buttons close-button" (click)="closeProductDialog()">Cancel</button>
+      <button class="header-buttons add-button" (click)="addProductDialog()">Add</button>
+    </div>
+    <div class="products-dialog-wrapper__content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</ng-template>

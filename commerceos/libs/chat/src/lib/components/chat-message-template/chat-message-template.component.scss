@@ -1,0 +1,17 @@
+.chat-message-template {
+  &__app {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    height: 114px;
+    width: 304px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

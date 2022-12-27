@@ -1,0 +1,223 @@
+id: testcases-resize
+name: Resizing
+variant: default
+type: replica
+master: ~
+data: {}
+template:
+  id: resize-document
+  type: document
+  children:
+    - id: header
+      type: section
+      children: []
+    - id: body
+      type: section
+      children:
+        - id: body-content
+          type: block
+          data:
+            devGrid: true
+            devGridStep: 25
+          children:
+            # Check elements
+            - id: body-block-red
+              type: block
+              children:
+                - { id: blocker-inner-red-bottom, type: block, children: [] }
+                - { id: blocker-inner-red-right, type: block, children: [] }
+            - id: body-block-blue
+              type: block
+              children:
+                - { id: blocker-inner-blue, type: block, children: [] }
+            - id: body-block-green
+              type: block
+              children: []
+            # Blockers
+            - { id: blocker-01, type: block, children: [] }
+            - { id: blocker-02, type: block, children: [] }
+            - { id: blocker-03, type: block, children: [] }
+            - { id: blocker-04, type: block, children: [] }
+            - { id: blocker-05, type: block, children: [] }
+            - { id: blocker-06, type: block, children: [] }
+            - { id: blocker-07, type: block, children: [] }
+            - { id: blocker-08, type: block, children: [] }
+            - { id: blocker-09, type: block, children: [] }
+            - { id: blocker-10, type: block, children: [] }
+            - { id: blocker-11, type: block, children: [] }
+            - { id: blocker-12, type: block, children: [] }
+            - { id: blocker-13, type: block, children: [] }
+            - { id: blocker-14, type: block, children: [] }
+    - id: footer
+      type: section
+      children: []
+
+stylesheets:
+  desktop:
+    resize-document: {}
+    header:
+      height: 50
+      backgroundColor: "#ffffff"
+    body: {}
+    body-content:
+      display: grid
+      margin: 0 auto
+      gridTemplateRows: 1000
+      gridTemplateColumns: 900
+      backgroundColor: "#f8f8f8"
+      marginLeft: 100
+      marginRight: 22
+    # Check elements
+    body-block-red:
+      gridArea: 1 / 1 / 1 / 1
+      display: grid
+      gridTemplateRows: 50 150
+      gridTemplateColumns: 50 150
+      height: 125
+      width: 125
+      margin: 25 0 0 25
+      backgroundColor: red
+    body-block-blue:
+      gridArea: 1 / 1 / 1 / 1
+      width: 175
+      height: 175
+      margin: 475 0 0 325
+      backgroundColor: blue
+    body-block-green:
+      gridArea: 1 / 1 / 1 / 1
+      width: 125
+      height: 125
+      margin: 850 0 0 725
+      backgroundColor: green
+    # Blockers
+    blocker-01:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 50 0 0 200
+      backgroundColor: gray
+    blocker-02:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 175 0 0 250
+      backgroundColor: gray
+    blocker-03:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 175 0 0 150
+      backgroundColor: gray
+    blocker-04:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 225 0 0 25
+      backgroundColor: gray
+    blocker-05:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 275 0 0 150
+      backgroundColor: gray
+    blocker-06:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 275 0 0 375
+      backgroundColor: gray
+    blocker-07:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 375 0 0 250
+      backgroundColor: gray
+    blocker-08:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 500 0 0 100
+      backgroundColor: gray
+    blocker-09:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 450 0 0 650
+      backgroundColor: gray
+    blocker-10:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 675 0 0 550
+      backgroundColor: gray
+    blocker-11:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 750 0 0 775
+      backgroundColor: gray
+    blocker-12:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 775 0 0 375
+      backgroundColor: gray
+    blocker-13:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 900 0 0 625
+      backgroundColor: gray
+    blocker-14:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 625 0 0 125
+      backgroundColor: gray
+    blocker-15:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 525 0 0 725
+      backgroundColor: gray4
+    # inner blockers
+    blocker-inner-blue:
+      width: 100
+      height: 100
+      margin: 100 0 0 100
+      backgroundColor: yellow
+    blocker-inner-red-bottom:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 50 0 0 0
+      backgroundColor: yellow
+    blocker-inner-red-right:
+      gridArea: 1 / 1 / 1 / 1
+      width: 50
+      height: 50
+      margin: 0 0 0 50
+      backgroundColor: yellow
+
+    footer:
+      height: 50
+      backgroundColor: "#ffffff"
+  tablet:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-blue: {}
+    body-block-green: {}
+
+    footer: {}
+  mobile:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-blue: {}
+    body-block-green: {}
+    footer: {}
+
+context: {}

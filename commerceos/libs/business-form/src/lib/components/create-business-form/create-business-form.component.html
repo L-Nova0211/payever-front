@@ -1,0 +1,44 @@
+<form novalidate class="form-table form-table-no-margin" [formGroup]="form" *ngIf="form"
+  [ngClass]="theme">
+  <peb-form-background>
+    <peb-select selectType="label" formControlName="businessStatus"
+      [label]="'forms.business_create.businessStatus.label'|translate" [animated]="true">
+      <peb-select-option *ngFor="let item of businessStatusOptions$|async" [value]="item.value" [label]="item.label">
+      </peb-select-option>
+    </peb-select>
+    <peb-form-field-input [label]="businessNameLabelKey$|async|translate" animated="true" appearance="label"
+      [isFieldInvalid]="errors.name.hasError" [errorMessage]="errors.name.errorMessage">
+      <input formControlName="name" />
+    </peb-form-field-input>
+    <peb-select selectType="label" [animated]="true" formControlName="status"
+      [label]="'forms.business_create.status.label'|translate">
+      <peb-select-option *ngFor="let item of statusOptions$|async" [value]="item.value" [label]="item.label">
+      </peb-select-option>
+    </peb-select>
+    <peb-select selectType="label" [animated]="true" formControlName="salesRange"
+      [label]="'forms.business_create.sales.label'|translate">
+      <peb-select-option *ngFor="let item of salesRangeOptions" [value]="item.value" [label]="item.label">
+      </peb-select-option>
+    </peb-select>
+    <pe-autocomplete
+      [label]="'forms.business_create.industry.placeholder'|translate"
+      [isFieldInvalid]="errors.industry.hasError"
+      [data]="industryOptions$|async"
+      [formControl]="form.get('industry')"
+      [errorMessage]="errors.industry.errorMessage"
+      [initialValue]="initialIndustryLabel"
+    ></pe-autocomplete>
+    <two-column-form>
+      <peb-select selectType="label" [animated]="true" formControlName="countryPhoneCode"
+        [label]="'forms.business_create.countryPhoneCode.label'|translate">
+        <peb-select-option *ngFor="let item of countryPhones" [value]="item.value" [label]="item.label">
+        </peb-select-option>
+      </peb-select>
+      <peb-form-field-input animated="true" [label]="'forms.business_create.phoneNumber.label'|translate"
+        [isFieldInvalid]="errors.phoneNumber.hasError" [errorMessage]="errors.phoneNumber.errorMessage"
+        appearance="label">
+        <input formControlName="phoneNumber" type="tel" (keydown)="validateNumber($event)" minlength="6"/>
+      </peb-form-field-input>
+    </two-column-form>
+  </peb-form-background>
+</form>

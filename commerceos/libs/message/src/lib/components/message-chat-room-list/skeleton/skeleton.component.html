@@ -1,0 +1,12 @@
+<div class="skeleton-container">
+  <ng-container *ngFor="let folder of chats" [ngTemplateOutlet]="folderItem"></ng-container>
+</div>
+
+<ng-template #folderItem>
+  <div class="skeleton-item">
+    <div class="chat">
+      <div class="chat__avatar"></div>
+      <div class="chat__title"></div>
+    </div>
+  </div>
+</ng-template>

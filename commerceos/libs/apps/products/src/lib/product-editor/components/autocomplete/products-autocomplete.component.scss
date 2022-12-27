@@ -1,0 +1,103 @@
+.autocomplete-container {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  flex-direction: column;
+  padding: 4px 12px;
+  width: auto;
+  height: 40px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &.ng-invalid {
+    input {
+      color: #eb4653;
+
+      &::placeholder {
+        color: rgba(235, 70, 83, 0.5);
+      }
+    }
+  }
+}
+
+label {
+  color: #7a7a7a;
+  height: 16px;
+  margin-bottom: 0;
+  order: 0;
+
+  font-size: 12px;
+  pointer-events: none;
+
+  transform: translateY(8px);
+  transform-origin: left;
+  transition: transform 0.1s;
+}
+
+input {
+  appearance: none;
+  border: unset;
+  font-family: inherit;
+  outline: unset;
+  order: 1;
+
+  background-color: transparent;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 12px !important;
+  font-weight: 500;
+  line-height: 1.33;
+  padding: 0;
+  width: 100%;
+
+  &::placeholder {
+    visibility: hidden;
+  }
+
+  &:focus {
+    label {
+      transform: translateY(0) scale(0.9166) !important;
+    }
+  }
+
+  &:focus + label,
+  &:not(:placeholder-shown) + label {
+    transform: translateY(0) scale(0.9166) !important;
+  }
+}
+
+.panel-box {
+  width: 100%;
+  height: auto;
+  backdrop-filter: blur(50px);
+}
+
+.mat-option[id^="pe-products-option-"] {
+  height: 40px !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:first-of-type {
+    border-radius: 12px 12px 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 12px 12px;
+  }
+
+  &:hover {
+    background-color: #0371e2;
+    outline: none;
+  }
+}

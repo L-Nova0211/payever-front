@@ -1,0 +1,36 @@
+<ng-container *ngIf="saveSubjectListener$ | async"></ng-container>
+<pe-list-container [title]="'affiliates-app.settings.title'" [hideTitleInMobile]="true">
+  <pe-list-section
+    [actionButtonType]="toggleButtonType"
+    [integrations]="getAccessConfig$ | async"
+    [sectionTitle]="'affiliates-app.settings.publishing.title'"
+    [showGroupTitle]="true"
+    (switched)="switchDomainLiveStatus($event)"
+  ></pe-list-section>
+  <pe-list-section
+    [actionButtonType]="arrowButtonType"
+    [integrations]="domains"
+    [sectionTitle]="'domains-lib.title'"
+    [showGroupTitle]="true"
+    (navigated)="openEditor($event, true)"
+  ></pe-list-section>
+
+  <pe-list-section
+    [actionButtonType]="arrowButtonType"
+    [integrations]="banks"
+    [sectionTitle]="'affiliates-app.settings.bank_accounts'"
+    [showGroupTitle]="true"
+    (navigated)="openEditor($event)"
+  ></pe-list-section>
+
+  <pe-list-section
+    [actionButtonType]="arrowButtonType"
+    [addButtonLabel]="'affiliates-app.actions.create_new'"
+    [integrations]="getAllNetworks$ | async"
+    [sectionTitle]="'affiliates-app.settings.networks'"
+    [showAddButton]="true"
+    [showGroupTitle]="true"
+    [translateItemsTitle]="false"
+    (navigated)="openNetworkEditor($event)"
+  ></pe-list-section>
+</pe-list-container>

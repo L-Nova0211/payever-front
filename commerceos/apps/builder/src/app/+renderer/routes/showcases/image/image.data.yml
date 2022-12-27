@@ -1,0 +1,21 @@
+element:
+  id: document
+  type: document
+  children:
+    - id: section-1
+      type: section
+      children:
+        - id: image-1
+          type: image
+          data:
+            src: https://i.ya-webdesign.com/images/transparent-nike-icon-6.png
+stylesheet:
+  all:
+    image-1:
+      width: 200
+      height: 200
+  updated:
+    image-1:
+      width: 200
+      height: 200
+      border: '2px solid red'

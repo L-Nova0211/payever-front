@@ -1,0 +1,58 @@
+.pe-search-list {
+  &__item {
+    align-items: center;
+    display: flex;
+    height: 44px;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  &__item-content span,
+  &__item-remove {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  &__item-content {
+    img,
+    mat-icon {
+      height: 32px;
+      width: 32px;
+  
+      border-radius: 6px;
+      margin-right: 9px;
+      object-fit: cover;
+    }
+
+    mat-icon svg {
+      scale: 1.6;
+      transform: translate(6px, 6px);
+    }
+
+    span {
+      align-items: center;
+      display: flex;
+      margin-right: 0.75em;
+      max-width: inherit;
+    }
+  }
+
+  &__item-icon {
+    border-radius: 4px;
+    height: 22px;
+    margin-right: 12px;
+    min-width: 22px;
+    width: 22px;
+  }
+
+  &__item-remove {
+    appearance: none;
+    background-color: transparent;
+    border: unset;
+    cursor: pointer;
+    font-family: inherit;
+    outline: unset;
+    white-space: nowrap;
+  }
+}

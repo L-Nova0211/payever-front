@@ -1,0 +1,20 @@
+<div class="full-size wrapper" [@overlayState]="state">
+  <div class="header">
+    <button class="mobile-control close-icon-wrapper" (click)="close()">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+
+  <peb-renderer
+    class="product-details__renderer"
+    [element]="data.snap.template"
+    [stylesheet]="data.snap.stylesheet"
+    [context]="data.snap.context"
+    [options.readOnly]="true"
+    [options.screen]="data.snap.screen"
+    [options.scale]="1"
+    [options.locale]="(app$ | async)?.defaultLocale"
+    [options.interactions]="true"
+    (interacted)="onInteraction($event)"
+  ></peb-renderer>
+</div>

@@ -1,0 +1,228 @@
+//
+// Main components and mixins styles
+// -----------------------------------
+
+@import 'pe_fonts';
+@import 'pe_base';
+
+
+// Mixins
+// -----------------------------
+
+@import 'pe_mixins';
+@import 'mixins/avatar';
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+
+// Bootstrap Components
+// Original Components
+// ---------------------------------
+
+//# Reset and dependencies
+.pe-bootstrap {
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+}
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/print";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+
+//# Core CSS
+.pe-bootstrap {
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/forms";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/grid";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/tables";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+}
+
+//# Components
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/navbar"; // Can't be added because bootstrap/forms is removed
+.pe-bootstrap {
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/navs";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/pager";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/labels";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/badges";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/media";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/panels";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/wells";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/close";
+}
+
+//# Components w/ JavaScript
+.pe-bootstrap {
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/modals";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+}
+
+//# Utility classes
+.pe-bootstrap {
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+  @import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+}
+
+// Base
+// -----------------------------
+
+@import "base/type";
+
+// Bootstrap Components (bootstrap)
+// --------------------------------
+
+//# Reset and dependencies
+@import "bootstrap/print";
+
+//# Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+//# Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+
+//# Components w/ JavaScript
+@import "bootstrap/modals";
+
+//# Utility classes
+@import "bootstrap/utilities";
+
+// Third party Components (plugins)
+// ------------------------------------
+
+@import 'plugins/datepicker';
+@import 'plugins/datepicker_ngx';
+@import 'plugins/medium_editor';
+@import 'plugins/colorpicker';
+
+
+// Material components
+// -----------------------------
+
+@import "material/theming";
+
+@import "material/autocomplete";
+@import "material/button";
+@import "material/button-toggle";
+@import 'material/card';
+@import "material/cdk";
+@import "material/checkbox";
+@import 'material/datepicker';
+@import 'material/divider';
+@import 'material/expansion-panel';
+@import 'material/form-field';
+@import 'material/grid-list';
+@import 'material/input';
+@import 'material/menu';
+@import 'material/progress-bar';
+@import 'material/radio';
+@import 'material/select';
+@import 'material/sidenav';
+@import 'material/dialog';
+@import 'material/spinner';
+@import 'material/table';
+@import 'material/toolbar';
+@import 'material/tabs';
+@import 'material/tooltip';
+@import 'material/tabs';
+@import 'material/autocomplete';
+@import 'material/slide-toggle';
+@import 'material/list';
+@import 'material/chip';
+@import 'material/slider';
+@import 'material/snack-bar';
+@import 'material/tree';
+@import 'material/badge';
+
+// PE Components (project)
+// -----------------------------
+
+@import "project/spinner";
+@import "project/icons";
+@import "project/notify";
+@import "project/toggle-settings-item";
+@import "project/block-thumb";
+@import "project/card";
+@import "project/card-breakpoints";
+@import "project/data-grid";
+@import "project/rate";
+@import "project/native-submit";
+@import "project/chart";
+@import "project/terminal-list";
+@import "project/pe-slider";
+@import "project/general-dashboard";
+@import "project/ui-readmore";
+@import "project/ui-accordion";
+@import "project/docker";
+@import "project/docker-pos";
+@import "project/builder";
+@import "project/content-editor";
+@import "project/profile-container";
+@import "project/app-container";
+@import "project/overlay-container";
+@import "project/builder-docker";
+// @import "project/dashboard";
+@import "project/wallpapers";
+@import "project/spotlight";
+@import "project/ui-search";
+@import "project/ui-subdashboard-header";
+@import "project/ui-platform-header";
+@import "project/ui-carousel";
+@import "project/ui-layout";
+@import "project/cards-container";
+@import "project/ui-paragraph-editor";
+@import "project/ui-tags-input";
+@import "project/scrollbars";
+@import "project/form-table";
+@import "project/form-field";
+@import "project/form-table-breakpoints";
+@import "project/form-table-dark";
+@import "project/form-table-horizontal";
+@import "project/avatar";
+@import "project/error-message";
+@import "project/file-picker";
+@import "project/image-picker";
+@import "project/number-field";
+@import "project/layout";
+@import "project/border-highlight";
+@import "project/info-box";
+@import "project/welcome-screen";
+@import "project/toolbar";
+@import "project/micro-addon";
+@import "project/input-spinner";
+@import "bootstrap/div-table";
+@import "project/autocomplete-chips";
+@import "project/select";
+
+@import "project/checkout-hot-fixes";
+
+// Browser specific hacks
+@import "project/browser-hacks";
+

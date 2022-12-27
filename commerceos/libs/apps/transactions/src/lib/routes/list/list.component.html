@@ -1,0 +1,123 @@
+<pe-grid [theme]="theme" [items]="listService.items$ | async">
+  <pe-grid-sidenav
+    #sideNav
+    [sidenavTitle]="'transactions.title' | translate"
+    [sidenavMenu]="sidenavMenu"
+    (menuItemSelected)="selectSideNavMenu($event)"
+  >
+    <pe-folders
+      [sideNav]="sideNav"
+      [rootFolder]="rootFolderData"
+      [folders]="foldersTreeData$ | async"
+      [selectFolder]="selectedFolder"
+      [isLoading]="isFoldersLoading$ | async"
+      (selectedRootFolder)="onSelectRootFolder()"
+      (selectedFolder)="onSelectFolder($event)"
+      (selectedDefaultFolder)="onSelectFolder($event)"
+      (createFolder)="transactionsFoldersService.onCreateFolder($event)"
+      (updateFolder)="transactionsFoldersService.onUpdateFolder($event)"
+      (deleteFolder)="transactionsFoldersService.onDeleteFolder($event)"
+      (createHeadline)="transactionsFoldersService.onCreateHeadline($event)"
+      (updateHeadline)="transactionsFoldersService.onUpdateHeadline($event)"
+      (deleteHeadline)="transactionsFoldersService.onDeleteHeadline($event)"
+      (positionsChanged)="transactionsFoldersService.onUpdatePositions($event)"
+    ></pe-folders>
+  </pe-grid-sidenav>
+
+  <pe-grid-content
+    [totalData]="{
+      label: 'transactions.total_transaction' | translate,
+      value: totalValue$ | async
+    }"
+    [mobileTitle]="mobileTitle$ | async"
+  >
+    <pe-grid-toolbar
+      #toolbarElem
+      [viewAdd]="false"
+      [filterConfig]="filterItems$ | async"
+      [searchItems]="searchItems2"
+      [totalItems]="totalItems$ | async"
+      (filtersChange)="onFiltersChange($event)"
+      [optionsMenu]="toolbar.optionsMenu"
+      (optionsChange)="optionsChange($event)"
+      [sortMenu]="toolbar.sortMenu"
+      (sortChange)="sortChange($event)"
+      [viewMenu]="viewMenu"
+      (viewChange)="viewChange($event)"
+      [customMenus]="toolbar.customMenus"
+    ></pe-grid-toolbar>
+    <pe-grid-viewport
+      [selectable]="false"
+      [viewportTitle]="'transactions.title_list' | translate"
+      [defaultLayout]="gridLayout"
+      [allowSetQueryPArams]="true"
+      [totalValue]="totalValue$ | async"
+      (itemContextSelect)="onViewportContextMenu($event)"
+      [allowSetQueryPArams]="true"
+    >
+      <pe-grid-list
+        noItemsPlaceholder='transactions'
+        [displayedColumns]="displayedColumns"
+        [viewAdd]="false"
+        [scrollBottomOffset]="200"
+        [isLoading]="(isLoading$ | async)"
+        (scrolledToEnd)="onScrollLoad()"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            [item]="item"
+            [viewAction]="true"
+            [excludeColumns]="['status']"
+            [itemContextMenu]="itemContextMenu$ | async"
+            [disableContextMenu]="true"
+            (actionClick)="actionClick($event)"
+            (itemClick)="actionClick($event)"
+          >
+          </pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+      <pe-grid-table
+        noItemsPlaceholder='transactions'
+        [displayedColumns]="tableColumns"
+        [scrollBottomOffset]="50"
+        [showHeadInMobile]="true"
+        [isLoading]="(isLoading$ | async)"
+        (scrolledToEnd)="onScrollLoad()"
+      >
+        <ng-template let-item="item">
+          <pe-table-row
+            [item]="item"
+            [itemContextMenu]="itemContextMenu$ | async"
+            [disableContextMenu]="true"
+            (actionClick)="actionClick($event)"
+            (preview)="onOpenPreview($event)"
+            (rowClicked)="actionClick($event)"
+            (moveToFolder)="moveToFolder($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          >
+            <ng-container *ngFor="let column of tableColumns">
+              <ng-container *ngIf="!column.selected$ || (column.selected$ && (column.selected$ | async))">
+                <ng-container *ngIf="getCellValue(item, column.name) as value">
+                  <ng-container *ngIf="!column.cellComponentFactory">
+                    <ng-template  #contentRow>{{value}}</ng-template>
+                  </ng-container>
+                  <ng-container *ngIf="column.cellComponentFactory">
+                    <ng-template  #contentRow>
+                      <pe-table-row-cell-component-host
+                        [inputData]="{
+                          item: item,
+                          componentFactory: column.cellComponentFactory
+                        }"
+                      >
+                      </pe-table-row-cell-component-host>
+                    </ng-template>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </pe-table-row>
+        </ng-template>
+      </pe-grid-table>
+    </pe-grid-viewport>
+  </pe-grid-content>
+</pe-grid>

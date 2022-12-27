@@ -1,0 +1,13 @@
+<button mat-button
+        class="mat-button-rounded mat-button-xs mat-raised-button mat-button-icon actions-more"
+        [matMenuTriggerFor]="menu"
+        (click)="$event.stopPropagation()">
+  <svg class="icon icon-16">
+    <use [attr.xlink:href]="'#icon-dots-h-24'"></use>
+  </svg>
+</button>
+<mat-menu class="mat-menu-dark" #menu="matMenu">
+  <ng-template matMenuContent>
+    <button mat-menu-item (click)="uninstallIntegration()">{{ 'actions.uninstall' | translate }}</button>
+  </ng-template>
+</mat-menu>

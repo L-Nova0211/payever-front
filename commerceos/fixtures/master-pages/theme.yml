@@ -1,0 +1,19 @@
+name: Master pages
+data:
+  categoryPages: /category/:categoryId
+  productPages: /products/:productId
+routing:
+  - routeId: apple-about-page-route
+    url: /
+    pageId: apple-about-page
+context: {}
+pages:
+  - about
+  - accessibility
+  - business
+  - connected
+  - environment
+  - find-store
+  - jobs
+  - newsroom
+  - terms-of-use

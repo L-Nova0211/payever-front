@@ -1,0 +1,165 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./**/tsconfig.*?.json",
+    "tsconfigRootDir": "."
+  },
+  "ignorePatterns": ["**/*"],
+  "plugins": [
+    "@typescript-eslint",
+    "@angular-eslint/eslint-plugin",
+    "@nrwl/nx",
+    "import"
+  ],
+  "extends": [
+    "plugin:@angular-eslint/recommended",
+    "plugin:import/typescript"
+  ],
+  "settings": {
+    "import/internal-regex": "^@pe/",
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".js"]
+    },
+    "import/resolver": {
+      "typescript": { }
+    },
+    "import/extensions": [
+      ".js",
+      ".ts"
+    ]
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "semi": 2,
+    "no-var": 2,
+    "eqeqeq": ["error", "always"],
+    "keyword-spacing": ["error", { "before": true }],
+    "no-unreachable": "error",
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore",
+        "enums": "ignore"
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@nrwl/nx/enforce-module-boundaries": [
+      "error",
+      {
+        "allow": [],
+        // update depConstraints based on your tags
+        "depConstraints": [
+          {
+            "sourceTag": "scope:apps",
+            "onlyDependOnLibsWithTags": ["scope:libs", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:libs",
+            "onlyDependOnLibsWithTags": ["scope:libs", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:libs"]
+          },
+          {
+            "sourceTag": "scope:common",
+            "onlyDependOnLibsWithTags": ["scope:apps", "scope:shared", "scope:libs"]
+          },
+          {
+            "sourceTag": "type:ui",
+            "onlyDependOnLibsWithTags": ["type:util", "type:data-access", "type:uses-builder"]
+          },
+          {
+            "sourceTag": "type:builder",
+            "onlyDependOnLibsWithTags": ["type:builder"]
+          },
+          // TODO: remove after builder would done
+          {
+            "sourceTag": "type:uses-builder",
+            "onlyDependOnLibsWithTags": ["type:builder"]
+          },
+          {
+            "sourceTag": "type:feature",
+            "onlyDependOnLibsWithTags": ["type:util", "type:data-access", "type:ui", "type:uses-builder"]
+          },
+          {
+            "sourceTag": "type:data-access",
+            "onlyDependOnLibsWithTags": ["type:util"]
+          },
+          {
+            "sourceTag": "type:util",
+            "onlyDependOnLibsWithTags": ["type:util", "type:data-access"]
+          }
+        ]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "object-curly-spacing": ["error", "always"],
+    "template-curly-spacing": ["error", "never"],
+    "curly": ["error"],
+    "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "import/extensions": "off",
+    "max-len": ["error", { "code": 120, "ignoreTemplateLiterals": true }],
+    "no-underscore-dangle": ["error", { "allowAfterThis": true, "allow": ["_id"] }],
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "@angular-eslint/component-class-suffix": [
+      "error",
+      {
+        "suffixes": [
+          "Component",
+          "Route",
+          "Dialog",
+          "Maker",
+          "Form",
+          "Sidebar",
+          "Editor",
+          "Element",
+          "Tool",
+          "ElementUi",
+          "Renderer",
+          "Input",
+          "Control",
+          "Viewer"
+        ]
+      }
+    ],
+    "@angular-eslint/directive-class-suffix": [
+      "error",
+      {
+        "suffixes": [
+          "Directive",
+          "Slot",
+          "Tree",
+          "Element",
+          "Tool"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.shipping_goods.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.actions.done"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="done()"
+>
+  <pe-load-micro [innerMicro]="{ micro: 'shipping', innerMicro: 'package-slip' }" [isShowLoader]="false">
+    <custom-package-slip
+      *ngIf="data && business"
+      [attr.data]="data | json"
+      [attr.business]="business | json"
+      [attr.shippingorderid]="shippingOrderId"
+    >
+    </custom-package-slip>
+  </pe-load-micro>
+</pe-action-container>

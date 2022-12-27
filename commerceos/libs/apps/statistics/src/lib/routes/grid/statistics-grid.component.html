@@ -1,0 +1,74 @@
+<div class="data-grid-wrap" [class.is-filters-hidden]="isFullScreenMode" [ngClass]="theme">
+  <pe-statistics-material-styles></pe-statistics-material-styles>
+  <pe-data-grid
+    #dataGridComponent
+    [items]="[]"
+    [filters]="[]"
+    [theme]="theme"
+    [isFilterCreating]="true"
+    [enableDragAndDrop]="true"
+    [searchItems]="searchItems"
+    [isShowGridItemInfo]="true"
+    [filterItems]="filterItems"
+    [displayNavbar]="!isFullScreenMode"
+    [creatingFilterParentName]="'Albums'"
+    [displayFilters]="showSidebar$ | async"
+    (searchChanged)="onSearchChanged($event)"
+    (searchRemove)="onSearchRemove($event)"
+    (gridContentContextMenu)="openWidgetContextMenu($event)"
+  >
+    <pe-sidebar-filters-wrapper>
+      <pe-sidebar-header
+        title="{{ 'statistics.sidebar.title' | translate }}"
+        (closeSidebar)="showSidebar = false"
+        [allowClose]="true"
+      ></pe-sidebar-header>
+      <pe-sidebar-filter-wrapper
+        *ngFor="let category of categories" (changeTitleOn)="onChangeTitle($event)"
+        [title]="category.title"
+        [expandable]="true"
+        [editable]="false"
+        [editMode]="category.editMode"
+        [active]="false">
+        <pe-tree-sidebar-filter
+          *ngIf="checkCategory(category) === 'dashboard'"
+          [tree]="category.tree"
+          [multiple]="false"
+          [formControl]="formGroupDashboard.get('tree')"
+          [refresh]="refresh$"
+          (nodeClick)="dashboardClick($event)"
+          (renameNode)="nodeRenamed($event)"
+          (nodeContextMenu)="openDashboardContextMenu($event)"
+          [allowToggle]="true">
+        </pe-tree-sidebar-filter>
+      </pe-sidebar-filter-wrapper>
+    </pe-sidebar-filters-wrapper>
+
+    <pe-sidebar-footer-wrapper>
+      <pe-menu-sidebar-footer [menuData]="sideNavActionRail" [theme]="theme"></pe-menu-sidebar-footer>
+    </pe-sidebar-footer-wrapper>
+
+    <mat-grid-list
+      [cols]="gridCols"
+      [rowHeight]="(editMode$ | async) ? '180px' : '140px'"
+      gutterSize="16px"
+      (contextmenu)="openWidgetContextMenu($event)"
+    >
+      <mat-grid-tile
+        *ngFor="let widget of widgets$ | async"
+        [colspan]="widget.size === widgetService.widgetSize.Small ? 1 : 2"
+        [rowspan]="widget.size === widgetService.widgetSize.Large ? 2 : 1"
+        [class]="widget.size"
+      >
+        <peb-widget-wrapper
+          (click)="onClickToEdit($event, widget)"
+          [class]="widget.size"
+          [class.expanded]="editMode$ | async"
+          [config]="widget"
+          [showEditBtn]="widget.edit"
+          [resizableLineGraph]="true"
+        ></peb-widget-wrapper>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </pe-data-grid>
+</div>

@@ -1,0 +1,30 @@
+<div *ngFor="let file of files; trackBy: trackBy" class="message-attachment">
+  <div class="message-attachment__preview" [style.background-image]="file.urlStyle">
+    <pe-chat-message-file-loader
+      [file]="file"
+      [theming]="theming"
+    ></pe-chat-message-file-loader>
+    <ng-container *ngIf="file.loaded$ | async as content">
+      <img *ngIf="file.isImage" alt="" class="message-attachment__thumbnail" [src]="content"/>
+      <div
+        class="message-attachment__preview_hovered"
+        (click)="file.action()"
+      >
+        <mat-icon class="message-attachment__preview-icon" svgIcon="eye"></mat-icon>
+      </div>
+    </ng-container>
+  </div>
+  <div class="message-attachment__info">
+    <span class="message-attachment__title">{{ file.title }}</span>
+    <div class="message-attachment__subtitle">
+      <span class="message-attachment__file-size">{{ fileSize(file.size) }}</span>
+      <ng-container *ngIf="!file.loaded$.value">
+        <span class="message-attachment__download-separator"></span>
+        <span
+          class="message-attachment__subtitle-action"
+          (click)="file.action()"
+        >{{ 'message-app.chat.message_file.actions.download' | translate }}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

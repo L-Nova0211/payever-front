@@ -1,0 +1,18 @@
+<div class="pe-info-box-container-fixed store-app-container">
+  <pe-info-box [fixed]="false"
+               [transparent]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [withPadding]="false"
+               [title]="'channels.shop.title' | translate"
+               [roundBorder]="true"
+               [notFullwidthOnMobile]="true"
+               (onClose)="goBack()">
+    <ng-container content>
+      <menu-list [titleForEmptyField]="'channels.shop.noShop' | translate"
+                 [menuList]="storeList"
+                 (changedToggle)="onChangeToggle($event)">
+      </menu-list>
+    </ng-container>
+  </pe-info-box>
+</div>

@@ -1,0 +1,57 @@
+<peb-form-field-input
+  appearance="label"
+  [errorMessage]="errorMessage"
+  [isFieldInvalid]="isFieldInvalid"
+  [label]="label"
+>
+  <input #input
+    class="pe-search-input"
+    (focus)="setFocus()"
+    (focusout)="setBlur()"
+    [formControl]="formControl"
+    [matAutocomplete]="auto"
+    [placeholder]="placeholder"
+    type="text"
+  />
+  <div
+    *ngIf="focused && loading"
+    class="suffix-spinner"
+  >
+    <mat-spinner
+      [diameter]="24"
+      mode="indeterminate"
+    ></mat-spinner>
+  </div>
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    class="pe-search-panel {{ theme }}"
+    (optionSelected)="optionSelected($event.option.value)"
+  >
+    <div *ngIf="(filteredItems$ | async) as filteredItems">
+      <mat-option
+        *ngFor="let option of filteredItems; trackBy: trackOption"
+        class="pe-search-panel__option"
+        [value]="option"
+      >
+        <img
+          *ngIf="option?.image && isIconImage(option.image)"
+          alt=""
+          [src]="option.image"
+        />
+        <mat-icon
+          *ngIf="option?.image && !isIconXlink(option.image) && !isIconImage(option.image) && option.image !== ''"
+          class="pe-search-panel__option-icon"
+          [svgIcon]="option.image"
+        ></mat-icon>
+        <svg
+          *ngIf="option?.image && isIconXlink(option.image)"
+          class="pe-search-panel__option-icon"
+        >
+          <use [attr.xlink:href]="option.image"></use>
+        </svg>
+        {{ option.title }}
+      </mat-option>
+    </div>
+  </mat-autocomplete>
+</peb-form-field-input>

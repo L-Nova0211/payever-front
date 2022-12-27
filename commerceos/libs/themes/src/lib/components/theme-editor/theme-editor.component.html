@@ -1,0 +1,36 @@
+<div [formGroup]="themeForm" [ngClass]="theme" >
+  <pe-media-editor
+    [blobs]="themeForm.controls.media.value"
+    [businessId]="businessId"
+    (changeMedia)="updatePicture($event)"
+    [isFolderEditor]="true"
+    [theme]="theme"
+  ></pe-media-editor>
+  <!-- (warning)="showWarning($event)" -->
+  <div [style.margin-top.px]="16">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'builder-themes.theme_editor.name.error' | translate"
+        [isFieldInvalid]="themeForm.controls.name.invalid"
+        [label]="'builder-themes.theme_editor.name.label' | translate"
+      >
+        <input
+          formControlName="name"
+          [placeholder]="'builder-themes.theme_editor.name.placeholder' | translate"
+          type="text"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <peb-form-background>
+      <peb-button-toggle
+        (changed)="changeThemeType($event)"
+        [checked]="themeForm.controls.isTemplateTheme.value"
+        [disabled]="themeForm.controls.isTemplateTheme.value"
+        [label]="'builder-themes.theme_editor.themes_market.label' | translate"
+        labelPosition="before"
+        [spacer]="true"
+      ></peb-button-toggle>
+    </peb-form-background>
+  </div>
+</div>

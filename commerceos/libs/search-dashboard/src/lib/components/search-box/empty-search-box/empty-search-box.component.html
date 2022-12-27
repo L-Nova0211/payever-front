@@ -1,0 +1,6 @@
+<div class="icons-container">
+  <ng-container *ngFor="let icon of iconsRow">
+    <div class="empty-search-icon" [style.background-image]="('url(' + (icon | iconsPngUrl) + ')') | safeStyle"></div>
+  </ng-container>
+</div>
+<div class="empty-search-text" translate>search_box.content.details</div>

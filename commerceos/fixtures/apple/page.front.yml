@@ -1,0 +1,840 @@
+id: apple-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-main-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-title
+          type: text
+          data:
+            text: iPhone SE
+        - id: first-section-description
+          type: text
+          data:
+            text: Lots to love. Less to spend.
+        - id: first-section-link
+          type: text
+          data:
+            text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+
+    - id: second-section
+      type: block
+      children:
+        - id: second-section
+          type: block
+          children:
+            - id: second-section-title
+              type: text
+              data:
+                text: iPhone 11
+            - id: second-section-description
+              type: text
+              data:
+                text: Just the right amount of everything.
+            - id: second-section-link
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+
+    - id: video-block
+      type: block
+      children:
+        - id: video-element
+          type: video
+          data:
+            source: https://payevertesting.blob.core.windows.net/builder-video/818dcc5f-13e3-45b1-8bf9-066bee0c5f6f-media
+            preview: https://payevertesting.blob.core.windows.net/builder-video/818dcc5f-13e3-45b1-8bf9-066bee0c5f6f-media_preview
+            autoplay: true
+            loop: true
+
+    - id: third-section
+      type: block
+      children:
+        - id: third-section
+          type: section
+          children:
+            - id: third-section-title
+              type: text
+              data:
+                text: iPad Pro
+            - id: third-section-description
+              type: text
+              data:
+                text: Your next computer is not a computer.
+            - id: third-section-link
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-item1
+          type: block
+          children:
+            - id: fourth-section-item1-backdrop
+              type: block
+              children:
+                - id: fourth-section-item1-title
+                  type: text
+                  data:
+                    text: WWDC20
+                - id: fourth-section-item1-description
+                  type: text
+                  data:
+                    text: This year, join us to experience the entire
+                - id: fourth-section-item1-link
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+        - id: fourth-section-item2
+          type: block
+          children:
+            - id: fourth-section-item2-backdrop
+              type: block
+              children:
+                - id: fourth-section-item2-title
+                  type: text
+                  data:
+                    text: WATCH
+                - id: fourth-section-item2-description
+                  type: text
+                  data:
+                    text: Starting at $249 with eligible trade-in.
+                - id: fourth-section-item2-link
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-item1
+          type: block
+          children:
+            - id: fifth-section-item1-backdrop
+              type: block
+              children:
+                - id: fifth-section-item1-title
+                  type: text
+                  data:
+                    text: Works the way you do.
+                - id: fifth-section-item1-description
+                  type: text
+                  data:
+                    text: Just the right amount of everything.
+                - id: fifth-section-item1-link
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Explore accessibility features</span>
+        - id: fifth-section-item2
+          type: block
+          children:
+            - id: fifth-section-item2-backdrop
+              type: block
+              children:
+                - id: fifth-section-item2-title
+                  type: text
+                  data:
+                    text: TV+
+                - id: fifth-section-item2-description
+                  type: text
+                  data:
+                    text: Get 1 year of Apple TV+ free when you buy an Apple device.
+                - id: fifth-section-item2-link
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Learn more</span>
+
+stylesheets:
+  desktop:
+    apple-main-page: {}
+    # ----------------------------------
+    # Desktop First section
+    # ----------------------------------
+    first-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-se/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    first-section-title:
+      margin: 45 0 0 330
+      fontSize: 56
+      fontWeight: 600
+      width: 256
+      color: '#f5f5f7'
+      textAlign: center
+    first-section-description:
+      margin: 10 0 0 290
+      fontSize: 28
+      width: 350
+      fontWeight: 400
+      color: '#f5f5f7'
+      textAlign: center
+    first-section-link:
+      margin: 0 0 0 400
+      width: 100
+      fontSize: 17
+      color: '#2997ff'
+    # ----------------------------------
+    # Desktop Second section
+    # ----------------------------------
+    second-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-11-spring/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    second-section-title:
+      margin: 45 auto 0 auto
+      fontSize: 56
+      width: 255
+      fontWeight: 600
+      color: '#1d1d1f'
+    second-section-description:
+      margin: 10 auto 0 auto
+      width: 443
+      fontSize: 28
+      fontWeight: 400
+      color: '#1d1d1f'
+    second-section-link:
+      margin: 0 0 0 420
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+
+    video-element:
+      width: 1320
+
+    # ----------------------------------
+    # Desktop Third section
+    # ----------------------------------
+    third-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/ipad-pro/hero__dvsxv8smkkgi_large_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    third-section-title:
+      margin: 45 0 0 400
+      fontSize: 56
+      width: 215
+      fontWeight: 600
+      color: '#1d1d1f'
+    third-section-description:
+      margin: 10 0 0 300
+      fontSize: 28
+      width: 475
+      fontWeight: 400
+      color: '#1d1d1f'
+      textAlign: center
+      padding: 10 0
+      overflow: hidden
+    third-section-link:
+      margin: 10 0 0 470
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+    # ----------------------------------
+    # Desktop Fourth section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 512 512
+      height: 500
+    fourth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/wwdc-2020/tile__cauwwcyyn9hy_large_2x.jpg'
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 100 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fourth-section-item1-title:
+      margin: 45 0 0 200
+      fontSize: 40
+      fontWeight: 600
+      width: 170
+
+      color: '#fff'
+    fourth-section-item1-description:
+      margin: 10 0 0 80
+      fontSize: 21
+      fontWeight: 400
+      width: 378
+      color: '#fff'
+
+    fourth-section-item1-link:
+      margin: 10 0 0 220
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+    fourth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/watch-series-5/tile_aws5__fwphji1d8yeu_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fourth-section-item2-title:
+      margin: 330 0 0 200
+      fontSize: 40
+      fontWeight: 600
+      width: 140
+
+      color: '#000'
+    fourth-section-item2-description:
+      margin: 10 0 0 80
+      fontSize: 21
+      fontWeight: 400
+      color: '#000'
+      width: 347
+
+    fourth-section-item2-link:
+      margin: 10 0 0 220
+      color: '#2997ff'
+      fontSize: 17
+      width: 100
+    # ----------------------------------
+    # Desktop Fifth section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateColumns: 512 512
+    fifth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/gaad/tile__cauwwcyyn9hy_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fifth-section-item1-title:
+      margin: 330 0 0 40
+      width: 430
+      fontSize: 40
+      fontWeight: 600
+
+      color: '#fff'
+    fifth-section-item1-description:
+      margin: 10 0 0 100
+      fontSize: 21
+      fontWeight: 400
+      width: 332
+      color: '#fff'
+
+    fifth-section-item1-link:
+      margin: 10 0 0 150
+      color: '#2997ff'
+      fontSize: 17
+      width: 220
+    fifth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/tv-plus-device-offer/tile_dj__czxnts8tuioi_xlarge_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fifth-section-item2-title:
+      margin: 330 0 0 200
+      fontSize: 40
+      width: 100
+      fontWeight: 600
+
+      color: '#000'
+    fifth-section-item2-description:
+      margin: 10 0 0 30
+      fontSize: 21
+      width: 440
+      textAlign: center
+      fontWeight: 400
+      color: '#000'
+
+    fifth-section-item2-link:
+      margin: 10 0 0 200
+      color: '#2997ff'
+      fontSize: 17
+      width: 86
+
+  tablet:
+    apple-main-page: {}
+    # ----------------------------------
+    # Tablet First section
+    # ----------------------------------
+    first-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-se/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    first-section-title:
+      margin: 45 0 0 250
+      fontSize: 56
+      width: 256
+      fontWeight: 600
+      color: '#f5f5f7'
+      textAlign: center
+    first-section-description:
+      margin: 10 0 0 200
+      fontSize: 28
+      fontWeight: 400
+      color: '#f5f5f7'
+      width: 350
+      textAlign: center
+    first-section-link:
+      margin: 0 0 0 330
+      fontSize: 17
+      width: 100
+      color: '#2997ff'
+    # ----------------------------------
+    # Tablet Second section
+    # ----------------------------------
+    second-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-11-spring/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    second-section-title:
+      margin: 45 0 0 280
+      fontSize: 56
+      width: 255
+      fontWeight: 600
+      color: '#1d1d1f'
+    second-section-description:
+      margin: 10 0 0 200
+      fontSize: 28
+      fontWeight: 400
+      width: 443
+      color: '#1d1d1f'
+    second-section-link:
+      margin: 0 0 0 350
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+
+    video-element:
+      width: 768
+
+    # ----------------------------------
+    # Tablet Third section
+    # ----------------------------------
+    third-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/ipad-pro/hero__dvsxv8smkkgi_large_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 700
+      display: grid
+      gridTemplateRows: 110 80 40
+    third-section-title:
+      margin: 45 0 0 300
+      fontSize: 56
+      fontWeight: 600
+      width: 215
+
+      color: '#1d1d1f'
+    third-section-description:
+      margin: 10 0 0 170
+      fontSize: 28
+      fontWeight: 400
+      width: 475
+      color: '#1d1d1f'
+
+      textAlign: center
+      padding: 10 0
+      overflow: hidden
+    third-section-link:
+      margin: 0 0 0 350
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+    # ----------------------------------
+    # Tablet Fourth section
+    # ----------------------------------
+    fourth-section:
+      height: 500
+    fourth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/wwdc-2020/tile__cauwwcyyn9hy_large_2x.jpg'
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 100 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fourth-section-item1-title:
+      margin: 45 0 0 320
+      fontSize: 40
+      fontWeight: 600
+      width: 170
+
+      color: '#fff'
+    fourth-section-item1-description:
+      margin: 10 0 0 200
+      fontSize: 21
+      width: 378
+      fontWeight: 400
+      color: '#fff'
+
+    fourth-section-item1-link:
+      margin: 0 0 0 350
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+    fourth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/watch-series-5/tile_aws5__fwphji1d8yeu_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fourth-section-item2-title:
+      margin: 330 0 0 320
+      fontSize: 40
+      fontWeight: 600
+      width: 140
+
+      color: '#000'
+    fourth-section-item2-description:
+      margin: 10 0 0 200
+      fontSize: 21
+      width: 347
+      fontWeight: 400
+      color: '#000'
+
+    fourth-section-item2-link:
+      margin: 0 0 0 350
+      color: '#2997ff'
+      fontSize: 17
+      width: 100
+    # ----------------------------------
+    # Tablet Fifth section
+    # ----------------------------------
+    fifth-section:
+    fifth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/gaad/tile__cauwwcyyn9hy_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fifth-section-item1-title:
+      margin: 330 0 0 200
+      fontSize: 40
+      fontWeight: 600
+
+      color: '#fff'
+    fifth-section-item1-description:
+      margin: 10 0 0 230
+      fontSize: 21
+      width: 332
+      fontWeight: 400
+      color: '#fff'
+
+    fifth-section-item1-link:
+      margin: 0 0 0 280
+      color: '#2997ff'
+      fontSize: 17
+      width: 220
+    fifth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/tv-plus-device-offer/tile_dj__czxnts8tuioi_xlarge_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fifth-section-item2-title:
+      margin: 330 0 0 360
+      fontSize: 40
+      width: 100
+      fontWeight: 600
+
+      color: '#000'
+    fifth-section-item2-description:
+      margin: 10 0 0 100
+      fontSize: 21
+      width: 552
+      fontWeight: 400
+      color: '#000'
+
+    fifth-section-item2-link:
+      margin: 0 0 0 350
+      color: '#2997ff'
+      fontSize: 17
+      width: 86
+
+  mobile:
+    apple-main-page: {}
+    # ----------------------------------
+    # Mobile First section
+    # ----------------------------------
+    first-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-se/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 500
+      display: grid
+      gridTemplateRows: 90 80 40
+    first-section-title:
+      margin: 45 0 0 80
+      fontSize: 42
+      fontWeight: 600
+      width: 200
+      color: '#f5f5f7'
+      textAlign: center
+    first-section-description:
+      margin: 10 0 0 10
+      fontSize: 28
+      fontWeight: 400
+      width: 350
+      color: '#f5f5f7'
+      textAlign: center
+    first-section-link:
+      margin: 0 0 0 130
+      fontSize: 17
+      color: '#2997ff'
+      width: 100
+    # ----------------------------------
+    # Mobile Second section
+    # ----------------------------------
+    second-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/iphone-11-spring/hero__dvsxv8smkkgi_mediumtall_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 500
+      display: grid
+      gridTemplateRows: 90 80 40
+    second-section-title:
+      margin: 45 0 0 90
+      fontSize: 42
+      fontWeight: 600
+      width: 200
+      color: '#1d1d1f'
+    second-section-description:
+      margin: 10 0 0 30
+      fontSize: 28
+      width: 300
+      fontWeight: 400
+      textAlign: center
+      color: '#1d1d1f'
+    second-section-link:
+      margin: 0 0 0 120
+      width: 100
+      color: '#2997ff'
+      fontSize: 17
+
+    video-element:
+      width: 360
+
+    # ----------------------------------
+    # Mobile Third section
+    # ----------------------------------
+    third-section:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/heroes/ipad-pro/hero__dvsxv8smkkgi_large_2x.jpg'
+      backgroundSize: cover
+      backgroundPosition: bottom
+      backgroundRepeat: no-repeat
+      height: 500
+      display: grid
+      gridTemplateRows: 90 80 40
+    third-section-title:
+      margin: 45 0 0 100
+      fontSize: 42
+      fontWeight: 600
+      width: 200
+
+      color: '#1d1d1f'
+    third-section-description:
+      margin: 0 0 0 30
+      fontSize: 28
+      width: 300
+      fontWeight: 400
+      color: '#1d1d1f'
+
+      textAlign: center
+      padding: 10 0
+      overflow: hidden
+    third-section-link:
+      margin: 10 0 0 120
+      color: '#2997ff'
+      width: 90
+      fontSize: 17
+    # ----------------------------------
+    # Mobile Fourth section
+    # ----------------------------------
+    fourth-section:
+      height: 500
+    fourth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/wwdc-2020/tile__cauwwcyyn9hy_large_2x.jpg'
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 100 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fourth-section-item1-title:
+      margin: 45 0 0 100
+      fontSize: 40
+      fontWeight: 600
+      width: 170
+
+      color: '#fff'
+    fourth-section-item1-description:
+      margin: 0 0 0 30
+      fontSize: 21
+      fontWeight: 400
+      width: 300
+      textAlign: center
+      color: '#fff'
+
+    fourth-section-item1-link:
+      margin: 0 0 0 150
+      color: '#2997ff'
+      width: 86
+      fontSize: 17
+    fourth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/watch-series-5/tile_aws5__fwphji1d8yeu_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fourth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fourth-section-item2-title:
+      margin: 320 0 0 100
+      fontSize: 40
+      fontWeight: 600
+      width: 140
+
+      color: '#000'
+    fourth-section-item2-description:
+      margin: 0 0 0 10
+      fontSize: 21
+      width: 347
+      fontWeight: 400
+      color: '#000'
+
+    fourth-section-item2-link:
+      margin: 0 0 0 120
+      color: '#2997ff'
+      fontSize: 17
+      width: 86
+    # ----------------------------------
+    # Mobile Fifth section
+    # ----------------------------------
+    fifth-section:
+    fifth-section-item1:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/gaad/tile__cauwwcyyn9hy_large_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item1-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(0,0,0,0.3)
+    fifth-section-item1-title:
+      margin: 280 0 0 20
+      width: 300
+      textAlign: center
+      fontSize: 40
+      fontWeight: 600
+
+      color: '#fff'
+    fifth-section-item1-description:
+      margin: 10 0 0 20
+      fontSize: 21
+      fontWeight: 400
+      width: 332
+      color: '#fff'
+
+    fifth-section-item1-link:
+      margin: 0 0 0 80
+      width: 220
+      color: '#2997ff'
+      fontSize: 17
+    fifth-section-item2:
+      backgroundImage: 'https://www.apple.com/v/home/i/images/promos/tv-plus-device-offer/tile_dj__czxnts8tuioi_xlarge_2x.jpg'
+      height: 500
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      backgroundPosition: center
+    fifth-section-item2-backdrop:
+      display: grid
+      gridTemplateRows: 380 60 40
+      height: 500
+      backgroundColor: rgba(255,255,255,0.3)
+    fifth-section-item2-title:
+      margin: auto auto 0 auto
+      fontSize: 40
+      fontWeight: 600
+
+      color: '#000'
+    fifth-section-item2-description:
+      margin: auto
+      fontSize: 21
+      textAlign: center
+      width: 300
+      fontWeight: 400
+      color: '#000'
+
+    fifth-section-item2-link:
+      margin: 0 0 0 150
+      color: '#2997ff'
+      width: 100
+      fontSize: 17
+
+context: {}

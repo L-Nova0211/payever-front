@@ -1,0 +1,8 @@
+<div class="widget-apps-container">
+  <div class="app" *ngFor="let app of apps" (click)="onAppClick(app)">
+    <div class="app__icon">
+      <img src="{{ app.url }}" />
+    </div>
+    <div class="app__name" [ngClass]="theme">{{ app.name }}</div>
+  </div>
+</div>

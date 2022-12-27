@@ -1,0 +1,77 @@
+//
+// Typography mixins
+// --------------------------------------------------
+
+// Font Large
+// -----------------------
+
+@mixin font-large-1($dark-theme: false) {
+  font-size: $font-size-large-1;
+  font-weight: $font-weight-regular;
+  color: $color-secondary-0;
+}
+
+@mixin font-large-2($dark-theme: false) {
+  font-size: $font-size-large-2;
+  font-weight: $font-weight-medium;
+  color: $color-secondary-0;
+}
+
+@mixin font-large-3($dark-theme: false) {
+  font-size: $font-size-large-3;
+  font-weight: $font-weight-medium;
+  color: $color-secondary-0;
+}
+
+
+// Font Regular
+// -----------------------
+
+@mixin font-regular-1($dark-theme: false) {
+  font-size: $font-size-regular-1;
+  font-weight: $font-weight-light;
+  color: $color-secondary-0;
+}
+
+@mixin font-regular-2($dark-theme: false) {
+  font-size: $font-size-regular-2;
+  font-weight: $font-weight-light;
+  color: $color-secondary-0;
+}
+
+@mixin font-regular-3($dark-theme: false) {
+  font-size: $font-size-regular-3;
+  font-weight: $font-weight-regular;
+  color: $color-secondary-0;
+}
+
+
+// Font Small
+// -----------------------
+
+@mixin font-small-1($dark-theme: false) {
+  font-size: $font-size-small;
+  font-weight: $font-weight-light;
+  color: $color-secondary-0;
+}
+
+@mixin font-small-2($dark-theme: false) {
+  font-size: $font-size-small;
+  font-weight: $font-weight-regular;
+}
+
+
+// Font Micro
+// -----------------------
+
+@mixin font-micro-1($dark-theme: false) {
+  font-size: $font-size-micro-1;
+  font-weight: $font-weight-light;
+  color: $color-secondary-0;
+}
+
+@mixin font-micro-2($dark-theme: false) {
+  font-size: $font-size-micro-2;
+  font-weight: $font-weight-regular;
+  color: $color-secondary-0;
+}

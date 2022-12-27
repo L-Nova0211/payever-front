@@ -1,0 +1,36 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "./../../components/panels/page-container";
+
+.menu-list {
+  .mat-card-content {
+    .mat-list-transparent {
+      .mat-list-item {
+        padding: 0 12px;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $menu-item-border-color;
+        }
+
+        &:last-child {
+          .mat-list-item-content {
+            border-bottom: 0 !important;
+          }
+        }
+
+
+        .mat-list-item-content {
+          .mat-list-item-title {
+            font-family: Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: $regular-text-color;
+          }
+        }
+      }
+    }
+  }
+}

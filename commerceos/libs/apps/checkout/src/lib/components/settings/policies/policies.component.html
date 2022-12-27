@@ -1,0 +1,16 @@
+<div class="pe-info-box-container-fixed policies-content">
+  <pe-info-box [withHeader]="false"
+               [withFooter]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               [fixed]="false"
+               (onClose)="goBack()"
+  >
+    <ng-container content>
+      <menu-list [titleForEmptyField]="translateService.translate('settings.policies.noPolicies')"
+                 [menuList]="channelSetsList"
+                 (changedToggle)="onChangeToggle($event)">
+      </menu-list>
+    </ng-container>
+  </pe-info-box>
+</div>

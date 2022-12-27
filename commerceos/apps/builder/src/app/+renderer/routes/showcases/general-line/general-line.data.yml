@@ -1,0 +1,65 @@
+elements:
+  id: line
+  type: line
+  data:
+    stroking: true
+    shadowing: true
+
+
+stylesheet:
+  all:
+    line:
+      width: 100
+      height: 10
+      backgroundColor: blue
+      margin: 20
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#0000ff'
+      shadowAngle: 60
+  second:
+    line:
+      width: 120
+      height: 10
+      backgroundColor: blue
+      margin: 20
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#0000ff'
+      shadowAngle: 45
+  third:
+    line:
+      width: 120
+      height: 10
+      backgroundColor: blue
+      margin: 20
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#0000ff'
+      shadowAngle: 170
+  fourth:
+    line:
+      width: 120
+      height: 10
+      backgroundColor: brown
+      margin: 20
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#c3c3c3'
+      shadowAngle: 230
+  fifth:
+    line:
+      width: 120
+      height: 10
+      backgroundColor: '#c3c3c3'
+      margin: 20
+      shadowOffset: 10
+      shadowBlur: 10
+      shadowOpacity: 50
+      shadowColor: '#c3c3c3'
+      shadowAngle: 300
+context: {}

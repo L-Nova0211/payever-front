@@ -1,0 +1,254 @@
+@import '../.././../../../../ui/src/lib/components/theming/theming';
+
+$activeAccentColor: #fff;
+$activePrimaryColor: #0371e2;
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin getConversationTheme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $hover-menu-item: map-get($theme-config, hover-menu-item);
+  $label-color: map-get($theme-config, label-color);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+
+  &:hover > * {
+    &:not(.pe-grid-conversation_active) {
+      background-color: $hover-menu-item;
+      border: 1px solid $separator;
+    }
+  }
+
+  &:not(:hover) {
+    &:not(:last-child) {
+      &::after {
+        background-color: $separator;
+      }
+
+      &.active {
+        &::after {
+          background-color: $activePrimaryColor;
+        }
+      }
+    }
+  }
+
+  .pe-grid-conversation {
+    &__logo,
+    &__tag,
+    &__unread-messages {
+      color: $activeAccentColor;
+    }
+
+    &__title {
+      color: $text-color;
+    }
+
+    &__draft-heading {
+      color: #ee5a5a;
+    }
+
+    &__last-message,
+    &__last-message div {
+      color: $text-color;
+    }
+
+    &__tag svg,
+    &__unread-messages {
+      background-color: $activePrimaryColor;
+    }
+
+    &__private-chat .icon,
+    &__time {
+      color: $label-color;
+    }
+
+    &_active {
+      background-color: $activePrimaryColor;
+      border: 1px solid $activePrimaryColor;
+
+      .pe-grid-conversation {
+        &__last-message,
+        &__last-message div,
+        &__private-chat .icon,
+        &__time,
+        &__title {
+          color: $activeAccentColor;
+        }
+
+        &__tag {
+          color: $activePrimaryColor;
+
+          svg {
+            background-color: $activeAccentColor;
+          }
+        }
+
+        &__unread-messages {
+          color: $activePrimaryColor;
+          background: $activeAccentColor;
+        }
+      }
+    }
+  }
+}
+
+:host {
+  &:hover > *,
+  .pe-grid-conversation_active {
+    height: 56px;
+    padding: 7px;
+  }
+
+  &:not(:hover) {
+      &::after {
+        content: "";
+        position: absolute;
+        margin-left: 8px;
+        margin-top: -1px;
+        height: 1px;
+        width: calc(100% - 16px);
+        background: #24272ed9;
+      }
+  }
+
+  &.dark {
+    @include getConversationTheme($dark-theme);
+  }
+
+  &.light {
+    @include getConversationTheme($light-theme);
+  }
+
+  &.transparent {
+    @include getConversationTheme($transparent-theme);
+  }
+}
+
+.pe-grid-conversation {
+  height: 56px;
+  width: 100%;
+
+  border: 1px transparent;
+  border-radius: 8px;
+
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &__logo {
+    border-radius: 50%;
+    margin-right: 6px;
+    overflow: hidden;
+
+    height: 32px;
+    max-height: 32px;
+    min-height: 32px;
+
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    width: calc(100% - 37px);
+  }
+
+  &__description,
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__abbreviation,
+  &__info,
+  &__last-message,
+  &__unread-messages {
+    align-items: center;
+    display: flex;
+  }
+
+  &__abbreviation {
+    background: linear-gradient(to bottom, #6E6D6C, #474747);
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &__draft-heading {
+    margin-right: 0.2em;
+  }
+
+  &__last-message {
+    max-width: calc(100% - 40px);
+
+    div {
+      font-size: 14px;
+      overflow: hidden;
+      pointer-events: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    svg {
+      height: 14px;
+      margin-right: 4px;
+      width: 12px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__tag {
+    display: contents;
+    font-size: 12px;
+
+    svg {
+      border-radius: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__time {
+    font-size: 12px;
+    padding-left: 2px;
+  }
+
+  &__unread-messages {
+    min-height: 18px;
+    min-width: 18px;
+    line-height: 14px;
+    font-size: 11px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    padding: 2px;
+    margin-left: 4px;
+  }
+}

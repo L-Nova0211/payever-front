@@ -1,0 +1,27 @@
+@import './_scrollbar';
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+}
+
+select, input, textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.shape-corners-control-tooltip {
+  margin-left: 350px !important;
+  margin-top: 55px !important;
+  margin-bottom: -100px !important;
+  background: black;
+}

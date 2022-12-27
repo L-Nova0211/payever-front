@@ -1,0 +1,188 @@
+// Tree
+// -----------------------
+
+.pe-bootstrap {
+
+  .mat-tree {
+    font-family: $font-family-sans-serif;
+
+    // Tree items
+    // -----------------------
+    &-node {
+      min-height: $grid-unit-y * 4;
+      overflow: unset;
+      @include pe_flex-wrap(wrap);
+
+      &-space {
+        @include pe_flexbox;
+        @include pe_justify-content(space-between);
+      }
+
+      &-right {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+
+        &-item {
+          margin-right: $grid-unit-x * 2;
+          color: $color-grey-7;
+        }
+      }
+
+      & > * {
+        flex-grow: 1;
+      }
+    }
+
+    &-list {
+      padding-left: $grid-unit-x;
+    }
+
+    // Scheme of nested trees
+    // -----------------------
+    &-scheme {
+      position: relative;
+      padding-left: $grid-unit-x * 3 + 2;
+      margin-bottom: 0;
+
+      &:before {
+        content: '';
+        background-color: $color-grey-6;
+        position: absolute;
+        height: calc(100% - 21px);
+        width: 1px;
+        left: 7px;
+        display: block;
+      }
+
+      .mat-tree-item {
+        position: relative;
+
+        &:before {
+          content: '';
+          background-color: $color-grey-6;
+          position: absolute;
+          height: 1px;
+          width: 16px;
+          top: $grid-unit-y * 2;
+          left: -$grid-unit-x * 3 + 6;
+          display: block;
+        }
+      }
+    }
+
+
+    // Element modifiers
+    // -----------------------
+    &-border-top {
+      border-top: 1px solid $color-grey-6;
+    }
+
+    &-text {
+      font-weight: $font-weight-light;
+      font-size: $font-size-base;
+      color: $color-grey-1;
+    }
+
+    .dots-width {
+      width: 4px;
+      margin-right: $grid-unit-x * 2 - 2;
+      margin-left: $grid-unit-x / 2;
+    }
+
+    &-grey {
+      color: $color-grey-4;
+    }
+
+    // List styles
+    // -----------------------
+
+    // weight of selector to override
+    .mat-nested-tree-node .mat-list-item .mat-list-text > * {
+      font-weight: $font-weight-light;
+    }
+
+    .mat-nav-list, .mat-list {
+      padding: 0;
+      background-color: transparent;
+
+      .mat-list-item {
+        height: $grid-unit-y * 4;
+
+        .mat-line {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &-content {
+          padding: 0;
+        }
+      }
+    }
+
+    // Overrides for nested components
+    // -----------------------
+    .form-fieldset {
+      margin-bottom: 0;
+    }
+
+    // Colors for Dark background
+    // -----------------------
+    &-dark {
+      background-color: transparent;
+
+      .mat-tree {
+
+        &-scheme {
+
+          &:before {
+            background-color: $color-white-grey-4;
+          }
+
+          .mat-tree-item {
+
+            &:before {
+              background-color: $color-white-grey-4;
+            }
+          }
+        }
+
+
+        &-border-top {
+          border-top: 1px solid $color-white-grey-2;
+        }
+
+        &-text {
+          color: $color-white-grey-9;
+          font-weight: $font-weight-light;
+        }
+
+        &-grey {
+          color: $color-white-grey-5;
+          fill: $color-white-grey-5;
+        }
+
+        .mat-nav-list {
+
+          .mat-list-item {
+
+            &-content {
+              color: $color-white-grey-9;
+            }
+          }
+        }
+      }
+    }
+
+
+    // Style Variations
+    // -----------------------
+
+    &-dark {
+
+    }
+  }
+}
+

@@ -1,0 +1,11 @@
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.position-relative {
+  position: relative;
+}
+.transparent {
+  opacity: 0;
+  cursor: default;
+}

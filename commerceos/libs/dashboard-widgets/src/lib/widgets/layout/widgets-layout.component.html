@@ -1,0 +1,56 @@
+<div class="widgets-dashboard-wrapper">
+  <search-widget *ngIf="(loaded$ | async)"></search-widget>
+  <widget-skeleton *ngIf="!(loaded$ | async)" theme="theme"></widget-skeleton>
+
+  <div [style.display]="(widgets$ | async)?.length ? 'block' : 'none'">
+    <ng-container *ngFor="let widget of widgets$|async">
+      <ng-container *ngIf="widget">
+        <ng-container [ngSwitch]="widget.appName">
+          <apps-widget *ngSwitchCase="WidgetTypeEnum.Apps" [widget]="widget"></apps-widget>
+
+          <appointments-widget *ngSwitchCase="WidgetTypeEnum.Appointments" [widget]="widget"></appointments-widget>
+
+          <transactions-widget *ngSwitchCase="WidgetTypeEnum.Transactions" [widget]="widget"></transactions-widget>
+
+          <store-widget *ngSwitchCase="WidgetTypeEnum.Shop" [widget]="widget"></store-widget>
+
+          <blog-widget *ngSwitchCase="WidgetTypeEnum.Blog" [widget]="widget"></blog-widget>
+
+          <message-widget *ngSwitchCase="WidgetTypeEnum.Message" [widget]="widget"></message-widget>
+  
+          <coupons-widget *ngSwitchCase="WidgetTypeEnum.Coupons" [widget]="widget"></coupons-widget>
+  
+          <invoice-widget *ngSwitchCase="WidgetTypeEnum.Invoice" [widget]="widget"></invoice-widget>
+  
+          <subscriptions-widget *ngSwitchCase="WidgetTypeEnum.Subscriptions" [widget]="widget"></subscriptions-widget>
+  
+          <shipping-widget *ngSwitchCase="WidgetTypeEnum.Shipping" [widget]="widget"></shipping-widget>
+  
+          <pos-widget *ngSwitchCase="WidgetTypeEnum.Pos" [widget]="widget"></pos-widget>
+
+          <checkout-widget *ngSwitchCase="WidgetTypeEnum.Checkout" [widget]="widget"></checkout-widget>
+
+          <marketing-widget *ngSwitchCase="WidgetTypeEnum.Marketing" [widget]="widget"></marketing-widget>
+
+          <studio-widget *ngSwitchCase="WidgetTypeEnum.Studio" [widget]="widget"></studio-widget>
+
+          <social-widget *ngSwitchCase="WidgetTypeEnum.Social" [widget]="widget"></social-widget>
+
+          <ads-widget *ngSwitchCase="WidgetTypeEnum.Ads" [widget]="widget"></ads-widget>
+
+          <contacts-widget *ngSwitchCase="WidgetTypeEnum.Contacts" [widget]="widget"></contacts-widget>
+
+          <products-widget *ngSwitchCase="WidgetTypeEnum.Products" [widget]="widget"></products-widget>
+
+          <connect-widget *ngSwitchCase="WidgetTypeEnum.Connect" [widget]="widget"></connect-widget>
+
+          <site-widget *ngSwitchCase="WidgetTypeEnum.Site" [widget]="widget"></site-widget>
+
+          <settings-widget *ngSwitchCase="WidgetTypeEnum.Settings" [widget]="widget"></settings-widget>
+
+          <tutorial-widget *ngSwitchCase="WidgetTypeEnum.Tutorial" [widget]="widget"></tutorial-widget>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+:host {
+  width: 100%;
+}
+
+.group__row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:first-of-type) {
+    margin-top: 10px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  peb-number-input-spinbutton {
+    width: 144px;
+  }
+}

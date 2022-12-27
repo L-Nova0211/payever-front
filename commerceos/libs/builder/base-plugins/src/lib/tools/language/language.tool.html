@@ -1,0 +1,6 @@
+<button class="tool" (click)="openLanguage(language)" [class.tool-loading]="loading">
+  <span class="tool__icon" #language>
+    <peb-shop-editor-languages [language]="language$ | async"></peb-shop-editor-languages>
+  </span>
+  <span class="tool__label">Language</span>
+</button>

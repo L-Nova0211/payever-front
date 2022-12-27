@@ -1,0 +1,34 @@
+//
+// Grid-list
+// ----------------------------
+
+.pe-grid-list {
+  margin-bottom: $grid-unit-y * 2;
+
+  .pe-grid-list {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  > .mat-grid-list {
+    > div > .mat-grid-tile {
+      height: $grid-unit-y * 2;
+    }
+  }
+
+  &-bordered {
+    border: 1px solid $color-grey-5;
+    @include border-radius($border-radius-base * 2);
+    overflow: hidden;
+
+    > .mat-grid-list {
+      margin-left: -1px;
+      margin-top: -1px;
+
+      > div > .mat-grid-tile {
+        border-left: 1px solid $color-grey-5;
+        border-top: 1px solid $color-grey-5;
+      }
+    }
+  }
+}

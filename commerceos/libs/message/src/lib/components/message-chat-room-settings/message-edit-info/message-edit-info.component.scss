@@ -1,0 +1,15 @@
+:host {
+  &.dark .peb-form-field-input { background-color: #111111; }
+  &.transparent .peb-form-field-input { background-color: rgba(0, 0, 0, .3); }
+  &.light .peb-form-field-input {
+    background-color: #ffffff;
+
+    input { color: black; }
+  }
+}
+
+.peb-form-field-input {
+  display: block;
+  margin-top: 12px;
+  border-radius: 12px;
+}

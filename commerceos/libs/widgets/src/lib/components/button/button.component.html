@@ -1,0 +1,58 @@
+<div [ngClass]="widgetTheme">
+  <div class="buttons">
+    <div class="buttons__content">
+      <ng-container *ngFor="let item of widget.data">
+        <div
+          class="buttons__item"
+          [ngStyle]="{'width': widget.data.length > 2 ? '33.3%' : '100%' }"
+          [class.buttons__item--not-button]="isSingleButtonWithLabel"
+          [class.buttons__item--double]="isDoubleButtons"
+        >
+          <ng-container *ngIf="item.isButton; else notButton">
+            <div
+              class="buttons__link widget__open-button"
+              [class.buttons__link--single]="isSingleButtonWithLabel"
+              (click)="clickItem($event, item)"
+            >
+              <mat-spinner class="widget__spinner mat-progress-spinner-light"
+               *ngIf="item.loading" [strokeWidth]="2" [diameter]="26"></mat-spinner>
+              <ng-container *ngIf="!item.loading">
+                <svg class="icon" [class.margin-right]="item.title"
+                 [ngClass]="item.iconSize ? 'icon-' + item.iconSize : 'icon-18'" *ngIf="item.icon">
+                  <use [attr.xlink:href]="item.icon"></use>
+                </svg>
+                <div class="buttons__button-title">
+                  {{ item.title | loadTranslate | async  }}
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+          <ng-template #notButton>
+            <div class="buttons__flex" (click)="clickItem($event, item)">
+              <div class="buttons__logo margin-right" *ngIf="!item.imgSrc && !item.icon">
+                <h2>
+                  {{ item.title | abbreviation }}
+                </h2>
+              </div>
+              <svg class="icon icon-24 margin-right" *ngIf="item.icon">
+                <use [attr.xlink:href]="item.icon"></use>
+              </svg>
+              <div class="buttons__logo margin-right" *ngIf="item.imgSrc">
+                <img [src]="item.imgSrc | mediaUrl:'images'"/>
+              </div>
+              <div class="buttons__title">
+                {{ item.title | translate }}
+              </div>
+              <div class="buttons__title margin-left" *ngIf="item.subtitle">
+                {{ item.subtitle | translate }}
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </ng-container>
+      <div *ngIf="!widget.data.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+      </div>
+    </div>
+  </div>
+</div>

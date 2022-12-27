@@ -1,0 +1,246 @@
+<form novalidate class="form-table form-table-no-margin" *ngIf="form" [ngClass]="theme">
+  <peb-form-background>
+    <ng-container *ngIf="formIsReady$ | async">
+      <ng-container *ngFor="let control of formScheme; trackBy: trackByFn">
+        <ng-container [ngSwitch]="control.type">
+          <ng-template
+            *ngSwitchCase="FormFieldType.SelectBusinessStatus"
+            [ngTemplateOutlet]="selectBusinessStatus"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.SelectStatus"
+            [ngTemplateOutlet]="selectStatus"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.SelectSales"
+            [ngTemplateOutlet]="selectSales"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.AutocompleteIndustry"
+            [ngTemplateOutlet]="autocompleteIndustry"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.SelectPhoneCode"
+            [ngTemplateOutlet]="selectPhoneCode"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Text"
+            [ngTemplateOutlet]="inputText"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Phone"
+            [ngTemplateOutlet]="inputPhone"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Textarea"
+            [ngTemplateOutlet]="inputTextarea"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Date"
+            [ngTemplateOutlet]="inputDate"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Number"
+            [ngTemplateOutlet]="inputNumber"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Boolean"
+            [ngTemplateOutlet]="inputBoolean"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Password"
+            [ngTemplateOutlet]="inputPassword"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Select"
+            [ngTemplateOutlet]="inputSelect"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Toggle"
+            [ngTemplateOutlet]="inputToggle"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+          <ng-template
+            *ngSwitchCase="FormFieldType.Checkbox"
+            [ngTemplateOutlet]="inputCheckbox"
+            [ngTemplateOutletContext]="{ control: control }"
+          ></ng-template>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </peb-form-background>
+</form>
+
+<ng-container [formGroup]="form">
+  <ng-template #selectBusinessStatus let-control="control">
+    <pe-select-business-status
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-select-business-status>
+  </ng-template>
+  <ng-template #selectStatus let-control="control">
+    <pe-select-status
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-select-status>
+  </ng-template>
+  <ng-template #selectSales let-control="control">
+    <pe-select-sales
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-select-sales>
+  </ng-template>
+  <ng-template #autocompleteIndustry let-control="control">
+    <pe-autocomplete-industry
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-autocomplete-industry>
+  </ng-template>
+  <ng-template #selectPhoneCode let-control="control">
+    <pe-select-phone-code
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-select-phone-code>
+  </ng-template>
+  <ng-template #inputText let-control="control">
+    <peb-form-field-input
+      [label]="control.title | translate"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [errorMessage]="errorMessage[control.name]"
+      animated="true"
+      appearance="label"
+    >
+      <input [formControl]="getControl(control.name)" type="text" />
+    </peb-form-field-input>
+  </ng-template>
+  <ng-template #inputPhone let-control="control">
+    <pe-input-phone
+      [control]="getControl(control.name)"
+      [form]="form"
+      [controlScheme]="control"
+      [businessRegistrationData]="businessRegistrationData"
+      [isSubmitted]="isSubmitted"
+      [errorMessage]="errorMessage"
+    ></pe-input-phone>
+  </ng-template>
+  <ng-template #inputTextarea let-control="control">
+    <peb-form-field-textarea
+      appearance="label"
+      [label]="control.title | translate"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [errorMessage]="errorMessage[control.name]"
+    >
+      <textarea [formControl]="getControl(control.name)"></textarea>
+    </peb-form-field-textarea>
+  </ng-template>
+
+  <ng-template #inputDate let-control="control">
+    <peb-form-field-input
+      appearance="label"
+      [errorMessage]="errorMessage[control.name]"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [label]="control.title | translate"
+    >
+      <input
+        readonly
+        [formControl]="getControl(control.name)"
+        [placeholder]="control.placeholder | translate"
+        [textMask]="controlDate.maskRule()"
+        type="text"
+      />
+      <div class="suffix-icon" (click)="openDatepicker($event, getControl(control.name))">
+        <mat-icon svgIcon="calendar"></mat-icon>
+      </div>
+    </peb-form-field-input>
+  </ng-template>
+  <ng-template #inputNumber let-control="control">
+    <peb-form-field-input
+      [label]="control.title | translate"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [errorMessage]="errorMessage[control.name]"
+      animated="true"
+      appearance="label"
+    >
+      <input [formControl]="getControl(control.name)" type="number" />
+    </peb-form-field-input>
+  </ng-template>
+  <ng-template #inputToggle let-control="control">
+    <peb-button-toggle
+      [formControl]="getControl(control.name)"
+      [label]="control.title | translate"
+      labelPosition="before"
+      [spacer]="true"
+      [required]="control.required"
+    ></peb-button-toggle>
+  </ng-template>
+  <ng-template #inputBoolean let-control="control">
+    <peb-button-toggle
+      [formControl]="getControl(control.name)"
+      [label]="control.title | translate"
+      labelPosition="after"
+      [spacer]="true"
+      [required]="control.required"
+    ></peb-button-toggle>
+  </ng-template>
+  <ng-template #inputCheckbox let-control="control">
+    <peb-checkbox [formControlName]="control.name" type="label">{{ control.title | translate }}</peb-checkbox>
+  </ng-template>
+  <ng-template #inputPassword let-control="control">
+    <peb-form-field-input
+      [label]="control.title | translate"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [errorMessage]="errorMessage[control.name]"
+      animated="true"
+      appearance="label"
+    >
+      <input type="password" autocomplete="new-password" [formControl]="getControl(control.name)" />
+      <input id="password" type="hidden" name="fakepasswordremembered" />
+    </peb-form-field-input>
+  </ng-template>
+  <ng-template #inputSelect let-control="control">
+    <peb-select
+      selectType="label"
+      [isFieldInvalid]="isSubmitted && getControl(control.name).invalid"
+      [errorMessage]="errorMessage[control.name]"
+      [animated]="true"
+      [formControl]="getControl(control.name)"
+      [label]="control.title | translate"
+    >
+      <peb-select-option *ngFor="let item of control | getValues" [value]="item.value" [label]="item.name">
+      </peb-select-option>
+    </peb-select>
+  </ng-template>
+</ng-container>

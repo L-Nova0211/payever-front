@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/libs/builder/core",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "hash.js": "hash.js",
+      "node-fetch": "node-fetch",
+      "lodash": "lodash",
+      "uuid": "uuid"
+    }
+  },
+  "allowedNonPeerDependencies": ["hash.js", "node-fetch", "uuid", "quill-delta"]
+}

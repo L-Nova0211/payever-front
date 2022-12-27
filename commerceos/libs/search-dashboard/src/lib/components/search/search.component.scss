@@ -1,0 +1,21 @@
+@import 'pe_variables.scss';
+@import 'pe_mixins.scss';
+
+::ng-deep .mat-form-field-suffix {
+  margin-right: 12px;
+}
+
+.empty-search-text {
+  color: #fff;
+  font-size: $font-size-micro-1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.search-spinner {
+  top:4px;
+}
+
+:host::ng-deep .no-label-input .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix .mat-form-field-label-wrapper {
+  display: none;
+}

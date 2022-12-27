@@ -1,0 +1,139 @@
+element:
+  id: menu-doc-1
+  type: document
+  children:
+  - id: topnav
+    type: section
+    children:
+    - id: topnav-grid
+      type: grid
+      children:
+      - id: topnav-logo
+        type: logo
+      - id: topnav-navigation
+        type: menu
+        routes:
+        - title: Home
+          route: /
+        - title: Products List
+          children:
+          - title: IMac
+            routes:
+            - title: IMac 27
+              route: /
+            - title: IMac 21
+              route: /
+        - title: About us
+          route: /about-us
+        - title: Next Page
+          route: /
+          children:
+          - title: test
+            routes:
+            - title: test
+              route: /
+stylesheet:
+  all:
+    topnav-logo:
+     slot: left
+     color: white
+     fontSize: 22
+     left: 8
+    topnav:
+     backgroundColor: rgba(0, 0, 0, 0.8)
+     height: 45
+    topnav-grid:
+     direction: horizontal
+     cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    topnav-navigation:
+     slot: center
+     height: 45
+     color: white
+     fontSize: 16
+     background: rgb(58, 58, 58)
+     mobileButtonHeight: 30
+     mobileButtonPosition: right
+     mobileButtonWidth: 30
+     mobileButtonElementColor: white
+     mobileButtonElementHeight: 4
+  mobile:
+    topnav:
+      backgroundColor: rgba(0, 0, 0, 0.8)
+      height: 45
+    topnav-grid:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    topnav-logo:
+      slot: left
+      color: white
+      fontSize: 22
+      left: 8
+    topnav-navigation:
+      slot: right
+      height: 45
+      color: white
+      fontSize: 16
+      background: rgb(58, 58, 58)
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: white
+      mobileButtonElementHeight: 4
+
+  second:
+    topnav-logo:
+      slot: left
+      color: white
+      fontSize: 22
+      left: 8
+    topnav:
+      backgroundColor: rgb(247,124,16)
+      height: 45
+    topnav-grid:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    topnav-navigation:
+      slot: center
+      height: 45
+      color: rgb(30,60,171)
+      fontSize: 12
+      background: rgb(202,93,1)
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: rgb(250,225,17)
+      mobileButtonElementHeight: 4
+
+  secondMobile:
+    topnav:
+      backgroundColor: rgba(0, 0, 0, 0.8)
+      height: 45
+    topnav-grid:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    topnav-logo:
+      slot: left
+      color: white
+      fontSize: 22
+      left: 8
+    topnav-navigation:
+      slot: right
+      height: 45
+      color: rgb(30,60,171)
+      fontSize: 12
+      background: rgb(202,93,1)
+      mobileButtonHeight: 40
+      mobileButtonPosition: right
+      mobileButtonWidth: 50
+      mobileButtonElementColor: rgb(250,225,17)
+      mobileButtonElementHeight: 6
+context:
+  topnav-logo:
+    state: 'ready'
+    data:
+      logoUrl: https://www.apple.com/ac/globalnav/5/en_US/images/globalnav/apple/image_large.svg
+      name: Test
+
+
+
+

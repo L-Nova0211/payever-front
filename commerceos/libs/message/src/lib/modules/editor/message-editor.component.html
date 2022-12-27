@@ -1,0 +1,12 @@
+<pe-message-contacts-style></pe-message-contacts-style>
+<ng-template>
+  <div class="message-contacts-dialog-wrapper">
+    <div class="message-contacts-dialog-wrapper__header">
+      <button class="header-buttons close-button" (click)="closeContactDialog()">Cancel</button>
+      <button class="header-buttons add-button" (click)="addContactDialog()">Add</button>
+    </div>
+    <div class="message-contacts-dialog-wrapper__content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-template>

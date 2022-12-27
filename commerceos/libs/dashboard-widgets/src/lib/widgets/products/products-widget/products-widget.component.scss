@@ -1,0 +1,41 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.list-product {
+  width: 33%;
+}
+/*
+.products-widget-flex {
+  @include pe_flexbox;
+  &.more {
+    @include pe_justify-content(space-between);
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
+.products-widget-title {
+  min-width: $icon-size-64;
+  max-width: $icon-size-64 * 2.5;
+  height: $icon-size-64;
+  font-size: $font-size-base;
+  font-weight: 500;
+  color: $color-secondary-4;
+  overflow: hidden;
+  @media (max-width: $viewport-breakpoint-sm-4 - 1) {
+    font-size: 14px;
+    min-width: 54px;
+    max-width: $icon-size-64 * 1.5;
+  }
+}
+.mat-divider-vertical {
+  background-color: $color-secondary-2;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.mat-button-rect-md {
+  width: 100%;
+}*/

@@ -1,0 +1,12 @@
+@import 'pe_variables.scss';
+@import 'pe_mixins.scss';
+
+:host {
+  @include full_screen(0, 0, 0, 0);
+  background-color: $color-grey-2;
+  border-radius: 50%;
+  .spinner-wrapper {
+    @include full_screen(50%, null, null, 50%);
+    @include payever_transform_translate(-50%, -50%);
+  }
+}

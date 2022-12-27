@@ -1,0 +1,84 @@
+.settings {
+  display: block;
+  overflow: hidden;
+  height: 100%;
+
+  .page-header {
+    max-width: 620px;
+    border-bottom: 0;
+    margin: 19px auto;
+    font-size: 24px;
+    font-weight: bold;
+
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+  .scrollbar {
+    overflow: auto;
+    height: calc(100% - 60px);
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .content {
+    max-width: 620px;
+    margin: auto;
+    @media (max-width: 935px) {
+      width: 100%;
+    }
+    @media (max-width: 720px) {
+      margin: 0;
+    }
+  }
+
+  &__section {
+    width: calc(100% - 5px);
+    margin: 0 auto 24px;
+    &__header {
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+    .new-button {
+      border: 0;
+      border-radius: 8px;
+      height: 40px;
+      margin-top: 17px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0091df;
+    }
+  }
+  &:not(.light) {
+    .page-header {
+      color: #fff;
+    }
+    .settings__section__header {
+      color: #7a7a7a;
+    }
+    .new-button {
+      background-color: #1c1d1e;
+    }
+  }
+  &.light {
+    .new-button {
+      background-color: #fff;
+    }
+  }
+}

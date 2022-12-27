@@ -1,0 +1,51 @@
+.builder-share-panel {
+  .overlay-widget__content {
+    padding: 0;
+  }
+
+  .expandable-panel {
+    &__header {
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .picker-container {
+    &__controls {
+      background-color: #111111;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .input-with-label {
+        color: #7a7a7a;
+
+        &__button {
+          background-color: #1c1d1e;
+        }
+      }
+    }
+  }
+}
+
+.builder-share {
+  &__picked-item {
+    &--menu {
+      padding: 0 !important;
+      background-color: var(--color-primary) !important;
+
+      .mat-menu-content {
+        padding: 0 !important;
+        background-color: var(--color-primary);
+      }
+
+      &-item {
+        padding: 8px 12px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0091df;
+        }
+      }
+    }
+  }
+}

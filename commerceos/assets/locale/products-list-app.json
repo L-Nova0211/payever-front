@@ -1,0 +1,258 @@
+{
+  "add": "Add",
+  "add_filter": "Add Filter",
+  "add_new_item": "Add New Item",
+  "add_or_import_products": "Add or import them to start your business.",
+  "add_product": "Add Product",
+  "add_products_to_store": "Add products to Store",
+  "add_products_to_terminal": "Add products to terminal",
+  "add_to_collection": "Add to Collection",
+  "add_to_store": "Add to a store",
+  "add_to_campaign": "Add to a campaign",
+  "add_to_widget": "Add to a widget",
+  "add_to_shop": "Add to shop",
+  "remove_products_from_shop": "Remove products from shop",
+  "remove_products_from_terminal": "Remove products from terminal",
+  "remove_products_from_widget": "Remove products from widget",
+  "apply_to": "Apply to",
+  "back": "Back",
+  "back_to_dashboard": "Back to Dashboard",
+  "cancel": "Cancel",
+  "choose_action": "Choose action",
+  "close": "Close",
+  "complete": "complete",
+  "confirm": "Confirm",
+  "copy": "Copy",
+  "paste": "Paste",
+  "collection": "Collection",
+  "collections": "Collections",
+  "folders": "Folders",
+  "folder": "Folder",
+  "continue": "Continue",
+  "delete": "Delete",
+  "done": "Done",
+  "delete_from_store": "Delete from Store",
+  "delete_item": "Delete item",
+  "delete_item_from_store": "Delete item from store",
+  "delete_items": "Delete items",
+  "delete_products": "Delete",
+  "deleting_collections": "Deleting collections",
+  "deleting_products": "Deleting products",
+  "deselect_all": "deselect all",
+  "do_you_really_want_to_delete_item": "Do you really want to delete this item?",
+  "do_you_really_want_to_delete_item_from_store": "Do you really want to delete this item from store?",
+  "do_you_really_want_to_delete_selected_items": "Do you really want to delete selected items?",
+  "do_you_really_want_to_delete_your_collections": "Do you really want to delete your collections?",
+  "do_you_really_want_to_delete_your_products": "Do you really want to delete your products?",
+  "edit": "Edit",
+  "add_folder": "Add folder",
+  "payever_products": "payever Products",
+  "errors": {
+    "forbidden": "You don't have permission to perform this action!",
+    "cannot_delete": "Cannot delete product"
+  },
+  "success": {
+    "product_delete": "Product successfully deleted"
+  },
+  "cancel_modal": {
+    "title": "Are you sure?",
+    "subtitle": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+    "confirm_text": "Yes",
+    "decline_text": "No"
+  },
+  "confirm_modal": {
+    "title": "Are you sure?",
+    "subtitle": "Do you really want to delete this product? This may affect on product grid in other apps",
+    "confirm_text": "Delete",
+    "decline_text": "Cancel"
+  },
+  "filters": {
+    "labels": {
+      "search": "Search",
+      "id": "Product ID",
+      "product_name": "Product Name",
+      "channel": "Channel",
+      "price": "Price",
+      "category": "Category",
+      "variant_name": "Variant Name",
+      "products_count": "Products count"
+    }
+  },
+  "for": "for",
+  "from": "from",
+  "grid_view": "Grid",
+  "toolbar": {
+    "options": {
+      "title": "Options",
+      "select_all": "Select all",
+      "deselect_all": "Deselect all",
+      "delete": "Delete",
+      "duplicate": "Duplicate"
+    }
+  },
+  "header": {
+    "add": "Add product",
+    "edit": "Edit product",
+    "list": "All",
+    "import": "Import",
+    "add-collection": "Add collection",
+    "edit-collection": "Edit collection",
+    "back_to_apps": "Back to apps",
+    "all_folders": "All folders"
+  },
+  "sidebar": {
+    "products": "Products",
+    "all_products": "All Products",
+    "new_folder": "New Folder",
+    "new_headline": "New Headline",
+    "category": "Category",
+    "rules": "Rules",
+    "folder_name": "Folder name",
+    "headline_name": "Headline name"
+  },
+  "import_items": "Import Items",
+  "imports": {
+    "amazon": {
+      "instructions": "Import from Amazon is available only for Amazon.de, Amazon.es, Amazon.fr and Amazon.it.<br/>You have to authorise a developer (Name: \"<b>payever GmbH</b>\", ID: \"<b>1915-8175-1543</b>\") in your seller central before import.",
+      "placeholders": {
+        "auth_token": "MWS authorization token",
+        "merchant_id": "Seller ID"
+      },
+      "start_importing": "Start Importing products with",
+      "start_importing_via": "Amazon Importer"
+    },
+    "close": "Close",
+    "csv": {
+      "errors": {
+        "non_csv_file": "Can't upload files other than CSV"
+      },
+      "start_importing": "Start Importing products from",
+      "start_importing_via": "CSV File",
+      "upload_button": "Upload CSV file",
+      "upload_csv": "Upload a CSV to mass import your items",
+      "upload_csv_1": "1. Download our template file",
+      "upload_csv_2": "2. Fill the CSV file with your items"
+    },
+    "google": {
+      "account_does_not_match_merchant_id": "This Google account does not match the Merchant ID",
+      "import_failed": "Import failed due to an unexpected error.",
+      "instructions_1": "You have to add \"<b>{{ google_email }}</b>\" as admin in your merchant center before import.",
+      "placeholders": {
+        "merchant_id": "Merchant ID"
+      },
+      "proceed_button": "Proceed to Google",
+      "start_importing": "Start Importing products from",
+      "start_importing_via": "Google Shopping"
+    },
+    "import": "Import",
+    "import_uploading": "Uploading Files",
+    "magento": {
+      "placeholders": {
+        "api_key": "Magento API key",
+        "api_username": "Magento API username",
+        "store_url": "Magento store URL"
+      },
+      "start_importing": "Start Importing products with",
+      "start_importing_via": "Magento Importer"
+    },
+    "methods": {
+      "amazon": "Amazon",
+      "csv": "CSV file",
+      "ebay": "Ebay",
+      "google": "Google",
+      "magento": "Magento",
+      "overwrite": "Overwrite existing products",
+      "xml": "XML file",
+      "file": "Upload File"
+    },
+    "response_failure_4": "<h3>{{ message }}</h3>",
+    "response_success": "{{ count_total }} product(s) imported successfully. {{ count_error }} product(s) could not be imported.",
+    "response_success_4": "<h3>{{ message }}</h3><h4>Total {{ count_total }} item(s). <br/> Imported {{ count_imported }} item(s). Updated {{ count_updated }} item(s). Existed {{ count_existed }} item(s). <br/> Error on import: {{ count_error }} item(s). <br/> {{error_list}}</h4>",
+    "response_success_scheduled_4": "{{ message }} Importing your items can take a few minutes and depend on quantity of your items.",
+    "import_submit": "Import",
+    "support_link": "Need any help?",
+    "response_message": "Initiated Importing products, You will be notified by a mail once the products are imported successfully",
+    "xml": {
+      "errors": {
+        "non_xml_file": "Can't upload files other than XML"
+      },
+      "start_importing": "Start Importing products from",
+      "start_importing_via": "XML File",
+      "upload_button": "Upload XML file",
+      "upload_xml": "Upload a XML to mass import your items",
+      "upload_xml_step_1": "Download our template file",
+      "upload_xml_step_2": "Fill the XML file with your items"
+    },
+    "overwrite_box": {
+      "title": "Confirm Overwrite",
+      "subtitle": "Overwriting the existing products cannot be reverted",
+      "accept_button": "Yes",
+      "decline_button": "No"
+    },
+    "import_button": "Imports",
+    "errors": {
+      "file_size": "Maximum file size is {{ size }}MB",
+      "import_in_progress": "Import is already in-progress. We will notify you once it's compelted",
+      "source_file_required": "Source file is required"
+    },
+    "files_form": {
+      "source_label": "Source file",
+      "source_placeholder": "Choose file or drag & drop here",
+      "images_label": "Images",
+      "images_placeholder": "Choose image or drag & drop here"
+    }
+  },
+  "in_stock": "in stock",
+  "inventory": "Inventory",
+  "keywords": "Keywords",
+  "list_view": "List",
+  "open": "Open",
+  "order": "Order",
+  "price": "Price",
+  "price_range": "Price Range",
+  "product": "Product",
+  "products": "Products",
+  "new": "New",
+  "products_added_to_shop_successfully": "Products were added to selected shop successfully",
+  "products_added_to_stores_successfully": "Products were added to selected stores successfully",
+  "products_added_to_terminal_successfully": "Products have been successfully added to terminal",
+  "products_saved_successfully": "Product details are saved successfully",
+  "select_all": "select all",
+  "select_filter": "Select a filter",
+  "select_products": "Select products",
+  "selected": "selected",
+  "sku": "SKU",
+  "sort": "Sort",
+  "sorted_by": "Sorted by:",
+  "sorters": {
+    "title": "Sort by",
+    "date": "By Date",
+    "default": "Default",
+    "oldest": "Oldest",
+    "newest": "Newest",
+    "name": "Name",
+    "price_asc": "Price: Low to High",
+    "price_desc": "Price: High to Low",
+    "relevance": "Relevance"
+  },
+  "stock_items": "Stock Items",
+  "stock": "Stock",
+  "to": "to",
+  "variant": "Variant",
+  "variants": "Variants",
+  "you_have_no_products": "You don`t have any product.",
+  "my_dropshipping": "My Dropshipping",
+  "edit_folder": {
+    "fields": {
+      "name": "Folder name",
+      "description": "Description text"
+    },
+    "errors": {
+      "name_required": "Required field"
+    }
+  },
+  "warning_price_duplicate_customer_group_modal":{
+    "title":"Warning" ,
+    "body":"You can not add duplicate Customer or Groups"
+  }
+}

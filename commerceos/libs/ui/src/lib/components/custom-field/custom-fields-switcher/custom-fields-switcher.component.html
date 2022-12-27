@@ -1,0 +1,53 @@
+<div class="pe-custom-fields-switcher" [ngSwitch]="item.type">
+  <ng-container *ngSwitchCase="FieldTypesEnum.Text">
+    <peb-form-field-input
+    [label]="item.title"
+    appearance="label"
+    [animated]="animated"
+    >
+    <input type="text" [(ngModel)]="item.value" />
+  </peb-form-field-input>
+</ng-container>
+<ng-container *ngSwitchCase="FieldTypesEnum.Checkbox">
+  <peb-button-toggle
+  [(ngModel)]="item.value"
+  [label]="item.title"
+  labelPosition="before"
+  [spacer]="true"
+  >
+</peb-button-toggle>
+</ng-container>
+<ng-container *ngSwitchCase="FieldTypesEnum.Paragraph">
+  <peb-form-field-textarea
+    class="textarea-wrapper"
+    appearance="label"
+    [label]="item.title"
+  >
+  <pe-textarea-autosize [(ngModel)]="item.value"></pe-textarea-autosize>
+  </peb-form-field-textarea>
+</ng-container>
+  <ng-container *ngSwitchCase="FieldTypesEnum.RadioButton">
+    <div class="radio-wrapper">
+      <peb-radio 
+      *ngFor="let option of item.defaultValues" 
+      [name]="option" 
+      [(ngModel)]="item.value" 
+      [checked]="item.value === option" 
+      [value]="option">{{option}}</peb-radio>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <peb-select
+      selectType="label"
+      [label]="item.title"
+      [(ngModel)]="item.value"
+      [multiple]="item.type === FieldTypesEnum.Multiselect"
+    >
+      <peb-select-option 
+      *ngFor="let option of item.defaultValues"
+      [label]="option"
+      [value]="option"
+      ></peb-select-option>
+    </peb-select>
+  </ng-container>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="!isMobile" class="pe-grid-viewport__title" [class.loading]="isGlobalLoading">
+  <button *ngIf="!isGlobalLoading" @fadeInAnimation class="sidebar-toggle" (click)="openSidebarFunc()">
+    <mat-icon svgIcon="toggle-sidebar"></mat-icon>
+  </button>
+
+  <p *ngIf="!isGlobalLoading" @fadeInAnimation>
+    {{ viewportTitle }} <span *ngIf="totalValue">({{ totalValue }})</span>
+  </p>
+  <div *ngIf="isGlobalLoading" @fadeOutAnimation class="skeleton-title"></div>
+</div>
+<ng-content *ngIf="isListView" select="pe-grid-list"></ng-content>
+<ng-content *ngIf="isTableView" select="pe-grid-table"></ng-content>
+<ng-content select="[emptyList]"></ng-content>

@@ -1,0 +1,16 @@
+@mixin peb-checkbox-theme($theme-config) {
+  $text-color: map-get($theme-config, text-color);
+
+  .checkbox-label-aria {
+    .peb-checkbox-wrapper {
+      .label-text {
+        color: $text-color;
+      }
+      &.label-checkbox {
+        .small-label-text {
+          color: $text-color;
+        }
+      }
+    }
+  }
+}

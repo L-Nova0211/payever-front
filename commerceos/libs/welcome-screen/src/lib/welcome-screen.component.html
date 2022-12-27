@@ -1,0 +1,27 @@
+<welcome-screen-styles>
+</welcome-screen-styles>
+
+<div class="welcome-screen">
+  <div class="welcome-screen-content">
+    <div
+      class="welcome-screen-image"
+      [class.commerceos]="appName === 'commerceos'"
+      [style.backgroundImage]="icon">
+    </div>
+    <div class="welcome-screen-content-title">{{ title }}</div>
+    <div class="welcome-screen-content-description">{{ message }}</div>
+    <button class="welcome-screen-content-button" (click)="onGetStarted()">
+      <pe-progress-button-content spinnerDiameter="22" [loading]="isLoading">
+        {{ getStarted }}
+      </pe-progress-button-content>
+    </button>
+    <button
+      *ngIf="appName !== 'commerceos'"
+      class="welcome-screen-content-button welcome-screen-content-button__dashboard"
+      (click)="navigateToDashboard()"
+    >
+      Back to Dashboard
+    </button>
+    <div class="welcome-screen-content-aclaration" [innerHTML]="herebyConfirm"></div>
+  </div>
+</div>

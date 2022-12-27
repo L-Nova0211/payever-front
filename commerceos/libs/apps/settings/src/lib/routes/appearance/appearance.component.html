@@ -1,0 +1,47 @@
+<div class="appearance" [ngClass]="theme === appThemeEnum.default ? appThemeEnum.default : appThemeEnum[theme]">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <span class="appearance__title text-theme">{{'info_boxes.panels.themes.title' | translate}}</span>
+        <div class="appearance__wrapper" >
+            <div class="appearance__wrapper__content">
+                <div class="appearance-item">
+                    <div class="item-content">
+                        <img alt="dark"
+                             [src]="configService.getCustomConfig().cdn + '/images/installation/settings/dark.png'">
+                    </div>
+                    <span class="item-title">{{'info_boxes.panels.themes.theme_list.dark.title' | translate}}</span>
+                    <peb-checkbox class="item-radio"
+                                  formControlName="default"
+                                  (click)="changeValue(peThemeEnum.DEFAULT, [peThemeEnum.LIGHT, peThemeEnum.TRANSPARENT])">
+                    </peb-checkbox>
+                </div>
+                <div class="appearance-item">
+                    <div class="item-content">
+                        <img alt="transparent"
+                             [src]="configService.getCustomConfig().cdn + '/images/installation/settings/transparrent.png'">
+                    </div>
+                    <span class="item-title">{{'info_boxes.panels.themes.theme_list.transparent.title' | translate}}</span>
+                    <peb-checkbox class="item-radio"
+                                  formControlName="transparent"
+                                  (click)="changeValue(peThemeEnum.TRANSPARENT, [peThemeEnum.DEFAULT, peThemeEnum.LIGHT])">
+                    </peb-checkbox>
+                </div>
+                <div class="appearance-item">
+                    <div class="item-content">
+                        <img alt="light"
+                             [src]="configService.getCustomConfig().cdn + '/images/installation/settings/light.png'"></div>
+                    <span class="item-title">{{'info_boxes.panels.themes.theme_list.light.title' | translate}}</span>
+                    <peb-checkbox class="item-radio"
+                                  formControlName="light"
+                                  (click)="changeValue(peThemeEnum.LIGHT, [peThemeEnum.DEFAULT, peThemeEnum.TRANSPARENT])">
+                    </peb-checkbox>
+                </div>
+            </div>
+            <div class="appearance__auto">
+                <label class="group__item-right-content__button text-theme">
+                    {{ 'info_boxes.panels.themes.automatic' | translate }}
+                </label>
+                <peb-button-toggle formControlName="automatic" (ngModelChange)="onToggle(automatic)"></peb-button-toggle>
+            </div>
+        </div>
+    </form>
+</div>

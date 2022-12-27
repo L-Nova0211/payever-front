@@ -1,0 +1,36 @@
+<ng-container *ngIf="(isLoadingData$ | async)">
+  <div class="loader-container billing-loader">
+    <div class="loader_48"></div>
+  </div>
+  <div class="billing-loader-title">{{ 'recurringBillingSection.loadingTitle' | translate }}</div>
+</ng-container>
+<ng-container *ngIf="!(isLoadingData$ | async)">
+  <p *ngIf="!isAvailable">
+    {{ 'recurringBillingSection.notAvailableTitle' | translate }}
+  </p>
+  <form *ngIf="form && isAvailable"
+    novalidate
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="form-table form-table-no-margin form-table-border-radius-md">
+      <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden class="native-submit"></button>
+    <div class="product-editor-content-main">
+      <div class="row">
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-7">
+          <pe-form-fieldset
+            class="transparent transparent-hide-overflow product-editor-content-info-form"
+            [isSubmitted]="isSubmitted"
+            [fields]="formScheme.fieldsets['recurringBillingSection']"
+            [formGroup]="form"
+            [translationScope]="formTranslationsScope"
+            [hideDisabled]="false"
+            [errors]="errors$ | async"
+            [formStyle]="'default'">
+          </pe-form-fieldset>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-container>

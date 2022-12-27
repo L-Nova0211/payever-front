@@ -1,0 +1,133 @@
+.media-editor {
+  &__add-image,
+  &__delete-image,
+  &__image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__add-image,
+  &__image {
+    border-radius: 8px;
+    height: 52px;
+    overflow: hidden;
+    outline: none;
+    width: 52px;
+    -webkit-transform: translateZ(0);
+  }
+
+  &__add-image {
+    background-color: transparent;
+    border: solid 0.8px #3a3d43;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  &__delete-image {
+    background-color: #111;
+    border-radius: 100%;
+    color: #fff;
+    cursor: pointer;
+    height: 18px;
+    opacity: 0;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 18px;
+  }
+  
+  &__image {
+    background-color: #000;
+  }
+
+  &__input {
+    display: none;
+  }
+  
+  &__picture-main {
+    height: auto;
+    width: 100%;
+  }
+
+  &__picture-wrapper {
+    background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    mat-icon {
+      align-self: center;
+      height: 86px;
+      width: 103px;
+    }
+
+    p {
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 18px 0 0;
+      opacity: 0.2;
+      text-align: center;
+    }
+
+    .image-container{
+      width: 100%;height: 100%;
+      background-position: center;min-height: 213px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+  }
+  
+  &__progress-percentage {
+    align-self: center;
+    color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+  }
+
+  &__progress-spinner {
+    stroke:rgba(0, 0, 0, 0.5);
+    stroke-width: 2;
+    z-index: 1;
+  }
+
+  &__thumbnail {
+    margin: 4px;
+    position: relative;
+
+    &:hover {
+      .media-editor__delete-image {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__thumbnail-border {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 56px;
+    left: -2px;
+    position: absolute;
+    top: -2px;
+    width: 56px;
+
+    &_active {
+      border: 2px solid #0371e2;
+    }
+
+    &_incorrect {
+      border: 2px solid rgb(212, 0, 0);
+    }
+  }
+
+  &__thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 11px -4px -4px;
+  }
+}

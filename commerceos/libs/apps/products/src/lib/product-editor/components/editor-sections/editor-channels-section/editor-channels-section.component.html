@@ -1,0 +1,39 @@
+<div class="channel-container">
+  <div *ngIf="!hasChannels">
+    <span>{{"channelsSection.available" | translate}}</span>
+  </div>
+  <form
+    *ngIf="hasChannels"
+    novalidate
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let channelGroup of channelsGroups">
+      <peb-expandable-panel
+        *ngIf="formScheme.fieldsets[channelGroup.type].length >= 1 &&
+               formScheme.fieldsets[channelGroup.type][0].fieldSettings.label else toggleRef"
+        [headerLabel]="channelGroup.name"
+        class="expandable-panel"
+        isContentOpen="true">
+        <div class="group">
+          <peb-button-toggle
+            *ngFor="let field of formScheme.fieldsets[channelGroup.type]"
+            [formControlName]="field.name"
+            [label]="field.fieldSettings.label"
+            class="channel-button-toggle button-toggle {{theme}}"
+            labelPosition="before"
+            (ngModelChange)="onToggle($event, field.id, channelGroup.type, field.name)"
+          ></peb-button-toggle>
+        </div>
+      </peb-expandable-panel>
+      <ng-template #toggleRef>
+        <peb-button-toggle *ngIf="formScheme.fieldsets[channelGroup.type][0] as field"
+          [label]="channelGroup.name"
+          [formControlName]="field.name"
+          class="market-toggle button-toggle {{theme}}"
+          labelPosition="before"
+          (ngModelChange)="onToggle($event, field.id, channelGroup.type, field.name)">
+        </peb-button-toggle>
+      </ng-template>
+    </ng-container>
+  </form>
+</div>

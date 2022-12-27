@@ -1,0 +1,146 @@
+.actions-list {
+  &.view-row {
+    .action-item {
+      width: 100%;
+      height: 40px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.33;
+      text-align: center;
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+      &:hover {
+        background: rgba(128, 128, 128, 0.1);
+      }
+
+      > * {
+        border: 0 !important;
+      }
+
+      &__icon {
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        border: none;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+
+           &.cancel {
+            width: 85%;
+            height: 85%;
+          }
+        }
+      }
+
+      span {
+        border: none;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(36, 39, 46, 0.85);
+      }
+    }
+
+    &.light {
+      .action-item {
+        color: #000;
+        background-color: #fff;
+
+        span {
+          color: #000;
+        }
+      }
+    }
+
+    &.transparent {
+      .action-item {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  &.view-column {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 13px;
+    justify-content: center;
+    gap: 30px;
+
+    .action-item {
+      flex: 1;
+      max-width: 70px;
+      background-color: transparent;
+      padding: 0;
+      border: 0;
+      word-break: break-word;
+      hyphens:auto;
+      -moz-hyphens:auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &__icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background-color: #111114;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+
+        img {
+          width: 60%;
+          height: 60%;
+          object-fit: contain;
+          object-position: center;
+
+          &.more-icon {
+            width: 100%;
+            height: 100%;
+          }
+
+          &.cancel {
+            width: 45%;
+            height: 45%;
+          }
+        }
+      }
+
+      span {
+        display: block;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 1.29;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 13px;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+    }
+
+    &.light {
+      .action-item {
+        span {
+          color: #000;
+        }
+      }
+
+    }
+  }
+}

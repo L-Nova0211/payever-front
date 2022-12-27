@@ -1,0 +1,131 @@
+<div class="pe-custom-field">
+  <div class="overlay-widget" [ngClass]="peOverlayData.theme">
+    <div class="overlay-widget__header">
+      <div class="header-container">
+        <button class="overlay-widget__back" (click)="close()">
+          {{ 'custom_field.cancel' | translate }}</button>
+      </div>
+      <div class="header-container"><span class="overlay-widget__title">
+        {{ 'custom_field.title' | translate }}</span></div>
+      <div class="header-container">
+        <button class="overlay-widget__done" (click)="save()">{{ 'custom_field.add' | translate }}</button>
+      </div>
+    </div>
+    <div class="overlay-widget__content" [formGroup]="newField">
+      <peb-form-background>
+        <peb-form-field-input
+          label="{{ 'custom_field.label' | translate }}"
+          appearance="label"
+          [animated]="true"
+          [isFieldInvalid]="errors.title.hasError"
+          [errorMessage]="errors.title.message"
+        >
+          <input type="text" formControlName="title" (blur)="checkErrors('title')" (focus)="resetError('title')"/>
+        </peb-form-field-input>
+      </peb-form-background>
+      <peb-form-background>
+        <peb-select
+          formControlName="type"
+          [animated]="true"
+          [selected]="newField.get('type').value"
+          selectType="label"
+          label="{{ 'custom_field.type' | translate }}"
+          (changed)="onUpdateOptionsList($event)">
+          <peb-select-option *ngFor="let type of fieldTypes" [value]="type" [label]="type | titlecase">
+  
+          </peb-select-option>
+        </peb-select>
+      </peb-form-background>
+      <div *ngIf="showOptions()">
+        <div
+        id="custom-field-options"
+        formArrayName="defaultValues"
+        cdkDropList
+        cdkDropListLockAxis="y"
+        cdkDropListOrientation="vertical"
+        (cdkDropListDropped)="onDropSortOptions($event)"
+        class="option__list">
+        <div
+          *ngFor="let option of defaultValues.controls; let i = index"
+          cdkDrag
+          cdkDragLockAxis="y"
+          class="option__item"
+          [ngClass]="[peOverlayData.theme, 'option__item']"
+          [formGroupName]="i"
+          cdkDragBoundary="#custom-field-options"
+          >
+          <div>
+            <div cdkDragHandle class="option__handle" [ngClass]="peOverlayData.theme">
+              <svg class="drag">
+                <use xlink:href="#icon-ui-drag"></use>
+              </svg>
+            </div>
+          </div>
+          <div [formGroup]="option" class="option__select">
+            <peb-form-background>
+              <peb-form-field-input
+              [label]="'custom_field.option_name' | translate"
+              class="option__fields"
+              appearance="label"
+              [errors]="errors$ | async"
+              [isFieldInvalid]="errors.defaultValues[i].hasError"
+              [errorMessage]="errors.defaultValues[i].message"
+              [animated]="true"
+              >
+                <input 
+                type="text" 
+                formControlName="name" 
+                [style.font-size.px]="12"
+                (blur)="checkInArrayErrors(i)" 
+                (focus)="resetInArrayErrors(i)"/>
+              </peb-form-field-input> 
+            </peb-form-background>
+          </div>
+          <div>
+            <button
+            class="option__remove"
+            [ngClass]="peOverlayData.theme"
+            type="button"
+            [disabled]="canDeleteOption()"
+            (click)="onDeleteOption(i)" 
+            >
+              <svg class="remove">
+                <use xlink:href="#icon-ui-remove-close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button 
+      peb-button 
+      class="option__add peb-button peb-base-button" 
+      [ngClass]="peOverlayData.theme" 
+      type="button" 
+      (click)="onAddOption()"
+      >
+        {{'custom_field.add_option' | translate}}
+      </button>
+      </div>
+      <peb-form-background [style.margin-bottom.px]="0">
+        <peb-button-toggle
+          formControlName="filterable"
+          label="{{ 'custom_field.filterable' | translate }}"
+          labelPosition="before"
+          [spacer]="true"
+        ></peb-button-toggle>
+        <peb-button-toggle
+          formControlName="editableByAdmin"
+          label="{{ 'custom_field.editable_by_admin' | translate }}"
+          labelPosition="before"
+          [spacer]="true"
+        ></peb-button-toggle>
+        <peb-button-toggle
+          formControlName="showDefault"
+          label="{{ 'custom_field.show_default' | translate }}"
+          labelPosition="before"
+          [spacer]="true"
+        ></peb-button-toggle>
+      </peb-form-background>
+    </div>
+  </div>
+</div>

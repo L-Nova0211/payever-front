@@ -1,0 +1,14 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+@import "../page-container.scss";
+
+.pe-info-box-container-fixed.pe-checkout-connect {
+  flex-direction: column;
+  min-height: fit-content;
+}
+
+@media (max-width: 720px) {
+  .page__container {
+    width: 100%;
+  }
+}

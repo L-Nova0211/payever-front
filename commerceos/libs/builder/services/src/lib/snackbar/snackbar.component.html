@@ -1,0 +1,28 @@
+<div class="snackbar-success">
+  <ng-container *ngIf="data.pending; else successIconTpl">
+    <span class="snackbar-success__icon">
+      <mat-progress-spinner mode="indeterminate" diameter="22"></mat-progress-spinner>
+    </span>
+  </ng-container>
+  <ng-template #successIconTpl>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" class="snackbar-success__icon">
+      <g fill="none" fill-rule="evenodd">
+        <g fill="#00B640">
+          <g>
+            <g>
+              <path d="M11 0c6.075 0 11 4.925 11 11s-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0zm5.838 6.307c-.208-.057-.43.003-.583.158l-7.66 7.767-2.85-2.898c-.236-.24-.618-.24-.854 0-.236.239-.236.627 0 .866l3.277 3.331c.113.117.266.183.427.183.165.003.323-.063.439-.183l8.075-8.2c.152-.154.212-.38.156-.591-.056-.212-.218-.377-.427-.433z" transform="translate(-405 -84) translate(389 71) translate(16 13)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </ng-template>
+  <span class="snackbar-success__alert">{{ data.errorText }} </span>
+  <span [ngStyle]="data.textStyles" class="snackbar-success__text" [innerHTML]="data.text || 'Action is done'"></span>
+  <span [ngStyle]="data.actionStyles" class="snackbar-success__actions">
+    <span *ngIf="data?.mainAction && data.mainBtnCaption" class="snackbar-success__main snackbar-success__btn" (click)="onMainClick()">{{ data.mainBtnCaption }}</span>
+    <span class="snackbar-success__hide snackbar-success__btn" (click)="onHideClick()">{{ data.hideBtnCaption || 'Hide' }}</span>
+  </span>
+</div>
+
+

@@ -1,0 +1,11 @@
+<div class='rules'>
+  <div class='rules__items'>
+    <div #scrollBox class="scroll" [class.is-scrolling]="isScrolling">
+      <ng-container *ngIf='rules.length'>
+        <pe-rule-list-item *ngFor='let rule of rules' [ruleName]="rule.name" (action)='onActionClick($event, rule)'>
+        </pe-rule-list-item>
+      </ng-container>
+    </div>
+  </div>
+  <div class='rules__button' (click)="onAddClick()">{{'rules.add-rule' | translate}}</div>
+</div>

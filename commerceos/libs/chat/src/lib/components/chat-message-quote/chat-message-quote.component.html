@@ -1,0 +1,7 @@
+<p class="sender" *ngIf="sender || date">{{ sender }}<time>{{ date | date: dateFormat }}</time></p>
+<p class="quote">
+  {{ quote }}
+</p>
+<pe-chat-message-text [message]="message">
+  {{ message }}
+</pe-chat-message-text>

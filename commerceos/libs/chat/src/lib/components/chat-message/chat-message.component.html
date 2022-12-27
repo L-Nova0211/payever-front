@@ -1,0 +1,174 @@
+<div
+  [class.message-container_template]="type === peChatMessageType.Template"
+  class="message-container"
+  [class]="theme"
+  [style.background-color]="shouldSetDynamicBgColor(type) ? messagesBottomColor : null"
+  [ngClass]="{
+    'sticky-date-container': type === peChatMessageType.DateSeparator,
+    'sticky-event-container': type === peChatMessageType.Event
+  }"
+  [class.message-container_selected]="selected"
+  [class.pointer]="isPointer"
+  (click)="onClick(messageObj.interactive?.action)"
+  (contextmenu)="messageContextMenu.emit($event)"
+>
+  <div class="flex-active">
+    <ng-container *ngIf="messageHeaderTypes.includes(type)">
+      <div class="avatar" (click)="getMember()">
+        <img class="avatar__img" *ngIf="avatarStyle" [src]="avatarStyle" alt="a" />
+        <div class="avatar__initials avatar__conversation" *ngIf="!avatarStyle">
+          {{ sender[0] | uppercase }}
+        </div>
+      </div>
+    </ng-container>
+    <div class="flex-grow">
+      <pe-chat-message-header
+        *ngIf="messageHeaderTypes.includes(type)"
+        [status]="status"
+        [avatarStyle]="avatarStyle"
+        [sender]="sender"
+        [grouped]="messageObj.grouped"
+        [date]="messageObj.sentAt"
+        [edited]="!!messageObj.editedAt"
+        [dateFormat]="dateFormat"
+        [showAuthor]="showAuthor"
+        [accentColor]="accentColor"
+        [selected]="selected"
+        [forwardedFrom]="messageObj.forwardFrom?.senderTitle"
+        [forward]="!!messageObj.forwardFrom"
+        [forwardBy]="messageObj.forwardFrom"
+        [accentMessageColor]="accentMessageColor"
+        (timeClicking)="timeClick($event)"
+        (replyingMessage)="replyMessage()"
+        (emitGetMember)="getMember()"
+      ></pe-chat-message-header>
+
+      <div class="message-person">
+        <ng-container [ngSwitch]="type">
+          <pe-chat-message-file
+            *ngSwitchCase="peChatMessageType.Attachment"
+            [class.reply]="reply"
+            [class.not-reply]="notReply"
+            [reply]="reply"
+            [notReply]="notReply"
+            [sender]="sender"
+            [date]="messageObj.sentAt"
+            [dateFormat]="dateFormat"
+            [message]="msg | tagTransformer: chatMemberUsernames"
+            [files]="messageObj.attachments"
+            [accentColor]="accentColor"
+            [messageObj]="messageObj"
+            [theme]="overlayTheme"
+          ></pe-chat-message-file>
+
+          <ng-container *ngSwitchCase="peChatMessageType.Box">
+            <ng-container *ngIf="messageObj.interactive?.image">
+              <div class="invitation">
+                <img [src]="messageObj.interactive?.image" alt="" />
+                <p class="invitation__content">{{ msg }}</p>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="!messageObj.interactive?.image">
+              <div class="toast">
+                <p class="toast__content">{{ msg }}</p>
+                <div *ngIf="messageObj.interactive?.icon" class="toast__close">
+                  <mat-icon
+                    *ngIf="messageObj.interactive.icon === 'checklist' && messageObj.interactive.marked"
+                    svgIcon="check"
+                  ></mat-icon>
+                  <object data="" type="owo/uwu" *ngIf="messageObj.interactive.icon === 'delete'">
+                    <a (click)="removeBox($event)" href="interactive?.action">
+                      <mat-icon svgIcon="close"></mat-icon>
+                    </a>
+                  </object>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="peChatMessageType.NavigateTo">
+            <div class="navigate-to">
+              <p class="navigate-to__content">{{ msg }}</p>
+              <div class="navigate-to__visited-icon">
+                <mat-icon svgIcon="check"></mat-icon>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="peChatMessageType.Link">
+            <div class="link-message">
+              <p class="link-message__title">
+                {{ 'message-app.chat.start-chatting-with-watsapp' | translate }}
+              </p>
+              <div class="link-message__detail">
+                <p class="link-message__content">
+                  {{ 'message-app.chat.use-watsapp-billion-people' | translate }}
+                </p>
+                <div class="link-message__dash" [style.background-color]="accentColor"></div>
+              </div>
+              <div class="link-preview" [style.background-image]="previewImage"></div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="peChatMessageType.Template">
+            <div class="template" [style.background-color]="messagesBottomColor">
+              <pe-chat-message-template
+                [components]="messageObj?.components"
+                (action)="templateAction($event)"
+              ></pe-chat-message-template>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="peChatMessageType.DateSeparator">
+            <div class="template date-separator">
+              {{ msg }}
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="peChatMessageType.WelcomeMessage">
+            <div class="toast">
+              <p class="toast__content">{{ msg }}</p>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="peChatMessageType.Event">
+            <div class="template date-separator">
+              {{ msg }}
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchDefault>
+            <pe-chat-message-mail
+              [content]="msg"
+              *ngIf="chatIntegrationType === 'email'; else textContent"
+            ></pe-chat-message-mail>
+
+            <ng-template #textContent>
+              <pe-chat-message-text
+                class="pe-chat-message-text"
+                [class.reply]="reply"
+                [class.not-reply]="notReply"
+                [replyData]="messageObj.replyData"
+                [sender]="sender"
+                [date]="messageObj.sentAt"
+                [dateFormat]="dateFormat"
+                [message]="msg | tagTransformer: chatMemberUsernames"
+                (showReplied)="showRepliedMessage($event)"
+              ></pe-chat-message-text>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <div *ngIf="type !== peChatMessageType.Event" class="message-person__time">
+      <mat-icon *ngIf="showPinIcon()" class="message-person__message-pinned" svgIcon="pin-highlighted"></mat-icon>
+      <span
+        *ngIf="!!messageObj.editedAt && !messageObj.interactive"
+        class="message-header__edited"
+        [style.color]="accentColor"
+        >{{ 'message-app.chat-room.edited' | translate }}</span
+      >
+      <time *ngIf="showTime" (click)="timeClick($event)" [style.color]="accentColor">{{
+        messageObj.sentAt | date: dateFormat
+      }}</time>
+    </div>
+  </div>
+</div>

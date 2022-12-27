@@ -1,0 +1,12 @@
+@mixin peb-datetime-picker-theme($theme-config) {
+  $background: map-get($theme-config, background);
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+
+  .peb-datetime-picker-wrapper {
+    background-color: $background;
+  }
+}

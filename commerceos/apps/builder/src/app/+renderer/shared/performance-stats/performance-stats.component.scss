@@ -1,0 +1,18 @@
+:host {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;
+  line-height: .9;
+  background: rgba(0,0,0,.8);
+  color: rgba(255,255,255,.8);
+  padding: 8px;
+}
+
+.prop {
+  text-align: right;
+}
+
+.value {
+  min-width: 48px;
+}

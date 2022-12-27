@@ -1,0 +1,19 @@
+<div *ngIf="header" class="header">
+  <h2>{{header}}</h2>
+</div>
+<div class="list">
+  <div *ngFor="let item of listData; index as i;" class="list__item" (click)="item.action($event, item)">
+    <div *ngIf="item.logo" class="list__item__icon">
+      <svg>
+        <use [attr.xlink:href]="item.logo"></use>
+      </svg>
+    </div>
+    <div class="list__item__content"
+         [ngClass]="listData.length - 1 !== i ? 'divider' :''">
+      <span>{{item.itemName}}</span>
+      <svg>
+        <use xlink:href="#icon-arrow-right-2-16"></use>
+      </svg>
+    </div>
+  </div>
+</div>

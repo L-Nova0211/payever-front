@@ -1,0 +1,12 @@
+@import '../../../../shared/styles/details-section.scss';
+
+.details-section {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 16px;
+
+  &__row {
+    width: 100%;
+    display: flex;
+  }
+}

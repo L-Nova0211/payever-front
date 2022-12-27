@@ -1,0 +1,46 @@
+.form-background-wrapper {
+  border-radius: 8px;
+  min-width: 200px;
+  overflow: hidden;
+
+  peb-form-field-input {
+    .label-input-content-wrapper {
+      position: relative;
+      width: initial;
+    }
+  }
+
+  peb-checkbox {
+    .peb-checkbox-wrapper {
+      height: 44px;
+      padding: 0 12px;
+      width: initial;
+    }
+  }
+
+  peb-select {
+    .label-select-wrapper {
+      width: initial;
+    }
+  }
+
+  button {
+    &.peb-text-button {
+      min-width: unset;
+    }
+
+    .peb-button-wrapper {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+    }
+  }
+
+  peb-button-toggle {
+    height: 44px;
+  }
+}

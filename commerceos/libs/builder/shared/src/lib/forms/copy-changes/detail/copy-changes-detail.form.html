@@ -1,0 +1,5 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" class="form">
+    <ul *ngFor="let screen of screens$ | async">
+        <li (click)="selectScreen(screen)"> {{ screen.charAt(0).toUpperCase() + screen.slice(1) }}</li>
+    </ul>
+</form>

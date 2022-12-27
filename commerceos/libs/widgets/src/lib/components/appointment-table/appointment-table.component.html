@@ -1,0 +1,17 @@
+<div [ngClass]="widgetTheme">
+  <div class="container">
+    <ng-container *ngFor="let item of widget.data">
+      <div class="appointment">
+        <div>
+          <svg class="icon icon-32 mr-20 ng-star-inserted">
+            <use xlink:href="#icon-commerceos-appointments"></use>
+          </svg>
+          <span class="text_title">{{ item?.subtitle }}</span>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="!widget.data?.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+    </div>
+  </div>
+</div>

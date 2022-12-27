@@ -1,0 +1,30 @@
+.pe-bootstrap {
+  .scrollbar-light::-webkit-scrollbar-track, .scrollbar-dark::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+
+  .scrollbar-light::-webkit-scrollbar, .scrollbar-dark::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  .scrollbar-light::-webkit-scrollbar-thumb, .scrollbar-dark::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+  }
+
+  .scrollbar-light::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .75);
+  }
+
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  .own-layout-template.scrollbar-dark::-webkit-scrollbar-track-piece {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}

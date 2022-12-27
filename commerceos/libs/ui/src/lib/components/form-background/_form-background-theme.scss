@@ -1,0 +1,47 @@
+@mixin peb-form-background-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+
+  .form-background-wrapper > * {
+    &:not(&:last-child) > * {
+      border-bottom: 1px solid $separator;
+    }
+  }
+
+  .two-column-form-wrapper > * {
+    &:not(&:first-child) > * {
+      border-left: 0.5px solid $separator;
+    }
+    
+    &:not(&:last-child) > * {
+      border-right: 0.5px solid $separator;
+    }
+  }
+
+  .form-background-wrapper {
+    background-color: $primary;
+
+    .two-column-form-wrapper {
+      .label-input-content-wrapper {
+        border-bottom: 0;
+      }
+
+      .peb-checkbox-wrapper {
+        border-bottom: 0;
+      }
+
+      .label-select-wrapper {
+        border-bottom: 0;
+      }
+
+      peb-button-toggle {
+        border-bottom: 0;
+      }
+
+      .button-toggle-container {
+        border-bottom: 0;
+      }
+    }
+  }
+}

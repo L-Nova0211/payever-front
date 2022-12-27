@@ -1,0 +1,220 @@
+@media (max-width: 720px) {
+  .products-dialog-wrapper {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+@media (max-height: 667px) {
+  .products-dialog-wrapper {
+    height: 496px;
+  }
+}
+@media (min-height: 667px) {
+  .products-dialog-wrapper {
+    height: 570px;
+  }
+}
+@media (min-width: 720px) and (max-width: 1076px) {
+  .products-dialog-wrapper {
+    width: 720px;
+  }
+}
+@media (min-width: 1076px) {
+  .products-dialog-wrapper {
+    width: auto;
+  }
+}
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cdk-global-overlay-wrapper .product-add-overlay {
+  .mat-dialog-container {
+    border-radius: 20px;
+    background-color: rgba(36, 39, 46, 1);
+    overflow: hidden;
+    padding: 0 0 26px 0;
+  }
+}
+
+.sidebar-menu__item {
+  height: initial !important;
+}
+
+.products-dialog-wrapper {
+  padding: 12px 4px;
+  &__header {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 8px;
+    .header-buttons {
+      width: 51px;
+      height: 24px;
+      border-radius: 6px;
+      outline: 0;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .close-button {
+      background-color: #86868b;
+    }
+    .add-button {
+      background-color: #0371e2;
+      margin-left: 8px;
+    }
+  }
+  &__content {
+    height: calc(100% - 24px);
+    .data-grid-wrap {
+      height: 100%;
+
+      #products-data-grid {
+        .grid-content {
+          .data-grid-item-wrap {
+            .item-wrapper {
+              height: 100%;
+            }
+          }
+          .sidebar-wrap {
+            height: unset;
+            padding: 0 8px 0 0;
+          }
+
+          &__right {
+            padding: 0;
+          }
+        }
+      }
+      .section {
+        &__title {
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          margin: 14px 7px 7px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.welcome-screen {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 260px;
+  height: 305px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+
+  margin-left: -24px;
+  margin-right: -24px;
+
+  @media screen and (max-width: 480px) {
+    width: 342px;
+    height: 420px;
+  }
+}
+
+.welcome-screen-content {
+  max-width: 520px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+
+  @media (max-width: 520px) {
+    max-width: 100%;
+  }
+}
+
+.welcome-screen-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 18px;
+
+  &:not(.commerceos) {
+    max-width: 86px;
+    max-height: 86px;
+    height: 65px;
+    width: 65px;
+  }
+
+  &.commerceos {
+    height: 32px;
+    width: 128px;
+  }
+}
+
+.welcome-screen-content-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.welcome-screen-content-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.welcome-screen-content-button {
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  width: 228px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #eb4653;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  &:hover{
+    opacity: .9;
+  }
+
+  &__dashboard {
+    background-image: none;
+    background-color: #6f7279;
+    &:hover{
+      opacity: .9;
+    }
+  }
+}
+

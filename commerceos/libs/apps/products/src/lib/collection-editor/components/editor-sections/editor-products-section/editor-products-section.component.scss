@@ -1,0 +1,64 @@
+:host {
+  background-color: #1c1d1e;
+  border-radius: 12px;
+  display: block;
+  overflow: hidden;
+}
+
+.product {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 12px;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+
+    span {
+      color: #ffffff;
+      font-size: 12px;
+      font-family: Roboto, sans-serif;
+      font-weight: 500;
+      line-height: 1.33;
+    }
+  }
+
+  &__image,
+  &__placeholder {
+    border-radius: 6px;
+    height: 32px;
+    margin-right: 12px;
+    width: 32px;
+  }
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__placeholder {
+    align-items: center;
+    background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+    display: flex;
+    justify-content: center;
+
+    svg {
+      color: rgba(0, 0, 0, .2);
+    }
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    max-height: 16px;
+    font-size: 12px;
+    color: #eb4653;
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,107 @@
+id: testcases-transforms
+name: Element Transformations
+variant: default
+type: replica
+master: ~
+data: {}
+template:
+  id: transforms-document
+  type: document
+  children:
+    - id: header
+      type: section
+      children: []
+    - id: body
+      type: section
+      data:
+        devGrid: true
+        devGridStep: 40
+      children:
+        - id: body-block-red
+          type: block
+          children: []
+        - id: body-block-blue
+          type: block
+          children: []
+        - id: body-image
+          type: image
+          data:
+            src: /fixtures/testcases/assets/containers.jpg
+        - id: body-shape
+          type: shape
+          data:
+            variant: square
+        - id: body-button
+          type: button
+          data:
+            text: Not container
+            variant: button--rounded
+    - id: footer
+      type: section
+      children: []
+
+stylesheets:
+  desktop:
+    transforms-document: {}
+    header:
+      height: 50
+      backgroundColor: "#ffffff"
+    body:
+      display: grid
+      margin: 0 auto
+      gridTemplateRows: 280 200 200 160
+      gridTemplateColumns: 360 120 400
+      backgroundColor: "#f8f8f8"
+    body-block-red:
+      gridArea: 1 / 1 / 1 / 1
+      height: 80
+      width: 80
+      margin: 40 0 0 40
+      backgroundColor: red
+    body-block-blue:
+      gridArea: 1 / 1 / 1 / 1
+      width: 120
+      height: 120
+      margin: 160 0 0 40
+      backgroundColor: blue
+    body-button:
+      gridArea: 1 / 1 / 1 / 1
+      height: 120
+      width: 200
+      margin: 160 0 0 200
+    body-shape:
+      gridArea: 1 / 1 / 1 / 1
+      height: 160
+      width: 240
+      margin: 680 0 0 680
+      backgroundColor: grey
+    body-image:
+      gridArea: 1 / 1 / 1 / 1
+      width: 520
+      height: 640
+      margin: 0 0 0 480
+    footer:
+      height: 50
+      backgroundColor: "#ffffff"
+  tablet:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-green: {}
+    body-block-blue: {}
+    body-block-yellow: {}
+    body-block-magenta: {}
+    footer: {}
+  mobile:
+    front-document: {}
+    header: {}
+    body: {}
+    body-block-red: {}
+    body-block-green: {}
+    body-block-blue: {}
+    body-block-yellow: {}
+    body-block-magenta: {}
+    footer: {}
+
+context: {}

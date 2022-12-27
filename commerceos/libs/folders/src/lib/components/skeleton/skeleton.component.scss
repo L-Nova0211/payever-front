@@ -1,0 +1,85 @@
+@import '../../../../../ui-styles/src/pe_skeleton.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-container {
+  width: 100%;
+
+  .skeleton-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .headline {
+      width: 60%;
+      max-width: 105px;
+      height: 18px;
+      border-radius: 5px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    .folder {
+      display: flex;
+      align-items: center;
+      width: 60%;
+      max-width: 105px;
+      height: 18px;
+
+      &__icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        background-color: $skeleton-color-dark;
+        @include skeleton-animation();
+      }
+
+      &__name {
+        width: calc(100% - 24px);
+        height: 12px;
+        border-radius: 3px;
+        background-color: $skeleton-color-dark;
+        @include skeleton-animation();
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &.transparent{
+    .headline {
+      background-color: $skeleton-color-transparent;
+    }
+
+    .folder {
+
+      &__icon {
+        background-color: $skeleton-color-transparent;
+      }
+
+      &__name {
+        background-color: $skeleton-color-transparent;
+      }
+    }
+  }
+
+  &.light {
+    .headline {
+      background-color: $skeleton-color-light;
+    }
+
+    .folder {
+
+      &__icon {
+        background-color: $skeleton-color-light;
+      }
+
+      &__name {
+        background-color: $skeleton-color-light;
+      }
+    }
+  }
+}

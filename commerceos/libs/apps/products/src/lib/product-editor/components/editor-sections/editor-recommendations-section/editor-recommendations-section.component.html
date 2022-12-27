@@ -1,0 +1,117 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (submit)="onSubmit()">
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+  <peb-button-toggle
+    class="allow-recommendations button-toggle"
+    formControlName="allowRecommendations"
+    label="{{ 'recommendations.allow_recommendations' | translate }}"
+    labelPosition="before"
+    (ngModelChange)="this.onToggleChanged($event)"
+  ></peb-button-toggle>
+  <div *ngIf="form.get('allowRecommendations').value" class="wrapper">
+    <peb-select
+      [animated]='true'
+      formControlName="recommendationTag"
+      selectType="label"
+      label="{{ 'recommendations.recommendation_type' | translate }}"
+      class='peb-select'
+      selected="none">
+      <peb-select-option
+        label="{{ 'filters.labels.category' | translate }}"
+        value="{{ tags.byCategory }}"
+        class='peb-select-option'>
+      </peb-select-option>
+      <peb-select-option label="{{ 'products' | translate }}"
+                         value="{{ tags.byProduct }}"
+                         class='peb-select-option'>
+      </peb-select-option>
+      <peb-select-option label="{{ 'folders' | translate }}"
+                         value="{{ tags.byFolder }}"
+                         class='peb-select-option'>
+      </peb-select-option>
+    </peb-select>
+
+    <ng-container *ngIf="form.get('recommendationTag').value === tags.byProduct; then product"></ng-container>
+    <ng-container *ngIf="form.get('recommendationTag').value === tags.byCategory; then category"></ng-container>
+    <ng-container *ngIf="form.get('recommendationTag').value === tags.byFolder; then collection"></ng-container>
+
+    <ng-template #product>
+      <div class="form-field">
+        <pe-products-autocomplete
+          class='form-field__autocomplete'
+          #productRecommendation
+          placeholder="{{ 'recommendations.add_products' | translate }}"
+          label="{{ 'products' | translate }}"
+          [values]="productOptions"
+          [disabled]="isDisabled"
+          (selected)="form.get('productRecommendation').patchValue($event)"
+        ></pe-products-autocomplete>
+        <button (click)="productRecommendation.clear(); addRecommendation('productRecommendation', productOptions);">
+          {{ 'add_product' | translate }}
+        </button>
+      </div>
+    </ng-template>
+
+    <ng-template #category>
+      <div class="form-field">
+        <pe-products-autocomplete
+          class='form-field__autocomplete'
+          #categoryRecommendation
+          placeholder="{{ 'recommendations.enter_category' | translate }}"
+          label="{{ 'filters.labels.category' | translate }}"
+          [values]="categoryOptions"
+          [disabled]="isDisabled"
+          (selected)="form.get('categoryRecommendation').patchValue($event)"
+        ></pe-products-autocomplete>
+        <button (click)="categoryRecommendation.clear(); addRecommendation('categoryRecommendation', categoryOptions)">{{ 'add_category' | translate }}</button>
+      </div>
+    </ng-template>
+
+    <ng-template #collection>
+      <div class="form-field">
+        <pe-products-autocomplete
+          class='form-field__autocomplete'
+          #collectionRecommendation
+          placeholder="{{ 'recommendations.enter_collection' | translate }}"
+          label="{{ 'folder' | translate }}"
+          [values]="collectionOptions"
+          [disabled]="isDisabled"
+          (selected)="form.get('collectionRecommendation').patchValue($event)"
+        ></pe-products-autocomplete>
+        <button (click)="collectionRecommendation.clear(); addRecommendation('collectionRecommendation', collectionOptions)">{{ 'add_folder' | translate }}</button>
+      </div>
+    </ng-template>
+
+    <ng-container *ngFor="let recommendation of form.get('selectedRecommendations').value">
+      <div class="recommendation">
+        <div>
+          <div *ngIf="recommendation.images && recommendation.images.length; then image else placeholder"></div>
+
+          <ng-template #image>
+            <div class="recommendation__image"
+              [style.background-image]="'url('+ getImagePath(recommendation.images[0]) +')'">
+            </div>
+          </ng-template>
+
+          <ng-template #placeholder>
+            <div class="recommendation__placeholder">
+              <svg class="icon icon-32" height="24" width="24">
+                <use xlink:href="#icon-images-128"></use>
+              </svg>
+            </div>
+          </ng-template>
+
+          <div class="recommendation__name">
+            <span>{{recommendation.name}}</span>
+          </div>
+        </div>
+
+        <button (click)="removeRecommendation(recommendation)">Remove</button>
+      </div>
+    </ng-container>
+  </div>
+
+</form>

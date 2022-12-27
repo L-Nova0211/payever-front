@@ -1,0 +1,31 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+// TODO Use variables
+
+:host ::ng-deep {
+  .mat-expansion-panel-header {
+    padding: 0 18px !important;
+    .icon {
+      margin-right: 12px;
+    }
+    .pe-truncate-text {
+      font-size: 13px;
+    }
+  }
+  .mat-list-item-content {
+    padding: 0 18px !important;
+  }
+  .mat-expansion-panel-content .mat-list {
+    margin-left: 0 !important;
+  }
+}
+
+.installed {
+  font-size: 11px;
+}
+
+.install, .installed {
+  min-width: 60px;
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+:host {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 82px);
+  width: 100%;
+}
+
+.pe-grid-conversation-empty-list {
+  padding: 16px;
+  text-align: center;
+
+  &.dark,
+  &.transparent {
+    color: #fff;
+  }
+
+  &.light {
+    color: #000;
+  }
+}

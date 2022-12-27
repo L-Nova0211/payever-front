@@ -1,0 +1,182 @@
+.dark {
+  &.root {
+    background-color: #24272e;
+  }
+}
+.light {
+  &.root {
+    background-color: #f3f2f8;
+  }
+}
+.transparent {
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+
+    @supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+      background-color: rgba(36, 39, 46, 0.96) !important;
+    }
+  }
+}
+
+cos-next-root {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.settings-app {
+  height: 100%;
+}
+
+.snackbar {
+  .snackbar__row {
+    .snackbar__icon {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.email-picker {
+  .picker-container {
+    .picker-container__controls {
+      .input-with-label__button {
+        .peb-text-button {
+          line-height: unset;
+        }
+      }
+    }
+  }
+}
+
+.country-picker {
+  .picker-container {
+    .picker-container__controls {
+      border-bottom: 0;
+    }
+  }
+}
+
+.dark {
+  &.root {
+    background-color: #24272e;
+  }
+  .button-toggle-container {
+    border-bottom: none;
+  }
+}
+.light {
+  &.root {
+    background-color: #f3f2f8;
+  }
+  .button-toggle-container {
+    border-bottom: none;
+  }
+}
+.transparent {
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+  }
+  .button-toggle-container {
+    border-bottom: none;
+  }
+}
+
+.overlay-transparent, .overlay-dark {
+  @supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+    background-color: rgba(36, 39, 46, 1) !important;
+  }
+}
+
+.overlay-light {
+  @supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+    background-color: hsla(0, 0%, 93.3%, 0.99) !important;
+  }
+}
+
+.new-employee-dialog {
+  .overlay-widget-container {
+    .overlay-widget {
+      &__content {
+        padding: 0;
+        overflow-y: auto;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.pe-scrollbar {
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.wallpaper-wrapper {
+  .scrollbar {
+    .grid-view-container {
+      margin-right: 0;
+    }
+  }
+}
+.employees-data-grid {
+  .scrollbar {
+    .grid-view-container {
+      margin-right: 0;
+
+      @mixin chipStyles($boxShadow, $backgroundColor) {
+        .item-header__chips {
+          .mat-chip {
+            box-shadow: $boxShadow;
+            background-color: $backgroundColor;
+            text-transform: uppercase;
+          }
+        }
+      }
+      pe-data-grid-item.label {
+        &-0 {
+          @include chipStyles(0 1px 4px 0 rgba(210, 44, 57, 0.5), #eb4653);
+        }
+        &-1 {
+          @include chipStyles(0 1px 4px 0 rgba(0, 0, 0, 0.5), #3a3941);
+        }
+        &-2 {
+          @include chipStyles(0 1px 4px 0 rgba(5, 40, 0, 0.51), #069d3b);
+        }
+      }
+    }
+  }
+}
+
+.two-column-form-wrapper {
+  .form-group__input {
+    & + .form-group__input.form-left-border {
+      border-left: 0;
+    }
+  }
+}
+
+
+peb-settings {
+  peb-list-info .header h2 {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+}

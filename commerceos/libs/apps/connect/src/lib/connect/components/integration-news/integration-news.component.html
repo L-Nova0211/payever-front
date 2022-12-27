@@ -1,0 +1,23 @@
+<div class="news">
+  <div class="news__text">
+    <div class="news__title">
+      {{ 'integration_full_page.news.title' | translate }}
+    </div>
+
+    <div *ngIf="integration.latestVersion" [innerHTML]="integration.latestVersion.description" class="news__description">
+    </div>
+  </div>
+
+  <!-- Side info -->
+  <div class="news__version-history">
+    <div (click)="navigate('version-history')" class="news__version-title">
+      {{ 'integration_full_page.news.version_history' | translate }}
+    </div>
+
+    <div *ngIf="integration.latestVersion" class="news__version-details">
+      {{ integration.latestVersion.versionDate }}
+      <br>
+      {{ integration.latestVersion.version }}
+    </div>
+  </div>
+</div>

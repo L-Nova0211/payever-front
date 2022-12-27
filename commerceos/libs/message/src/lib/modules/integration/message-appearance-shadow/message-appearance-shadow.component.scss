@@ -1,0 +1,10 @@
+.appearance-shadow {
+  margin-top: 12px;
+  border-radius: 12px;
+  background-color: #111111;
+  overflow: hidden;
+
+  &__shadow-color-picker .color-picker-form__container {
+    border-top: 1px solid #1c1d1e;
+  }
+}

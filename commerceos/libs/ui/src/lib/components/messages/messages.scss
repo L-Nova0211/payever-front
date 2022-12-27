@@ -1,0 +1,59 @@
+:host {
+  width: fit-content;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 32px;
+  min-width: 200px;
+  border-radius: 8px;
+  padding: 0px 12px;
+
+  .message-icon {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+
+    &__warning {
+      width: 17px;
+      height: 16px;
+    }
+  }
+  .message {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    &__text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      line-height: 1.33;
+      color: #fff;
+      white-space: normal;
+    }
+  }
+  .message-button {
+    display: flex;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      line-height: 1.33;
+      color: #fff;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
+.warning {
+  background-color: #eb4653;
+}
+
+.confirm {
+  background-color: #069d3b;
+}

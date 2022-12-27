@@ -1,0 +1,42 @@
+pe-folders {
+  .mat-tree {
+    .cdk-drag-placeholder {
+      display: none !important;
+      visibility: hidden !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    .mat-tree-node {
+      & > div {
+        width: 100%;
+      }
+      .folder-tree__node {
+        &--active {
+          .folder-tree__toggle-button {
+            .mat-icon svg {
+              g,
+              path {
+                fill: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+pe-preview-container .cdk-drag-placeholder {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body.move-to-folder {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

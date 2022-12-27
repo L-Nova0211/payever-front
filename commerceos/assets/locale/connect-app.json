@@ -1,0 +1,535 @@
+{
+  "connect-app": {
+    "actions": {
+      "add": "Add",
+      "download": "Download",
+      "disconnect": "Disconnect",
+      "go_back": "Go back",
+      "install": "Install",
+      "uninstall": "Uninstall",
+      "open": "Open",
+      "close": "Close",
+      "copy": "Copy",
+      "paste": "Paste",
+      "continue": "Continue",
+      "copied": "Copied!",
+      "create": "Create",
+      "reset_creds": "Reset Credentials",
+      "connect": "Connect",
+      "save": "Save",
+      "done": "Done",
+      "send": "Send",
+      "rename": "Rename",
+      "delete": "Delete",
+      "addPlus": "+ Add",
+      "upload": "Upload",
+      "submit": "Submit",
+      "edit": "Edit",
+      "move": "Move",
+      "of": "of",
+      "cancel": "Cancel"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "contextMenu": {
+      "title": "Options"
+    },
+    "welcome": {
+      "backToDashboard": "Back to Dashboard"
+    },
+    "folders": {
+      "addTo": "Add to ",
+      "moveTo": "Move to",
+      "moveHere": "Move here",
+      "deleteFrom": "Add from",
+      "addFolder": "Add Folder",
+      "deleteFolder": "Delete Folder",
+      "renameFolder": "Rename Folder",
+      "addToFolder": "Add To Folder",
+      "deleteFromFolder": "Delete From Folder"
+    },
+    "errors": {
+      "unknown_error": "Unknown error",
+      "forbidden": "You don't have permission to perform this action!"
+    },
+    "installation": {
+      "title": "Installation",
+      "labels": {
+        "title": "Title",
+        "category": "Category",
+        "developer": "Developer",
+        "languages": "Languages",
+        "app_support": "App Support",
+        "website": "Website",
+        "pricing": "Pricing"
+      },
+      "installed": {
+        "title": "Installed",
+        "description": "You are successfully connected to \"{{ title }}\" now!"
+      },
+      "uninstalled": {
+        "title": "Uninstalled",
+        "description": "You are successfully disconnected from \"{{ title }}\" now!"
+      }
+    },
+    "integration_full_page": {
+      "title": {
+        "times_downloaded": "Times Installed",
+        "rating": "Rating",
+        "no_rating": "No rating"
+      },
+      "rating_confirm_dialog": {
+        "confirm": "Confirm",
+        "subtitle": "Submitted, thanks for your feedback"
+      },
+      "app": {
+        "website": "Website",
+        "support": "Support"
+      },
+      "ratings_reviews": {
+        "title": "Ratings & Reviews",
+        "see_all": "See all",
+        "ratings": "Ratings",
+        "out_of": "out of",
+        "write_review": "Write a review",
+        "no_ratings":"No ratings",
+        "click_to_rate": "Click to rate:"
+      },
+      "news": {
+        "title": "What's New",
+        "version_history": "Version History",
+        "more": "more"
+      },
+      "information": {
+        "title": "Information",
+        "provider": "Provider",
+        "size": "Size",
+        "category": "Category",
+        "compability": "Compability",
+        "languages": "Languages",
+        "website": "Developer Website",
+        "policy": "Privacy policy",
+        "agreement": "Licence Agreement"
+      },
+      "more": {
+        "title": "More by payever",
+        "see_all": "See all"
+      }
+    },
+    "integration_versions_page": {
+      "back": "Back"
+    },
+    "integration_all_reviews_page": {
+      "no_ratings": "No ratings",
+      "back": "Back"
+    },
+    "integration_write_review": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "cancel_review": "Are you sure, you want to cancel the review?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "grid": {
+      "content": {
+        "toolbar": {
+          "big_grid": "Big Grid"
+        }
+      }
+    },
+    "integrations": {
+      "categories": {
+        "payments": "Payments",
+        "shippings": "Shippings",
+        "accountings": "Accountings",
+        "shopsystems": "Shopsystems",
+        "products": "Products",
+        "communications": "Communications",
+        "messaging": "Messaging",
+        "social": "Social"
+      }
+    },
+    "list_common": {
+      "title": "Connect",
+      "items_title": "apps"
+    },
+    "list_specific": {
+      "title": "Connect"
+    },
+    "categories": {
+      "all": {
+        "title": "All",
+        "title_full": "All Apps"
+      },
+      "payments": {
+        "title": "Payments",
+        "default_variant": "Default",
+        "actions": {
+          "get_products": "Get Products",
+          "add_variant": "Add"
+        },
+        "add_variant": {
+          "title": "Add connection",
+          "form": {
+            "name": {
+              "label": "Name",
+              "placeholder": "Name"
+            }
+          },
+          "errors": {
+            "connect_default_before_add": "Please connect default variant at first"
+          }
+        },
+        "form": {
+          "accept_fee": {
+            "label": "Who covers fees?",
+            "placeholder": "Who covers fees?"
+          },
+          "accountNumber": {
+            "label": "Account number",
+            "placeholder": "Account number"
+          },
+          "encryptionKey": {
+            "label": "Encryption key",
+            "placeholder": "Encryption key"
+          },
+          "condition": {
+            "label": "Please select condition",
+            "placeholder": "Please select condition"
+          },
+          "channel": {
+            "label": "Channel",
+            "placeholder": "Channel"
+          },
+          "delayedPayments": {
+            "label": "Capture transaction manually",
+            "placeholder": "Capture transaction manually"
+          },
+          "isDownPaymentAllowed": {
+            "label": "My customers should be able to make a down payment.",
+            "placeholder": "My customers should be able to make a down payment."
+          },
+          "isEmailNotificationAllowedComponent": {
+            "label": "I want to receive email notifications about changes in the application status of my customers.",
+            "placeholder": "I want to receive email notifications about changes in the application status of my customers."
+          },
+          "invoiceFee": {
+            "label": "Transaction fee",
+            "placeholder": "Transaction fee"
+          },
+          "login": {
+            "label": "Login",
+            "placeholder": "Login"
+          },
+          "password": {
+            "label": "Password",
+            "placeholder": "Password"
+          },
+          "registrationType": {
+            "label": "Registration type",
+            "placeholder": "Registration type"
+          },
+          "sender": {
+            "label": "Sender",
+            "placeholder": "Sender"
+          },
+          "shop_redirect_enabled": {
+            "label": "Do redirect to the shop after success or failure",
+            "placeholder": "Do redirect to the shop after success or failure"
+          },
+          "statementDescriptor": {
+            "label": "Credit card statement descriptor",
+            "placeholder": "Credit card statement descriptor"
+          },
+          "configKey": {
+            "label": "Configurations-Keys",
+            "placeholder": "Configurations-Keys"
+          },
+          "vendorNumber": {
+            "label": "Vendor number",
+            "placeholder": "Vendor number"
+          },
+          "storeId": {
+            "label": "Store ID",
+            "placeholder": "Store ID"
+          },
+          "publicKey": {
+            "label": "Public key",
+            "placeholder": "Public key"
+          },
+          "paymentAction": {
+            "label": "Payment action",
+            "placeholder": "Payment action"
+          },
+          "payExCaptureEnabled": {
+            "label": "Enable payment capture for PayEx",
+            "placeholder": "Enable payment capture for PayEx"
+          },
+          "privateKey": {
+            "label": "Private key",
+            "placeholder": "Private key"
+          },
+          "merchantNumber": {
+            "label": "Merchant Number",
+            "placeholder": "Merchant Number"
+          },
+          "useDefaultStoreIdentifier": {
+            "label": "Use orderID reference as store identifier",
+            "placeholder": "Use orderID reference as store identifier"
+          },
+          "storeIdentifier": {
+            "label": "Store Identifier",
+            "placeholder": "Store Identifier"
+          },
+          "vendor": {
+            "label": "Vendor name",
+            "placeholder": "Vendor name"
+          }
+        },
+        "payment_methods": {
+          "sofort":"SOFORT Banking",
+          "invoice":"Invoice",
+          "cash":"Wire Transfer",
+          "paymill_directdebit":"Direct Debit",
+          "paymill_creditcard":"Paymill Credit Card",
+          "paypal":"PayPal",
+          "stripe":"Credit Card",
+          "santander_installment":"Santander Installments",
+          "santander_pos_installment":"POS Santander Installments",
+          "santander_installment_no":"Santander Installments Norway",
+          "santander_pos_installment_no":"POS Santander Installments Norway",
+          "santander_invoice_no":"Santander Invoice Norway",
+          "santander_pos_invoice_no":"POS Santander Invoice Norway",
+          "santander_installment_dk":"Santander Installments Denmark",
+          "santander_installment_se":"Santander Installments Sweden",
+          "payex_faktura":"PayEx Invoice",
+          "santander_ccp_installment":"Santander DE Comfort card plus",
+          "payex_creditcard":"PayEx Credit Card",
+          "stripe_directdebit":"Stripe DirectDebit",
+          "santander_invoice_de":"Santander DE Invoice",
+          "santander_pos_invoice_de":"POS Santander DE Invoice",
+          "santander_pos_installment_se":"POS Santander Installments Sweden",
+          "santander_factoring_de":"Santander Factoring",
+          "santander_pos_factoring_de":"POS Santander Factoring",
+          "apple_pay":"Apple Pay",
+          "google_pay":"Google Pay"
+        },
+        "lists": {
+          "accept_fee": {
+            "merchant_covers_fee": "Merchant covers fee",
+            "customer_covers_fee": "Customer covers fee"
+          },
+          "payment_action": {
+            "sale": "Sale",
+            "authorization": "Authorization",
+            "order": "Order"
+          },
+          "software_cards": {
+            "use_cart_software": "Cart software",
+            "dont_use_cart_software": "I don´t use a cart software"
+          },
+          "registration_types": {
+            "payever_0_8_owg_spezial": "Regular registration (0.9% + 0.15\u20ac / transaction)",
+            "payeverdigital": "Digital goods (2% + 0.15\u20ac / transaction)",
+            "payeveradult": "Adult content (5% + 0.15\u20ac / transaction"
+          }
+        },
+        "auth": {
+          "dk_products": {
+            "titles": {
+              "variable_interest": "Variable interest",
+              "establishment_fee": "Establishment fee",
+              "account_fee": "Account fee"
+            },
+            "errors": {
+              "no_one_product_selected": "At least one product must be selected!",
+              "cant_get_store_products": "Can't get product data for this store!",
+              "empty_store_id": "Store id can't be empty!"
+            }
+          },
+          "external": {
+            "errors": {
+              "cant_redirect": "Cant make external auth redirection!"
+            }
+          }
+        },
+        "settings": {
+          "payex_capture_enabled": {
+            "cant_load_payments": "Can't load payments",
+            "disabled_feature_warning": "This feature will be disabled if PayEx Credit Card payment method is not activated for the account"
+          }
+        },
+        "main": {
+          "titles": {
+            "account": "Account",
+            "externalRegister" : "Register",
+            "documents": "Documents",
+            "settings": "Settings",
+            "authentication": "Authentication",
+            "registration": "Registration"
+          },
+          "statuses": {
+            "pending_approval": "Pending approval"
+          }
+        },
+        "documents": {
+          "upload-commercial-excerpt": "Company register extract or business registration",
+          "upload-commercial-excerpt-comment": "Valid formats are: JPEG, PNG, and PDF",
+          "upload-onboarding-contract-file": "Onboarding contract",
+          "upload-sepa-contract-file": "SEPA contract",
+          "upload-passport": "Your scanned ID",
+          "download-for-sign": "Download document to sign"
+        }
+      },
+      "accounting": {
+        "title": "Accounting"
+      },
+      "shipping": {
+        "title": "Shipping"
+      },
+      "products": {
+        "title": "Products"
+      },
+      "messaging": {
+        "title": "Messaging"
+      },
+      "shopsystem": {
+        "title": "Shopsystem"
+      },
+      "shopsystems": {
+        "title": "Shopsystem",
+        "form": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Name"
+          }
+        },
+        "downloads": {
+          "titles": {
+            "plugin_with_ver": "Plugin ({{ version }})",
+            "instructions": "Instructions"
+          }
+        },
+        "api_keys": {
+          "dandomain": {
+            "titles": {
+              "key_secret": "API Key",
+              "url": "URL",
+              "key_created": "Created"
+            }
+          },
+          "default": {
+            "actions": {
+              "key_add": "Add"
+            },
+            "titles": {
+              "create_key": "Create key",
+              "key_id": "Client Id",
+              "key_secret": "Client secret",
+              "business_uuid": "Business UUID",
+              "key_created": "Created"
+            },
+            "messages": {
+              "key_was_removed": "Key was successfully removed"
+            },
+            "errors": {
+              "pending_approval": "Pending approval"
+            }
+          }
+        },
+        "main": {
+          "titles": {
+            "downloads": "Downloads",
+            "api_keys": "API keys"
+          }
+        }
+      },
+      "communication": {
+        "title": "Communication"
+      },
+      "communications": {
+        "title": "Communication",
+        "form": {
+          "autoresponderEnabled": {
+            "label": "Autoresponder enabled",
+            "placeholder": "Autoresponder enabled"
+          },
+          "secondFactor": {
+            "label": "Second factor",
+            "placeholder": "Second factor"
+          },
+          "verificationType": {
+            "label": "Verify type",
+            "placeholder": "Verify type",
+            "value": {
+              "0": "Verify by payment",
+              "1": "Verify by ID"
+            }
+          }
+        },
+        "main": {
+          "titles": {
+            "settings": "Settings"
+          }
+        }
+      }
+    },
+    "add_keys": {
+      "title": "Add Keys"
+    },
+    "create_new_account": {
+      "title": "Create new account"
+    },
+    "layout": {
+      "title": "Connect"
+    },
+    "payment_option": {
+      "down_payment": "My customers should be able to make a down payment.",
+      "email_notification": "I want to receive email notifications about changes in the application status of my customers."
+    },
+    "qr": {
+      "previewImageTitle": "Pay Now"
+    },
+    "columns": {
+      "name": "Name"
+    },
+    "filters": {
+      "name": "Name",
+      "tree": {
+        "my_apps": "My apps",
+        "my_apps_c": "My Apps",
+        "categories": "Categories",
+        "settings": "Settings"
+      }
+    },
+    "connect": {
+      "values": {
+        "filter_labels": {
+          "_id": "Id",
+          "name": "Name",
+          "category": "Category",
+          "developer": "Developer",
+          "order": "Order",
+          "positions": "positions",
+          "updated_at": "Updated At",
+          "created_at": "Created At"
+        }
+      }
+    },
+    "sort_by": {
+      "title": "Sort by",
+      "sort_name_a_z": "Name A-Z",
+      "sort_name_z_a": "Name Z-A",
+      "sort_created_oldest": "Newest first",
+      "sort_created_newest": "Oldest first"
+    },
+    "tpm": {
+      "payments": {
+        "santander_installment_dk": {
+          "get_products": "Get Products"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import 'pe_variables.scss';
+@import 'pe_mixins.scss';
+
+:host {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  .search-scroll-container {
+    @include pe_flexbox();
+    @include pe_justify-content(center);
+
+    @media (max-height: 450px) {
+      padding: 33px 0;
+      @include pe_align-items(flex-start);
+    }
+  }
+
+  .close-button {
+    position: fixed;
+    right: $grid-unit-x * 2 - 4;
+    top: 0;
+    height: $grid-unit-y * 2 + $padding-xs-vertical * 4;
+    color: $color-secondary;
+
+    @media (max-width: $viewport-breakpoint-sm-1) {
+      margin-right: $padding-large-horizontal / 2;
+    }
+    @media screen and (max-width: 816px) {
+      left: calc(100vw - 34px);
+      width: 14px;
+      height: 26px;
+    }
+
+    .icon {
+      display: none;
+
+      @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+        display: block;
+      }
+    }
+
+    .text {
+      display:  block;
+      height: 18px;
+      padding: 2px 14px;
+      background: $color-background;
+      border-radius: $border-radius-base;
+      font-size: 12px;
+      line-height: 14px;
+
+      @include payever-transition();
+
+      &:hover {
+        background-color: $color-background-hover;
+        color: $color-secondary;
+      }
+
+      @media (max-width: $viewport-breakpoint-ipad + $grid-unit-x * 4) {
+        display: none;
+      }
+    }
+  }
+  .search-box-wrapper {
+    width: 600px;
+    position: relative;
+    top: 75px;
+    padding-bottom: 20px;
+    @include payever_animation(osScaleIn $animation-duration-slide-in ease-in);
+
+    @media screen and (max-width: $viewport-breakpoint-sm-1) {
+      width: 98%;
+      margin: 0 auto;
+    }
+  }
+  .out {
+    &.close-button,
+    &.search-box-wrapper {
+      @include payever_animation(osScaleOut $animation-duration-complex ease-out);
+      @include payever_transform_scale(0.85, 0.85);
+      opacity: 0;
+    }
+  }
+}

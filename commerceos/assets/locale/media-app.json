@@ -1,0 +1,23 @@
+{
+  "media": {
+    "actions": {
+      "add_media": "Add media",
+      "can_drop": "You can drop media",
+      "drag_n_drop": "Drag & Drop here to add"
+    },
+    "notify": {
+      "file_size_part_1": "File \"",
+      "file_size_part_2": "\" size is",
+      "file_size_part_3": "Mb. Maximum file size must be lower 10Mb",
+      "invalid_file_type": "Invalid file type",
+      "only_image_allowed": "Only image is allowed",
+      "one_video_per_post": "No more than one video for the post",
+      "defferent_types": "Unable to create a post with different types of media content"
+    },
+    "errors": {
+      "500": "Internal server error",
+      "404": "Not found",
+      "400": ""
+    }
+  }
+}

@@ -1,0 +1,210 @@
+//
+// Image picker
+// ----------------------------
+
+.pe-bootstrap {
+  .image-picker {
+
+    @include pe_flexbox();
+    margin-bottom: $grid-unit-y;
+    margin-top: $grid-unit-y;
+
+    &:not(.image-picker-description-right) {
+      &.image-picker-with-description > :first-child {
+        margin-right: $grid-unit-x;
+      }
+    }
+
+    &-preview-label {
+      display: flex;
+      text-rendering: optimizeLegibility;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size-h2;
+      font-weight: $font-weight-thin;
+      color: $color-white;
+      background-image: $default-logo-gradient;
+      font-family: sans-serif;
+    }
+
+    &-container-loader {
+      background-image: $default-logo-gradient;
+    }
+
+    &-align-left {
+      justify-content: flex-start;
+    }
+
+    &-align-center {
+      justify-content: center;
+    }
+
+    &-align-right {
+      justify-content: flex-end;
+    }
+
+    &-container {
+      @include pe_flexbox();
+      @include pe_justify-content(center);
+      @include pe_flex(1, 1, 0px);
+      position: relative;
+      height: $icon-size-128;
+      border: 2px solid $mat-form-field-border-color;
+      border-radius: $border-radius-base * 2;
+      color: $color-gray-2;
+      cursor: pointer;
+      text-align: center;
+      overflow: hidden;
+
+      .image-picker-empty {
+        @include pe_flexbox();
+        @include pe_justify-content(center);
+        @include pe_align-items(center);
+        @include pe_flex-direction(column);
+        height: 100%;
+        width: 100%;
+
+        &-label {
+          margin-top: $grid-unit-y * 2;
+          margin-bottom: 0;
+        }
+      }
+
+      &:hover {
+        .image-picker-delete {
+          opacity: .67;
+        }
+      }
+
+      .image-picker-delete {
+        border: 2px solid white;
+        margin-right: -11px;
+        margin-top: -11px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        opacity: 0;
+        cursor: pointer;
+
+        @media(max-width: 480px) {
+          opacity: .67;
+        }
+
+        &:hover {
+          opacity: .9;
+        }
+
+        .icon {
+          vertical-align: 1px;
+        }
+      }
+
+      .image-wrapper {
+        @include payever_absolute();
+        overflow: hidden;
+
+        img {
+          @include payever_image_covers();
+        }
+      }
+
+      &-labeled {
+        margin-top: inherit;
+      }
+
+      &-loader {
+        @include pe_align-items(center);
+      }
+
+      &-disabled {
+        cursor: not-allowed;
+
+        .image-picker-delete {
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    &-description {
+      @include pe_flex(1, 1, 0px);
+
+      &-right {
+        @include pe_flex-direction(row-reverse);
+
+        &.image-picker-with-description > :nth-child(2) {
+          margin-right: $grid-unit-x;
+        }
+      }
+
+      &-vertical-center {
+        @include payever_vertical_align_middle();
+
+        span {
+          @include inline-block(middle);
+        }
+      }
+    }
+
+    &-label {
+      margin-top: $padding-small-vertical;
+    }
+
+    &-round {
+      .image-picker-container {
+        height: $grid-unit-y * 5;
+        min-width: $grid-unit-y * 5;
+        max-width: $grid-unit-y * 5;
+        border-radius: 50%;
+
+        .image-picker-empty {
+          background-color: $color-white-grey-2;
+
+          &-label {
+            margin: 0;
+            font-size: $font-size-small;
+            line-height: $line-height-base;
+          }
+        }
+
+        @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+          height: $grid-unit-y * 4;
+          min-width: $grid-unit-y * 4;
+          max-width: $grid-unit-y * 4;
+
+          .image-picker-empty-label {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-details {
+      @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+        margin: 0;
+      }
+      .image-picker-container {
+        height: $grid-unit-y * 8;
+        min-width: $grid-unit-y * 8;
+        max-width: $grid-unit-y * 8;
+        border-radius: 50%;
+
+        .image-picker-empty {
+          background-color: $color-white-grey-2;
+
+          &-label {
+            margin: 0;
+            font-size: $font-size-small;
+            line-height: $line-height-base;
+          }
+        }
+
+        .image-picker-delete {
+          margin: 0;
+        }
+
+      }
+    }
+  }
+}

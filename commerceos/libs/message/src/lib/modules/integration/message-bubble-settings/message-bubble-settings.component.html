@@ -1,0 +1,107 @@
+<div class="bubble-theme" [formGroup]="bubbleSettingsGroup">
+  <ul class="bubble-theme__nav">
+    <ng-container *ngFor="let item of bubbleSettingsTitles; let index = index;">
+      <li class="bubble-theme__nav-item {{bubbleSettingsGroup.controls['brand'].value === item.value ? 'active' : ''}}">
+        <label><input type="radio" formControlName="brand" [value]="item.value">{{item.label}}</label>
+      </li>
+    </ng-container>
+  </ul>
+  <div class="bubble-theme__content">
+
+    <button
+      class="bubble-theme__set-logo"
+      (click)="navigateToBusinessSettings()">{{ 'message-app.message-integration.change-logo' | translate }}</button>
+
+    <div class="bubble-theme__show-button">
+      <peb-button-toggle
+        formControlName="showNotifications"
+        label="{{ 'message-app.message-integration.show-notifications' | translate }}"
+        labelPosition="before"
+        [spacer]="true"
+      ></peb-button-toggle>
+    </div>
+
+    <pe-message-appearance-shadow
+      formControlName="boxShadow"
+    ></pe-message-appearance-shadow>
+
+    <div class="bubble-theme__dropdown">
+      <peb-select
+        class="peb-select"
+        formControlName="style"
+        [selectType]="'label'"
+        label="{{ 'message-app.message-integration.style' | translate }}"
+        [animated]="true"
+      >
+        <peb-select-option *ngFor="let item of bubbleThemeStyleOptions" [value]="item.value"
+                           [label]="item.label">
+        </peb-select-option>
+      </peb-select>
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8">
+        <use xlink:href="#icon-apps-message-arrow-down-24"></use>
+      </svg>
+    </div>
+
+    <div class="bubble-theme__slider" *ngIf="showRoundedSlider">
+      <pe-message-slider
+        label="{{ 'message-app.message-integration.radius' | translate }}"
+        formControlName="roundedValue"
+        [min]="1"
+        [max]="20"
+      ></pe-message-slider>
+    </div>
+
+    <mat-tab-group [selectedIndex]="sidebarBubbleSettingsIndex" animationDuration="200ms">
+      <mat-tab class="widget-settings">
+
+      </mat-tab>
+      <mat-tab class="bubble-settings">
+
+        <div class="bubble-theme__dropdown">
+          <peb-select
+            class="peb-select"
+            [selectType]="'label'"
+            label="{{ 'message-app.message-integration.layout' | translate }}"
+            [animated]="true"
+            formControlName="layout"
+          >
+            <peb-select-option *ngFor="let item of bubbleThemeStyleLayout" [value]="item.value"
+                               [label]="item.label">
+            </peb-select-option>
+          </peb-select>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8">
+            <use xlink:href="#icon-apps-message-arrow-down-24"></use>
+          </svg>
+        </div>
+
+        <div class="bubble-theme__text">
+          <peb-form-field-input
+            class="peb-form-field-input"
+            [appearance]="'label'"
+            label="{{ 'message-app.message-integration.custom-text' | translate }}"
+            [animated]="true"
+          >
+            <input type="text" name="" placeholder="" formControlName="text"/>
+          </peb-form-field-input>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+    <div class="bubble-theme__colors" #colorPicker>
+      <peb-color-picker-form
+        class="bubble-theme__background-color-picker"
+        buttonLabel="{{ 'message-app.message-integration.change-color' | translate }}"
+        label="{{ 'message-app.message-integration.bg-color' | translate }}"
+        formControlName="bgColor"
+      >
+      </peb-color-picker-form>
+      <peb-color-picker-form
+        class="bubble-theme__text-color-picker"
+        buttonLabel="{{ 'message-app.message-integration.change-color' | translate }}"
+        label="{{ 'message-app.message-integration.text-color' | translate }}"
+        formControlName="textColor"
+      >
+      </peb-color-picker-form>
+    </div>
+  </div>
+</div>

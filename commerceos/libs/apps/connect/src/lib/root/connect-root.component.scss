@@ -1,0 +1,170 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+connect-third-party {
+  display: block;
+  height: 100%;
+
+  pe-third-party-root-form {
+    display: block;
+  }
+}
+
+cos-connect-root {
+  pe-simple-welcome-stepper {
+    position: static;
+    display: flex;
+    .pe-simple-stepper {
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .top-offset-fix {
+    transform: translateX(0);
+  }
+
+  .connect-app-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // overflow-y: scroll;
+    // overflow-x: scroll;
+
+    .icon-32 {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  #connect-header {
+    .close-button .show-before {
+      margin-left: -5px;
+    }
+  }
+
+  .connect-app-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 56px;
+
+    &.dark {
+      background-color: rgba(36, 40, 46, 0.9);
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    &.light {
+      background-color: #f3f2f8;
+      outline-style: solid;
+      outline-width: 1px;
+      backdrop-filter: blur(50px);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    &.transparent {
+      background-color: rgba(36, 39, 46, 0.8);
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+    }
+
+    .chips .chip .close-button {
+      display: flex;
+      align-items: center;
+      margin-top: -2px;
+    }
+  }
+}
+
+connect-communications-device-payments-main {
+  pe-info-box {
+    transform: unset !important;
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+}
+
+plugin-api-keys {
+  .mat-content mat-panel-title {
+    align-items: center;
+  }
+}
+.overlay-widget__content {
+  @media (max-height: 500px) {
+    border-radius: 0 !important;
+    overflow: auto !important;
+  }
+}
+
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .overlay-widget-container,
+  .overlay-widget-container [class^="overlay-"] {
+    border-radius: 12px;
+    overflow: unset;
+  }
+
+  .overlay-widget-container {
+    @media all and (max-width: 720px) {
+      align-items: center;
+      max-height: 100vh;
+      height: 100vh;
+    }
+    .overlay-widget {
+      overflow: hidden;
+      &__back {
+        margin: 0 0 0 24px;
+        @media all and (max-width: 720px) {
+          margin: 0 0 0 12px;
+        }
+      }
+
+      &__title {
+        font-size: 24px;
+        font-weight: bold;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      &__done {
+        margin-right: 24px;
+        @media all and (max-width: 720px) {
+          margin-right: 12px;
+        }
+      }
+
+      &__content {
+        //need for safari 10.1+
+        @media not all and (min-resolution: 0.001dpcm) {
+          @supports (-webkit-appearance: none) {
+            margin-right: -4px;
+            overflow: scroll;
+            overflow-x: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  .pe-info-box .mat-card .mat-card-actions {
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .form-table .form-fieldset .row > [class*="col"] {
+    margin-bottom: 1px;
+  }
+
+  .operations-display-flex .mat-button-block:last-child {
+    border-bottom-left-radius: 12px !important;
+  }
+}

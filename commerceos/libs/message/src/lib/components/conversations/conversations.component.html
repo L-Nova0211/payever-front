@@ -1,0 +1,63 @@
+<pe-grid
+  [embedMod]="true"
+  [theme]="theme"
+>
+  <pe-grid-sidenav
+    [closeOnResize]="closeOnResize"
+    [isOpenOnMobile]="false"
+    (menuItemSelected)="conversationListMenuSelected($event)"
+    [showSidenavHeader]="false"
+    [sidenavMenu]="conversationListMenu"
+    [sidenavName]="sidenavName"
+    [smallPadding]="true"
+    [mobileView]="isEmbedChat || isLiveChat"
+  >
+    <pe-message-conversation-search searchConversation
+      (filter)="filterConversationList($event)"
+      [isLoading]="isLoading$ | async"
+      [mobileView]="isEmbedChat || isLiveChat"
+    ></pe-message-conversation-search>
+    <pe-message-conversation-empty-list emptyConversationList
+      [emptyListStatus]="emptyListStatus$ | async"
+      [isLoading]="isLoading$ | async"
+      [theme]="theme"
+    ></pe-message-conversation-empty-list>
+    <pe-message-conversation-list
+      [conversationList]="conversationList$ | async"
+      [isLoading]="isLoading$ | async"
+    >
+      <ng-template let-item="item">
+        <pe-message-conversation
+          (actionClick)="actionClick($event)"
+          [item]="item"
+          [itemContextMenu]="conversationContextMenu"
+          (itemContextSelect)="conversationContextSelect($event)"
+          (moveToFolder)="addConversationToFolder($event)"
+          [peDropIntoFolder]="dropIntoFolder(item)"
+          [typingMembers]="getTypingMembers(item)"
+        ></pe-message-conversation>
+      </ng-template>
+    </pe-message-conversation-list>
+  </pe-grid-sidenav>
+  <pe-grid-content
+    [showMobileFooter]="false"
+    [showMobileTitle]="true"
+    [sidenavName]="sidenavName"
+    [mobileView]="isEmbedChat || isLiveChat"
+  >
+    <div class="pe-message-chat-room-element">
+      <pe-message-chat-room
+        (activatedChat)="activatedChatListener($event)"
+        [isEmbedChat]="isEmbedChat"
+        [isLiveChat]="isLiveChat"
+        [mobileView]="mobileView"
+        [theme]="theme"
+      ></pe-message-chat-room>
+    </div>
+  </pe-grid-content>
+</pe-grid>
+
+<ng-template #deleteForEveryOneTemplate>
+  <pe-message-delete-for-everyone-template
+  ></pe-message-delete-for-everyone-template>
+</ng-template>

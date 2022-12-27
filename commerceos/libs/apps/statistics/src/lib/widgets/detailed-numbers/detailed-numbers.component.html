@@ -1,0 +1,78 @@
+<div class="table-top">
+  <div class="table-top__title">{{ config.dataSource[0][0]?.text?.toUpperCase() }}</div>
+  <div class="table-top__currency">
+    <ng-container *ngIf="!editMode">{{ config?.dataSource[0][2]?.text }}</ng-container>
+    <span *ngIf="editMode" class="done-btn" (click)="onEditMode()">Done</span>
+  </div>
+</div>
+
+<ng-container *ngIf="!editMode">
+  <div class="top-table">
+    <div *ngIf="config.dataSource[1]" class="top-table__row top-table__row--header">
+      <div class="top-table__cell">
+        {{
+          config.dataSource[1][0]?.text
+            ? config.dataSource[1][0]?.text
+            : (config.dataSource[1][0]?.value | number: '.0-2')
+        }}
+        {{ config.dataSource[1][0]?.currency ? config.dataSource[1][0]?.currency : config.dataSource[1][0]?.percent }}
+      </div>
+      <div class="top-table__cell">
+        {{
+          config.dataSource[1][1]?.text
+            ? config.dataSource[1][1]?.text
+            : (config.dataSource[1][1]?.value | number: '.0-2')
+        }}
+        {{ config.dataSource[1][1]?.currency ? config.dataSource[1][1]?.currency : config.dataSource[1][1]?.percent }}
+      </div>
+      <div class="top-table__cell">
+        {{ config.dataSource[1][2]?.text ? config.dataSource[1][2]?.text : config.dataSource[1][2]?.valut }}
+        {{ config.dataSource[1][2]?.currency ? config.dataSource[1][2]?.currency : config.dataSource[1][2]?.percent }}
+      </div>
+    </div>
+  </div>
+
+  <div class="detailed-numbers-table">
+    <div *ngIf="config.dataSource[2]" class="detailed-numbers-table__row">
+      <div class="detailed-numbers-table__cell">
+        {{
+          config.dataSource[2][0]?.text
+            ? config.dataSource[2][0]?.text
+            : (config.dataSource[2][0]?.value | number: '.0-2')
+        }}
+        {{ config.dataSource[2][0]?.currency ? config.dataSource[2][0]?.currency : config.dataSource[2][0]?.percent }}
+      </div>
+      <div class="detailed-numbers-table__cell">
+        {{
+          config.dataSource[2][1]?.text
+            ? config.dataSource[2][1]?.text
+            : (config.dataSource[2][1]?.value | number: '.0-2')
+        }}
+        {{ config.dataSource[2][1]?.currency ? config.dataSource[2][1]?.currency : config.dataSource[2][1]?.percent }}
+      </div>
+      <div class="detailed-numbers-table__cell">
+        {{
+          config.dataSource[2][2]?.text
+            ? config.dataSource[2][2]?.text
+            : (config.dataSource[2][2]?.value | number: '.0-2')
+        }}
+        {{ config.dataSource[2][2]?.currency ? config.dataSource[2][2]?.currency : config.dataSource[2][2]?.percent }}
+      </div>
+    </div>
+    <ng-container *ngFor="let row of config.dataSource | slice: 3:getRowsNumber()">
+      <div class="detailed-numbers-table__row" *ngIf="!checkIfEmpty(row)">
+        <div
+          class="detailed-numbers-table__cell"
+          *ngFor="let cell of row; let i = index"
+          [ngClass]="{
+            positive: cell?.value > 0 && i === 2,
+            negative: cell?.value < 0 && i === 2
+          }"
+        >
+          {{ cell?.text ? cell?.text : (cell?.value | number: '.0-2') }}
+          {{ cell?.currency ? cell?.currency : cell?.percent }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

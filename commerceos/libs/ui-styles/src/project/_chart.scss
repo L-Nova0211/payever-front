@@ -1,0 +1,75 @@
+.pe-bootstrap {
+  .chart {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius-base;
+    background: $color-white;
+    position: relative;
+    padding-top: $grid-unit-y * 5;
+    height: $grid-unit-y * 20;
+    margin-bottom: $grid-unit-y * 2;
+    @media (max-width: $viewport-breakpoint-sm-3) {
+      margin-bottom: $grid-unit-y;
+    }
+    .chart-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $grid-unit-y * 4;
+      padding: $grid-unit-y $pe_hgrid_gutter;
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        padding: $grid-unit-y $pe_hgrid_gutter/2;
+      }
+      .chart-title {
+        margin: 0;
+        @include text-overflow;
+      }
+      .chart-settings {
+        position: absolute;
+        top: 50%;
+        margin-top: -1 * ($grid-unit-y * 3) / 2;
+        right: $pe_hgrid_gutter;
+        .btn {
+          color: $color-light-gray-1;
+        }
+        .dropdown-menu {
+          right: -6px;
+          margin-top: 10px;
+        }
+        & + .chart-title {
+          margin-right: 24px + $pe_hgrid_gutter/2;
+        }
+      }
+    }
+    .chart-content {
+      padding:  0 $pe_hgrid_gutter;
+      height: $grid-unit-y * 11;
+      margin-bottom: $grid-unit-y * 4;
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        padding: $grid-unit-y $pe_hgrid_gutter/2;
+      }
+    }
+    .chart-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding:  0 $pe_hgrid_gutter $grid-unit-y * 2 $pe_hgrid_gutter;
+      height: $grid-unit-y * 4;
+      @media (max-width: $viewport-breakpoint-sm-3) {
+        padding: $grid-unit-y $pe_hgrid_gutter/2;
+      }
+      .btn {
+        color: $color-gray-2;
+      }
+    }
+    &.chart-big {
+      height: auto;
+      min-height: $grid-unit-y * 35;
+      .chart-content {
+        height: auto;
+        min-height: $grid-unit-y * 26;
+      }
+    }
+  }
+}

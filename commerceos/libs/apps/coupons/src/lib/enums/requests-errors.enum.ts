@@ -1,0 +1,15 @@
+export enum PeCouponsRequestsErrorsEnum {
+  GetChannels = 'coupons-app.apm_errors.get_channels',
+  GetCoupon = 'coupons-app.apm_errors.get_coupon',
+  GetCoupons = 'coupons-app.apm_errors.get_coupons',
+  GetCouponByCode = 'coupons-app.apm_errors.get_coupon_by_code',
+  CreateCoupon = 'coupons-app.apm_errors.create_coupon',
+  DeleteCoupon = 'coupons-app.apm_errors.delete_coupon',
+  UpdateCoupon = 'coupons-app.apm_errors.update_coupon',
+  GetCouponEligibility = 'coupons-app.apm_errors.get_coupon_eligibility',
+  GetCouponTypeExtraField = 'coupons-app.apm_errors.get_coupon_type_extra_field',
+  GetProducts = 'coupons-app.apm_errors.get_products',
+  GetCategories = 'coupons-app.apm_errors.get_categories',
+  GetContacts = 'coupons-app.apm_errors.get_contacts',
+  GetContactsGroups = 'coupons-app.apm_errors.get_contacts_groups',
+}

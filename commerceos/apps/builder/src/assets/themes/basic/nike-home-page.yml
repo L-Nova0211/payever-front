@@ -1,0 +1,1251 @@
+id: nike-home-page
+element:
+  id: nike-home-page
+  type: document
+  children:
+    - id: nike-navbar
+      type: section
+      children:
+        - id: nike-navbar-top-grid
+          type: grid
+          children:
+            - id: nike-membership-link
+              type: text
+              data:
+                text: 'Be There'
+            - id: nike-login-link
+              type: text
+              data:
+                text: "Create or log in a Nike Member profile"
+            - id: nike-help-link
+              type: text
+              data:
+                text: Help
+            - id: nike-shop-link
+              type: image
+              data:
+                src: "shoplink"
+            - id: nike-location
+              type: text
+              data:
+                text: "Luxembourg"
+    - id: nike-second-navbar
+      type: section
+      children:
+      - id: nike-navbar-bottom-grid
+        type: grid
+        children:
+          - id: nike-topnav-logo
+            type: logo
+          - id: nike-topnav-navigation
+            type: navbar
+            data:
+              routes:
+              - title: New Releases
+                route: /
+              - title: Men
+                route: /
+              - title: Women
+                route: /
+              - title: Kids
+                route: /
+              - title: Customise
+                route: /
+              - title: Collection
+                route: /
+              - title: Sale
+                route: /
+    - id: nike-main-section
+      type: section
+      children:
+        - id: nike-main-section-image
+          type: image
+          data:
+            src: https://static.nike.com/a/images/f_auto/dpr_1.0/w_1053,c_limit/cbaeff43-8276-42cd-85c9-0653f537d212/nike-just-do-it.jpg
+    - id: nike-products-section-1
+      type: section
+      children:
+        - id: nike-products-section-1-grid-title
+          type: grid
+          children:
+            - id: nike-products-section-1-title
+              type: text
+              data:
+                text: 'Gear Up'
+            - id: nike-products-section-1-view-all-link
+              type: text
+              data:
+                text: 'View All'
+        - id: nike-products-section-1-grid-products
+          type: grid
+          children:
+            - id: nike-products-section-1-product-1
+              type: shop-products
+            - id: nike-products-section-1-product-2
+              type: shop-products
+            - id: nike-products-section-1-product-3
+              type: shop-products
+    - id: nike-categories-section-1
+      type: section
+      children:
+        - id: nike-categories-section-1-title
+          type: text
+          data:
+            text: 'Lightweight Layers'
+        - id: nike-categories-section-1-grid
+          type: grid
+          children:
+            - id: nike-categories-section-1-grid-category-1
+              type: block
+              children:
+                - id: nike-categories-section-1-grid-category-1-title
+                  type: text
+                  data:
+                    text: 'Pack-Away Performance Grip'
+                - id: nike-categories-section-1-grid-category-1-button
+                  type: button
+                  data:
+                    text: Shop
+            - id: nike-categories-section-1-grid-category-2
+              type: block
+              children:
+                - id: nike-categories-section-1-grid-category-2-title
+                  type: text
+                  data:
+                    text: 'Pack-Away Performance Grip'
+                - id: nike-categories-section-1-grid-category-2-button
+                  type: button
+                  data:
+                    text: Shop
+            - id: nike-categories-section-1-grid-category-3
+              type: block
+              children:
+                - id: nike-categories-section-1-grid-category-3-title
+                  type: text
+                  data:
+                    text: 'Pack-Away Performance Grip'
+                - id: nike-categories-section-1-grid-category-3-button
+                  type: button
+                  data:
+                    text: Shop
+    - id: nike-products-section-2
+      type: section
+      children:
+      - id: nike-products-section-2-grid-title
+        type: grid
+        children:
+        - id: nike-products-section-2-title
+          type: text
+          data:
+            text: 'Trending Now'
+        - id: nike-products-section-2-view-all-link
+          type: text
+          data:
+            text: 'View All'
+      - id: nike-products-section-2-grid-products
+        type: grid
+        children:
+        - id: nike-products-section-2-product-1
+          type: shop-products
+        - id: nike-products-section-2-product-2
+          type: shop-products
+        - id: nike-products-section-2-product-3
+          type: shop-products
+    - id: nike-video-section
+      type: section
+      children:
+        - id: nike-media-section-title
+          type: text
+          data:
+            text: Play Inside
+        - id: nike-media-section-video
+          type: video
+          data:
+            sources:
+              - 'https://ak.picdn.net/shutterstock/videos/1044255715/preview/stock-footage-person-signing-important-document-camera-following-tip-of-the-pen-as-it-signs-crucial-business.webm'
+            settings:
+              autoplay: true
+              controls: false
+              loop: true
+    - id: nike-just-in-section
+      type: section
+      children:
+        - id: nike-just-in-title
+          type: text
+          data:
+            text: 'Just In'
+        - id: nike-just-in-banner
+          type: block
+          children:
+            - id: nike-just-in-banner-title
+              type: text
+              data:
+                text: 'Make You Mark'
+            - id: nike-just-in-banner-button
+              type: button
+              data:
+                text: Shop
+    - id: nike-dont-miss-section
+      type: section
+      children:
+        - id: nike-dont-miss-section-title
+          type: text
+          data:
+            text: 'Dont Miss'
+        - id: nike-dont-miss-section-grid
+          type: grid
+          children:
+            - id: nike-dont-miss-category-1
+              type: block
+              children:
+                - id: nike-dont-miss-category-1-title
+                  type: text
+                  data:
+                    text: Jordan Max 200
+                - id: nike-dont-miss-category-1-button
+                  type: button
+                  data:
+                    text: Shop
+            - id: nike-dont-miss-category-2
+              type: block
+              children:
+              - id: nike-dont-miss-category-2-title
+                type: text
+                data:
+                  text: 'SuperRep Go'
+              - id: nike-dont-miss-category-2-button
+                type: button
+                data:
+                  text: Shop
+    - id: nike-more-nike-section
+      type: section
+      children:
+        - id: nike-more-nike-section-title
+          type: text
+          data:
+            text: 'More Nike'
+        - id: nike-more-nike-grid
+          type: grid
+          children:
+            - id: nike-more-nike-category-1
+              type: block
+              children:
+                - id: nike-more-nike-category-1-button
+                  type: button
+                  data:
+                    text: Men's
+            - id: nike-more-nike-category-2
+              type: block
+              children:
+                - id: nike-more-nike-category-2-button
+                  type: button
+                  data:
+                    text: Women's
+            - id: nike-more-nike-category-3
+              type: block
+              children:
+              - id: nike-more-nike-category-3-button
+                type: button
+                data:
+                  text: Kid's
+    - id: nike-all-categories-section
+      type: section
+      children:
+        - id:  nike-all-categories-section-headers-grid
+          type: grid
+          children:
+            - id: nike-all-categories-section-header-1
+              type: text
+              data:
+                text: Shoes
+            - id: nike-all-categories-section-header-2
+              type: text
+              data:
+                text: Clothing
+            - id: nike-all-categories-section-header-3
+              type: text
+              data:
+                text: Kids'
+            - id: nike-all-categories-section-header-4
+              type: text
+              data:
+                text: Featured
+            - id: nike-all-categories-section-category-1-1
+              type: text
+              data:
+                text: 'Sneakers and Shoes'
+            - id: nike-all-categories-section-category-1-2
+              type: text
+              data:
+                text: 'Football Boots'
+            - id: nike-all-categories-section-category-1-3
+              type: text
+              data:
+                text: 'Running Shoes'
+            - id: nike-all-categories-section-category-1-4
+              type: text
+              data:
+                text: 'Netball Sneakers'
+            - id: nike-all-categories-section-category-2-1
+              type: text
+              data:
+                text: 'Sneakers and Shoes'
+            - id: nike-all-categories-section-category-2-2
+              type: text
+              data:
+                text: 'Football Boots'
+            - id: nike-all-categories-section-category-2-3
+              type: text
+              data:
+                text: 'Running Shoes'
+            - id: nike-all-categories-section-category-2-4
+              type: text
+              data:
+                text: 'Netball Sneakers'
+            - id: nike-all-categories-section-category-3-1
+              type: text
+              data:
+                text: 'Sneakers and Shoes'
+            - id: nike-all-categories-section-category-3-2
+              type: text
+              data:
+                text: 'Football Boots'
+            - id: nike-all-categories-section-category-3-3
+              type: text
+              data:
+                text: 'Running Shoes'
+            - id: nike-all-categories-section-category-3-4
+              type: text
+              data:
+                text: 'Netball Sneakers'
+            - id: nike-all-categories-section-category-4-1
+              type: text
+              data:
+                text: 'Sneakers and Shoes'
+            - id: nike-all-categories-section-category-4-2
+              type: text
+              data:
+                text: 'Football Boots'
+            - id: nike-all-categories-section-category-4-3
+              type: text
+              data:
+                text: 'Running Shoes'
+            - id: nike-all-categories-section-category-4-4
+              type: text
+              data:
+                text: 'Netball Sneakers'
+    - id: nike-footer-1
+      type: section
+      children:
+        - id: nike-footer-1-grid
+          type: grid
+          children:
+            - id: nike-footer-1-title-1
+              type: text
+              data:
+                text: 'GIFT CARDS'
+            - id: nike-footer-1-title-2
+              type: text
+              data:
+                text: 'FIND A STORE'
+            - id: nike-footer-1-title-3
+              type: text
+              data:
+                text: 'SIGNUP FOR EMAIL'
+            - id: nike-footer-1-title-4
+              type: text
+              data:
+                text: 'BECOME A MEMBER'
+            - id: nike-footer-1-title-5
+              type: text
+              data:
+                text: 'STUDENT DISCOUNT'
+            - id: nike-footer-1-title-6
+              type: text
+              data:
+                text: 'SITE FEEDBACK'
+            - id: nike-footer-1-title-7
+              type: text
+              data:
+                text: 'GET HELP'
+            - id: nike-footer-1-title-8
+              type: text
+              data:
+                text: 'ABOUT NIKE'
+            - id: nike-footer-1-link-1
+              type: text
+              data:
+                text: 'Order status'
+            - id: nike-footer-1-link-2
+              type: text
+              data:
+                text: 'Shipping and Delivery'
+            - id: nike-footer-1-link-3
+              type: text
+              data:
+                text: 'Returns'
+            - id: nike-footer-1-link-4
+              type: text
+              data:
+                text: 'Payment Options'
+            - id: nike-footer-1-link-5
+              type: text
+              data:
+                text: 'Contact Us'
+            - id: nike-footer-1-link-6
+              type: text
+              data:
+                text: 'News'
+            - id: nike-footer-1-link-7
+              type: text
+              data:
+                text: 'Careers'
+            - id: nike-footer-1-link-8
+              type: text
+              data:
+                text: 'Investors'
+            - id: nike-footer-1-link-9
+              type: text
+              data:
+                text: 'Sustainability'
+
+
+
+
+stylesheet:
+  desktop:
+    nike-navbar:
+      backgroundColor: white
+      boxShadow: 'inset 0 -1px 0 0 #e5e5e5'
+    nike-navbar-top-grid:
+      direction: horizontal
+      cells: memb:1fr jordan:1fr space1:5fr login:auto help:1fr location:auto
+    nike-membership-link:
+      slot: memb
+      fontSize: 12px
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontWeight: 400
+      width: 100%
+      textAlign: center
+      padding: 8px 0
+      color: '#757575'
+      boxShadow: 'inset -1px 0 0 0 #e5e5e5'
+    nike-login-link:
+      slot: login
+      fontSize: 12px
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      width: 100%
+      textAlign: center
+      padding: 8px 0
+      fontWeight: 400
+      color: '#757575'
+    nike-help-link:
+      slot: help
+      fontSize: 12px
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      width: 100%
+      textAlign: center
+      padding: 8px 0
+      fontWeight: 400
+      color: '#757575'
+    nike-location:
+      slot: location
+      fontSize: 12px
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      width: 100%
+      padding: 8px 0
+      textAlign: center
+      fontWeight: 400
+      color: '#757575'
+    nike-second-navbar:
+      boxShadow: 'inset 0 -1px 0 0 #e5e5e5'
+    nike-navbar-bottom-grid:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    nike-topnav-logo:
+      slot: left
+      color: black
+      fontSize: 22
+      left: 8
+    nike-topnav-navigation:
+      slot: center
+      height: 45
+      color: black
+      fontSize: 16
+      background: white
+      fontFamily: 'Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif'
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: white
+      mobileButtonElementHeight: 4
+    nike-main-section-image:
+      width: '100%'
+    nike-products-section-1:
+      margin: 50px 0
+    nike-products-section-1-grid-title:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    nike-products-section-1-title:
+      slot: left
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-products-section-1-view-all-link:
+      slot: right
+      width: 100%
+      textAlign: right
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 16
+      fontWeight: 500
+      color: "#111"
+    nike-products-section-1-grid-products:
+      direction: horizontal
+      cells: product1:1fr product2:1fr product3:1fr
+    nike-products-section-1-product-1:
+      slot: product1
+      itemWidth: 300
+      itemHeight: 400
+    nike-products-section-1-product-2:
+      slot: product2
+      itemWidth: 300
+      itemHeight: 400
+    nike-products-section-1-product-3:
+      slot: product3
+      itemWidth: 300
+      itemHeight: 400
+    nike-categories-section-1:
+      margin: 50px 0
+    nike-categories-section-1-title:
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-categories-section-1-grid:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    nike-categories-section-1-grid-category-1:
+      slot: left
+      backgroundSize: '100% 100%'
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/h_1016,c_limit/37415cd9-5270-4fe5-b825-0474c5711a0e/nike-just-do-it.jpg"
+      width: 521
+      height: 850
+      margin: 0 10px 0 0
+    nike-categories-section-1-grid-category-1-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: white
+      left: 30
+      top: 700
+    nike-categories-section-1-grid-category-1-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 750
+      borderRadius: 50
+    nike-categories-section-1-grid-category-2:
+      slot: right
+      backgroundSize: '100% 100%'
+      width: 521
+      height: 420
+      margin: 0 0 10px 0
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_502,c_limit/75acb763-937e-4de9-bce9-5709feee9802/nike-just-do-it.jpg"
+    nike-categories-section-1-grid-category-2-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: white
+      left: 30
+      top: 270
+    nike-categories-section-1-grid-category-2-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 320
+      borderRadius: 50
+    nike-categories-section-1-grid-category-3:
+      slot: right
+      width: 521
+      height: 420
+      backgroundSize: '100% 100%'
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_502,c_limit/182ea4c1-4a50-4fd9-ac25-1ec00bf9779a/nike-just-do-it.jpg"
+    nike-categories-section-1-grid-category-3-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: white
+      left: 30
+      top: 270
+    nike-categories-section-1-grid-category-3-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 320
+      borderRadius: 50
+    nike-products-section-2:
+      margin: 50px 0
+    nike-products-section-2-grid-title:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    nike-products-section-2-title:
+      slot: left
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-products-section-2-view-all-link:
+      slot: right
+      width: 100%
+      textAlign: right
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 16
+      fontWeight: 500
+      color: "#111"
+    nike-products-section-2-grid-products:
+      direction: horizontal
+      cells: product1:1fr product2:1fr product3:1fr
+    nike-products-section-2-product-1:
+      slot: product1
+      itemWidth: 300
+      itemHeight: 400
+    nike-products-section-2-product-2:
+      slot: product2
+      itemWidth: 300
+      itemHeight: 400
+    nike-products-section-2-product-3:
+      slot: product3
+      itemWidth: 300
+      itemHeight: 400
+    nike-media-section-title:
+      width: 100%
+      textAlign: left
+      margin: 0 0 24 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-just-in-section:
+      margin: 50px 0 0 0
+    nike-just-in-title:
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-just-in-banner:
+      height: 700
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_1052,c_limit/e59004f4-5c9a-478e-a307-3603540cdb6f/nike-just-do-it.jpg"
+      backgroundPosition: 'center center'
+    nike-just-in-banner-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: black
+      left: 30
+      top: 550
+    nike-just-in-banner-button:
+      width: 80
+      height: 20
+      backgroundColor: black
+      color: white
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 600
+      borderRadius: 50
+    nike-dont-miss-section:
+      margin: 50px 0 0 0
+    nike-dont-miss-section-title:
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-dont-miss-section-grid:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    nike-dont-miss-category-1:
+      slot: left
+      height: 700
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/h_700,c_limit/702e7d34-f4ce-42ad-81e1-0aedd9d8e4a4/nike-just-do-it.jpg"
+      backgroundSize: '150% 100%'
+      backgroundPosition: center
+    nike-dont-miss-category-1-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: white
+      left: 30
+      top: 550
+    nike-dont-miss-category-1-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      color: black
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 600
+      borderRadius: 50
+    nike-dont-miss-category-2:
+      slot: right
+      height: 700
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/h_700,c_limit/24fb4f53-ba07-46fa-934e-bcb35b0cc021/nike-just-do-it.jpg"
+      backgroundSize: '150% 100%'
+      backgroundPosition: center
+      margin: '0 0 0 10px'
+    nike-dont-miss-category-2-title:
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 20
+      fontWeight: 50
+      color: white
+      left: 30
+      top: 550
+    nike-dont-miss-category-2-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      color: black
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 600
+      borderRadius: 50
+    nike-more-nike-section:
+      margin: 50px 0 0 0
+    nike-more-nike-grid:
+      direction: horizontal
+      cells: left:1fr center:1fr right:1fr
+    nike-more-nike-section-title:
+      width: 100%
+      textAlign: left
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      margin: 0 0 24 0
+      fontSize: 24
+      fontWeight: 500
+      color: "#111"
+    nike-more-nike-category-1:
+      slot: left
+      height: 400
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_340,c_limit/0bafb728-2ae2-416f-bb18-5935801c8071/nike-just-do-it.png"
+      backgroundSize: '100% 100%'
+      backgroundPosition: center
+      margin: '0 16px 0 0'
+    nike-more-nike-category-1-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      color: black
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 350
+      borderRadius: 50
+    nike-more-nike-category-2:
+      slot: center
+      height: 400
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_340,c_limit/2c8754ce-6287-4e77-a198-1ad483fba257/nike-just-do-it.png"
+      backgroundSize: '100% 100%'
+      backgroundPosition: center
+      margin: '0 16px 0 0'
+    nike-more-nike-category-2-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      color: black
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 350
+      borderRadius: 50
+    nike-more-nike-category-3:
+      slot: right
+      height: 400
+      backgroundImage: "https://static.nike.com/a/images/f_auto/dpr_2.0/w_340,c_limit/414db494-7ebc-4d53-bbff-58d50b380a24/nike-just-do-it.png"
+      backgroundSize: '100% 100%'
+      backgroundPosition: center
+    nike-more-nike-category-3-button:
+      width: 80
+      height: 20
+      backgroundColor: white
+      color: black
+      fontSize: 16
+      font-weight: 500
+      font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      padding: 10
+      position: absolute
+      left: 30
+      top: 350
+      borderRadius: 50
+    nike-all-categories-section:
+      margin: 50px 0 0 0
+    nike-all-categories-section-headers-grid:
+      direction: horizontal
+      cells: space:0.5fr title1:1fr space:0.5fr title2:1fr space:0.5fr title3:1fr space:0.5fr title4:1fr space:0.5fr
+    nike-all-categories-section-header-1:
+      slot: title1
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      margin: 0 0 20 0
+    nike-all-categories-section-header-2:
+      slot: title2
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      margin: 0 0 20 0
+    nike-all-categories-section-header-3:
+      slot: title3
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      margin: 0 0 20 0
+    nike-all-categories-section-header-4:
+      slot: title4
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      margin: 0 0 20 0
+    nike-all-categories-section-category-1-1:
+      slot: title1
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-1-2:
+      slot: title1
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-1-3:
+      slot: title1
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-1-4:
+      slot: title1
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-2-1:
+      slot: title2
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-2-2:
+      slot: title2
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-2-3:
+      slot: title2
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-2-4:
+      slot: title2
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-3-1:
+      slot: title3
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-3-2:
+      slot: title3
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-3-3:
+      slot: title3
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-3-4:
+      slot: title3
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-4-1:
+      slot: title4
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-4-2:
+      slot: title4
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-4-3:
+      slot: title4
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-all-categories-section-category-4-4:
+      slot: title4
+      width: '100%'
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 16
+      fontWeight: 500
+      textAlign: left
+      color: grey
+      margin: 10 0
+    nike-footer-1:
+      backgroundColor: '#111'
+      padding: 40px 40px 20px 0
+    nike-footer-1-grid:
+      direction: horizontal
+      cells: cell1:1fr space:0.5fr cell2:1fr space:0.5fr cell3:1fr space:4fr
+    nike-footer-1-title-1:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-2:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-3:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-4:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-5:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-6:
+      slot: cell1
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-7:
+      slot: cell2
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      margin: 0 0 10 0
+      color: white
+      fontWeight: 400
+    nike-footer-1-title-8:
+      slot: cell3
+      margin: 0 0 10 0
+      fontFamily: "Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif"
+      fontSize: 14
+      color: white
+      fontWeight: 400
+    nike-footer-1-link-1:
+      width: 100%
+      slot: cell2
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-2:
+      width: 100%
+      slot: cell2
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-3:
+      width: 100%
+      slot: cell2
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-4:
+      width: 100%
+      slot: cell2
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-5:
+      width: 100%
+      slot: cell2
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-6:
+      width: 100%
+      slot: cell3
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-7:
+      width: 100%
+      slot: cell3
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-8:
+      width: 100%
+      slot: cell3
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+    nike-footer-1-link-9:
+      width: 100%
+      slot: cell3
+      margin: 0 0 10 0
+      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+      fontSize: 12
+      color: '#7e7e7e'
+      fontWeight: 400
+  tablet:
+    nike-navbar-top-grid:
+      direction: horizontal
+      cells: memb:1fr jordan:1fr space1:5fr login:auto help:1fr location:auto
+    nike-second-navbar:
+      boxShadow: 'inset 0 -1px 0 0 #e5e5e5'
+    nike-navbar-bottom-grid:
+      direction: horizontal
+      cells: left:1fr center:auto right:1fr
+    nike-topnav-logo:
+      slot: left
+      color: black
+      fontSize: 22
+      left: 8
+    nike-topnav-navigation:
+      slot: center
+      height: 45
+      color: black
+      fontSize: 16
+      background: white
+      fontFamily: 'Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif'
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: black
+      mobileButtonElementHeight: 4
+    nike-main-section-image:
+      height: 620
+  mobile:
+    nike-navbar-top-grid:
+      direction: horizontal
+      cells: location:auto
+    nike-second-navbar:
+      boxShadow: 'inset 0 -1px 0 0 #e5e5e5'
+    nike-navbar-bottom-grid:
+      direction: horizontal
+      cells: left:1fr space1:auto right:1fr
+    nike-topnav-logo:
+      slot: left
+      color: black
+      fontSize: 22
+      left: 8
+    nike-topnav-navigation:
+      slot: right
+      height: 45
+      color: black
+      fontSize: 16
+      background: black
+      fontFamily: 'Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif'
+      mobileButtonHeight: 30
+      mobileButtonPosition: right
+      mobileButtonWidth: 30
+      mobileButtonElementColor: black
+      mobileButtonElementHeight: 4
+    nike-main-section-image:
+      height: 620
+
+
+context:
+  nike-topnav-logo:
+    state: 'ready'
+    data:
+      logoUrl: /assets/themes/nike/logo.png
+
+  nike-products-section-1-product-1:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 32 GB'
+      prices:
+        regular: '460'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  nike-products-section-1-product-2:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 128 GB'
+      prices:
+        regular: '560'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  nike-products-section-1-product-3:
+    state: 'ready'
+    data:
+    - title: 'Apple Care+ für iPad'
+      prices:
+        regular: '79'
+      image: 'https://payeverproduction.blob.core.windows.net/products/11c8a92e-14e2-433a-b2b7-45075fd6c683-AppleCare+.png'
+
+  nike-products-section-2-product-1:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 32 GB'
+      prices:
+        regular: '460'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  nike-products-section-2-product-2:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 128 GB'
+      prices:
+        regular: '560'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  nike-products-section-2-product-3:
+    state: 'ready'
+    data:
+    - title: 'Apple Care+ für iPad'
+      prices:
+        regular: '79'
+      image: 'https://payeverproduction.blob.core.windows.net/products/11c8a92e-14e2-433a-b2b7-45075fd6c683-AppleCare+.png'

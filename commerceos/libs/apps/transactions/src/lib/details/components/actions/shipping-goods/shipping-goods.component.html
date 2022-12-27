@@ -1,0 +1,136 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.shipping_goods.heading"
+  [theme]="theme"
+  [submitTitleTranslateKey]="!hasLabelAction && !hasSlipAction ? 'actions.send' : 'transactions.actions.done'"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="send()"
+>
+  <form class="shipping-form" novalidate [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background class="form-background">
+      <div class="note" *ngIf="!hasLabelAction && !hasSlipAction">
+        {{ 'transactions.form.shipping_goods.note' | translate }}
+      </div>
+      <div class="note" *ngIf="hasLabelAction || hasSlipAction">
+        {{ 'transactions.form.shipping_goods.shipped' | translate }}
+      </div>
+    </peb-form-background>
+
+    <div class="panels-wrapper">
+      <ng-template #fullToggle let-label="label">
+        <peb-button-toggle
+          [label]="label"
+          [spacer]="true"
+          [disabled]="!actionData?.partialAllowed"
+          [checked]="!actionData?.partialAllowed"
+          labelPosition="before"
+          (changed)="onToggleAmount($event)"
+        ></peb-button-toggle>
+      </ng-template>
+
+      <ng-container *ngIf="!hasItems">
+        <ng-template #amountData>
+          <peb-form-background class="form-background">
+            <ng-container
+              *ngTemplateOutlet="fullToggle; context: {
+                label: 'transactions.form.shipping_goods.labels.full' | translate
+              }"
+            ></ng-container>
+            <pe-amount
+              [order]="order"
+              [refundTotal]="refundTotal"
+            ></pe-amount>
+          </peb-form-background>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="matExpansionPanel; context: {
+          title: 'transactions.form.shipping_goods.labels.amount_title' | translate,
+          template: amountData
+        }"></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="hasItems">
+        <ng-template #itemsData>
+          <peb-form-background class="form-background">
+            <ng-container
+              *ngTemplateOutlet="fullToggle; context: {
+                label: 'transactions.form.shipping_goods.labels.full_items' | translate
+              }"
+            ></ng-container>
+            <pe-refund-product-picker
+              [data]="products"
+              [theme]="theme"
+              [disabled]="productsDisabled"
+              placeholder="Search"
+            ></pe-refund-product-picker>
+          </peb-form-background>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="matExpansionPanel; context: {
+          title: 'transactions.form.shipping_goods.labels.items_title' | translate,
+          template: itemsData
+        }"></ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="!hasShippingMethod">
+        <ng-template #shippingDetails>
+          <ng-container formGroupName="shippingDetails">
+            <pe-shipping-options [isSubmitted]="isSubmitted"></pe-shipping-options>
+          </ng-container>
+        </ng-template>
+
+        <ng-template #returnDetails>
+          <ng-container formGroupName="returnDetails">
+            <pe-return-options [isSubmitted]="isSubmitted"></pe-return-options>
+          </ng-container>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="matExpansionPanel; context: {
+          title: 'transactions.form.shipping_goods.labels.shipping_options' | translate,
+          template: shippingDetails
+        }"></ng-container>
+
+        <ng-container *ngTemplateOutlet="matExpansionPanel; context: {
+          title: 'transactions.form.shipping_goods.labels.return_options' | translate,
+          template: returnDetails
+        }"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="needVerify">
+        <ng-template #verify>
+          <pe-verify
+            [order]="order"
+            [isSubmitted]="isSubmitted"
+            [securityField]="securityField"
+            [securityFormControl]="securityFormControl"
+          ></pe-verify>
+        </ng-template>
+        <ng-container *ngTemplateOutlet="matExpansionPanel; context: {
+          title: 'transactions.form.shipping_goods.labels.verify' | translate,
+          template: verify
+        }"></ng-container>
+      </ng-container>
+    </div>
+  </form>
+  <button class="shipping-action" *ngIf="hasLabelAction" (click)="onOpenLabelAction()">
+    {{ 'transactions.form.shipping_goods.actions.download_label' | translate }}
+  </button>
+  <button class="shipping-action" *ngIf="hasSlipAction" (click)="onOpenSlipAction()">
+    {{ 'transactions.form.shipping_goods.actions.download_shipping_slip' | translate }}
+  </button>
+</pe-action-container>
+
+<ng-template #matExpansionPanel let-title="title" let-template="template">
+  <mat-expansion-panel class="mat-expansion-panel" hideToggle [expanded]="true">
+    <mat-expansion-panel-header collapsedHeight="40px" expandedHeight="40px">
+      <mat-panel-title class="section-title">{{title}}</mat-panel-title>
+      <svg class="icon icon_plus" height="12" width="12">
+        <use xlink:href="#icon-plus-softy-16"></use>
+      </svg>
+      <svg class="icon icon_minus" height="12" width="12">
+        <use xlink:href="#icon-minus-softy-16"></use>
+      </svg>
+    </mat-expansion-panel-header>
+
+    <ng-container [ngTemplateOutlet]="template"></ng-container>
+  </mat-expansion-panel>
+</ng-template>

@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" class="pe-message__mobile-navigation-icon ng-tns-c698-3">
+  <g fill="none" fill-rule="evenodd" class="ng-tns-c698-3">
+    <g fill="#636363" class="ng-tns-c698-3">
+      <path
+        d="M1038 76c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm.437 4.397l-.084.073-3 3c-.267.266-.29.683-.073.976l.073.084 3 3c.292.293.767.293 1.06 0 .266-.266.29-.683.073-.976l-.073-.084-2.47-2.47 2.47-2.47c.266-.266.29-.683.073-.976l-.073-.084c-.266-.267-.683-.29-.976-.073z"
+        transform="translate(-1030 -76)" class="ng-tns-c698-3"></path>
+    </g>
+  </g>
+</svg>

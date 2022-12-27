@@ -1,0 +1,78 @@
+<div *ngIf="getAllPersonalDomains$ | async" class="pe-personal-domain" [ngClass]="theme">
+  <div
+    *ngIf="!domainList.length"
+    class="pe-personal-domain__no-domain"
+  >
+    <peb-messages
+      [color]="'warning'"
+      [message]="'domains-lib.messages.no_domains_connected' | translate"
+      [showIcon]="true"
+    ></peb-messages>
+    <button pe-form-button
+      (click)="addDomain()"
+      color="confirm"
+    >
+      {{ 'domains-lib.actions.add_domain' | translate }}
+    </button>
+  </div>
+
+  <peb-expandable-panel
+    *ngFor="let domain of domainList; let i = index"
+    [headerLabel]="domain.name"
+    [isContentOpen]="!i"
+  >
+    <div class="pe-personal-domain__section">
+      <peb-form-background>
+        <peb-form-field-input
+          appearance="label"
+          [label]="'domains-lib.personal_domain.domain.label' | translate"
+        >
+          <input readonly
+            [placeholder]="'domains-lib.personal_domain.domain.placeholder' | translate"
+            [value]="domain.name"
+          />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+
+    <div class="pe-personal-domain__section">
+      <peb-form-background>
+        <peb-form-field-input
+          appearance="label"
+          [label]="'domains-lib.personal_domain.creation_date.label' | translate"
+        >
+          <input readonly
+            [placeholder]="'domains-lib.personal_domain.creation_date.placeholder' | translate"
+            [value]="domain.createdAt"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input
+          appearance="label"
+          [label]="'domains-lib.personal_domain.provider.label' | translate"
+        >
+          <input readonly
+            [placeholder]="'domains-lib.personal_domain.provider.placeholder' | translate"
+            [value]="domain?.provider ? domain.provider : 'Unknown provider'"
+          />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+
+    <div class="pe-personal-domain__section">
+      <peb-messages
+        [color]="domain.isConnected ? 'confirm' : 'warning'"
+        [message]="(domain.isConnected
+            ? 'domains-lib.messages.successfuly_connected'
+            : 'domains-lib.errors.not_connected'
+          ) | translate"
+        [showIcon]="!domain.isConnected"
+      ></peb-messages>
+    </div>
+    <button pe-form-button
+      (click)="removeDomain(domain, i)"
+      color="warn"
+    >
+      {{ 'domains-lib.actions.remove_domain' | translate }}
+    </button>
+  </peb-expandable-panel>
+</div>

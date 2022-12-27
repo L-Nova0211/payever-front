@@ -1,0 +1,122 @@
+//
+// Chip
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-chip-list {
+    max-width: 100%;
+    flex-grow: 1;
+  }
+
+  .mat-chip {
+    background-color: $color-grey-7;
+    color: $color-grey-2;
+    outline: none;
+    font-family: $font-family-sans-serif;
+    line-height: $grid-unit-y * 2;
+    height: $chip-height-md;
+    padding: 0 $chip-padding-default-h-md;
+    border-radius: $chip-border-radius-md;
+    font-size: $font-size-small;
+
+    &:focus {
+      @include box-shadow(none);
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: .3;
+    }
+
+    .mat-icon {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .mat-slide-toggle {
+      margin-left: auto;
+    }
+
+    .mat-chip-avatar {
+      @include pe-avatar;
+    }
+
+    &.mat-chip-with-trailing-icon {
+      color: $color-secondary-0;
+      padding: 0 $chip-padding-trailing-icon-md 0 $chip-padding-default-h-md;
+
+      .mat-chip-remove.mat-icon,
+      .mat-chip-trailing-icon {
+        width: $chip-trailing-icon-width-md;
+        height: $chip-trailing-icon-height-md;
+      }
+    }
+
+    &.mat-chip-with-avatar {
+      padding: 0 $chip-padding-default-h-md 0 $chip-padding-avatar-icon-md;
+
+      .mat-chip-avatar {
+        width: $chip-avatar-diameter-md;
+        height: $chip-avatar-diameter-md;
+      }
+    }
+
+    &.mat-chip-with-trailing-icon.mat-chip-with-avatar {
+      padding: 0 $chip-padding-trailing-icon-md 0 $chip-padding-avatar-icon-md;
+    }
+
+    // Sizes
+    // -------------------------
+
+    &.mat-chip-sm {
+      height: $chip-height-sm;
+      width: $chip-width-sm;
+      padding: 0 $chip-padding-default-h-sm;
+      font-size: $font-size-small;
+      font-weight: $font-weight-light;
+      border-radius: $chip-border-radius-sm;
+
+      &.mat-chip-with-trailing-icon {
+        padding: 0 $chip-padding-trailing-icon-sm 0 $chip-padding-default-h-sm;
+        background-color: $color-white-grey-2;
+        color: $color-secondary-0;
+
+        .mat-chip-remove,
+        .mat-chip-trailing-icon {
+          width: $chip-trailing-icon-width-sm;
+          height: $chip-trailing-icon-height-sm;
+        }
+      }
+    }
+
+    &.mat-chip-lg {
+      height: $chip-height-lg;
+      padding: 0 $chip-padding-default-h-lg;
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      border-radius: $chip-border-radius-lg;
+
+      &.mat-chip-with-toggle {
+        padding: 0 $chip-padding-toggle-lg 0 $chip-padding-default-h-lg;
+      }
+
+      &.mat-chip-with-avatar {
+        padding: 0 $chip-padding-default-h-lg 0 $chip-padding-avatar-icon-lg;
+
+        .mat-chip-avatar {
+          width: $chip-avatar-diameter-lg;
+          height: $chip-avatar-diameter-lg;
+        }
+      }
+
+      &.mat-chip-with-toggle.mat-chip-with-avatar {
+        padding: 0 $chip-padding-toggle-lg 0 $chip-padding-avatar-icon-lg;
+      }
+    }
+
+    &.mat-chip-auto-width {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<!--
+<mat-accordion #accordion *ngIf="form && formScheme">
+-->
+<ng-container *ngIf="form && formScheme">
+  <form novalidate
+        (ngSubmit)="onSubmit()"
+        class="form-table form-table-no-margin"
+        [formGroup]="form">
+    <button #submitTriggerAccount id="submitTriggerAccount" name="submitButton" type="submit" class="native-submit"></button>
+    <ng-container *ngFor="let item of accountList; let i = index">
+      <mat-expansion-panel hideToggle #panel [class.mat-expansion-panel-dark]="true">
+        <mat-expansion-panel-header collapsedHeight="55px"
+                                    expandedHeight="55px">
+          <mat-panel-title class="mat-expansion-panel-header-title-no-logo">
+            {{ item.title }}
+          </mat-panel-title>
+          <div class="mat-expansion-panel-spacer"></div>
+          <svg class="icon icon-16 icon-plus">
+            <use xlink:href="#icon-plus-softy-16"></use>
+          </svg>
+          <svg class="icon icon-16 icon-minus">
+            <use xlink:href="#icon-minus-softy-16"></use>
+          </svg>
+        </mat-expansion-panel-header>
+        <!--
+        <pe-form-fieldset class="transparent"
+                          *ngIf="formScheme.fieldsets[item.name]"
+                          [hideDisabled]="true"
+                          [isSubmitted]="isSubmitted"
+                          [translationScope]="'user_business_form.form.'+item.name"
+                          [errors]="(errorsNonFlat$ | async)[item.name] || {}"
+                          [fields]="formScheme.fieldsets[item.name]"
+                          [formGroup]="form.get(item.name)"
+                          [formStyle]="'transparent'"
+        ></pe-form-fieldset>
+        -->
+        <pe-form-fieldset class="transparent"
+                          *ngIf="formScheme.fieldsets[item.name]"
+                          [hideDisabled]="true"
+                          [isSubmitted]="isSubmitted"
+                          [translationScope]="'user_business_form.form.'+item.name"
+                          [errors]="(errorsNonFlat$ | async)[item.name] || {}"
+                          [fields]="formScheme.fieldsets[item.name]"
+                          [formGroup]="form.get(item.name)"
+                          [formStyle]="'transparent'"
+        ></pe-form-fieldset>
+      </mat-expansion-panel>
+    </ng-container>
+  </form>
+  <button mat-raised-button
+          class="mat-button-block no-border-radius"
+          type="button"
+          [disabled]="isLoading || (isSaving$ | async)"
+          (click)="submitTriggerAccount.click()">
+    <pe-progress-button-content
+        [spinnerDiameter]="26"
+        [loading]="isLoading || (isSaving$ | async)"
+        [spinnerStrokeWidth]="2">
+      <span>{{submitButtonText | translate}}</span>
+    </pe-progress-button-content>
+  </button>
+</ng-container>

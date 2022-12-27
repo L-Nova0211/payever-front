@@ -1,0 +1,58 @@
+<div class="contacts__widgets">
+
+  <div
+    *ngIf="isLoading"
+    class="contacts__loader"
+  >
+    <mat-spinner [strokeWidth]="2" [diameter]="26"></mat-spinner>
+  </div>
+
+  <div class="contacts__image">
+    <img
+      *ngIf="contactInfo?.imageUrl; else defaultImg"
+      alt="img-avatar"
+      [src]="contactInfo.imageUrl"
+    />
+    <ng-template #defaultImg>
+      <div class="contacts__default-image">
+        <img alt="Default photo" src="./assets/icons/default-photo.svg">
+      </div>
+    </ng-template>
+  </div>
+
+  <mat-menu #statusesMenu="matMenu" class="add-contact__status-menu">
+    <div
+      *ngFor="let status of statuses; let l = last"
+      class="add-contact__status-option"
+      [class.add-contact__status-option-last]="l"
+      (click)="selectStatus(status)"
+    >
+      <span class="add-contact__status-option-text">{{status.name}}</span>
+    </div>
+  </mat-menu>
+
+  <div class="contacts__tools">
+    <div class="contacts__tool" (click)="openGroup()">
+      <div class="contacts__tool-icon">
+        <img alt="Add Folder" src="./assets/icons/add-icon-tool.svg">
+      </div>
+      <span class="contacts__tool-label">Folder</span>
+    </div>
+    
+    <div class="contacts__tool" (click)="goEditContactPage()">
+      <div class="contacts__tool-icon">
+        <img alt="Edit" src="./assets/icons/edit-icon-tool.svg">
+      </div>
+      <span class="contacts__tool-label">Edit</span>
+    </div>
+
+   
+  </div>
+
+  <pe-widget
+    *ngIf="socialIconsWidget && (contactInfo.mobilePhone || contactInfo.email) "
+    class="contacts__pe-widget"
+    [theme]="theme"
+    [widget]="socialIconsWidget"
+  ></pe-widget>
+</div>

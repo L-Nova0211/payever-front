@@ -1,0 +1,74 @@
+@import "../../../../assets/imports";
+
+::ng-deep .mat-toolbar-link-icon-prepend {
+  margin-top: -4px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.modal-general {
+  margin: $padding-base-horizontal * 2;
+
+  .mat-list-transparent {
+    .mat-list-item {
+      &-content {
+        height: $pe_vgrid_height * 5!important;
+        font-size: $font-size-base;
+      }
+
+      &-col {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      &-col-2 {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    .mat-divider {
+      //position: inherit;
+    }
+
+    padding: 0;
+
+    .payment-title {
+      padding: 11px;
+    }
+  }
+
+  .payment-title {
+    position: relative;
+    .icon {
+      position: absolute;
+      top: 50%;
+      @include payever_transform_translateY(-50%);
+    }
+    span {
+      margin-left: $padding-base-horizontal * 2.5;
+    }
+  }
+
+  @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+    margin: $padding-base-horizontal;
+    .mat-list-transparent {
+      padding: 0;
+    }
+  }
+
+  .mat-divider-horizontal {
+    margin-left: $padding-base-horizontal;
+  }
+
+  .action-wrapper {
+    max-width: 120px;
+    max-height: 45px;
+  }
+}

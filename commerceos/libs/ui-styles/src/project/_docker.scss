@@ -1,0 +1,181 @@
+.pe-bootstrap {
+  .docker {
+    .docker-menu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      text-align: center;
+      @media screen and (max-width: $viewport-breakpoint-sm-2) {
+        display: none;
+      }
+      .docker-menu-open {
+        z-index: 10;
+        position: relative;
+        margin: 0;
+        padding: 0 5px;
+        display: inline-block;
+        border-radius: 4 * $border-radius-base 4 * $border-radius-base 0 0;
+        background-color: rgba($color-white, 0.4);
+        font-size: 0;
+        .app {
+          display: inline-block;
+          position: relative;
+          margin: $grid-unit-y 10px;
+          vertical-align: bottom;
+          @media screen and (max-width: $viewport-breakpoint-sm-3) {
+            margin: 8px 9px;
+          }
+          a {
+            cursor: pointer;
+            display: block;
+            .icon-app-md {
+              width: 5 * $grid-unit-y;
+              height: 5 * $grid-unit-y;
+              background-color: $color-white;
+              @media screen and (max-width: $viewport-breakpoint-sm-3) {
+                width: 42px;
+                height: 42px;
+              }
+            }
+            span {
+              display: none;
+              position: absolute;
+              top: -50px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: $border-radius-base;
+              padding: ceil($margin-adjust / 2) 3 * $margin-adjust;
+              background: rgba($color-black, 0.8);
+              box-shadow: 0 0 14px rgba($color-justblack, 0.1);
+              color: $color-white;
+              white-space: nowrap;
+              font-size: 12px;
+            }
+            &:hover {
+              span {
+                display: block;
+              }
+            }
+          }
+          .info-circle {
+            position: absolute;
+            right: -6px;
+            top: -6px;
+            border-radius: 100%;
+            height: 16px;
+            width: 16px;
+            background-color: $color-red;
+            @media screen and (max-width: $viewport-breakpoint-sm-3) {
+              width: 12px;
+              height: 12px;
+              right: -4px;
+              top: -4px;
+            }
+          }
+        }
+
+        .app-separator {
+          display: inline-block;
+          width: $margin-adjust / 4;
+          margin: $grid-unit-y 5px;
+          height: 5 * $grid-unit-y;
+          border: $border-light-gray-1;
+          vertical-align: bottom;
+          @media screen and (max-width: $viewport-breakpoint-sm-3) {
+            height: 42px;
+            margin: 8px 5px;
+          }
+        }
+      }
+    }
+    .mobile-docker {
+      display: none;
+    }
+    @media screen and (max-width: $viewport-breakpoint-sm-2) {
+      .mobile-docker {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: $grid-unit-y * 7;
+        overflow: hidden;
+        z-index: 500;
+        display: block;
+        .blur-container {
+          filter: blur($margin-adjust);
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          right: -10px;
+          bottom: -10px;
+        }
+
+        .mobile-apps {
+          background-color: rgba($color-gray, 0.4);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 0 7%;
+          @media screen and (max-width: $viewport-breakpoint-xs-2) {
+            padding: 0 3%;
+          }
+          a {
+            display: block;
+            width: 20%;
+            float: left;
+            height: 100%;
+            text-align: center;
+            & > div {
+              position: relative;
+              height: 100%;
+              padding-top: 46px;
+              svg {
+                color: $color-light-gray-1;
+                position: absolute;
+                top: 17px;
+                left: 50%;
+                margin-left: -12px;
+              }
+              .info-circle-mobile {
+                background-color: $color-red;
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                margin-top: -20px;
+                margin-right: -20px;
+                border-radius: 100%;
+              }
+              .small {
+                color: $color-light-gray-1;
+                text-align: center;
+                @media screen and (max-width: $viewport-breakpoint-xs-2) {
+                  font-size: 10px;
+                }
+              }
+            }
+
+            .mobile-apps-icon {
+              position: absolute;
+              top: 6px;
+              left: 50%;
+              margin-left: -20px;
+              width: 40px;
+              height: 40px;
+              border: $margin-adjust solid $color-blue;
+              border-radius: 100%;
+              &.opened {
+                border: 2 * $margin-adjust solid $color-blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

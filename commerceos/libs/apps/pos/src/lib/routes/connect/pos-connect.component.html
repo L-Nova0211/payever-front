@@ -1,0 +1,32 @@
+<pe-pos-material-styles></pe-pos-material-styles>
+<div class='connect__container' [ngClass]="theme">
+  <div class="page-header">{{'pos-app.connect.title' | translate}}</div>
+  <div class="scrollbar">
+    <div class="content">
+
+      <section class="connect__section">
+        <div class="connect__section__content">
+          <div class="connect__section__content-item" *ngFor="let integration of connects$ | async; index as i">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="integration.integration.displayOptions.icon"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{ integration.integration.displayOptions.title | translate }}</div>
+              <div class="item-control">
+                <peb-button-toggle [ngModel]="(enabledIntegrations$ | async)?.includes(integration.integration.name)"
+                  (changed)="onToggleIntegration(integration)"></peb-button-toggle>
+                <button peb-text-button color="confirm" (click)="clickedIntegrationOpenButton(integration)">{{
+                  'pos-app.actions.open' | translate}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="add-connect" (click)="clickedIntegrationAddButton()">
+        {{ 'pos-app.connect.add' | translate }}
+      </div>
+    </div>
+  </div>
+</div>

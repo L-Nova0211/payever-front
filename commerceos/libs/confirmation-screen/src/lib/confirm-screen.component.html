@@ -1,0 +1,65 @@
+<div class='confirmation-screen'>
+  <div class='confirmation-screen__content'>
+    <div class='confirmation-screen__image'>
+      <ng-container *ngIf="headingsData.icon" [ngSwitch]="headingsData.icon.iconType">
+        <img
+          *ngSwitchCase="iconTypes.Image"
+          alt=""
+          class="confirmation-screen__icon"
+          [src]="headingsData.icon.path"
+        />
+        <mat-icon
+          *ngSwitchCase="iconTypes.MatIcon"
+          class="confirmation-screen__icon"
+          [svgIcon]="headingsData.icon.path"
+        ></mat-icon>
+        <svg
+          *ngSwitchCase="iconTypes.XLink"
+          class="confirmation-screen__icon"
+        >
+          <use [attr.xlink:href]="headingsData.icon.path"></use>
+        </svg>
+        <div
+          *ngSwitchCase="iconTypes.Abbreviation"
+          class="confirmation-screen__abbreviation"
+        >
+          {{ headingsData.icon.path | uppercase }}
+        </div>
+      </ng-container>
+      <mat-icon
+        *ngIf="!headingsData.icon"
+        class="confirmation-screen__warning-icon"
+        svgIcon="warning-icon"
+      ></mat-icon>
+    </div>
+    <div class='confirmation-screen__content-title'>{{ headingsData?.title }}</div>
+    <div class='confirmation-screen__content-description'>
+      {{ headingsData?.subtitle }} <br> {{ headingsData?.description }}
+    </div>
+    <ng-template [ngTemplateOutlet]="headingsData.customMiddleTemplate" ></ng-template>
+    <button
+      class='confirmation-screen__content-button'
+      (click)='onConfirm()'
+      [ngClass]="confirmBtnClass"
+    >
+      <span *ngIf="!headingsData?.confirmLoading$ || !(confirmLoading$ | async)">
+        {{ headingsData?.confirmBtnText }}
+      </span>
+      <mat-spinner
+        *ngIf="headingsData?.confirmLoading$ && (confirmLoading$ | async)"
+        class="mat-spinner-themed dashboard-spinner"
+        [strokeWidth]="2"
+        [diameter]="22"
+      ></mat-spinner>
+    </button>
+    <button
+      class='confirmation-screen__content-button confirmation-screen__content-button_cancel'
+      (click)='onDecline()'
+    >
+      {{ headingsData?.declineBtnText }}
+    </button>
+
+    <ng-template [ngTemplateOutlet]="headingsData.customBottomTemplate" ></ng-template>
+
+  </div>
+</div>

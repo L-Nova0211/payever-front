@@ -1,0 +1,15 @@
+{
+  "name": "@pe/settings",
+  "version": "2.0.11",
+  "description": "CommerceOS: settings",
+  "repository": "https://gitlab.devpayever.com/frontend/settings",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@angular/common": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "tslib": "^1.10.0",
+    "@angular/material": "latest",
+    "@angular/cdk": "latest",
+    "@pe/ui": "latest"
+  }
+}

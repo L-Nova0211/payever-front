@@ -1,0 +1,26 @@
+<button *ngIf="currentLocale" class="locales-switcher-button" (click)="openOverlay()">
+  <span class="name">
+    {{ currentLocale.name }}
+    <svg height="12" width="6">
+      <use xlink:href="#icon-ui-arrow-open"></use>
+    </svg>
+  </span>
+  <span class="code">{{ currentLocale.code | uppercase }}</span>
+</button>
+
+<!-- <mat-menu #localesSwitcher="matMenu" panelClass="locales-switcher-menu" class="{{dark && 'locales-switcher-menu'}}">
+  <ng-template matMenuContent>
+    <div class="header">Language</div>
+    <span 
+       *ngFor="let locale of locales"
+       class="locale-switcher-link"
+       (click)="changeLocale(locale)"
+       [ngClass]="'locale-switcher-link-' + locale.code"
+       [class.active]="locale.code === currentLocale.code">
+       <svg class="lang-icon">
+        <use [attr.xlink:href]="'#icon-flag-'+(locale.code==='sv'?'se':locale.code)"></use>
+      </svg>
+      {{ locale.name }}
+    </span>
+  </ng-template>
+</mat-menu> -->

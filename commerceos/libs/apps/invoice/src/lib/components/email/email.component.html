@@ -1,0 +1,96 @@
+<div class="container" [ngClass]="config.theme">
+     <peb-expandable-panel (opened)="panelStateTrigger('general')" headerLabel="General" (closed)="expandable.general = false" [isContentOpen]="expandable.general">
+        <peb-form-background>
+            <peb-form-field-input animated="true" label="Email" appearance="label"
+            [isFieldInvalid]="errors.email.hasError" [errorMessage]="errors.email.errorMessage"
+            >
+                <input [formControl]="emailForm.get('email')" pebInput placeholder="Enter Email"/>
+            </peb-form-field-input>
+          </peb-form-background>
+    </peb-expandable-panel>
+  <peb-expandable-panel (opened)="panelStateTrigger('inbox')" headerLabel="Inbox server (IMAP)" (closed)="expandable.inbox = false" [isContentOpen]="expandable.inbox">
+        <peb-form-background>
+            <peb-form-field-input animated="true"  label="Username"
+            [isFieldInvalid]="errors.inbox_userName.hasError" [errorMessage]="errors.inbox_userName.errorMessage"
+             appearance="label">
+                <input  [formControl]="emailForm.get('inbox_userName')" placeholder="Enter Username"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Password" appearance="label"
+            [isFieldInvalid]="errors.inbox_password.hasError" [errorMessage]="errors.inbox_password.errorMessage"
+            >
+                <input  [formControl]="emailForm.get('inbox_password')" type="password" placeholder="Enter Password"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Server" appearance="label"
+            [isFieldInvalid]="errors.inbox_server.hasError" [errorMessage]="errors.inbox_server.errorMessage"
+            >
+                <input [formControl]="emailForm.get('inbox_server')"  placeholder="Enter Server"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Port" appearance="label"
+            [isFieldInvalid]="errors.inbox_port.hasError" [errorMessage]="errors.inbox_port.errorMessage"
+            >
+                <input type="number" [formControl]="emailForm.get('inbox_port')"  placeholder="Enter Port"/>
+            </peb-form-field-input>
+            <peb-select [animated]="true" [formControl]="emailForm.get('inbox_protection')" selectType="label" label="Protection" >
+                <peb-select-option value="SSL" label="SSL"></peb-select-option>
+                <peb-select-option value="STARTTLS" label="STARTTLS"></peb-select-option>
+            </peb-select>
+          </peb-form-background>
+    </peb-expandable-panel>
+    <peb-expandable-panel (opened)="panelStateTrigger('outbox')" headerLabel="Outbox server (SMTP)" (closed)="expandable.outbox = false" [isContentOpen]="expandable.outbox">
+        <peb-form-background>
+            <peb-form-field-input animated="true"  label="Username" appearance="label"
+            [isFieldInvalid]="errors.outbox_userName.hasError" [errorMessage]="errors.outbox_userName.errorMessage"
+            >
+                <input [formControl]="emailForm.get('outbox_userName')"  placeholder="Enter Username"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Password" appearance="label"
+            [isFieldInvalid]="errors.outbox_password.hasError" [errorMessage]="errors.outbox_password.errorMessage"
+            >
+                <input [formControl]="emailForm.get('outbox_password')" type="password" placeholder="Enter Password"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Server" appearance="label"
+            [isFieldInvalid]="errors.outbox_server.hasError" [errorMessage]="errors.outbox_server.errorMessage"
+            >
+                <input [formControl]="emailForm.get('outbox_server')"  placeholder="Enter Server"/>
+            </peb-form-field-input>
+            <peb-form-field-input animated="true"  label="Port" appearance="label"
+            [isFieldInvalid]="errors.outbox_port.hasError" [errorMessage]="errors.outbox_port.errorMessage"
+            >
+                <input type="number" [formControl]="emailForm.get('outbox_port')"  placeholder="Enter Port"/>
+            </peb-form-field-input>
+            <peb-select [animated]="true" [formControl]="emailForm.get('outbox_protection')" selectType="label" label="Protection" >
+                <peb-select-option value="SSL" label="SSL"></peb-select-option>
+                <peb-select-option value="STARTTLS" label="STARTTLS"></peb-select-option>
+            </peb-select>
+          </peb-form-background>
+    </peb-expandable-panel>
+     <peb-expandable-panel (opened)="panelStateTrigger('message')" headerLabel="Message for customer"  (closed)="expandable.message = false" [isContentOpen]="expandable.message">
+        <peb-form-background>
+            <peb-form-field-input animated="true"  label="Subject" appearance="label">
+                <input [formControl]="emailForm.get('customerMessageSubject')" placeholder="Enter Subject"/>
+            </peb-form-field-input>
+          </peb-form-background>
+          <div class="text-editor-container">
+            <pe-text-editor-toolbar
+                #editorToolbar
+                [hideLink]="true"
+                [hideOpenNewTab]="true"
+                [hideColorPicker]="true"
+                [hideFontSize]="true"
+                (actionClicked)="onTextEditorAction($event)"
+                (click)="editorFocused = true">
+            </pe-text-editor-toolbar>
+          <pe-text-editor
+            class='text-editor'
+            #textEditor
+            [formControl]="emailForm.get('message')"
+            [htmlText]="description || ' '"
+            [editable]="true"
+            (contentChange)="onDescriptionChange($event)"
+            (editorFocus)="editorFocus()"
+            (editorClick)="$event.stopPropagation()">
+            </pe-text-editor>
+          </div>
+
+    </peb-expandable-panel>
+</div>

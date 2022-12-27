@@ -1,0 +1,59 @@
+.change-device-type {
+  width: calc(100% - 20px);
+  height: 40px;
+  border: 1px solid #3a3d43;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 9px;
+  padding: 0 12px;
+  font-size: 14px;
+  margin: 0 10px 4px 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .arrow-open {
+    width: 15px;
+    height: 8px;
+    color: #fff;
+  }
+}
+
+.styles-active-form {
+  max-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 8px 0 16px;
+  border-radius: 12px;
+  padding: 10px 12px 10px 16px;
+  background-color: #111111;
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

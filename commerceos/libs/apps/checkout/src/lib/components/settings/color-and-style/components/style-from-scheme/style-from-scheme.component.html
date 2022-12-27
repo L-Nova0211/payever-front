@@ -1,0 +1,26 @@
+<mat-list
+  *ngFor="let group of groups; trackBy: trackByFn; let i = index"
+  [disableRipple]="true"
+  novalidate
+  class="mat-list-transparent mat-list-transparent-bold"
+  [class.mat-list-margin-top]="!!i"
+>
+  <ng-container *ngFor="let item of getItemsByGroup(i); trackBy: trackByItems">
+    <pe-style-item
+      *ngIf="isShowScreen(item)"
+      [theme]="theme"
+      [control]="parentForm.get(item.controlName)"
+      [type]="item.type"
+      [labelTranslateKey]="item.labelKey"
+      [buttonLabelTranslateKey]="item?.buttonLabelKey"
+    >
+    </pe-style-item>
+  </ng-container>
+  <pe-style-modal-item
+    *ngFor="let modal of getModalsByGroup(i); trackBy: trackByFn"
+    [theme]="theme"
+    [modal]="modal"
+    [parentForm]="parentForm"
+  >
+  </pe-style-modal-item>
+</mat-list>

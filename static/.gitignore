@@ -1,0 +1,15 @@
+.DS_Store
+npm-debug*
+node_modules/
+.docker/.env
+.docker/github
+!.docker/github/token.dist
+dist/
+src/env.json
+.idea/
+.vscode/
+i18n-serve
+yarn-error.log
+.env
+test (copy).html
+.history/

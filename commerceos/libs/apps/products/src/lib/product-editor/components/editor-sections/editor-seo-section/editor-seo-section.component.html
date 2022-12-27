@@ -1,0 +1,28 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+
+  <div class="wrapper">
+    <peb-form-background>
+      <peb-form-field-input
+        [label]="'seoSection.form.title' | translate"
+        appearance="label"
+        [animated]='true'>
+        <input [placeholder]="'seoSection.form.title' | translate" formControlName="title" type="text">
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class='seo-form-description'>
+      <peb-form-background>
+        <peb-form-field-textarea
+          [label]="'seoSection.form.description' | translate"
+          appearance="label">
+      <textarea rows="6"
+                formControlName="description"></textarea>
+        </peb-form-field-textarea>
+      </peb-form-background>
+    </div>
+  </div>
+</form>

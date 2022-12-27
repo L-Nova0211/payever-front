@@ -1,0 +1,39 @@
+element:
+  id: general-objects-doc
+  type: grid
+  children:
+    - id: square
+      type: shape
+      data:
+        text: Text inside shape
+        variant: square
+    - id: circle
+      type: shape
+      data:
+        text: Text inside shape
+        variant: circle
+    - id: triangle
+      type: shape
+      data:
+        text: Text inside shape
+        variant: triangle
+
+stylesheet:
+  all:
+    general-objects-doc:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    square:
+      slot: left
+      width: 256
+      height: 256
+    circle:
+      slot: center
+      width: 256
+      height: 256
+    triangle:
+      slot: right
+      width: 256
+      height: 256
+
+context: {}

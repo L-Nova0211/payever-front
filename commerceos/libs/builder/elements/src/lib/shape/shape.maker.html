@@ -1,0 +1,155 @@
+<ng-container *ngIf="(data$ | async)"></ng-container>
+
+<ng-container *ngIf="isSVG$  | async">
+  <div class="svg-wrap" [ngStyle]="(style$ | async)?.svgWrap">
+    <div class="svg-wrap__icon" [ngStyle]="(style$|async).svgIconWrap">
+      <peb-svg-fill
+        [width]="this.styles.width"
+        [height]="this.styles.height"
+        [url]="this.styles.backgroundImage"
+        [scale]="scale$|async"
+        [type]="type$|async"
+      ></peb-svg-fill>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="(isSVG$  | async)=== false">
+  <div
+    class="overlay"
+    [ngStyle]="(style$ | async)?.overlay"
+  ></div>
+
+  <ng-container *ngIf="isVideo$|async as video">
+    <div class="video-wrap" [ngStyle]="(style$ | async)?.videoWrap">
+      <video
+        class="video-player"
+        [ngStyle]="(style$ | async).video"
+        [class.loaded]="(videoLoaded$ | async) || !video?.preview"
+        [controls]="video?.controls"
+        [autoplay]="video?.autoplay"
+        [loop]="video?.loop"
+        [muted]="!video?.sound"
+        [src]="video?.source"
+        (canplay)="onLoaded()"
+        #video
+      ></video>
+    </div>
+    <img
+      #img
+      (error)="img.style.display = 'none'"
+      class="preview-player"
+      *ngIf="!videoLoaded && video?.preview"
+      [ngStyle]="(style$ | async).img"
+      [src]="video.preview"
+    />
+    <ng-container *ngIf="(!videoLoaded && video?.source); then loadingSpinner"></ng-container>
+  </ng-container>
+
+  <ng-template #loadingSpinner>
+    <div class="video__loading-spinner-wrapper">
+      <mat-spinner id="video__loading-spinner" class="mat-spinner-themed" [strokeWidth]="5"></mat-spinner>
+    </div>
+  </ng-template>
+
+</ng-container>
+
+  <div class="content-wrap" [class.content-wrap__none-events]="options.readOnly && (data$ | async).controls">
+    <ng-container [ngSwitch]="data?.functionLink?.dataType">
+      <ng-container *ngSwitchCase="dataType.Select">
+        <ng-container *ngIf="!options.readOnly; else clientDropdown">
+          <peb-shape-dropdown-element-ui
+            [options]="options"
+            [dropdownLabel]="data?.functionLink?.title | rendererTranslate:options"
+          ></peb-shape-dropdown-element-ui>
+        </ng-container>
+        <ng-template #clientDropdown>
+          <peb-shape-dropdown-element-ui
+            [options]="options"
+            [dropdownLabel]="dropdownParams.label | rendererTranslate:options"
+            [dropdownOptions]="dropdownParams.options"
+            [dropdownCloseOnChoose]="true"
+            [formControl]="formControl"
+          ></peb-shape-dropdown-element-ui>
+        </ng-template>
+      </ng-container>
+      <ng-container *ngSwitchCase="dataType.PasswordInput">
+        <peb-shape-input-element-ui
+          [integrationLink]="data?.functionLink"
+          [options]="options"
+          [styles]="(content$|async).ops[0]?.attributes||{}"
+          [formControl]="formControl"
+          type="password"
+        ></peb-shape-input-element-ui>
+      </ng-container>
+      <ng-container *ngSwitchCase="dataType.Textarea">
+        <peb-shape-textarea-element-ui
+          [integrationLink]="data?.functionLink"
+          [options]="options"
+        ></peb-shape-textarea-element-ui>
+      </ng-container>
+      <ng-container *ngSwitchCase="dataType.Input">
+        <peb-shape-input-element-ui
+          [integrationLink]="data?.functionLink"
+          [options]="options"
+          [styles]="(content$|async).ops[0]?.attributes||{}"
+          [mask]="getMaskByType(data.functionLink.type)"
+          [formControl]="formControl"
+        ></peb-shape-input-element-ui>
+
+        <ng-container *ngIf="isNotInteractions$|async">
+          <ng-container *ngTemplateOutlet="editorTpl;"></ng-container>
+        </ng-container>
+
+      </ng-container>
+      <ng-container *ngSwitchCase="dataType.Languages">
+        <peb-shape-dropdown-element-ui
+          [options]="options"
+          [dropdownIcon]="PebLanguagesData[options.locale] ? '/assets/base-plugins/' + PebLanguagesData[options.locale].roundIcon + '.svg' : ''"
+          [dropdownLabel]="(PebLanguagesData[options.locale]?.shortName || (data?.functionLink?.title | rendererTranslate:options)) | uppercase"
+        ></peb-shape-dropdown-element-ui>
+      </ng-container>
+      <ng-container *ngSwitchCase="dataType.Checkbox">
+        <peb-shape-checkbox-element-ui
+          [options]="options"
+        ></peb-shape-checkbox-element-ui>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <ng-container *ngIf="isFilter; else editorTpl">
+          <ng-container *ngIf="isPriceSort">
+            <peb-shape-sort-select
+              [options]="options"
+              [params]="dropdownParams"
+              (interaction)="interaction($event)"
+            ></peb-shape-sort-select>
+          </ng-container>
+          <ng-container *ngIf="isTypeFilter">
+            <peb-shape-filter-select
+              [options]="options"
+              [params]="dropdownParams"
+              (interaction)="interaction($event)"
+            ></peb-shape-filter-select>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+
+<div class="children-wrap" [class.children-wrap__none-events]="options.readOnly && (data$ | async).controls">
+  <ng-container pebRendererChildrenSlot></ng-container>
+</div>
+
+<ng-template #editorTpl>
+  <div class="text-content">
+    <peb-text-editor
+      [text]="content$ | async"
+      [document]="document"
+      [scale]="options.scale"
+      [readOnly]="options.readOnly"
+      [verticalAlign]="verticalAlign"
+      [enabled]="editorEnabled$ | async"
+      (textChanged)="onTextChanged($event)"
+    ></peb-text-editor>
+  </div>
+</ng-template>

@@ -1,0 +1,43 @@
+<ng-container *ngIf="isEditAble$ | async">
+  <pe-edit-action-styles></pe-edit-action-styles>
+  <pe-action-container
+    doneTranslateKey="transactions.actions.close"
+    titleTranslateKey="transactions.form.edit.heading"
+    [theme]="theme"
+    (closeEvent)="close()"
+    (submitEvent)="close()"
+  >
+    <div *ngIf="isLoadingMicro$ | async" class="loader-wrapper">
+      <mat-spinner class="mat-progress-spinner-light" [strokeWidth]="2" [diameter]="32"></mat-spinner>
+    </div>
+    <div [class.hidden]="isLoadingMicro$ | async">
+      <div *ngIf="error">
+        <h1 translate>transactions.form.edit.heading_error</h1>
+        <p class="text-danger">{{ error | translate }}</p>
+      </div>
+      <div [class.hidden]="isLoadingMicro$ | async">
+        <div *ngIf="error">
+          <h1 translate>transactions.form.edit.heading_error</h1>
+          <p class="text-danger">{{ error | translate }}</p>
+        </div>
+        <div *ngIf="!error">
+          <pe-load-micro *ngIf="bootstrapScriptUrl$ | async as scriptUrl"
+            [bootstrapScriptUrl]="scriptUrl"
+            [isShowLoader]="false">
+            <pe-checkout-wrapper-edit-transaction
+              *ngIf="billingAddress && flowId && transactionId"
+              [attr.params]="defaultParams | json"
+              [attr.fixedposition]="false | json"
+
+              [attr.transactionid]="transactionId"
+              [attr.flowid]="flowId"
+              [attr.billingaddress]="billingAddress | json"
+
+              (layoutshown)="onLayoutShown()">
+            </pe-checkout-wrapper-edit-transaction>
+          </pe-load-micro>
+        </div>
+      </div>
+    </div>
+  </pe-action-container>
+</ng-container>

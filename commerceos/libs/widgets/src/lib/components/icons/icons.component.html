@@ -1,0 +1,22 @@
+<div [ngClass]="widgetTheme">
+  <div class="icons">
+    <div class="icons__links">
+      <div class="icons__link" *ngFor="let icon of widget.data" (click)="clickItem($event, icon)">
+        <div class="icons__image" [ngClass]="widgetTheme">
+          <mat-spinner class="widget__spinner mat-progress-spinner-light" *ngIf="icon.loading" [strokeWidth]="2" [diameter]="26"></mat-spinner>
+          <svg class="icon icon-64" *ngIf="icon.icon; else imgIcon">
+            <use [attr.xlink:href]="icon.icon"></use>
+          </svg>
+          <ng-template #imgIcon>
+            <div class="icons__thumb"
+                 [style.background-image]="('url(' + (getRetinaIcon(icon.imgSrc) | iconsPngUrl) + ')') | safeStyle"></div>
+          </ng-template>
+        </div>
+        <div class="icons__title">{{ icon.title | translate }}</div>
+      </div>
+      <div *ngIf="!widget.data.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+      </div>
+    </div>
+  </div>
+</div>

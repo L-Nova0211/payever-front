@@ -1,0 +1,55 @@
+<div class="widget">
+  <div class="widget__header">
+    <div class="widget__title">Screen</div>
+    <div class="widget__close" (click)="close(overlayData.data.screen)">
+      <mat-icon class="screen__icon" svgIcon="button-close"></mat-icon>
+    </div>
+  </div>
+  <div class="widget__body">
+    <div
+      [class.screen--active]="overlayData.data.screen === PebScreen.Desktop"
+      class="screen__item"
+    >
+      <div (click)="setScreen(PebScreen.Desktop)">
+        <mat-icon class="screen__icon" svgIcon="screen-desktop"></mat-icon>
+        <span class="screen__title">Desktop</span>
+      </div>
+      <input
+        [checked]="overlayData.data.defaultScreen === PebScreen.Desktop"
+        name="default"
+        type="radio"
+        (click)="setDefaultScreen(PebScreen.Desktop)"
+      >
+    </div>
+    <div
+      [class.screen--active]="overlayData.data.screen === PebScreen.Tablet"
+      class="screen__item"
+    >
+      <div (click)="setScreen(PebScreen.Tablet)">
+        <mat-icon class="screen__icon" svgIcon="screen-tablet"></mat-icon>
+        <span class="screen__title">Tablet</span>
+      </div>
+      <input
+        [checked]="overlayData.data.defaultScreen === PebScreen.Tablet"
+        name="default"
+        type="radio"
+        (click)="setDefaultScreen(PebScreen.Tablet)"
+      >
+    </div>
+    <div
+      [class.screen--active]="overlayData.data.screen === PebScreen.Mobile"
+      class="screen__item"
+    >
+      <div (click)="setScreen(PebScreen.Mobile)">
+        <mat-icon class="screen__icon" svgIcon="screen-mobile"></mat-icon>
+        <span class="screen__title">Mobile</span>
+      </div>
+      <input
+        [checked]="overlayData.data.defaultScreen === PebScreen.Mobile"
+        name="default"
+        type="radio"
+        (click)="setDefaultScreen(PebScreen.Mobile)"
+      >
+    </div>
+  </div>
+</div>

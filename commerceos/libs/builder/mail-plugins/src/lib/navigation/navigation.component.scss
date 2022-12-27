@@ -1,0 +1,97 @@
+@import '../../../../styles/src/lib/styles/variables';
+@import './page-item';
+
+:host {
+  height: 100%;
+}
+
+$add-button-height: 35px;
+$font-color: #fff;
+$hover-color: #424242;
+$border-color: #444;
+
+.pages {
+  overflow: auto;
+  width: $pagesSidebarWidth;
+
+  &::-webkit-scrollbar {
+    width: .5em;
+    background: #323232;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+}
+
+.pages .page {
+  cursor: pointer
+}
+
+.add-button {
+  width: 100%;
+  cursor: pointer;
+  height: $add-button-height;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid $border-color;
+  color: $font-color;
+  transition: background-color .2s;
+  outline: none;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 0.2;
+    transform: translateY(6px) scale(0.98);
+  }
+  85%, 100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.page__menu {
+  background: #eee;
+  color: #323232;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #888;
+  }
+
+  li {
+    padding: .75em;
+    cursor: pointer;
+  }
+
+  li.disabled {
+    color: #888;
+    cursor: default;
+  }
+
+  li:hover:not(.disabled) {
+    color: white;
+    background: #67696c;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,17 @@
+<div class="statistics-form__wrapper">
+  <ng-container *ngIf="widgetService.currentPage == 0">
+    <peb-statistics-app></peb-statistics-app>
+  </ng-container>
+
+  <ng-container *ngIf="widgetService.currentPage == 1">
+    <peb-widget-style></peb-widget-style>
+  </ng-container>
+
+  <ng-container *ngIf="widgetService.currentPage == 2">
+    <peb-widget-size></peb-widget-size>
+  </ng-container>
+
+  <ng-container *ngIf="widgetService.currentPage == 3">
+    <peb-statistics-form></peb-statistics-form>
+  </ng-container>
+</div>

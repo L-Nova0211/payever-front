@@ -1,0 +1,18 @@
+<mat-list-item class="mat-list-item-no-padding-left">
+  <div class="mat-list-item-flex">
+    <peb-form-field-input
+      class="field-input"
+      label="{{ labelTranslateKey | translate }}"
+      appearance="label"
+    >
+      <input
+        type="number"
+        placeholder="{{ 'actions.enterValue' | translate }}"
+        [formControl]="control"
+      />
+      <div class="suffix">
+        <p translate>unitOfMeasurement.pixels</p>
+      </div>
+    </peb-form-field-input>
+  </div>
+</mat-list-item>

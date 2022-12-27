@@ -1,0 +1,25 @@
+<payment-main-wrap
+    [paymentMethod]="paymentMethod"
+    [doOpenNextPanel$]="openNextPanel$"
+    [doOpenPanel$]="openPanel$"
+    (dataLoading)="onDataLoad.next($event)">
+  <div account>
+    <account (onAdditionalInfoSaved)="onAdditionalInfoSaved()"></account>
+  </div>
+  <div payment-documents>
+    <payment-documents [paymentMethod]="paymentMethod" (onUploadSuccess)="onDocumentsUploaded()"></payment-documents>
+  </div>
+  <ng-template let-type="type" let-index="index">
+    <ng-container *ngIf="type === 'settings'">
+      <div class="payment-santander-installment__settings-wrapper">
+        <payment-readonly-vendorNumber [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-readonly-vendorNumber>
+        <payment-settings-isDownPaymentAllowed (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-isDownPaymentAllowed>
+        <payment-settings-isEmailNotificationAllowedComponent class="rounded-bottom" (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-isEmailNotificationAllowedComponent>
+        <payment-settings-save-button [paymentMethod]="paymentMethod" [paymentIndex]="index" [data]="settingsOptionsData$ | async"></payment-settings-save-button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="type === 'authentication'">
+      <authentication [paymentIndex]="index"></authentication>
+    </ng-container>
+  </ng-template>
+</payment-main-wrap>

@@ -1,0 +1,89 @@
+<div class="chat-permission">
+  <div [formGroup]="chatPermissions">
+    <peb-expandable-panel
+      class="peb-expandable-panel general"
+      headerLabel="{{ 'message-app.channel.permissions.general-permissions' | translate }}"
+      [isContentOpen]="collapsed"
+    >
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+          formControlName="publicView"
+          label="{{ 'message-app.channel.permissions.view-channel' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+          formControlName="change"
+          label="{{ 'message-app.channel.permissions.manage-channel' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+    </peb-expandable-panel>
+    <peb-expandable-panel
+      class="peb-expandable-panel invite"
+      headerLabel="{{ 'message-app.channel.permissions.invite-permissions' | translate }}"
+      [isContentOpen]="collapsed"
+    >
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+          formControlName="addMembers"
+          label="{{ 'message-app.channel.settings.add-members' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+    </peb-expandable-panel>
+    <peb-expandable-panel
+      class="peb-expandable-panel channel"
+      headerLabel="{{ 'message-app.channel.permissions.channel-permissions' | translate }}"
+      [isContentOpen]="collapsed"
+    >
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+          formControlName="sendMessages"
+          label="{{ 'message-app.channel.settings.send-messages' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+          formControlName="sendMedia"
+          label="{{ 'message-app.channel.settings.send-media' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+      <div class="chat-permission__switch">
+        <peb-button-toggle
+        formControlName="showSender"
+        label="{{ 'message-app.channel.permissions.show-author' | translate }}"
+        [spacer]="true"
+        labelPosition="before"
+        ></peb-button-toggle>
+      </div>
+    </peb-expandable-panel>
+    <peb-expandable-panel
+      class="peb-expandable-panel integration"
+      headerLabel="{{ 'message-app.channel.permissions.integration' | translate }}"
+      [isContentOpen]="true"
+    >
+      <div class="chat-permission__switch chat-permission__live">
+        <peb-button-toggle
+          formControlName="live"
+          label="{{ 'message-app.channel.permissions.live-status' | translate }}"
+          [spacer]="true"
+          labelPosition="before"
+          (changed)="onToggleIntegration($event,false)"
+        ></peb-button-toggle>
+        <div class="edit_button">
+          <span (click)="onToggleIntegration(true)">{{'message-app.sidebar.edit' | translate}}</span>
+        </div>
+      </div>
+    </peb-expandable-panel>
+  </div>
+</div>
+

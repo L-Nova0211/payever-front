@@ -1,0 +1,6 @@
+<button class="tool" (click)="!loading && execCommand.emit({ type: 'toggleThemeValidatorSidebar' })" [class.tool-loading]="loading">
+  <div class="tool__icon">
+    <peb-editor-validator-icon></peb-editor-validator-icon>
+  </div>
+  <span class="tool__label">Validator</span>
+</button>

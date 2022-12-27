@@ -1,0 +1,20 @@
+<ng-container *ngIf="setFilter$ | async"></ng-container>
+<div [class.search-conversation-wrapper]="mobileView">
+  <peb-form-field-input
+    appearance="search"
+    [formGroup]="searchFilter"
+    [label]="'message-app.sidebar.search' | translate"
+  >
+    <svg searchIcon class="search">
+      <use xlink:href="#icon-search-18"></use>
+    </svg>
+    <input #filter
+           formControlName="filter"
+           [placeholder]="'message-app.sidebar.search' | translate"
+           type="text"
+    />
+    <div *ngIf="filter.value" class="reset">
+      <mat-icon svgIcon="small-close-icon" (click)="resetFilter()"></mat-icon>
+    </div>
+  </peb-form-field-input>
+</div>

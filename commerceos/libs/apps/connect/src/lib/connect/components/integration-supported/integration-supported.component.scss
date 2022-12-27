@@ -1,0 +1,9 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+.supported {
+  padding-top: $padding-large-vertical*2;
+  padding-bottom: $padding-large-vertical*2;
+  border-bottom: 1px solid $color-white-grey-1;
+}

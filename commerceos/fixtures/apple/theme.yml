@@ -1,0 +1,34 @@
+name: Apple
+
+data:
+  productPages: /products/:productId
+  categoryPages: /category/:categoryId
+
+routing:
+  - routeId: 'apple-main-page-route'
+    url: /
+    pageId: apple-main-page
+  - routeId: 'apple-about-page-route'
+    url: /about
+    pageId: apple-about-page
+  - routeId: apple-contacts-page-route
+    url: /contacts
+    pageId: apple-contacts-page
+  - routeId: 'apple-not-found-page-route'
+    url: /404
+    pageId: apple-not-found-page
+
+context:
+  '#logo':
+    service: company
+    method: getLogo
+    params: []
+    usedBy: []
+
+pages:
+  - front
+  - product
+  - category
+  - about
+  - not-found
+  - contacts

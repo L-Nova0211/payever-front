@@ -1,0 +1,53 @@
+@import '../../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin background-root($theme-config) {
+  $background: map-get($theme-config, background);
+  $text-color: map-get($theme-config, text-color);
+
+  .appointments-root {
+    &__content,
+    &__header {
+      background-color: $background;
+    }
+  }
+    
+  .nav-content {
+    background-color: $background;
+  }
+}
+
+.appointments-root {
+  height: 100%;
+  
+  &.dark,
+  &.default {
+    @include background-root($dark-theme);
+  }
+
+  &.light {
+    @include background-root($light-theme);
+  }
+
+  &.transparent {
+    @include background-root($transparent-theme);
+  }
+
+  &__header {
+    height: 60px;
+
+    .header-container {
+      height: 60px;
+      padding: 16px 22px;
+    }
+  }
+
+  &__content {
+    height: calc(100% - 60px);
+    position: absolute;
+    width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+<peb-editor-sidebar-tabs>
+  <peb-editor-sidebar-tab title="Section">
+
+    <peb-section></peb-section>
+
+    <div class="form__row fill">
+      <div class="group__row">
+        <label class="group__label">
+          Fill
+        </label>
+        <div class="peb-fill" (click)="showBackgroundForm()">
+          <div class="peb-fill__thumbnail" [ngStyle]="background$ | async"></div>
+          <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="form__row">
+      <button (click)="addSection()" type="button">Add section</button>
+    </div>
+  </peb-editor-sidebar-tab>
+  <peb-editor-sidebar-tab title="Video" *ngIf="activeMediaType === mediaType.Video">
+    <div class="form__row">
+      <peb-studio-media-form
+        *ngIf="component?.video"
+        [formGroup]="component.video.form"
+        [type]="mediaType.Video"
+      ></peb-studio-media-form>
+      <peb-video-form
+        *ngIf="component.video?.form"
+        [formGroup]="component.video.form"
+        (fileChanged)="component.video.submit.next($event)"
+      >
+      </peb-video-form>
+    </div>
+  </peb-editor-sidebar-tab>
+</peb-editor-sidebar-tabs>

@@ -1,0 +1,57 @@
+<div class="percentage">
+  <div class="percentage__top">
+    <div class="percentage__title">{{ config?.dataSource[0][0]?.text?.toUpperCase() || 'TRANSACTIONS' }}</div>
+    <div class="percentage__right">
+      <span *ngIf="editMode" class="done-btn" (click)="onEditMode()">Done</span>
+    </div>
+  </div>
+  <div *ngIf="!editMode" class="circular-chart">
+    <svg viewbox="0 0 36 36" class="circular-chart__body green">
+      <path
+        class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path
+        class="circle"
+        attr.stroke-dasharray="{{ getGraphPercentage() }}"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+    </svg>
+    <div class="circular-chart__text">
+      <span class="circular-chart__text-date">
+        {{
+          config?.dataSource[0][2]?.text
+            ? config?.dataSource[0][2]?.text
+            : (config?.dataSource[0][2]?.value | number: '.0-2')
+        }}
+        {{
+          config?.dataSource[0][2]?.currency ? config?.dataSource[0][2]?.currency : config?.dataSource[0][2]?.percent
+        }}
+      </span>
+      <span class="circular-chart__text-percentage" [ngClass]="{'large-config' : config.size === 'large'}">
+        {{
+          config?.dataSource[1][0]?.text
+            ? config?.dataSource[1][0]?.text
+            : (config?.dataSource[1][0]?.value | number: '.0-2')
+        }}
+        {{
+          config?.dataSource[1][0]?.currency ? config?.dataSource[1][0]?.currency : config?.dataSource[1][0]?.percent
+        }}
+      </span>
+      <span *ngIf="config.size !== 'large'" class="circular-chart__text-profit">
+        {{
+          config?.dataSource[1][1]?.text
+            ? config?.dataSource[1][1]?.text
+            : (config?.dataSource[1][1]?.value | number: '.0-2')
+        }}
+        {{
+          config?.dataSource[1][1]?.currency ? config?.dataSource[1][1]?.currency : config?.dataSource[1][1]?.percent
+        }}
+      </span>
+    </div>
+  </div>
+</div>

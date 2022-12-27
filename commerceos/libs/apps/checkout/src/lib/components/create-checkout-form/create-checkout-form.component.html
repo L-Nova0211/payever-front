@@ -1,0 +1,55 @@
+<form
+  *ngIf="form"
+  class="form-container create-checkout-form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <peb-logo-picker
+    [image]="form.get('logo').value"
+    [buttonLabel]="'create_checkout.logo.addLogo' | translate"
+    [abbrevation]="form.get('name').value | abbreviation"
+    [isImageLoading]="isPictureLoadingSubject | async"
+    (file)="onLogoUpload($event)"
+    (deleteLogo)="deleteImage()"
+  ></peb-logo-picker>
+
+  <div class="fields create-checkout-fields">
+    <peb-form-field-input
+      *ngIf="form"
+      class="checkout-name-input"
+      [label]="inputLabel"
+      appearance="label">
+      <input formControlName="name" (focus)="isNameInputFocused = true" (blur)="isNameInputFocused = false"/>
+    </peb-form-field-input>
+  </div>
+  <div
+    class="fields__validation fields__validation_invalid"
+    [class.fields__validation_hidden]="!form?.controls?.name || (!form?.controls?.name.value && isNameInputFocused) || !this.form.dirty || this.form.valid">
+    <svg *ngIf="this.form.controls.name.invalid || isFormNotChanged()" class="error-icon">
+      <use xlink:href="#icon-warning-20"></use>
+    </svg>
+    <div *ngIf="this.form.controls.name.invalid && !this.form.controls.name.value" translate>
+      create_checkout.validation.errors.required
+    </div>
+    <div
+      *ngIf="this.form.controls.name.invalid && this.form.controls.name.value && this.form.controls.name.value.length > nameMaxLength"
+      translate>
+      create_checkout.validation.errors.longName
+    </div>
+    <div
+      *ngIf="this.form.controls.name.invalid && this.form.controls.name.value && this.form.controls.name.value.length < nameMaxLength && (!currentCheckout || currentCheckout?.name !== this.form.controls.name.value)"
+      translate>
+      create_checkout.validation.errors.unavailableName
+    </div>
+    <div *ngIf="this.form.controls.name.valid && isFormNotChanged()" translate>
+      create_checkout.validation.errors.oldName
+    </div>
+  </div>
+
+  <div
+    *ngIf="!createMode && !isCurrentCheckout"
+    class="add-button add-button__danger-color add-button__margin-top"
+    translate
+    (click)="onDeleteButtonClick()">
+    create_checkout.buttons.deleteCheckout
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<div class="row-uploader" [ngClass]="theme">
+    <div class="upload-items">
+      <p>Uploading {{ itemsUpload }} items. {{ progressBar }}% complete</p>
+    </div>
+    <div class="cancel">
+      <p (click)="cancelUpload()">Cancel</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,130 @@
+<mat-list class="mat-list-transparent" [class.mat-list-padding-md]="sizeMd">
+  <ng-content></ng-content>
+  <ng-container *ngIf="integrations && connections && installedConnections">
+    <ng-container *ngFor="let integration of integrations">
+      <ng-template *ngIf="getIntegrationConnections(integration)?.length <= 1" [ngTemplateOutlet]="single"
+                   [ngTemplateOutletContext]="{integration: integration}"></ng-template>
+      <ng-template *ngIf="getIntegrationConnections(integration)?.length > 1" [ngTemplateOutlet]="multi"
+                   [ngTemplateOutletContext]="{integration: integration}"></ng-template>
+    </ng-container>
+  </ng-container>
+
+  <mat-list-item *ngIf="isShowAddButton" class="add-button">
+    <button mat-button
+            [class.mat-button-link]="true"
+            [class.mat-button-no-padding]="true"
+            (click)="clickedAddButton.emit(category)">
+      {{ 'actions.addPlus' | translate }}
+    </button>
+
+  </mat-list-item>
+</mat-list>
+
+<ng-template #single let-integration="integration">
+  <mat-list-item [class.mat-list-item-no-padding-left]="noPaddingLeft">
+    <div class="mat-list-item-col">
+      <div class="icon-menu-wrapper">
+        <svg class="icon icon-16 icon-menu-item">
+          <!-- TODO Remove openbank hack when icon is ready -->
+          <use [attr.xlink:href]="integration.integration.displayOptions.icon"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="mat-list-item-flex no-left-padding">
+      <div class="mat-list-item-content expansion-list-title">
+        <span class="pe-truncate-text">{{ integration.integration.displayOptions.title | translate }}</span>
+      </div>
+    </div>
+    <div class="mat-list-item-flex no-right-padding">
+      <div class="mat-list-item-col text-right" *ngIf="isShowToggleButton">
+        <mat-slide-toggle *ngIf="getIntegrationConnections(integration)[0] as connection;"
+                          [checked]="isConnectionInstalled(connection)"
+                          (change)="toggleClick(integration, connection)"
+        ></mat-slide-toggle>
+        <mat-slide-toggle *ngIf="!getIntegrationConnections(integration)[0]"
+                          [checked]="false"
+                          [disabled]="true"
+        ></mat-slide-toggle>
+      </div>
+      <div>
+        <button mat-raised-button
+                [class.mat-button-rounded]="true"
+                [class.mat-button-xs]="true"
+                (click)="onOpen(integration)"
+                class="expansion-list-button"
+                type="button"
+                color="muted-light">
+          <pe-progress-button-content class="mat-progress-spinner-light"
+                                      [spinnerDiameter]="15"
+                                      [spinnerStrokeWidth]="2"
+                                      [spinnerLight]="true"
+                                      [loading]="(openingIntegration$ | async)?.integration?.name === integration?.integration.name">
+            {{ 'actions.open' | translate }}
+          </pe-progress-button-content>
+        </button>
+      </div>
+    </div>
+  </mat-list-item>
+</ng-template>
+
+<ng-template #multi let-integration="integration">
+  <mat-list-item [class.mat-list-item-no-padding-left]="noPaddingLeft">
+    <div class="mat-list-item-col">
+      <div class="icon-menu-wrapper">
+        <svg class="icon icon-16 icon-menu-item">
+          <use [attr.xlink:href]="integration.integration.displayOptions.icon"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="mat-list-item-flex no-left-padding">
+      <div class="mat-list-item-content expansion-list-title">
+        <span class="pe-truncate-text">{{ integration.integration.displayOptions.title | translate }}</span>
+      </div>
+    </div>
+    <div class="mat-list-item-flex no-right-padding">
+      <div class="mat-list-item-col text-right"></div>
+      <div>
+        <button mat-raised-button
+                [class.mat-button-rounded]="true"
+                [class.mat-button-xs]="true"
+                (click)="onOpen(integration)"
+                class="expansion-list-button"
+                type="button"
+                color="muted-light">
+          <pe-progress-button-content class="mat-progress-spinner-light"
+                                      [spinnerDiameter]="15"
+                                      [spinnerStrokeWidth]="2"
+                                      [spinnerLight]="true"
+                                      [loading]="(openingIntegration$ | async)?.integration?.name === integration?.integration.name">
+            {{ 'actions.open' | translate }}
+          </pe-progress-button-content>
+        </button>
+      </div>
+    </div>
+  </mat-list-item>
+
+  <ng-container *ngFor="let connection of getIntegrationConnections(integration)">
+    <mat-list-item [class.mat-list-item-no-padding-left]="noPaddingLeft" class="list-item-connection">
+      <div class="mat-list-item-col">
+        <div class="icon-menu-wrapper transparent">
+          <svg class="icon icon-16 icon-menu-item">
+          </svg>
+        </div>
+      </div>
+      <div class="mat-list-item-flex">
+        <div class="mat-list-item-content expansion-list-title no-margin">
+          <span
+            class="pe-truncate-text">{{ connection.name || ('integrationConnection.default' | translate) }}</span>
+        </div>
+      </div>
+      <div class="mat-list-item-flex no-right-padding">
+        <div class="mat-list-item-col text-right">
+          <mat-slide-toggle *ngIf="isShowToggleButton"
+                            [checked]="isConnectionInstalled(connection)"
+                            (change)="toggleClick(integration, connection)"
+          ></mat-slide-toggle>
+        </div>
+      </div>
+    </mat-list-item>
+  </ng-container>
+</ng-template>

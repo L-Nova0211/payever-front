@@ -1,0 +1,117 @@
+pe-autocomplete {
+  input {
+    padding: 0 12px !important;
+    margin: 0 -12px;
+    box-sizing: content-box;
+  }
+
+  .dropdown-arrow {
+    position: absolute;
+    right: 12px;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    .arrow-open {
+      width: 15px;
+      height: 8px;
+      color: #fff;
+    }
+  }
+}
+
+.autocomplete-panel {
+  border-radius: 12px !important;
+  margin-top: 4px;
+  backdrop-filter: blur(50px);
+  scrollbar-width: none;
+
+  .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+    background-color: inherit;
+
+    .mat-option-text {
+      background-color: inherit;
+    }
+  }
+
+  .mat-option {
+    max-height: 35px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.1;
+    padding: 10px 12px;
+    margin: 0;
+    color: white;
+
+    &.mat-selected,
+    &:hover {
+      background-color: #0371e2 !important;
+
+      .mat-option-text { color: white !important; }
+    }
+
+    &:not(:first-of-type) {
+      &::before {
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #393939;
+    }
+    // .mat-option-text {
+    //   font-family: 'Roboto', sans-serif;
+    //   font-size: 14px;
+    //   font-weight: 400;
+    //   line-height: 1.1;
+    //   padding-left: 10px;
+    //   padding-right: 10px;
+    // }
+
+    .autocomplete-option-item {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      &__image {
+        border-radius: 6.7px;
+        height: 32px;
+        min-width: 32px;
+        width: 32px;
+        overflow: hidden;
+      }
+      &__flag-icon {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      display: block;
+    }
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}

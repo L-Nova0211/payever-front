@@ -1,0 +1,14 @@
+<button mat-raised-button
+        type="button"
+        class="install-button"
+        [class.mat-button-rounded]="true"
+        [class.mat-button-xs]="size === 'xs'"
+        [class.mat-button-sm]="size === 'sm'"
+        [class.mat-button-md]="size === 'md'"
+        [class.mat-button-lg]="size === 'lg'"
+        [class.mat-button-xl]="size === 'xl'"
+        (click)=installIntegration($event)>
+  <pe-progress-button-content [loading]="isInstalling$ | async" [spinnerDiameter]="15">
+    {{ installed ? ('actions.open' | translate) : ('actions.install' | translate) }}
+  </pe-progress-button-content>
+</button>

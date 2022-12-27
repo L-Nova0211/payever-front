@@ -1,0 +1,26 @@
+.color-theme {
+  margin-top: 12px;
+
+  &__color-mock-up {
+    padding: 12px 0 8px;
+    background-color: #111111;
+    border-radius: 12px 12px 0 0;
+    border-bottom: solid 1px #424242;
+  }
+
+  &__color-layout {
+    display: flex;
+    padding: 8px 12px;
+    height: 48px;
+    background-color: #111111;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .swiper {
+    width: 100%;
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+}

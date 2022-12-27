@@ -1,0 +1,37 @@
+.pe-bootstrap {
+  .progress {
+    height: $grid-unit-y * 2;
+    margin-bottom: $grid-unit-y * 2;
+    @include box-shadow(none);
+  }
+  .progress-bar {
+    line-height: $grid-unit-y * 2;
+    @include box-shadow(none);
+  }
+  .progress-xs {
+    .progress {
+      height: 5px;
+      .progress-bar {
+        overflow: hidden;
+        text-indent: -10000px;
+      }
+    }
+  }
+  .progress-sm {
+    .progress {
+      height: $grid-unit-y;
+      .progress-bar {
+        overflow: hidden;
+        text-indent: -10000px;
+      }
+    }
+  }
+  .progress-lg {
+    .progress {
+      height: $grid-unit-y * 3;
+      .progress-bar {
+        line-height: $grid-unit-y * 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,230 @@
+$regular-text-color: darken(#ffffff, 10%);
+$menu-item-border-color: rgba(255, 255, 255, 0.1);
+$content-background-color: #1c1d1e;
+$table-content-background-color: #111111;
+$regular-light-text-color: #111111;
+$regular-light-secondary-text-color: #7a7a7a;
+$content-light-background-color: #ffffff;
+$content-light-button-background-color: #f9f9f9;
+$content-light-border-color: rgba(0, 0, 0, 0.1);
+$content-transparent-background-color: rgba(0, 0, 0, 0.3);
+$content-transparent-button-background-color: rgba(0, 0, 0, 0.5);
+$content-transparent-border-color: rgba(255, 255, 255, 0.1);
+
+:host {
+  color: #ffffff;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.transaction {
+  &__container {
+    display: flex;
+    width: 100%;
+
+    &.gray {
+      background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+  }
+
+  &__image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    min-height: 120px;
+
+    span {
+      font-size: 1.6em;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+    }
+  }
+
+  &__info {
+    background-color: #1c1d1e;
+    padding: 0.6875em 0.75em 0.4375em;
+  }
+
+  &__title {
+    color: #ffffff;
+    font-size: 0.875em;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 0.8em;
+    font-weight: normal;
+    line-height: 1;
+    margin-top: 0.1875em;
+    min-height: 2.0625em;
+    color: #ffffff;
+  }
+}
+
+.connect-context-menu {
+  backdrop-filter: blur(50px);
+  background-color: $content-background-color;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  min-width: 252px;
+  padding-bottom: 1em;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 8px;
+  }
+
+  &__title {
+    color: $regular-text-color;
+    cursor: default;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__close {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    width: 20px;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 8px;
+
+    &-item {
+      align-items: center;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      margin-top: 12px;
+      position: relative;
+      padding: 4px 8px;
+
+      &-label {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+        color: $regular-text-color;
+      }
+
+      &-menu-trigger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+      }
+
+      &.red {
+        span {
+          color: #eb4653;
+        }
+
+        &:hover {
+          background-color: #eb4653;
+
+          span {
+            color: white;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: #0371e2;
+      }
+    }
+  }
+
+  &_light {
+    background-color: $content-light-background-color;
+
+    .connect-context-menu__title {
+      color: $regular-light-text-color;
+    }
+
+    li span {
+      color: $regular-light-text-color;
+    }
+  }
+
+  &_transparent {
+    background-color: $content-transparent-background-color;
+  }
+}
+
+.sidebar-item {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.86;
+  letter-spacing: normal;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  padding:9px;
+  margin-bottom: 3px;
+  &:not(.active):hover {
+    background-color: hsla(0, 0%, 100%, 0.05);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .transaction {
+    &__image {
+      span {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.no-orders-found {
+  opacity: 0.5;
+  position: absolute;
+  width: calc(100% - 16px);
+  padding-bottom: 30%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  .mat-icon {
+    width: 42px;
+    height: 42px;
+  }
+  h3 {
+    margin-bottom: 4px;
+    font-weight: 300;
+    font-size: 23px;
+  }
+  p {
+    font-size: 12px;
+    max-width: 260px;
+    text-align: center;
+  }
+}

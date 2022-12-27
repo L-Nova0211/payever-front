@@ -1,0 +1,27 @@
+<ng-template
+  let-scale="scale"
+  let-type="type"
+  let-boxStyle="boxStyle"
+  let-previewStyle="previewStyle"
+  let-count="countItems"
+>
+  <div *ngIf="type === PreviewType.HTMLElement">
+    <div #viewBox class="view-box" [style.transform]="'translate(-50%, -50%)'">
+      <ng-container
+        [ngTemplateOutlet]="counter"
+        [ngTemplateOutletContext]="{count: count}"
+      ></ng-container>
+      <div [style.transform]="'scale('+scale+')'" [ngStyle]="boxStyle">
+        <div [ngStyle]="previewStyle" [innerHtml]="preview"></div>
+      </div>
+    </div>
+  </div>
+  <div class="view-box" *ngIf="type === PreviewType.ImageSrc">
+    <ng-container [ngTemplateOutlet]="counter" [ngTemplateOutletContext]="{count: count}"></ng-container>
+    <img [src]="preview">
+  </div>
+</ng-template>
+
+<ng-template #counter let-count="count">
+  <div *ngIf="count > 1" [ngStyle]="counterPosition" class="view-box__counter">{{ count > 99 ? '99+' : count }}</div>
+</ng-template>

@@ -1,0 +1,20 @@
+$skeleton-color-dark: rgba(0, 0, 0, 0.3);
+$skeleton-color-transparent: rgba(0, 0, 0, 0.3);
+$skeleton-color-light: #dfdfdf;
+
+$skeleton-bg-dark: #1c1d1e;
+$skeleton-bg-transparent: #1c1d1e;
+$skeleton-bg-light: #f7f7f7;
+
+@mixin skeleton-animation() {
+  animation: skeleton-loading 1.5s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}

@@ -1,0 +1,102 @@
+<div class="additional-channel-settings">
+  <div class="additional-channel-settings__header">
+    <div (click)="clickButtonLeftSide()">
+      <span>{{buttonLeftSide}}</span>
+    </div>
+    <p>{{title}}</p>
+    <div class="right" (click)="done()">
+      <span class="blue">{{ 'message-app.sidebar.done' | translate }}</span>
+    </div>
+  </div>
+  <div class="additional-channel-settings__container" [formGroup]="additionalSettingsGroup">
+    <mat-tab-group
+      [selectedIndex]="settingsLevel"
+      animationDuration="200ms"
+    >
+      <mat-tab>
+        <div class="additional-channel-settings-main">
+          <div class="additional-channel-settings-main__item"
+           *ngFor="let item of settingsItems" (click)="changeLevel(item)">
+            <svg class="additional-channel-settings-main__type-icon" [ngSwitch]="item.type">
+              <use *ngSwitchCase="peAdditionalChannelSettingsItems.Type" xlink:href="#icon-apps-type"></use>
+              <use *ngSwitchCase="peAdditionalChannelSettingsItems.Sign" xlink:href="#icon-apps-sign"></use>
+              <use *ngSwitchCase="peAdditionalChannelSettingsItems.Remove" xlink:href="#icon-apps-user-removed"></use>
+              <use *ngSwitchCase="peAdditionalChannelSettingsItems.Permission"
+               xlink:href="#icon-apps-permissions"></use>
+            </svg>
+            <span class="additional-channel-settings-main__label" translate>{{item.label}}</span>
+            <svg class="additional-channel-settings-main__arrow-right">
+              <use xlink:href="#icon-apps-arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <div class="channel-type">
+          <div class="channel-type__type-list">
+            <label *ngFor="let type of types">
+              <input hidden type="radio" formControlName="subType" [value]="type.value">
+              <span translate>{{ type.title }}</span>
+              <div class="channel-type__checkmark">
+                <svg width="8" height="6" viewBox="0 0 14 10" style="margin: auto">
+                  <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <g stroke="#FFF" stroke-width="1.4">
+                      <g>
+                        <path d="M8.4 14L12.6 18.2 19.6 9.8" transform="translate(-577 -373) translate(570 364)"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <div class="channel-sign">
+          <peb-button-toggle
+            formControlName="signed"
+            label="{{ 'message-app.channel.settings.sign-text' | translate }}"
+            [spacer]="true"
+            labelPosition="before"
+          ></peb-button-toggle>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <div class="channel-removed-users">
+          <pe-picker
+            class="pe-picker"
+            label="{{ 'message-app.channel.settings.additional.remove' | translate }}"
+            placeholder="{{ 'message-app.channel.form.search' | translate }}"
+            [data]="members"
+            formControlName="removedUsers"
+            (buttonClick)="removeUser()"
+            (optionsButtonClick)="removeUser($event)"
+            buttonLabel="{{ 'message-app.channel.settings.remove_all' | translate }}"
+          ></pe-picker>
+          <div
+            class="channel-removed-users__achive-removed-users"
+            *ngIf="removedMembers && removedMembers.length > 0"
+          >
+            <div class="channel-removed-users__header-removed-users">
+             <p>{{removedMembers.length}} removed user{{removedMembers.length > 1 ? 's' : ''}}</p>
+            </div>
+            <div class="channel-removed-users__container">
+              <div
+                class="channel-removed-users__item"
+                *ngFor="let member of removedMembers"
+              >
+                <img class="channel-removed-users__avatar" src="{{member.image}}"/>
+                <div class="channel-removed-users__info">
+                  <p class="channel-removed-users__name">{{member.label}}</p>
+                  <p class="channel-removed-users__removed-by">removed by Admin</p>
+                </div>
+                <button class="channel-removed-users__button" (click)="unblockUser(member.value)">Unblock</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

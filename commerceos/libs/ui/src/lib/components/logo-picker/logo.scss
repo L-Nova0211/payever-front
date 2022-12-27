@@ -1,0 +1,138 @@
+.logo-picker-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .image {
+    height: 80px;
+    width: 80px;
+    position: relative;
+
+    &__spinner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .logo {
+      height: 80px;
+      width: 80px;
+      border-radius: 40px;
+      object-fit: cover;
+    }
+
+    .delete-logo {
+      display: none;
+      z-index: 1;
+      height: 22px;
+      width: 22px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+
+      svg {
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        color: #949599;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .delete-logo {
+        display: block;
+      }
+    }
+
+    &__background {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 40px;
+      background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+
+      .no-image-logo {
+        height: 39px;
+        width: 46px;
+      }
+
+      mat-icon {
+        line-height: 0;
+      }
+
+      p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 37px;
+        font-weight: 400;
+        line-height: 44px;
+        color: #fff;
+        margin: 0;
+      }
+    }
+  }
+
+  .picker-button {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 18px;
+    width: fit-content;
+    max-width: 150px;
+    border-radius: 18.4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 6px 2px 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    span {
+      line-height: 0;
+    }
+
+    &__icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 6px;
+    }
+
+    &__label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      line-height: 1.33;
+      color: #fff;
+    }
+  }
+}
+
+.cdk-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  outline: 0;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

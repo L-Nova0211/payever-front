@@ -1,0 +1,14 @@
+{
+  "name": "@pe/builder-core",
+  "version": "5.10.86",
+  "dependencies": {
+    "hash.js": "^1.1.7",
+    "node-fetch": "^2.6.0",
+    "tslib": "^2.0.0",
+    "uuid": "^8.0.0",
+    "quill-delta": "^4.2.2"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.15"
+  }
+}

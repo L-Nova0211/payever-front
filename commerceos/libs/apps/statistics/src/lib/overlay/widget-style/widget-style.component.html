@@ -1,0 +1,10 @@
+<div class="widget-style">
+  <peb-widget-wrapper
+    *ngFor="let widget of widgets"
+    class="widget small"
+    [useDefaultDataSource]="true"
+    [config]="widget"
+    (click)="onWidgetStyleSelect(widget.viewType)"
+    [isClickable]="true"
+  ></peb-widget-wrapper>
+</div>

@@ -1,0 +1,10 @@
+pe-action-edit {
+  pe-action-container {
+    @media (min-width: 460px) {
+      .overlay {
+        width: 90ch !important;
+        max-width: 800px !important;
+      }
+    }
+  }
+}

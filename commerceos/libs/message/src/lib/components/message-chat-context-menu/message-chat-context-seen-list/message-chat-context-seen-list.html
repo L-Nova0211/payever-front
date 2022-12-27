@@ -1,0 +1,10 @@
+<div class="pe-context-menu-seen-list" [style.width.px]="(members.length * 13) + 13">
+    <pe-message-chat-room-list-header 
+        class="pe-context-menu-seen-list__row"
+        *ngFor="let chat of members;" 
+        [chat]="chat"
+        [hasInfo]="false"
+        draggable="false"
+    >
+    </pe-message-chat-room-list-header>   
+</div> 

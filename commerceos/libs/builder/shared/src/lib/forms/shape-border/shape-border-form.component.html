@@ -1,0 +1,43 @@
+<div class="form" *ngIf="shapeBorderService.shapeBorderForm">
+  <form [formGroup]="shapeBorderService.shapeBorderForm">
+    <div class="group__row">
+      <label class="group__label">
+        Border
+      </label>
+    </div>
+    <ng-container>
+      <div class="group__row">
+        <label class="group__label">
+          Fill
+        </label>
+        <div class="peb-fill" (click)="shapeBorderService.showBorderColorForm()">
+          <div
+            class="peb-fill__thumbnail"
+            [style.background-color]="borderColor$|async"
+          ></div>
+          <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+        </div>
+      </div>
+
+      <div class="group__row" (click)="shapeBorderService.openBorderStyleForm()">
+        <label class="group__label">
+          Style
+        </label>
+        <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow"></mat-icon>
+      </div>
+
+      <div class="group__row">
+        <label class="group__label">
+          Width
+        </label>
+        <peb-number-input-spinbutton
+          class="sidebar__spinbutton"
+          [min]="0"
+          [max]="100"
+          formControlName="borderWidth"
+          units="px"
+        ></peb-number-input-spinbutton>
+      </div>
+    </ng-container>
+  </form>
+</div>

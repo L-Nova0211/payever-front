@@ -1,0 +1,57 @@
+.form-container {
+  width: 100%;
+}
+
+.overlay-widget-container {
+  max-width: 480px !important;
+
+  .overlay-widget__content {
+    peb-field-form {
+      form {
+        padding: 0 12px 12px;
+      }
+    }
+  }
+
+  .field__body {
+    input {
+      width: 40% !important;
+    }
+  }
+}
+
+.statistics-preview {
+  display: flex;
+  justify-content: center;
+  .small {
+    max-width: 142px;
+  }
+  .medium {
+    max-width: 284px;
+  }
+  .large {
+    max-width: 284px;
+  }
+
+  .simple-numbers {
+    margin-top: -7px;
+  }
+}
+
+.remove-btn {
+  margin: 12px;
+  margin-top: 0;
+  width: 95%;
+  color: #eb4653;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  padding: 0;
+}

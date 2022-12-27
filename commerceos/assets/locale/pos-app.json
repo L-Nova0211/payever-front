@@ -1,0 +1,86 @@
+{
+  "pos-app": {
+    "actions": {
+      "edit": "Edit",
+      "open": "Open",
+      "cancel": "Cancel",
+      "done": "Done",
+      "save": "Save",
+      "create_new": "Create New",
+      "remove_domain": "Remove domain",
+      "create_domain": "Add domain",
+      "copy": "Copy",
+      "copy_link": "Copy Link",
+      "copied": "Copied",
+      "download_qr": "Download QR"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "errors": {
+      "unknown_error": "Unknown error"
+    },
+    "messages": {
+      "domain_connected": "Domain connected",
+      "domain_disconnected": "Domain is not connected",
+      "no_domain":"No domains connected"
+    },
+    "navigation": {
+      "title": "Navigation",
+      "add_terminal": "Add new terminal",
+      "switch_terminal": "Switch terminal",
+      "qr_generator": "QR generator",
+      "connect": "Connect",
+      "settings": "Settings"
+    },
+    "sidebar": {
+      "title": "Point of Sale"
+    },
+    "info":{
+      "link_copied": "Link copied",
+      "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px"
+    },
+    "settings": {
+      "add_terminal": "Add Terminal",
+      "edit_terminal": "Edit Terminal",
+      "customer_privacy": "Customer privacy",
+      "title": "Settings",
+      "payever_domain": "Payever Domain",
+      "publishing": "PUBLISHING",
+      "domains": "DOMAINS",
+      "domain_label": "Domain",
+      "domain_placeholder": "Enter Domain",
+      "date_placeholder": "Enter Date",
+      "date_label": "Date Added",
+      "provider_label": "Provider",
+      "provider_placeholder": "Enter Provider",
+      "business_uuid": "Business UUID",
+      "terminal_uuid": "Terminal UUID",
+      "meta_description":"Meta description",
+      "page_title":"Page title",
+      "terminals": "Terminals",
+      "terminal_title": "Terminal title",
+      "enter_terminal_title": "Enter Terminal Title",
+      "error_msg": {
+        "name_invalid": "Name should have at least 3 characters",
+        "name_incorrect": "Name is not correct"
+      }
+    },
+    "connect": {
+      "title": "Connect",
+      "add": "Add",
+      "qr": {
+        "title": "QR"
+      }
+    },
+    "switch_terminal": {
+      "title": "All Terminals"
+    },
+    "themes": {
+      "title": "Themes"
+    },
+    "overlay": {
+      "options": "Options"
+    }
+  }
+}

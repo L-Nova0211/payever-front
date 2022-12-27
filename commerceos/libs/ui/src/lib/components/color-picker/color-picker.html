@@ -1,0 +1,52 @@
+<div
+  class="color-picker-form__container"
+  [class.color-picker-form__container-light]="theme === 'light'"
+  [class.color-picker-form__container-transparent]="theme === 'transparent'">
+  <div class="color-picker-form__content">
+    <div
+      class="color-picker-form__color"
+      [style.backgroundColor]="color">
+    </div>
+    <div class="color-picker-form__label">
+      {{label}}
+    </div>
+  </div>
+  <div class="color-picker-form__button-container">
+    <button
+      peb-text-button
+      color="confirm"
+      class="color-picker-form__button-item"
+      (click)="openColorPicker(colorPickerTrigger)">
+      {{buttonLabel}}
+    </button>
+  </div>
+  <div
+    #colorPickerTrigger
+    class="color-picker-form__trigger"
+    [matMenuTriggerFor]="colorPickerFormMenu">
+  </div>
+  <mat-menu
+    #colorPickerFormMenu="matMenu"
+    xPosition="after"
+    [backdropClass]="'color-picker-form-menu-' + theme"
+    (close)="closeColorPicker()">
+    <div class="color-picker-form-menu__container">
+      <div class="color-picker-form-menu__title" (click)="$event.stopPropagation()">
+        <div class="color-picker-form-menu__label">{{buttonLabel}}</div>
+        <svg class="color-picker-form-menu__icon" (click)="colorPickerFormMenu.closed.emit()">
+          <use xlink:href="#icon-x-solid-24"></use>
+        </svg>
+      </div>
+      <div
+        *ngIf="displayColorPicker"
+        cpPositionRelativeToArrow="true"
+        [cpToggle]="true"
+        [cpDialogDisplay]="'inline'"
+        [cpOutputFormat]="'hex'"
+        [cpAlphaChannel]="'always'"
+        [pebColorPicker]="color"
+        (colorPickerChange)="colorSelect($event)"
+      ></div>
+    </div>
+  </mat-menu>
+</div>

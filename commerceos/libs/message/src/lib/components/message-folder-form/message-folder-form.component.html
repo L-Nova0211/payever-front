@@ -1,0 +1,10 @@
+<ng-container [formGroup]="folderFormGroup">
+  <peb-form-field-input
+    [animated]="true"
+    appearance="label"
+    class="peb-form-field-input"
+    label="{{ 'message-app.sidebar.folder_name' | translate }}"
+  >
+    <input formControlName="name" type="text"/>
+  </peb-form-field-input>
+</ng-container>

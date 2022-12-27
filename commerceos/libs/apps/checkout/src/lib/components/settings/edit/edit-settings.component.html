@@ -1,0 +1,25 @@
+<div class="pe-info-box-container-fixed edit-settings">
+  <form *ngIf="form" class="edit-settings-form" [formGroup]="form" novalidate>
+    <peb-form-field-input
+      *ngIf="form && editMode === 'message'"
+      class="edit-settings-input"
+      [label]="title"
+      appearance="label">
+      <input formControlName="message"/>
+    </peb-form-field-input>
+    <peb-select
+      *ngIf="form && editMode === 'phoneNumber'"
+      class="edit-settings-select"
+      selectType="label"
+      [label]="title"
+      [selected]="form?.controls?.phoneNumber.value">
+      <peb-select-option
+        *ngFor="let number of (storageServiceLocal.phoneNumbers$ | async)"
+        [attr.key]="number"
+        [value]="number"
+        [label]="number"
+        (click)="selectFieldValue(number, 'phoneNumber')"
+      ></peb-select-option>
+    </peb-select>
+  </form>
+</div>

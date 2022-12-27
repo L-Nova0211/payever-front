@@ -1,0 +1,63 @@
+:host {
+  background-color: rgba(0,0,0,.3);
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.select,
+.down,
+.down svg path {
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 1);
+}
+
+.select {
+  align-items: center;
+  background-color: transparent;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  line-height: 1.1666666667;
+  padding: 4px 8px 4px 8px;
+  width: 100%;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &_disabled {
+    border: 1px solid #626262;
+    background-color: #505050;
+    color: #7c7c7c;
+    cursor: default;
+  }
+
+  span {
+    width: 100%;
+  }
+}
+
+.down {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 28px;
+  pointer-events: none;
+  width: 20px;
+
+  &_disabled {
+    background-color: transparent;
+
+    svg path {
+      stroke: #7c7c7c;
+    }
+  }
+}

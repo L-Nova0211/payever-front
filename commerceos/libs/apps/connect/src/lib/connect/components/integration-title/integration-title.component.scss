@@ -1,0 +1,96 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+:host {
+  display: flex;
+  padding-top: $padding-large-vertical*2.5;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__text {
+    display: flex;
+    flex-flow: column;
+    flex-basis: 85%;
+  }
+}
+
+.upper-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: $padding-base-vertical;
+  border-bottom: 1px solid $color-secondary-2;
+
+  &__text-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__main-title {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+  }
+
+  &__description {
+    font-size: $font-size-micro-1;
+    font-weight: $font-weight-light;
+    color: $color-secondary-0;
+}
+
+  &__author {
+    font-size: $font-size-micro-1;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+  }
+}
+
+.lower-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: $padding-base-vertical;
+
+  &__rating-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__rating-inline {
+    display: flex;
+    font-size: 22px;
+  }
+
+  &__rating-count {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+    display: inline;
+    padding-right: $padding-xs-horizontal;
+  }
+
+  &__rating-subline {
+    font-size: $font-size-micro-1;
+  }
+
+  &__downloads {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__downloads-count {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+  }
+
+  &__downloads-title {
+    font-size: $font-size-micro-1;
+  }
+}

@@ -1,0 +1,128 @@
+<div peFileDrop
+  *ngIf="showIndex$ | async as showIndex"
+  [ngClass]="theme"
+  (dragleave)="onFileOver(!$event)"
+  (onFileOver)="onFileOver($event)"
+  (onFileDrop)="onFileDrop($event)"
+>
+  <div
+    class="media-editor__picture-wrapper"
+    [style.minHeight]="media.length === 0 || loading || isDragging ? '213px' : 'auto'"
+  >
+    <ng-container *ngIf="!loading">
+      <mat-icon
+        *ngIf="isDragging || media.length === 0"
+        svgIcon="content-placeholder"
+        (click)="mediaUploader.click()"
+      ></mat-icon>
+      <div *ngIf="!isDragging && media.length === 0">
+        <p>{{ 'media.actions.drag_n_drop' | translate }}</p>
+      </div>
+      <ng-container
+        *ngIf="media.length !==0 && !isDragging"
+        [ngTemplateOutlet]="media[showIndex - 1].mediaMimeType === 'image' ? imageTemplate : videoTemplate"
+        [ngTemplateOutletContext]="{ file: media[showIndex - 1], thumbnail: false }"
+      ></ng-container>
+    </ng-container>
+    <div
+      *ngIf="isDragging"
+      (click)="isDragging=false"
+    >
+      <p>{{ 'media.actions.can_drop' | translate }}</p>
+    </div>
+
+    <ng-container *ngIf="showProgress">
+      <mat-spinner
+        *ngIf="currentUploadingFile %2 === 0"
+        class="media-editor__progress-spinner"
+        [diameter]="80"
+        [value]="uploadProgress"
+        [mode]="'determinate'"
+      ></mat-spinner>
+      <mat-spinner
+        *ngIf="currentUploadingFile %2 !== 0"
+        class="media-editor__progress-spinner"
+        [diameter]="80"
+        [value]="uploadProgress"
+        [mode]="'determinate'"
+      ></mat-spinner>
+      <div class="media-editor__progress-percentage">
+        <span *ngIf="totalUploadFiles > 1">
+          {{ currentUploadingFile }}/{{ totalUploadFiles }}
+        </span>
+        <span>
+          {{ uploadProgress < 0 ? 0 : uploadProgress > 100 ? 100 : uploadProgress }}%
+        </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div
+    *ngIf="media.length > 0 && !isFolderEditor"
+    class="media-editor__thumbnails"
+  >
+    <div
+      *ngFor="let file of media; let i = index"
+      class="media-editor__thumbnail"
+      (click)="showSelectedFile(i)"
+    >
+      <div class="media-editor__image">
+        <ng-container
+          [ngTemplateOutlet]="file.mediaMimeType === 'image' ? imageTemplate : videoTemplate"
+          [ngTemplateOutletContext]="{ file: file, thumbnail: true }"
+        ></ng-container>
+      </div>
+      <div
+        class="media-editor__thumbnail-border"
+        [class.media-editor__thumbnail-border_active]="i === showIndex - 1"
+        [class.media-editor__thumbnail-border_incorrect]="checkIncorrect(i)"
+      ></div>
+      <div
+        class="media-editor__delete-image"
+        (click)="removeFromMedia(i)"
+      >
+        <svg height="10" width="10">
+          <use xlink:href="#icon-close-bold-12"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="media-editor__thumbnail">
+      <mat-icon
+        class="media-editor__add-image"
+        (click)="mediaUploader.click()"
+        svgIcon="add-file"
+      ></mat-icon>
+    </div>
+  </div>
+  <div [style.margin-top.px]="16"></div>
+  <button pe-form-button
+    (click)="mediaUploader.click()"
+  >
+    {{ 'media.actions.add_media' | translate }}
+  </button>
+</div>
+
+<input #mediaUploader multiple
+  accept="image/jpg, image/jpeg, image/png, video/mp4, video/mov, video/quicktime"
+  class="media-editor__input"
+  (change)="onFileChange($event)"
+  type="file"
+/>
+
+<ng-template #imageTemplate let-file="file" let-thumbnail="thumbnail">
+  <img
+    class="media-editor__picture-main"
+    [src]="file.localUrl
+      ? file.localUrl
+      : (file.mediaUrl | mediaUrl:'social':thumbnail:null)"
+  />
+</ng-template>
+
+<ng-template #videoTemplate let-file="file" let-thumbnail="thumbnail">
+  <video #videoPlayer autoplay loop
+    class="media-editor__picture-main"
+    [src]="file.localUrl 
+      ? file.localUrl 
+      : file.mediaUrl | mediaUrl:'social':(thumbnail ? 'thumbnail' : 'regular'):null"
+  ></video>
+</ng-template>

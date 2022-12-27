@@ -1,0 +1,53 @@
+.screen-list {
+  width: 100%;
+  background-color: #111111;
+  border-radius: 12px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 12px;
+    color: white;
+
+    &:hover,
+    &.selected {
+      background-color: #0371e2;
+      cursor: pointer;
+    }
+
+    span {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .active {
+      border-color: #fff;
+      border-radius: 8px;
+      border-style: solid;
+      border-width: 1px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 0.8;
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      background-color: #0371e2;
+      stroke: #fff;
+    }
+  }
+}

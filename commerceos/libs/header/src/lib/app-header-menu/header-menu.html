@@ -1,0 +1,49 @@
+<div class="header-menu-container" ngClass="{{theme + '-pe-header-menu'}}">
+  <div class="header-menu-container__header">
+    <div class="header-menu-container__header-item">
+    </div>
+    <div class="header-menu-container__header-item">
+      <div class="title">Menu</div>
+    </div>
+    <div class="header-menu-container__header-item">
+      <button class="btn done-btn" (click)="onCancel()">Done</button>
+    </div>
+  </div>
+  <div class="header-menu-container__content">
+    <ng-container *ngIf="!optionSelected; else optionList">
+      <ng-container *ngFor="let option of data.option">
+        <div class="menu-item" (click)="onSelectOption(option)">
+          <div class="menu-item__icon">
+            <svg>
+              <use [attr.xlink:href]="option.icon"></use>
+            </svg>
+          </div>
+          <div class="menu-item__text">{{option.title}}</div>
+          <div class="menu-item__arrow">
+            <svg class="arrow-open">
+              <use xlink:href="#icon-ui-arrow-open"></use>
+            </svg>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #optionList>
+  <ng-container *ngFor="let list of optionSelected.list">
+    <div class="menu-item" (click)="onSelectList(list.value)">
+      <div class="menu-item__icon">
+        <svg>
+          <use [attr.xlink:href]="list.icon"></use>
+        </svg>
+      </div>
+      <div class="menu-item__text">{{list.label}}</div>
+      <div class="menu-item__arrow">
+        <svg class="arrow-open">
+          <use xlink:href="#icon-ui-arrow-open"></use>
+        </svg>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>

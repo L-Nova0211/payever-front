@@ -1,0 +1,82 @@
+@import '../../../../../ui-styles/src/pe_skeleton.scss';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.skeleton-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 26px;
+  width: 100%;
+  padding: 16px;
+
+  @media (min-width: 720px) {
+    padding: 18px 22px;
+  }
+
+  .section-left {
+    .toggle-skeleton {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    .item-menu-skeleton {
+      width: 60px;
+      height: 22px;
+      flex-grow: 0;
+      margin-left: 8px;
+      border-radius: 3px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+  }
+
+  .section-left,
+  .section-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .section-right {
+    .avatar-skeleton {
+      width: 24px;
+      height: 24px;
+      flex-grow: 0;
+      margin: 0 8px 0 0;
+      border-radius: 12px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    .item-menu-skeleton {
+      width: 24px;
+      height: 24px;
+      flex-grow: 0;
+      margin: 0 6px;
+      border-radius: 6px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    .close-skeleton {
+      width: 104px;
+      height: 24px;
+      flex-grow: 0;
+      border-radius: 6px;
+      background-color: $skeleton-color-dark;
+      @include skeleton-animation();
+      margin-left: 6px;
+
+      @media (max-width: 720px) {
+        width: 24px;
+      }
+    }
+  }
+}

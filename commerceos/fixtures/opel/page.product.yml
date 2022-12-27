@@ -1,0 +1,402 @@
+id: product-page
+name: Product
+variant: product
+type: replica
+master: ~
+data: {}
+template:
+  id: product-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+
+            - id: header-menu
+              type: menu
+              data:
+                routes:
+                  - title: "SHOP"
+                    route: /category
+                  - title: "CHARGING"
+                    route: /category/charging
+                  - title: "VEHICLE ACCESSORIES"
+                    route: /category/vehicle
+                  - title: "PARTS"
+                    route: /category/parts
+                  - title: "APPAREL"
+                    route: /category/apparel
+                  - title: "LIFESTYLE"
+                    route: /category/lifestyle
+
+            - id: header-cart
+              type: shop-cart
+
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-product
+          type: shop-product-details
+
+    - id: footer
+      type: section
+      children:
+        - id: footer-block
+          type: block
+          children:
+            - id: footer-section-link1
+              type: text
+              data:
+                text: "Opel © 2020"
+            - id: footer-section-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/privacy" style="color: #fff; text-decoration: none;">Privacy & Legal</a>'
+            - id: footer-section-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/find-us" style="color: #fff; text-decoration: none;">Contact</a>'
+            - id: footer-section-payever
+              type: image
+              data:
+                src: 'https://payeverproduction.blob.core.windows.net/builder/e7af555f-c086-4150-af78-5ea2971d1b8d-Whitepowered.png'
+
+stylesheets:
+  desktop:
+    product-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    header-logo:
+      width: 150
+      height: 80
+    header-menu:
+      fontFamily: Gillsans, sans-serif
+      color: '#000'
+      fontWeight: bold
+      margin: 5 20 0 80
+    header-cart:
+      width: 20
+      height: 46
+      margin: 15 20 0 40
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section-image:
+      width: 650
+
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+      width: 1024
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      color: '#fff'
+      fontSize: auto
+      width: 90
+    footer-section-link2:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 100
+    footer-section-link3:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 90
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+
+  tablet:
+    shop-tesla-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      width: 768
+      display: grid
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      width: 80
+      height: 50
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 0 0 0 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 12 0 10 10
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 3 0 0 590
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Table First Section
+    # ----------------------------------
+    first-section-image:
+      width: 350
+      height: 350
+
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+  mobile:
+    shop-tesla-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      width: 80
+      height: 50
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 0 0 0 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 12 0 10 10
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 3 0 0 180
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      width: 360
+    first-section-image:
+      width: 360
+      height: 360
+    first-section-block:
+      width: 360
+    first-block:
+      width: 350
+      marginLeft: 10
+    first-block-title:
+      width: 250
+      fontSize: 32
+      marginTop: 20
+      color: '#171a20'
+      marginBottom: 10
+      fontWeight: bold
+      fontFamily: Roboto, Helvetica Neue
+    first-block-price:
+      fontFamily: Roboto, Helvetica Neue
+      color: '#171a20'
+      fontSize: 32
+      width: 176
+      marginBottom: 40
+      fontWeight: bold
+    first-block-text:
+      fontFamily: Roboto, Helvetica Neue
+      marginBottom: 20
+      width: 350
+      color: '#171a20'
+      fontWeight: bold
+    first-block-link:
+      fontFamily: Roboto, Helvetica Neue
+      marginBottom: 40
+      width: 350
+      fontWeight: bold
+      color: '#757575'
+    first-desc-title:
+      fontFamily: Roboto, Helvetica Neue
+      marginBottom: 20
+      width: 86
+      color: '#171a20'
+      fontWeight: bold
+    first-block-desc:
+      color: '#999'
+      width: 350
+      fontFamily: Roboto, Helvetica Neue
+
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      width: 360
+    second-section-block:
+      width: 360
+    second-section-image:
+      width: 360
+      height: 360
+      marginTop: 10
+      marginBottom: 50
+
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      width: 360
+      backgroundColor: '#000'
+    footer-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 0
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      margin: 20 0 0 20
+      textAlign: left
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+    footer-section-link5:
+      margin: 20 0 0 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link6:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link7:
+      backgroundColor: 'transparent'
+      margin: 20 0 20 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link8:
+      margin: 20 0 20 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 2 / 2 / 2 / 2
+
+context: {}

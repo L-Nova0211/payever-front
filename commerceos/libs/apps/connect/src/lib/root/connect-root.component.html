@@ -1,0 +1,14 @@
+<div [ngClass]="theme">
+  <pe-new-platform-header
+    id="connect-header"
+    [isLoading]="isGlobalLoading"
+    class="products-header"
+    (resized)="onPlatformHeaderResized($event)"
+  ></pe-new-platform-header>
+
+  <div class="connect-app-content top-offset-fix data-grid-scroll-container"
+  [ngClass]="theme"
+  >
+    <router-outlet></router-outlet>
+  </div>
+</div>

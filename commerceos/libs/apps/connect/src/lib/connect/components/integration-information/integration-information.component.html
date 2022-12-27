@@ -1,0 +1,54 @@
+<div class="info">
+  <div class="info__title">
+    {{ 'integration_full_page.information.title' | translate }}
+  </div>
+
+  <!-- Integration params -->
+  <div class="info__params">
+    <div class="info__param">
+      <div class="info__param-title">{{ 'integration_full_page.information.provider' | translate }}</div>
+      <div class="info__param-value">{{ integration.installationOptions.developer | translate }}</div>
+    </div>
+
+    <div class="info__param">
+      <div class="info__param-title">{{ 'integration_full_page.information.category' | translate }}</div>
+      <div class="info__param-value">{{ integration.installationOptions.category | translate }}</div>
+    </div>
+
+    <div class="info__param">
+      <div class="info__param-title">{{ 'integration_full_page.information.languages' | translate }}</div>
+      <div class="info__param-value">{{ integration.installationOptions.languages | translate }}</div>
+    </div>
+  </div>
+
+  <!-- Underline links -->
+  <div class="info__underline-links">
+    <div class="info__underline-item">
+      <div>
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="'#icon-network'"></use>
+        </svg>
+      </div>
+
+      <div (click)="openLink(integration.installationOptions.website)" class="info__underline-label">{{ 'integration_full_page.information.website' | translate }}</div>
+    </div>
+    <div class="info__underline-item">
+      <div>
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="'#icon-lock'"></use>
+        </svg>
+      </div>
+
+      <div (click)="openLink('policy')" class="info__underline-label">{{ 'integration_full_page.information.policy' | translate }}</div>
+    </div>
+    <div class="info__underline-item">
+      <div>
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="'#icon-draft-16'"></use>
+        </svg>
+      </div>
+
+      <div (click)="openLink('agreement')" class="info__underline-label">{{ 'integration_full_page.information.agreement' | translate }}</div>
+    </div>
+  </div>
+</div>

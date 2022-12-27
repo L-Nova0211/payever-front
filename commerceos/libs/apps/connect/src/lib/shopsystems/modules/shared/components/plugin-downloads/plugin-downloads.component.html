@@ -1,0 +1,18 @@
+<mat-list>
+  <mat-list-item *ngFor="let item of (downloadLinks || [])">
+    <div class="mat-list-item-col">
+      {{ item.name }}
+    </div>
+    <div class="mat-list-item-col text-right sections-step-buttons">
+      <a mat-raised-button
+         class="pull-right button-download"
+         color="muted-light"
+         target="_blank"
+         [href]="item.link"
+         [class.mat-button-rounded]="true"
+         [class.mat-button-xs]="true">
+        {{ 'actions.download' | translate }}
+      </a>
+    </div>
+  </mat-list-item>
+</mat-list>

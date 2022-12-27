@@ -1,0 +1,105 @@
+@mixin DisplayGridStyles($isMobile: 0) {
+  @if $isMobile == 0 {
+    display: grid;
+    width: calc(100% - 16px);
+  } @else {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  align-items: center;
+  background-color: inherit;
+
+  &.empty {
+    border-radius: 12px;
+  }
+}
+
+@mixin TableGridCell {
+  cursor: pointer;
+  color: #fff;
+  background-color: #1c1d1e;
+  height: 40px;
+  border-top: 1px solid #393939;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  padding: 0 8px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  .cut-overflow {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & .checkbox {
+    background-color: #3e3d3c;
+    border-color: #fff;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    fill: none;
+    height: 16px;
+    margin-bottom: -4px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 0.8;
+    width: 16px;
+    min-width: 16px;
+    transform: translateY(-2px);
+
+    &.active {
+      background-color: #0371e2;
+      stroke: #fff;
+    }
+  }
+}
+
+@mixin GridColumns($checkboxWidth) {
+  grid-template-columns: repeat(calc(var(--num-columns) - 1), minmax(auto, 1fr)) min-content;
+
+  &:not(.mobile-view) {
+    @include DisplayGridStyles(0);
+    width: 100%;
+  }
+  &.mobile-view {
+    @include DisplayGridStyles(1);
+  }
+
+  &.has-buttons {
+    grid-template-columns: repeat(var(--num-columns), minmax(auto, 1fr)) repeat(var(--num-buttons), 120px);
+  }
+  @media (max-width: 720px) {
+    &.has-buttons {
+      grid-template-columns: repeat(var(--num-columns), minmax(auto, 1fr)) repeat(var(--num-buttons), 50px);
+    }
+  }
+  &.selectable {
+    grid-template-columns: $checkboxWidth repeat(var(--num-columns), minmax(auto, 1fr));
+
+    &.has-buttons {
+      grid-template-columns: $checkboxWidth repeat(var(--num-columns), minmax(auto, 1fr)) repeat(
+          var(--num-buttons),
+          120px
+        );
+    }
+
+    @media (max-width: 720px) {
+      &.has-buttons {
+        grid-template-columns: $checkboxWidth repeat(var(--num-columns), minmax(auto, 1fr)) repeat(
+            var(--num-buttons),
+            1px
+          );
+      }
+    }
+  }
+}

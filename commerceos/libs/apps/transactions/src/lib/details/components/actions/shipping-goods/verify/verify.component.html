@@ -1,0 +1,25 @@
+<form [formGroup]="form" *ngIf="preparedControls">
+  <pe-verify-action-fields [order]="order"></pe-verify-action-fields>
+
+  <peb-form-background class="form-background second-section" *ngIf="securityFormControl">
+    <peb-form-field-input
+      [isFieldInvalid]="isSubmitted && securityFormControl.errors"
+      [errorMessage]="'transactions.form.verify.errors.required' | translate"
+      [label]="'transactions.form.shipping_goods.labels.otp_label' | translate"
+      appearance="label"
+    >
+      <input type="text" [mask]="securityField.mask" [formControl]="securityFormControl" />
+    </peb-form-field-input>
+  </peb-form-background>
+
+  <peb-form-background class="form-background second-section">
+    <peb-checkbox
+      [isFieldInvalid]="isSubmitted && form.get('_confirm').errors"
+      class="verify-checkbox"
+      type="label"
+      formControlName="_confirm"
+    >
+      {{ 'transactions.form.shipping_goods.labels.confirm' | translate }}
+    </peb-checkbox>
+  </peb-form-background>
+</form>

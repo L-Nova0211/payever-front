@@ -1,0 +1,8 @@
+<div class="payment-section" *ngIf="order" [ngClass]="theme">
+  <div class="section-item">
+    <div class="section-item__label">{{'transactions.sections.payment.payment_method' | translate}}</div>
+    <div class="section-item__value">
+      {{'integrations.payments.' + order.payment_option.type + '.title' | translate}}
+    </div>
+  </div>
+</div>

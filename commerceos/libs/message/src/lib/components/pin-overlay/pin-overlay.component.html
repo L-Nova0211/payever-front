@@ -1,0 +1,8 @@
+<div class="pin-message">
+  <div class="pin-message__title">{{ 'pin-overlay.title' | translate }}</div>
+  <div class="pin-message__subtitle">{{ 'pin-overlay.subtitle' | translate }}</div>
+  <button class="pin-message__pin pin-message__button"
+          (click)="onConfirm()">{{ 'pin-overlay.pin' | translate }}</button>
+  <button class="pin-message__cancel pin-message__button"
+          (click)="onDecline()">{{ 'pin-overlay.cancel' | translate }}</button>
+</div>

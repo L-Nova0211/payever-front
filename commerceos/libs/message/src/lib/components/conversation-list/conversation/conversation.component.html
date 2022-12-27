@@ -1,0 +1,81 @@
+<div
+  *ngIf="conversation"
+  longpressevent
+  class="pe-grid-conversation"
+  [class.pe-grid-conversation_active]="isConversationActive"
+  (click)="setConversationAsActive()"
+  (longPress)="openContextMenuItem($event)"
+>
+  <div class="pe-grid-conversation__logo">
+    <img *ngIf="item.image" alt="" [src]="item.image" loading="lazy" />
+    <div *ngIf="!item.image" class="pe-grid-conversation__abbreviation">
+      {{ conversation.initials | uppercase }}
+    </div>
+  </div>
+  <div class="pe-grid-conversation__content">
+    <div class="pe-grid-conversation__header">
+      <span class="pe-grid-conversation__title">{{ item.title }}</span>
+      <span class="pe-grid-conversation__time">{{
+        conversation.isUpdatedToday
+          ? (conversation.updatedAt | date: 'HH:mm')
+          : (conversation.updatedAt | date: 'dd.MM.YYYY')
+      }}</span>
+    </div>
+    <div class="pe-grid-conversation__description">
+      <span class="pe-grid-conversation__last-message" *ngIf="!(typingMembers && typingMembers.length)">
+        <span *ngIf="conversation.draft" class="pe-grid-conversation__draft-heading">
+          {{ 'message-app.sidebar.draft' | translate }}
+        </span>
+        <svg *ngIf="!conversation.draft && conversation.isLastMessageAttachment">
+          <use xlink:href="#icon-file-14"></use>
+        </svg>
+        <div
+          *ngIf="conversation.integrationName !== 'email'; else emailSubject"
+          [innerHTML]="conversation.lastMessage"
+        ></div>
+      </span>
+
+      <pe-chat-typing-dots
+        class="pe-grid-conversation__last-message"
+        *ngIf="typingMembers && typingMembers.length"
+        [userTyping]="typingMembers"
+        [truncateLength]="10"
+        [messageAppColor]="messageAppColor"
+      >
+      </pe-chat-typing-dots>
+
+      <div class="pe-grid-conversation__info">
+        <span
+          *ngIf="conversation.showTag"
+          class="pe-grid-conversation__tag"
+          [style.background-color]="conversation.accentColor"
+        >
+          <svg class="icon icon-18">
+            <use [attr.xlink:href]="'#icon-at-sign'"></use>
+          </svg>
+        </span>
+        <ng-container *ngIf="conversation.unreadMessages as number; else privateChannel">
+          <span
+            *ngIf="number - conversation.showTag"
+            class="pe-grid-conversation__unread-messages"
+            [style.background-color]="conversation.accentColor"
+          >
+            {{ number < 50 ? number : '50+' }}
+          </span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #emailSubject>
+  <div>{{ item.description }}</div>
+</ng-template>
+
+<ng-template #privateChannel>
+  <span *ngIf="conversation.isPrivateChannel" class="pe-grid-conversation__private-chat">
+    <svg class="icon icon-16">
+      <use [attr.xlink:href]="'#icon-lock'"></use>
+    </svg>
+  </span>
+</ng-template>

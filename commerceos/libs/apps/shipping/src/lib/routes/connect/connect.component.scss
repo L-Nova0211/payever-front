@@ -1,0 +1,133 @@
+@import '../settings';
+
+.dark {
+  &.page {
+    .group {
+      margin-bottom: 15px;
+      &__item {
+        background-color: #1c1d1e;
+
+        &-right-content {
+          .button-toggle-container {
+            margin: 0;
+            padding: 0;
+          }
+          &__button {
+            width: fit-content;
+            margin-right: 16px;
+            font-family: Roboto,sans-serif;
+            color: #0091df;
+            cursor: pointer;
+          }
+        }
+
+        &-icon {
+          .mat-icon {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+    .add-button {
+      height: 40px;
+      width: 100%;
+      background-color: #1c1d1e;
+      color: #0091df;
+      font-size: 16px;
+      line-height: 1.33;
+    }
+  }
+}
+
+.light {
+  &.page {
+    .add-button {
+      height: 40px;
+      width: 100%;
+      background-color: #fff;
+      color: #0091df;
+      font-size: 16px;
+      line-height: 1.33;
+    }
+    .page__title {
+      color: #000;
+    }
+    .group {
+      &__item {
+        background-color: #fff;
+        &-right-content {
+          .button-toggle-container {
+            margin: 0;
+            padding: 0;
+          }
+
+          &__button {
+            width: fit-content;
+            margin-right: 16px;
+            font-family: Roboto,sans-serif;
+            color: #0091df;
+            cursor: pointer;
+          }
+        }
+
+        &-icon {
+          .mat-icon {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        &-label {
+          color: #000;
+        }
+      }
+    }
+    .divider {
+      border-left-color: #fff;
+      background-color: rgba(155, 155, 155, 0.2);
+    }
+  }
+}
+
+.transparent {
+  &.page {
+    .add-button {
+      height: 40px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #0091df;
+      font-size: 16px;
+      line-height: 1.33;
+    }
+    .group {
+      &__item {
+        background-color: rgba(0, 0, 0, 0.3);
+        &-right-content {
+          .button-toggle-container {
+            margin: 0;
+            padding: 0;
+          }
+
+          &__button {
+            width: fit-content;
+            margin-right: 16px;
+            font-family: Roboto,sans-serif;
+            color: #0091df;
+            cursor: pointer;
+          }
+        }
+        &-icon {
+          .mat-icon {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    border-left-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(155, 155, 155, 0.2);
+  }
+}

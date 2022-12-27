@@ -1,0 +1,8 @@
+<two-column-form *ngFor="let file of files; let i = index">
+  <button peb-button color="form" class="attachments-line">{{file.name}}</button>
+  <div class="delete-icon">
+    <mat-icon svgIcon="delete" (click)="removeFileFromFileList(i)"></mat-icon>
+  </div>
+</two-column-form>
+<input class="file-input" type="file" #btn hidden="hidden" >
+<button peb-button class="attachment-button" (click)="btn.click()">Add attachment</button>

@@ -1,0 +1,112 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="availabilityForm"
+  [ngClass]="theme"
+>
+  <div class="block-elements">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'appointments-app.field_editor.field_title.error' | translate"
+        [isFieldInvalid]="availabilityForm.controls.name.invalid"
+        [label]="'appointments-app.type_editor.name.label' | translate"
+      >
+        <input
+          formControlName="name"
+          type="text"
+        />
+      </peb-form-field-input>
+      <peb-select
+        formControlName="timeZone"
+        [label]="'appointments-app.availability_editor.time-zone' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of timeZones"
+          [label]="option.label"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+  </div>
+  <div formArrayName="weekDayAvailability">
+    <peb-expandable-panel
+      *ngFor="let dayItem of formArray('weekDayAvailability').controls; let dayIndex=index"
+      [headerLabel]="'appointments-app.availability_editor.day.' + dayItem.get('name').value | translate"
+      [isContentOpen]="dayItem.get('isEnabled').value"
+    >
+      <div [formGroupName]="dayIndex">
+        <peb-form-background>
+          <peb-button-toggle
+            formControlName="isEnabled"
+            [label]="'appointments-app.availability_editor.day.' + dayItem.get('name').value | translate"
+            labelPosition="before"
+            [spacer]="true"
+          ></peb-button-toggle>
+        </peb-form-background>
+            <div formArrayName="ranges">
+              <div
+                class="form-sub-group mt-12"
+                *ngFor="let available of formArrayDayAvailabilityRanges(dayItem).controls; let i=index"
+              >
+                <peb-form-background>
+                  <two-column-form [formGroupName]="i">
+                    <peb-form-field-input
+                      appearance="label"
+                      (click)="openTimepicker($event, available.controls.from)"
+                      [errorMessage]="'appointments-app.availability_editor.time.error' | translate"
+                      [isFieldInvalid]="isInvalid(available.controls.from)"
+                      [label]="'appointments-app.availability_editor.time.from' | translate"
+                    >
+                      <input pe-input-time
+                             formControlName="from"
+                             [placeholder]="'appointments-app.availability_editor.time.placeholder' | translate"
+                             [textMask]="maskRule(timeMask)"
+                             type="text"
+                      />
+                      <div class="suffix-icon">
+                        <mat-icon svgIcon="time"></mat-icon>
+                      </div>
+                    </peb-form-field-input>
+                    <peb-form-field-input
+                      appearance="label"
+                      (click)="openTimepicker($event, available.controls.to, available.controls.from)"
+                      [errorMessage]="'appointments-app.availability_editor.time.error' | translate"
+                      [isFieldInvalid]="isInvalid(available.controls.to)"
+                      [label]="'appointments-app.availability_editor.time.to' | translate"
+                    >
+                      <input pe-input-time
+                             formControlName="to"
+                             [placeholder]="'appointments-app.availability_editor.time.placeholder' | translate"
+                             [textMask]="maskRule(timeMask)"
+                             type="text"
+                      />
+                      <div class="suffix-icon">
+                        <mat-icon svgIcon="time"></mat-icon>
+                      </div>
+                    </peb-form-field-input>
+                  </two-column-form>
+                </peb-form-background>
+                <button color="warn" (click)="removeCondition(dayItem, i)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+                    <use xlink:href="#icon-basket"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+        <button pe-form-button *ngIf="dayItem.get('isEnabled').value" class="mt-12" color="confirm" (click)="addCondition(dayItem)">
+          {{ 'appointments-app.actions.add_condition' | translate }}
+        </button>
+      </div>
+    </peb-expandable-panel>
+  </div>
+  <div class="bottom-element">
+    <peb-checkbox
+      class="item-radio"
+      type="label"
+      formControlName="isDefault"
+    >
+      {{ 'appointments-app.availability_editor.set_default' | translate }}
+    </peb-checkbox>
+  </div>
+</form>

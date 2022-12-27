@@ -1,0 +1,20 @@
+<div [formGroup]="embedLinks">
+  <pe-picker
+    class="picker-channel"
+    label="{{ 'message-app.message-integration.channels' | translate }}"
+    placeholder="{{ 'message-app.message-integration.search' | translate }}"
+    [data]="channelList"
+    buttonLabel="{{ 'message-app.message-integration.new-channel' | translate }}"
+    (buttonClick)="newChannel()"
+    formControlName="channels"
+  ></pe-picker>
+
+  <div class="embed-link-wrapper">
+    <p class="title">{{ 'message-app.message-integration.embed-link' | translate }}</p>
+    <textarea #embedCode>{{embedHTMLCode}}</textarea>
+  </div>
+  <button
+    class="copy-embed"
+    [class.success]="copied"
+    (click)="copyEmbed(embedCode)">{{embedTextButton}}</button>
+</div>

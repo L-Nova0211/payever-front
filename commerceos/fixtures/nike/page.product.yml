@@ -1,0 +1,50 @@
+id: nike-product-page
+name: Product Page
+variant: product
+type: replica
+master: ~
+data: {}
+template:
+  id: nike-product-page
+  type: document
+  children:
+    - id: content-section
+      type: section
+      children:
+        - id: content-section-product-details
+          type: shop-product-details
+
+stylesheets:
+  desktop:
+    nike-product-page: {}
+    # ----------------------------------
+    # Desktop Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-product-details:
+      width: 1024
+
+  tablet:
+    nike-product-page: {}
+    # ----------------------------------
+    # Tablet Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-product-details:
+      width: 768
+      margin: 0 12
+
+  mobile:
+    nike-product-page: {}
+    # ----------------------------------
+    # Mobile Content Section
+    # ----------------------------------
+    content-section:
+      height: 700
+    content-section-product-details:
+      width: 360
+      margin: 0 12
+
+context: {}

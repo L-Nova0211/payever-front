@@ -1,0 +1,53 @@
+.pickers-wrapper {
+  @media (max-width: 720px) {
+    width: 100%;
+    max-width: 720px;
+  }
+  @media (min-width: 720px) {
+    width: 720px;
+  }
+  @media (min-width: 1180px) {
+    width: 928px;
+  }
+  @media (min-width: 1400px) {
+    width: 1100px;
+  }
+  @media (max-height: 667px) {
+    height: 496px;
+  }
+  @media (min-height: 667px) {
+    height: 570px;
+  }
+
+  &__add-button,
+  &__close-button {
+    padding: 0 10px;
+    min-width: 51px;
+    height: 24px;
+    border-radius: 6px;
+    outline: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.91;
+    text-align: center;
+    color: #ffffff;
+  }
+  &__add-button {
+    background-color: #0371e2;
+    margin-left: 8px;
+  }
+  &__close-button {
+    background-color: #86868b;
+  }
+  &__content {
+    height: calc(100% - 36px);
+  }
+  &__header {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+  }
+}

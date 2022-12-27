@@ -1,0 +1,30 @@
+<ng-container *ngFor="let option of options">
+  <ng-container *ngIf="isGroup(option)">
+    <div class="option__group">
+      <ng-container *ngFor="let o of option">
+        <ng-container *ngTemplateOutlet="optionTemplate; context: { option: o }"></ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!isGroup(option)">
+    <ng-container *ngTemplateOutlet="optionTemplate; context: { option: option }"></ng-container>
+  </ng-container>
+
+</ng-container>
+
+<ng-template #optionTemplate let-option="option">
+  <div class="option__item" (click)="selected.emit(option.value)">
+    <svg [class.active]="isSelected(option.value)" width="10" height="9" viewBox="0 0 10 9">
+      <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#0371e2" stroke-width="1.5">
+          <path d="M8 35.57L11.032 39.026 15.96 32" transform="translate(-7 -31)"/>
+        </g>
+      </g>
+    </svg>
+    <span *ngIf="option.iconTpl" class="option__icon">
+      <ng-container [ngTemplateOutlet]="option.iconTpl" [ngTemplateOutletContext]="{ option: option }"></ng-container>
+    </span>
+    <span>{{ option.name }}</span>
+  </div>
+</ng-template>

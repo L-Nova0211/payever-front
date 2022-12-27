@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  position: relative;
+}
+.mat-progress-spinner-light {
+  position: absolute;
+  left: calc(50% - 13px);
+  top: 110px;
+}

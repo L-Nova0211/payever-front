@@ -1,0 +1,212 @@
+//
+// Datepicker
+// ----------------------------
+
+@include mat-datepicker-theme($theme);
+
+.pe-bootstrap {
+
+  // As we use themes - dark is not needed anymore
+  /*
+  .mat-datepicker-dark {
+
+    &.mat-calendar {
+      backdrop-filter: blur(50px);
+      background-color: $color-grey-5;
+    }
+
+    .mat-calendar-period-button {
+      color: $color-white;
+    }
+
+    .mat-calendar-table-header {
+      th {
+        color: $color-white-grey-5;
+      }
+    }
+
+    .mat-calendar-previous-button {
+      color: $color-white-grey-4;
+    }
+
+    .mat-calendar-next-button {
+      color: $color-white-grey-4;
+
+      &[disabled] {
+        color: $color-white-grey-2;
+      }
+    }
+
+    .mat-calendar-body-disabled {
+
+      .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+        color: $color-secondary-2;
+      }
+    }
+
+    .mat-calendar-body-cell-content {
+      color: $color-white-grey-8;
+    }
+  }
+  */
+
+  .mat-datepicker {
+    &-dialog {
+      .mat-dialog-container {
+        background: transparent;
+        padding: 0;
+
+        .mat-datepicker-content-touch {
+          margin: 0;
+        }
+      }
+    }
+
+    &-popup {
+      @include payever_transform_translate(0, -$grid-unit-y);
+
+      &[style*="top"] {
+        @include payever_transform_translate(0, $grid-unit-y);
+      }
+    }
+
+    &-content {
+      background: transparent;
+      border-radius: $border-radius-base * 2;
+      box-shadow: $box-shadow;
+    }
+
+    &-toggle {
+
+      .mat-button-wrapper {
+        .mat-datepicker-toggle-default-icon {
+          width: $icon-size-20;
+          height: $icon-size-20;
+          color: $mat-form-field-label-empty-color;
+        }
+      }
+
+      .mat-icon-button {
+        background-color: transparent;
+        border-radius: 0;
+
+        .mat-button-focus-overlay {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .mat-calendar {
+    background-color: $color-primary;
+    border-radius: $border-radius-base * 2;
+    height: $mat-datepicker-calendar-height !important;
+
+    &-header {
+      color: $color-secondary-0;
+      padding: $grid-unit-y 0 0 0;
+      margin-bottom: $grid-unit-y;
+    }
+
+    &-controls {
+      margin: 0;
+    }
+
+    &-period-button {
+      color: $color-secondary-7;
+      min-height: 0;
+      background-color: transparent;
+
+      .mat-calendar-arrow {
+        display: none;
+      }
+
+      &:hover {
+        .mat-button-focus-overlay,
+        .mat-button-ripple {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &-previous-button,
+    &-next-button {
+      background-color: transparent;
+      color: $color-secondary-0;
+
+      &[disabled] {
+        color: $color-secondary-2;
+      }
+    }
+
+    &-content {
+      padding: 0;
+      padding-bottom: ceil($grid-unit-y / 2);
+    }
+
+    &-table-header {
+      color: $color-secondary-0;
+
+      th {
+        font-weight: $font-weight-regular;
+        padding-bottom: $grid-unit-y;
+        text-align: center;
+      }
+
+      .mat-calendar-table-header-divider {
+        padding-bottom: ceil($grid-unit-y / 2);
+        &:after {
+          left: 0;
+          right: 0;
+          background-color: $color-secondary-2;
+        }
+      }
+    }
+
+    &-body {
+      padding-top: $grid-unit-y;
+      color: $color-secondary-2;
+
+      tr {
+        border-bottom: none;
+      }
+
+      tr:first-child {
+        .mat-calendar-body-label {
+          visibility: hidden;
+
+          // Hides unnecessary month label which takes space of a full row
+          // and increases calendar height
+          // otherwise useful to keep correct position of 1st week labels
+          &[colspan="7"] {
+            display: none;
+          }
+        }
+      }
+
+      &-cell-content {
+        color: $color-secondary-0;
+        border: none;
+        border-radius: 100%;
+        overflow: hidden;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      &-selected {
+        background: $color-secondary-1;
+      }
+    }
+
+    .mat-calendar-body-disabled {
+      .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+        color: $color-secondary-2;
+      }
+    }
+  }
+}

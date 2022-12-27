@@ -1,0 +1,24 @@
+<button class="tool" (click)="!loading && openShapes()" [class.tool-loading]="loading">
+  <div class="tool__icon" *ngIf="!isMobile; else mobileIcon">
+    <div class="insert">+</div>
+    <span class="tool__label">
+      Insert
+    </span>
+  </div>
+  <ng-template #mobileIcon>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+      <g fill="none" fill-rule="evenodd">
+        <g>
+          <g>
+            <g transform="translate(-168 -69) translate(168 69)">
+              <path fill="#0371E2" fill-rule="nonzero"
+                d="M8.381 0c3.517 0 6.529 2.167 7.772 5.238h-1.465c-1.155-2.313-3.545-3.902-6.307-3.902-3.891 0-7.045 3.154-7.045 7.045 0 2.762 1.589 5.152 3.902 6.307v1.465C2.167 14.91 0 11.898 0 8.38 0 3.752 3.752 0 8.381 0z" />
+              <rect width="15.426" height="15.426" x="5.906" y="5.906" stroke="#0371E2" stroke-width="1.336"
+                rx="3.143" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </ng-template>
+</button>

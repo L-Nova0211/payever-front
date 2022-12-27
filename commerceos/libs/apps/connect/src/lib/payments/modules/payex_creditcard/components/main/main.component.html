@@ -1,0 +1,24 @@
+<payment-main-wrap
+    [paymentMethod]="paymentMethod"
+    [doOpenNextPanel$]="openNextPanel$"
+    [doOpenPanel$]="openPanel$"
+    [forceHideSectionAccount]="true"
+    [hasExternalRegistration]="true"
+    (dataLoading)="onDataLoad.next($event)">
+  <ng-template let-type="type" let-index="index">
+    <ng-container *ngIf="type === 'authentication'">
+      <authentication [paymentIndex]="index"></authentication>
+    </ng-container>
+    <ng-container *ngIf="type === 'external-registration'">
+      <payment-external-registration [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-external-registration>
+    </ng-container>
+    <ng-container *ngIf="type === 'settings'">
+      <div class="payment-santander-installment__settings-wrapper">
+        <payment-settings-acceptFee (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-acceptFee>
+        <payment-settings-shopRedirectEnabled (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-shopRedirectEnabled>
+        <payment-settings-delayedPayments class="rounded-bottom" (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-delayedPayments>
+        <payment-settings-save-button [paymentMethod]="paymentMethod" [paymentIndex]="index" [data]="settingsOptionsData$ | async"></payment-settings-save-button>
+      </div>
+    </ng-container>
+  </ng-template>
+</payment-main-wrap>

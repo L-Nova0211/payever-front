@@ -1,0 +1,16 @@
+:host{
+    display: flex;
+}
+.container{
+    padding: 0 12px 6px;
+    .toggle-container{
+        background-color: #111111;
+        display: flex;
+        justify-content: space-between;
+        div:first-child{
+            margin:8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}

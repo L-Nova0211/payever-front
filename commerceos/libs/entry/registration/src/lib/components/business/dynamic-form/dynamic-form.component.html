@@ -1,0 +1,14 @@
+<entry-dynamic-business-form
+  [businessRegistrationData]="businessRegistrationData"
+  [isLoading]="isLoading"
+  [businessForm]="businessForm"
+  submitTextKey="actions.get_started"
+  [allowValidation]="allowValidation"
+  (formDataEmitter)="onFormDataReceive($event)"
+  (formHasErrorsEmitter)="onFormErrorReceive($event)"
+></entry-dynamic-business-form>
+<button class="signup-button" type="submit" (click)="validateAndCreateBusiness()">
+  <pe-progress-button-content class="mat-progress-spinner-light" [loading]="isLoading">{{
+    'actions.get_started' | translate
+  }}</pe-progress-button-content>
+</button>

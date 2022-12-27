@@ -1,0 +1,1036 @@
+id: pages-accesories
+type: document
+children:
+  - id: header
+    area: header
+    type: section
+    style:
+      backgroundColor: rgba(0,0,0,0.8)
+      height: 45px
+    children:
+      - id: header-block
+        type: block
+        style:
+          display:
+            desktop: block
+            tablet: block
+            mobile: none
+          width: 100%
+          height: 45px
+          textAlign: center
+        children:
+          - id: header-link-1
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Support
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+  - id: hero-1
+    area: hero
+    type: section
+    style: 
+      backgroundColor: "#f2f2f2"
+      height: 480px
+    children: 
+      - id: hero-1-image
+        type: block
+        style: 
+          backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-alp-201909?wid=2880&hei=960&fmt=png-alpha&qlt=80&.v=1566582108849
+          backgroundSize: cover
+          backgroundRepeat: no-repeat
+          left: 
+            desktop: 165
+            tablet: 165
+            mobile: 0
+          height: 480px
+      - id: hero-1-text-container
+        type: block
+        style: 
+          margin: 0 0 0 22px
+          top: -280
+          width: 340px
+        children: 
+          - id: hero-1-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Make the perfect connection.
+            style: 
+              fontSize: 48
+          - id: hero-1-link
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: "Shop Power & Cables >"
+            style: 
+              fontSize: 22
+              top: 20
+              color: "#0070c9"
+
+# Products 1 header 
+  - id: products-1-header
+    type: section
+    style: 
+      top: 0
+    children:
+      - id: products-1-container
+        type: block
+        style: 
+          width:
+            desktop: unset
+            tablet: unset
+            mobile: 200px
+          margin: 50px auto
+        children: 
+          - id: products-1-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Featured Mac Accessories
+            style: 
+              fontSize: 
+                desktop: 40
+                tablet: 40
+                mobile: 28
+              textAlign: center
+
+# Products section 1
+  - id: products-section-1
+    type: section
+    area: products
+    style: 
+      top: 0
+    children:
+      - id: products-1-grid
+        type: grid
+        area: products
+        style: 
+          items: 2
+          direction: 
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 675
+            tablet: 675
+            mobile: 1250
+        children:
+          - id: product-1
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-1
+              padding: 40px
+            children:
+              - id: product-1-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWV92?wid=532&hei=582&fmt=png-alpha&qlt=80&.v=1572981351218
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-1-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Leather Sleeve for 16‑inch MacBook Pro – Saddle Brown
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-1-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $199.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-2
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-2
+              padding: 40px
+            children:
+              - id: product-2-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/pro-display-hero?wid=1420&hei=930&fmt=png-alpha&qlt=80&.v=1572384750703
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-2-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Pro Display XDR - Standard glass
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-2-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $4,999.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+
+# Products section 2
+  - id: products-section-2
+    type: section
+    area: products
+    style: 
+      top: 0
+    children:
+      - id: products-2-grid
+        type: grid
+        area: products
+        style: 
+          items: 3
+          direction: 
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 675
+            tablet: 675
+            mobile: 1820
+        children:
+          - id: product-1
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-1
+              padding: 40px
+            children:
+              - id: product-1-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HMUB2?wid=532&hei=582&fmt=png-alpha&qlt=80&.v=1563827752399
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-1-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: LG UltraFine 5K Display
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-1-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $1,299.95
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-2
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-2
+              padding: 40px
+            children:
+              - id: product-2-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MX0J2_GEO_US?wid=532&hei=582&fmt=png-alpha&qlt=80&.v=1573268141869
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-2-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: 96W USB-C Power Adapter
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-2-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $79.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-3
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-3
+              padding: 40px
+            children:
+              - id: product-3-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MJ1M2?wid=532&hei=582&fmt=png-alpha&qlt=80&.v=1478279537071
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-3-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: USB-C to USB Adapter
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-3-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $19.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+
+# Products 2 header 
+  - id: products-2-header
+    type: section
+    style: 
+      top: 0
+    children:
+      - id: products-2-container
+        type: block
+        style: 
+          width:
+            desktop: unset
+            tablet: unset
+            mobile: 200px
+          margin: 50px auto
+        children: 
+          - id: products-2-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mice & Keyboards
+            style: 
+              fontSize: 
+                desktop: 40
+                tablet: 40
+                mobile: 28
+              textAlign: center
+
+# Products section 3
+  - id: products-section-3
+    type: section
+    area: products
+    style: 
+      top: 0
+    children:
+      - id: products-3-grid
+        type: grid
+        area: products
+        style: 
+          items: 3
+          direction: 
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 675
+            tablet: 675
+            mobile: 1770
+        children:
+          - id: product-1
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-1
+              padding: 40px
+            children:
+              - id: product-1-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MRMH2?wid=532&hei=582&fmt=png-alpha&.v=1520629359080
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-1-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Magic Keyboard with Numeric Keypad
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-1-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $149.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-2
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-2
+              padding: 40px
+            children:
+              - id: product-2-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MRME2_AV1?wid=532&hei=582&fmt=png-alpha&.v=1520531660489
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-2-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Magic Mouse 2
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-2-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $99.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-3
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-3
+              padding: 40px
+            children:
+              - id: product-3-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MRMF2_AV1?wid=532&hei=582&fmt=png-alpha&.v=1520532432823
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-3-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Magic trackpad 2
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-3-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $149.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+
+# Products 2 shop link
+  - id: products-2-link
+    type: section
+    style: 
+      top: 0
+    children:
+      - id: products-2-container
+        type: block
+        style: 
+          width: 238px
+          margin: 50px auto
+        children: 
+          - id: products-2-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: "Shop Mice & Keyboards >"
+            style: 
+              fontSize: 22
+              top: 20
+              color: "#0070c9"
+
+# Products 3 header 
+  - id: products-3-header
+    type: section
+    style: 
+      top: 0
+    children:
+      - id: products-3-container
+        type: block
+        style: 
+          width:
+            desktop: unset
+            tablet: unset
+            mobile: 200px
+          margin: 50px auto
+        children: 
+          - id: products-3-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac Essentials
+            style: 
+              fontSize: 
+                desktop: 40
+                tablet: 40
+                mobile: 28
+              textAlign: center
+
+# Products section 4
+  - id: products-section-4
+    type: section
+    area: products
+    style: 
+      top: 0
+    children:
+      - id: products-4-grid
+        type: grid
+        area: products
+        style: 
+          items: 3
+          direction: 
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 675
+            tablet: 675
+            mobile: 1920
+        children:
+          - id: product-1
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-1
+              padding: 40px
+            children:
+              - id: product-1-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=532&hei=582&fmt=png-alpha&qlt=80&.v=1572990352299
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-1-info
+                type: text
+                fontSize: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Free engraving
+                style: 
+                  color: "#e85d00"
+                  textAlign: center
+                  padding: 5px 0 9px
+              - id: products-1-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: AirPods Pro
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-1-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $249.00
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-2
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-2
+              padding: 40px
+            children:
+              - id: product-2-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HNFF2?wid=532&hei=582&fmt=png-alpha&.v=1562899790436
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-2-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Incase 13" Compact Sleeve in Flight Nylon for MacBook Air and MacBook Pro
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-2-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $49.95
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+          - id: product-3
+            type: block
+            style:
+              backgroundColor: "#f2f2f2"
+              slot: cell-3
+              padding: 40px
+            children:
+              - id: product-3-image
+                type: block
+                style:
+                  height: 300px
+                  margin: 65px 0px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HMTZ2?wid=532&hei=582&fmt=png-alpha&.v=1549667432008
+                  backgroundRepeat: no-repeat
+                  backgroundPosition: center center
+                  backgroundSize: contain
+              - id: products-1-info
+                type: text
+                fontSize: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Only at Apple
+                style: 
+                  color: "#e85d00"
+                  textAlign: center
+                  padding: 5px 0 9px
+              - id: products-3-name
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: LaCie 2TB Mobile Drive External Hard Drive USB-C USB 3.0
+                style: 
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+              - id: products-3-price
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: $89.95
+                style:
+                  padding: 20px 0px
+                  fontSize: 
+                    desktop: 17
+                    tablet: 17
+                    mobile: 17
+                  textAlign: center
+
+# Program section
+  - id: program-section
+    area: program
+    type: section
+    style: 
+      height: 390px
+      backgroundColor: "#fafafa"
+    children: 
+      - id: program-container
+        type: block
+        style:
+          maxWidth: 
+            desktop: 492px
+            tablet: 492px
+            mobile: 292px
+          top: 100
+          margin: 0px auto
+        children:
+          - id: program-image
+            type: block
+            style:
+              height: 54px 
+              backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-applecare-accessories-201810_FMT_WHH?wid=108&hei=108&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1540232204009
+              backgroundPosition: center center
+              backgroundSize: contain
+              backgroundRepeat: no-repeat
+          - id: program-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Protect your Mac
+            style:
+              margin: 16px 0 0 0
+              fontSize: 32
+              textAlign: center
+          - id: program-description
+            type: text
+            text: Add three years of coverage with AppleCare+ and get service and support from Apple experts.
+            style:
+              fontSize: 17
+              margin: 16px 0px
+              textAlign: center
+          - id: products-link
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: "Learn more >"
+            style: 
+              fontSize: 22
+              top: 20
+              color: "#0070c9"
+              textAlign: center
+        
+# Footer
+  - id: footer
+    area: footer
+    type: section
+    style:
+      background: "#f2f2f2"
+      padding: 30px 0
+    children:
+      - id: footer-col1
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 100px
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          verticalAlign: top
+          textAlign: left
+        children:
+          - id: footer-col1-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Einkaufen und mehr
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col1-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-6
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-7
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-8
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: AirPods
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-9
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: HomePod
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col2
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col2-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Services
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col2-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple TV+
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Arcade
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iCloud
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col3
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col3-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Store
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col3-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Store finden
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Genius Bar
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Today at Apple
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0

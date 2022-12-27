@@ -1,0 +1,53 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.capture.heading"
+  [theme]="theme"
+  [submitTitleTranslateKey]="doneBtnTitle"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background>
+      <two-column-form>
+        <peb-form-field-input
+          [isFieldInvalid]="form.get('customerId').errors?.invalid"
+          [errorMessage]="form.get('customerId').errors?.invalid"
+          label="{{ 'transactions.form.invoice.labels.customer_id' | translate }}"
+          appearance="label"
+        >
+          <input
+            type="number"
+            pebInput
+            placeholder="{{ 'transactions.form.invoice.labels.customer_id' | translate }}"
+            formControlName="customerId"
+          />
+        </peb-form-field-input>
+        <peb-form-field-input
+          label="{{ 'transactions.form.invoice.labels.invoice_date' | translate }}"
+          appearance="label"
+          (click)="onOpenDatepicker($event)"
+        >
+          <input pebInput placeholder="DD/MM/YYYY" formControlName="invoiceDate" readonly />
+          <div class="suffix-icon">
+            <svg>
+              <use xlink:href="#icon-settings-datepicker"></use>
+            </svg>
+          </div>
+        </peb-form-field-input>
+      </two-column-form>
+      <peb-form-field-input
+        [isFieldInvalid]="form.get('invoiceId').errors?.invalid"
+        [errorMessage]="form.get('invoiceId').errors?.invalid"
+        label="{{ 'transactions.form.invoice.labels.invoice_id' | translate }}"
+        appearance="label"
+      >
+        <input
+          type="number"
+          pebInput
+          placeholder="{{ 'transactions.form.invoice.labels.invoice_id' | translate }}"
+          formControlName="invoiceId"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </form>
+</pe-action-container>

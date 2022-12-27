@@ -1,0 +1,22 @@
+:host {
+
+  .peb-form-field-input {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &.dark .peb-form-field-input { background-color: #111111; }
+  &.transparent .peb-form-field-input { background-color: rgba(0, 0, 0, .3); }
+  &.light .peb-form-field-input {
+    background-color: #ffffff;
+
+    input { color: black; }
+  }
+}
+
+.creating-channel-steps-main {
+  .peb-form-field-input {
+    margin-top: 12px;
+  }
+}

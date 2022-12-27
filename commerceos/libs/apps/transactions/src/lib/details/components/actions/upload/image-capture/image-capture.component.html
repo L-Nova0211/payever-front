@@ -1,0 +1,82 @@
+<button type="button"
+        mat-button
+        class="button upload-button"
+        (click)="matSelect.onContainerClick()">
+    <span class=wrap-content>
+      {{ translationsScope + '.labels.upload_document' | translate }}
+    </span>
+</button>
+
+<input
+  #fileSelector
+  class="hidden"
+  type="file"
+  accept="image/png,image/jpeg,image/jpg,.pdf"
+  (change)="onPickFile($event)"
+>
+<input
+  #mobileCameraCapture
+  class="hidden"
+  type="file"
+  accept="image/*"
+  capture="environment"
+  (change)="onPickFile($event)"
+>
+
+<mat-form-field class="hidden-select" appearance="fill">
+  <mat-select #matSelect>
+    <mat-option
+      *ngIf="isDesktop() && !forceHideDesktopTakePhoto"
+      class="hide-for-small-resolution"
+      (click)="onTakePhotoDesktop()"
+    >
+      <div class="option-content">
+        <span translate>{{ translationsScope + '.actions.takePhoto' }}</span>
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="'#icon-retro-camera'"></use>
+        </svg>
+      </div>
+    </mat-option>
+    <mat-option *ngIf="isMobile()" (click)="mobileCameraCapture.click()">
+      <div class="option-content">
+        <span translate>{{ translationsScope + '.actions.takePhoto' }}</span>
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="'#icon-retro-camera'"></use>
+        </svg>
+      </div>
+    </mat-option>
+    <mat-option (click)="fileSelector.click()">
+      <div class="option-content">
+        <span translate>{{ translationsScope + '.actions.chooseFile' }}</span>
+        <svg class="icon icon-16" style="width: 18px;">
+          <use [attr.xlink:href]="'#icon-photo-or-video-16'"></use>
+        </svg>
+      </div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ng-template #modalContent>
+  <mat-dialog-content>
+    <div class="overlay__header">
+      <button
+        class="overlay__button overlay__button_grey"
+        (click)="closeModal()"
+      >{{'actions.close' | translate}}</button>
+      <span class="overlay__title"></span>
+      <button
+        class="overlay__button"
+        (click)="triggerSnapshot()"
+      >{{ translationsScope + '.actions.takePhoto' | translate }}</button>
+    </div>
+    <div class="overlay__body">
+      <webcam *ngIf="isDesktop()"
+        [trigger]="triggerObservable"
+        [width]="640"
+        [height]="480"
+        (initError)="handleInitError($event)"
+        (imageCapture)="handleWebcamImage($event)"
+      ></webcam>
+    </div>
+  </mat-dialog-content>
+</ng-template>

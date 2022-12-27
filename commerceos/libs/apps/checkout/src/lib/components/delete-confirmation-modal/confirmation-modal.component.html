@@ -1,0 +1,66 @@
+<div class="checkout-confirm-modal__container">
+  <ng-container *ngIf="!isCheckoutDeleted">
+    <div class="checkout-confirm-modal__icon">
+      <svg class="checkout-confirm-modal__icon_danger">
+        <use xlink:href="#icon-warning-20"></use>
+      </svg>
+    </div>
+    <div class="checkout-confirm-modal__title" translate>
+      deleteModal.title
+    </div>
+    <div class="checkout-confirm-modal__description" translate>
+      deleteModal.text
+    </div>
+    <div class="checkout-confirm-modal__actions">
+      <div
+        class="checkout-confirm-modal__action-item danger-color"
+        (click)="onDeleteCheckout()">
+        <span
+          *ngIf="!loading"
+          class="checkout-confirm-modal__action-label"
+          translate>
+          create_checkout.buttons.deleteCheckout
+        </span>
+        <mat-spinner
+          *ngIf="loading"
+          class="mat-progress-spinner-light"
+          [strokeWidth]="2"
+          [diameter]="15">
+        </mat-spinner>
+      </div>
+      <div
+        class="checkout-confirm-modal__action-item"
+        (click)="cancel.emit(true)">
+        <span
+          class="checkout-confirm-modal__action-label"
+          translate>
+          actions.goBack
+        </span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isCheckoutDeleted">
+    <div class="checkout-confirm-modal__icon">
+      <svg class="checkout-confirm-modal__icon_success">
+        <use xlink:href="#icon-success-128"></use>
+      </svg>
+    </div>
+    <div class="checkout-confirm-modal__title" translate>
+      deleteModal.titleSuccess
+    </div>
+    <div class="checkout-confirm-modal__description" translate>
+      deleteModal.textSuccess
+    </div>
+    <div class="checkout-confirm-modal__actions">
+      <div
+        class="checkout-confirm-modal__action-item success-color"
+        (click)="returnAfterDelete()">
+        <span
+          class="checkout-confirm-modal__action-label"
+          translate>
+          actions.close
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</div>

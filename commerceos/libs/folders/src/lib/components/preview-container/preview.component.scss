@@ -1,0 +1,25 @@
+:host {
+  position: absolute;
+}
+
+.view-box {
+  position: relative;
+  width: fit-content;
+
+  &__counter {
+    position: absolute;
+    bottom: calc(100% - 7.5px);
+    left: calc(100% - 7.5px);
+    min-width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: rgb(3, 113, 226);
+    color: rgb(255, 255, 255);
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    z-index: 2;
+  }
+}

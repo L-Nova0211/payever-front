@@ -1,0 +1,18 @@
+<mat-list class="mat-list-dark mat-list-with-heading" [class.mat-list-dark-empty]="empty">
+  <ng-container *ngFor="let group of groups">
+    <div *ngIf="withHeading" mat-subheader>{{group.heading}}</div>
+    <ng-container *ngFor="let item of group.items; last as isLast">
+      <mat-list-item (click)="onItemClick(item)">
+        <svg *ngIf="item.iconSrc" class="icon icon-24 addon-prepend"><use [attr.xlink:href]="item.iconSrc"></use></svg>
+        <div *ngIf="item.imageIconSrc" class="addon-prepend-image" [style.background-image]="'url(' + item.imageIconSrc + ')'"></div>
+        <div class="mat-list-item-inner">
+          <div class="mat-list-item-title">{{item.title}}</div>
+          <div class="mat-list-item-desc" *ngIf="item.description">{{item.description}}</div>
+        </div>
+        <svg class="icon icon-16 addon-append"><use xlink:href="#icon-arrow-right-ios-16"></use></svg>
+      </mat-list-item>
+      <mat-divider *ngIf="!isLast"></mat-divider>
+    </ng-container>
+  </ng-container>
+  <ng-content *ngIf="empty" select="[empty-content]"></ng-content>
+</mat-list>

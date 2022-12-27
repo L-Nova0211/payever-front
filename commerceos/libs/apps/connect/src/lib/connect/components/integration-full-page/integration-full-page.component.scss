@@ -1,0 +1,14 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+.integration-full-page {
+  padding-top: 26px;
+  color: var(--color-secondary-0);
+  max-width: 1400px;
+  margin: auto;
+}
+
+:host {
+  background-color: var(--color-background);
+  display: block;
+}

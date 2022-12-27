@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 6px;
+  width: 92px;
+  cursor: pointer;
+
+  .mock-up-block {
+    width: 80px;
+    height: 54px;
+    padding: 7px 6px;
+    border-radius: 8px;
+    border: solid 1px transparent;
+
+    &:hover {
+      border: solid 1px #424242;
+    }
+
+    &.selected {
+      border: solid 2px #0371e2;
+    }
+
+    &__title {
+      width: 50%;
+      height: 4px;
+      margin: 0 0 4px 0;
+      border-radius: 2px;
+    }
+
+    &__content {
+      width: 100%;
+      height: 4px;
+      margin: 4px 0 12px;
+      border-radius: 2px;
+    }
+  }
+
+  .mock-up-title {
+    margin-top: 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: capitalize;
+    color: #eeeeee;
+  }
+}

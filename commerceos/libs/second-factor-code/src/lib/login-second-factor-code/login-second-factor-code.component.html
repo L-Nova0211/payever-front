@@ -1,0 +1,38 @@
+<entry-layout [hideLanguageSwitcher]="hideLanguageSwitcher">
+  <div *ngIf="form" class="login-second-factor-code__container">
+    <button mat-button
+            class="mat-button-no-padding close-button login-second-factor-code__skip"
+            type="button"
+            *ngIf="isShowSkip()"
+            (click)="onSuccessLogin()">
+      <small>Skip</small>
+    </button>
+    <p class="login-second-factor-code__description">{{'forms.login.twoFA.description' | translate:{email: email} }}</p>
+    <p class="login-second-factor-code__invalid" *ngIf="codeInvalid$ | async">{{'forms.login.twoFA.incorrect_2fa_code' | translate}}</p>
+
+    <form class="login-second-factor-code__form">
+      <pe-input
+        *ngFor="let control of formScheme.fieldsets['code']; index as index"
+        [autoFocus]="(currentActive$ | async) === index"
+        [addonAppend]="false"
+        [addonPrepend]="false"
+        [nameAttribute]="control.name"
+        [autocompleteAttribute]="false"
+        [formControlRef]="form.get(control.name)"
+        [maxLength]="6"
+        [required]="true"
+        [readonly]="false"
+        [type]="'number'"
+        (keydown)="onKeyDown($event)"
+        (valueChange)="onValueChange($event.value, index)"
+      ></pe-input>
+    </form>
+
+    <button class="login-second-factor-code__button" type="submit">
+      <pe-progress-button-content class="mat-progress-spinner-light" [loading]="isLoading$ | async">{{ 'actions.login' | translate }}</pe-progress-button-content>
+    </button>
+    <button class="login-second-factor-code__button login-second-factor-code__button_gray" [class.visibility-hidden]="busy$ | async" type="button" (click)="onReSendCode()">
+      <pe-progress-button-content class="mat-progress-spinner-light" [loading]="busySendCode$ | async">{{'forms.login.twoFA.send_code' | translate}}</pe-progress-button-content>
+    </button>
+  </div>
+</entry-layout>

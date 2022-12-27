@@ -1,0 +1,16 @@
+<pe-search (onChange)="_onSearch($event)" [searchString]="searchString"></pe-search>
+
+<pe-search-results [withHeading]="true" [groups]="groups" [empty]="!hasValue" (onChoose)="onClickResultAsAdmin($event)">
+  <ng-container empty-content>
+    <empty-search-box></empty-search-box>
+  </ng-container>
+</pe-search-results>
+<ng-container *ngIf="isLoading$ | async">
+  <mat-progress-spinner
+    class="example-margin mat-progress-spinner-light"
+    [strokeWidth]="2"
+    [diameter]="26"
+    [mode]="'indeterminate'"
+    [value]="50">
+  </mat-progress-spinner>
+</ng-container>

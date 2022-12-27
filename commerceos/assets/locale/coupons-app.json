@@ -1,0 +1,266 @@
+{
+  "coupons-app": {
+    "actions": {
+      "cancel": "Cancel",
+      "close": "Close",
+      "done": "Done",
+      "edit": "Edit",
+      "loading": "Loading...",
+      "open": "Open",
+      "remove": "Remove",
+      "save": "Save"
+    },
+    "apm_errors": {
+      "create_coupon": "Failed to create a coupon",
+      "delete_coupon": "Failed to delete coupon",
+      "update_coupon": "Failed to update the coupon",
+      "get_channels": "Failed to get channel list from Coupons app",
+      "get_coupon": "Failed to get a coupon",
+      "get_coupons": "Failed to get coupons",
+      "get_coupon_by_code": "Failed to get a coupon by code",
+      "get_coupon_eligibility": "Failed to get eligibility of coupon by coupon id",
+      "get_coupon_type_extra_field": "Failed to get coupon type extra field by coupon id",
+      "get_categories": "Failed to get list of product categories from Coupons app",
+      "get_contacts": "Failed to get contact list from Coupons app",
+      "get_contacts_groups": "Failed to get a list of contact groups from Coupons app",
+      "get_products": "Failed to get product list from Coupons app"
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "coupon_editor": {
+          "creating": {
+            "title": "Creating coupon",
+            "subtitle": "Do you really want to close creating a coupon? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing coupon",
+            "subtitle": "Do you really want to close editing a coupon? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "coupon": {
+          "title": "Delete coupon",
+          "subtitle": "Are you sure you want to delete selected coupoun?"
+        },
+        "coupons": {
+          "title": "Delete coupons",
+          "subtitle": "Are you sure you want to delete selected coupouns?"
+        }
+      }
+    },
+    "sidebar_title": "Coupons",
+    "sidebar_subtitle": "My coupons",
+    "all_folders": "All folders",
+    "coupon_editor": {
+      "code": {
+        "error": "Enter code",
+        "generate": "Generate code",
+        "helper": "Customers will enter this discount code at checkout",
+        "label": "Discount code",
+        "placeholder": "e.g. SPRINGSALE"
+      },
+      "create_coupon": "Create Coupon",
+      "edit_coupon": "Edit Coupon",
+      "description": {
+        "label": "Description",
+        "placeholder": "e.g. Buy 2 get 1 free"
+      },
+      "discount_amount": "Amount",
+      "discount_quantity": "Quantity",
+      "value": {
+        "label": "Discount value",
+        "placeholder": "Enter value"
+      },
+      "discount_types": {
+        "label": "Types",
+        "percentage": "Percentage",
+        "amount": "Fixed amount",
+        "shipping": "Free shipping",
+        "buy_x_get_y": "Buy X get Y"
+      },
+      "discount_currency": {
+        "usd": "Dollars"
+      },
+      "discount_applies_to": {
+        "label": "Applies to",
+        "all_products": "All products",
+        "specific_categories": "Specific categories",
+        "specific_products": "Specific products"
+      },
+      "min_requirements": {
+        "label": "Minimum requirements",
+        "min_purchase_amount": "Minimum purchase amount",
+        "min_quantity_of_items": "Minimum quantity of items",
+        "none": "None"
+      },
+      "at_a_discounted_value": {
+        "label": "At a discounted value",
+        "free": "Free",
+        "percentage": "Percentage",
+        "set_percentage": "Set percentage"
+      },
+      "buy_requirement_type": {
+        "amount": "Amount",
+        "quantity": "Quantity",
+        "customer_buys": "Customer buys",
+        "customer_gets": "Customer gets",
+        "customer_spends": "Customer spends",
+        "customer_buys_specific": "Customer buys (specific)",
+        "customer_spends_specific": "Customer spends (specific)",
+        "min_purchase_amount": "Minimum purchase amount",
+        "min_quantity_of_items": "Minimum quantity of items"
+      },
+      "free_shipping_type": {
+        "label": "Countries",
+        "all_countries": "All countries",
+        "selected_countries": "Selected countries",
+        "add_countries": "Add countries",
+        "search_countries": "Search countries",
+        "exclude_shipping_rates": "Exclude shipping rates over certain amount",
+        "over_amount": "Over amount"
+      },
+      "buy_or_get_type": {
+        "specific_categories": "Specific categories",
+        "specific_products": "Specific products"
+      },
+      "customer_eligibility": {
+        "all": "All",
+        "everyone": "Everyone",
+        "label": "Customer eligibility",
+        "specific_customers": "Specific customers",
+        "specific_groups_of_customers": "Specific groups of customers"
+      },
+      "max_uses_rep_order": {
+        "label": "Set a maximum number of uses per order",
+        "max_number_of_uses": "Value"
+      },
+      "usage_limit": {
+        "one_use_per_customer": "Limit to one use per customer",
+        "total_number_of_times": "Limit number of times this discount can be used in total",
+        "max_number_of_times": "Value"
+      },
+      "datetime": {
+        "date_placeholder": "DD.MM.YYYY",
+        "end_date": "End date",
+        "end_date_subscript": "The start date must be set before the end date can be set",
+        "end_time": "End time",
+        "set_end_datetime": "Set end date",
+        "start_date": "Start date",
+        "start_time": "Start time",
+        "time_placeholder": "HH:MM"
+      },
+      "activate_dates": "Activate dates",
+      "channels": "Channels",
+      "pos": "Point of Sale",
+      "products": {
+        "error": "At least one product must be chosen",
+        "label": "Products",
+        "placeholder": "Search products"
+      },
+      "categories": {
+        "error": "At least one category must be chosen",
+        "label": "Categories",
+        "placeholder": "Search categories"
+      },
+      "countries": {
+        "error": "At least one country must be chosen",
+        "label": "Countries",
+        "placeholder": "Search countries"
+      },
+      "customers": {
+        "error": "At least one customer must be chosen",
+        "label": "Customers",
+        "placeholder": "Search customers"
+      },
+      "groups": {
+        "error": "At least one group of customers must be chosen",
+        "label": "Groups of customers",
+        "placeholder": "Search groups of customers"
+      },
+      "errors": {
+        "unknown_error": "Unknown error",
+        "not_found": "Coupon by id {couponId} not found",
+        "not_unique": "Code is not unique",
+        "default": "Incorrectly added value",
+        "description_value": "Enter description",
+        "max_percentage_value": "Discount value must not be greater 100%",
+        "discount_value": {
+          "required": "Enter discount value",
+          "positive_number": "Discount value must be a positive number",
+          "positive_number_gr_zero": "Discount value must be a positive number greater zero",
+          "positive_number_gr_one": "Discount value must be a positive number greater one",
+          "positive_integer": "Discount value must be a positive integer",
+          "positive_integer_gr_zero": "Discount value must be a positive integer greater zero"
+        },
+        "over_amount_value": {
+          "required": "Enter over amount value",
+          "positive_number": "Amount must be a positive number",
+          "positive_number_gr_zero": "Amount must be a positive number greater zero",
+          "positive_number_gr_one": "Amount must be a positive number greater one",
+          "positive_integer": "Amount must be a positive integer",
+          "positive_integer_gr_zero": "Amount must be a positive integer greater zero"
+        },
+        "minimum_purchase_amount": {
+          "required": "Enter minimum purchase amount",
+          "positive_number": "Amount must be a positive number",
+          "positive_number_gr_zero": "Amount must be a positive number greater zero",
+          "positive_number_gr_one": "Amount must be a positive number greater one",
+          "positive_integer": "Amount must be a positive integer",
+          "positive_integer_gr_zero": "Amount must be a positive integer greater zero"
+        },
+        "minimum_quantity_of_items": {
+          "required": "Enter minimum quantity of items",
+          "positive_number": "Quantity must be a positive number",
+          "positive_number_gr_zero": "Quantity must be a positive number greater zero",
+          "positive_number_gr_one": "Quantity must be a positive number greater one",
+          "positive_integer": "Quantity must be a positive integer",
+          "positive_integer_gr_zero": "Quantity must be a positive integer greater zero"
+        },
+        "get_quantity": {
+          "required": "Enter quantity of items",
+          "positive_number": "Quantity must be a positive number",
+          "positive_number_gr_zero": "Quantity must be a positive number greater zero",
+          "positive_number_gr_one": "Quantity must be a positive number greater one",
+          "positive_integer": "Quantity must be a positive integer",
+          "positive_integer_gr_zero": "Quantity must be a positive integer greater zero"
+        },
+        "max_uses_per_order": {
+          "required": "Enter maximum uses per order",
+          "positive_integer": "Maximum of uses must be a positive integer",
+          "positive_integer_gr_zero": "Maximum of uses must be a positive integer greater zero"
+        },
+        "usage_limit": {
+          "required": "Enter total usage limit",
+          "positive_integer": "Total usage limit must be a positive integer",
+          "positive_integer_gr_zero": "Total usage limit must be a positive integer greater zero"
+        },
+        "start_date": "Set start date",
+        "start_time": "Set start time",
+        "end_date": "Set end date",
+        "end_date_before": "The end date must be the same as the start date or later",
+        "end_time": "Set end time",
+        "end_time_before": "The end time must be later than the start time"
+      }
+    },
+    "folders": {
+      "all_coupons": "All Coupons"
+    },
+    "notify": {
+      "all_selected_items": "All selected items",
+      "all_selected_coupons": "All selected coupons",
+      "all_selected_folders": "All selected folders",
+      "channels_off": "At least one channel must be activated",
+      "coupon": "Coupon",
+      "successfuly_created": "Coupon \"{couponCode}\" successfuly created",
+      "successfuly_deleted": "successfuly deleted",
+      "successfuly_duplicated": "Coupon \"{copiedFrom}\" successfuly duplicated as \"{copiedTo}\"",
+      "successfuly_updated": "Coupon \"{couponCode}\" successfuly updated"
+    },
+    "title": "Coupons"
+  }
+}

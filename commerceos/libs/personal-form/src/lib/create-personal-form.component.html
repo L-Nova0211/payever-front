@@ -1,0 +1,119 @@
+
+<form autocomplete="off" novalidate class="form-table form-table-no-margin" [formGroup]="form" *ngIf="form"
+  [ngClass]="theme" (submit)="registerPersonalAccount()">
+  <div class="registration-header-title" translate style="text-align: center;font-size: 14px;">
+    {{ type === 'personal' ? 'registration.container.heading_personal' : 'registration.container.heading_business' }}
+  </div>
+  <div class="personal-registration">
+    <div style="margin-bottom: 12px">
+      <peb-messages [message]="errorMessage" *ngIf="errorMessage"></peb-messages>
+    </div>
+    <peb-form-background>
+      <two-column-form>
+        <peb-form-field-input animated="true" [label]="'forms.personal_create.firstName.placeholder'|translate"
+          [isFieldInvalid]="errors.firstName.hasError" [errorMessage]="errors.firstName.errorMessage"
+          appearance="label">
+          <input formControlName="firstName" />
+        </peb-form-field-input>
+        <peb-form-field-input animated="true" [label]="'forms.personal_create.lastName.placeholder'|translate"
+          [isFieldInvalid]="errors.lastName.hasError" [errorMessage]="errors.lastName.errorMessage" appearance="label">
+          <input formControlName="lastName" />
+        </peb-form-field-input>
+      </two-column-form>
+      <peb-form-field-input [animated]="emailAnimated" [label]="'forms.personal_create.email.placeholder'|translate"
+        [isFieldInvalid]="errors.email.hasError" [errorMessage]="errors.email.errorMessage" appearance="label">
+        <input #email type="email" formControlName="email" (blur)="checkField('email', true)"
+          (focus)="checkField('email', false)" autocomplete="nope" [attr.disabled]="emailAnimated ? null : ''" />
+        <input id="username" style="display:none" type="text" name="fakeusernameremembered">
+      </peb-form-field-input>
+      <peb-form-field-input animated="true" [label]="'forms.login.plainPassword.placeholder'|translate"
+        [isFieldInvalid]="errors.password.hasError" [errorMessage]="errors.password.errorMessage" appearance="label">
+        <input type="password" formControlName="password" (blur)="checkField('password', true)"
+          (focus)="checkField('password', false);" autocomplete="new-password" />
+        <input id="password" style="display:none" type="password" name="fakepasswordremembered">
+      </peb-form-field-input>
+      <peb-form-field-input animated="true" [label]="'forms.login.confirmPassword.label' | translate"
+        [isFieldInvalid]="errors.confirmPass.hasError" [errorMessage]="errors.confirmPass.errorMessage"
+        appearance="label">
+        <input type="password" formControlName="confirmPass" />
+        <input id="confirmPass" style="display:none" type="password">
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class="pe-recaptcha-wrap" *ngIf="this.form.get('recaptchaToken')">
+      <pe-recaptcha [size]="'normal'" [theme]="'dark'" (verified)="onReCaptchaVerified($event)"></pe-recaptcha>
+    </div>
+    <password-must [focused]="passwordFocused$" [control]="form.controls.password">
+    </password-must>
+    <button class="signup-button" type="submit">
+      <pe-progress-button-content class="mat-progress-spinner-light" [loading]="isLoading">
+        <span translate>
+          {{ type === 'personal' ? 'actions.register' : 'actions.sign_up' }}
+        </span>
+      </pe-progress-button-content>
+    </button>
+    <button type="button" class="signup-button gray" (click)="navigate()" translate>actions.login</button>
+  </div>
+</form>
+
+<ng-container *ngIf="!employee">
+  <div class="or-data">
+    or
+  </div>
+  <div class="personal-registration">
+    <button *ngIf="!facebookLoading" class="login-button" (click)="redirectFacebookUrl()">
+      <div class="svg-contain">
+        <svg class="social-icon" style="color:#4267B2;" *ngIf="!facebookLoading">
+          <use xlink:href="#icon-social-facebook-12"></use>
+        </svg>
+        <pe-progress-button-content class="mat-progress-spinner-light button-text">
+          {{'actions.signup-with-facebook' | translate}}
+        </pe-progress-button-content>
+      </div>
+    </button>
+    <button *ngIf="facebookLoading" class="login-button">
+      <div class="spinner-contain">
+        <mat-spinner class="mat-progress-spinner-light" [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter">
+        </mat-spinner>
+      </div>
+    </button>
+  </div>
+  <div class="personal-registration">
+    <button *ngIf="!googleLoading" class="login-button" (click)="redirectGoogleUrl()">
+      <div class="svg-contain">
+        <svg class="social-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.788 10.225c0-.658-.059-1.283-.159-1.892h-9.417v3.759h5.392c-.241 1.233-.95 2.275-2 2.983v2.5h3.217c1.883-1.742 2.966-4.308 2.966-7.35z"
+            fill="#4285F4" />
+          <path
+            d="M10.213 20c2.7 0 4.958-.9 6.608-2.425l-3.217-2.5c-.9.6-2.041.967-3.391.967-2.609 0-4.817-1.759-5.609-4.134H1.287v2.575C2.93 17.75 6.304 20 10.212 20z"
+            fill="#34A853" />
+          <path
+            d="M4.604 11.908A5.803 5.803 0 0 1 4.288 10c0-.667.116-1.308.316-1.908V5.517H1.288a9.884 9.884 0 0 0 0 8.966l3.316-2.575z"
+            fill="#FBBC05" />
+          <path
+            d="M10.213 3.958c1.475 0 2.791.509 3.833 1.5l2.85-2.85C15.17.992 12.912 0 10.212 0 6.305 0 2.93 2.25 1.287 5.517l3.317 2.575c.792-2.375 3-4.134 5.609-4.134z"
+            fill="#EA4335" />
+        </svg>
+        <pe-progress-button-content class="mat-progress-spinner-light button-text">
+          {{'actions.signup-with-google' | translate}}
+        </pe-progress-button-content>
+      </div>
+    </button>
+    <button *ngIf="googleLoading" class="login-button">
+      <div class="spinner-contain">
+        <mat-spinner class="mat-progress-spinner-light" [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter">
+        </mat-spinner>
+      </div>
+    </button>
+  </div>
+</ng-container>
+
+<div class="personal-registration">
+  <div class="entry-layout-terms">
+    {{'login.terms_registering' | translate}}
+    <a target="_blank" [href]="termsLink">{{'login.terms_service' | translate}}</a>
+    {{'login.terms_read' | translate}}
+    <a target="_blank" [href]="privacyLink">{{'login.terms_policy' | translate}}</a>
+  </div>
+</div>

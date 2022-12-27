@@ -1,0 +1,77 @@
+@mixin peb-form-field-input-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+
+  .input-content-wrapper {
+    background-color: $accent;
+
+    .label-container {
+      &.form-search,
+      input {
+        background-color: $primary;
+      }
+
+      input {
+        color: $text-color;
+
+        &::placeholder {
+          color: $label-color;
+          opacity: 1;
+        }
+      }
+    }
+
+    .label-container .search,
+    .suffix p {
+      color: $text-color;
+    }
+
+    &_search .reset {
+      background-color: $primary;
+    }
+  }
+
+  .label-input-content-wrapper {
+    .label-container {
+      .label-text {
+        color: $label-color;
+      }
+      .input-field {
+        input {
+          color: $text-color;
+
+          &::placeholder {
+            color: $label-color;
+            opacity: 1;
+          }
+        }
+
+        span {
+          color: $text-color;
+          @if $text-color == #000 {
+            -webkit-text-fill-color: black;
+          }
+          &.prefix {
+            color: $label-color;
+          }
+        }
+      }
+    }
+
+    .suffix {
+      background-color: $accent;
+      p {
+        color: $text-color;
+      }
+    }
+
+    .suffix-spinner {
+      mat-spinner {
+        stroke: $label-color;
+      }
+    }
+  }
+}

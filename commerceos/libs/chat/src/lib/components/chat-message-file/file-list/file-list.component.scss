@@ -1,0 +1,130 @@
+@import '../../../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin getMessageFileListTheme($theme-config) {
+  .message-attachment {
+    &__preview_hovered {
+      color: map-get($theme-config, active-text);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__title {
+      color: map-get($theme-config, text-color);
+    }
+
+    &__subtitle {
+      color: map-get($theme-config, label-color);
+    }
+  }
+}
+
+:host {
+  &.dark {
+    @include getMessageFileListTheme($dark-theme);
+  }
+  &.light {
+    @include getMessageFileListTheme($light-theme);
+  }
+  &.transparent {
+    @include getMessageFileListTheme($transparent-theme);
+  }
+}
+
+.message-attachment {
+  display: flex;
+  padding: 4px 0;
+  width: 100%;
+
+  &__preview {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__preview,
+  &__info {
+    max-height: 54px;
+    min-height: 54px;
+  }
+
+  &__thumbnail {
+    width: 100%;
+  }
+
+  // &__thumbnail,
+  &__preview {
+    border-radius: 6px;
+    display: flex;
+    position: relative;
+
+    margin-right: 12px;
+    max-width: 54px;
+    min-width: 54px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__preview_hovered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__preview-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  &__info {
+    position: relative;
+    width: 100%;
+  }
+
+  &__title,
+  &__subtitle {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &__title {
+    top: 4px;
+
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    bottom: 4px;
+  }
+
+  &__download-separator::before {
+    content: " – ";
+  }
+
+  &__subtitle-action {
+    cursor: pointer;
+  }
+}

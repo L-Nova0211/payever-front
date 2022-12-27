@@ -1,0 +1,86 @@
+//
+// Slider
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-slider {
+    width: 100%;
+    height: $grid-unit-y;
+    padding: 0;
+
+    &.mat-slider-horizontal {
+
+      .mat-slider-wrapper {
+        top: $grid-unit-y - 6;
+      }
+    }
+
+    &-thumb-container {
+
+      .mat-slider-thumb {
+        background-color: $color-blue;
+        transform: scaleX(1);
+        bottom: 7 - $grid-unit-y;
+        right: 7 - $grid-unit-y;
+        width: $grid-unit-x - 4;
+        height: $grid-unit-y - 3;
+
+        &-label {
+          // @TODO: replace it with variable, color $color-grey-5 not working here, need color without opacity
+          background-color: #DBDBDB;
+        }
+      }
+    }
+
+    &-track-wrapper {
+
+      .mat-slider-track-fill {
+        background-color: $color-blue;
+      }
+
+      .mat-slider-track-background {
+        background-color: $color-grey-5;
+        transform: scaleX(1) !important;
+      }
+    }
+
+    &-disabled {
+
+      .mat-slider-track-background {
+        background-color: $color-grey-5;
+      }
+
+      .mat-slider-track-fill {
+        background-color: $color-grey-3;
+        transform: scaleX(0) !important;
+      }
+
+      .mat-slider-thumb-container {
+
+        .mat-slider-thumb {
+          background-color: $color-gray-2;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  .slider-wrapper {
+    @include pe_flexbox();
+    @include pe_align-items(center);
+    width: 100%;
+
+    &-label {
+      margin-right: $grid-unit-x * 2;
+      white-space: nowrap;
+    }
+
+    &-value {
+      min-width: max-content;
+      font-size: $font-size-small;
+      font-family: $font-family-sans-serif;
+    }
+
+  }
+}

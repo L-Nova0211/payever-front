@@ -1,0 +1,9 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .payment-main-wrap-container {
+    .mat-accordion.base-auth-container {
+      margin-top: 0;
+    }
+  }
+}

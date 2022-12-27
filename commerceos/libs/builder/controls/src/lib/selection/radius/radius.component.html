@@ -1,0 +1,19 @@
+<svg
+  class="container"
+  overflow="visible"
+  *ngIf="data$ | async as anchor"
+  [attr.viewBox]="'0 0 ' + this.width + ' ' + this.height"
+  xmlns:svg="http://www.w3.org/2000/svg"
+>
+  <svg:g>
+    <ng-container *ngIf="anchor.x">
+      <svg:circle
+        class="anchor"
+        [attr.cx]="anchor.x"
+        [attr.cy]="anchor.y"
+        [attr.r]="anchor.width / 2"
+        [attr.fill]="anchor.color"
+      />
+    </ng-container>
+  </svg:g>
+</svg>

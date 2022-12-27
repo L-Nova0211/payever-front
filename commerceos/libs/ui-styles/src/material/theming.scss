@@ -1,0 +1,133 @@
+//
+// Theming
+// ----------------------------
+
+@import '~@angular/material/theming';
+
+// Mixin that renders all of the core styles that are not theme-dependent.
+@mixin mat-core($typography-config: null) {
+  @include angular-material-typography($typography-config);
+  @include mat-ripple();
+  @include cdk-a11y();
+  @include cdk-overlay();
+  @include cdk-text-field();
+}
+
+@include mat-core();
+
+$dark-primary-text: $text-color;
+$dark-secondary-text: $text-color;
+$dark-disabled-text: $color-grey-4;
+$dark-dividers: $color-grey-5;
+$dark-focused: $color-grey-5;
+$light-primary-text: $color-white;
+$light-secondary-text: $color-white;
+$light-disabled-text: $color-white-grey-4;
+$light-dividers: $color-white-pe;
+$light-focused: $color-white-pe;
+
+$primary-palette: (
+  50: #ffebee,
+  100: $color-light-blue,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: $color-blue,
+  600: #e53935,
+  700: $color-dark-blue,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252, // нажатый чекбокс
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$primary: mat-palette($primary-palette);
+
+$accent-palette: (
+  50: #ffebee,
+  100: #f0f4c3,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: $color-green,
+  600: #e53935,
+  700: $color-dark-green,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252, // нажатый чекбокс
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$accent:  mat-palette($accent-palette);
+
+$warning-palette: (
+  50: #f9fbe7,
+  100: #f0f4c3,
+  200: #e6ee9c,
+  300: #dce775,
+  400: #d4e157,
+  500: $color-red,
+  600: #c0ca33,
+  700: $color-dark-red,
+  800: #9e9d24,
+  900: #827717,
+  A100: #f4ff81,
+  A200: #eeff41,
+  A400: #c6ff00,
+  A700: #aeea00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+$warning: mat-palette($warning-palette);
+
+$theme: mat-light-theme($primary, $accent, $warning);
+
+@include mat-core-theme($theme);

@@ -1,0 +1,36 @@
+<pe-message-chat-context-menu-styles></pe-message-chat-context-menu-styles>
+<div class="pe-context-menu" ngClass="{{theme + '-pe-context-menu'}}">
+  <div class="pe-context-menu__header">
+    <span class="pe-context-menu__title">{{ data.title | translate }}</span>
+    <button class="pe-context-menu__close" (click)="onClose()">
+      <mat-icon svgIcon="close" class="mat-icon notranslate mat-icon-no-color"></mat-icon>
+    </button>
+  </div>
+  <ul>
+    <li
+      *ngFor="let item of data.list"
+      [class.no-selectable]="item.value === separator"
+      class="pe-context-menu__item"
+      [class.red]="item?.red"
+      (click)="onSelect(item.value)"
+    >
+      <ng-container *ngIf="item.value !== separator; else separatorLine">
+        <span>
+          {{ getLabel(item) }}
+        </span>
+        <ng-container [ngSwitch]="item.actions">
+          <pe-message-chat-room-list-header-styles></pe-message-chat-room-list-header-styles>
+          <pe-message-chat-context-seen-list
+          class="pe-context-menu__seen-list"
+          *ngSwitchCase="peMessageChatRoomContextActions.SeenList"
+          [seenList]="item.items"
+          >
+          </pe-message-chat-context-seen-list>
+        </ng-container>
+      </ng-container>
+      <ng-template #separatorLine>
+        <hr>
+      </ng-template>
+    </li>
+  </ul>
+</div>

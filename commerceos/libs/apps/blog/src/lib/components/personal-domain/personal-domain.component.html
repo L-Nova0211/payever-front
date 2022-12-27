@@ -1,0 +1,45 @@
+<div class="container" [ngClass]="config.theme">
+    <div *ngIf="!domainList?.length&&!isloading" class="no-domain">
+        <peb-messages  [showIcon]="true" [message]="'blog-app.messages.no_domain'|translate"></peb-messages>
+        <button class="setting-button confirm"
+         (click)="addDomain()">{{'blog-app.actions.create_domain'|translate}}</button>
+    </div>
+
+    <peb-expandable-panel [headerLabel]="domain.name"
+    [isContentOpen]="!i" *ngFor="let domain of domainList, let i =index">
+        <div style="margin-bottom: 11px;">
+            <peb-form-background >
+                <peb-form-field-input animated="true"
+                 [label]="'blog-app.settings.domain_label'|translate" appearance="label">
+                    <input [(value)]="domain.name"
+                     [placeholder]="'blog-app.settings.domain_placeholder'|translate"  disabled/>
+                  </peb-form-field-input>
+            </peb-form-background>
+        </div>
+
+
+        <peb-form-background >
+            <peb-form-field-input animated="true" [label]="'blog-app.settings.date_label'|translate" appearance="label">
+                <input [value]="domain.createdAt|date:'longDate'"
+                 disabled [placeholder]="'blog-app.settings.date_placeholder'|translate" />
+              </peb-form-field-input>
+              <peb-form-field-input  animated="true"
+               [label]="'blog-app.settings.provider_label'|translate" appearance="label">
+                <input [value]="domain.provider ? domain.provider : 'unknown'"
+                disabled [placeholder]="'blog-app.settings.provider_placeholder'|translate" />
+              </peb-form-field-input>
+        </peb-form-background>
+       <div style="margin-top:16px">
+        <peb-messages
+        [showIcon]="!domain.isConnected"
+        [message]="(domain.isConnected
+         ? 'blog-app.messages.domain_connected'
+         : 'blog-app.messages.domain_disconnected') |translate"
+        [color]="domain.isConnected?'confirm':'warning'"
+        ></peb-messages>
+       </div>
+
+        <button class="setting-button"
+         (click)="removeDomain(domain,i)">{{'blog-app.actions.remove_domain'|translate}}</button>
+    </peb-expandable-panel>
+</div>

@@ -1,0 +1,44 @@
+@import "pe_variables.scss";
+@import "pe_mixins.scss";
+
+
+:host {
+  width: 100%;
+  @media (min-width: $viewport-breakpoint-sm-1) {
+    & {
+      width: 555px;
+    }
+  }
+
+  .widgets-dashboard-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @media (max-width:720px) {
+      padding: 10px;
+    }
+  }
+
+  .edit-install-wrapper {
+    padding-bottom: $grid-unit-y * 2;
+    text-align: center;
+
+    .edit-install {
+      padding: 0 $padding-small-horizontal * 2;
+      height: $grid-unit-y * 4;
+      font-size: $font-size-large-2;
+      background-color: $color-primary-3;
+      border-radius: 22px;
+      &:hover {
+        background-color: $color-primary-2;
+      }
+      &-wrapper {
+        width: $pe_vgrid_height * 4;
+        margin: $margin-adjust*6 auto;
+      }
+    }
+    .edit-install.mat-raised-button > span {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="page" [ngClass]="theme">
+  <h1 class="page__title">{{ 'shipping-app.connect.title' | translate }}</h1>
+  <div class="group">
+    <span class="group__label">{{ 'shipping-app.connect.subtitle' | translate }}</span>
+    <ng-container *ngFor="let method of shippingMethods | async">
+      <div *ngIf="method.installed" class="group__item without-padding">
+        <div class="group__item-icon">
+          <svg [style.width.px]="20" [style.height.px]="20" color="white">
+            <use [attr.xlink:href]="method.integration.displayOptions.icon"></use>
+          </svg>
+        </div>
+        <div class="list-item-space">
+          <div class="group__item-label">{{ method?.integration?.name?.toUpperCase() }}</div>
+          <div class="group__item-right-content">
+            <peb-button-toggle [ngModel]="method?.enabled" (ngModelChange)="onToggle(method?._id, method?.enabled)"></peb-button-toggle>
+            <label class="group__item-right-content__button" (click)="openIntegrationConfiguration(method?.integration?.name)">
+              {{ 'shipping-app.actions.open' | translate }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div>
+    <button peb-button class="add-button" (click)="addConnection()">Add</button>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+@import "pe_mixins.scss";
+@import "pe_variables.scss";
+
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+@include peb-theme($theme-dark);
+
+.entry-layout-reset-password {
+  ::ng-deep.mat-card-transparent {
+    background-color: transparent;
+    box-shadow: none !important;
+    overflow: visible;
+  }
+}
+
+@media (max-width: $viewport-breakpoint-sm-2) {
+  .entry-layout-reset-password {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0; // 12px;
+    pe-info-box {
+      width: 100%;
+      display: block;
+      position: relative;
+      margin: auto;
+    }
+  }
+}
+
+:host::ng-deep.info-box {
+  .mat-card-transparent {
+    @media (max-width: 400px) {
+      //width: 100% !important;
+    }
+  }
+
+  .mat-card-content-no-background-color {
+    @media (max-width: $viewport-breakpoint-xs-2) {
+      padding: 24px 0 !important;
+    }
+  }
+
+  .logo-wrapper {
+    @include pe_flexbox;
+    @include pe_justify-content(center);
+    color: $color-white-pe;
+    margin: 28px 0;
+    height: 28px;
+  }
+
+  .heading {
+    // margin-bottom: $grid-unit-y * 3;
+    // margin-top: 70px;
+    margin-bottom: 36px;
+    margin-top: -8px;
+    color: $color-white-grey-7;
+    font-weight: 400;
+  }
+  .heading-2 {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-weight: normal;
+    line-height: 130%;
+    color: $color-white-grey-8;
+  }
+
+  .mat-card-transparent .mat-card-content-padding-sm .form-table .form-fieldset {
+    // margin: 0 0 0 0;
+  }
+
+  @media (max-width: 719px) {
+    .form-table, entry-error {
+      width: calc(100% - #{$grid-unit-y});
+      margin-left: ($grid-unit-y/2);
+    }
+  }
+
+  .back-button {
+    color: $color-white-grey-8;
+    font-weight: normal;
+    display: block;
+    margin: 12px auto 0;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}
+
+.content-wrapper {
+  margin: 24px auto 26px auto;
+  padding: 0 16px;
+}
+
+.heading, .descriptions{
+  text-align: center;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.3333333333;
+  margin-bottom: 22px;
+
+  @media (min-width: 521px) {
+    line-height: 1.5714285714;
+  }
+}
+.heading-2{
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 15px 0 8px;
+}
+
+
+.buttons-back{
+  padding: 0 83px;
+  @media (max-width:520px) {
+    padding: 0;
+  }
+}
+
+.verification-button{
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #0371e2;
+  color:white;
+  font-size: 14px;
+  font-weight: 500;
+  outline: 0;
+  border: 0;
+  margin-top: 12px;
+  height: 54px;
+  &:hover{
+    background-color: rgb(23, 133, 246);
+  }
+
+  @media (min-width: 521px) {
+    height: 44px;
+  }
+}
+

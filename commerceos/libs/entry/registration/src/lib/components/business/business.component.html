@@ -1,0 +1,26 @@
+<entry-layout [entryLogo]="industryIcon" [hideLogo]="false">
+  <div class="registration-header-title">{{ 'registration.container.heading_business' | translate }}</div>
+  <div style="margin-bottom: 12px">
+    <peb-messages [message]="messageData" *ngIf="messageData"></peb-messages>
+  </div>
+  <ng-container *ngIf="businessRegistrationData">
+    <entry-default-business-registration
+      *ngIf="!businessForm?.length"
+      [businessRegistrationData]="businessRegistrationData"
+      (unableMessage)="this.emailData = $event"
+    ></entry-default-business-registration>
+    <entry-dynamic-business-registration
+      *ngIf="businessForm?.length"
+      [businessRegistrationData]="businessRegistrationData"
+      [businessForm]="businessForm"
+      (unableMessage)="this.emailData = $event"
+    ></entry-dynamic-business-registration>
+  </ng-container>
+
+  <div class="entry-layout-terms">
+    {{ 'login.terms_registering' | translate }}
+    <a target="_blank" [href]="'forms.registration.terms_link' | translate">{{ 'login.terms_service' | translate }}</a>
+    {{ 'login.terms_read' | translate }}
+    <a target="_blank" [href]="'forms.registration.privacy_link' | translate">{{ 'login.terms_policy' | translate }}</a>
+  </div>
+</entry-layout>

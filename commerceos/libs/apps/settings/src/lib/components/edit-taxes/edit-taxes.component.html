@@ -1,0 +1,34 @@
+<form [ngClass]="theme" [formGroup]="taxesForm">
+    <div class="main-form">
+        <div class="form-margins">
+            <peb-form-background>
+                <peb-form-field-input label="{{ 'form.create_form.taxes.taxes.companyRegisterNumber.label' | translate }}" appearance="label">
+                    <input placeholder="{{'form.create_form.taxes.taxes.companyRegisterNumber.placeholder' | translate}}"
+                           formControlName="companyRegisterNumber"
+                    />
+                </peb-form-field-input>
+                <div class="columns">
+                    <peb-form-field-input class="two-column-input" label="{{ 'form.create_form.taxes.taxes.taxId.label' | translate }}" appearance="label">
+                        <input type="text"
+                               placeholder="{{ 'form.create_form.taxes.taxes.taxId.placeholder' | translate }}"
+                               formControlName="taxId"
+                        />
+                    </peb-form-field-input>
+                    <div class="divider"></div>
+                    <peb-form-field-input class="two-column-input" label="{{ 'form.create_form.taxes.taxes.taxNumber.label' | translate }}" appearance="label">
+                        <input placeholder="{{ 'form.create_form.taxes.taxes.taxNumber.placeholder' | translate }}"
+                               formControlName="taxNumber" />
+                    </peb-form-field-input>
+                </div>
+                <div class="toggle-group">
+                    <div class="toggle-group__label">
+                        <span >{{'form.create_form.taxes.taxes.turnoverTaxAct.label' | translate}}</span>
+                    </div>
+                    <div class="toggle-group__toggle">
+                        <peb-button-toggle formControlName="turnoverTaxAct"></peb-button-toggle>
+                    </div>
+                </div>
+            </peb-form-background>
+        </div>
+    </div>
+</form>

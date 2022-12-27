@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload-text {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    background-color: #111;
+    color: gray;
+    border-radius: 12px;
+  }
+
+  &__input {
+    color: white;
+  }
+}
+
+.text-editor {
+  height: 220px;
+  border-radius: 12px;
+  padding: 6px 12px;
+  background-color: #111;
+  color: white;
+}

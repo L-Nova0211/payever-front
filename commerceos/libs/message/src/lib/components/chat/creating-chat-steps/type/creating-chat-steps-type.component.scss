@@ -1,0 +1,63 @@
+:host {
+
+  .peb-form-field-input {
+    border-radius: 12px;
+    display: block;
+  }
+
+  &.dark .peb-form-field-input { background-color: #111111; }
+  &.transparent .peb-form-field-input { background-color: rgba(0, 0, 0, .3); }
+  &.light .peb-form-field-input {
+    background-color: #ffffff;
+
+    input { color: black; }
+  }
+}
+
+.creating-channel-steps-type {
+  &__type-list {
+    border-radius: 12px;
+    margin: -1px 0 0;
+    overflow: hidden;
+
+    label {
+      align-items: center;
+      background-color: #111111;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1px;
+      padding: 12px;
+
+      span {
+        color: white;
+        font-size: 12px;
+        line-height: 1.3333333333;
+      }
+
+      input:checked ~ .creating-channel-steps-type__checkmark {
+        background-color: #0371e2;
+        border-color: #fff;
+        opacity: 1;
+
+        svg {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__checkmark {
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    opacity: 0;
+    width: 20px;
+  }
+}

@@ -1,0 +1,58 @@
+<ng-container *ngIf="config.dataSource">
+  <ng-container>
+    <peb-detailed-numbers
+      *ngIf="config.viewType === widgetService.widgetType.DetailedNumbers || !config.viewType"
+      [class]="config.size"
+      [config]="config"
+      [useDefaultDataSource]="useDefaultDataSource"
+      [editMode]="editMode"
+      [onEditMode]="onEditMode"
+    ></peb-detailed-numbers>
+    <peb-two-columns
+      *ngIf="config.viewType === widgetService.widgetType.TwoColumns"
+      [config]="config"
+      [class]="config.size"
+      [useDefaultDataSource]="useDefaultDataSource"
+      [editMode]="editMode"
+      [onEditMode]="onEditMode"
+    ></peb-two-columns>
+    <peb-percentage
+      *ngIf="config.viewType === widgetService.widgetType.Percentage"
+      [config]="config"
+      [class]="config.size"
+      [useDefaultDataSource]="useDefaultDataSource"
+      [editMode]="editMode"
+      [onEditMode]="onEditMode"
+    ></peb-percentage>
+    <peb-simple-numbers
+      *ngIf="config.viewType === widgetService.widgetType.SimpleNumbers"
+      [config]="config"
+      [class]="config.size"
+      [useDefaultDataSource]="useDefaultDataSource"
+      [editMode]="editMode"
+      [onEditMode]="onEditMode"
+    ></peb-simple-numbers>
+    <peb-line-graph
+      *ngIf="config.viewType === widgetService.widgetType.LineGraph"
+      [config]="config"
+      [useDefaultDataSource]="useDefaultDataSource"
+      [resizable]="resizableLineGraph"
+      [editMode]="editMode"
+      [onEditMode]="onEditMode"
+      [class]="config.size"
+      [view]="getGraphView(config.size)"
+    ></peb-line-graph>
+  </ng-container>
+
+  <button *ngIf="editMode" class="remove-btn" (click)="onRemove()">
+    {{ 'statistics.action.remove_widget' | translate }}
+  </button>
+</ng-container>
+
+<div class="edit-btn" *ngIf="showEditBtn" (click)="onEditMode()">
+  {{ 'statistics.action.edit' | translate }}
+</div>
+
+<div *ngIf="!config.dataSource && !editMode" class="loading">
+  <mat-spinner diameter="30" color="white"></mat-spinner>
+</div>

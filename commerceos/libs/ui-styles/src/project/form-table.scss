@@ -1,0 +1,713 @@
+//
+// Form Table
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-form-field-label-wrapper {
+    box-sizing: content-box;
+  }
+
+  .create-shop {
+    .form-table {
+      pe-form-fieldset.transparent {
+
+        .form-fieldset {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .form-table {
+    border-radius: $border-radius-base;
+    margin-bottom: $margin-base-y;
+    overflow: hidden;
+
+    @include form-table-borders($form-table-border-color);
+
+    .vertical {
+
+      .mat-radio-button {
+        display: block;
+        min-height: $grid-unit-y * 5 - 1px;
+        line-height: $grid-unit-y * 5 - 1px;
+        padding: 0 $grid-unit-x 0 0;
+        vertical-align: top;
+
+        &:first-child {
+          margin-top: -1px;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+          min-height: $grid-unit-y * 5;
+          line-height: $grid-unit-y * 5;
+          position: relative;
+        }
+      }
+
+      .mat-radio-label {
+        vertical-align: top;
+      }
+
+      &.mat-radio-error {
+        width: 100% !important;
+
+        & + .mat-error {
+          display: none;
+        }
+      }
+    }
+
+    .input-group {
+
+      .pe-input-group-addon {
+
+        display: table-cell;
+        padding: 0 $grid-unit-x;
+        margin-left: -$grid-unit-x;
+
+        > * {
+          margin: 0;
+          line-height: 0;
+          .icon-16 {
+            margin: 0;
+          }
+        }
+      }
+
+      .pe-input {
+        width: 100%;
+      }
+    }
+
+    .mat-checkbox {
+
+      &-label-before {
+        text-align: right;
+      }
+
+      &-space-between {
+
+        .mat-checkbox-layout {
+          margin-bottom: 0;
+          @include pe_flexbox;
+          @include pe_justify-content(space-between);
+          width: 100%;
+
+          .mat-checkbox-inner-container {
+            margin: auto 0;
+          }
+        }
+      }
+    }
+
+    // added other filled addon styles for .transparent ".addon-filled"
+    pe-form-fieldset:not(.transparent),
+    .pe-form-fieldset:not(.transparent) {
+
+      .mat-form-field-addon-style-filled:not(.mat-form-field-has-toggle) {
+        .mat-form-field-suffix {
+          background: $form-table-bg-color;
+          height: ceil(($grid-unit-y * 5) - 2px);
+          padding: ($grid-unit-y * 2 - 2px) ($grid-unit-x - 3px);
+          margin-top: - $grid-unit-y + 3px;
+          margin-bottom: - $grid-unit-y + 3px;
+          margin-right: -$grid-unit-x;
+          border-radius: 0 $border-radius-small $border-radius-small 0;
+        }
+      }
+    }
+
+    .mat-form-field {
+      width: 100%;
+
+      &-textarea {
+        .mat-form-field-wrapper {
+          height: auto;
+        }
+      }
+
+      &-wrapper {
+        padding: ceil($grid-unit-y - 2px) 0;
+        min-height: $mat-form-field-height - 2;
+        height: $mat-form-field-height - 2;
+        margin-bottom: -1px;
+      }
+
+      &-underline {
+        bottom: 0px;
+        left: -$grid-unit-x;
+        right: -$grid-unit-x;
+        background-color: transparent;
+        z-index: -1;
+        width: auto;
+      }
+
+      &-flex {
+        @include pe_align-items(center);
+      }
+
+      &-prefix, &-suffix {
+        .mat-icon {
+          width: auto;
+          line-height: 0;
+          height: auto;
+          .icon {
+            vertical-align: middle;
+          }
+        }
+      }
+
+      &-prefix {
+        margin-right: $grid-unit-x;
+      }
+
+      &-infix {
+        padding-bottom: 0;
+      }
+
+      &-label {
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 1px;
+        z-index: -1;
+      }
+
+      &-label-wrapper {
+        z-index: 3;
+      }
+
+      &-ripple {
+        height: 1px;
+      }
+
+      &:not(.mat-form-field-should-float) {
+        .mat-form-field-label {
+          @include payever_transform_translate(0, ceil(-$grid-unit-x * .75));
+        }
+      }
+
+      &.mat-form-field-invalid {
+        .mat-form-field-subscript-wrapper {
+          top: $grid-unit-y - 2px;
+          margin-top: 0;
+          width: auto;
+        }
+
+        .mat-form-field-label {
+          transition-duration: 0;
+          @include payever_transform_translate(0, 0);
+          opacity: 0;
+        }
+
+        &.mat-focused {
+          .mat-form-field-label {
+            opacity: 0;
+          }
+        }
+
+        &.mat-form-field-has-prefix {
+          .mat-error {
+            margin-left: $grid-unit-x * 3;
+          }
+        }
+      }
+
+      &.mat-form-field-type-mat-input,
+      &.mat-form-field-type-mat-select {
+      }
+    }
+
+    .pe-select {
+      // to avoid overlapping error message and arrow
+      .mat-form-field.mat-form-field-invalid .mat-form-field-subscript-wrapper {
+        padding-right: 40px;
+      }
+    }
+    // Elements
+    // ----------------------------
+
+    .form-fieldset {
+      border-radius: ceil($border-radius-base * 1.5);
+      margin-bottom: $margin-base-y;
+      display: block;
+      background: $color-primary;
+      overflow: hidden;
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &.form-fieldset-no-border {
+        background: transparent;
+      }
+      .row > [class*=col] {
+        position: relative;
+        min-height: $mat-form-field-height;
+        @include pe_flexbox();
+        @include pe_align-items(center);
+        z-index: 0;
+
+        &.form-fieldset-field-padding {
+          padding-left: $padding-small-horizontal;
+          padding-right: $padding-small-horizontal;
+        }
+
+        &.form-fieldset-field-padding-24 {
+          @media (min-width: $viewport-breakpoint-sm-1) {
+            padding-left: $padding-base-horizontal * 2;
+            padding-right: $padding-base-horizontal *2;
+            .mat-form-field-underline {
+              left: -$grid-unit-x * 2;
+              right: -$grid-unit-x * 2;
+            }
+          }
+        }
+
+        &.form-fieldset-field-no-padding-mobile {
+          @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        > * {
+          width: 100%;
+        }
+        > .tooltip-icon {
+          color: $mat-form-field-label-empty-color;
+          width: auto;
+          cursor: pointer;
+        }
+      }
+
+      .mat-checkbox-layout {
+        margin-bottom: 0;
+      }
+
+      .pe-checkbox {
+        padding: ceil($grid-unit-y + 3px) 0;
+        padding-right: 10px;
+      }
+
+      .label-white {
+        label {
+          color: $color-secondary;
+          font-weight: 300;
+          font-size: 14px;
+        }
+      }
+
+      // Style variations
+      // ---------------------
+
+      &-muted-light {
+        .form-fieldset {
+          box-shadow: none;
+          border-radius: 8px;
+        }
+
+        .row > [class*=col] {
+          border: none;
+          background-color: $color-primary-6;
+
+          .mat-form-field  {
+            .mat-form-field-label {
+              color: rgba(0, 0, 0, 0.75);
+            }
+
+            .mat-form-field-ripple {
+              background-color: transparent;
+            }
+          }
+        }
+
+        .mat-select-arrow:before {
+          opacity: 0.4;
+        }
+      }
+
+      &-no-margin {
+        margin-bottom: 0;
+      }
+
+      &-no-border {
+        border: 0;
+        padding-left: 0;
+        padding-top: 0;
+        box-shadow: none;
+        border-radius: 0;
+        @media (max-width: $screen-xs-max) {
+          padding-left: ceil($grid-unit-x / 2);
+        }
+
+        > .row > [class*=col] {
+          border: 0;
+          box-shadow: none;
+          min-height: $grid-unit-y * 3;
+          // We need it for vertical align for info icon of checkbox in form (Santa DE Micro as example) in FF and IE:
+          @include pe_align-items(start);
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .mat-checkbox-error:after {
+          display: none;
+        }
+
+        .pe-checkbox {
+          margin-bottom: $grid-unit-y;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+      &-no-border-radius {
+        > .row > [class*=col] {
+          border-radius: 0 !important;
+        }
+      }
+      &-field-readonly {
+        opacity: 0.6;
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    input {
+      &::-webkit-input-placeholder { text-overflow:ellipsis; }
+      &:-moz-placeholder { text-overflow:ellipsis; } /* FF 4-18 */
+      &::-moz-placeholder { text-overflow:ellipsis; } /* FF 19+ */
+      &:-ms-input-placeholder {text-overflow:ellipsis; } /* IE 10+ */
+    }
+
+    pe-form-fieldset, .pe-form-fieldset, .form-fieldset-container {
+      &.transparent {
+        background: transparent;
+        overflow: visible;
+        // padding-left: 1px;
+
+        &.round-corners {
+          .form-fieldset {
+            .row > [class*=col] {
+              &:last-child {
+                &.col-xs-12,&.com-sm-12,&.com-md-12,&.com-lg-12 {
+                  border-bottom-left-radius: $border-radius-base * 2;
+                  border-bottom-right-radius: $border-radius-base * 2;
+                  .mat-form-field-underline {
+                    left: -$border-radius-base * 2;
+                    right: -$border-radius-base * 2;
+                  }
+                }
+                &.form-fieldset-field-padding-24 {
+                  @media (min-width: $viewport-breakpoint-sm-1) {
+                    .mat-form-field-underline {
+                      left: -($grid-unit-x * 2 - $border-radius-base * 2);
+                      right: -($grid-unit-x * 2 - $border-radius-base * 2);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-hide-overflow {
+          overflow: hidden;
+          transform: translate3d(0, 0, 0);
+        }
+
+        .form-fieldset {
+
+          &.fixed-dark {
+            background: rgba(30, 31, 34, 0.8);
+
+            .row > [class*=col] {
+              mat-form-field.mat-form-field {
+                input.mat-input-element.mat-form-field-autofill-control {
+                  font-weight: 400;
+                  color: $color-white !important;
+                  caret-color: hsla(0,0%,100%,.2)
+                }
+              }
+            }
+          }
+          background: transparent; // This is inside .transparent so can't have color
+          box-shadow: none;
+          overflow: visible;
+          .row > [class*=col] {
+            border-color: transparent;
+            background-clip: padding-box;
+            background-color: $color-primary-8;
+            z-index: 1;
+            @media (min-width: 1400px) and (max-width: 1550px){
+              border-width: 0 1px 1.4px 0; // fix for scale 90%
+            }
+            &:first-child {
+              // WTF is this? should be [class*=col] ...
+              &.col-xs-12,&.com-sm-12,&.com-md-12,&.com-lg-12 {
+                border-top-left-radius: $border-radius-base * 2;
+                border-top-right-radius: $border-radius-base * 2;
+              }
+            }
+
+            .mat-form-field-label, .mat-slide-toggle-label {
+              color: $color-secondary-8;
+              font-weight: $font-weight-light;
+            }
+
+            .mat-form-field.mat-form-field-has-toggle {
+              .mat-input-element {
+                font-weight: 400;
+                color: $color-secondary-8;
+                caret-color: $color-secondary-2;
+              }
+
+              &.mat-form-field-addon-style-filled {
+                .mat-form-field-suffix {
+                  display: flex;
+
+                  > pe-form-addon:first-child {
+                    margin-top: 8px;
+                    margin-right: 10px;
+                  }
+
+                  > pe-form-addon:last-child {
+                    background-color: $color-secondary-1;
+                    height: 55px;
+                    padding: 20px 0;
+                    width: 48px;
+                    text-align: center;
+                    margin-top: -10px;
+                    margin-bottom: -8px;
+                    margin-right: -12px;
+                    border-radius: 0;
+                    color: $color-secondary-8;
+                    font-weight: 300;
+                    -webkit-font-smoothing: antialiased;
+                  }
+                }
+              }
+            }
+
+            .mat-form-field:not(.mat-form-field-has-toggle) {
+              .mat-input-element {
+                font-weight: 400;
+                color: $color-secondary-0;
+                caret-color: $color-secondary-2;
+              }
+
+              .mat-form-field-required-marker {
+                color: $color-secondary-2;
+              }
+
+              &.mat-form-field-addon-style-filled {
+                .mat-form-field-suffix {
+                  background-color: $color-secondary-1;
+                  height: 55px;
+                  padding: 20px 0;
+                  width: 48px;
+                  text-align: center;
+                  margin-top: -10px;
+                  margin-bottom: -8px;
+                  margin-right: -12px;
+                  border-radius: 0;
+                  color: $color-secondary-8;
+                  font-weight: 300;
+                  -webkit-font-smoothing: antialiased;
+
+                  @media(max-width: $viewport-breakpoint-xs-2 - 1) {
+                    height: 43px;
+                    padding: 15px 0;
+                    width: 48px;
+                    text-align: center;
+                    margin-top: -7px;
+                    margin-bottom: -9px;
+                    margin-right: -22px;
+                  }
+                }
+              }
+            }
+
+            .mat-select-content {
+              background-color: $color-solid-grey-1;
+            }
+
+            .mat-select-value {
+              color: $color-secondary-0;
+            }
+
+            .mat-form-field-prefix, .mat-form-field-suffix {
+              background: transparent;
+
+              .mat-icon .icon {
+                color: $color-secondary-6;
+              }
+            }
+
+            .mat-select {
+              &-arrow {
+                border-width: 0;
+                &:before {
+                  top: calc(50% - 5px);
+                  opacity: 0.6;
+                }
+              }
+            }
+
+            .mat-checkbox {
+              .mat-checkbox-label {
+                color: $color-secondary-0;
+              }
+
+              .mat-checkbox-checked .mat-checkbox-label, .mat-checkbox-checked.mat-accent .mat-checkbox-label {
+                color: $color-secondary-0;
+              }
+
+              .mat-checkbox-frame {
+                border-color: $color-secondary-0;
+              }
+
+              .mat-checkbox-checked.mat-accent .mat-checkbox-frame {
+                border-color: $color-secondary-0 !important;
+              }
+
+              .mat-checkbox-checked.mat-accent .mat-checkbox-background .mat-checkbox-checkmark-path {
+                stroke: $color-secondary-0 !important;
+              }
+
+              &.mat-checkbox-checked .mat-checkbox-background .mat-checkbox-checkmark-path {
+                stroke: $color-secondary-0 !important;
+              }
+            }
+
+            pe-input-password {
+              position: relative;
+
+              .input-password-errors {
+                position: absolute;
+                top: calc(100% + 8px);
+                left: $grid-unit-x;
+                box-shadow: 0 0 16px rgba(17,17,17,.8);
+                z-index: 1;
+                padding: 4px 6px;
+                background-color: #333;
+                border-radius: $border-radius-base + 2px;
+                width: 65%;
+                ul {
+                  position: relative;
+                  padding-left: 8px;
+                  margin: 0;
+                  list-style-type: none;
+                  &::before {
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    top: -8px;
+                    background: #333;
+                    left: 10px;
+                    -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg);
+                  }
+
+                  li {
+                    padding-bottom: 1px;
+                    color: $color-secondary-6;
+                    @include pe_flexbox;
+                    @include pe_align-items(center);
+                    &.valid {
+                      color: rgba(245, 244, 244, 0.34);
+                    }
+                    &:first-child {
+                      color: $color-secondary-6;
+                    }
+                    svg {
+                      margin-right: ceil($grid-unit-x / 2);
+                    }
+                  }
+                }
+              }
+              .forgot-password-link {
+                right: 0;
+                top: 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                @include transition(height .4s cubic-bezier(.25,.8,.25,1));
+
+                a {
+                  display: block;
+                  font-size: $font-size-small;
+                  color: $color-secondary-4;
+                  text-decoration: underline;
+                  padding: 0;
+                  height: fit-content;
+                  outline: none;
+                  @include transition(font-size .4s cubic-bezier(.25,.8,.25,1));
+                }
+              }
+              .mat-focused + .forgot-password-link,
+              .mat-form-field-should-float + .forgot-password-link {
+                height: 32px;
+
+                @media (max-width: $viewport-breakpoint-xs-2) {
+                  height: 18px;
+                }
+
+                a {
+                  font-size: 11px;
+                }
+              }
+            }
+
+            .pe-autocomplete-chips {
+              .mat-form-field-wrapper {
+                height: initial;
+
+                .mat-chip {
+                  height: $grid-unit-y * 2.9;
+                  min-height: $grid-unit-y * 2;
+                  color: $color-secondary-0;
+                  background-color: $color-secondary-2;
+                  .mat-chip-trailing-icon {
+                    color: $color-secondary-7;
+                  }
+                }
+                .mat-chip-input {
+                  height: $grid-unit-y * 2;
+                }
+              }
+            }
+
+            .pe-file-picker-field-container {
+              margin: 14px 0;
+            }
+          }
+          .row > [class*=opacity-03] {
+            background-color: $color-primary-light-overlap;
+          }
+          &-no-border-radius {
+            border-radius: 0 !important;
+            > .row > [class*=col] {
+              border-radius: 0 !important;
+            }
+          }
+        }
+      }
+    }
+
+    &-no-margin {
+      overflow: visible;
+      margin: 0;
+
+      .form-fieldset {
+        margin: 0;
+      }
+    }
+
+    &-border-radius-md {
+      border-radius: $border-radius-base * 2;
+    }
+  }
+}

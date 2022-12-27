@@ -1,0 +1,341 @@
+{
+  "message-app": {
+    "invitation": {
+      "actions": {
+        "cancel": "Cancel",
+        "join": "Join"
+      },
+      "confirmation": {
+        "title": "Are you sure?",
+        "subtitle": "You want to join the \"{channelTitle}\" channel?"
+      },
+      "notification": {
+        "already_a_member": "You are already a member of the \"{channelTitle}\" channel",
+        "succesfully_joined": "You have successfully joined the \"{channelTitle}\" channel",
+        "member_invited_by": "Member {includedUser} invited by {includedByUser}",
+        "member_invited_by_link": "Member {includeUser} invited by invitation link",
+        "member_excluded_by": "Member {excludedUser} invited by {excludedByUser}",
+        "member_left_chat": "Member {leftUser} left the channel"
+      }
+    },
+    "chat": {
+      "attach_menu": {
+        "cancel": "Cancel",
+        "send": "Send",
+        "photo_video": "Photo & Video",
+        "file": "Files",
+        "add_more": "Add more",
+        "compressed": "Compressed",
+        "optional_text": "Optional Text",
+        "url": "URL",
+        "invalid_file_type": "File type not supported"
+      },
+      "drop_box": {
+        "files": {
+          "title": "Drop files here",
+          "subtitle": "File"
+        },
+        "images_raw": {
+          "title": "Drop images here",
+          "subtitle": "File"
+        },
+        "images_compressed": {
+          "title": "Drop photos here",
+          "subtitle": "Image"
+        }
+      },
+      "message_file": {
+        "actions": {
+          "download": "Download"
+        }
+      },
+      "anonymous-user": "Anonymous User",
+      "choose_recipient": "Choose Recipient"
+    },
+    "connection": {
+      "add": "Add"
+    },
+    "footer": {
+      "view": "View",
+      "add": "Add",
+      "save_draft": "Save as Draft",
+      "schedule": "Shedule",
+      "send": "Send",
+      "close": "Close"
+    },
+    "sidebar": {
+      "message": "Message",
+      "all_messages": "All messages",
+      "chat": "Chat",
+      "bot": "Bot",
+      "sms": "SMS",
+      "mail": "Mail",
+      "group": "Group",
+      "contact": "Contact",
+      "channel": "Channel",
+      "options": "Options",
+      "move_to": "Move to",
+      "create": "Create",
+      "connect": "Connect",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "close": "Close",
+      "open": "Open",
+      "save": "Save",
+      "done": "Done",
+      "folder": "Folder",
+      "headline": "Headline",
+      "rules": "Rules",
+      "new_folder": "New folder",
+      "folder_name": "Folder name",
+      "new_chat_message": "New Chat Message",
+      "all_chat_boxes": "All chat boxes",
+      "contact_isnt_installed": "Contact app is not installed",
+      "empty_contact_list": "You don’t have any added contacts",
+      "add_new": "Add new",
+      "add": "Add",
+      "add_contacts": "Add Contacts",
+      "all_folders": "All folders",
+      "create_new": "Create new",
+      "conversation_list": "Conversation list",
+      "contacts": "Contacts",
+      "search": "Search",
+      "search_conversation": "Search conversation",
+      "empty_list": "The folder does not yet contain any conversations",
+      "conversations_not_found": "No conversations were found for your search query",
+      "add_to_folder": "Add to folder...",
+      "exclude_from_current_folder": "Exclude from current folder",
+      "leave":"Leave",
+      "leave_chat":"Leave chat",
+      "delete_and_leave":"Delete and leave",
+      "leave_chat_dialog":"Are you sure you want to delete all message history and leave <<\"{channelLabel}\">>?",
+      "action_cannot_undone":"This action cannot be undone."
+    },
+    "group": {
+      "add_contact": "Add contact",
+      "form": {
+        "name": "Group Name"
+      }
+    },
+    "channel": {
+      "istyping": "is typing",
+      "aretyping": "are typing",
+      "form": {
+        "add_member": "Add member",
+        "description": "Description",
+        "copy_invite": "Copy Invite Link",
+        "name": "Channel Name",
+        "photo": "Add Media",
+        "search": "Search",
+        "skip": "Skip",
+        "type": {
+          "public": "Public Channel",
+          "private": "Private Channel",
+          "integration": "Integration Channel"
+        },
+        "errors": {
+          "just_one_member": "You can't add more than one member to a channel",
+          "email_not_unique": "Email should be unique",
+          "already_created": "Chat with contact already created",
+          "email_pattern": "should be correct",
+          "link_occupied": "This link is already occupied",
+          "not_empty": "The slug doesn't should be empty",
+          "contacts_app_required": "Contacts App should be installed",
+          "user_already_in_chat": "User {userEmail} already in chat"
+        }
+      },
+      "overlay": {
+        "title": "New Channel",
+        "next": "Next"
+      },
+      "permissions": {
+        "title": "Permissions",
+        "general-permissions": "General permissions",
+        "view-channel": "View channel",
+        "manage-channel": "Manage channel",
+        "invite-permissions": "Invite permissions",
+        "channel-permissions": "Channel permissions",
+        "show-author": "Show author of the message",
+        "integration": "Integration",
+        "live-status": "Live status"
+      },
+      "settings": {
+        "more": "More",
+        "are-you-sure": "Are you sure?",
+        "delete-text": "Do you really want to delete this chat? All data will be lost and you will not be able to restore it.",
+        "go-back": "Go Back",
+        "delete": "Delete Chat",
+        "invite-link": "Invite Link",
+        "copy-invite-link": "Copy",
+        "copied-invite-link": "Copied",
+        "sign-text": "Append names of the admins to the messages they post.",
+        "remove": "Remove",
+        "remove_all": "Remove All",
+        "subscribers": "SUBSCRIBERS",
+        "admins": "ADMINS",
+        "send-messages": "Send Messages",
+        "send-media": "Send Media",
+        "send-stickers": "Send Stickers & GIFs",
+        "embed-links": "Embed Links",
+        "add-members": "Add Members",
+        "remove-member": "Remove member",
+        "pin-message": "Pin Messages",
+        "change-group-info": "Change Group Info",
+        "dismiss-admin": "Dismiss admin",
+        "owner-protect": "You cannot edit the right of this admin.",
+        "online": "Online",
+        "additional": {
+          "type": "Channel Type",
+          "sign": "Sign Messages",
+          "remove": "Removed Users",
+          "permission": "Permissions"
+        },
+        "remove-member-overlay": {
+          "title": "Remove \"{memberLabel}\"  from the group?",
+          "decline": "Cancel",
+          "confirm": "Remove"
+        }
+      }
+    },
+    "chat-room": {
+      "products": "Products",
+      "in_reply_to": "In reply to",
+      "placeholder": {
+        "no_chat_rooms": "Add your first contact to start a conversation",
+        "no_messages": "Add content for your visitors and users"
+      },
+      "context-menu": {
+        "title": "Options",
+        "items": {
+          "copy": "Copy Text",
+          "copy_selected": "Copy Selected Text",
+          "edit": "Edit",
+          "select": "Select",
+          "forward": "Forward",
+          "reply": "Reply",
+          "pin": "Pin",
+          "unpin": "Unpin",
+          "paste": "Paste",
+          "delete": "Delete",
+          "forward-selected": "Forward Selected",
+          "clear-selection": "Clear Selection",
+          "delete-selected": "Delete Selected",
+          "seen" : "Seen",
+          "go-to-message": "Go to message"
+        }
+      },
+      "edited": "edited",
+      "reply_inside_message": "reply"
+    },
+    "message-overlay": {
+      "overlay": {
+        "title": "New Message"
+      },
+      "delete": {
+        "title": "Delete message",
+        "label": "Do you really want to delete this message?",
+        "confirm": "Yes",
+        "decline": "No",
+        "delete-for-everyone": "Delete for everyone?"
+      },
+      "delete_multiple": {
+        "title": "Delete messages",
+        "label": "Do you really want to delete this messages?"
+      }
+    },
+    "unpin_all_overlay": {
+      "title": "Are you sure?",
+      "subtitle": "Do you really want to unpin all messages?",
+      "unpin_all": "Unpin all",
+      "cancel": "Cancel"
+    },
+    "message-integration": {
+      "add": "Add integrations",
+      "dismiss-changes": "Are you sure you want to dismiss all changes?",
+      "not-exist-public-channel": "Public channel is not exist",
+      "not-exist-integration-channel": "Integration channel is not exist",
+      "create-public-channel": "Do you want to create new public channel?",
+      "create-integration-channel": "Do you want to create new integration channel?",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "back": "Back",
+      "done": "Done",
+      "widget": "Widget",
+      "bubble": "Bubble",
+      "circle": "Circle",
+      "rounded": "Rounded edges",
+      "rectangle": "Rectangle",
+      "logo": "Logo",
+      "logo-name": "Logo + Name",
+      "name": "Name",
+      "payever-brand": "Payever Brandig",
+      "custom-brand": "Customized",
+      "copy-embed": "Copy embed",
+      "copied": "Successfully copied",
+      "shadow": "Shadow",
+      "change-color": "Change Color",
+      "text-color": "Text Color",
+      "bg-color": "Background Color",
+      "custom-text": "Custom Text",
+      "layout": "Layout",
+      "radius": "Radius",
+      "style": "Style",
+      "channels": "Channels",
+      "search": "Search",
+      "new-channel": "New Channel",
+      "new-group": "New Group",
+      "embed-link": "Embed link",
+      "show-notifications": "Show Notifications",
+      "change-logo": "Change Logo",
+      "color": "Color",
+      "types": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "facebook-messenger": "Facebook Messenger",
+        "live-chat": "Live Chat",
+        "telegram": "Telegram",
+        "instagram-messenger": "Instagram Messenger"
+      }
+    },
+    "message-interface": {
+      "settings": "Settings",
+      "accounts": "Accounts",
+      "add_accounts": "Add accounts",
+      "notifications": "Notifications",
+      "embed": "Embed",
+      "cancel": "Cancel",
+      "done": "Done",
+      "connect": "Connect",
+      "integration": "Integration",
+      "language": "Language"
+    },
+    "product-list": {
+      "in_stock": "in stock"
+    },
+    "permissions": {
+      "send-media": "You don't have permission to send media",
+      "change-group-info": "You don't have permission to send media",
+      "add-members": "You don't have permission to send media"
+    }
+  },
+  "pin-overlay": {
+    "title": "payever Shop Bot",
+    "subtitle": "Would you like to pin this message?",
+    "pin": "Pin",
+    "cancel": "Cancel",
+    "pin_for_chat": "Pin for me and ",
+    "pin_for_all": "Pin for all members"
+  },
+  "add-to-folder-overlay": {
+    "title": "Add to folder",
+    "close": "Close",
+    "save":  "Save"
+  },
+  "unpin-overlay": {
+    "title": "Are you sure?",
+    "subtitle": "Do you really want to unpin this message?",
+    "unpin": "Unpin",
+    "cancel": "Cancel"
+  }
+}

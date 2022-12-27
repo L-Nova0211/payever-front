@@ -1,0 +1,26 @@
+<div class="nav-content">
+  <pe-grid [theme]="theme">
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'pos-app.sidebar.title' | translate"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [selectFolder]="selectedFolder"
+        [folders]="treeData"
+        (selectedFolder)="navigateTolLink($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+
+    <pe-grid-content
+      [showMobileFooter]="false"
+      [style.overflow]="selectedFolder?.data?.link === 'dashboard' ? 'hidden' : 'inherit'"
+      [mobileTitle]="mobileTitle$ | async"
+    >
+      <div class="client-wrapper" [class.preloader-bg]="isPreloadDashboard$ | async">
+        <router-outlet></router-outlet>
+      </div>
+    </pe-grid-content>
+  </pe-grid>
+</div>
+

@@ -1,0 +1,66 @@
+id: template-shop-page
+name: Shop elements
+variant: default
+type: replica
+master: ~
+data: {}
+template:
+  id: template-shop-page
+  type: document
+  children:
+    - id: main-section
+      type: section
+      children:
+        - id: title-cart
+          type: text
+          data:
+            text: 'Cart:'
+        - id: grid-cart
+          type: grid
+          children:
+          - id: shop-cart
+            type: shop-cart
+        - id: title-products
+          type: text
+          data:
+            text: 'Products:'
+        - id: shop-products
+          type: shop-products
+        - id: title-product-details
+          type: text
+          data:
+            text: 'Product details:'
+        - id: product-details
+          type: shop-product-details
+
+stylesheets:
+  desktop:
+    main-section:
+      height: 2048
+    grid-cart:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    title-cart:
+      fontSize: 32
+      margin: 32 0 0
+    shop-cart:
+      slot: left
+    title-products:
+      fontSize: 32
+      margin: 32 0 0
+    shop-products:
+      itemWidth: 275
+      itemHeight: 400
+    title-product-details:
+      fontSize: 32
+      margin: 32 0 0
+    product-details:
+      itemWidth: 275
+      itemHeight: 400
+
+context:
+  shop-products:
+    service: products
+    method: getByIds
+    params:
+      - [1]

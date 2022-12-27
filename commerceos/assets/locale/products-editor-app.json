@@ -1,0 +1,452 @@
+{
+  "addDropdownOption": "+ Add",
+  "saveDropdownOption": "Save",
+  "add": "Add",
+  "more": "More",
+  "add_category": "Add Category",
+  "add_product": "Add Product",
+  "edit_product": "Edit Product",
+  "add_collection": "Add Collection",
+  "add_price_by_group": "Add price by groups",
+  "add_folder": "Add Folder",
+  "edit_collection": "Edit Collection",
+  "add_media": "Add Media",
+  "add_color": "Add Color",
+  "show_product": "Show this product",
+  "add_attributes": "Add attributes",
+  "back": "Back",
+  "loading": "Loading ...",
+  "saving": "Saving ...",
+  "browse_to_upload": "or browse to upload",
+  "cancel": "Cancel",
+  "cancel_confirmation": {
+    "description": "Are you sure you want to cancel?",
+    "title": "Cancel confirmation"
+  },
+  "cm": "cm",
+  "confirm": "Confirm",
+  "delete": "Delete",
+  "delete_product": "Delete product",
+  "delete_collections": "Delete collections",
+  "delete_product_from_collection": "Delete product from collection",
+  "description": {
+    "label": "Description text",
+    "placeholders": {
+      "content": "Content",
+      "description": "Description"
+    },
+    "title": "Description"
+  },
+  "drag_and_drop": "Drag and drop",
+  "drag_and_drop_images": "Drag and drop images",
+  "drag_and_drop_images_of_products": "Drag and drop images of your product or",
+  "edit": "Edit",
+  "editor_paste_or_type_link": "Paste or type a link",
+  "errors": {
+    "forbidden": "You don't have permission to perform this action!",
+    "billingSubscriptionsNotLoadedBeforeSave": "Please wait for billing subscriptions loading process finished before save",
+    "country_required": "Country is required",
+    "language_required": "Language is required"
+  },
+  "kg": "kg",
+  "menu": {
+    "common": {
+      "name": "Product",
+      "sub": {
+        "description": "Description",
+        "name": "Product name",
+        "pictures": "Pictures"
+      }
+    }
+  },
+  "name": {
+    "placeholders": {
+      "name_full": "Product name"
+    },
+    "title": "Product name"
+  },
+  "next": "Next",
+  "not_blank": "This value should not be blank",
+  "options": "Options",
+  "pictures": {
+    "add_image": "Add image",
+    "errors": {
+      "non_image_file": "Can't upload files other then images",
+      "duplicate_image_file": "You already uploaded the same picture",
+      "image_size": "Maximum image size is 5MB",
+      "max_count": "Maximum {{maxCount}} images can be uploaded"
+    },
+    "headings": {
+      "drag_to_sort": "Drag to sort"
+    },
+    "title": "Pictures"
+  },
+  "placeholders": {
+    "productType": "Product Type",
+    "description": "Add description",
+    "price": "Price",
+    "group": "Group",
+    "salePrice": "Sale price",
+    "saleStartDate": "Sale start",
+    "saleEndDate": "Sale end",
+    "product_name": "Set product name",
+    "country": "Country",
+    "language": "Language",
+    "colorName":"Color Name"
+  },
+  "points": "point(s)",
+  "price": {
+    "headings": {
+      "tax": "Tax"
+    },
+    "no_vat_tax": "No VAT/Tax",
+    "notify_when_low_in_stock": "Notify me when low in stock",
+    "placeholders": {
+      "barcode": "Barcode",
+      "price": "Price",
+      "price_taxless": "Price (tax excluded)",
+      "quantity": "Quantity",
+      "skucode": "Code / SKU",
+      "tax_class": "Tax Class",
+      "tax_code": "Tax Code"
+    },
+    "sale": "Sale",
+    "available": "Available",
+    "sale_price": "Sale price",
+    "title": "Price and inventory"
+  },
+  "customer_eligibility": {
+    "actions": {
+      "remove": "Remove"
+    },
+    "label": "Customer eligibility",
+    "all": "All",
+    "everyone": "Everyone",
+    "specific_customers": "Specific customers",
+    "specific_groups_of_customers": "Specific groups of customers",
+    "groups_of_customers": "Groups of customers",
+    "search_groups_of_customers": "Search groups of customers",
+    "search_customer": "Search customer",
+    "customers": "Customers",
+    "groups_of_customers_error": "This group was already chosen",
+    "customers_error": "This customer was already chosen"
+  },
+  "product_list": {
+    "add": "Add product",
+    "add_existing_product": "Add existing products",
+    "show_products": "Show products",
+    "add_new_product": "Add new product",
+    "products": "Products",
+    "all": "All"
+  },
+  "products": {
+    "saved": "Product is saved",
+    "edited": "Product is updated"
+  },
+  "recommendations": {
+    "allow_recommendations": "Allow recommendations",
+    "recommendation_type": "Recommendation type"
+  },
+  "related": {
+    "title": "Related products"
+  },
+  "retention": {
+    "title": "Retention"
+  },
+  "save": "Save",
+  "save_product": "Save Product",
+  "sections": {
+    "main": "Main",
+    "pricing": "Pricing",
+    "content": "Content",
+    "info": "Info",
+    "category": "Category",
+    "inventory": "Inventory",
+    "variant": "Variant",
+    "variants": "Variants",
+    "attributes": "Attributes",
+    "selling": "Selling",
+    "channels": "Channels",
+    "cross_selling": "Cross Selling",
+    "shipping": "Shipping",
+    "seo": "SEO",
+    "taxes": "Taxes",
+    "recommendations": "Recommendations",
+    "visibility": "Visibility",
+    "products": "Products",
+    "recurring_billing": "Subscription"
+  },
+  "title": "Product Editor",
+  "title_preview": "Product",
+  "upload": "Upload",
+  "you_can_drop_image": "You can drop your images",
+  "product_type": {
+    "service": "Service",
+    "digital": "Digital",
+    "physical": "Physical"
+  },
+  "collections": {
+    "add_condition": "+ Add Condition",
+    "saved": "Collection is saved",
+    "edited": "Collection is updated",
+    "mainSection": {
+      "form": {
+        "title": {
+          "placeholder": "Title"
+        },
+        "name": {
+          "label": "Name"
+        },
+        "conditionsType": {
+          "label": "Product must match"
+        },
+        "value": {
+          "label": "Value",
+          "placeholder": "Value"
+        },
+        "condition": {
+          "label": "Condition"
+        },
+        "key": {
+          "label": "Title"
+        }
+      }
+    },
+    "conditions": {
+      "is": "Is",
+      "isNot": "Is not",
+      "startsWith": "Starts with",
+      "endsWith": "Ends with",
+      "contains": "Contains",
+      "doesNotContain": "Does not contain",
+      "greaterThan": "Greater than",
+      "lessThan": "Less than"
+    },
+    "condition_types": {
+      "any_condition": "Any condition",
+      "all_conditions": "All conditions",
+      "no_condition": "No Condition"
+    },
+    "conditions_field": {
+      "title": "Title",
+      "type": "Type",
+      "price": "Price",
+      "weight": "Weight"
+    }
+  },
+  "mainSection": {
+    "form": {
+      "title": {
+        "label": "Title"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "errors": {
+        "sku": "This value is already used",
+        "name": "Name is required",
+        "price_required": "Price required",
+        "sale_price": "Sale price should be smaller then price",
+        "sale_price_required": "Sale price required",
+        "unequal_prices": "price and main price should be equal when we choose all",
+        "invalid_date_format": "Invalid date format",
+        "start_date_required": "Sale start date required",
+        "end_date_required": "Sale end date required",
+        "start_date_greater_than_end": "Start date is greater than end date"
+      }
+    }
+  },
+  "inventorySection": {
+    "errors": {
+      "low_inventory_greater": "Low stock should be smaller then stock"
+    }
+  },
+  "info": {
+    "placeholders": {
+      "inventoryTrackingEnabled": "Should payever track inventory",
+      "inventory": "Available",
+      "low_inventory": "Low stock level",
+      "email_low_stock": "Notify me via email"
+    }
+  },
+  "channelsSection": {
+    "available": "Currently no channels are available",
+    "payever_dropshipping": "payever Dropshipping"
+  },
+  "seoSection": {
+    "form": {
+      "title": "Page title",
+      "description": "Meta description"
+    }
+  },
+  "shippingSection": {
+    "form": {
+      "weight": {
+        "label": "Weight",
+        "min_validation": "Minimum value for weight is 0"
+      },
+      "width": {
+        "label": "Width",
+        "min_validation": "Minimum value for width is 0"
+      },
+      "length": {
+        "label": "Length",
+        "min_validation": "Minimum value for length is 0"
+      },
+      "height": {
+        "label": "Height",
+        "min_validation": "Minimum value for height is 0"
+      }
+    },
+    "errors": {
+      "weight_is_required": "Weight is required",
+      "width_is_required": "Width is required",
+      "length_is_required": "Length is required",
+      "height_is_required": "Height is required"
+    },
+    "measure": {
+      "cm": "Cm",
+      "kg": "Kg"
+    },
+    "available": "Shipping available only for physical product"
+  },
+  "taxesSection": {
+    "form": {
+      "tax": {
+        "label": "Tax"
+      }
+    }
+  },
+  "recurringBillingSection": {
+    "loadingTitle": "Loading subscriptions data. Please wait",
+    "notAvailableTitle": "Billing subscriptions are not available",
+    "form": {
+      "enabled": {
+        "label": "Recurring billing"
+      },
+      "billingPeriod": {
+        "label": "Billing period",
+        "placeholder": "Billing period"
+      },
+      "interval": {
+        "label": "Interval",
+        "placeholder": "Interval",
+        "options":{
+          "day": "Day",
+          "week": "Week",
+          "month": "Month",
+          "year": "Year"
+        }
+      }
+    }
+  },
+  "variantEditor": {
+    "add_variant": "Add variant",
+    "edit_variant": "Edit variant",
+    "title": "New variant",
+    "edit": "Edit",
+    "done": "Done",
+    "add_option": "+ Add option",
+    "placeholders": {
+      "productType": "Product Type",
+      "price": "Variant price",
+      "sale_price": "Variant sale price",
+      "sale": "Sale",
+      "saleStartDate": "Sale start",
+      "saleEndDate": "Sale end",
+      "available": "Available",
+      "sku": "Code / SKU",
+      "barcode": "Barcode",
+      "qty": "Qty",
+      "description": "Description",
+      "option_name": "Option name",
+      "option_value": "Option value",
+      "inventoryTrackingEnabled": "Should payever track inventory",
+      "inventory": "Available"
+    },
+    "labels": {
+      "price": "Price",
+      "description": "Description",
+      "items": "items"
+    },
+    "dialog_leave": {
+      "yes": "Yes",
+      "no": "No",
+      "heading_adding": "Adding variant",
+      "heading_editing": "Editing variant",
+      "description_adding": "Do you really want to close adding a Variant? Because all data will be lost when unsaved and you will not be able to restore it",
+      "description_editing": "Do you really want to close editing a Variant? Because all data will be lost when unsaved and you will not be able to restore it"
+    },
+    "errors": {
+      "sku_is_required": "SKU is required",
+      "wrong_sku": "Wrong SKU",
+      "existing_sky": "Existing SKU",
+      "incorrect_name": "Name is not correct",
+      "value_required": "Value is required",
+      "name_required": "Name is not correct, value is required",
+      "unique": "Value must be unique"
+    },
+    "colorPicker": {
+      "placeholders": {
+        "colorValue": "Color Hex"
+      }
+    }
+  },
+  "snack_bar_exceptions": {
+    "product_not_exist": "Product does not exist anymore",
+    "collection_not_exist": "Collection does not exist anymore"
+  },
+  "dialog_leave": {
+    "yes": "Yes",
+    "no": "No",
+    "heading_adding": "Adding Product",
+    "heading_editing": "Editing product",
+    "description_adding": "Do you really want to close adding a product? Because all data will be lost when unsaved and you will not be able to restore it.",
+    "description_editing": "Do you really want to close editing a product? Because all data will be lost when unsaved and you will not be able to restore it."
+  },
+  "dialog_pre_update": {
+    "yes": "Yes",
+    "no": "No",
+    "heading_lang": "Change the language",
+    "description_lang": "To change the language the product has to be saved first. Save the product?",
+    "heading_country": "Change the country",
+    "description_country": "To change the country the product has to be saved first. Save the product?"
+  },
+
+  "collection_dialog_leave": {
+    "yes": "Yes",
+    "no": "No",
+    "heading_adding": "Adding Collection",
+    "heading_editing": "Editing collection",
+    "description_adding": "Do you really want to close adding a collection? Because all data will be lost when unsaved and you will not be able to restore it.",
+    "description_editing": "Do you really want to close editing a collection? Because all data will be lost when unsaved and you will not be able to restore it."
+  },
+  "text_editor": {
+    "link_to": "Link To",
+    "open_in_new_tab": "Open In New Tab",
+    "custom_link": "Custom Link"
+  },
+  "typePicker": {
+    "default": "Default",
+    "color": "Color",
+    "chooseOption": "Choose option"
+  },
+  "colorPicker": {
+    "colorValue": "Color Hex",
+    "colorName": "Color Name",
+    "chooseColor": "Choose color"
+  },
+  "attribute_type": {
+    "text": "Text",
+    "numeric": "Numeric",
+    "color": "Color"
+  },
+  "attributeEditor": {
+    "type": "Attribute type",
+    "name": "Attribute name",
+    "value": "Attribute value"
+  },
+  "ng_kit.forms.error.validator.required": "This field is required",
+  "ng_kit.forms.error.unknown_error": "Field value is not correct",
+  "ng_kit.forms.error.validator.minlength": "Field value is too short"
+}

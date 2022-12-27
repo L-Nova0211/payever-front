@@ -1,0 +1,7 @@
+<peb-editor
+  *ngIf="data$ | async as data"
+  class="pe-builder-styles"
+  [data]="data"
+  style="background-color: transparent; height: calc(100% + 16px);"
+></peb-editor>
+<pe-builder-header-menu-styles></pe-builder-header-menu-styles>

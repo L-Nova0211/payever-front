@@ -1,0 +1,17 @@
+:host {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  height: auto;
+  padding: 0 15px 0 15px;
+  .app-platform-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 13px 0 10px;
+    width: 100%;
+  }
+}

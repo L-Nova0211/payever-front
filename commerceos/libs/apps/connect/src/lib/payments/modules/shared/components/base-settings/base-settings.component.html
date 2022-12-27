@@ -1,0 +1,15 @@
+<form novalidate
+      (ngSubmit)="onSubmit()"
+      class="form-table form-table-no-margin"
+      [formGroup]="form"
+      *ngIf="form && formScheme">
+  <pe-form-fieldset class="transparent"
+                    [errors]="(errorsNonFlat$ | async)[this.fieldsetsKey] || {}"
+                    [hideDisabled]="hideDisabled"
+                    [translationScope]="'categories.payments.form'"
+                    [isSubmitted]="isSubmitted"
+                    [fields]="formScheme.fieldsets[this.fieldsetsKey]"
+                    [formGroup]="form.get(this.fieldsetsKey)"
+                    [formStyle]="'transparent'"
+  ></pe-form-fieldset>
+</form>

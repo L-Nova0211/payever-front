@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 59" fit="" height="100%" width="100%" 
+          preserveAspectRatio="xMidYMid meet" focusable="false">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#ffffff" fill-rule="nonzero" transform="translate(-654.000000, -208.000000)">
+              // eslint-disable-next-line max-len
+              <path d="M152.778 87.278h-22.556V64.722c0-1.78-1.442-3.222-3.222-3.222s-3.222 1.443-3.222 3.222v22.556h-22.556C99.442 87.278 98 88.72 98 90.5s1.443 3.222 3.222 3.222h22.556v22.556c0 1.78 1.442 3.222 3.222 3.222s3.222-1.443 3.222-3.222V93.722h22.556c1.78 0 3.222-1.442 3.222-3.222s-1.443-3.222-3.222-3.222z" transform="translate(556.000000, 147.000000)"></path>
+            </g>
+          </g>
+        </svg>

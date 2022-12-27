@@ -1,0 +1,151 @@
+.pe-context-menu-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pe-context-menu {
+  backdrop-filter: blur(50px);
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  min-width: 252px;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+  }
+
+  &__title {
+    cursor: default;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__close {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    width: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 8px 16px;
+
+    li {
+      align-items: center;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      margin-top: 12px;
+      position: relative;
+      padding: 4px 8px;
+
+      svg.icon{
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+        margin-left: 3px;
+      }
+
+      span {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      &.red {
+        span {
+          color: #eb4653;
+        }
+
+        &:hover {
+          background-color: #eb4653;
+
+          span {
+            color: white;
+          }
+        }
+      }
+  
+      &:hover {
+        background-color: #0371e2;
+      }
+    }
+  }
+}
+
+.default-pe-context-menu,
+.dark-pe-context-menu {
+  background-color: rgba(36, 39, 46, 0.85);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+
+  .pe-context-menu {
+    &__title {
+      color: #fff;
+    }
+
+    &__close path {
+      fill: #636363;
+    }
+  }
+
+  ul li span {
+    color: white;
+  }
+}
+
+.light-pe-context-menu {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
+
+  .pe-context-menu {
+    &__title {
+      color: #000;
+    }
+
+    &__close path {
+      fill: #000;
+    }
+  }
+
+  ul li {
+    span {
+      color: #000;
+    }
+
+    &:hover {
+      span {
+        color: white;
+      }
+    }
+  }
+}
+
+.transparent-pe-context-menu {
+  background-color: rgba(28, 29, 30, 0.3);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+
+  .pe-context-menu {
+    &__title {
+      color: #fff;
+    }
+
+    &__close path {
+      fill: #636363;
+    }
+  }
+
+  ul li span {
+    color: white
+  }
+}

@@ -1,0 +1,11 @@
+<ng-container *ngIf="position && scale && spaceWidth">
+  <div 
+    class="coords"
+    [style.marginLeft.px]="spaceWidth"
+    [style.left.px]="position.x * scale"
+    [style.top.px]="(position.y - 8) * scale"
+  >
+    <span>X: {{ math.round(position.x) }}</span>
+    <span>Y: {{ math.round(position.y) }}</span>
+  </div>
+</ng-container>

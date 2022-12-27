@@ -1,0 +1,14 @@
+<pe-edit-currency-styles></pe-edit-currency-styles>
+<form class="form-container" [ngClass]="theme" [formGroup]="currencyForm">
+    <peb-form-background>
+        <pe-input-picker
+                class="select-options"
+                formControlName="currency"
+                [selectedItem]="selectedCurrency"
+                panelClass="edit-currency-autocomplete"
+                [label]="'info_boxes.modals.currency.label' | translate"
+                [placeholder]="'info_boxes.modals.currency.label' | translate"
+                [data]="currencies"
+        ></pe-input-picker>
+    </peb-form-background>
+</form>

@@ -1,0 +1,230 @@
+.message-container {
+  height: 82.3vh;
+  max-width: 78.77vw;
+  width: 78.77vw;
+  display: flex;
+  flex-direction: column;
+
+  .overlay-header {
+    height: 48px;
+  }
+
+  .message {
+    &__content {
+      display: flex;
+      flex: 1 1 100%;
+      width: 100%;
+      gap: 12px;
+      padding: 0 12px;
+    }
+
+    &__builder {
+      width: calc(100% - 266px);
+    }
+
+    &__sidebar {
+      width: 254px;
+      border-radius: 12px;
+      background-color: #1c1d1e;
+      // padding: 12px;
+    }
+
+    &__mail-options {
+      width: 100%;
+
+      .form-field {
+        border-radius: 12px 12px 0 0;
+
+        &__icon {
+          position: absolute;
+          right: 278px;
+          margin-right: 12px;
+          margin-top: -24px;
+          cursor: pointer;
+        }
+
+        .send-test-mail-button {
+          position: absolute;
+          right: 278px;
+          margin-right: 12px;
+          width: 92px;
+          height: 24px;
+          /* margin: 3px 0 0 146px; */
+          font-family: Roboto;
+          font-size: 12px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.74;
+          letter-spacing: normal;
+          text-align: center;
+          background: #7a7a7a;
+          color: #ffffff;
+          outline: none;
+          border-radius: 6px;
+          margin-top: -28px;
+          border: none;
+          margin-right: 12px;
+          cursor: pointer;
+        }
+
+        &:nth-of-type(1) {
+          input {
+            padding-left: 25px;
+          }
+        }
+        &:nth-of-type(2) {
+          input {
+            padding-left: 56px;
+          }
+        }
+        &:nth-of-type(3) {
+          input {
+            padding-left: 43px;
+          }
+        }
+        &:nth-of-type(4) {
+          input {
+            border-bottom: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 68px;
+          }
+        }
+      }
+
+      .label {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        color: #7a7a7a;
+        margin-left: 12px;
+        height: 32px;
+        font-size: 14px;
+      }
+      .input {
+        .option {
+          font-weight: 500;
+        }
+        span {
+          font-weight: 500;
+        }
+        background-color: #1c1d1e;
+        display: block;
+
+        &.first {
+          border-radius: 12px 12px 0 0;
+        }
+
+        input {
+          color: #fff;
+          border-bottom: 1px solid #2b2b2b;
+          box-sizing: content-box;
+          margin-top: 6px;
+          padding-bottom: 5px;
+        }
+
+        &__select {
+          height: 42px;
+          margin-bottom: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: auto;
+    }
+  }
+}
+
+.message-header-title {
+  font-size: 24px;
+}
+
+::ng-deep {
+  .overlay-widget-container, .overlay-widget-container .overlay-dark {
+    border-radius: 12px;
+}
+  .pe-message-message-form-overlay {
+    height: 82.3vh;
+    max-width: 78.77vw;
+    width: 78.77vw;
+
+    iframe {
+      height: calc(100% - 129px) !important;
+    }
+    .sidebar-right {
+      border-radius: 12px 12px 0 0 !important;
+    }
+
+    .pe-builder-styles {
+      width: 100%;
+      padding: 0;
+    }
+
+    .main-item-button {
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      cursor: default;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .message-close-button {
+      width: 51px;
+      height: 24px;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.91;
+      letter-spacing: normal;
+      padding: 0 !important;
+      background-color: #57585a;
+      text-align: center;
+      color: #ffffff;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      height: 100vh;
+      max-width: 100vw;
+      width: 100vw;
+    }
+
+    .form-field__send-button {
+      background: #0371e2 !important;
+    }
+
+    .form-field {
+      mat-icon {
+        width: 16px;
+        height: 16px;
+      }
+      background: rgba(0, 0, 0, 0.3);
+      .label-input-content-wrapper {
+        height: 32px;
+        .form-label {
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+  peb-editor-brush-tool {
+    .tool {
+      &__icon {
+        height: 100%;
+        svg {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

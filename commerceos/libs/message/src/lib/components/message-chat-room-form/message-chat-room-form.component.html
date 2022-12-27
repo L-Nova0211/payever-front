@@ -1,0 +1,26 @@
+<div class="header">
+  <div></div>
+  <span>New Chat Message</span>
+  <button (click)="onClose()">Close</button>
+</div>
+<pe-chat class="pe-chat" [title]="'test'" [ngClass]="theme">
+  <pe-chat-header
+    *ngIf="items"
+    [contacts]="items"
+    label="To:"
+    [showContactAutocomplete]="true"
+    [activeChannel]="activeChannel"
+    [recipients]="recipients"
+    (selectOption)="onSelected($event)"
+    [channelMenuItems]="channelMenuItems"
+    (channelMenuItem)="channelMenuItem($event)"
+  ></pe-chat-header>
+  <pe-chat-form
+    [attachMenuItems]="attachMenuItems"
+    [sender]="sender"
+    [showSendButton]="true"
+
+    (send)="sendMessage($event)"
+    (attachMenuItem)="attachMenuItem($event)"
+  ></pe-chat-form>
+</pe-chat>

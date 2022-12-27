@@ -1,0 +1,558 @@
+//
+// Button
+// ----------------------------
+
+@include mat-button-theme($theme);
+
+.pe-bootstrap {
+
+  .mat-button, .mat-raised-button {
+    font-size: $font-size-base;
+    border-radius: $border-radius-base;
+    line-height: $btn-height;
+    height: $btn-height;
+    font-weight: $font-weight-regular;
+    font-family: $font-family-sans-serif;
+    text-align: center;
+    box-shadow: none !important;
+    padding: 0 $grid-unit-x;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+
+    .mat-button-wrapper {
+      height: 100%;
+      @include pe_flexbox;
+      @include pe_justify-content(center);
+      @include pe_align-items(center);
+    }
+
+    .mat-spinner {
+      margin: 0 auto;
+
+      & + .mat-button-wrapper {
+        display: none;
+      }
+    }
+
+    .mat-button-focus-overlay {
+      // to avoid height jumping during transitions
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    // important fix for IOS to propagate touch events
+    &:not([disabled]) * {
+      cursor: pointer;
+    }
+
+  }
+
+  .mat-button {
+
+    .mat-button-focus-overlay {
+      background: transparent;
+    }
+
+    // Color variations
+    // -------------------
+
+    @mixin mat-button-disabled($color) {
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &.focus {
+          color: $color;
+          text-decoration: none;
+        }
+      }
+    }
+
+    @include mat-button-disabled($color-grey-1);
+
+    &.mat-primary {
+      @include mat-button-disabled($color-dark-blue);
+    }
+
+    &.mat-accent {
+      @include mat-button-disabled($color-dark-green);
+    }
+
+    &.mat-warn {
+      @include mat-button-disabled($color-dark-red);
+    }
+
+    // Mobile variations
+    // --------------------
+    @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+      &.mobile-padding-left {
+        &-16 {
+          padding-right: $padding-base-horizontal; // and switch button back to left
+          padding-left: $padding-large-horizontal;
+        }
+        &-24 {
+          padding-right: $padding-base-horizontal; // and switch button back to left
+          padding-left: $padding-base-horizontal * 2;
+        }
+      }
+    }
+
+    // Style Variations
+    // -------------------
+
+    &-rounded {
+      border-radius: $border-radius-large * 16 + 4;
+
+      &.mat-raised-button.mat-button-xxs {
+        width: 17px;
+        height: 17px;
+        padding: 0;
+      }
+    }
+
+    &-rect {
+      &-md {
+        height: 60px;
+        width: 115px;
+        border-radius: 8px;
+        font-size: 12px;
+      }
+
+      &-inner-vertical {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+        @include pe_flex-direction(column);
+
+        svg:first-of-type {
+          margin-top: 14px;
+          margin-bottom: 8px;
+        }
+
+        span:first-of-type {
+          line-height: 1.42;
+        }
+      }
+
+      &-inner-horizontal {
+        @include pe_flexbox;
+        @include pe_align-items(center);
+
+        svg:first-of-type {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-gradient {
+
+      .mat-spinner {
+        circle {
+          stroke: $color-primary-5;
+        }
+      }
+
+      @include payever-button-variant(
+        $color-btn: $color-secondary,
+        $color-btn-hover: $color-secondary,
+        $color-btn-focus: $color-secondary,
+        $color-btn-active: $color-secondary,
+        $color-btn-disabled: $color-secondary,
+        $color-btn-badge: $color-blue,
+
+        $background: $color-blue,
+        $background-hover: $color-dark-blue,
+        $background-focus: $color-dark-blue,
+        $background-active: $color-dark-blue,
+        $background-disabled: $color-blue,
+        $background-badge: $color-secondary,
+
+        $border-color: transparent,
+        $border-hover: transparent,
+        $border-focus: transparent,
+        $border-active: transparent,
+        $border-disabled: transparent,
+
+        $opacity-disabled: .65,
+        $background-image: $btn-checkout-background-image,
+        $background-image-hover: $btn-checkout-background-image,
+        $background-image-focus: $btn-checkout-background-image,
+        $background-image-active: $btn-checkout-background-image,
+        $background-image-disabled: $btn-checkout-background-image-disabled,
+        $border-width: 0);
+
+      &[disabled] {
+        color: $color-secondary !important;
+      }
+    }
+
+    &-link {
+
+      .mat-button-focus-overlay {
+        background-color: transparent;
+      }
+
+      &:hover:not([disabled]) {
+
+        color: $color-blue;
+
+        &.mat-primary {
+          color: $color-dark-blue;
+        }
+
+        &.mat-accent {
+          color: $color-dark-green;
+        }
+
+        &.mat-warn {
+          color: $color-dark-red;
+        }
+
+        &.mat-muted {
+          color: $color-grey-2;
+        }
+
+        &.mat-muted-light {
+          color: $color-primary-4;
+        }
+
+        &.mat-dark {
+          color: $color-grey-1;
+        }
+
+        .mat-button-focus-overlay {
+          background: transparent;
+        }
+      }
+
+      &.mat-muted {
+        color: $color-grey-4;
+      }
+
+      &.mat-muted-light {
+        color: $color-primary-5;
+      }
+
+      &.mat-dark {
+        color: $color-grey-4;
+      }
+
+      &.mat-muted-white {
+        color: $color-secondary-7;
+
+        &:hover:not([disabled]) {
+          color: $color-secondary;
+        }
+      }
+    }
+
+    &-bold {
+      font-weight: $font-weight-medium;
+    }
+
+    &-block {
+      display: block;
+      width: 100%;
+    }
+
+    &-no-padding {
+      padding: 0;
+      margin: 0;
+      min-width: auto;
+
+      &-right {
+        padding-right: 0;
+      }
+    }
+
+    &-icon {
+      padding: 0;
+      min-width: $btn-height;
+
+      &.mat-button-xl {
+        min-width: $btn-height-xl;
+      }
+
+      &.mat-button-lg {
+        min-width: $btn-height-lg;
+      }
+
+      &.mat-button-sm {
+        min-width: $btn-height-sm;
+      }
+
+      &.mat-button-xs {
+        min-width: $btn-height-xs;
+      }
+    }
+
+
+    &-space-around {
+      .mat-button-wrapper {
+        @include pe_justify-content(space-around);
+      }
+    }
+
+    &-fit-content {
+      min-width: auto;
+      padding: 0;
+    }
+
+    &-small-padding {
+      padding: 0 $grid-unit-x / 2;
+    }
+
+    &-no-width {
+      min-width: auto;
+    }
+
+    &-space-between {
+      .mat-button-wrapper {
+        @include pe_justify-content(space-between);
+      }
+    }
+
+    &-with-arrow {
+      padding-right: 4px;
+    }
+
+    &-line-height-sm {
+      line-height: ceil($grid-unit-y * 1.5);
+    }
+
+    &-transparent {
+
+      &.mat-raised-button {
+        background-color: transparent;
+      }
+    }
+
+    &-menu {
+      transform: translate(0); // fix for safari
+
+      .mat-button-wrapper {
+        @include pe_justify-content(space-between);
+      }
+
+      &.mat-button-xxs {
+        min-width: $grid-unit-x * 5;
+      }
+
+      .icon {
+        margin-left: $grid-unit-x * 2;
+      }
+    }
+
+    &-set {
+      line-height: 0; // fix for: .pe-bootstrap has line-height 22 as default
+
+      .mat-button, .mat-raised-button {
+        border-radius: unset;
+        margin-right: 1px;
+      }
+
+      .mat-button, .mat-raised-button {
+        &:first-of-type {
+          border-top-left-radius: $border-radius-base;
+          border-bottom-left-radius: $border-radius-base;
+        }
+      }
+
+      .mat-button, .mat-raised-button {
+        &:last-of-type {
+          border-top-right-radius: $border-radius-base;
+          border-bottom-right-radius: $border-radius-base;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-dark {
+      background-color: $color-grey-2;
+      color: $color-white-grey-6;
+    }
+
+    &-col-dir {
+      .mat-button-wrapper {
+        @include pe_flex-direction(column);
+      }
+    }
+
+    // Size Variations
+    // -------------------
+
+    @mixin button-size($height, $font-size) {
+      height: $height;
+      font-size: $font-size;
+
+      .mat-button-wrapper {
+        line-height: $height;
+      }
+    }
+
+    &-xl {
+      @include button-size($btn-height-xl, $font-size-large-2);
+    }
+
+    &-lg {
+      @include button-size($btn-height-lg, $font-size-large-2);
+    }
+
+    &-sm {
+      @include button-size($btn-height-sm, $font-size-small);
+    }
+
+    &-xs {
+      @include button-size($btn-height-xs, $font-size-micro-2);
+    }
+
+    &-xxs {
+      @include button-size($btn-height-xxs, $font-size-micro-2);
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  .mat-raised-button {
+    border: 1px solid $color-grey-2;
+    @include payever-button-variant;
+    line-height: $btn-height-without-borders;
+    min-width: auto;
+
+    &.mat-primary {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-blue,
+        $color-blue, $color-blue, $color-blue, $color-blue, $color-blue, $color-white,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-accent {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-green,
+        $color-green, $color-green, $color-green, $color-green, $color-green, $color-white,
+        transparent, transparent, transparent, transparent, transparent, .5);
+    }
+
+    &.mat-warn {
+      @include payever-button-variant($color-white, $color-white, $color-white, $color-white, $color-white, $color-red,
+        $color-red, $color-red, $color-red, $color-red, $color-red, $color-white,
+        transparent, transparent, transparent, transparent, transparent, .5);
+    }
+
+    &.mat-muted {
+      @include payever-button-variant($color-white-grey-7, $color-white-grey-7, $color-white-grey-7, $color-white-grey-7,
+        $color-white-grey-8, $color-grey-3, $color-grey-3, $color-grey-3, $color-grey-3, $color-grey-4, $color-grey-5,
+        $color-white, transparent, transparent, transparent, transparent, transparent);
+    }
+
+
+    &.mat-muted-light {
+      @include payever-button-variant($color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0,
+        $color-primary-4, $color-primary-3, $color-primary-3, $color-primary-3, $color-primary-3, $color-primary-5,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-light-themed {
+      @include payever-button-variant($color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0,
+      $color-primary-3, $color-primary-2, $color-primary-2, $color-primary-2, $color-primary-2, $color-primary-4,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-dark {
+      @include payever-button-variant($color-white-grey-7, $color-white-grey-7, $color-white-grey-7, $color-white-grey-7, $color-white-grey-7, $color-white-grey-7,
+        $color-grey-4, $color-grey-3, $color-grey-3, $color-grey-3, $color-grey-3, $color-grey-5,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-white {
+      @include payever-button-variant($color-secondary-9, $color-secondary-9, $color-secondary-9, $color-secondary-9, $color-secondary-9, $color-secondary-9,
+        $color-primary-4, $color-primary-4, $color-primary-4, $color-primary-4, $color-primary-4, $color-primary-5,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-transparent {
+      @include payever-button-variant($color-secondary-4, $color-secondary-4, $color-secondary-4, $color-white-grey-4, $color-secondary-4, $color-secondary-4,
+        $color-secondary-1, $color-secondary-2, $color-secondary-1, $color-secondary-1, $color-secondary-1, $color-secondary-2,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-white-themed {
+      @include payever-button-variant($color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0, $color-secondary-0,
+      $color-secondary-2, $color-secondary-3, $color-secondary-2, $color-secondary-2, $color-secondary-2, $color-secondary-3,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-muted-transparent-themed {
+      @include payever-button-variant($color-secondary, $color-secondary, $color-secondary, $color-secondary, $color-secondary, $color-secondary,
+        $color-secondary-2, $color-secondary-4, $color-secondary-2, $color-secondary-2, $color-secondary-2, $color-secondary-4,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-dark {
+      @include payever-button-variant($color-white-grey-7, $color-white-grey-7, $color-white-grey-7, $color-white-grey-7,
+        $color-white-grey-8, $color-grey-3,
+        $color-grey-1, $color-grey-1, $color-grey-1, $color-grey-2, $color-grey-3, $color-white,
+        transparent, transparent, transparent, transparent, transparent);
+    }
+
+    &.mat-button-divider {
+
+      .mat-button-divider-icon-wrapper {
+        height: 100%;
+        padding: 0 $grid-unit-x;
+      }
+
+      .mat-button-divider-title {
+        height: 100%;
+        padding: 0 $grid-unit-x;
+        border-left: 1px solid $color-white-pe;
+      }
+    }
+
+    //# Sizes for raised buttons
+
+    &.mat-button-xl {
+      .mat-button-wrapper {
+        line-height: $btn-height-xl-without-borders;
+      }
+    }
+
+    &.mat-button-lg {
+      .mat-button-wrapper {
+        line-height: $btn-height-lg-without-borders;
+      }
+    }
+
+    &.mat-button-sm {
+      .mat-button-wrapper {
+        line-height: $btn-height-sm-without-borders;
+      }
+    }
+
+    &.mat-button-xs {
+      .mat-button-wrapper {
+        line-height: normal;
+      }
+    }
+
+    &.mat-button-xxs {
+      .mat-button-wrapper {
+        line-height: normal;
+      }
+    }
+
+    &.mat-button-line-height-inherit {
+      line-height: inherit;
+    }
+  }
+}
+
+.dark-action-button {
+  color: $color-white-pe !important;
+  background: $color-grey-dark !important;
+
+  &:hover {
+    background-color: $color-grey-8-light !important;
+    color: $color-white-pe !important;
+  }
+}

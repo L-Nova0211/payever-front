@@ -1,0 +1,64 @@
+<mat-accordion class="mat-accordion-xl" *ngIf="!isVariantStatusConnected(paymentIndex)">
+  <form novalidate
+        autocomplete="off"
+        (ngSubmit)="onSubmit()"
+        class="form-table form-table-no-margin"
+        [formGroup]="form"
+        *ngIf="form">
+    <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" class="native-submit"></button>
+    <pe-form-fieldset class="transparent"
+                      [hideDisabled]="true"
+                      [errors]="(errorsNonFlat$ | async)['credentials'] || {}"
+                      [isSubmitted]="isSubmitted"
+                      [translationScope]="'categories.payments.form'"
+                      [fields]="formScheme.fieldsets['credentials']"
+                      [formGroup]="form.get('credentials')"
+                      [formStyle]="'transparent'"
+    ></pe-form-fieldset>
+
+    <div *ngIf="products$ | async" class="products">
+      <div *ngFor="let product of (products$ | async)" class="product">
+
+        <mat-checkbox class="product-checkbox"
+                      [labelPosition]="'after'"
+                      [checked]="isProductChecked(product.Id)"
+                      (change)="onProductChecked($event, product.Id)">
+          <span [innerHtml]="product.Name"></span>
+        </mat-checkbox>
+
+        <div class="product-info">
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <span class="small-2" translate>categories.payments.auth.dk_products.titles.variable_interest</span>
+            </div>
+            <div class="col-xs-6 col-sm-8">
+              <span class="small-2">{{ (product.NominalInterest || 0) * 0.01 | percent:'1.0-2' }}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <span class="small-2" translate>categories.payments.auth.dk_products.titles.establishment_fee</span>
+            </div>
+            <div class="col-xs-6 col-sm-8">
+              <span class="small-2">{{ (product.EstablishmentFee || 0) }}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <span class="small-2" translate>categories.payments.auth.dk_products.titles.account_fee</span>
+            </div>
+            <div class="col-xs-6 col-sm-8">
+              <span class="small-2">{{ (product.AccountFee || 0) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="create-account-btn">
+      <button mat-raised-button [disabled]="isNeedGetProducts() && !isDoReset()" type="button" class="no-border" (click)="submitTrigger.click()" [class.mat-button-block]="true">
+        <pe-progress-button-content [loading]="isLoading$ | async">{{ isDoReset() ? ('actions.reset_creds' | translate) : ('actions.connect' | translate) }}</pe-progress-button-content>
+      </button>
+    </div>
+  </form>
+</mat-accordion>

@@ -1,0 +1,400 @@
+id: footer-page
+variant: front
+data: {}
+template:
+  id: burberry-main-page
+  type: document
+  children:
+    - id: footer
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer-column1
+          type: block
+          children:
+            - id: footer-column1-link-title
+              type: text
+              data:
+                text: EASY ONLINE SHOPPING
+            - id: footer-column1-link1
+              type: text
+              data:
+                text: Fast Delivery
+            - id: footer-column1-link2
+              type: text
+              data:
+                text: Fair return policy
+            - id: footer-column1-link3
+              type: text
+              data:
+                text: Great Customer Support
+
+        - id: footer-column2
+          type: block
+          children:
+            - id: footer-column2-link-title
+              type: text
+              data:
+                text: PAYMENT METHODS
+            - id: footer-column2-link1
+              type: text
+              data:
+                text: Credit Card
+            - id: footer-column2-link2
+              type: text
+              data:
+                text: PayPal
+
+        - id: footer-column3
+          type: block
+          children:
+            - id: footer-column3-link-title
+              type: text
+              data:
+                text: COMPANY
+            - id: footer-column3-link1
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/" style="color: #000">Home</a>'
+            - id: footer-column3-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/contacts" style="color: #000">Contact us</a>'
+            - id: footer-column3-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/category" style="color: #000">Catalogue</a>'
+            - id: footer-column3-link4
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/about" style="color: #000">About us</a>'
+
+    - id: copyright-section
+      type: section
+      children:
+        - id: copyright-block
+          type: block
+          children:
+            - id: copyright-text
+              type: text
+              data:
+                text: 'Shop with love. ♡ Made with <a href="#" peb-link-action="navigate.external-page" peb-link-payload="http://payever.org/" style="color: #8b8b8b">payever</a>'
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 50
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 50
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 50
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    # ----------------------------------
+    # Desktop Copyright Section
+    # ----------------------------------
+    copyright-section:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    copyright-block:
+      margin: 0 0 0 300
+      display: grid
+    copyright-text:
+      width: 500
+      textAlign: center
+      fontFamily: AvenirLTStd-Book,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      fontSize:  14
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 40
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 40
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 40
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    # ----------------------------------
+    # Tablet Copyright Section
+    # ----------------------------------
+    copyright-section:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    copyright-block:
+      margin: 0 0 0 150
+      display: grid
+    copyright-text:
+      width: 500
+      textAlign: center
+      fontFamily: AvenirLTStd-Book,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      fontSize:  14
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#fff'
+      display: grid
+      gridTemplateColumns: 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 20
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 20
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      width: 200
+      textAlign: left
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 110
+      textAlign: left
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 20 20 20
+      margin: 0 0 20 20
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      font-wight: 500
+      fontSize: 12
+      width: 200
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+
+    # ----------------------------------
+    # Mobile Copyright Section
+    # ----------------------------------
+    copyright-section:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    copyright-block:
+      margin: 0
+      display: grid
+    copyright-text:
+      margin: 0 0 0 20
+      width: 300
+      textAlign: left
+      fontFamily: AvenirLTStd-Book,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: '#000'
+      fontSize: 12
+context: {}

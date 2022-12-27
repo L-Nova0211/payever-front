@@ -1,0 +1,18 @@
+<div class="pe-info-box-container-fixed pos-app-container">
+  <pe-info-box [fixed]="false"
+               [transparent]="true"
+               [withHeader]="false"
+               [withFooter]="false"
+               [withPadding]="false"
+               [notFullwidthOnMobile]="true"
+               [roundBorder]="true"
+               [title]="'channels.pos.title' | translate"
+               (onClose)="goBack()">
+    <ng-container content>
+      <menu-list [titleForEmptyField]="'channels.pos.noTerminal' | translate"
+                 [menuList]="terminalList"
+                 (changedToggle)="onChangeToggle($event)">
+      </menu-list>
+    </ng-container>
+  </pe-info-box>
+</div>

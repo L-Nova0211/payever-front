@@ -1,0 +1,795 @@
+id: giuseppe-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: giuseppe-main-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-title
+              type: text
+              data:
+                text: "Discover 'Kay'"
+            - id: first-section-description
+              type: text
+              data:
+                text: Ansight
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-content
+          type: block
+          children:
+            - id: second-section-block1
+              type: block
+              children:
+                - id: second-block1-title
+                  type: text
+                  data:
+                    text: "Jetzt im Trend"
+                - id: second-block1-description
+                  type: text
+                  data:
+                    text: "Mirror, mirror…you know the rest. Slip into the majestic 'Aretha', a metallic silver mule with dazzling bow."
+                - id: second-block1-text
+                  type: text
+                  data:
+                    text: "ANSIGHT"
+            - id: second-section-block2
+              type: block
+              children: []
+            - id: second-section-block3
+              type: block
+              children:
+                - id: second-block3-image
+                  type: block
+                  children: []
+                - id: second-block3-content
+                  type: block
+                  children:
+                    - id: second-block3-title
+                      type: text
+                      data:
+                        text: Aretha
+                    - id: second-block3-price
+                      type: text
+                      data:
+                        text: "595,00 €"
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-block1
+          type: block
+          children:
+            - id: third-block1-title
+              type: text
+              data:
+                text: "Sneakers"
+            - id: third-block1-description
+              type: text
+              data:
+                text: "Die ikonischen Damen-Sneaker von Giuseppe Zanotti sind immer hochmodische Hingucker und die perfekte Ergänzung für alle lässig dynamischen Looks ."
+            - id: third-block1-text
+              type: text
+              data:
+                text: "ANSIGHT"
+            - id: third-block1-image
+              type: block
+              children: []
+        - id: third-section-block2
+          type: block
+          children:
+            - id: third-block2-image
+              type: block
+              children: []
+            - id: third-block2-title
+              type: text
+              data:
+                text: "Sneakers"
+            - id: third-block2-description
+              type: text
+              data:
+                text: "Die ikonischen Damen-Sneaker von Giuseppe Zanotti sind immer hochmodische Hingucker und die perfekte Ergänzung für alle lässig dynamischen Looks ."
+            - id: third-block2-text
+              type: text
+              data:
+                text: "ANSIGHT"
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-block1-image
+          type: block
+          children: []
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-block2-title
+              type: text
+              data:
+                text: "Die Sammlung „Talon“ "
+            - id: fourth-block2-description
+              type: text
+              data:
+                text: "Der „Talon“ Sneaker Die Neuauflage eines Oldschool-Basketballschuhs für moderne Nonkonformisten."
+            - id: fourth-block2-text
+              type: text
+              data:
+                text: "ANSIGHT"
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-video
+          type: video
+          data:
+            source: https://media.giuseppezanotti.com/final+video/PHOEBE+NUITE_1920x1080.mp4
+            preview: https://media.giuseppezanotti.com/final+video/PHOEBE+NUITE_1920x1080.mp4
+            autoplay: true
+            loop: true
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-title
+          type: text
+          data:
+            text: Bleiben Sie auf dem Laufenden
+
+stylesheets:
+  desktop:
+    giuseppe-main-page: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 600
+      backgroundImage: 'https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_23.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 1024
+    first-section-block:
+      display: grid
+      margin: auto
+      backgroundColor: 'rgba(0, 0, 0, 0.25)'
+      height: 150
+      width: 250
+    first-section-title:
+      width: 200
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      margin: 40 0 0 30
+    first-section-description:
+      width: 150
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 16
+      margin: 0 0 0 50
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      height: 500
+      gridTemplateRows: 1fr 40
+    second-section-content:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    second-section-block1:
+      display: grid
+      height: 215
+      width: 335
+      gridTemplateRows: 1fr 0fr 1fr
+      margin: auto
+    second-block1-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      margin: 50 0 20 0
+    second-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 0 20 0
+      fontSize: 14
+    second-block1-text:
+      fontSize: auto
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 0 0 30 0
+    second-section-block2:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_13.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 500
+      width: 342
+    second-section-block3:
+      display: grid
+      gridTemplateRows: 1fr
+      margin: auto
+      height: 400
+    second-block3-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/catalog/product/I/0/I000009002_A_1.jpg
+      backgroundSize: cover
+      backgroundPosition: bottom
+      height: 300
+      width: 342
+    second-block3-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      display: grid
+      margin: 30 0 20 100
+      textAlign: center
+    second-block3-price:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 135
+      display: grid
+      textAlign: center
+      margin: 0 0 20 120
+      fontSize: 14
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      height: 480
+      gridTemplateRows: 1fr 20
+    third-section-block1:
+      display: grid
+    third-block1-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      margin: 0 0 20 0
+    third-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 400
+      margin: 0 0 20 0
+      fontSize: auto
+    third-block1-text:
+      fontSize: auto
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 70
+      margin: 0 0 30 0
+    third-block1-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-sneakers-man-fw20_14.jpg
+      width: 500
+      height: 600
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-block2:
+      display: grid
+      marginLeft: 20
+    third-block2-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      margin: 20 0 20 0
+    third-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 400
+      margin: 0 0 20 0
+      fontSize: auto
+    third-block2-text:
+      fontSize: auto
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 0 0 30 0
+    third-block2-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-urchin-sneakers-fw20_13.jpg
+      width: 500
+      height: 600
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 auto auto 0
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------  ------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      margin: auto
+      height: 400
+      gridTemplateRows: 1fr 20
+    fourth-block1-image:
+      width: 500
+      height: 500
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-talon-man-sneakers-ss20.jpg
+      backgroundSize: cover
+      backgroundPosition: top
+      marginTop: 20
+    fourth-section-block:
+      display: grid
+      gridTemplateRows: 1fr 0fr 1fr
+      marginLeft: 20
+    fourth-block2-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      textAlign: center
+      margin: 200 0 20 80
+    fourth-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 400
+      margin: 0 0 0 30
+      textAlign: center
+      fontSize: auto
+    fourth-block2-text:
+      fontSize: auto
+      textAlign: center
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 20 0 0 150
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section-video:
+      width: 1024
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 150
+      gridTemplateRows: 1fr 40 0fr
+      width: 1024
+    sixth-section-block:
+      display: grid
+      margin: auto 0 auto auto
+    sixth-section-title:
+      width: 600
+      textAlign: center
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 28
+      fontWeight: 300
+      margin: 70 0 0 200
+
+  tablet:
+    giuseppe-main-page: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 500
+      backgroundImage: 'https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_23.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 768
+      margin: auto
+    first-section-block:
+      display: grid
+      margin: auto
+      backgroundColor: 'rgba(0, 0, 0, 0.25)'
+      height: 150
+      width: 250
+    first-section-title:
+      width: 200
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      margin: 30 0 10 30
+    first-section-description:
+      width: 110
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 16
+      margin: 0 0 0 70
+
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      width: 100%
+      height: 600
+      margin: auto
+    second-section-block1:
+      display: grid
+      gridTemplateRows: 1fr 0fr 1fr
+      margin: auto
+    second-block1-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      textAlign: center
+      margin: 50 0 20 300
+    second-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 500
+      margin: auto 0 0 150
+      textAlign: center
+      fontSize: 14
+    second-block1-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 30 0 0 300
+      textAlign: center
+    second-section-block2:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_13.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 400
+      width: 400
+      marginLeft: 200
+    second-section-block3:
+      display: grid
+      gridTemplateRows: 1fr
+    second-block3-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/catalog/product/I/0/I000009002_A_1.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 400
+      width: 400
+      marginLeft: 200
+    second-block3-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      display: grid
+      margin: 50 0 20 300
+      textAlign: center
+    second-block3-price:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 100
+      textAlign: center
+      display: grid
+      margin: 0 0 50 330
+      fontSize: auto
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-section-block1:
+      width: 350
+      margin: auto auto auto 20
+    third-section-block2:
+      width: 350
+    third-block1-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      margin: 0 0 20 0
+      textAlign: left
+    third-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 0 20 0
+      fontSize: auto
+      textAlign: left
+    third-block1-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      textAlign: left
+      margin: 0 0 30 0
+    third-block1-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-sneakers-man-fw20_14.jpg
+      width: 350
+      height: 400
+      backgroundSize: cover
+      backgroundPosition: center
+    third-block2-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      textAlign: left
+      margin: 20 0 20 0
+    third-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      textAlign: left
+      margin: 0 0 20 0
+      fontSize: auto
+    third-block2-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      textAlign: left
+      margin: 0 0 30 0
+    third-block2-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-urchin-sneakers-fw20_13.jpg
+      width: 350
+      height: 400
+      backgroundSize: cover
+      backgroundPosition: center
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-block1-image:
+      width: 400
+      height: 400
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-talon-man-sneakers-ss20.jpg
+      backgroundSize: cover
+      backgroundPosition: top
+      marginTop: 20
+    fourth-section-block:
+    fourth-block2-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 262
+      textAlign: center
+      margin: 200 0 20 50
+    fourth-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 310
+      margin: 0 0 0 30
+      textAlign: center
+      fontSize: auto
+    fourth-block2-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 20 0 0 150
+
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section-video:
+      width: 768
+
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 150
+      gridTemplateRows: 1fr 40 0fr
+      width: 768
+    sixth-section-title:
+      width: 500
+      textAlign: center
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 28
+      fontWeight: 300
+      margin: 50 150 0 150
+
+  mobile:
+    giuseppe-main-page: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 400
+      backgroundImage: 'https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_23.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 360
+    first-section-block:
+      display: grid
+      margin: auto
+      backgroundColor: 'rgba(0, 0, 0, 0.25)'
+      height: 150
+      width: 250
+    first-section-title:
+      width: 200
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 32
+      margin: 40 20 10 20
+    first-section-description:
+      width: 110
+      textAlign: center
+      color: '#fff'
+      font-family: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 16
+      margin: 0 0 20 70
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      width: 360
+      height: 600
+      margin: auto
+    second-section-block1:
+      display: grid
+      gridTemplateRows: 1fr 0fr 1fr
+      margin: auto
+    second-block1-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      textAlign: center
+      margin: 50 0 20 100
+    second-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 30 0 40
+      textAlign: center
+      fontSize: 12
+    second-block1-text:
+      fontSize: auto
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 30 100 0 120
+      textAlign: center
+    second-section-block2:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-shoes-woman-fw20_13.jpg
+      backgroundSize: cover
+      backgroundPosition: center
+      height: 500
+      width: 360
+    second-section-block3:
+      display: grid
+      gridTemplateRows: 1fr
+    second-block3-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/catalog/product/I/0/I000009002_A_1.jpg
+      backgroundSize: cover
+      backgroundPosition: bottom
+      height: 300
+      width: 340
+      marginLeft: 0
+    second-block3-title:
+      fontSize: 25
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 170
+      display: grid
+      margin: 50 0 20 100
+      textAlign: center
+    second-block3-price:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 120
+      textAlign: center
+      display: grid
+      margin: 0 100 50 120
+      fontSize: auto
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section: {}
+    third-block1-title:
+      fontSize: 20
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 100
+      display: grid
+      textAlign: left
+      margin: 20 0 20 10
+    third-block1-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 0 20 10
+      textAlign: left
+      display: grid
+      fontSize: auto
+    third-block1-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 0 0 20 10
+      display: grid
+      textAlign: left
+    third-block1-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-sneakers-man-fw20_14.jpg
+      width: 360
+      height: 400
+      backgroundSize: cover
+      margin: auto
+      backgroundPosition: center
+    third-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 200
+      display: grid
+      textAlign: left
+      margin: 20 0 20 10
+    third-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 0 20 10
+      textAlign: left
+      display: grid
+      fontSize: auto
+    third-block2-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 0 0 20 10
+      display: grid
+      textAlign: left
+    third-block2-image:
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-urchin-sneakers-fw20_13.jpg
+      width: 360
+      height: 400
+      backgroundSize: cover
+      backgroundPosition: center
+      marginTop: 10
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section: {}
+    fourth-block1-image:
+      width: 360
+      height: 400
+      backgroundImage: https://www.giuseppezanotti.com/media/contentmanager/content/giuseppe-zanotti-talon-man-sneakers-ss20.jpg
+      backgroundSize: cover
+      backgroundPosition: top
+      marginTop: 20
+    fourth-section-block:
+      display: grid
+      gridTemplateRows: 1fr 0fr 1fr
+    fourth-block2-title:
+      fontSize: 20
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 200
+      textAlign: center
+      margin: 20 50 20 80
+    fourth-block2-description:
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 300
+      margin: 0 30 0 30
+      textAlign: center
+      fontSize: auto
+    fourth-block2-text:
+      fontSize: 12
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      width: 150
+      margin: 20 100 0 100
+      textAlign: center
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section-video:
+      width: 360
+
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 150
+      gridTemplateRows: 1fr 40 0fr
+      width: 360
+    sixth-section-title:
+      width: 218
+      textAlign: center
+      color: '#000'
+      fontFamily: AvenirLTStd-Light,Helvetica Neue,Helvetica,Arial,sans-serif
+      fontSize: 14
+      fontWeight: 300
+      margin: 50 0 0 80
+
+context: {}

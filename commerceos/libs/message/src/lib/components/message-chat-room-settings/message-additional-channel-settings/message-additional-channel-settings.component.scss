@@ -1,0 +1,228 @@
+.additional-channel-settings {
+  padding: 12px;
+  min-width: 436px;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 7px;
+    margin-bottom: 18px;
+
+    div {
+      min-width: 44px;
+
+      &.right {
+        text-align: right;
+      }
+
+      span {
+        font-size: 14px;
+        color: #7a7a7a;
+        cursor: pointer;
+        line-height: 1.2857142857;
+
+        &.blue {
+          color: #0091df;
+        }
+      }
+    }
+
+    p {
+      color: #fff;
+      font-family: Roboto,sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  &__container {
+    .mat-tab-header {
+      display: none;
+    }
+  }
+
+  .additional-channel-settings-main {
+    border-radius: 12px;
+    overflow: hidden;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background-color: #111111;
+      border-top: 1px solid #1c1d1e;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        border-top: none;
+      }
+    }
+
+    &__type-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__label {
+      flex: 1;
+      margin-left: 8px;
+      margin-right: 8px;
+      color: #ffffff;
+    }
+
+    &__arrow-right {
+      width: 8px;
+      height: 14px;
+
+      polygon {
+        fill: #ffffff!important;
+      }
+    }
+  }
+
+  .channel-type {
+    &__type-list {
+      border-radius: 12px;
+      margin: -1px 0 0;
+      overflow: hidden;
+
+      label {
+        align-items: center;
+        background-color: #111111;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1px;
+        padding: 12px;
+
+        span {
+          color: white;
+          font-size: 12px;
+          line-height: 1.3333333333;
+        }
+
+        input:checked ~ .channel-type__checkmark {
+          background-color: #0371e2;
+          border-color: #fff;
+          opacity: 1;
+
+          svg {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &__checkmark {
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid white;
+      display: flex;
+      height: 20px;
+      justify-content: center;
+      margin-top: -2px;
+      margin-bottom: -2px;
+      opacity: 0;
+      width: 20px;
+    }
+  }
+
+  .channel-sign {
+    border-radius: 12px;
+    background-color: #111111;
+  }
+
+  .channel-removed-users {
+    .pe-picker .picker-container {
+      border-radius: 12px;
+    }
+
+    button.text-confirm {
+      color: #eb4653;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    &__container {
+      display: flex;
+    }
+
+    &__item {
+      display: flex;
+      padding: 0 0 0 12px;
+      width: 100%;
+      background-color: #111111;
+      border-bottom: solid 1px #1c1d1e;
+
+      &:nth-last-child(1) {
+        border-radius: 0 0 12px 12px;
+        border-bottom: none;
+      }
+    }
+
+    &__info {
+      margin: 0 auto 0 12px;
+      padding: 4px 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    &__name {
+      font-weight: 500;
+    }
+
+    &__avatar {
+      padding: 4px 0;
+      height: 32px;
+      border-radius: 12px;
+    }
+
+    &__header-removed-users {
+      margin-top: 12px;
+      padding: 6px 12px;
+      background-color: #111111;
+      border-radius: 12px 12px 0 0;
+      border-bottom: solid 1px #1c1d1e;
+
+      p {
+        color: #0371e2;
+      }
+    }
+
+    &__button {
+      color: #0371e2;
+      background-color: #1c1d1e;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+
+      &:focus,
+      &:hover,
+      &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .channel-permission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    span {
+      color: #ffffff;
+    }
+  }
+}

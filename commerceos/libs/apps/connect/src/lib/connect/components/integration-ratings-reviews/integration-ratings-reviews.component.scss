@@ -1,0 +1,149 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+.rating-reviews {
+  padding-top: $padding-large-vertical*2;
+  padding-bottom: $padding-large-vertical*2;
+  border-bottom: 1px solid $color-white-grey-1;
+  display: flex;
+  flex-flow: column;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: $padding-large-vertical;
+  }
+
+  &__title-text {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+    padding-bottom: $padding-base-vertical;
+  }
+
+  &__side-buttons {
+    text-align: right;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: $padding-base-vertical*2;
+
+  &__current {
+    flex-basis: 49%;
+  }
+
+  &__total {
+    flex-basis: 49%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__big-rating {
+    display: inline;
+    font-size: $font-size-d1;
+    font-weight: $font-weight-bold;
+  }
+  
+  &__out-rating {
+    display: inline;
+    font-weight: $font-weight-medium;
+  }
+
+  &__total-count {
+    padding-right: $padding-small-horizontal;
+  }
+
+  &__rating-lines {
+    width: 100%;
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    flex-basis: 49%;
+  }
+}
+
+.review-card {
+  @include border-radius(10px);
+  background: $color-white-grey-1;
+  color: $color-white;
+  margin-bottom: $grid-unit-y * 2;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    flex-flow: column;
+    font-weight: $font-weight-regular;
+  }
+
+  &__title-text {
+    font-size: $font-size-base;
+  }
+
+  &__info {
+    font-size: $font-size-base;
+    font-weight: $font-weight-light;
+    color: $color-white-grey-4;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__date {
+    text-align: right;
+  }
+
+  &__rating {
+    font-size: 15px;
+  }
+}
+
+.rating-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: $padding-large-vertical*2;
+  padding-bottom: $padding-large-vertical*2;
+  border-top: 1px solid $color-white-grey-1;
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 49%;
+    align-items: center;
+  }
+
+  &__stars {
+    font-size: 26px;
+  }
+
+  &__review {
+    flex-basis: 49%;
+    display: flex;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
+
+::ng-deep.confirm-rating-dialog {
+  .mat-card {
+    background-color: $color-grey-1;
+  }
+}

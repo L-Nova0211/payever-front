@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="31"
+     viewBox="0 0 34 31">
+  <defs>
+    <path id="ikp3tcub6b" d="M0.366 0.334L8.909 0.334 8.909 2.954 0.366 2.954z"/>
+    <path id="fojbma64vd" d="M0 0.362L19.478 0.362 19.478 6.009 0 6.009z"/>
+    <path id="ld2esm5qtf" d="M0 0.02L19.478 0.02 19.478 7.42 0 7.42z"/>
+    <filter id="8soq9rvmoa" width="160%" height="170%" x="-30%" y="-30%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1"
+                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="currentColor" fill-rule="evenodd">
+    <g filter="url(#8soq9rvmoa)" transform="translate(-1472 -501) translate(1433 48)">
+      <g transform="translate(25 92) translate(17 361) translate(4 5) translate(5.101 .13)">
+        <mask id="y45ea02xnc" fill="#fff">
+          <use xlink:href="#ikp3tcub6b"/>
+        </mask>
+        <path
+          d="M7.81 2.616V1.98c0-.302-.245-.547-.547-.547H2.018c-.303-.002-.55.24-.552.543v.64c0 .185-.149.336-.334.338H.705c-.187 0-.339-.152-.339-.338V1.98C.37 1.07 1.108.334 2.017.334h5.241c.91 0 1.648.736 1.651 1.646v.636c0 .186-.152.338-.338.338h-.423c-.186 0-.338-.152-.338-.338"
+          mask="url(#y45ea02xnc)"/>
+      </g>
+      <g transform="translate(25 92) translate(17 361) translate(4 5) translate(0 3.376)">
+        <mask id="uwr2zw3pse" fill="#fff">
+          <use xlink:href="#fojbma64vd"/>
+        </mask>
+        <path
+          d="M1.359 5.357c5.548.87 11.198.87 16.747 0l.194-.033c.685-.106 1.186-.699 1.179-1.391V1.336C19.456.79 19.008.36 18.462.362H1.016C.464.362.013.802 0 1.354v2.597c-.008.692.494 1.285 1.178 1.392l.181.014z"
+          mask="url(#uwr2zw3pse)"/>
+      </g>
+      <g transform="translate(25 92) translate(17 361) translate(4 5) translate(0 9.405)">
+        <mask id="5fopq1yvhg" fill="#fff">
+          <use xlink:href="#ld2esm5qtf"/>
+        </mask>
+        <path
+          d="M18.23.144c-2.252.395-4.53.63-6.816.705-.194.008-.355.152-.385.343-.069.648-.64 1.125-1.29 1.076-.652.07-1.237-.403-1.306-1.055l-.001-.016c-.034-.197-.2-.342-.4-.348C5.752.772 3.478.536 1.23.144L.464.023C.238-.005.03.156.004.382 0 .398 0 .415 0 .432v5.565c-.002.783.63 1.421 1.414 1.423h16.64c.78.003 1.417-.625 1.424-1.405V.45c0-.228-.186-.412-.414-.412l-.05.003-.783.103z"
+          mask="url(#5fopq1yvhg)"/>
+      </g>
+    </g>
+  </g>
+</svg>

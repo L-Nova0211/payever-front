@@ -1,0 +1,62 @@
+<pe-confirm-action-dialog-styles></pe-confirm-action-dialog-styles>
+<div class="confirm-action-dialog" style="text-align: center;" [class]="data.theme">
+  <div class="confirm-action-dialog__content">
+    <svg class="confirm-action-dialog__icon" width="61" height="56" viewBox="0 0 61 56" *ngIf="!data.payeverIcon">
+      <g fill="none" fill-rule="evenodd">
+        <g fill="#FFBE00">
+          <path d="M34.43 1.003c1.284.721 2.345 1.783 3.066 3.067l22.452 39.975c2.17 3.864.797 8.757-3.068 10.927-1.2.674-2.553 1.028-3.93 1.028H8.049C3.616 56 .023 52.407.023 47.975c0-1.377.354-2.73 1.028-3.93L23.502 4.07c2.17-3.864 7.063-5.238 10.927-3.067zm-3.947 41.186c-1.19 0-2.086.322-2.692.967-.605.644-.908 1.442-.908 2.393 0 .951.303 1.738.908 2.362.606.623 1.503.935 2.692.935 1.189 0 2.091-.312 2.708-.935.616-.624.925-1.411.925-2.362 0-.95-.309-1.749-.925-2.393-.617-.645-1.52-.967-2.708-.967zm3.038-25.537h-6.407l.43 22.394h5.515l.462-22.394z" transform="translate(-190 -78) translate(190 78)"/>
+        </g>
+      </g>
+    </svg>
+    <svg class="confirm-action-dialog__icon" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" *ngIf="data.payeverIcon">
+      <defs>
+          <linearGradient id="i4jze5t5ba" x1="36.298%" x2="67.489%" y1="21.956%" y2="67.475%">
+              <stop offset="0%" stop-color="#6084D7"/>
+              <stop offset="22%" stop-color="#5D81D3"/>
+              <stop offset="46%" stop-color="#5578C6"/>
+              <stop offset="70%" stop-color="#4868B1"/>
+              <stop offset="94%" stop-color="#355393"/>
+              <stop offset="100%" stop-color="#304D8B"/>
+          </linearGradient>
+          <linearGradient id="ur80id7lyb" x1="52.294%" x2="45.649%" y1="-13.668%" y2="120.379%">
+              <stop offset="0%" stop-color="#6084D7"/>
+              <stop offset="30%" stop-color="#5E82D4"/>
+              <stop offset="50%" stop-color="#587BCB"/>
+              <stop offset="69%" stop-color="#4F70BB"/>
+              <stop offset="85%" stop-color="#4160A5"/>
+              <stop offset="100%" stop-color="#304D8B"/>
+          </linearGradient>
+      </defs>
+      <g fill="none" fill-rule="evenodd">
+          <g fill-rule="nonzero">
+              <g>
+                  <g>
+                      <g>
+                          <path fill="#304D8B" d="M32.371 39.285l-6.499 4.361c-.569.384-1.303.422-1.908.098-.605-.324-.981-.956-.977-1.642V34.89c-.006-.174.08-.339.226-.433.146-.094.331-.104.487-.025l8.604 3.97c.175.07.295.233.31.42.014.188-.08.368-.243.463z" transform="translate(-655.000000, -255.000000) translate(553.000000, 232.000000) translate(102.000000, 22.999901) translate(0.006801, 0.000000)"/>
+                          <path fill="url(#i4jze5t5ba)" d="M23.276 35.433L1.606 22.502C.502 21.849-.118 20.613.017 19.339c.135-1.274 1-2.352 2.215-2.76L50.427.136C51.515-.21 52.7.223 53.31 1.188c.61.965.493 2.22-.285 3.055l-29.748 31.19z" transform="translate(-655.000000, -255.000000) translate(553.000000, 232.000000) translate(102.000000, 22.999901) translate(0.006801, 0.000000)"/>
+                          <path fill="url(#ur80id7lyb)" d="M23.208 35.636s10.64 12.507 16.477 19.244c.844.96 2.17 1.341 3.394.977 1.226-.365 2.127-1.409 2.308-2.674l8.315-50.027c.286-1.113-.216-2.28-1.221-2.838-1.005-.558-2.26-.368-3.055.463l-26.1 31.173c-.993 1.009-1.045 2.612-.118 3.682z" transform="translate(-655.000000, -255.000000) translate(553.000000, 232.000000) translate(102.000000, 22.999901) translate(0.006801, 0.000000)"/>
+                      </g>
+                  </g>
+              </g>
+          </g>
+      </g>
+    </svg>
+
+
+    <h2 class="confirm-action-dialog__title" [ngClass]="data.theme">{{ data.title }}</h2>
+
+    <p class="confirm-action-dialog__subtitle" [ngClass]="data.theme">{{ data.subtitle }}</p>
+
+    <div class="confirm-action-dialog__projected-content" *ngIf="data.component">
+      <ng-container #projectedContent>
+      </ng-container>
+    </div>
+
+
+    <div class="confirm-action-dialog__buttons">
+      <button class="button" [ngClass]="data.theme" [style.backgroundColor]="data.confirmButtonColor ? data.confirmButtonColor: '#eb4653'" (click)="onConfirmClick()">{{ data.confirmButtonTitle }}</button>
+      <button class="button" [ngClass]="data.theme" (click)="onCancelClick()" mat-dialog-close *ngIf="data.cancelButtonTitle">{{ data.cancelButtonTitle }}</button>
+    </div>
+  </div>
+
+</div>

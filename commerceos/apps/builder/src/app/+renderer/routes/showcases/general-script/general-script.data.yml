@@ -1,0 +1,7 @@
+element:
+  id: script
+  type: script
+  data:
+    script: 'console.log("Snippet executed")'
+
+stylesheet: {}

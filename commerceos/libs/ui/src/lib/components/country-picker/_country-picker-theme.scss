@@ -1,0 +1,67 @@
+@mixin peb-country-picker-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+  $hover-text: map-get($theme-config, hover-text);
+
+  .picker-container {
+    &__controls {
+      border-bottom: 1px solid $separator;
+      .input-with-label {
+        background-color: $primary;
+        span {
+          color: $label-color;
+        }
+        input {
+          color: $text-color;
+        }
+      }
+
+      .button-container {
+        background-color: $accent;
+      }
+    }
+
+    .country-container {
+      &__item {
+        border-bottom: 1px solid $separator;
+        background-color: $accent;
+        color: $text-color;
+        :last-of-type {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .country-autocomplete-panel {
+    background-color: $accent;
+
+    .mat-option {
+      color: $text-color;
+
+      &:hover {
+        color: $hover-text;
+        .mat-option-text {
+          color: $hover-text;
+        }
+      }
+
+      &:not(:first-of-type) {
+        &::before {
+          background-color: $separator;
+        }
+      }
+      .mat-option-text {
+        color: $text-color;
+      }
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+  }
+}

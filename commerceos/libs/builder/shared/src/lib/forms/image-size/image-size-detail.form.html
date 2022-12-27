@@ -1,0 +1,40 @@
+<div class="group image-size" *ngIf="formGroup">
+  <div class="group__row" *ngFor="let option of options">
+    <div class="image-size__option" (click)="setImageSizeValue(option.value)">
+      <div class="image-size__option-icon">
+        <ng-container [ngTemplateOutlet]="iconTpl" [ngTemplateOutletContext]="{ option: option }"></ng-container>
+      </div>
+      <span class="image-size__option-name">{{ option.name }}</span>
+      <mat-icon class="image-size__option-checkmark" svgIcon="checkmark-blue" *ngIf="option.value === formGroup.get('size').value"></mat-icon>
+    </div>
+  </div>
+  <ng-container *ngIf="formGroup.get('size').value === ImageSize.OriginalSize">
+    <div class="group__row image-size__scale">
+      <label class="group__label">Scale</label>
+    </div>
+    <div class="combined-input-range image-size__scale">
+      <peb-range-input
+        label="Scale"
+        [min]="0"
+        [max]="200"
+        [formControl]="formGroup.get('scale')"
+      ></peb-range-input>
+      <peb-number-input
+        [min]="0"
+        [max]="200"
+        [formControl]="formGroup.get('scale')"
+        units="%"
+      ></peb-number-input>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #iconTpl let-option="option">
+  <ng-container [ngSwitch]="option.value">
+    <peb-editor-background-original-size-icon *ngSwitchCase="ImageSize.OriginalSize"></peb-editor-background-original-size-icon>
+    <peb-editor-background-stretch-icon *ngSwitchCase="ImageSize.Stretch"></peb-editor-background-stretch-icon>
+    <peb-editor-background-tile-icon *ngSwitchCase="ImageSize.Initial"></peb-editor-background-tile-icon>
+    <peb-editor-background-scale-to-fill-icon *ngSwitchCase="ImageSize.Cover"></peb-editor-background-scale-to-fill-icon>
+    <peb-editor-background-scale-to-fit-icon *ngSwitchCase="ImageSize.Contain"></peb-editor-background-scale-to-fit-icon>
+  </ng-container>
+</ng-template>

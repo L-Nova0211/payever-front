@@ -1,0 +1,54 @@
+<div class="product-picker-container" #productPickerWrapper [attr.id]="inputId">
+  <div class="product-picker-container__controls">
+    <div class="input-with-label" [class.is-invalid]="isFieldInvalid">
+      <span class="label-text">{{isFieldInvalid ? errorMessage : label}}</span>
+      <input
+        placeholder="{{placeholder}}"
+        #input
+        (keyup)="onKey($event)"
+        [formControl]="filterController"
+        [matAutocomplete]="productAuto"
+        [attr.id]="inputId"
+      />
+      <mat-autocomplete
+        (optionSelected)="optionSelect($event)"
+        [panelWidth]="productWidth"
+        class="product-autocomplete-panel"
+        #productAuto="matAutocomplete"
+        [displayWith]="displayFn">
+        <mat-option class="product-picker" 
+          *ngFor="let option of filteredOptions"
+          [value]="option">
+          <div class="option-container">
+            <span class="option-container__image"><img [src]="option.image"></span>
+            <span class="option-container__label">{{option.name}}</span>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+    <div class="button-container">
+      <button peb-text-button color="confirm" (click)="addProduct()">
+        Browse
+      </button>
+    </div>
+  </div>
+  
+  <div class="product-container">
+    <ng-container *ngFor="let item of addedItems; let i = index">
+      <div class="product-container__item">
+        <div>
+          <span class="product-image"><img *ngIf="item.image" [src]="item.image"></span>
+          <span>{{item.name}}</span>
+        </div>
+        <button
+          peb-text-button
+          class="remove-btn"
+          color="warn"
+          (click)="onRemoveProduct($event, i)"
+        >
+          Remove
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

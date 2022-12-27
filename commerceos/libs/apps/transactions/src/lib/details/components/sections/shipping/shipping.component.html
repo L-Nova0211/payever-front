@@ -1,0 +1,19 @@
+<div class="shipping-section" *ngIf="order" [ngClass]="theme">
+  <div class="section-item" *ngIf="order.shipping?.method_name">
+    <div class="section-item__label">{{ 'transactions.sections.shipping.shipping_carrier' | translate }}</div>
+    <div class="section-item__value">{{order.shipping?.method_name?.toUpperCase() || '-'}}</div>
+  </div>
+  <ng-container *ngIf="shippingAddress">
+    <div class="section-item">
+      <div class="section-item__label">{{ 'transactions.sections.shipping.name' | translate }}</div>
+      <div class="section-item__value">{{shippingAddressName}}</div>
+    </div>
+    <div class="section-item">
+      <div class="section-item__label">{{ 'transactions.sections.shipping.address' | translate }}</div>
+      <div class="section-item__value">{{shippingAddress}}</div>
+    </div>
+  </ng-container>
+</div>
+<div class="section-info" *ngIf="!this.shippingAddress">
+  {{'transactions.sections.shipping.shipping_address' | translate}}
+</div>

@@ -1,0 +1,88 @@
+<pe-builder-share-styles></pe-builder-share-styles>
+
+<peb-expandable-panel headerLabel="Share via email" class="builder-share__expandable-panel" [isContentOpen]="true">
+  <pe-picker
+    #emailPicker
+    class="builder-share__picker"
+    label="Add people to this project via email"
+    placeholder="Search"
+    buttonLabel="Add"
+    [isEditableItem]="true"
+    [data]="emailPickerData$ | async"
+    (buttonClick)="addContact()"
+    (onKeyUp)="onEmailPickerKeyUp($event)"
+    (changed)="onEmailPickerKeyUp(emailPicker.inputRef?.nativeElement?.value || '')"
+    [formControl]="emailPickerControl"
+  >
+    <ng-template #pickedItemTpl let-item="item" let-index="index">
+      <div class="builder-share__picked-item">
+        <div class="builder-share__picked-item--delete" (click)="emailPicker.onRemoveItem($event, index)">
+          <!-- TODO: move svg to assets -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+            <g fill="none" fill-rule="evenodd">
+              <g fill="#EB4653">
+                <g>
+                  <g>
+                    <path d="M11.512 16.05c-.037.401-.37.703-.772.703H4.508c-.402 0-.734-.302-.774-.708L2.48 4.212H12.77l-1.258 11.839zM4.988 1.736c.022-.212.197-.373.41-.373h4.451c.214 0 .39.161.409.35l.071 1.504H4.92l.068-1.48zm9.76 1.48h-3.421l-.074-1.574C11.184.915 10.58.366 9.849.366H5.397c-.73 0-1.332.549-1.403 1.298L3.92 3.216H.498c-.275 0-.499.222-.499.499 0 .275.224.497.5.497h.977l1.267 11.933c.086.916.846 1.604 1.765 1.604h6.232c.919 0 1.678-.688 1.764-1.598l1.268-11.939h.976c.277 0 .499-.222.499-.497 0-.277-.222-.5-.499-.5z" transform="translate(-489 -338) translate(477 327) translate(12 11)"/>
+                    <path d="M7.624 14.188c.275 0 .499-.223.499-.5V6.565c0-.275-.224-.498-.5-.498-.274 0-.498.223-.498.498v7.125c0 .276.224.499.499.499M9.711 14.186c.017.002.034.002.05.002.254 0 .47-.193.497-.448l.713-7.125c.026-.275-.172-.52-.448-.547-.286-.023-.518.175-.545.446l-.713 7.125c-.027.275.173.519.446.547M5.557 14.188c.017 0 .032 0 .05-.002.275-.028.474-.272.447-.547l-.713-7.125c-.027-.274-.273-.472-.545-.446-.275.027-.475.272-.448.547l.713 7.125c.025.257.242.448.496.448" transform="translate(-489 -338) translate(477 327) translate(12 11)"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="builder-share__picked-item--container">
+          <div class="builder-share__picked-item--info">
+            <div class="builder-share__picked-item--image" [style.background-image]="'url(' + item.image + ')'"></div>
+            <div class="builder-share__picked-item--label">
+              {{ item.label }}
+            </div>
+          </div>
+          <div class="builder-share__picked-item--role">
+            <div class="builder-share__picked-item--role-info">
+              <div class="builder-share__picked-item--role-label">
+                Role
+              </div>
+              <div class="builder-share__picked-item--role-value">
+                {{ PickedItemRoles[item.value?.role]?.label || 'None' }}
+              </div>
+              <mat-menu
+                #roleMenu
+                class="builder-share__picked-item--menu"
+                xPosition="before"
+              >
+                <div
+                  class="builder-share__picked-item--menu-item"
+                  *ngFor="let option of PickedItemRoleOptions"
+                  (click)="setRole(index, option.value)"
+                >
+                  {{ option.label }}
+                </div>
+              </mat-menu>
+            </div>
+            <div class="builder-share__picked-item--role-arrow" [mat-menu-trigger-for]="roleMenu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 26">
+                <g fill="none" fill-rule="evenodd">
+                  <g>
+                    <g transform="translate(-855 -334) translate(855 334)">
+                      <rect width="24" height="26" fill="#212121" rx="6"/>
+                      <path fill-rule="nonzero" stroke="#616568" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15.316 11.579L12 15.368 12 15.368 8.684 11.579" transform="matrix(-1 0 0 1 24 0)"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </pe-picker>
+</peb-expandable-panel>
+
+<peb-expandable-panel headerLabel="Additional" class="builder-share__expandable-panel" [isContentOpen]="true">
+  <div class="builder-share__additional">
+<!--    <div class="builder-share__button" (click)="openEmployeeForm()">Add New</div>-->
+<!--    <div class="builder-share__button">Choose Employees</div>-->
+    <div class="builder-share__button">Get Link</div>
+  </div>
+</peb-expandable-panel>

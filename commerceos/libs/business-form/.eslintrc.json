@@ -1,0 +1,15 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*"],
+  "rules": {
+    "@angular-eslint/directive-class-suffix": [
+      "error",
+      {
+        "suffixes": [
+          "FormComponent",
+          "ControlComponent"
+        ]
+      }
+    ]
+  }
+}

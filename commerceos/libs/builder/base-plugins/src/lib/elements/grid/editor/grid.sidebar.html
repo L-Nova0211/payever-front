@@ -1,0 +1,119 @@
+<ng-container [ngTemplateOutlet]="mainSidebar"></ng-container>
+
+<ng-template #mainSidebar>
+  <form [formGroup]="form" *ngIf="form" class="form">
+    <div class="group__wrapper">
+
+      <ng-container *ngIf="isCellElement$ | async; then cellSidebarTemplate else tableSidebarTemplate"></ng-container>
+
+      <ng-container #cellSidebarSlot></ng-container>
+    </div>
+
+    <ng-template #tableSidebarTemplate>
+      <peb-editor-sidebar-tabs  [activeTabIndex]="0">
+        <peb-editor-sidebar-tab title="Style">
+          <div class="group">
+            <div class="group__row">
+              <peb-grid-layout-form></peb-grid-layout-form>
+            </div>
+          </div>
+          <div class="group">
+            <div class="group__row">
+              <label class="group__label">
+                Spacing
+              </label>
+              <peb-number-input-spinbutton
+                class="sidebar__spinbutton"
+                formControlName="spacing"
+                [min]="0"
+                [max]="100"
+              ></peb-number-input-spinbutton>
+            </div>
+          </div>
+          <div class="group" *ngIf="!component.definition.children?.length">
+            <div class="group__row">
+              <label class="group__label">
+                Link
+              </label>
+            </div>
+            <peb-link-form></peb-link-form>
+          </div>
+          <div class="group">
+            <peb-functions-form></peb-functions-form>
+          </div>
+
+          <peb-grid-border-form></peb-grid-border-form>
+
+        </peb-editor-sidebar-tab>
+        <peb-editor-sidebar-tab title="Text" *ngIf="showFontForm">
+          <div class="group">
+            <peb-text-form></peb-text-form>
+          </div>
+        </peb-editor-sidebar-tab>
+        <peb-editor-sidebar-tab title="Arrange">
+          <ng-container [ngTemplateOutlet]="cellSizeFormTemplate"></ng-container>
+          <div class="group" *ngIf="!component.definition.children?.length && component.parent?.definition.type === 'section'">
+            <div class="group__row">
+              <label class="group__label">Full height</label>
+              <peb-slide-toggle formControlName="fullHeight"></peb-slide-toggle>
+            </div>
+          </div>
+        </peb-editor-sidebar-tab>
+      </peb-editor-sidebar-tabs>
+    </ng-template>
+
+    <ng-template #cellSidebarTemplate>
+      <ng-container #tabSidebarSlot></ng-container>
+    </ng-template>
+
+    <ng-template #cellSizeFormTemplate>
+      <div class="group__row">
+        <peb-position-form></peb-position-form>
+      </div>
+
+      <div class="group__row">
+        <peb-alignment-form
+          *ngIf="alignment?.form"
+          [formGroup]="alignment?.form"
+          (blurred)="alignment?.submit.next()"
+        ></peb-alignment-form>
+      </div>
+
+      <div class="group dimensions" style="border-bottom: none;" formGroupName="dimensions">
+        <div class="group__row">
+          <label class="group__label">
+            Row & Column Size
+          </label>
+        </div>
+
+        <div class="group__row">
+          <label class="group__label">
+            Height
+          </label>
+          <div class="number-input">
+            <peb-number-input-spinbutton
+              class="sidebar__spinbutton"
+              formControlName="height"
+              [min]="(limits | async)?.height?.min"
+              [max]="(limits | async)?.height?.max"
+              units="px"
+            ></peb-number-input-spinbutton>
+          </div>
+        </div>
+
+        <div class="group__row">
+          <label class="group__label">
+            Width
+          </label>
+          <div class="number-input">
+            <peb-number-input-spinbutton
+              class="sidebar__spinbutton"
+              formControlName="width"
+              units="px"
+            ></peb-number-input-spinbutton>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </form>
+</ng-template>

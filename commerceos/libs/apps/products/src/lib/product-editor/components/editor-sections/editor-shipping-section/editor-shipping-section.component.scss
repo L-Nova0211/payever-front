@@ -1,0 +1,19 @@
+.wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+
+  .shipping__row {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1px;
+  }
+}
+
+.shipping-form-field {
+  display: block;
+
+  .suffix {
+    min-width: 40px;
+  }
+}

@@ -1,0 +1,83 @@
+//
+// Avatar
+// ----------------------------
+
+.pe-bootstrap {
+  .avatar {
+    @include pe-avatar;
+    width: $icon-size-32;
+    height: $icon-size-32;
+    color: $color-white;
+
+    &-round {
+      border-radius: 50%;
+    }
+
+    &-squared {
+      border-radius: 5px;
+
+      &.avatar-16 {
+        border-radius: 2px;
+      }
+
+      &.avatar-24 {
+        border-radius: 4px;
+      }
+
+      &.avatar-32 {
+        border-radius: 5px;
+      }
+
+      &.avatar-48 {
+        border-radius: 8px;
+      }
+
+      &.avatar-64 {
+        border-radius: 10px;
+      }
+
+      &.avatar-96 {
+        border-radius: 16px;
+      }
+
+      &.avatar-128 {
+        border-radius: 20px;
+      }
+    }
+
+    &-16 {
+      width: $icon-size-16;
+      height: $icon-size-16;
+    }
+
+    &-24 {
+      width: $icon-size-24;
+      height: $icon-size-24;
+    }
+
+    &-32 {
+      width: $icon-size-32;
+      height: $icon-size-32;
+    }
+
+    &-48 {
+      width: $icon-size-48;
+      height: $icon-size-48;
+    }
+
+    &-64 {
+      width: $icon-size-64;
+      height: $icon-size-64;
+    }
+
+    &-96 {
+      width: $icon-size-96;
+      height: $icon-size-96;
+    }
+
+    &-128 {
+      width: $icon-size-128;
+      height: $icon-size-128;
+    }
+  }
+}

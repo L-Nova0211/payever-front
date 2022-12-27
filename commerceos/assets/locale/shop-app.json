@@ -1,0 +1,75 @@
+{
+  "shop-app": {
+    "actions": {
+      "edit": "Edit",
+      "copy_link": "Copy link",
+      "open": "Open",
+      "cancel": "Cancel",
+      "done": "Done",
+      "save": "Save",
+      "hide": "Hide",
+      "create_new": "Create New",
+      "remove_domain": "Remove domain",
+      "create_domain": "Add domain"
+    },
+    "errors": {
+      "unknown_error": "Unknown error",
+      "link_copied": "Link copied"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "messages": {
+      "domain_connected": "Domain connected",
+      "domain_disconnected": "Domain is not connected",
+      "no_domain":"No domains connected"
+    },
+    "sidebar": {
+      "title": "Shop"
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "info":{
+      "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px",
+      "app_offline": "The current state of the store is set to offline"
+    },
+    "dialogs": {
+      "window_exit": {
+        "title": "Are you sure?",
+        "label": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+        "confirm": "Yes",
+        "decline": "No"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "live_status": "Live status",
+      "payever_domain": "payever domain",
+      "personal_domain": "Personal domain",
+      "connect_existing": "Connect existing domain",
+      "password_protection": "Password protection",
+      "customer_privacy": "Customer privacy",
+      "facebook_pixel": "Facebook Pixel",
+      "google_analytics": "Google Analytics",
+      "spam_protection": "Spam protection",
+      "social_image": "Social sharing image",
+      "publishing": "PUBLISHING",
+      "domains": "DOMAINS",
+      "domain_label": "Domain",
+      "domain_placeholder": "Enter Domain",
+      "date_placeholder": "Enter Date",
+      "date_label": "Date Added",
+      "provider_label": "Provider",
+      "provider_placeholder": "Enter Provider",
+      "safety": "SAFETY",
+      "social": "SOCIAL",
+      "all_shops": "ALL SHOPS",
+      "meta_description":"Meta description",
+      "page_title":"Page title"
+    },
+    "themes": {
+      "title": "Themes"
+    }
+  }
+}

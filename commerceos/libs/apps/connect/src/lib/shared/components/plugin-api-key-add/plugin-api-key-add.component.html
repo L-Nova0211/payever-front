@@ -1,0 +1,31 @@
+<form novalidate
+      (ngSubmit)="onSubmit()"
+      class="form-table form-table-no-margin plugin-api-key-add-form"
+      [formGroup]="form"
+      *ngIf="form">
+  <button #submitTriggerAddApiKey id="submitTriggerAddApiKey" name="submitButton" type="submit" class="native-submit"></button>
+  <pe-form-fieldset class="transparent"
+                    [translationScope]="'categories.shopsystems.form'"
+                    [isSubmitted]="isSubmitted"
+                    [fields]="formScheme.fieldsets['key']"
+                    [formGroup]="form.get('key')"
+                    [formStyle]="'transparent'"
+  ></pe-form-fieldset>
+  <button mat-button
+          type="button"
+          class="mat-button-block plugin-api-key-button"
+          (click)="submitTriggerAddApiKey.click()">
+    <pe-progress-button-content [spinnerDiameter]="26"
+                                [spinnerStrokeWidth]="2"
+                                [loading]="isLoading$ | async">
+      {{ 'actions.create' | translate }}
+    </pe-progress-button-content>
+  </button>
+  <button mat-button
+          type="button"
+          class="mat-button-block plugin-api-key-button plugin-api-key-button-cancel"
+          [disabled]="isLoading$ | async"
+          (click)="created.emit()">
+    {{ 'actions.cancel' | translate }}
+  </button>
+</form>

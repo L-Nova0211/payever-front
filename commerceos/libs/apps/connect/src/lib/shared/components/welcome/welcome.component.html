@@ -1,0 +1,28 @@
+<div class="connect-welcome__container">
+  <div class="connect-welcome__icon">
+    <svg>
+      <use xlink:href="#icon-apps-app-connect"></use>
+    </svg>
+  </div>
+  <div class="connect-welcome__title" translate>
+    welcome.connect.title
+  </div>
+  <div class="connect-welcome__description" translate>
+    welcome.connect.message
+  </div>
+  <div class="connect-welcome__actions-block">
+    <div
+        class="connect-welcome__action primary"
+        (click)="getStarted()">
+      <span *ngIf="!isLoading" translate>welcome.get-started</span>
+      <mat-spinner *ngIf="isLoading" [strokeWidth]="2" [diameter]="15"></mat-spinner>
+    </div>
+    <div
+        class="connect-welcome__action"
+        translate
+        (click)="backToDashboard()">
+      welcome.backToDashboard
+    </div>
+  </div>
+  <div class="connect-welcome__terms" [innerHTML]="herebyConfirm"></div>
+</div>

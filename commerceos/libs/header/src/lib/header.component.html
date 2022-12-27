@@ -1,0 +1,103 @@
+<div class="container" [class]="theme">
+  <pe-dashboard-platform-header *ngIf="businessData else loadingBlock">
+    <ng-content select="[leftSectionItems]"></ng-content>
+    <div class="header__right-menu">
+      <pe-user-avatar
+        [name]="businessData.name"
+        [avatar]="getBusinessImagePath(businessData.logo)"
+        (click)="navigateToSettings()"
+      >
+        <svg *ngIf="!getBusinessImagePath(businessData.logo)" class="icon icon-24" avatarSlot>
+          <use xlink:href="#icon-menu-avatar-24" />
+        </svg>
+      </pe-user-avatar>
+      <div *ngIf="showIconOfMessageApp" class="header__messages" (click)="toggleMessages()">
+        <pe-messages [notifications]="unreadMessages" [class]="theme"></pe-messages>
+        <mat-spinner
+          *ngIf="loading$ | async"
+          class="header__mat-progress-spinner mat-progress-spinner-light"
+          [strokeWidth]="2"
+          [diameter]="24"
+        ></mat-spinner>
+      </div>
+      <!-- <pe-notifications #triggerPopupElement (click)="toggleNotifications()"></pe-notifications> -->
+      <pe-search (click)="openSearch()" [class]="theme"></pe-search>
+      <pe-main-menu [matMenuTriggerFor]="menu" [class]="theme"></pe-main-menu>
+      <mat-menu #menu="matMenu" class="pe-header-menu" [class]="theme">
+        <div class="header">
+          <span style="font-size: 14px; font-weight: 700; text-transform: uppercase;">{{
+            'header.left_section_items.menu' | loadTranslate | async
+          }}</span>
+          <div class="close_btn">
+            <svg width="20" height="20">
+              <use xlink:href="#icon-ui-close-circle"></use>
+            </svg>
+          </div>
+        </div>
+        <!-- Additional menu items from configuration -->
+        <ng-container *ngIf="menuItems.length">
+          <ng-container *ngFor="let item of menuItems">
+            <ng-container *ngIf="item.show">
+              <button mat-menu-item (click)="item.onClick()">
+                <svg class="icon icon-20">
+                  <use [attr.xlink:href]="item.icon"></use>
+                </svg>
+                <span class="business-menu-item">{{ item.translateTitle | translate }}</span>
+              </button>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+        <!-- Default menu items -->
+        <button mat-menu-item (click)="addBusiness()">
+          <svg class="icon icon-20">
+            <use xlink:href="#icon-n-launch"></use>
+          </svg>
+          <span class="business-menu-item">{{ 'header.menu.add_business' | translate }}</span>
+        </button>
+        <button mat-menu-item (click)="navigateToExternal(contactHref)">
+          <svg class="icon icon-20">
+            <use xlink:href="#icon-contact-20"></use>
+          </svg>
+          <span class="business-menu-item">{{ 'header.menu.contact' | translate }}</span>
+        </button>
+        <button mat-menu-item (click)="navigateToExternal(helpHref)">
+          <svg class="icon icon-20">
+            <use xlink:href="#icon-star-20"></use>
+          </svg>
+          <span class="business-menu-item">{{ 'header.menu.help' | translate }}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <svg class="icon icon-20">
+            <use xlink:href="#icon-logout-20"></use>
+          </svg>
+          <span class="business-menu-item">{{ 'header.menu.log_out' | translate }}</span>
+        </button>
+      </mat-menu>
+
+      <ng-content select="[rightSectionItems]"></ng-content>
+
+      <pe-popup [connectedTo]="triggerPopupElement" #dropdown>
+        <dashboard-notification-list
+          *ngIf="dropdown.open"
+          [notifications]="notifications$ | async"
+          (hide)="toggleNotifications()"
+        ></dashboard-notification-list>
+      </pe-popup>
+    </div>
+  </pe-dashboard-platform-header>
+  <ng-template #loadingBlock>
+    <div class="loading-header-container">
+      <div class="loading-business-switcher">
+        <div class="circle-box hide-mobile"></div>
+        <div class="horizontal-box"></div>
+      </div>
+      <div class="loading-button-group">
+        <div class="circle-box"></div>
+        <div class="square-box show-mobile"></div>
+        <div class="square-box"></div>
+        <div class="square-box"></div>
+        <div class="square-box"></div>
+      </div>
+    </div>
+  </ng-template>
+</div>

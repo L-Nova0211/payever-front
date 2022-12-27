@@ -1,0 +1,18 @@
+<div class='autocomplete-container'>
+  <input
+    #input
+    type="text"
+    [placeholder]="placeholder"
+    [formControl]="formControl"
+    [matAutocomplete]="auto"
+  >
+  <label>{{ label }}</label>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="valueSelected($event.option.value)">
+    <div class="panel-box">
+    <mat-option
+      *ngFor="let value of filteredValues | async; let i = index; trackBy: trackValue"
+      id="pe-products-option-{{ i }}"
+      [value]="value">{{ value }}</mat-option>
+    </div>
+  </mat-autocomplete>
+</div>

@@ -1,0 +1,168 @@
+{
+  "message-app": {
+    "connection": {
+      "add": "Add"
+    },
+    "footer": {
+      "view": "View",
+      "add": "Add",
+      "save_draft": "Save as Draft",
+      "schedule": "Shedule",
+      "send": "Send",
+      "close": "Close"
+    },
+    "sidebar": {
+      "message": "Message",
+      "all_messages": "All messages",
+      "chat": "Chat",
+      "bot": "Bot",
+      "sms": "SMS",
+      "mail": "Mail",
+      "group": "Group",
+      "contact": "Contact",
+      "channel": "Channel",
+      "options": "Options",
+      "move_to": "Move to",
+      "create": "Create",
+      "connect": "Connect",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "close": "Close",
+      "save": "Save",
+      "done": "Done",
+      "folder": "Folder",
+      "new_folder": "New folder",
+      "folder_name": "Folder name",
+      "new_chat_message": "New Chat Message",
+      "all_chat_boxes": "All chat boxes",
+      "empty_contact_list": "You don’t have any added contacts",
+      "add_new": "Add new",
+      "add": "Add"
+    },
+    "channel": {
+      "istyping": "is typing",
+      "aretyping": "are typing",
+      "form": {
+        "add_member": "Add member",
+        "description": "Description",
+        "copy_invite": "Copy Invite Link",
+        "name": "Channel Name",
+        "photo": "Add Media",
+        "search": "Search",
+        "skip": "Skip",
+        "type": {
+          "public": "Public Channel",
+          "private": "Private Channel",
+          "integration": "Integration Channel"
+        }
+      },
+      "overlay": {
+        "title": "New Channel",
+        "next": "Next"
+      },
+      "settings": {
+        "more": "More",
+        "are-you-sure": "Are you sure?",
+        "delete-text": "Do you really want to delete this channel? All data will be lost and you will not be able to restore it.",
+        "go-back": "Go Back",
+        "delete": "Delete Channel",
+        "invite-link": "Invite Link",
+        "copy-invite-link": "Copy Invite Link",
+        "copied-invite-link": "Successfully copied",
+        "sign-text": "Append names of the admins to the messages they post.",
+        "remove": "Remove",
+        "subscribers": "SUBSCRIBERS",
+        "admins": "ADMINS",
+        "send-messages": "Send Messages",
+        "send-media": "Send Media",
+        "send-stickers": "Send Stickers & GIFs",
+        "embed-links": "Embed Links",
+        "add-members": "Add Members",
+        "pin-message": "Pin Messages",
+        "change-group-info": "Change Group Info",
+        "dismiss-admin": "Dismiss admin",
+        "owner-protect": "You cannot edit the right of this admin.",
+        "additional": {
+          "type": "Channel Type",
+          "sign": "Sign Messages",
+          "remove": "Removed Users",
+          "permission": "Permissions"
+        }
+      }
+    },
+    "chat-room": {
+      "products": "Products",
+      "placeholder": {
+        "no_chat_rooms": "Add your first contact to start a conversation",
+        "no_messages": "Add content for your visitors and users"
+      }
+    },
+    "message-overlay": {
+      "overlay": {
+        "title": "New Message"
+      }
+    },
+    "message-integration": {
+      "dismiss-changes": "Are you sure you want to dismiss all changes?",
+      "not-exist-public-channel": "Public channel is not exist",
+      "not-exist-integration-channel": "Integration channel is not exist",
+      "create-public-channel": "Do you want to create new public channel?",
+      "create-integration-channel": "Do you want to create new integration channel?",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "back": "Back",
+      "done": "Done",
+      "widget": "Widget",
+      "bubble": "Bubble",
+      "circle": "Circle",
+      "rounded": "Rounded edges",
+      "rectangle": "Rectangle",
+      "logo": "Logo",
+      "logo-name": "Logo + Name",
+      "name": "Name",
+      "payever-brand": "Payever Brandig",
+      "custom-brand": "Customized",
+      "copy-embed": "Copy embed",
+      "copied": "Successfully copied",
+      "shadow": "Shadow",
+      "change-color": "Change Color",
+      "text-color": "Text Color",
+      "bg-color": "Background Color",
+      "custom-text": "Custom Text",
+      "layout": "Layout",
+      "radius": "Radius",
+      "style": "Style",
+      "channels": "Channels",
+      "search": "Search",
+      "new-channel": "New Channel",
+      "embed-link": "Embed link",
+      "show-notifications": "Show Notifications",
+      "change-logo": "Change Logo",
+      "color": "Color",
+      "types": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "facebook-messenger": "Facebook Messenger",
+        "payever": "Live Chat",
+        "telegram": "Telegram",
+        "instagram-messenger": "Instagram Messenger"
+      }
+    },
+    "message-interface": {
+      "settings": "Settings",
+      "accounts": "Accounts",
+      "add_accounts": "Add accounts",
+      "notifications": "Notifications",
+      "embed": "Embed",
+      "cancel": "Cancel",
+      "done": "Done",
+      "connect": "Connect",
+      "integration": "Integration",
+      "language": "Language"
+    },
+    "product-list": {
+      "in_stock": "in stock"
+    }
+  }
+}

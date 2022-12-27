@@ -1,0 +1,66 @@
+<div class="two-columns">
+  <div class="two-columns__top">
+    <div class="two-columns__title">{{ config?.dataSource[0][0]?.text?.toUpperCase() || 'TRANSACTIONS' }}</div>
+    <div class="two-columns__currency">
+      <ng-container *ngIf="!editMode">{{ config?.dataSource[0][2]?.text }}</ng-container>
+      <span *ngIf="editMode" class="done-btn" (click)="onEditMode()">Done</span>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!editMode">
+    <div class="two-columns__body">
+      <div class="feature">
+        <div class="feature__label">
+          {{
+            config?.dataSource[1][0]?.text
+              ? config?.dataSource[1][0]?.text
+              : (config?.dataSource[1][0]?.value | number: '.0-2')
+          }}
+          {{
+            config?.dataSource[1][0]?.currency ? config?.dataSource[1][0]?.currency : config?.dataSource[1][0]?.percent
+          }}
+        </div>
+        <div class="feature__value">
+          {{
+            config?.dataSource[1][2]?.text
+              ? config?.dataSource[1][2]?.text
+              : (config?.dataSource[1][2]?.value | number: '.0-2')
+          }}
+          {{
+            config?.dataSource[1][2]?.currency ? config?.dataSource[1][2]?.currency : config?.dataSource[1][2]?.percent
+          }}
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__label">
+          {{
+            config?.dataSource[1][1]?.text
+              ? config?.dataSource[1][1]?.text
+              : (config?.dataSource[1][1]?.value | number: '.0-2')
+          }}
+          {{
+            config?.dataSource[1][1]?.currency ? config?.dataSource[1][1]?.currency : config?.dataSource[1][1]?.percent
+          }}
+        </div>
+        <div class="feature__value">
+          {{
+            config?.dataSource[2][0]?.text
+              ? config?.dataSource[2][0]?.text
+              : (config?.dataSource[2][0]?.value | number: '.0-2')
+          }}
+          {{
+            config?.dataSource[2][0]?.currency ? config?.dataSource[2][0]?.currency : config?.dataSource[2][0]?.percent
+          }}
+        </div>
+      </div>
+    </div>
+    <div class="two-columns__profit">
+      {{
+        config?.dataSource[2][1]?.text
+          ? config?.dataSource[2][1]?.text
+          : (config?.dataSource[2][1]?.value | number: '.0-2')
+      }}
+      {{ config?.dataSource[2][1]?.currency ? config?.dataSource[2][1]?.currency : config?.dataSource[2][1]?.percent }}
+    </div>
+  </ng-container>
+</div>

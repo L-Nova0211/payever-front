@@ -1,0 +1,18 @@
+<div class='rule-item'>
+  <span class='rule-item__name'>{{ruleName}}</span>
+  <span class='rule-item__action' (click)="onDuplicateClick()">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+      <use xlink:href="#icon-rule-duplicate"></use>
+    </svg>
+  </span>
+  <span class='rule-item__action' (click)="onEditClick()">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+      <use xlink:href="#icon-rule-edit"></use>
+    </svg>
+  </span>
+  <span class='rule-item__action' (click)="onDeleteClick()">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 0 16 18'>
+      <use xlink:href="#icon-rule-delete"></use>
+    </svg>
+  </span>
+</div>

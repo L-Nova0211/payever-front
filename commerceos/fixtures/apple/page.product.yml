@@ -1,0 +1,57 @@
+id: apple-product-details-page
+name: Product details Page
+variant: product
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-product-details-page
+  type: document
+  children:
+    - id: body
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: body-product-details
+          type: shop-product-details
+
+stylesheets:
+  desktop:
+    apple-product-details-page: {}
+    # ----------------------------------
+    # Desktop Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 1024
+    body-product-details: {}
+
+  tablet:
+    apple-product-details-page: {}
+    # ----------------------------------
+    # Tablet Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 768
+    body-product-details:
+      margin: 0 12
+
+  mobile:
+    apple-product-details-page: {}
+    # ----------------------------------
+    # Mobile Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 360
+    body-category:
+      slot: absolute
+    body-product-details:
+      margin: 0 12
+
+context: {}

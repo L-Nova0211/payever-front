@@ -1,0 +1,124 @@
+//
+// Radio
+// ----------------------------
+@include mat-radio-theme($theme);
+
+.pe-bootstrap {
+
+  .mat-radio {
+
+    // Elememnts
+    // -------------------------------
+
+    &-outer-circle {
+      border: 1px solid $form-table-border-color;
+    }
+
+    &-label {
+      margin-bottom: 0;
+      color: $mat-form-field-label-empty-color;
+    }
+
+    &-button {
+      margin-right: $grid-unit-x;
+    }
+
+    &-inner-circle {
+      display: none !important;
+    }
+
+    &-label-content {
+      padding-left: $grid-unit-x;
+      font-weight: $font-weight-regular;
+
+      &.mat-radio-label-before {
+        padding-left: 0;
+        padding-right: $grid-unit-x;
+      }
+    }
+
+    &-ripple {
+      display: none;
+    }
+
+    &-group {
+
+      & + .mat-error {
+        display: none;
+      }
+
+      &-label-before {
+        text-align: right;
+      }
+    }
+
+    // States
+    // -------------------------------
+
+    &-disabled {
+      cursor: not-allowed;
+
+      .mat-radio-label {
+        color: $color-grey-4;
+        cursor: not-allowed;
+      }
+
+      .mat-radio-outer-circle {
+        border-color: $color-grey-6;
+      }
+
+      .mat-radio-background {
+        background-color: $color-white-grey-9;
+      }
+    }
+
+    &-checked {
+      .mat-radio-container {
+        .mat-radio-outer-circle {
+          background: $color-blue $img-check-20-white no-repeat center center;
+          border-color: transparent;
+        }
+      }
+
+      .mat-radio-label {
+        color: $color-black-pe;
+      }
+    }
+
+    &-error {
+      width: auto !important;
+      .mat-radio-outer-circle {
+        border-color: $color-red;
+        background-color: $color-red-light;
+      }
+
+      & + .mat-error {
+        font-size: $font-size-small;
+        width: auto !important;
+        display: inline-block;
+        margin-top: 1px;
+      }
+
+      &.mat-radio-group-label-before {
+        & + .mat-error {
+          @include pe_order(-1);
+          @include pe_flex-grow(1);
+          text-align: right;
+          margin-right: $grid-unit-x;
+        }
+      }
+
+      &:after {
+        content: '';
+        height: 1px;
+        width: 100%;
+        left: 0;
+        background: $color-red;
+        position: absolute;
+        bottom: -1px;
+      }
+    }
+  }
+}
+
+

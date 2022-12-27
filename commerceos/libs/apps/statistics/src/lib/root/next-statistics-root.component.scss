@@ -1,0 +1,56 @@
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+.dark {
+  @include peb-theme($theme-dark);
+  &.root {
+    background-color: #24272e;
+  }
+}
+.light {
+  @include peb-theme($theme-light);
+  &.root {
+    background-color: #f3f2f8;
+  }
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+  }
+}
+
+cos-next-statistics-root {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section-button {
+  &.left-section-button {
+    .white-space {
+      display: unset !important;
+    }
+  }
+}
+
+.wider-overlay {
+  .overlay-widget-container {
+    max-width: 480px;
+  }
+}
+
+.remove-overlay-content-padding {
+  .overlay-widget__content {
+    padding: 0;
+  }
+}

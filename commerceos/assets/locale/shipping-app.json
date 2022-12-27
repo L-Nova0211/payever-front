@@ -1,0 +1,366 @@
+{
+  "shipping-app": {
+    "labels": {
+      "shipping_to": "Shipping to",
+      "shipping_from": "Shipping from",
+      "starting_from": "Starting to",
+      "up": "and up"
+    },
+    "actions": {
+      "open": "Open",
+      "delete": {
+        "label": "Are you sure?",
+        "info": "Do you really want to delete this item? All data will be lost and you will not be able to restore it,"
+      },
+      "delete_selected": "Delete selected item(s)",
+      "edit": "Edit",
+      "save": "Save",
+      "add": "Add",
+      "done": "Done",
+      "yes": "Yes",
+      "no": "No",
+      "cancel": "Cancel",
+      "install": "Install",
+      "remove": "Remove",
+      "preview": "Preview",
+      "new_package": "Add new package",
+      "add_new": "Add new",
+      "edit_location": "Edit location",
+      "add_location": "Add location",
+      "choose": "Choose action"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "snackbar": {
+      "default_delete": "Couldn't delete default profile",
+      "default_last_change": "Has to be at least one Default profile"
+    },
+    "grid": {
+      "options": "Options",
+      "delete": "Delete",
+      "duplicate": "Duplicate",
+      "copy": "Copy",
+      "paste": "Paste",
+      "select_all": "Select All",
+      "deselect_all": "Deselect All",
+      "edit": "Edit",
+      "open": "Open",
+      "default": "Default"
+    },
+    "dialog_leave": {
+      "package": "package",
+      "profile": "profile",
+      "zone": "zone",
+      "location": "location",
+      "heading_adding": "Adding ",
+      "heading_editing": "Editing ",
+      "description_adding": "Do you really want to close adding a ",
+      "description_editing": "Do you really want to close editing a ",
+      "description": "? Because all data will be lost when unsaved and you will not be able to restore it"
+    },
+    "sort_actions": {
+      "title": "Sort by",
+      "name": "Name",
+      "ascending": "Newest",
+      "descending": "Oldest",
+      "date": "Date"
+    },
+    "grid_fields": {
+      "name": "Name",
+      "condition": "Condition",
+      "price": "Price",
+      "width": "Width",
+      "height": "Height",
+      "length": "Length",
+      "weight": "Weight"
+    },
+    "main_nav": {
+      "name": "Shipping",
+      "navigation": "Navigation",
+      "profiles": "Shipping profiles",
+      "zones": "Shipping zones",
+      "packages": "Shipping packages",
+      "delivery_location": "Delivery by location",
+      "pickup_location": "Pickup by location",
+      "slip": "Packaging slip",
+      "connect": "Connect"
+    },
+    "packages_nav": {
+      "name": "Packages",
+      "my_packages": "My packages",
+      "envelopes": "Envelopes",
+      "boxes": "Boxes",
+      "soft_packages": "Soft packages"
+    },
+    "modal_header": {
+      "title": {
+        "new_shipping": "Add new shipping",
+        "new_zone": "Add new zone",
+        "new_package": "Add package",
+        "edit_package": "Edit package"
+      }
+    },
+    "connections": {
+      "myrates": {
+        "label": "Setup your own rates"
+      }
+    },
+    "forms": {
+      "add_shipping": "Please add shipping location",
+      "add_shipping_pickup": "Please add shipping pickup location",
+      "local_delivery": {
+        "title": "Local delivery",
+        "location_status": "location status",
+        "has_local_delivery": "This location offers local delivery",
+        "delivery_prices": "Delivery prices for this location are in",
+        "change_currency": "Change Currency",
+        "delivery_area": "DELIVERY AREA",
+        "delivery_area_postal": "Use postal codes (Choose specific areas that you deliver to.)",
+        "delivery_area_label": "Set a delivery radius (Set a distance around your location that you deliver to.)",
+        "delivery_area_label_bottom": "Set a delivery area using a radius or postal codes to determine how far you will travel to deliver orders.",
+        "delivery_radius": "DELIVERY RADIUS",
+        "placeholder": "Enter value",
+        "postal_codes": "POSTAL CODES",
+        "postal_codes_label_bottom": "Enter postal codes separated by a comma.",
+        "placeholder_postal": "Enter postal codes",
+        "minimum_price_label": "MINIMUM ORDER PRICE",
+        "delivery_price": "DELIVERY PRICE",
+        "delivery_information": "DELIVERY INFORMATION"
+      },
+      "local_pickup": {
+        "title": "Local pickup",
+        "location_status": "location status",
+        "has_local_pickup": "This location offers local delivery",
+        "expected_pickup": "Expected pickup time",
+        "order_ready": "Order ready for pickup notification",
+        "pickup_instructions_placeholder": "Bring your confirmation email when you come to collect your order.",
+        "pickup_instructions": "Pickup instructions."
+      },
+      "location_dialog": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter name"
+        },
+        "address": {
+          "label": "Address",
+          "placeholder": "Enter address"
+        },
+        "street_address": {
+          "label": "Street address",
+          "placeholder": "Enter street address"
+        },
+        "postal_code": {
+          "label": "Postal code",
+          "placeholder": "Enter postal code"
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "Enter city"
+        },
+        "country": {
+          "label": "Country"
+        },
+        "telephone": {
+          "label": "Telephone number",
+          "placeholder": "Enter phone number"
+        },
+        "errors": {
+          "name": "Name is required",
+          "address": "Street address is required",
+          "address_pattern": "Street address needs a street number",
+          "postal": "Postal code is required",
+          "city": "City is required",
+          "country": "Country is required",
+          "phone_pattern": "Phone needs only a number"
+        }
+      },
+      "zone_dialog": {
+        "headers": {
+          "zone": "Shipping zone",
+          "rate": "Shipping zone rates"
+        },
+        "name": {
+          "label": "Zone name",
+          "placeholder": "Enter zone name"
+        },
+        "errors": {
+          "zone": "Zone name required",
+          "countries": "Zone countries are required",
+          "rates": "Rates are required",
+          "max_weight": "Min weight should be less than max",
+          "max_price": "Min price should be less than max"
+        },
+        "type": {
+          "label": "Rate type"
+        },
+        "rate_name": {
+          "label": "Rate name",
+          "placeholder": "Enter rate name"
+        },
+        "rate_price": {
+          "label": "Rate price",
+          "placeholder": "Enter rate price"
+        },
+        "conditions": {
+          "label": "Conditions"
+        },
+        "min_weight": {
+          "label": "Minimum weight",
+          "placeholder": "Enter weight"
+        },
+        "max_weight": {
+          "label": "Maximum weight",
+          "placeholder": "Enter weight"
+        },
+        "min_price": {
+          "label": "Minimum price",
+          "placeholder": "Enter price"
+        },
+        "max_price": {
+          "label": "Maximum price",
+          "placeholder": "Enter price"
+        },
+        "shipping_speed": {
+          "label": "Shipping speed"
+        },
+        "price": {
+          "label": "Price",
+          "placeholder": "Enter price"
+        },
+        "autoShow": "Automatically show new shipping services to customers when they become available.",
+        "fee_percantage": {
+          "label": "Handleing fee percentage",
+          "placeholder": "Enter percentage"
+        },
+        "fee_flat": {
+          "label": "Handleing fee flat amount",
+          "placeholder": "Enter price"
+        },
+        "disclamer": "Adjust calculated rates to account for packaging and handling costs",
+        "remove_rate": "Remove rate",
+        "add_rate": "Add new rate"
+      },
+      "new_package_dialog": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter name"
+        },
+        "package_type": {
+          "label": "Package type"
+        },
+        "package_kind": {
+          "label": "Kind"
+        },
+        "size": {
+          "label": "Size"
+        },
+        "length": {
+          "label": "Length",
+          "placeholder": "Enter length"
+        },
+        "width": {
+          "label": "Width",
+          "placeholder": "Enter width"
+        },
+        "height": {
+          "label": "Height",
+          "placeholder": "Enter height"
+        },
+        "empty_weight": {
+          "label": "Weight when empty"
+        },
+        "value": {
+          "label": "Value",
+          "placeholder": "Enter value"
+        },
+        "default": "Set as default package",
+        "errors": {
+          "name": "Name is required",
+          "length": "Length is required",
+          "width": "Width is required",
+          "height": "Height is required",
+          "weight": "Weight is required",
+          "package": "At least one required"
+        }
+      },
+      "profiles_dialog": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter name"
+        },
+        "disclamer": "Customers won't see this.",
+        "products": {
+          "placeholder": "Search"
+        },
+        "from_origin": {
+          "label": "Shipping from",
+          "placeholder": "Enter origin",
+          "button": "Manage"
+        },
+        "to_zone": {
+          "label": "Shipping to",
+          "placeholder": "Enter zone",
+          "button": "Create zone"
+        },
+        "no_zones": "No zones or rates",
+        "create_zone": "Create zone",
+        "edit_origin": "Edit origin",
+        "errors": {
+          "profile": "Profile name required",
+          "products": "Products are required",
+          "zones_origins": "Zones and Origins are required"
+        },
+        "default": "Default",
+        "default_message": "Set as default profile"
+      }
+    },
+    "connect": {
+      "title": "Connect",
+      "subtitle": "Shipping carriers",
+      "dhl": "DHL",
+      "ups": "UPS",
+      "fedex": "FedEx"
+    },
+    "package_slip": {
+      "title": "Packaging slip",
+      "date": "Date",
+      "ship_to": "Ship to",
+      "bill_to": "Bill to",
+      "order_id": "Order ID",
+      "product": "Product",
+      "qty": "Qty",
+      "price": "Price",
+      "count_items": "{{count}} item(s)",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total"
+    },
+    "products": {
+      "actions": {
+        "add_product": "Add product",
+        "add_collection": "Add collection",
+        "add_to_collection": "Add to collection",
+        "choose_action": "Choose action",
+        "select_all": "Select all",
+        "deselect_all": "Deselect all"
+      },
+      "sort": {
+        "name": "Name",
+        "price_asc": "Price ascending",
+        "price_desc": "Price descending"
+      },
+      "order": "Order",
+      "channel": "Channel",
+      "category": "Category",
+      "price": "Price",
+      "collection": "Colleection",
+      "confirm_dialog": {
+        "deleting_products": "Deleting products",
+        "do_you_want_to_delete": "Do you really want to delete your products?",
+        "deleting_collections": "Deleting products",
+        "do_you_want_to_delete_collections": "Do you really want to delete your products?"
+      }
+    }
+  }
+}

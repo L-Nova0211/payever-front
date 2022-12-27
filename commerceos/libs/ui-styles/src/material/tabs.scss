@@ -1,0 +1,84 @@
+//
+// Tabs
+// ----------------------------
+
+.pe-tabs {
+
+  .mat-tab-header {
+
+    &-pagination {
+      min-width: $margin-base-x;
+      margin-bottom: $grid-unit-y;
+      color: $color-grey-5;
+
+      &-chevron {
+        width: $grid-unit-y;
+        height: $grid-unit-y;
+      }
+
+      &-disabled {
+        visibility: hidden;
+      }
+    }
+
+    .mat-tab-label-container {
+
+      .mat-tab-list {
+        margin-bottom: $grid-unit-y;
+
+        &:after {
+          content: '';
+          height: 1px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          background-color: $color-grey-5;
+        }
+
+        .mat-tab-labels {
+
+          .mat-tab-label {
+            height: $grid-unit-y * 3;
+            min-width: auto;
+            padding: 0;
+            margin: 0 ceil($margin-base-x / 2);
+            font-size: $font-size-base;
+            font-family: $font-family-base;
+            color: $color-grey-2;
+            opacity: 1;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &-active {
+
+              .mat-tab-label-content {
+                color: $color-grey-1;
+                font-weight: $font-weight-medium;
+              }
+            }
+
+            &.mat-tab-disabled {
+              opacity: .3;
+            }
+          }
+        }
+
+        .mat-ink-bar {
+          height: 1px;
+          background-color: $color-black;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .mat-tab-body-wrapper {
+    // TODO styles for the content (margins/paddings)
+  }
+}

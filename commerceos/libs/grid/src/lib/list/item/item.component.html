@@ -1,0 +1,34 @@
+<ng-container *ngIf="item && !isMobileListWithMobileView">
+  <pe-grid-list-item
+    (actionClick)="actionClick.emit($event)"
+    [disableContextMenu]="disableContextMenu"
+    [disableSelect]="disableSelect"
+    [excludeColumns]="excludeColumns"
+    [item]="item"
+    [allowPreview]="allowPreview"
+    [template]="template"
+    [itemContextMenu]="itemContextMenu"
+    (itemContextSelect)="itemContextSelect.emit($event)"
+    (preview)="preview.emit($event)"
+    (itemClick)="itemClick.emit($event)"
+    [toAdd]="toAdd"
+    [viewAction]="viewAction"
+    [displayColumns]="displayColumnsData"
+    [autoHeightImage]="autoHeightImage"
+  ></pe-grid-list-item>
+</ng-container>
+<ng-container *ngIf="item && isMobileListWithMobileView">
+  <pe-grid-mobile-item
+    (actionClick)="actionClick.emit($event)"
+    (itemContextSelect)="itemContextSelect.emit($event)"
+    [disableContextMenu]="disableContextMenu"
+    [disableSelect]="disableSelect"
+    [item]="item"
+    [itemContextMenu]="itemContextMenu"
+    [toAdd]="toAdd"
+    [displayColumns]="displayColumnsData"
+  >
+    <ng-content></ng-content>
+  </pe-grid-mobile-item>
+</ng-container>
+

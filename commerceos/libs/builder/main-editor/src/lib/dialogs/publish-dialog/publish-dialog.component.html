@@ -1,0 +1,91 @@
+<div class="viewer__widget" [ngClass]="theming">
+  <div class="viewer__widget__header">
+    <div class="viewer__widget__title">Publish</div>
+    <div class="viewer__widget__close" (click)="onCloseClick()">
+      <mat-icon svgIcon="button-close"></mat-icon>
+    </div>
+  </div>
+  <div class="viewer__widget__body">
+    <mat-spinner *ngIf="loading$ | async" [diameter]="30" [strokeWidth]="2" class="mat-spinner-themed dashboard-spinner"></mat-spinner>
+    <div class="theme" *ngIf="!(loading$ | async)">
+      <div class="theme__image">
+        <div class="image__overlay" (click)="fileInput.click()">
+          <div class="round-container">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-apps-small-imgae"></use>
+            </svg>
+          </div>
+        </div>
+        <mat-spinner [diameter]="30" *ngIf="pictureLoading$ | async" [strokeWidth]="2" class="mat-spinner-themed"></mat-spinner>
+
+        <img *ngIf="pictureSrc$ | async as pictureSrc" [src]="pictureSrc" alt=""  (load)="onImgLoad()">
+
+        <div class="image__overlay-unavailable" *ngIf="!(pictureSrc$ | async) && !(pictureLoading$ | async)">Logo is unavailable</div>
+
+      </div>
+
+      <div class="theme__body" *ngIf="theme$ | async as theme">
+        <input class="theme__name" placeholder="Theme name" [value]="theme?.name || ''" (blur)="updateThemeName($event.target?.value)">
+        <div class="theme__tags">
+          <mat-form-field class="tags-input">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let tag of tags$ | async; let i=index"
+                        [selectable]="true"
+                        [removable]="true"
+                        (removed)="removeTag(i)"
+              >
+                {{tag}}
+                <div matChipRemove>x</div>
+              </mat-chip>
+              <input
+                placeholder="Add tags"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="true"
+                (matChipInputTokenEnd)="addTag($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="theme__publish-btn radius__top" [disabled]="disabled$|async" (click)="onPublish()">
+        <ng-container *ngIf="(publishing$ | async) || (hasActiveTask$ | async); else publishSpanTpl">
+          <pe-progress-button-content
+            [loading]="true"
+            [spinnerDiameter]="22"
+            [spinnerStrokeWidth]="2"
+            [spinnerLight]="true"
+            class="mat-progress-spinner-light"
+          >
+          </pe-progress-button-content>
+        </ng-container>
+       
+        <ng-template #publishSpanTpl>
+          <span>Publish</span>
+        </ng-template>
+      </button>
+    </div>
+    <div class="publishing" *ngIf="showDescription$|async">
+      <div class="publishing__divider"></div>
+      <div class="publishing__button" (click)="onReviewToggle()">
+        <mat-icon *ngIf="isReviewEnabled$ | async; else reviewDisabled" svgIcon="mark-checked" class="publishing__button-icon"></mat-icon>
+        <ng-template #reviewDisabled>
+          <mat-icon svgIcon="mark-disabled" class="publishing__button-icon"></mat-icon>
+        </ng-template>
+        <span>Review Changes and Publish</span>
+      </div>
+      <div class="publishing__button" (click)="onViewUrl()">
+        <mat-icon svgIcon="view" class="publishing__button-icon"></mat-icon>
+        <span>View Published URL</span>
+      </div>
+      <div class="publishing__divider"></div>
+    </div>
+  </div>
+</div>
+
+<input
+  #fileInput
+  style="display: none"
+  type="file"
+  accept="image/*"
+  (change)="onImageUpload($event)"
+/>

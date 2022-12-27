@@ -1,0 +1,23 @@
+<div class="container" [ngClass]="config.theme">
+  <div style="margin-bottom: 11px;">
+      <peb-form-background >
+          <peb-form-field-input animated="true" [label]="'shop-app.settings.domain_label'|translate" appearance="label"
+            [isFieldInvalid]="!!this.errorMsg" [errorMessage]="this.errorMsg">
+              <input [value]="domainConfig.domainName" (input)="validateDomain($event)" [placeholder]="'shop-app.settings.domain_placeholder'|translate" />
+                <div class="suffix">
+          <p>.{{shopHost}}</p>
+      </div>
+            </peb-form-field-input>
+      </peb-form-background>
+  </div>
+
+  <peb-form-background >
+      <peb-form-field-input animated="true" [label]="'shop-app.settings.date_label'|translate" appearance="label">
+          <input [value]="domainConfig.creationDate|date:'longDate'" disabled [placeholder]="'shop-app.settings.date_placeholder'|translate" />
+        </peb-form-field-input>
+        <peb-form-field-input animated="true" [label]="'shop-app.settings.provider_label'|translate" appearance="label">
+          <input [(value)]="domainConfig.provider"  disabled [placeholder]="'shop-app.settings.provider_placeholder'|translate" />
+        </peb-form-field-input>
+  </peb-form-background>
+
+</div>

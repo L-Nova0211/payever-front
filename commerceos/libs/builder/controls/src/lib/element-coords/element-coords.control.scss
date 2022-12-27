@@ -1,0 +1,40 @@
+$main-color: white;
+$background-color: rgba(17, 17, 17, 0.8);
+
+:host {
+  pointer-events: none;
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 10000000;
+}
+
+.coords {
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  padding: 4px 6px;
+  font-weight: normal;
+  font-variant: normal;
+  border-radius: 4px;
+  margin-top: -26px;
+
+  line-height: 1;
+  color: $main-color;
+  background: $background-color;
+
+  span {
+    font-size: 12px;
+    margin-right: 6px;
+    user-select: none;
+    pointer-events: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+.transactions-revenue {
+  // margin-left: 24px;
+
+  b {
+    font-weight: 500;
+    display: inline-block;
+  }
+}
+.transactions-revenue-today {
+  color: $color-secondary;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: normal;
+  height: 100%;
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  @include pe_justify-content(space-between);
+
+  .icon-8 {
+    width: 5px;
+    margin-bottom: 1px;
+    margin-right: 2px;
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+  @media (max-width: $viewport-breakpoint-ipad - 1) {
+    font-size: 11px;
+  }
+}
+.transactions-revenue-today-value {
+  font-size: 31px;
+  display: inline-block;
+  line-height: 37px;
+  @media (max-width: $viewport-breakpoint-sm-4 - 1) {
+    font-size: 25px;
+  }
+  @media (max-width: $viewport-breakpoint-ipad - 1) {
+    font-size: 19px;
+  }
+}
+.transactions-revenue-month {
+  color: $color-secondary-4;
+}
+.transactions-quarters {
+  @include pe_flexbox;
+  @include pe_justify-content(space-between);
+  font-size: 20px;
+  font-weight: normal;
+  color: $color-secondary-0;
+  padding-top: 21px;
+  padding-right: 24px;
+  padding-bottom: 6px;
+}
+.transactions-quarters-item {
+  font-size: $font-size-base;
+  color: $color-secondary-4;
+  display: inline-block;
+  &::first-letter {
+    color: $color-secondary;
+  }
+}

@@ -1,0 +1,157 @@
+{{ $chartName := .Values.chartName }}
+{{ $values := .Values }}
+{{ $deployEnv := .Values.deploy.env }}
+{{ $appName := $chartName }}
+
+{{ range $app := $values.builderClientApps }}
+
+  {{ $appName = printf "%s-%s" $chartName $app.name }}
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: frontend
+    type: http
+  annotations:
+    "werf.io/set-replicas-only-on-creation": "true"
+spec:
+  replicas: {{ $values.replicas.http }}
+  serviceName: {{ $appName }}
+
+  selector:
+    matchLabels:
+      app: {{ $appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ $appName }}
+        tier: frontend
+        type: http
+
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
+
+    spec:
+      priorityClassName: {{ $values.priorityClass }}
+      imagePullSecrets:
+        - name: {{ $values.image.pullSecretName }}
+
+      initContainers:
+        - name: dist
+          image: {{ $values.image.dist }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/dist.client.sh" ]
+
+          resources:
+{{ if eq  $deployEnv "test" }}
+{{ toYaml $values.resourcestest.app | indent 12 }}
+{{ else if eq  $deployEnv "stage" }}
+{{ toYaml $values.resourcesstage.app | indent 12 }}
+{{ else }}
+{{ toYaml $values.resourceslive.app | indent 12 }}
+{{ end }}
+
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: micro-url-map
+            - secretRef:
+                name: {{ $chartName }}
+
+          volumeMounts:
+            - name: shared-files
+              mountPath: /dist
+
+      terminationGracePeriodSeconds: 60
+
+      containers:
+        - name: node
+          image: {{ $values.image.nodejs }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/deploy.client.sh" ]
+
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
+            preStop:
+              exec:
+                command: ["sleep", "15"]
+
+          ports:
+            - containerPort: {{ $values.service.containerPort }}
+              protocol: TCP
+              name: http
+{{ if $app.secondaryContainerPort }}
+            - containerPort: {{ $app.secondaryContainerPort }}
+              protocol: TCP
+              name: http-secondary
+{{ end }}
+
+          livenessProbe:
+            httpGet:
+              path: /api/status
+              port: {{ $values.service.statusPort }}
+            initialDelaySeconds: 150
+            periodSeconds: 30
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /api/status
+              port: {{ $values.service.statusPort }}
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 15
+
+          volumeMounts:
+          - name: shared-files
+            mountPath: /payever
+
+          resources:
+{{ if eq  $deployEnv "test" }}
+{{ toYaml $values.resourcestest.app | indent 12 }}
+{{ else if eq  $deployEnv "stage" }}
+{{ toYaml $values.resourcesstage.app | indent 12 }}
+{{ else }}
+{{ toYaml $values.resourceslive.app | indent 12 }}
+{{ end }}
+
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: micro-url-map
+            - secretRef:
+                name: {{ $chartName }}
+
+          env:
+            - name: KUBERNETES_DEPLOYED
+              value: "{{ now }}"
+            - name: MICRO_CHECKOUT_VERSION
+              value: "{{ $values.microCheckoutVersion }}"
+            - name: APP_TYPE
+              value: "{{ $app.name }}"
+{{ if $app.secondaryContainerPort }}
+            - name: APP_SECONDARY_PORT
+              value: "{{ $app.secondaryContainerPort }}"
+{{ end }}
+
+  volumeClaimTemplates:
+  - metadata:
+      name: shared-files
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi
+---
+{{ end }}

@@ -1,0 +1,22 @@
+<ng-template>
+  <div class="pickers-wrapper">
+    <div class="pickers-wrapper__header">
+      <button
+        class="pickers-wrapper__close-button"
+        (click)="closeDialog()"
+      >
+        {{ 'appointments-app.actions.cancel' | translate }}
+      </button>
+      <button
+        class="pickers-wrapper__add-button"
+        (click)="closeDialog(true)"
+      >
+        {{ 'appointments-app.actions.add' | translate }}
+      </button>
+    </div>
+    <div class="pickers-wrapper__content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-template>
+<pe-pickers-wrapper-styles></pe-pickers-wrapper-styles>

@@ -1,0 +1,58 @@
+<mat-list class="mat-list-transparent" [class.mat-list-padding-md]="sizeMd">
+  <ng-content></ng-content>
+  <ng-container *ngFor="let integration of integrations">
+    <mat-list-item [class.mat-list-item-no-padding-left]="noPaddingLeft">
+      <div class="mat-list-item-col">
+        <div class="icon-menu-wrapper">
+          <svg class="icon icon-16 icon-menu-item">
+            <use [attr.xlink:href]="integration.integration.displayOptions.icon"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="mat-list-item-flex no-left-padding">
+        <div class="mat-list-item-content expansion-list-title">
+          <span class="pe-truncate-text">{{ integration.integration.displayOptions.title | translate }}</span>
+        </div>
+      </div>
+      <div class="mat-list-item-flex no-right-padding">
+        <div class="mat-list-item-col text-right">
+          <mat-slide-toggle
+            *ngIf="isShowToggleButton && (noActionsIntegrations || []).indexOf(integration.integration.name) < 0"
+            [checked]="(enabledIntegrations || []).indexOf(integration.integration.name) >= 0"
+            [disabled]="!integration.enabled"
+            (change)="toggleClick(integration)"
+          ></mat-slide-toggle>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button
+                  *ngIf="(noActionsIntegrations || []).indexOf(integration.integration.name) < 0"
+                  [class.mat-button-rounded]="true"
+                  [class.mat-button-xs]="true"
+                  (click)="onOpen(integration)"
+                  class="expansion-list-button"
+                  type="button"
+                  color="muted-light">
+            <pe-progress-button-content class="mat-progress-spinner-light"
+                                        [spinnerDiameter]="15"
+                                        [spinnerStrokeWidth]="2"
+                                        [spinnerLight]="true"
+                                        [loading]="isLoading(integration)">
+              {{ 'actions.open' | translate }}
+            </pe-progress-button-content>
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-divider class="mat-divider-full-width"></mat-divider>
+  </ng-container>
+
+  <mat-list-item *ngIf="isShowAddButton" class="add-button">
+    <button mat-button
+            [class.mat-button-link]="true"
+            [class.mat-button-no-padding]="true"
+            (click)="clickedAddButton.emit(category)">
+      {{ 'actions.addPlus' | translate }}
+    </button>
+
+  </mat-list-item>
+</mat-list>

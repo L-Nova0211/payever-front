@@ -1,0 +1,14 @@
+@import "../../../../../../../libs/builder/styles/src/lib/styles/variables";
+
+.link-to {
+  &__button {
+    padding: 4px 5px 4px 8px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

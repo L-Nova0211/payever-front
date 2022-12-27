@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  padding: 6px 12px 12px 12px;
+}
+
+.option {
+  &__group {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #37363b;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    padding-right: 12px;
+
+    svg {
+      display: none;
+      margin-right: -10px;
+
+      &.active {
+        display: inline-block;
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #ffffff;
+      padding: 7px 0 7px 16px;
+    }
+  }
+}

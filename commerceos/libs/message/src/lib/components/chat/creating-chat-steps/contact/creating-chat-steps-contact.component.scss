@@ -1,0 +1,76 @@
+.contact-invite-link {
+  &__link {
+    margin-top: 12px;
+    border-radius: 12px;
+  }
+
+  &__actions-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    padding: 14px 12px;
+    appearance: none;
+    min-width: 105px;
+    &.success {
+      color: #28b327;
+    }
+  }
+
+  &__skip {
+    height: 40px;
+    margin: 12px 0 0;
+    padding: 0;
+    border-radius: 12px;
+  }
+  
+  &__skip, &__copy {
+    outline: none;
+    line-height: 40px;
+    letter-spacing: normal;
+    box-shadow: none;
+    text-align: center;
+    background-color: #1c1d1e;
+    color: #0091df;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    width: 100%;
+    cursor: pointer;
+    &:focus,
+    &:hover,
+    &:active {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &__root-link {
+    width: 280px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px!important;
+    color: #7a7a7a!important;
+    margin-right: 0!important;
+  }
+
+  &__input-disable {
+    color: #7a7a7a!important;
+  }
+}
+.add-admins {
+  .errors {
+    margin-top: 5px;
+  }
+  
+  .picker-container {
+    border-radius: 12px;
+  }
+}

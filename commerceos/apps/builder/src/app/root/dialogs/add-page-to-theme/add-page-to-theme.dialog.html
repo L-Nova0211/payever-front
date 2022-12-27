@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+  <div class="field">
+    <label>
+      <div>FROM:</div>
+      <select formControlName="apiPathFrom">
+        <option *ngFor="let path of apiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="field">
+    <label>
+      <div>TO:</div>
+      <select formControlName="apiPathTo">
+        <option *ngFor="let path of apiPaths" [value]="path.value">{{ path?.key }}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="field">
+    <label>
+      <div>TOKEN: </div>
+      <input placeholder="TOKEN" type="text" formControlName="token">
+    </label>
+  </div>
+
+  <label class="field">
+    <div>FROM THEME ID: </div>
+    <input placeholder="Theme ID" type="text" formControlName="fromThemeId">
+  </label>
+
+  <label class="field">
+    <div>TO THEME ID: </div>
+    <input placeholder="Theme ID" type="text" formControlName="toThemeId">
+  </label>
+
+  <div *ngIf="!pages?.length" class="field">
+    <button (click)="getPages()" [disabled]="form.get('fromThemeId')?.invalid || form.get('token')?.invalid">Get pages</button>
+  </div>
+
+  <div *ngIf="pages?.length" class="field">
+    <div>PAGES:</div>
+    <div formArrayName="pages" *ngFor="let page of pages; let i=index">
+      <label *ngIf="page?.control">
+        <input type="checkbox" [formControl]="page?.control">
+        <span>{{ page?.name }}</span>
+        <span> [ {{ page?.id }} ]</span>
+      </label>
+    </div>
+  </div>
+
+  <label class="field">
+    <div>MARK ALL PAGES AS MASTER: </div>
+    <input type="checkbox" formControlName="markAllPagesAsMaster">
+  </label>
+
+  <div class="field">
+    <button (click)="onSubmit()" [disabled]="form.invalid || form.disabled || !validPagesControl">Copy</button>
+  </div>
+
+</form>

@@ -1,0 +1,16 @@
+<div [ngClass]="widgetTheme">
+  <div class="text">
+    <div *ngIf="widget.data[0]" class="text__main-title">
+      {{ widget.data[0].title }}
+    </div>
+    <div *ngIf="widget.data[1]" class="text__second-title">
+      {{ widget.data[1].title }}
+    </div>
+    <div *ngIf="widget.data[2]" class="text__third-title" [ngClass]="widget.data[2].titleColor">
+      {{ widget.data[2].title }}
+    </div>
+  </div>
+  <div *ngIf="!widget.data.length">
+    {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+  </div>
+</div>

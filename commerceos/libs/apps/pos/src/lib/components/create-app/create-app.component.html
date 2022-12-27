@@ -1,0 +1,25 @@
+<div class="container" [ngClass]="config.theme">
+  <div style="margin-bottom: 16px;">
+    <div style="margin-bottom: 16px;">
+      <peb-logo-picker
+        [isImageLoading]="isImageLoading"
+        (file)="onLogoUpload($event)"
+        [image]="posConfig.logo"
+        [abbrevation]="posConfig.name | abbreviation">
+      </peb-logo-picker>
+    </div>
+    <peb-form-background>
+      <peb-form-field-input [label]="'pos-app.settings.terminal_title' | translate" appearance="label">
+        <input [ngModel]="posConfig.name" (ngModelChange)="validateTerminalName($event)" [placeholder]="'pos-app.settings.enter_terminal_title' | translate"/>
+      </peb-form-field-input>
+    </peb-form-background>
+  </div>
+<div style="margin-bottom: 16px;"  *ngIf="errorMsg">
+  <peb-messages  [showIcon]="false" [message]="errorMsg"></peb-messages>
+</div>
+<button *ngIf="appData._id && appData.name && !appData.active"
+class="delete-button"
+(click)="removeTerminal()"
+[ngClass]="config.theme">Delete Terminal</button>
+
+</div>

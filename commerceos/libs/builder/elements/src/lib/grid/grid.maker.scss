@@ -1,0 +1,26 @@
+:host {
+  position: relative;
+  display: inline-block;
+}
+
+.grid {
+  &__table {
+    display: table;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__cell {
+    display: table-cell;
+  }
+
+  &__end {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+  }
+}

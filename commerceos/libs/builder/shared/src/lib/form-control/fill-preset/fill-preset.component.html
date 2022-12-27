@@ -1,0 +1,23 @@
+<div class="grid">
+  <div *ngFor="let column of columns" class="column">
+    <div
+      *ngFor="let color of column"
+      [style.backgroundColor]="color"
+      class="cell"
+      (click)="select(color)"
+    >
+      <div
+        class="marker"
+        [class.marker_active]="control.value === color"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="6" viewBox="0 0 8 6">
+          <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g stroke="#FFF" stroke-width=".8">
+              <path d="M4.8 8L7.2 10.4 11.2 5.6" transform="translate(-1141 -181) translate(1137 176)"/>
+            </g>
+          </g>
+        </svg>      
+      </div>  
+    </div>
+  </div>
+</div>

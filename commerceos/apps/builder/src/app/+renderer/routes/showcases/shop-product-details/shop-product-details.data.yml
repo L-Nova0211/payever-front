@@ -1,0 +1,41 @@
+elements:
+  id: products
+  type: shop-product-details
+
+
+stylesheet:
+  all:
+    products:
+      itemWidth: 275
+      itemHeight: 400
+
+context:
+  '@product-details':
+    state: 'ready'
+    data:
+      title: 'Product title'
+      price: '49,95 €'
+      images:
+        - /assets/showcase-images/products/5.png
+        - /assets/showcase-images/products/6.png
+        - /assets/showcase-images/products/7.png
+      variants:
+        - id: 47de8fc3-0cbe-4ee0-a057-c146fa040fb5
+          title: Title
+          description: Ladies handbag - dimension 60 x 40 cm&nbsp;<div>Handmade</div><div>Sapphire</div><div>100%
+            Recycled plastic</div>
+          price: 89.99
+          options:
+          - id: 758c0c57-e66b-4806-8059-0830ea3bc9b9
+            name: Color
+            value: Black
+        - id: 37de8fc3-0cbe-4ee0-a057-c146fa040fb5
+          title: Title 2
+          description: 2 Ladies handbag - dimension 60 x 40 cm&nbsp;<div>Handmade</div><div>Sapphire</div><div>100%
+            Recycled plastic</div>
+          price: 85.99
+          options:
+          - id: 758c0c57-e66b-4806-8059-0830ea3bc9b9
+            name: Color
+            value: White
+      description: Deep sea anglerfish gizzard shad bonnetmouth, gurnard ribbonbearer lined sole; Cornish Spaktailed Bream. Tench elasmobranch; tench airsac catfish ziege stoneroller minnow loach goby Pacific cod. Roundhead longnose whiptail catfish gouramie! Southern flounder; weasel shark Razorback sucker giant sea bass snake mudhead salmon shark; soapfish red snapper orangestriped triggerfish huchen wrasse tenpounder? Humuhumunukunukuapuaa basslet, black bass gulper eel American sole daggertooth pike conger, southern flounder lemon shark.

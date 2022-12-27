@@ -1,0 +1,65 @@
+@import 'pe_colors_variables.scss';
+@import url('../../../../../../node_modules/normalize.css/normalize.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@import 'theming/theming';
+@import 'theming/all-theme';
+
+$theme-dark: peb-theme-choose('dark');
+$theme-light: peb-theme-choose('light');
+$theme-transparent: peb-theme-choose('transparent');
+
+.root {
+  height: 100%;
+}
+
+.dark {
+  @include peb-theme($theme-dark);
+  &.root {
+    background-color: #24272e;
+    color: #ffffff;
+  }
+}
+.light {
+  @include peb-theme($theme-light);
+  &.root {
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+  &.root {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(36, 39, 46, 0.8);
+  }
+}
+
+os-commerce .root-container {
+  padding: 0 !important;
+}
+
+cos-next-studio-root {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  background: $color-background;
+}
+
+.studio-container {
+  height: calc(100% - 60px);
+}
+
+pe-navbar-controls {
+  display: inline-flex !important;
+}
+
+.pe-context-menu ul li span {
+  font-weight: 400;
+}

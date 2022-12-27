@@ -1,0 +1,44 @@
+@mixin pe-autocomplete-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $label-color: map-get($theme-config, label-color);
+
+  .autocomplete-panel {
+    background-color: $accent;
+
+    .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+      color: $primary;
+
+      .mat-option-text {
+        color: $primary;
+      }
+    }
+
+    .mat-option {
+      color: $text-color;
+
+      &:hover {
+        color: $primary;
+        .mat-option-text {
+          color: $primary;
+        }
+      }
+
+      &:not(:first-of-type) {
+        &::before {
+          background-color: $separator;
+        }
+      }
+      .mat-option-text {
+        color: $text-color;
+      }
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+  }
+}

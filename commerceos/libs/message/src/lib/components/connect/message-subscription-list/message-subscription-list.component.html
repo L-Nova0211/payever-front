@@ -1,0 +1,24 @@
+<peb-form-background>
+  <div [formGroup]="formGroup" class="row" *ngFor="let subscription of peOverlayData.subscriptionList">
+    <svg class="icon" [ngSwitch]="subscription.integration.name">
+      <use *ngSwitchCase="peMessageIntegration.WhatsApp" xlink:href="#icon-social-whatsapp-12"></use>
+      <use *ngSwitchCase="peMessageIntegration.FacebookMessenger" xlink:href="#icon-social-facebook-12"></use>
+      <use *ngSwitchCase="peMessageIntegration.LiveChat" xlink:href="#icon-social-live-chat-12"></use>
+      <use *ngSwitchCase="peMessageIntegration.Telegram" xlink:href="#icon-social-telegram-18"></use>
+      <use *ngSwitchCase="peMessageIntegration.InstagramMessenger" xlink:href="#icon-social-instagram-12"></use>
+      <use *ngSwitchCase="peMessageIntegration.Email" xlink:href="#icon-social-telegram-18"></use>
+    </svg>
+    <peb-button-toggle
+      class="peb-button-toggle"
+      [formControlName]="subscription.integration.name"
+      [label]="getLabel(subscription.integration.name)"
+      [spacer]="true"
+      labelPosition="before"
+    ></peb-button-toggle>
+    <span class="link" (click)="openIntegration(subscription)">{{ 'message-app.sidebar.open' | translate}}</span>
+  </div>
+</peb-form-background>
+<a
+  class="install-connection"
+  (click)="add()"
+>{{'message-app.connection.add' | translate}}</a>

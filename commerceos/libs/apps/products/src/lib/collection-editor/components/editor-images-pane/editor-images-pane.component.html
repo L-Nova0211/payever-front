@@ -1,0 +1,54 @@
+<div
+  peFileDrop
+  class="editor-images__container"
+  [class.container__dragging]="isDragging"
+  (onFileOver)="onFileOver($event)"
+  (onFileDrop)="onFileDrop($event)"
+  [style.minHeight]="!pictures.length || loading ? '213px' : 'auto'">
+  <ng-container *ngIf="!loading">
+    <svg *ngIf="isDragging || pictures.length === 0" width="102" height="86" viewBox="0 0 102 86">
+      <defs>
+        <path id="yxzp67f59a" d="M0 0L87.344 0 87.344 71.913 0 71.913z"/>
+      </defs>
+      <g fill="none" fill-rule="evenodd">
+        <g opacity=".1" transform="translate(-630 -237) translate(630 237) translate(14.63 13.5)">
+          <mask id="8q9il7temb" fill="#fff">
+            <use xlink:href="#yxzp67f59a"/>
+          </mask>
+          <path fill="#000" d="M10.398 2.08h66.548c4.594 0 8.318 3.725 8.318 8.318V59.27L69.293 43.298c-1.884-1.9-4.954-1.915-6.853-.031l-.03.031-5.45 5.428c-1.894 1.905-4.976 1.915-6.88.023l-.024-.023L35.5 34.168c-1.895-1.907-4.974-1.917-6.881-.022l-.023.022L2.08 60.476v-50.12c.022-4.578 3.74-8.276 8.318-8.276M76.946 0H10.398C4.656 0 0 4.655 0 10.398v51.117c0 5.742 4.656 10.398 10.398 10.398h66.548c5.744 0 10.398-4.656 10.398-10.398V10.357C87.32 4.63 82.673 0 76.946 0" mask="url(#8q9il7temb)"/>
+          <path fill="#000" d="M53.154 11.314c4.124 0 7.468 3.341 7.468 7.465s-3.344 7.466-7.468 7.466c-4.122 0-7.466-3.342-7.466-7.466 0-4.124 3.344-7.465 7.466-7.465" mask="url(#8q9il7temb)"/>
+        </g>
+        <path fill="#000" fill-opacity=".1" fill-rule="nonzero" d="M75.923 0c5.47 0 10.03 3.913 11.057 9.111H84.58c-.954-3.79-4.3-6.615-8.324-6.764l-.334-.006h-64.65c-4.822 0-8.754 3.843-8.926 8.654l-.006.33V61.24c0 4.611 3.455 8.41 7.9 8.924v2.353C4.615 72.006.184 67.34.006 61.6L0 61.24V11.325C0 5.191 4.853.195 10.914.006L11.272 0h64.651z" transform="translate(-630 -237) translate(630 237)"/>
+      </g>
+    </svg>
+    <div *ngIf="pictures.length === 0 && !isDragging">
+      <p translate>drag_and_drop_images</p>
+    </div>
+  </ng-container>
+
+  <div>
+    <mat-progress-spinner
+      *ngIf="loading"
+      style="stroke: rgba(0, 0, 0, .2) !important"
+      [strokeWidth]="2"
+      [diameter]="64"
+      [value]="uploadProgress"
+      [mode]="'determinate'"
+    ></mat-progress-spinner>
+  </div>
+
+  <div
+    *ngIf="pictures.length === 1 && !isDragging && !loading"
+    (click)="fileInput.click()"
+    class="picture-wrapper">
+    <img *ngIf="!loading" [src]="previewImageUrl" class="picture-main" alt="main picture">
+  </div>
+  <div *ngIf="pictures.length > 1 && !isDragging && !loading">
+    <img *ngFor="let img of pictures; let index" [src]="getImageURLFromBlob(img)" [alt]="'img-' + index">
+  </div>
+  <div *ngIf="isDragging" (click)="isDragging=false">
+    <p translate>you_can_drop_image</p>
+  </div>
+</div>
+<input #fileInput type="file" accept="image/*" (change)="onFileChange($event)" hidden>
+<div class="button" (click)="fileInput.click()">{{ 'add_media' | translate }}</div>

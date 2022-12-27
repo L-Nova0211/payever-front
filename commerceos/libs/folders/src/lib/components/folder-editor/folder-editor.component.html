@@ -1,0 +1,29 @@
+<form
+  [class.folder-editor__loading]="loading"
+  [formGroup]="folderForm"
+  [ngClass]="theme"
+>
+  <pe-media-editor
+    [blobs]="folderForm.controls.image.value"
+    [businessId]="businessId"
+    (changeMedia)="updatePicture($event)"
+    [isFolderEditor]="true"
+    [theme]="theme"
+    (warning)="showWarning($event)"
+  ></pe-media-editor>
+  <div [style.margin-top.px]="16"></div>
+  <peb-form-background>
+    <peb-form-field-input 
+      appearance="label"
+      [errorMessage]="'folders.folder_editor.folder_name.error' | translate"
+      [isFieldInvalid]="folderForm.controls.name.invalid"
+      [label]="'folders.folder_editor.folder_name.title' | translate"
+    >
+      <input
+        formControlName="name"
+        [placeholder]="'folders.folder_editor.folder_name.placeholder' | translate"
+        type="text"
+      />
+    </peb-form-field-input>
+  </peb-form-background>
+</form>

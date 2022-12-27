@@ -1,0 +1,1495 @@
+id: footer-page
+variant: footer
+data: {}
+template:
+  id: footer-page
+  type: document
+  children:    
+    - id: footer
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer-column1
+          type: block
+          children:
+            - id: footer-column1-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop and Learn</span>
+            - id: footer-column1-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Mac</span>
+            - id: footer-column1-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">iPad</span>
+            - id: footer-column1-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">iPhone</span>
+            - id: footer-column1-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Watch</span>
+            - id: footer-column1-link5
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">TV</span>
+            - id: footer-column1-link6
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Music</span>
+            - id: footer-column1-link7
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">AirPods</span>
+            - id: footer-column1-link8
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">HomePod</span>            
+            - id: footer-column1-link9
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">iPod touch</span>
+            - id: footer-column1-link10
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Accessories</span>
+            - id: footer-column1-link11
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Gift Cards</span>        
+            
+        - id: footer-column2
+          type: block
+          children:
+            - id: footer-column2-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Services</span>
+            - id: footer-column2-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Music</span>
+            - id: footer-column2-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple News+</span>
+            - id: footer-column2-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple TV+</span>
+            - id: footer-column2-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Arcade</span>
+            - id: footer-column2-link5
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Books</span>
+            - id: footer-column2-link6
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Card</span>
+            - id: footer-column2-link7
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">iCloud</span>        
+            
+            - id: footer-column3
+              type: block
+              children:
+                - id: footer-column3-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Account</span>
+                - id: footer-column3-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Manage Your Apple ID</span>
+                - id: footer-column3-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Store Account</span>
+                - id: footer-column3-link3
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">iCloud.com</span>
+        
+        - id: footer-column4
+          type: block
+          children:
+            - id: footer-column4-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Store</span>
+            - id: footer-column4-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Find a Store</span>
+            - id: footer-column4-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop Online</span>
+            - id: footer-column4-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Genius Bar</span>
+            - id: footer-column4-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Today at Apple</span>
+            - id: footer-column4-link5
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Camp</span>
+            - id: footer-column4-link6
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Store App</span>
+            - id: footer-column4-link7
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Refurbished and Clearance</span>
+            - id: footer-column4-link8
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Financing</span>
+            - id: footer-column4-link9
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Trade In</span>
+            - id: footer-column4-link10
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Order Status</span>
+            - id: footer-column4-link11
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shopping Help</span>     
+        
+        - id: footer-column5
+          type: block
+          children:
+            - id: footer-column5-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">For Business</span>
+            - id: footer-column5-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple and Business</span>
+            - id: footer-column5-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop for Business</span>     
+            - id: footer-column6
+              type: block
+              children:
+                - id: footer-column6-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">For Education</span>
+                - id: footer-column6-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple and Education</span>
+                - id: footer-column6-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop for K-12</span>
+                - id: footer-column6-link3
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop for College</span>  
+            - id: footer-column7
+              type: block
+              children:
+                - id: footer-column7-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">For Healthcare</span>
+                - id: footer-column7-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple in Healthcare</span>
+                - id: footer-column7-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Health on Apple Watch</span>
+                - id: footer-column7-link3
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Health Records on iPhone</span>                
+            - id: footer-column8
+              type: block
+              children:
+                - id: footer-column8-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">For Government</span>
+                - id: footer-column8-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop for Government</span>
+                - id: footer-column8-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Shop for Veterans and Military</span>           
+        - id: footer-column9
+          type: block
+          children:
+            - id: footer-column9-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Values</span>
+            - id: footer-column9-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Accessibility</span>
+            - id: footer-column9-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Education</span>         
+            - id: footer-column9-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Environment</span>
+            - id: footer-column9-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Inclusion and Diversity</span>         
+            - id: footer-column9-link5
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Privacy</span>
+            - id: footer-column9-link6
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Supplier Responsibility</span>                 
+            
+            - id: footer-column10
+              type: block
+              children:
+                - id: footer-column10-link-title
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">About Apple</span>
+                - id: footer-column10-link1
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Newsroom</span>
+                - id: footer-column10-link2
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Apple Leadership</span>         
+                - id: footer-column10-link3
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Job Opportunities</span>
+                - id: footer-column10-link4
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Investors</span>         
+                - id: footer-column10-link5
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Events</span>
+                - id: footer-column10-link6
+                  type: text
+                  data:
+                    text: <span peb-link-type="internal" peb-link-path="/products/93c3ed34-ea9c-4af1-b464-bc712ed95596">Contact Apple</span>              
+
+
+stylesheets:
+  desktop:
+    footer-page: {}
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30 
+      margin: 0 0 0 24
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link7:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link8:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link9:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link10:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link11:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 46
+      fontWeight: 500
+      textAlign: left
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link7:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30 
+      margin: 0 0 0 12
+    footer-column4-link-title:
+      marginTop: 20
+      width: 100
+      textAlign: left
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link7:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column4-link8:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link9:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link10:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link11:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: 0 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      width: 100
+      textAlign: left
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column5-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column8:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: 0 0 0 0
+    footer-column8-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column8-link1:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column8-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column9:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column9-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column9-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column9-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column10:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 0
+    footer-column10-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+
+
+  tablet:
+    footer-page: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30 
+      margin: 0 0 0 24
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link7:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link8:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link9:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link10:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link11:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 46
+      fontWeight: 500
+      textAlign: left
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column2-link7:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30 
+      margin: 0 0 0 12
+    footer-column4-link-title:
+      marginTop: 20
+      width: 100
+      textAlign: left
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link7:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column4-link8:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link9:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link10:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link11:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: 0 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      width: 100
+      textAlign: left
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column5-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column8:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: 0 0 0 0
+    footer-column8-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column8-link1:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column8-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column9:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column9-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column9-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column9-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column9-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column10:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 0
+    footer-column10-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+
+  mobile:
+    footer-page: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      fontWeight: 500
+      fontSize: 12
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column1-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link5:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link6:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link7:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link8:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link9:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link10:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column1-link11:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 12
+    footer-column2-link-title:
+      marginTop: 20
+      textAlign: left
+      color: '#111'
+      width: 46
+      fontWeight: 500
+      fontSize: 12
+    footer-column2-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link5:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link6:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column2-link7:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column3-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30 30 30 30 30 30
+      margin: -30 0 0 12
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column4-link5:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link6:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link7:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column4-link8:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link9:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link10:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column4-link11:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column5:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: -30 0 0 12
+    footer-column5-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 70
+      fontSize: 12
+    footer-column5-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column5-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column6:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column6-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column6-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column6-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column6-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0 0 0 0
+    footer-column7-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column7-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column7-link3:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column8:
+      display: grid
+      gridTemplateRows: 50 30 30
+      margin: 0 0 0 0
+    footer-column8-link-title:
+      marginTop: 20
+      color: '#111'
+      fontWeight: 500
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column8-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column8-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+    footer-column9:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: -110 0 0 12
+    footer-column9-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      font-wight: 500
+      fontSize: 12
+    footer-column9-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column9-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column9-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column9-link4:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column9-link5:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column9-link6:
+      color: '#7e7e7e'
+      width: 150
+      textAlign: left
+      fontSize: 12
+    footer-column10:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30 30 30
+      margin: 0 0 0 0
+    footer-column10-link-title:
+      marginTop: 20
+      color: '#111'
+      width: 100
+      textAlign: left
+      font-wight: 500
+      fontSize: 12
+    footer-column10-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link2:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+    footer-column10-link5:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+    footer-column10-link6:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      fontSize: 12
+
+context: {}

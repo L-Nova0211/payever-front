@@ -1,0 +1,47 @@
+<div class="container" [ngClass]="config.theme">
+  <form [formGroup]="domainConfig">
+    <div style="margin-bottom: 11px">
+      <peb-form-background>
+        <peb-form-field-input
+          [animated]="true"
+          appearance="label"
+          class="peb-form-field-input"
+          [label]="'site-app.settings.domain_label' | translate"
+          [errorMessage]="errors.domainName.errorMessage"
+          [isFieldInvalid]="errors.domainName.hasError"
+        >
+          <input
+            formControlName="domainName"
+            (blur)="checkErrors('domainName')"
+            (focus)="resetErrors('domainName')"
+            pebInput
+            type="text"
+          />
+
+          <div class="suffix">
+            <p>.{{ siteHost }}</p>
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+
+    <peb-form-background>
+      <peb-form-field-input [label]="'site-app.settings.date_label' | translate" appearance="label">
+        <input
+          formControlName="creationDate"
+          disabled
+          pebInput
+          [placeholder]="'site-app.settings.date_placeholder' | translate"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input [label]="'site-app.settings.provider_label' | translate" appearance="label">
+        <input
+          formControlName="provider"
+          disabled
+          pebInput
+          [placeholder]="'site-app.settings.provider_placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </form>
+</div>

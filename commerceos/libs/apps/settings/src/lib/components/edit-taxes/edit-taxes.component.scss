@@ -1,0 +1,27 @@
+.columns {
+  display: flex;
+  width: 100%;
+
+  .two-column-input {
+    width: 50%;
+  }
+
+  .divider {
+    width: 1px;
+    border-left: 1px solid #24272e;
+  }
+}
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  &__label {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: white;
+    }
+  }
+}

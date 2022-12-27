@@ -1,0 +1,228 @@
+//
+// Dialog
+// ----------------------------
+@include mat-dialog-theme($theme);
+
+// animation for sliding from top to bottom for TopDialog
+@keyframes slideDown {
+  0% {
+  }
+  100% {
+    @include payever_transform_translateY(0%);
+  }
+}
+
+.slide-top {
+  &.cdk-overlay-pane {
+    @include payever_transform_translateY(-250%);
+    @include payever_animation(slideDown, 0.5s, forwards, 0s, ease-in);
+    .mat-dialog-container {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+  }
+}
+
+.no-scroll-body {
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// this class assigned to <html> tag
+.pe-top-dialog {
+  position: initial;
+
+  .cdk-overlay-backdrop {
+    position: fixed;
+  }
+
+  .mat-dialog-content {
+    overflow: hidden;
+  }
+}
+
+.pe-bootstrap {
+
+  .mat-dialog {
+
+    &-title {
+      margin-top: $grid-unit-y * 2;
+      margin-bottom: $padding-large-vertical * 2;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-h3;
+      font-weight: $font-weight-light;
+      line-height: $modal-title-line-height;
+    }
+
+    &-container {
+      position: relative;
+      border-radius: $border-radius-base * 2;
+      padding: 0;
+      color: inherit;
+      background-color: $modal-content-bg;
+      box-shadow: $box-shadow;
+    }
+
+    &-content {
+      padding-left: $margin-base-x;
+      padding-right: $margin-base-x;
+      padding-bottom: $grid-unit-x * 2;
+      margin-left: -$margin-base-x;
+      margin-right: -$margin-base-x;
+    }
+
+    &-actions {
+      @include pe_justify-content(flex-end);
+      border-top: 1px solid $color-grey-5;
+      padding-left: $grid-unit-x * 2;
+      padding-right: $grid-unit-x * 2;
+      margin-left: -$margin-base-x;
+      margin-right: -$margin-base-x;
+      margin-bottom: 0;
+      min-height: $grid-unit-y * 5;
+    }
+
+    &-content-wrapper {
+      position: relative;
+
+      &-loader {
+        @include payever_absolute();
+        @include pe_flexbox();
+        @include pe_justify-content(center);
+        @include pe_align-items(center);
+      }
+    }
+
+    &-close-icon {
+      position: absolute;
+      right: $grid-unit-x * 2;
+      top: $grid-unit-y * 2;
+      z-index: 1;
+    }
+
+    // Style variations
+    // -----------------------
+
+    &-micro {
+      $toolbar-height: $grid-unit-y * 5;
+      $micro-header-height: $grid-unit-y * 7;
+
+      .mat-dialog-title {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .mat-dialog-container {
+        background: none;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: none;
+      }
+
+      .mat-dialog-toolbar {
+        height: $grid-unit-y * 5;
+        line-height: $grid-unit-y * 5;
+      }
+
+      .mat-dialog-wrapper {
+        background-color: $modal-content-bg;
+        height: calc(100% - #{$toolbar-height});
+        border-radius: $border-radius-base * 2;
+      }
+
+      .mat-dialog-content {
+        padding-top: $grid-unit-y * 2;
+        max-height: calc(100vh - #{$micro-header-height});
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .cdk-overlay-container {
+    z-index: $zindex-top-overlay;
+
+    .dialog-overlay-panel {
+      margin-left: $grid-unit-x * 2 !important; // need important to overwrite material inline style
+      margin-right: $grid-unit-x * 2 !important;
+    }
+
+    .dialog-confirm {
+      .mat-dialog {
+        &-title {
+          margin-top: $grid-unit-y;
+          font-size: $font-size-base * 1.25;
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+
+    @mixin flex-fullscreen {
+      @include pe_flexbox();
+      @include pe_flex-direction(column);
+      @include pe_flex-grow(1);
+    }
+
+    .cdk-overlay-pane-for-mobile-fullscreen-dialog {
+      @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        .mat-dialog-container {
+          border-radius: 0;
+        }
+        .mat-dialog-content {
+          max-height: initial;
+        }
+      }
+    }
+
+    // @TODO this is far from perfect
+    .dialog-fullscreen {
+      margin-top: 2 * $grid-unit-y;
+      margin-bottom: 2 * $grid-unit-y;
+      height: calc(100% - 4 * #{$grid-unit-y});
+
+      .mat-dialog-container {
+        @include flex-fullscreen();
+
+        .micro-overlay {
+          @include flex-fullscreen();
+
+          .micro-overlay-dialog {
+            @include flex-fullscreen();
+
+            > * {
+              @include flex-fullscreen();
+
+              .mat-dialog-content-wrapper {
+                @include flex-fullscreen();
+
+                > * {
+                  @include flex-fullscreen();
+
+                  .dialog-content {
+                    @include flex-fullscreen();
+
+                    .mat-dialog-content {
+                      @include flex-fullscreen();
+                      max-height: unset;
+
+                      .dialog-container {
+                        @include flex-fullscreen();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

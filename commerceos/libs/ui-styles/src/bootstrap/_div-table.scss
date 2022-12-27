@@ -1,0 +1,61 @@
+.pe-bootstrap {
+  .div-table {
+    border-radius: $border-radius-base;
+    box-shadow: inset 0 0 0 1px $form-table-border-color;
+    padding: 0 $pe_hgrid_gutter / 2;
+    margin-bottom: $grid-unit-y * 2;
+    background-color: $color-white;
+    overflow: hidden;
+    > .row {
+      > [class*="col-"] {
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent $form-table-border-color $form-table-border-color transparent;
+        padding: $grid-unit-y $pe_hgrid_gutter / 2;
+        @include break(sm_2) {
+          padding: $grid-unit-y * 1.5 $pe_hgrid_gutter;
+        }
+        > .form-table {
+          fieldset:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+
+        > *:last-child {
+          margin-bottom: 0;
+        }
+
+        > .form-group:last-child,
+        > .field-checkbox:last-child {
+          .form-widget:last-child {
+            label {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        &.no-padding {
+          padding: 0;
+          @include break(sm_2) {
+            padding: 0;
+          }
+          // remove outer border on inner forms
+          .form-table {
+            > fieldset {
+              box-shadow: none;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    &-no-overflow-hidden {
+      overflow: visible;
+      > .row {
+        > [class*="col-"] {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}

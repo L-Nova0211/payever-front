@@ -1,0 +1,250 @@
+{
+  "subscriptions-app": {
+    "actions": {
+      "add_logo": "Add logo",
+      "add_new": "Add new",
+      "back": "Back",
+      "cancel": "Cancel",
+      "close": "Close",
+      "create": "Create",
+      "create_new": "Create new",
+      "delete": "Delete",
+      "delete_network": "Delete network",
+      "done": "Done",
+      "loading": "Loading...",
+      "open": "Open",
+      "remove": "Remove",
+      "save": "Save",
+      "saving": "Saving...",
+      "upload_new": "Upload new"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "apm_errors": {
+      "get_network": "Failed to get the subscriptions network",
+      "get_networks": "Failed to get list of subscriptions networks",
+      "create_network": "Failed to create a subscriptions network",
+      "delete_network": "Failed to delete subscriptions network",
+      "update_network": "Failed to update the subscriptions network",
+      "get_default_network": "Failed to get a default subscriptions network",
+      "set_default_network": "Failed to set the subscriptions network as default",
+
+      "get_all_plans": "Failed to get list of plans",
+      "get_plans_by_network": "Failed to get list of plans",
+      "get_program": "Failed to get the plan",
+      "create_plan": "Failed to create a plan",
+      "delete_plan": "Failed to delete plan",
+      "update_plan": "Failed to update the plan",
+
+      "get_categories": "Failed to get list of products categories",
+      "get_products": "Failed to get list of products",
+      "get_subscribers": "Failed to get list of subscribers",
+      "get_subscribers_groups": "Failed to get list of subscribers groups",
+      "get_subscribers_of_group": "Failed to get list of subscribers of group",
+
+      "get_connections": "Failed to get list of connections",
+      "install_connection": "Failed to install connection",
+      "uninstall_connection": "Failed to uninstall connection",
+
+      "get_access_config": "Failed to get access configuration",
+      "get_live_status": "Failed to get live status",
+      "update_access_config": "Failed to update access configuration",
+
+      "get_shop_active_theme": "Failed to get active theme of application",
+      "no_application_id": "There is no application ID in the url path"
+    },
+    "badges": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "plan_editor": {
+          "creating": {
+            "title": "Creating plan",
+            "subtitle": "Do you really want to close creating a plan? All data will be lost and you will not be able to restore it"
+          },
+          "editing": {
+            "title": "Editing plan",
+            "subtitle": "Do you really want to close editing a plan? All data will be lost and you will not be able to restore it"
+          }
+        },
+        "network_editor": {
+          "creating": {
+            "title": "Creating network",
+            "subtitle": "Do you really want to close creating a subscriptions network?"
+          },
+          "editing": {
+            "title": "Editing network",
+            "subtitle": "Do you really want to close editing the subscriptions network?"
+          }
+        }
+      },
+      "delete": {
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "plan": {
+          "title": "Delete plan",
+          "subtitle": "Are you sure you want to delete selected plan?"
+        },
+        "plans": {
+          "title": "Delete plans",
+          "subtitle": "Are you sure you want to delete selected plans?"
+        },
+        "network": {
+          "title": "Delete subscriptions network",
+          "subtitle": "Are you sure you want to delete the subscriptions network? All plans and themes will also be deleted!"
+        }
+      }
+    },
+    "folders": {
+      "all_plans": "All plans"
+    },
+    "grid_table_columns": {
+      "plan_rate": "Plan rate",
+      "total_subscribers": "Subscribers"
+    },
+    "navigation": {
+      "connect": "Connect",
+      "dashboard": "Dashboard",
+      "edit": "Edit",
+      "my_plans": "My plans",
+      "settings": "Settings",
+      "themes": "Themes",
+      "title": "Navigation"
+    },
+    "notify": {
+      "all_selected_folders": "All selected folders",
+      "all_selected_items": "All selected items",
+      "all_selected_plans": "All selected plans",
+      "firstly_connect_domain": "Firstly you should connect a domain!",
+      "firstly_create_network": "Firstly you should create a subscriptions network!",
+      "payments": "Payments",
+      "plan": "Plan",
+      "network_created": "Subscriptions network \"{networkName}\" successfuly created",
+      "network_deleted": "Subscriptions network \"{networkName}\" successfuly deleted",
+      "network_updated": "Subscriptions network \"{networkName}\" successfuly updated",
+      "successfuly_created": "successfuly created",
+      "successfuly_deleted": "successfuly deleted",
+      "successfuly_duplicated": "successfuly duplicated",
+      "successfuly_updated": "successfuly updated"
+    },
+    "plan_editor": {
+      "applies_to": {
+        "label": "Plan applies to",
+        "all_products": "All products",
+        "specific_products": "Specific products",
+        "specific_categories": "Specific categories"
+      },
+      "billing": {
+        "label": "Billing period",
+        "trial_period": {
+          "duration": "Trial period duration",
+          "error": "Trial period duration must be a positive integer greater zero",
+          "label": "Trial period",
+          "placeholder": "Enter duration in days"
+        },
+        "periods": {
+          "every_day": "Every day",
+          "every_week": "Every week",
+          "every_month": "Every month",
+          "every_year": "Every year"
+        }
+      },
+      "categories": {
+        "error": "At least one category must be chosen",
+        "label": "Categories",
+        "placeholder": "Search categories"
+      },
+      "create_plan": "Create plan",
+      "edit_plan": "Edit plan",
+      "eligibility": {
+        "label": "Plan eligibility",
+        "all_subscribers": "All subscribers",
+        "specific_subscribers": "Specific subscribers",
+        "specific_groups_of_subscribers": "Specific groups of subscribers"
+      },
+      "groups": {
+        "error": "At least one group of subscribers must be chosen",
+        "label": "Groups of subscribers",
+        "placeholder": "Search groups of subscribers"
+      },
+      "payments": {
+        "label": "Payment options"
+      },
+      "products": {
+        "error": "At least one product must be chosen",
+        "label": "Products",
+        "placeholder": "Search products"
+      },
+      "subscribers": {
+        "error": "At least one subscriber must be chosen",
+        "label": "Subscribers",
+        "placeholder": "Search subscribers"
+      },
+      "title_field": {
+        "error": "Plan title is required",
+        "label": "Plan title",
+        "placeholder": "Enter plan title"
+      }
+    },
+    "network_editor": {
+      "network_name": {
+        "error": {
+          "required": "Network name is required",
+          "incorrect": "Name of network is not correct",
+          "min_name_length": "Name should have at least three characters",
+          "not_unique": "Network with name \"{networkName}\" already exists"
+        },
+        "label": "Subscriptions network name",
+        "placeholder": "Enter subscriptions network name"
+      },
+      "title": "Create subscriptions network"
+    },
+    "settings": {
+      "networks": "All subscriptions networks",
+      "payments": "Payments",
+      "publishing": {
+        "title": "Publishing",
+        "livestatus": "Live status"
+      },
+      "title": "Settings"
+    },
+    "title": "Subscriptions"
+  },
+  "connect-app": {
+    "actions": {
+      "add_integrations": "Add integrations",
+      "open": "Open"
+    },
+    "layout": {
+      "title": "Connect"
+    }
+  },
+  "integrations": {
+    "payments": {
+      "title": "Payments",
+      "paypal": {
+        "title": "PayPal"
+      },
+      "santander_invoice_de": {
+        "title": "Santander Invoice"
+      },
+      "santander_invoice_no": {
+        "title": "Santander Invoice"
+      },
+      "santander_pos_factoring_de": {
+        "title": "Santander installment factoring POS"
+      },
+      "stripe": {
+        "title": "Stripe Credit Card"
+      },
+      "stripe_directdebit": {
+        "title": "Stripe Direct Debit"
+      }
+    }
+  }
+}

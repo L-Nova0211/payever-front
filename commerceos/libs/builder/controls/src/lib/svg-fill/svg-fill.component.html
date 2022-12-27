@@ -1,0 +1,42 @@
+
+<ng-container [ngSwitch]="type$|async">
+  <ng-container *ngSwitchCase="'till'">
+    <ng-container *ngTemplateOutlet="till"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'original'">
+    <ng-container *ngTemplateOutlet="original"></ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #till>
+  <svg
+  [attr.viewBox]="viewBox$|async"
+  width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern
+        [innerHTML]="svgDOM$|async"
+        id="Pattern"
+        width="100%"
+        height="100%"
+        [attr.patternTransform]="scale$|async"
+        patternUnits="userSpaceOnUse"
+      ></pattern>
+    </defs>
+
+    <rect fill="url(#Pattern)" width="100%" height="100%" />
+  </svg>
+</ng-template>
+
+<ng-template #original>
+  <div style="overflow: hidden;">
+    <svg
+      [attr.viewBox]="viewBox$|async"
+      [innerHTML]="svgDOM$|async"
+      [attr.transform]="scale$|async"
+      width="100%"
+      height="100%"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+    </svg>
+  </div>
+</ng-template>

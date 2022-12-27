@@ -1,0 +1,76 @@
+@import "../../../../../../assets/imports";
+
+:host ::ng-deep {
+  .mat-expansion-panel {
+    border-bottom: 0 !important;
+  }
+  .mat-accordion-xl {
+    padding: 0;
+  }
+  .connect-add-keys-wrapper {
+    .connect-add-keys-header {
+      width: $pe_hgrid_gutter*16.5;
+      font-size: $font-size-large-1;
+      padding-top: $margin-adjust*2;
+    }
+
+    .connect-form-submit {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .connect-field {
+      margin-top: $margin-adjust*0.75;
+      background: $color-white-grey-1;
+      border-radius: $border-radius-base*2;
+    }
+
+    input.form-control {
+      color: $color-white;
+    }
+
+    .no-border-right {
+      border-right: 0 !important;
+    }
+    .no-border-left {
+      border-left: 0 !important;
+    }
+    .border-top-left-radius {
+      border-top-left-radius: $border-radius-base * 2;
+    }
+    .border-top-right-radius {
+      border-top-right-radius: $border-radius-base * 2;
+    }
+    .border-bottom-left-radius {
+      border-bottom-left-radius: $border-radius-base * 2;
+    }
+    .border-bottom-right-radius {
+      border-bottom-right-radius: $border-radius-base * 2;
+    }
+    .form-table {
+      margin: $margin-adjust*5.5;
+    }
+
+    .form-table fieldset {
+      margin-bottom: 0;
+    }
+    ::-webkit-input-placeholder {
+      color: $color-white;
+    }
+    ::-moz-placeholder {
+      color: $color-white;
+    }
+    :-ms-input-placeholder {
+      color: $color-white;
+    }
+    :-moz-placeholder {
+      color: $color-white;
+    }
+  }
+}
+.form-table {
+  .mat-form-field {
+    padding-left: 11px!important;
+  }
+}

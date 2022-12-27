@@ -1,0 +1,22 @@
+<div class="pe-message-invite-form">
+  <div class="invite-form__header">
+    <div>
+      <span (click)="cancel()">{{ 'message-app.sidebar.cancel' | translate }}</span>
+    </div>
+    <p>{{ peOverlayConfig.title }}</p>
+    <div class="right">
+      <span (click)="done()" class="blue">{{ 'message-app.sidebar.add' | translate }}</span>
+    </div>
+  </div>
+  <div class="invite-form__content" #formContent>
+    <pe-creating-chat-steps-contact
+      [chatType]="messageChatType"
+      [type]="type"
+      [code]="code"
+      [invitationId]="invitationId"
+      [chatClass]="inviteClass"
+      (changeStep)="changeStep($event)"
+      [step]="currentStep"
+    ></pe-creating-chat-steps-contact>
+  </div>
+</div>

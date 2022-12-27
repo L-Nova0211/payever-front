@@ -1,0 +1,20 @@
+<div class="chips">
+  <div class="chips__input">
+    <input
+      #input
+      type="text"
+      [attr.id]="inputId"
+      placeholder="{{placeholder}}"
+      tabindex="0"
+      (keydown)="onKeydown($event)"
+      (focus)="onInputFocus($event)"
+      (blur)="onInputBlur($event)"
+      [disabled]="disabled"
+    />
+  </div>
+  <div class="chips__container">
+    <ng-container *ngFor="let item of value; let i = index">
+      <peb-chip value="{{item}}" (click)="onItemClick($event, i)"></peb-chip>
+    </ng-container>
+  </div>
+</div>

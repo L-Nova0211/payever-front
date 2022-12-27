@@ -1,0 +1,66 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+.app {
+  padding-top: $padding-large-vertical*2;
+  padding-bottom: $padding-large-vertical*2;
+  border-bottom: 1px solid $color-secondary-2;
+  display: flex;
+  flex-flow: column;
+
+  &__slider {
+   width: 100%;
+   margin: auto;
+   padding-bottom: $padding-large-vertical*2;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__company {
+    font-size: $font-size-micro-1;
+    font-weight: $font-weight-light;
+    color: $color-secondary-0;
+  }
+
+  &__website {
+    font-size: $font-size-micro-1;
+    font-weight: $font-weight-light;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__support {
+    font-size: $font-size-micro-1;
+    font-weight: $font-weight-light;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__support-label {
+    padding-right: $padding-xs-horizontal;
+  }
+
+  &__website-label {
+    padding-right: $padding-xs-horizontal;
+  }
+  
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slide {
+    border-radius: 4px;
+  }
+}

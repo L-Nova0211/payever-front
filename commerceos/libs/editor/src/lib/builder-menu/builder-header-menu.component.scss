@@ -1,0 +1,142 @@
+@import '../../ui/src/lib/components/theming/theming';
+
+@mixin builder-header-menu-theme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $box-shadow-color: map-get($theme-config, box-shadow-color);
+  $hover: map-get($theme-config, hover);
+  $hover-menu-item: map-get($theme-config, hover-menu-item);
+  $hover-text: map-get($theme-config, hover-text);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $x-button: map-get($theme-config, x-button);
+
+  background-color: $accent;
+  box-shadow: 0 2px 12px 0 $box-shadow-color;
+
+  .pe-builder-header-menu {
+    &__title,
+    &__item-title,
+    &__close-button:hover {
+      color: $text-color;
+    }
+  
+    &__close-button {
+      color: $x-button; //was #636363
+    }
+    
+    &__item {
+      &.active,
+      &:hover {
+        color: $hover-text;
+      }
+
+      &.active {
+        background-color: $hover;
+      }
+
+      &:not(.active):hover {
+        background-color: $hover-menu-item;
+      }
+    }
+    
+    &__divider {
+      background-color: $separator; //was #515151
+    }
+  
+    &__menu {
+      background-color: #4e4e4e;
+    }
+  }
+}
+
+.pe-builder-header-menu {
+  border-radius: 12px;
+  padding: 8px;
+
+  &.dark,
+  &.default {
+    $theme-config: peb-theme-choose('dark');
+    @include builder-header-menu-theme($theme-config);
+  }
+
+  &.light {
+    $theme-config: peb-theme-choose('light');
+    @include builder-header-menu-theme($theme-config);
+  }
+
+  &.transparent {
+    $theme-config: peb-theme-choose('transparent');
+    @include builder-header-menu-theme($theme-config);
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    padding: 8px;
+  }
+
+  &__title {
+    font-size: 16px; //was 24px
+    font-weight: bold;
+  }
+
+  &__close-button {
+    cursor: pointer;
+    height: 20px;
+    transition: all .2s;
+
+    mat-icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__body {
+    margin-top: 8px;
+  }
+
+  &__item {
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    padding: 6px 8px;
+    transition: all .2s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-icon {
+    border-radius: 5px;
+    display: flex;
+    height: 20px;
+    margin-right: 8px;
+    min-width: 20px;
+    overflow: hidden;
+    width: 20px;
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+  }
+  
+  &__divider {
+    margin-bottom: 10px;
+    height: 1px;
+    width: 100%;
+  }
+}

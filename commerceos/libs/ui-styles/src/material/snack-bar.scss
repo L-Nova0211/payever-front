@@ -1,0 +1,66 @@
+//
+// Snack bar
+// ----------------------------
+
+$snack-bar-bg-color: #979797;
+
+.pe-bootstrap {
+
+  .mat-snack-bar-container {
+    max-width: none;
+    margin: 0;
+    text-align: center;
+
+    color: $color-white;
+
+    &-place-bottom {
+      border-radius: $border-radius-base;
+      position: absolute;
+      left: ceil($grid-unit-x / 2);
+      right: ceil($grid-unit-x / 2);
+      bottom: ceil($grid-unit-y / 2);
+      top: auto;
+    }
+
+    &-place-top {
+      border-radius: $border-radius-base;
+      position: absolute;
+      left: ceil($grid-unit-x / 2);
+      right: ceil($grid-unit-x / 2);
+      top: ceil($grid-unit-y / 2);
+      bottom: auto;
+    }
+
+    @media (max-width: $screen-sm-max){
+      &-place-bottom, &-place-top {
+        top: 50%;
+        bottom: auto;
+        transform: translate(0, -50%) !important;
+      }
+    }
+
+    &-fixed {
+      position: fixed;
+    }
+
+    &.snackbar-builder {
+      margin: 82px auto;
+      background-color: $color-grey-1;
+    }
+
+    &.snackbar-settings {
+      margin-top: $margin-base-y;
+    }
+    
+    &.snackbar-icon-left {
+      .snackbar-icon{
+        float: left;
+      }
+    }
+    
+  }
+
+  .mat-snack-bar-container.mat-snack-bar-center {
+    width: auto;
+  }
+}

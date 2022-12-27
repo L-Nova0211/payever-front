@@ -1,0 +1,741 @@
+id: footer-page
+variant: front
+data: {}
+template:
+  id: nike-main-page
+  type: document
+  children:
+    - id: footer
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer-column1
+          type: block
+          children:
+            - id: footer-column1-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal">PAYMENT METHODS</span>
+            - id: footer-column1-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal">Credit Card</span>
+            - id: footer-column1-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal">PayPal</span>
+
+        - id: footer-column2
+          type: block
+          children:
+            - id: footer-column2-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal">LOGISTIC PARTNERS</span>
+            - id: footer-column2-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal">DHL</span>
+
+        - id: footer-column3
+          type: block
+          children:
+            - id: footer-column3-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal">EASY ONLINE SHOPPING</span>
+            - id: footer-column3-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal">Fast Delivery</span>
+            - id: footer-column3-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal">Fair return policy</span>
+            - id: footer-column3-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal">Great Customer Support</span>
+
+
+        - id: footer-column4
+          type: block
+          children:
+            - id: footer-column4-link-title
+              type: text
+              data:
+                text: <span peb-link-type="internal">COMPANY</span>
+            - id: footer-column4-link1
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/">Home</span>
+            - id: footer-column4-link2
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/contacts">Contact us</span>
+            - id: footer-column4-link3
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/catalog">Catalogue</span>
+            - id: footer-column4-link4
+              type: text
+              data:
+                text: <span peb-link-type="internal" peb-link-path="/about">About us</span>
+
+
+    - id: footer2
+      type: section
+      children:
+        - id: footer2-section-link1
+          type: text
+          data:
+            text: 'Shop with love. ♡ Made with <a href="#" peb-link-action="navigate.external-page" peb-link-payload="http://payever.org/" style="color: #8b8b8b">payever</a>'
+        - id: footer2-block
+          type: block
+          children:
+            - id: footer2-block-link2
+              type: text
+              data:
+                text: 'Privacy & Cookies'
+            - id: footer2-block-link3
+              type: text
+              data:
+                text: 'Accessibility'
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0
+    footer-column1-link-title:
+      marginTop: 20
+      width: 150
+      textAlign: left
+      display: grid
+      color: '#000'
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0
+    footer-column2-link-title:
+      marginTop: 20
+      color: '#000'
+      width: 150
+      textAlign: left
+      display: grid
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column2-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#000'
+      width: 150
+      textAlign: left
+      display: grid
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column3-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column3-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30
+      margin: 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#000'
+      width: 150
+      textAlign: left
+      display: grid
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column4-text:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 50
+      textAlign: left
+      display: grid
+    footer-column4-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column4-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+
+
+    footer2:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      width: 1024
+      height: 44
+    footer2-section-link1:
+      color: '#000'
+      width: 500
+      margin: 15 0
+      fontSize: auto
+      backgroundColor: 'transparent'
+      textAlign: left
+    footer2-block:
+      display: grid
+      width: 300
+      textAlign: center
+      gridTemplateColumns: 1fr 1fr 1fr
+      margin: 15 0 0 250
+    footer2-block-link1:
+      fontSize: auto
+      backgroundColor: 'transparent'
+      color: '#000'
+      width: 100
+      margin: 0 10 0 0
+    footer2-block-link2:
+      fontSize: auto
+      backgroundColor: 'transparent'
+      color: '#000'
+      width: 150
+      margin: 0
+    footer2-block-link3:
+      fontSize: 12
+      width: 100
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 0 0 0 10
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#000'
+      font-wight: 900
+      width: 150
+      textAlign: left
+      display: grid
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0
+    footer-column2-link-title:
+      marginTop: 20
+      width: 150
+      textAlign: left
+      display: grid
+      color: '#000'
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column2-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 200
+      textAlign: left
+      display: grid
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 200
+      textAlign: left
+      display: grid
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#000'
+      font-wight: 900
+      width: 150
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column3-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column4:
+      display: grid
+      gridTemplateRows: 50 30
+      margin: 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#000'
+      width: 150
+      textAlign: left
+      display: grid
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column4-text:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column4-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+
+
+    footer2:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      height: 44
+    footer2-section-link1:
+      color: '#000'
+      width: 500
+      textAlign: left
+      display: grid
+      margin: 15 0 0 20
+      fontSize: auto
+      backgroundColor: 'transparent'
+    footer2-block:
+      display: grid
+      width: 250
+      gridTemplateColumns: 1fr 1fr 1fr
+      margin: auto
+    footer2-block-link1:
+      fontSize: 12
+      width: 100
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 0
+    footer2-block-link2:
+      fontSize: 12
+      width: 100
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 0 0 0 40
+    footer2-block-link3:
+      fontSize: 12
+      width: 100
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 0 0 0 20
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      height: 200
+      backgroundColor: '#e3e3e3'
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column1:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column1-link-title:
+      marginTop: 20
+      color: '#000'
+      font-wight: 900
+      width: 150
+      textAlign: left
+      display: grid
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column1-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column1-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column2:
+      display: grid
+      gridTemplateRows: 50 30 30 30
+      margin: 0
+    footer-column2-link-title:
+      marginTop: 20
+      width: 150
+      textAlign: left
+      display: grid
+      color: '#000'
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column2-link1:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column2-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column2-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column2-link4:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column3:
+      display: grid
+      gridTemplateRows: 50 30 30 30 30
+      margin: 0 0 0 12
+    footer-column3-link-title:
+      marginTop: 20
+      color: '#000'
+      font-wight: 900
+      width: 150
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+      display: grid
+      textAlign: left
+    footer-column3-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      display: grid
+      textAlign: left
+    footer-column3-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column3-link3:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column3-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+    footer-column4:
+      display: grid
+      width: 150
+      gridTemplateRows: 50 30
+      margin: 0
+    footer-column4-link-title:
+      marginTop: 20
+      color: '#000'
+      width: 150
+      textAlign: left
+      display: grid
+      font-wight: 900
+      fontSize: 12
+      fontFamily: futura-pt,sans-serif
+    footer-column4-text:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 50
+      textAlign: center
+      display: grid
+    footer-column4-block1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column4-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer-column4-link1:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 150
+      textAlign: left
+      display: grid
+    footer-column4-link2:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link3:
+      color: '#7e7e7e'
+      fontSize: 12
+      width: 100
+      textAlign: left
+      display: grid
+    footer-column4-link4:
+      color: '#7e7e7e'
+      width: 100
+      textAlign: left
+      display: grid
+      fontSize: 12
+
+
+    footer2:
+      backgroundColor: '#c4c4c4'
+      display: grid
+      gridTemplateColumns: 1fr
+      height: 44
+    footer2-section-link1:
+      color: '#000'
+      width: 500
+      textAlign: left
+      display: grid
+      margin: 12 0 5 25
+      fontSize: 12
+      backgroundColor: 'transparent'
+    footer2-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      margin: 5 0 5 0
+    footer2-block-link2:
+      fontSize: auto
+      width: 150
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 5 0 5 0
+    footer2-block-link3:
+      fontSize: auto
+      width: 100
+      textAlign: center
+      display: grid
+      backgroundColor: 'transparent'
+      color: '#000'
+      margin: 5 10 5 0
+
+context: {}

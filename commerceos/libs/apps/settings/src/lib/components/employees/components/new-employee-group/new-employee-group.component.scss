@@ -1,0 +1,82 @@
+.dialog {
+  width: 100%;
+  max-height: 690px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .form-margin {
+    margin: 0 12px 12px 12px;
+  }
+
+  &__title {
+    display: flex;
+
+
+    &__button {
+      margin: 0 12px;
+    }
+
+    &__text {
+      margin: 0;
+      flex-grow: 1;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .employee-panel {
+    margin-top: 1px;
+
+    &__app {
+      margin-bottom: 16px;
+      display: block;
+    }
+  }
+
+  .form-group {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    &__row {
+      display: flex;
+    }
+
+    &__input {
+      flex-grow: 1;
+    }
+
+    &__small-field {
+      max-width: 50%;
+      box-sizing: border-box;
+    }
+  }
+
+  .full-width-select {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+@import 'pe_variables.scss';
+@import 'pe_mixins.scss';
+
+$space: 18px;
+$space-mobile: 14px;
+
+.icons-container {
+  @include pe_flexbox;
+  @include pe_flex-wrap(wrap);
+  width: 80%;
+  margin: auto;
+  padding-top: $space;
+}
+.empty-search-icon {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  margin: $space;
+}
+.empty-search-text {
+  color: $color-secondary;
+  font-size: $font-size-micro-1;
+  width: 80%;
+  text-align: center;
+  margin: $space auto;
+  padding-bottom: 20px;
+}
+
+@media (max-width: $viewport-breakpoint-sm-1) {
+  .icons-container {
+    padding-top: $space-mobile;
+    @include pe_justify-content(center);
+  }
+
+  .empty-search-icon {
+    margin: $space-mobile;
+  }
+
+  .empty-search-text {
+    margin: $space-mobile auto;
+  }
+}

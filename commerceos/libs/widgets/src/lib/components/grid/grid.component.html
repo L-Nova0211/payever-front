@@ -1,0 +1,22 @@
+<div [ngClass]="widgetTheme">
+  <div class="grid">
+    <div class="grid__items">
+      <div class="grid__item" *ngFor="let product of widget.data" (click)="clickItem($event, product)">
+        <div class="grid__image" [style.background-image]="product.imgSrc">
+          <mat-spinner class="widget__spinner mat-progress-spinner-light" *ngIf="product.loading" [strokeWidth]="2" [diameter]="26"></mat-spinner>
+          <div class="grid__titles">
+            <div class="grid__sub-title">
+              {{ product.subtitle | translate }}
+            </div>
+            <div class="grid__title">
+              {{ product.title | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!widget.data.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data'}}
+      </div>
+    </div>
+  </div>
+</div>

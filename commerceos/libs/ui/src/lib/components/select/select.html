@@ -1,0 +1,40 @@
+<div
+  [class.input-wrapper]="selectType !== 'label' && selectType !== 'full' && selectType !== 'status'"
+  [class.label-select-wrapper]="selectType === 'label'"
+  [class.full-select-wrapper]="selectType === 'full'"
+  [class.status-select-wrapper]="selectType === 'status'"
+>
+  <div class="input" [class.required]="required" [class.is-invalid]="isFieldInvalid" #dropref (click)="showDropdown()">
+    <div 
+    class="label-container" 
+    [class.select-disabled]="disabled" 
+    *ngIf="selectType === 'label' || selectType === 'status'; else notLabel">
+      <span class="label-text" [@isFocusedLabel]="shouldAnimate()"> {{isFieldInvalid ? errorMessage : label}} </span>
+      <span
+        #input
+        class="select-text"
+        [class.select-placeholder]="displayText ? false : true"
+        [@isFocusedText]="shouldAnimate()"
+      >
+        {{displayText ? displayText : placeholder}}
+      </span>
+    </div>
+    <ng-template #notLabel>
+      <span #input class="select-input-text"> {{displayText}} </span>
+    </ng-template>
+    <div class="spacer"></div>
+    <span *ngIf="!hideArrow" class="dropdown-arrow">
+      <svg class="arrow-open">
+        <use xlink:href="#icon-ui-arrow-open"></use>
+      </svg>
+    </span>
+    <peb-overlay (showing)="isShowing($event)" [reference]="dropref">
+      <div class="peb-select-options-container">
+        <ng-content select="peb-select-group"></ng-content>
+        <ng-content select="peb-select-option"></ng-content>
+        <ng-content select="pe-select-virtual-options"></ng-content>
+        <ng-content select="peb-select-action"></ng-content>
+      </div>
+    </peb-overlay>
+  </div>
+</div>

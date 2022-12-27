@@ -1,0 +1,147 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.main-form {
+  .form-margins {
+    margin-top: 16px;
+
+    .origin-field {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 4px 0 4px 12px;
+      &__image {
+        height: 32px;
+        width: 32px;
+        border-radius: 6.7px;
+        overflow: hidden;
+
+        img {
+          height: 32px;
+          width: 32px;
+        }
+      }
+      &__name {
+        flex: 1;
+        margin-left: 12px;
+        span {
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.33;
+          letter-spacing: normal;
+          color: #ffffff;
+        }
+      }
+      &__actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &__error {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      peb-messages {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.cdk-overlay-pane {
+  margin-top: 0;
+}
+
+.form-disclamer {
+  display: flex;
+  margin-top: 7px;
+  margin-left: 13px;
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #7a7a7a;
+  }
+}
+
+.zones-picker-wrapper {
+  display: flex;
+  justify-content: space-between;
+  .zones-picker {
+    width: 100%;
+  }
+
+  .suffix {
+    position: sticky;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 105px;
+    right: 0;
+    height: 44px;
+  }
+}
+@media (max-width: 500px) {
+  .zone-dialog {
+    .overlay-widget-container {
+      display: flex;
+      width: 96%;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+      .overlay-dark ,
+      .overlay-light ,
+      .overlay-transparent {
+        height: 100%;
+        overflow-y: auto;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+        border-radius: 20px;
+      }
+    }
+  }
+  .origin-dialog {
+    .overlay-widget-container {
+      display: flex;
+      width: 96%;
+      justify-content: center;
+      align-items: center;
+      .overlay-dark ,
+      .overlay-light ,
+      .overlay-transparent {
+        height: fit-content;
+      }
+    }
+  }
+}
+@media (max-width: 720px) {
+  .products-dialog {
+    .overlay-widget-container{
+      display: flex;
+      width: 96%;
+      justify-content: center;
+      .overlay-dark ,
+      .overlay-light ,
+      .overlay-transparent {
+        width: inherit;
+      }
+    }
+  }
+
+}

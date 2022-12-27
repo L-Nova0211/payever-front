@@ -1,0 +1,68 @@
+//
+// Badge
+// ----------------------------
+
+$mat-badge-size: floor($grid-unit-x * 1.5);
+
+.pe-bootstrap {
+  .mat-badge {
+    position: relative;
+
+    &-content {
+      border-radius: ceil($mat-badge-size / 2);
+      height: $mat-badge-size;
+      display: flex;
+      @include pe_justify-content(center);
+      align-items: center;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-micro-3;
+      min-width: $mat-badge-size;
+      letter-spacing: normal;
+      font-weight: $font-weight-light;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    // Style Variations
+    // ----------------------
+
+    @mixin badge-variant($background-color, $color) {
+      .mat-badge-content {
+        background-color: $background-color;
+        color: $color;
+      }
+    }
+
+    @include badge-variant($color-grey-6, $text-color);
+
+    // TODO: check why material doesn't add class
+    &[matbadgecolor='primary'] {
+      @include badge-variant($color-blue, $color-white);
+    }
+
+    &-accent {
+      @include badge-variant($color-green, $color-white);
+    }
+
+    &-warn {
+      @include badge-variant($color-red, $color-white);
+    }
+
+    &-independent {
+      .mat-badge-content {
+        position: relative;
+        min-width: auto;
+        margin-top: 0;
+        margin-right: 0;
+        padding-top: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        @include payever_transform_translateY(ceil($grid-unit-x / 4));
+        width: $icon-size-16;
+        height: $icon-size-16;
+      }
+    }
+  }
+}

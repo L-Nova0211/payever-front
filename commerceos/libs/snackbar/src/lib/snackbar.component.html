@@ -1,0 +1,29 @@
+<div class="snackbar">
+  <div class="snackbar__row">
+    <ng-container *ngIf="pending; else icon">
+      <span class="snackbar__spinner">
+        <mat-progress-spinner class="spinner" mode="indeterminate" diameter="22"></mat-progress-spinner>
+      </span>
+    </ng-container>
+    <ng-template #icon>
+      <div class="snackbar__icon">
+        <svg [style.height.px]="iconSize" [style.width.px]="iconSize" [style.color]="iconColor" [class.success]="iconId === 'icon-commerceos-success'">
+          <use [attr.xlink:href]="'#' + iconId"></use>
+        </svg>
+      </div>
+    </ng-template>
+
+    <div class="snackbar__message"><span class="bold-content" *ngIf="boldContent">{{ boldContent }}</span>{{ content }}</div>
+  </div>
+  <div  *ngIf='useShowButton'
+        class='snackbar__button snackbar__button-show'
+        (click)="showButtonAction()">
+    <span>Show</span>
+  </div>
+  <div class='snackbar__button snackbar__button-hide'
+       [style.margin-left]="!useShowButton ? '16px' : 'unset'"
+       [style.color]="hideButtonColor"
+       (click)="onActionClick('hide')">
+    <span>{{ snackbarData.hideButtonTitle || 'Hide' }}</span>
+  </div>
+</div>

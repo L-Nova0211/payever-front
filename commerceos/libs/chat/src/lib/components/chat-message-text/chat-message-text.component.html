@@ -1,0 +1,9 @@
+<div *ngIf="replyData" class="text-message" (click)="showRepliedMessage($event)">
+  <div class="text-message__dash" [style.background-color]="accentColor"></div>
+  <div *ngIf="previewImage" class="text-preview" [style.background-image]="previewImage"></div>
+  <div class="text-message__detail">
+    <p class="text-message__title">{{ replyData.name }}</p>
+    <p class="text-message__content">{{ replyData.content }}</p>
+  </div>
+</div>
+<p class="text" *ngIf="message" [innerHTML]="message"></p>

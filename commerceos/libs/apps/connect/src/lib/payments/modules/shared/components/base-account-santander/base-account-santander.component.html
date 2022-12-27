@@ -1,0 +1,58 @@
+<onboarding-form
+  *ngIf="business"
+  [business]="business"
+  [isLoading]="isLoading"
+  [paymentMethod]="paymentMethod"
+  [requiredFields]="requiredFields"
+  (submitSuccess)="onSubmitSuccess($event)"
+  (submitFailed)="onSubmitFailed($event)"
+  (ready)="onReady($event)"
+></onboarding-form>
+<!--
+<mat-accordion #accordion *ngIf="form && formScheme">
+  <form novalidate
+        (ngSubmit)="onSubmit()"
+        class="form-table form-table-no-margin"
+        [formGroup]="form">
+    <button #submitTriggerAccount id="submitTriggerAccount" name="submitButton" type="submit" class="native-submit"></button>
+    <ng-container *ngFor="let item of accountList; let i = index">
+      <mat-expansion-panel hideToggle #panel [class.mat-expansion-panel-dark]="true">
+        <mat-expansion-panel-header
+            collapsedHeight="40px"
+            expandedHeight="40px"
+            class="mat-expansion-panel-header-no-logo">
+          <mat-panel-title class="mat-expansion-panel-header-title-no-logo">
+            {{ item.title }}
+          </mat-panel-title>
+          <mat-panel-description>
+            <svg>
+              <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+            </svg>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <pe-form-fieldset class="transparent"
+                          [hideDisabled]="true"
+                          [isSubmitted]="isSubmitted"
+                          [translationScope]="'user_business_form.form.'+item.name"
+                          [errors]="(errorsNonFlat$ | async)[item.name] || {}"
+                          [fields]="formScheme.fieldsets[item.name]"
+                          [formGroup]="form.get(item.name)"
+                          [formStyle]="'transparent'"
+        ></pe-form-fieldset>
+      </mat-expansion-panel>
+    </ng-container>
+  </form>
+  <button mat-raised-button
+          class="mat-button-block no-border-radius"
+          type="button"
+          [disabled]="isLoading$ | async"
+          (click)="submitTriggerAccount.click()">
+    <pe-progress-button-content
+        [spinnerDiameter]="26"
+        [loading]="isLoading$ | async"
+        [spinnerStrokeWidth]="2">
+      <span>{{submitButtonText | translate}}</span>
+    </pe-progress-button-content>
+  </button>
+</mat-accordion>
+-->

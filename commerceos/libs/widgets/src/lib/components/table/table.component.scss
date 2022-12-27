@@ -1,0 +1,47 @@
+:host {
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.pe-widget-table {
+  &__rows {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    height: inherit;
+    padding: 0.75em 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-right: auto;
+    margin-left: 1em;
+  }
+}
+
+.theme-light .pe-widget-table {
+  &__icon {
+    color: #959595
+  }
+}

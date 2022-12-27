@@ -1,0 +1,116 @@
+.settings__section__content {
+  &-item {
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    &.parent-overlay {
+      font-size: 12px;
+    }
+    
+    .item-content {
+      width: 100%;
+      border-top: 1px solid;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+
+      &.not-overlay {
+        font-weight: 400;
+      }
+
+      .item-icon {
+        margin: 0 12px;
+        border-radius: 100%;
+        mat-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+  
+      peb-button-toggle {
+        flex: 1;
+      }
+      .integration-config {
+        color: #0091df;
+        cursor: pointer;
+        margin-right: 12px;
+        font-weight: 400;
+
+        &.not-overlay {
+          margin-right: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      .item-content {
+        border: 0;
+      }
+    }
+  
+    &:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    } 
+  }
+  &:not(.light) {
+    .settings__section__content-item {
+      background-color: #1c1d1e;
+      
+      &.parent-overlay {
+        background-color: #111;
+      }
+      .item-content {
+        color: white;
+        border-top-color: #393939;
+      }
+    }
+    &.transparent {
+      .settings__section__content-item {
+        background-color: rgba(28, 29, 30, 0.6);
+      }
+    }
+  }
+  &.light {
+    .settings__section__content-item {
+      background-color: #fafafa;
+      .item-content {
+        color: black;
+        border-top-color: #d8d8d8;
+      }
+    }
+  }
+}
+
+button {
+  font-size: 12px;
+  border: 0;
+  border-radius: 8px;
+  height: 40px;
+  &:not(:first-of-type) {
+    margin-top: 17px;
+  }
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0091df;
+  &:not(.light){
+    background-color: #1c1d1e;
+  }
+  &.light {
+    background-color: #fff;
+  }
+}

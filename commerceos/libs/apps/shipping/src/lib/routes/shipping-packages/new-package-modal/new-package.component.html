@@ -1,0 +1,180 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="shippingPackageForm">
+  <div class="main-form">
+    <div class="form-margins side-margin bottom-margin">
+      <peb-form-background>
+        <peb-select
+          selectType="label"
+          [label]="'shipping-app.forms.new_package_dialog.package_kind.label' | translate"
+          [formControl]="shippingPackageKind"
+        >
+          <peb-select-option class="select-options" *ngFor="let item of packageKind" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+        </peb-select>
+      </peb-form-background>
+    </div>
+
+    <ng-container *ngIf="shippingPackageKind.value === 'Custom'; then customPackage; else carrierPackage"></ng-container>
+
+    <ng-template #customPackage>
+      <div class="form-margins side-margin">
+        <peb-form-background>
+          <peb-form-field-input
+            [label]="'shipping-app.forms.new_package_dialog.name.label' | translate"
+            appearance="label"
+            [isFieldInvalid]="shippingPackageForm.get('name').invalid"
+            [errorMessage]="'shipping-app.forms.new_package_dialog.errors.name' | translate"
+          >
+            <input
+              pebInput
+              [placeholder]="'shipping-app.forms.new_package_dialog.name.placeholder' | translate"
+              formControlName="name"
+            />
+          </peb-form-field-input>
+        </peb-form-background>
+      </div>
+      <div class="form-margins side-margin" *ngIf="!edit">
+        <peb-form-background>
+          <peb-select
+            selectType="label"
+            [label]="'shipping-app.forms.new_package_dialog.package_type.label' | translate"
+            formControlName="type"
+          >
+            <peb-select-option class="select-options" *ngFor="let item of packageBoxTypes" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+          </peb-select>
+        </peb-form-background>
+      </div>
+
+      <div class="form-margins side-margin">
+        <peb-form-background>
+          <peb-select
+            selectType="label"
+            [label]="'shipping-app.forms.new_package_dialog.size.label' | translate"
+            formControlName="dimensionUnit"
+          >
+            <peb-select-option
+              class="select-options"
+              *ngFor="let item of sizeMeasurementUnits"
+              [value]="item.value"
+              [label]="item.label"
+            ></peb-select-option>
+          </peb-select>
+          <peb-form-field-input *ngIf="this.shippingPackageForm.controls.type.value !== packageTypeEnum.Envelope"
+                                [label]="'shipping-app.forms.new_package_dialog.height.label' | translate"
+                                appearance="label"
+                                [isFieldInvalid]="shippingPackageForm.get('height').invalid"
+                                [errorMessage]="'shipping-app.forms.new_package_dialog.errors.height' | translate"
+          >
+            <input
+              type="number"
+              min="1"
+              pebInput
+              [placeholder]="'shipping-app.forms.new_package_dialog.height.placeholder' | translate"
+              formControlName="height"
+              (keypress)="numeric.transform($event)"
+            />
+          </peb-form-field-input>
+          <peb-form-field-input
+            [label]="'shipping-app.forms.new_package_dialog.length.label' | translate"
+            appearance="label"
+            [isFieldInvalid]="shippingPackageForm.get('length').invalid"
+            [errorMessage]="'shipping-app.forms.new_package_dialog.errors.length' | translate"
+          >
+            <input
+              type="number"
+              min="1"
+              pebInput
+              [placeholder]="'shipping-app.forms.new_package_dialog.length.placeholder' | translate"
+              formControlName="length"
+              (keypress)="numeric.transform($event)"
+            />
+          </peb-form-field-input>
+          <peb-form-field-input
+            [label]="'shipping-app.forms.new_package_dialog.width.label' | translate"
+            appearance="label"
+            [isFieldInvalid]="shippingPackageForm.get('width').invalid"
+            [errorMessage]="'shipping-app.forms.new_package_dialog.errors.width' | translate"
+          >
+            <input
+              type="number"
+              min="1"
+              pebInput
+              [placeholder]="'shipping-app.forms.new_package_dialog.width.placeholder' | translate"
+              formControlName="width"
+              (keypress)="numeric.transform($event)"
+            />
+          </peb-form-field-input>
+
+        </peb-form-background>
+      </div>
+
+      <div class="form-margins side-margin">
+        <peb-form-background>
+          <peb-select
+            selectType="label"
+            [label]="'shipping-app.forms.new_package_dialog.empty_weight.label' | translate"
+            formControlName="weightUnit"
+          >
+            <peb-select-option
+              class="select-options"
+              *ngFor="let item of weightMeasurementUnits"
+              [value]="item.value"
+              [label]="item.label"
+            ></peb-select-option>
+          </peb-select>
+
+          <peb-form-field-input [label]="'shipping-app.forms.new_package_dialog.value.label' | translate"
+                                appearance="label"
+                                [isFieldInvalid]="shippingPackageForm.get('weight').invalid"
+                                [errorMessage]="'shipping-app.forms.new_package_dialog.errors.weight' | translate "
+          >
+            <input
+              type="number"
+              min="1"
+              pebInput
+              [placeholder]="'shipping-app.forms.new_package_dialog.value.placeholder' | translate"
+              formControlName="weight"
+              (keypress)="numeric.transform($event)"
+            />
+          </peb-form-field-input>
+        </peb-form-background>
+      </div>
+
+      <div class="form-margins side-margin" >
+        <peb-form-background>
+          <peb-checkbox formControlName="isDefault"> {{ 'shipping-app.forms.new_package_dialog.default' | translate }} </peb-checkbox>
+        </peb-form-background>
+      </div>
+    </ng-template>
+
+    <ng-template #carrierPackage>
+      <div class="form-margins" *ngFor="let carrier of carrierBoxes; let i = index;">
+        <peb-expandable-panel *ngIf="carrier?.boxes.length > 0" isContentOpen="true" headerLabel="{{ carrier?.integration?.name | uppercase }} packaging">
+          <peb-form-background>
+            <ng-container *ngFor="let box of carrier?.boxes;">
+              <div class="carrier-box">
+                <peb-checkbox type="label" [checked]="isChecked(box)" (changed)="handleBoxes($event, box, carrier?.boxes)">
+                  <pre>{{ box?.name }}</pre>
+                  {{ box?.width }} x {{ box?.height }} x {{ box?.length }} {{ box?.dimensionUnit }}, {{ box?.weight }}
+                  {{ box?.weightUnit }}
+                </peb-checkbox>
+                <div class="suffix">
+                  <button *ngIf="!box.isDefault" peb-text-button color="confirm" (click)="makeDefault(box, i)">
+                    Make default
+                  </button>
+                  <button *ngIf="box.isDefault" peb-text-button [disabled]="true">
+                    Default
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+          </peb-form-background>
+        </peb-expandable-panel>
+      </div>
+      <div class="form-margins__error">
+        <peb-messages
+          *ngIf="!carrierValid"
+          [message]="'shipping-app.forms.new_package_dialog.errors.package' | translate"
+        ></peb-messages>
+      </div>
+    </ng-template>
+  </div>
+</form>

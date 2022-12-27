@@ -1,0 +1,52 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+:host {
+  display: block;
+  transform: translateX(0);
+  height: 100%;
+}
+
+.mat-accordion-xl {
+  &.content-accordion {
+    margin-bottom: $padding-base-vertical * 4;
+  }
+
+  &.mat-accordion-xl-full-width {
+    .mat-expansion-panel {
+      .mat-expansion-panel-header-padding-md {
+        padding-right: 24px;
+        padding-left: 60px;
+
+        .mat-panel-icon {
+          left: 24px;
+        }
+      }
+    }
+
+    pe-subdashboard-header.pe-subdashboard {
+      .mat-expansion-panel-app-header {
+        .mat-expansion-panel-header {
+          padding-left: 24px;
+          padding-right: 18px !important;
+        }
+      }
+    }
+  }
+
+  pe-subdashboard-header.pe-subdashboard {
+    .mat-expansion-panel-app-header {
+      .mat-expansion-panel-header {
+        padding-left: 12px;
+      }
+    }
+  }
+
+  .pe-subdashboard {
+    .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        border-radius: $border-radius-base * 3 !important;
+      }
+    }
+  }
+}

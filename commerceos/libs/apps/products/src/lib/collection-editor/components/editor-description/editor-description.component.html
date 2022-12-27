@@ -1,0 +1,18 @@
+<pe-text-editor-toolbar
+  #editorToolbar
+  [hideLink]="true"
+  [hideOpenNewTab]="true"
+  [hideColorPicker]="true"
+  [hideFontSize]="true"
+  (actionClicked)="onTextEditorAction($event)"
+  (click)="editorFocused = true">
+</pe-text-editor-toolbar>
+<pe-text-editor
+  class='text-editor'
+  #textEditor
+  [htmlText]="description || ' '"
+  [editable]="true"
+  (contentChange)="onDescriptionChange($event)"
+  (editorFocus)="editorFocus()"
+  (editorClick)="$event.stopPropagation()">
+</pe-text-editor>

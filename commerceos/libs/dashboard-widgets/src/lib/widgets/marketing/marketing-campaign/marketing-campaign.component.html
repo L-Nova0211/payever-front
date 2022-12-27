@@ -1,0 +1,16 @@
+<mat-list class="mat-list-transparent mat-list-transparent-no-padding">
+  <ng-container *ngFor="let campaign of campaigns; last as isLast">
+    <mat-list-item class="mat-list-item-no-padding-left mat-list-item-no-padding-right">
+      <div class="mat-list-item-flex">
+        <div class="mat-list-item-col campaign-row">
+          <button mat-button class="campaign-title"
+                  [class.selected]="selectedCampaign?._id === campaign._id"
+                  (click)="onClick.emit(campaign)">
+            {{campaign.name}}
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-divider *ngIf="!isLast" class="mat-divider mat-divider-horizontal"></mat-divider>
+  </ng-container>
+</mat-list>

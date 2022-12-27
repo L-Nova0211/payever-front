@@ -1,0 +1,7 @@
+<div [ngStyle]="(style$ | async)?.gridWrapper">
+  <div #gridRef [ngStyle]="(style$ | async)?.gridRef">
+    <ng-container pebRendererChildrenSlot></ng-container>
+  </div>
+
+  <div #gridEnd class="grid__end"></div>
+</div>

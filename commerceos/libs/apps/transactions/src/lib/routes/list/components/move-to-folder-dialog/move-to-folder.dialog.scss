@@ -1,0 +1,22 @@
+@import "theming/theming";
+@import "theming/all-theme";
+@import "~@pe/ui-kit/scss/pe_variables";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+.move-to-folder {
+  .dark {
+    @include peb-theme($theme-dark);
+  }
+
+  .light {
+    @include peb-theme($theme-light);
+  }
+
+  .transparent {
+    @include peb-theme($theme-transparent);
+  }
+}
+

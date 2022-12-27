@@ -1,0 +1,65 @@
+{
+  "invoice-app": {
+    "actions": {
+      "edit": "Edit",
+      "copy_link": "Copy link",
+      "open": "Open",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "done": "Done",
+      "save": "Save",
+      "create_new": "Create New"
+    },
+    "info":{
+      "items_deleted": "Selected items successfully deleted",
+      "items_not_deleted": "Cannot delete items",
+      "social_image": "When you share a link to your store on social media, an image is usually shown in your post. This one will be used if another relevant image can’t be found. Recommended size: 1200 x 628 px"
+    },
+    "sidebar": {
+      "title": "Invoice"
+    },
+    "header": {
+      "all_folders": "All folders"
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "invoices": {
+      "title": "Invoices"
+    },
+    "themes": {
+      "title": "Invoices"
+    },
+    "dialogs": {
+      "window_exit": {
+        "title": "Are you sure?",
+        "label": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+        "confirm": "Yes",
+        "decline": "No"
+      },
+      "messages": {
+        "invoice_duplicated": "Invoice successfully duplicated",
+        "invoice_not_duplicated": "Cannot duplicate Invoice",
+        "approve_title": "Are you sure?",
+        "approve_subtitle": "Do you really want to delete these items? These items will be lost and you will not be able to restore it."
+      }
+    },
+    "common": {
+      "invoice": {
+        "all": "All",
+        "draft": "Draft",
+        "sent": "Sent",
+        "recieved": "Recieved",
+        "my_invoices": "My invoices",
+        "time_sent": "Time Sent",
+        "today": "Today",
+        "last_week": "Last week",
+        "last_month": "Last month",
+        "name": "Name",
+        "add_new_folder": "Add new folder",
+        "new_folder": "New folder",
+        "folder_name": "Folder name"
+      }
+    }
+  }
+}

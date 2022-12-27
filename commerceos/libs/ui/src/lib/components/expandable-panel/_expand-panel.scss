@@ -1,0 +1,17 @@
+@mixin peb-expandable-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $text-color: map-get($theme-config, text-color);
+
+  .expandable-panel {
+    &__header {
+      color: $text-color;
+      background-color: $primary;
+      
+      @if $text-color == #000 {
+        .expandable-panel__header-icon {
+          filter: brightness(0.2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<pe-chat-header-tag-styles></pe-chat-header-tag-styles>
+<div class="pe-message-chat-room-list__icon">
+    <div class="pe-message-chat-room-list__avatar" *ngIf="avatar">
+        <img class="pe-message-chat-room-list__avatar-img" [src]="avatar" alt="chat-avatar" loading="lazy">
+    </div>
+    <div class="pe-message-chat-room-list__initials" *ngIf="!avatar">
+        {{ chat.initials[0] }}
+    </div>
+</div>
+<div class="pe-message-chat-room-list__info">
+    <div class="pe-message-chat-room-list__header">
+        <span class="pe-message-chat-room-list__title">{{chat.title}}</span>
+    </div>
+</div>

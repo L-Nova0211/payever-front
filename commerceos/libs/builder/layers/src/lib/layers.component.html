@@ -1,0 +1,51 @@
+<div class="layer-title">
+  <span>Layers</span>
+</div>
+
+<div class="layers-tree scrollbar" pebAutoHideScrollBar>
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+      <div class="layers-tree__item">
+        <ng-container *ngIf="node.expandable">
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon
+              svgIcon="triangle-right"
+              [class.icon-down]="treeControl.isExpanded(node)"
+              [class.icon-right]="!treeControl.isExpanded(node)"
+            ></mat-icon>
+          </button>
+        </ng-container>
+
+        <ng-container *ngTemplateOutlet="icon; context:{ type: node.type }"></ng-container>
+
+        <span class="layers-tree__name" (click)="onSelectElement(node.id)">{{node.name}}</span>
+        <ng-container *ngIf="node.type === 'section'">
+          <div class="layers-tree__eye" (click)="toggleVisible(node)">
+            <ng-container [ngSwitch]="node.isVisible">
+              <ng-container *ngSwitchCase="true">
+                <mat-icon svgIcon="visible-eye-icon" class="eye-icon"></mat-icon>
+              </ng-container>
+              <ng-container *ngSwitchCase="false">
+                <mat-icon svgIcon="hidden-eye-icon" class="eye-icon"></mat-icon>
+              </ng-container>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </mat-tree-node>
+  </mat-tree>
+</div>
+
+<ng-template #icon let-type="type">
+  <ng-container [ngSwitch]="type">
+    <div class="icon" *ngSwitchCase="'section'">
+      <mat-icon [svgIcon]="isMobile?'browser-mobile':'browser-desktop'"></mat-icon>
+    </div>
+    <mat-icon svgIcon="grid-document-icon" *ngSwitchCase="'grid'"></mat-icon>
+    <mat-icon svgIcon="navbar-document-icon" *ngSwitchCase="'navbar'"></mat-icon>
+    <mat-icon svgIcon="text-document-icon" *ngSwitchCase="'text'"></mat-icon>
+    <mat-icon svgIcon="shape-icon" class="icon" *ngSwitchCase="'shape'"></mat-icon>
+    <mat-icon svgIcon="image-document-icon" class="icon" *ngSwitchDefault></mat-icon>
+  </ng-container>
+</ng-template>
+

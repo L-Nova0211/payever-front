@@ -1,0 +1,24 @@
+@import "../../../../styles/src/lib/styles/mixins";
+@import "../../../../styles/src/lib/styles/variables";
+
+.icon {
+  @include icon-size(18);
+  margin-right: 2px;
+  vertical-align: sub;
+}
+
+.mat-option.mat-selected:not(:hover) {
+  background-color: unset;
+}
+
+mat-select {
+  height: $defaultInputHeight;
+}
+
+// we need this and placeholder to fix css error with angular-material library
+::ng-deep .mat-select-placeholder {
+  color: #ffffff;
+}
+
+
+

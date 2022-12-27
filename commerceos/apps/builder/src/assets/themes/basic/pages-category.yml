@@ -1,0 +1,198 @@
+id: pages-category
+type: document
+children:
+  - id: hero1
+    area: hero
+    type: section
+    style:
+      background: "#fafafa"
+      height: 220px
+    children:
+      - id: hero-title
+        type: text
+        text: Photography
+        style:
+          display: inline-block
+          margin: 90px
+          fontSize: 37
+          fontWeight: 500
+          verticalAlign: top
+      - id: hero-image
+        type: block
+        style:
+          display: inline-block
+          backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/photography-accessories-201909?wid=380&hei=320&fmt=png-alpha&.v=1566853169771
+          backgroundSize: contain
+          backgroundPosition: center
+          backgroundRepeat: no-repeat
+          height: 100%
+          width: 380px
+          verticalAlign: top
+
+  - id: filter-bar
+    type: section
+    style:
+      height: 50px
+      width: 100%
+      borderTop: 1px solid rgba(136,136,136,.4)
+      borderBottom: 1px solid rgba(136,136,136,.4)
+      verticalAlign: middle
+    children:
+      - id: filter-box
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: middle
+          width: 50%
+        children:
+          - id: filter-button
+            type: text
+            text: Filter
+            style:
+              margin: 19px
+              color: rgb(102, 102, 102)
+              fontSize: 12
+              display: inline-block
+              verticalAlign: middle
+      - id: sort-box
+        type: block
+        style:
+          display: inline-block
+          textAlign: right
+          verticalAlign: middle
+          width: 50%
+        children:
+          - id: sort-button
+            type: text
+            text: Sort By
+            style:
+              display: inline-block
+              margin: 0 5px 0 0
+              color: "#888"
+              fontSize: 12
+          - id: sort-selected
+            type: text
+            text: Featured
+            style:
+              display: inline-block
+              color: "#333"
+              fontSize: 12
+  - id: product-space
+    type: section
+    style:
+      width: 100%
+      height: 100%
+      border: solid 1px blue
+    children:
+      - id: sidebar
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          height: 400px
+          width: 180px
+          border: solid 1px red
+      - id: prod-container
+        type: block
+        style:
+          display: inline-block
+          verticalAlign: top
+          width: calc(100% - 185px)
+          border: solid 1px green
+        children:
+          - id: prod-1
+            type: block
+            style:
+              display: inline-block
+              height: 450px
+              width: 33%
+            children:
+              - id: img-1
+                type: block
+                style:
+                  width: 90%
+                  margin: 0 5%
+                  height: 350px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HMUC2?wid=445&hei=445&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1572480429444
+                  backgroundSize: contain
+                  backgroundPosition: center
+                  backgroundRepeat: no-repeat
+              - id: title-1
+                type: text
+                text: Logitech 4K Pro Magnetic Webcam for Pro DIsplay XDR
+                style:
+                  color: "#333"
+                  fontSize: 16
+                  textAlign: center
+              - id: price-1
+                type: text
+                text: $ 199.95
+                style:
+                  color: "#888"
+                  fontSize: 16
+                  textAlign: center
+                  margin: 7px 0 0 0
+          - id: prod-2
+            type: block
+            style:
+              display: inline-block
+              height: 450px
+              width: 33%
+            children:
+              - id: img-2
+                type: block
+                style:
+                  width: 90%
+                  margin: 0 5%
+                  height: 350px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HNPE2?wid=445&hei=445&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1575499936115
+                  backgroundSize: contain
+                  backgroundPosition: center
+                  backgroundRepeat: no-repeat
+              - id: title-2
+                type: text
+                text: GoPro MAX Camera
+                style:
+                  color: "#333"
+                  fontSize: 16
+                  textAlign: center
+              - id: price-2
+                type: text
+                text: $ 499.95
+                style:
+                  color: "#888"
+                  fontSize: 16
+                  textAlign: center
+                  margin: 7px 0 0 0
+          - id: prod-3
+            type: block
+            style:
+              display: inline-block
+              height: 450px
+              width: 33%
+            children:
+              - id: img-3
+                type: block
+                style:
+                  width: 90%
+                  margin: 0 5%
+                  height: 350px
+                  backgroundImage: https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/HKW02?wid=445&hei=445&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1484157202950
+                  backgroundSize: contain
+                  backgroundPosition: center
+                  backgroundRepeat: no-repeat
+              - id: title-3
+                type: text
+                text: Adobe Creative Cloud Photography Plan
+                style:
+                  color: "#333"
+                  fontSize: 16
+                  textAlign: center
+              - id: price-3
+                type: text
+                text: $ 119.95
+                style:
+                  color: "#888"
+                  fontSize: 16
+                  textAlign: center
+                  margin: 7px 0 0 0

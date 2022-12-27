@@ -1,0 +1,53 @@
+namespace: default
+priorityClass: app-10stars
+domain: 'test.devpayever.com'
+issue: ''
+deployToExclusive: true
+microCheckoutVersion: 1.0.0
+microUrlCommerceosVersion: 1.0.0
+replicas:
+  http: 7
+
+image:
+  nginx: registry.devpayever.com/frontend/commerceos
+  pullSecretName: regsecret
+
+service:
+  externalPort: 80
+  containerPort: 80
+  monitoringPort: 8080
+
+serviceBuilderClient:
+  externalPort: 80
+  containerPort: 3000
+  statusPort: 3000
+
+#COSF resources
+test:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 250Mi
+    limits:
+      memory: 464Mi
+stage:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 250Mi
+    limits:
+      memory: 464Mi
+live:
+  resources:
+    requests:
+      cpu: 150m
+      memory: 250Mi
+    limits:
+      memory: 464Mi
+job:
+  resources:
+    requests:
+      cpu: 150m
+      memory: 250Mi
+    limits:
+      memory: 464Mi

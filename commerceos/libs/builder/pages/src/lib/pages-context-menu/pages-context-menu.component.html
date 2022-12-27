@@ -1,0 +1,17 @@
+<div class="menu">
+  <div class="menu__header">
+    <span class="menu__title">Options</span>
+    <button class="menu__close" (click)="onClose.emit()">
+      <mat-icon class="icon" svgIcon="button-close"></mat-icon>
+    </button>
+  </div>
+  <ul class="menu__list">
+    <ng-container *ngFor="let option of options">
+      <li class="menu__list-item"
+          (click)="option.onClick && option.onClick()"
+          [class.delete]="option.title.toLowerCase() === 'delete'">
+        <span class="menu__list-item-title">{{ option.title }}</span>
+      </li>
+    </ng-container>
+  </ul>
+</div>

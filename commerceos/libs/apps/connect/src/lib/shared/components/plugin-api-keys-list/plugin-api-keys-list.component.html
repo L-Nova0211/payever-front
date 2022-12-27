@@ -1,0 +1,89 @@
+<p class="text text-danger loading-error"
+   *ngIf="this.error$ | async">{{ (this.error$ | async)?.message || ('errors.unknown_error' | translate) }}</p>
+
+<mat-accordion *ngIf="this.apiKeys$ | async" multi="true" class="plugin-api-accordion-container">
+  <mat-expansion-panel
+      *ngFor="let key of (this.apiKeys$ | async)"
+      #apiKeysPanel
+      class="mat-expansion-panel-dark mat-expansion-panel-no-border-radius mat-expansion-panel__api-keys"
+      hideToggle>
+    <mat-expansion-panel-header collapsedHeight="40px"
+                                expandedHeight="40px"
+                                class="mat-expansion-panel-header-no-logo">
+
+      <mat-panel-title class="mat-expansion-panel-header-title-no-logo">
+        {{ key.name }}
+      </mat-panel-title>
+
+      <div class="mat-expansion-panel-spacer"></div>
+
+      <div class="mat-list-item-col text-right sections-step-buttons">
+        <button mat-raised-button
+                [class.mat-button-rounded]="true"
+                [class.mat-button-xs]="true"
+                color="muted-light"
+                (click)="removeKey(key, $event)">
+          {{ 'actions.delete' | translate }}
+        </button>
+
+        <svg class="icon icon-16">
+          <use [attr.xlink:href]="apiKeysPanel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+        </svg>
+      </div>
+
+    </mat-expansion-panel-header>
+    <ng-template *ngIf="template" [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{key: key}"></ng-template>
+    <ng-template *ngIf="!template" [ngTemplateOutlet]="keyDefaultTemplate"
+                 [ngTemplateOutletContext]="{key: key}"></ng-template>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<ng-template #keyDefaultTemplate let-key="key">
+  <div class="key" template="#key">
+    <div class="key-info">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2 key-info__title"><strong translate>categories.shopsystems.api_keys.default.titles.key_id</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <div class="small-2 key-value">{{ key.id }}
+            <a (click)="clipboardCopy(key.id, getCopyText$(key, 'id'))"
+               class="btn-copy">{{ getCopyText$(key, 'id') | async | translate }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2 key-info__title"><strong
+              translate>categories.shopsystems.api_keys.default.titles.key_secret</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <div class="small-2 key-value">{{ key.secret }}
+            <a (click)="clipboardCopy(key.secret, getCopyText$(key, 'secret'))"
+               class="btn-copy">{{ getCopyText$(key, 'secret') | async | translate }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2 key-info__title"><strong translate>categories.shopsystems.api_keys.default.titles.business_uuid</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <div class="small-2 key-value">{{ businessUuid }}
+            <a (click)="clipboardCopy(businessUuid, getCopyText$(key, 'businessUuid'))"
+               class="btn-copy">{{ getCopyText$(key, 'businessUuid') | async | translate }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <span class="small-2 key-info__title"><strong
+              translate>categories.shopsystems.api_keys.default.titles.key_created</strong></span>
+        </div>
+        <div class="col-xs-6 col-sm-8">
+          <span class="small-2 key-value">{{ key.createdAt | amDateFormat: 'DD.MM.YYYY HH:mm' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

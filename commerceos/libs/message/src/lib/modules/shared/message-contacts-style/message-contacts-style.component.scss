@@ -1,0 +1,93 @@
+@media (max-width: 720px) {
+  .message-contacts-dialog-wrapper {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+@media (max-height: 667px) {
+  .message-contacts-dialog-wrapper {
+    height: 496px;
+  }
+}
+@media (min-height: 667px) {
+  .message-contacts-dialog-wrapper {
+    height: 100%;
+  }
+}
+@media (min-width: 720px) and (max-width: 1076px) {
+  .message-contacts-dialog-wrapper {
+    width: 720px;
+  }
+}
+@media (min-width: 1076px) {
+  .message-contacts-dialog-wrapper {
+    width: 100%;
+  }
+}
+
+.sidebar-menu__item {
+  padding: 0 !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cdk-global-overlay-wrapper {
+  .mat-dialog-container {
+    border-radius: 20px;
+    background-color: rgba(36, 39, 46, 1);
+    overflow: hidden;
+    padding: 0 0 26px 0;
+  }
+}
+
+.message-contacts-dialog-wrapper {
+  background-color: #24272e;
+  border-radius: 12px;
+  padding: 12px 4px;
+  overflow: hidden;
+
+  &__header {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+
+    .header-buttons {
+      min-width: 51px;
+      height: 24px;
+      border-radius: 6px;
+      outline: 0;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .close-button {
+      background-color: #86868b;
+
+    }
+    .add-button {
+      background-color: #0371e2;
+      margin-left: 8px;
+    }
+  }
+  &__content {
+    height: calc(100% - 24px);
+
+    .grid-view-container {
+      max-width: 100%;
+    }
+  }
+}
+
+.message-contacts-backdrop {
+  background: rgba(0,0,0,.32);
+  background-color: rgba(0, 0, 0, 0.5);
+}

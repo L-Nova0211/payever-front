@@ -1,0 +1,33 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+.news {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: $padding-large-vertical*2;
+  padding-bottom: $padding-large-vertical*2;
+  border-bottom: 1px solid $color-white-grey-1;
+
+  &__text {
+    display: flex;
+    flex-flow: column;
+    flex-basis: 80%;
+  }
+
+  &__title {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+    padding-bottom: $padding-base-vertical;
+  }
+
+  &__version-history {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__version-details {
+    color: $color-white-grey-4;
+  }
+}

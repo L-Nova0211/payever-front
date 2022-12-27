@@ -1,0 +1,125 @@
+/* Firefox */
+@supports (-moz-appearance:none) {
+  .pe-bootstrap {
+    .form-table .form-fieldset,
+    .form-table fieldset,
+    .div-table {
+      box-shadow: inset 0 0 0 1.5px $form-table-border-color;
+    }
+
+    .form-fieldset-no-border {
+      box-shadow: none !important;
+    }
+  }
+
+  .pe-bootstrap .rate-options [class*="col"] {
+    white-space: normal;
+    &.text-secondary {
+      white-space: nowrap;
+    }
+  }
+
+  // hack for top toolbar in apps. It is over the scrollbar, because scrollbar appears for micro-container
+  // but toolbar is fixed relative to page
+  .pe-bootstrap {
+    .mat-toolbar-fixed:not(.mat-toolbar-global-header) {
+      position: sticky !important;
+    }
+    .mat-accordion-below-header {
+      margin-top: 0 !important;
+    }
+  }
+
+  // hide scrollbar inside overlay container
+  .pe-bootstrap {
+    pe-overlay-container {
+      .overlay-container {
+        & > .mat-card {
+          .mat-card-content {
+            position: relative;
+            overflow: hidden;
+
+            .scroll-wrapper {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+
+              .mat-card-content-scroll-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: calc(100% + #{$padding-small-horizontal * 2}); // 100% + scrollbar width
+                overflow-y: scroll
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // fix textcut of inputs on windows FF
+  .mat-input-with-addon-inline-prepend-wrapper {
+    line-height: normal;
+    input[type="password"] {
+      font-family: $font-family-monospace;
+    }
+  }
+
+  //fix underline 1.00001 value
+  .pe-bootstrap {
+    .mat-form-field-underline {
+      transform: scale(1);
+    }
+  }
+
+}
+
+/* IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .pe-bootstrap {
+    .mat-card-transparent, .mat-card-transparent-sm {
+      .mat-card-header {
+        .mat-card-header-text {
+          .mat-card-title {
+            display: block;
+          }
+        }
+      }
+    }
+
+    //vertical center fieldset slide-toggle
+    .mat-slide-toggle-flex {
+      padding: 16px 0;
+    }
+  }
+
+  .mat-input-with-addon-inline-prepend-wrapper {
+    input[type="password"] {
+      font-family: $font-family-monospace;
+    }
+  }
+
+  .pe-bootstrap {
+    .mat-accordion {
+      .mat-expansion-panel {
+        &:last-of-type{
+          border-radius: 0 !important;
+        }
+      }
+    }
+  }
+
+  .mat-content {
+    .text-right {
+      .mat-raised-button {
+        margin: 5px 0 0;
+      }
+      .icon {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}

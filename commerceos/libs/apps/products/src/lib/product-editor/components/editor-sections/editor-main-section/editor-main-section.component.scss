@@ -1,0 +1,51 @@
+.product-main-fields {
+  border-radius: 12px;
+  display: grid;
+  grid-gap: 1px;
+  overflow: hidden;
+  margin-top: 16px;
+
+  .first-row,
+  .price-row {
+    display: grid;
+    grid-column-gap: 1px;
+  }
+
+  .first-row {
+    // grid-template-columns: 1fr auto;
+    max-width: calc(100vw - 40px);
+
+    @media (min-width: 452px) {
+      max-width: 412px;
+    }
+  }
+
+  .price-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-form-field-input,
+  .main-button-toggle,
+  .main-form-field-select {
+    .suffix {
+      min-width: auto;
+    }
+  }
+
+  .main-button-toggle {
+    display: block;
+    padding: 2px 4px;
+  }
+
+  .calendar-image {
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+.overlay__body-messages{
+  display: block;
+  margin-top: 8px;
+}

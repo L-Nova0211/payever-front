@@ -1,0 +1,65 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.upload.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.upload.actions.verify"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <div
+    peFileDrop
+    class="file-picker-drop-area"
+    [class.is-dragging]="isDragging"
+    (onFileOver)="onFileOver($event)"
+    (onFileDrop)="onFileDrop($event)"
+  >
+    <mat-icon class="placeholder-icon" svgIcon="files-placeholder"></mat-icon>
+    <p>{{ translationsScope + '.labels.drag_title' | translate }}</p>
+  </div>
+
+  <pe-image-capture (filePicked)="onFileChange($event)" (imageCapture)="onImageCapture($event)"></pe-image-capture>
+
+  <peb-messages *ngIf="errorMessage" [message]="errorMessage"></peb-messages>
+
+  <div class="documents-wrap">
+    <form [formGroup]="form">
+      <ng-container formArrayName="documents">
+        <ng-container *ngFor="let document of documentsControl.controls; let i = index">
+          <div class="documents-wrap__item" [formGroup]="document">
+            <div class="placeholder">
+              <img
+                *ngIf="isPreview(document.get('extension').value)"
+                [src]="sanitizeData(document.get('file').value)"
+              />
+              <mat-icon
+                *ngIf="!isPreview(document.get('extension').value)"
+                class="image"
+                svgIcon="image-placeholder"
+              ></mat-icon>
+            </div>
+            <peb-form-background>
+              <two-column-form>
+                <peb-form-field-input appearance="label" [isFieldInvalid]="document.get('_hasError').value">
+                  <input type="text" readonly pebInput formControlName="filename" />
+                </peb-form-field-input>
+                <peb-select
+                  selectType="label"
+                  [label]="translationsScope + '.labels.document_type' | translate"
+                  formControlName="documentType"
+                  [isFieldInvalid]="isSubmitted && document.get('documentType')?.invalid"
+                  [errorMessage]="translationsScope + '.errors.required' | translate"
+                >
+                  <peb-select-option *ngFor="let option of documentTypes" [value]="option.value" [label]="option.label">
+                  </peb-select-option>
+                </peb-select>
+              </two-column-form>
+            </peb-form-background>
+            <button class="remove-btn" type="button" (click)="onDeleteFile(i)">
+              <mat-icon svgIcon="remove-icon"></mat-icon>
+            </button>
+          </div>
+        </ng-container>
+      </ng-container>
+    </form>
+  </div>
+</pe-action-container>

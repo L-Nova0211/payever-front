@@ -1,0 +1,406 @@
+.pe-bootstrap {
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &-rounded {
+      border-radius: 50%;
+    }
+  }
+
+  .icon-8 {
+    @include square($icon-size-8);
+  }
+
+  .icon-10 {
+    @include square($icon-size-10);
+  }
+
+  .icon-12 {
+    @include square($icon-size-12);
+  }
+
+  .icon-14 {
+    @include square($icon-size-14);
+  }
+
+  .icon-16 {
+    @include square($icon-size-16);
+  }
+
+  .icon-18 {
+    @include square($icon-size-18);
+  }
+
+  .icon-20 {
+    @include square($icon-size-20);
+  }
+
+  .icon-24 {
+    @include square($icon-size-24);
+  }
+
+  .icon-32 {
+    @include square($icon-size-32);
+  }
+
+  .icon-48 {
+    @include square($icon-size-48);
+  }
+
+  .icon-64 {
+    @include square($icon-size-64);
+  }
+
+  .icon-96 {
+    @include square($icon-size-96);
+  }
+
+  .icon-128 {
+    @include square($icon-size-128);
+  }
+
+  .icon-db {
+    box-shadow: 4px 6px 26px 0 rgba(0, 0, 0, .12),
+    inset -1px -1px 0 0 rgba(0, 0, 0, .5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, .14);
+
+    display: inline-block;
+    border-radius: 24.6%;
+    background-color: rgba(255, 255, 255, .15);
+    background-position: 0px 0px;
+    width: 64px;
+    height: 64px;
+    transition: background-color 0.225s ease;
+    background-size: 64px 128px;
+
+    @include retina() {
+      background-size: 64px 128px !important;
+    }
+
+    // tablet
+    @include break(sm_2) {
+      background-size: 110px 220px;
+      width: 110px;
+      height: 110px;
+    }
+
+    // desktop
+    @include break(sm_3) {
+      background-size: 128px 256px;
+      width: 128px;
+      height: 128px;
+    }
+
+    // tablet
+    @include break-retina(sm_2) {
+      background-size: 110px 220px !important;
+    }
+
+    // desktop
+    @include break-retina(sm_3) {
+      background-size: 128px 256px !important;
+    }
+
+    &:hover,
+    &.colored {
+      background-position: 0px 64px;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      // tablet
+      @include break(sm_2) {
+        background-position: 0px 110px;
+      }
+
+      // desktop
+      @include break(sm_3) {
+        background-position: 0px 128px;
+      }
+    }
+
+  }
+
+  .profile-light-bg {
+    background-color: $color-white;
+  }
+
+  .profile-16 {
+    @include square(16px);
+  }
+
+  .profile-24 {
+    @include square(24px);
+  }
+
+  .profile-32 {
+    @include square(32px);
+  }
+
+  .profile-48 {
+    @include square(48px);
+  }
+
+  .profile-64 {
+    @include square(64px);
+  }
+
+  .profile-96 {
+    @include square(96px);
+  }
+
+  .profile-128 {
+    @include square(128px);
+  }
+
+  .pe-bootstrap {
+    .profile-default {
+      background: $color-very-light-gray;
+      color: $color-gray;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      .icon-128 {
+        margin-top: -64px;
+        margin-left: -64px;
+      }
+
+      .icon-64 {
+        margin-top: -32px;
+        margin-left: -32px;
+      }
+
+      .icon-48 {
+        margin-top: -24px;
+        margin-left: -24px;
+      }
+
+      .icon-32 {
+        margin-top: -16px;
+        margin-left: -16px;
+      }
+
+      .icon-24 {
+        margin-top: -12px;
+        margin-left: -12px;
+      }
+    }
+
+    .profile-default-siluet {
+      overflow: hidden;
+      opacity: .9;
+
+      .icon {
+        width: 100%;
+        height: 100%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+
+    .profile-default-text {
+      font-size: 48px;
+      @media (max-width: $viewport-breakpoint-sm-2) {
+        font-size: 32px;
+      }
+
+      &.profile-32 {
+        font-size: 13px;
+      }
+
+      .text {
+        font-weight: 600;
+        display: inline-block;
+        height: 1em;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -.5em;
+        transform: translateX(-50%);
+      }
+    }
+
+    .img-biz {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include payever_transform_translate(-50%, -50%);
+      }
+    }
+
+    .icon-app-lg {
+      @include square($grid-unit-y * 12);
+      overflow: hidden;
+      border-radius: $icon-border-radius;
+      box-shadow: $icon-shadow-large;
+    }
+
+    .icon-app-md {
+      @include square($grid-unit-y * 7);
+      overflow: hidden;
+      border-radius: $icon-border-radius;
+      box-shadow: $icon-shadow-medium;
+    }
+
+    .icon-app-s {
+      @include square($grid-unit-y * 4);
+      overflow: hidden;
+      border-radius: $icon-border-radius;
+      box-shadow: $icon-shadow-small;
+    }
+
+    .icon-app-xs {
+      @include square($grid-unit-y * 3);
+      overflow: hidden;
+      border-radius: $icon-border-radius;
+      box-shadow: $icon-shadow-small;
+    }
+
+    .arrow-dashboard {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 22px;
+      z-index: 1;
+      transition: all .4s cubic-bezier(.645, .045, .355, 1);
+      cursor: pointer;
+
+      &:after, &:before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14px;
+        height: 2px;
+        margin-top: -1px;
+        border-radius: 20px;
+        background-color: #fff;
+        transition: all .4s cubic-bezier(.645, .045, .355, 1);
+        opacity: .75;
+      }
+
+      &:before {
+        -webkit-transform-origin: 13px center;
+        -ms-transform-origin: 13px center;
+        transform-origin: 13px center;
+        margin-left: -13px;
+      }
+
+      &:after {
+        -webkit-transform-origin: 1px center;
+        -ms-transform-origin: 1px center;
+        transform-origin: 1px center;
+        margin-right: -13px;
+      }
+
+      &:hover {
+        &:before, &:after {
+          opacity: 1;
+        }
+      }
+
+      &.down {
+        &:hover {
+          &:before {
+            -webkit-transform: rotate(20deg);
+            -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+          }
+
+          &:after {
+            -webkit-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+          }
+        }
+      }
+
+      &.up {
+        &:hover {
+          &:before {
+            -webkit-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+          }
+
+          &:after {
+            -webkit-transform: rotate(20deg);
+            -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+          }
+        }
+      }
+    }
+
+    .icon-chevron-up {
+      @include payever_transform_rotate(180deg);
+    }
+  }
+
+  .icon-p-square {
+    border: 1px solid $color-gray-3;
+    background: -moz-linear-gradient(top, rgba($color-light-gray-2, 1) 0%, rgba($color-light-gray-1, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba($color-light-gray-2, 1) 0%, rgba($color-light-gray-1, 1) 100%);
+    background: linear-gradient(to bottom, rgba($color-light-gray-2, 1) 0%, rgba($color-light-gray-1, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$pe_color_light_gray_2', endColorstr='$pe_color_light_gray_1', GradientType=0);
+    border-radius: $border-radius-base;
+
+    &.icon-16 {
+      border-radius: $border-radius-base / 2;
+    }
+
+    &.icon-32 {
+      border-radius: $border-radius-base / 2;
+    }
+  }
+
+  .icon-notification-count {
+    height: $icon-size-16;
+    min-width: $icon-size-16;
+    width: auto;
+    background-color: $color-red;
+    color: $color-white;
+    font-size: $grid-unit-y;
+    padding: ($icon-size-16 - $grid-unit-y)/2;
+    font-weight: 500;
+    border-radius: 100%;
+    line-height: 1;
+    text-align: center;
+    display: inline-block;
+
+    &.icon-32 {
+      height: $icon-size-32;
+      min-width: $icon-size-32;
+      width: auto;
+      font-size: $grid-unit-y * 2;
+      padding: ($icon-size-32 - $grid-unit-y * 2)/2;
+    }
+
+    &.icon-64 {
+      height: $icon-size-64;
+      min-width: $icon-size-64;
+      width: auto;
+      font-size: $grid-unit-y * 4;
+      padding: ($icon-size-64 - $grid-unit-y * 4)/2;
+    }
+
+    &.icon-blue {
+      background-color: $color-blue;
+    }
+  }
+}

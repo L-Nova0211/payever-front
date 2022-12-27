@@ -1,0 +1,10 @@
+<pe-message-bubble-item
+  *ngIf="item && !item.hidden"
+  class="pe-message-bubble-item"
+  [item]="item"
+  [logo]="logo"
+  [companyName]="companyName"
+  [boxShadow]="boxShadow"
+  [unreadMessages]="unreadMessages$ | async"
+  (click)="onClick()"
+></pe-message-bubble-item>

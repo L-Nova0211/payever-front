@@ -1,0 +1,25 @@
+<div class="pe-search-list__item">
+  <div class="pe-search-list__item-content">
+    <span>
+      <img
+        *ngIf="image && isIconImage(image)"
+        alt=""
+        [src]="image"
+      />
+      <mat-icon
+        *ngIf="image && !isIconXlink(image) && !isIconImage(image) && image !== ''"
+        [svgIcon]="image"
+      ></mat-icon>
+      <svg
+        *ngIf="image && isIconXlink(image)"
+        class="pe-search-list__item-icon"
+      >
+        <use [attr.xlink:href]="image"></use>
+      </svg>
+      <ng-content></ng-content>
+    </span>
+  </div>
+  <button class="pe-search-list__item-remove" (click)="onRemove()">
+    {{ removeButtonLabel ? (removeButtonLabel | translate) : 'Remove' }}
+  </button>
+</div>

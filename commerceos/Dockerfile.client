@@ -1,0 +1,41 @@
+ARG BUILD_NODE_IMAGE
+ARG PROD_NODE_IMAGE
+
+FROM $BUILD_NODE_IMAGE AS build
+
+ARG NAMESPACE
+ENV NAMESPACE=$NAMESPACE
+
+ARG NG_CLI_VERSION=8.3.21
+ARG NX_CLI_VERSION=8.5.2
+COPY package.json package-lock.json .npmrc /payever/
+COPY ./apps/builder-client/src/environments/environment.prod.ts /payever/src/environments/
+COPY ./apps/builder-client/src/environments/env.$NAMESPACE.ts /payever/src/environments/env.$NAMESPACE
+RUN echo "npm version=> $(npm --version)"
+RUN npm config set cache /.npm-cache
+RUN echo "Path to npm cache2=> $(npm get cache)"
+RUN cd /payever && npm ci || FAILED=true; if [ $FAILED ]; then rm -rf node_modules; rm -rf package-lock.json; npm cache clean --force && npm i && npm ci; fi
+
+COPY . /payever
+COPY ./deploy/env.json /payever/env.json
+RUN sed -i "s/microenvironment/$NAMESPACE/g" ./apps/builder-client/src/environments/environment.prod.ts
+RUN npm install -g @angular/cli@$NG_CLI_VERSION; npm install -g @nrwl/cli@$NX_CLI_VERSION;
+
+# changed to nx
+RUN cd /payever && npm i && npm run build:ssr
+
+FROM $PROD_NODE_IMAGE
+WORKDIR /payever
+RUN apk update --no-cache && apk add --no-cache curl
+
+ARG CI_COMMIT_SHA
+RUN npm i amqp-ts
+RUN npm i elastic-apm-node
+RUN npm i yargs
+COPY --from=build /payever/dist ./dist
+COPY --from=build /payever/deploy/ ./deploy
+COPY --from=build /payever/env.json ./env.json
+COPY --from=build /payever/src/environments/environment.prod.ts ./
+
+RUN chmod +x ./deploy/*
+RUN mkdir -p /payever/dist/server/api && echo $CI_COMMIT_SHA && echo $CI_COMMIT_SHA > /payever/dist/server/api/status

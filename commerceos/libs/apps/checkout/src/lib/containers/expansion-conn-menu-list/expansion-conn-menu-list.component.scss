@@ -1,0 +1,29 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+@import "../../components/panels/page-container";
+
+@media (max-width: $viewport-breakpoint-sm-1 - 1) {
+  .icon-menu-item {
+    display: none;
+  }
+}
+
+@media (min-width: $viewport-breakpoint-sm-1) {
+  .mat-list-item-no-padding-left .expansion-list-title {
+    margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.mat-divider-full-width {
+  margin-left: 0 !important;
+}
+
+.list-item-connection {
+  height: 40px !important;
+}
+
+.pe-truncate-text {
+  max-width: 264px;
+}

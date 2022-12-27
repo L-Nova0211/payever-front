@@ -1,0 +1,147 @@
+@import '../../../../../../styles/src/lib/styles/spinner';
+@import '../../../../../../styles/src/lib/styles/variables';
+
+:host {
+  height: 100%;
+}
+
+.group {
+  &__title {
+    width: 70%;
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+  .group__header {
+    font-weight: 300;
+  }
+  .group__section-button {
+    color: $formFieldTextColor;
+    background-color: $buttonBg;
+    border-radius: $borderRadius;
+    width: 100%;
+    padding: 0.125em;
+  }
+  .group__section-button.group__section-button--position {
+    width: calc(50% - 10px);
+  }
+}
+
+form.form {
+  padding: 1em;
+
+  .form-group {
+    span {
+      display: inline-block;
+      width: 4em;
+    }
+  }
+}
+
+
+:host {
+  height: 100%;
+}
+
+.form {
+  padding: 12px;
+
+  &__row {
+    margin-top: 16px;
+
+    > span {
+      color: #7a7a7a;
+      display: block;
+      font-size: 11px;
+      font-family: Roboto, sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    input {
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      box-sizing: border-box;
+      padding: 4px 20px 4px 8px;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      color: #ffffff;
+      height: 28px;
+      margin: 0;
+      outline: none;
+      width: 100%;
+    }
+
+    button {
+      appearance: none;
+      background-color: #37363b;
+      border-radius: 6px;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.7;
+      outline: none;
+      padding: 4px 14px;
+      width: 100%;
+    }
+  }
+}
+
+.position {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6px;
+}
+
+.fill {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: relative;
+
+  &::before,
+  &::after {
+    background-color: #37363b;
+    display: block;
+    content: '';
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.add {
+  padding-top: 16px;
+  position: relative;
+
+  &::before {
+    background-color: #37363b;
+    display: block;
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.reset {
+  padding-bottom: 16px;
+  position: relative;
+  margin: 0;
+}

@@ -1,0 +1,24 @@
+
+<form novalidate [formGroup]="form" *ngIf="form !== null">
+  <peb-form-background class="second-section">
+    <peb-checkbox
+      [isFieldInvalid]="isSubmitted && form.get('_confirm').errors"
+      class="verify-checkbox"
+      type="label"
+      formControlName="_confirm"
+      required="true"
+    >
+      {{ 'transactions.form.verify.labels.approved' | translate }}
+    </peb-checkbox>
+    <peb-checkbox
+      [isFieldInvalid]="isSubmitted && form.get('_signed').errors"
+      *ngIf="isShowSignedField"
+      class="verify-checkbox"
+      type="label"
+      formControlName="_signed"
+      required="true"
+    >
+      {{ 'transactions.form.verify.labels.signed' | translate }}
+    </peb-checkbox>
+  </peb-form-background>
+</form>

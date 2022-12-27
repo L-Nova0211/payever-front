@@ -1,0 +1,80 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $deployEnv := .Values.deploy.env }}
+{{ $appName := $chartName }}
+
+{{ range $app := $values.builderClientApps }}
+
+  {{ $appName = printf "%s-%s-consumer" $chartName $app.name }}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: nodejs
+    type: consumer
+
+  annotations:
+    "werf.io/set-replicas-only-on-creation": "true"
+
+spec:
+  replicas: {{ $values.replicas.consumer }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: {{ $appName }}
+
+  template:
+    metadata:
+      labels:
+        app: {{ $appName }}
+        tier: frontend
+        type: consumer
+
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
+
+    spec:
+      priorityClassName: {{ $values.priorityClass }}
+      imagePullSecrets:
+        - name: {{ $values.image.pullSecretName }}
+
+      terminationGracePeriodSeconds: 60
+
+      containers:
+        - name: node
+          image: {{ $values.image.dist }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/consumer.sh" ]
+
+          resources:
+{{ if eq  $deployEnv "test" }}
+{{ toYaml $values.resourcestest.consumer | indent 12 }}
+{{ else if eq  $deployEnv "stage" }}
+{{ toYaml $values.resourcesstage.consumer | indent 12 }}
+{{ else }}
+{{ toYaml $values.resourceslive.consumer | indent 12 }}
+{{ end }}
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: micro-url-map
+            - secretRef:
+                name: {{ $chartName }}
+
+          env:
+            - name: KUBERNETES_DEPLOYED
+              value: "{{ now }}"
+            - name: APP_TYPE
+              value: "{{ $app.name }}"
+---
+{{ end }}

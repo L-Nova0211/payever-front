@@ -1,0 +1,13 @@
+:host {
+  display: inline-block;
+  margin-left: 8px;
+
+  .notifications-icon {
+    height: auto;
+    width: 16px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

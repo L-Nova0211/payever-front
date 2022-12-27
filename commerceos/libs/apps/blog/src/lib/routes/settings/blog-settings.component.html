@@ -1,0 +1,209 @@
+<pe-blog-material-styles></pe-blog-material-styles>
+<div class='settings__container' [ngClass]="theme">
+  <div class="page-header">{{'blog-app.settings.title'|translate}}</div>
+  <div class="scrollbar">
+    <div class="content">
+      <section class="settings__section">
+        <div class="settings__section__header">{{'blog-app.settings.publishing'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item no-hover">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-livestatus'"></use>
+              </svg>
+            </div>
+            <div class="item-content"   style="padding-right: 8px;">
+              <div>{{'blog-app.settings.live_status'|translate}}</div>
+              <div style="margin: -6px;">
+                <peb-button-toggle [ngModel]="isLive" (ngModelChange)="toggleBlogLive($event)"></peb-button-toggle>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'blog-app.settings.domains'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.payeverDomain)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'blog-app.settings.payever_domain'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="settings__section__content-item" (click)="openOverlay(components.personalDomain)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'blog-app.settings.personal_domain'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+          <div class="settings__section__content-item" (click)="openOverlay(components.connectExisting)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'blog-app.settings.connect_existing'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'blog-app.settings.safety'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.passwordProtection)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-lock'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'blog-app.settings.password_protection'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.cusomerPrivacy)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-lock'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Customer privacy</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.spamProtection)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-globe'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Spam protection</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'blog-app.settings.social'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" (click)="openOverlay(components.socialImage)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-image'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>{{'blog-app.settings.social_image'|translate}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.googleAnalytics)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-analytics'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Google Analytics</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="settings__section__content-item" (click)="openOverlay(components.facebookPixel)">
+            <div class="item-icon">
+              <svg>
+                <use [attr.xlink:href]="'#icon-settings-pixel'"></use>
+              </svg>
+            </div>
+            <div class="item-content">
+              <div>Facebook pixel</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="settings__section">
+        <div class="settings__section__header">{{'blog-app.settings.all_blogs'|translate}}</div>
+        <div class="settings__section__content">
+          <div class="settings__section__content-item" *ngFor="let blog of blogList" [class.active]="blog.isDefault"
+          (click)="openOverlay(components.createApp, blog)"
+          >
+            <div class="item-icon">
+              <img [src]="blog.picture" alt="" *ngIf="blog.picture">
+              <div *ngIf="!blog.picture" class="abbreviation">
+                <span class="abbreviation__name">{{ blog.name | abbreviation }}</span>
+              </div>
+            </div>
+            <div class="item-content">
+              <div>{{blog.name}}</div>
+              <div>
+                <svg>
+                  <use [attr.xlink:href]="'#icon-arrow-right-2-16'"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="new-button" (click)="openOverlay(components.createApp,{})">
+          {{'blog-app.actions.create_new'|translate}}</button>
+      </section>
+
+    </div>
+
+  </div>
+
+</div>

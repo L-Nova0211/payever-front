@@ -1,0 +1,41 @@
+<pe-info-box class="pe-info-box-header-padding"
+             [transparent]="true"
+             [withHeader]="false"
+             [withFooter]="false"
+             [withPadding]="false"
+             [blurred]="false"
+             [fixed]="true"
+             [title]="'categories.payments.add_variant.title' | translate"
+             [notFullwidthOnMobile]="false"
+             [noBackgroundColor]="false"
+             [roundBorder]="true"
+             (onClose)="created.next()">
+  <ng-container content>
+
+    <form novalidate
+          (ngSubmit)="onSubmit()"
+          class="form-table form-table-no-margin"
+          [formGroup]="form"
+          *ngIf="form">
+      <button #submitTriggerAddConnVariant id="submitTriggerAddConnVariant" name="submitButton" type="submit" class="native-submit"></button>
+      <pe-form-fieldset class="transparent"
+                        [translationScope]="'categories.payments.add_variant.form'"
+                        [isSubmitted]="isSubmitted"
+                        [fields]="formScheme.fieldsets['variant']"
+                        [formGroup]="form.get('variant')"
+                        [formStyle]="'transparent'"
+      ></pe-form-fieldset>
+      <button mat-button
+              type="button"
+              class="mat-button-block"
+              (click)="submitTriggerAddConnVariant.click()">
+        <pe-progress-button-content [spinnerDiameter]="26"
+                                    [spinnerStrokeWidth]="2"
+                                    [loading]="isLoading$ | async">
+          {{ 'categories.payments.actions.add_variant' | translate }}
+        </pe-progress-button-content>
+      </button>
+    </form>
+
+  </ng-container>
+</pe-info-box>

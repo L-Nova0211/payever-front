@@ -1,0 +1,34 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", "**/*.js", "**/*.spec.ts", "test.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@nrwl/nx/angular",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "parserOptions": {
+        "project": ["libs/message/tsconfig.*?.json"]
+      },
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          { "type": "attribute", "prefix": "pe", "style": "camelCase" }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          { "type": "element", "prefix": "pe", "style": "kebab-case" }
+        ],
+        "max-len": ["error", { "code": 120, "ignoreTemplateLiterals": true, "ignoreComments": true }],
+        "no-underscore-dangle": ["error", { "allowAfterThis": true, "allow": ["_id", "__v"] }],
+        "template-curly-spacing": ["error", "never"]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@nrwl/nx/angular-template"],
+      "rules": { }
+    }
+  ]
+}

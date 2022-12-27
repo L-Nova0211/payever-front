@@ -1,0 +1,108 @@
+<ng-container *ngIf="!widget.showInstallAppButton  || widget.setupStatus === AppSetUpStatusEnum.Completed; else startWidget">
+  <div [ngClass]="widgetTheme">
+    <div class="widget">
+      <div
+        class="widget__content"
+        [ngClass]="{'widget__content--notifications-open': showNotifications}"
+      >
+        <div class="widget__header">
+          <div class="widget__sub-header">
+            <div class="widget__image"
+              *ngIf="widget.iconUrl; else svgIcon"
+              [style.background-image]="'url(' + ( widget.iconUrl | iconsPngUrl ) + ')' | safeStyle"
+            ></div>
+            <ng-template #svgIcon>
+              <ng-template *ngIf="widget.icon; else abbreviationIcon">
+                <svg class="icon icon-18">
+                  <use [attr.xlink:href]="widget.icon"></use>
+                </svg>
+              </ng-template>
+              <ng-template #abbreviationIcon>
+                <div class="widget--abbreviation-icon">
+                  {{ widget.title | abbreviation  }}
+                </div>
+              </ng-template>
+            </ng-template>
+            <div class="widget__name">
+              {{ widget.title | loadTranslate | async }}
+            </div>
+          </div>
+          <div class="widget__sub-header">
+            <div class="widget__open-button" *ngIf="widget.openButtonFn" (click)="openApplication()">
+              <mat-spinner *ngIf="openButtonLoading" class="widget__spinner mat-progress-spinner-light"
+              [strokeWidth]="2" [diameter]="16"></mat-spinner>
+              <ng-container *ngIf="!openButtonLoading">
+                {{ (widget.openButtonLabel || 'widgets.actions.open' | loadTranslate | async )}}
+              </ng-container>
+            </div>
+            <div class="widget__open-button widget__buttons"
+              *ngIf="widget.notificationCount"
+              (click)="toggleNotifications()"
+            >
+              {{ widget.notificationCount }}
+              <div class="widget__button widget__open-button widget__notification-count-button">
+                <svg class="icon icon-8" [ngClass]="{'spin': showNotifications}">
+                  <use xlink:href="#icon-plus-softy-16"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget__body">
+          <ng-container [ngSwitch]="widget.type">
+            <pe-widget-grid *ngSwitchCase="WidgetType.Grid" [widget]="widget" [theme]="theme"></pe-widget-grid>
+            <pe-widget-button *ngSwitchCase="WidgetType.Button" [widget]="widget" [theme]="theme"></pe-widget-button>
+            <pe-widget-icons *ngSwitchCase="WidgetType.Icons" [widget]="widget" [theme]="theme"></pe-widget-icons>
+            <pe-widget-table *ngSwitchCase="WidgetType.Table" [widget]="widget" [theme]="theme"></pe-widget-table>
+            <pe-widget-image-table *ngSwitchCase="WidgetType.ImageTable" [widget]="widget" [theme]="theme">
+            </pe-widget-image-table>
+            <pe-widget-text *ngSwitchCase="WidgetType.Text" [widget]="widget" [theme]="theme"></pe-widget-text>
+            <pe-widget-column *ngSwitchCase="WidgetType.Column" [widget]="widget" [theme]="theme"></pe-widget-column>
+            <pe-widget-avatars *ngSwitchCase="WidgetType.Avatars" [widget]="widget" [theme]="theme"></pe-widget-avatars>
+            <pe-widget-coupon-code *ngSwitchCase="WidgetType.Coupon" [widget]="widget" [theme]="theme">
+            </pe-widget-coupon-code>
+            <pe-widget-social-table *ngSwitchCase="WidgetType.Social" [widget]="widget" [theme]="theme">
+            </pe-widget-social-table>
+            <pe-widget-appointment-table *ngSwitchCase="WidgetType.Appointment" [widget]="widget" [theme]="theme">
+            </pe-widget-appointment-table>
+            <pe-widget-contacts-table *ngSwitchCase="WidgetType.Contacts" [widget]="widget" [theme]="theme">
+            </pe-widget-contacts-table>
+            <ng-container *ngSwitchCase="WidgetType.Custom">
+              <ng-content></ng-content>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="widget__notifications" [ngClass]="{'widget__notifications--hidden': !showNotifications}">
+        <div class="widget__notification" *ngFor="let notification of widget.notifications">
+          <div class="widget__notification-icon"
+            *ngIf="widget.notificationsIcon"
+            [style.background-image]="'url(' + ( widget.notificationsIcon | iconsPngUrl ) + ')' | safeStyle"
+          ></div>
+          <div class="widget__notification-row">
+            <span class="widget__notification-title">{{notification.message | loadTranslate | async}}</span>
+            <span class="widget__notification-open widget__open-button margin-right"
+            (click)="openNotification(notification)">
+              <mat-spinner *ngIf="notification.loading" class="widget__spinner mat-progress-spinner-light"
+              [strokeWidth]="2" [diameter]="16"></mat-spinner>
+              <ng-container *ngIf="!notification.loading">
+                {{ 'widgets.actions.open' | loadTranslate | async }}
+              </ng-container>
+            </span>
+            <span *ngIf="notification.deleteFn" class="widget__notification-delete widget__open-button"
+            (click)="notification.deleteFn()">
+              <svg class="icon icon-8">
+                <use xlink:href="#icon-close-12"></use>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #startWidget>
+  <pe-widget-start [widget]="widget" [theme]="theme"></pe-widget-start>
+</ng-template>

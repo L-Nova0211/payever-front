@@ -1,0 +1,151 @@
+@import "../../misc/scss/pe_variables";
+
+.form {
+  margin: 0 auto;
+  display: block;
+  max-width: 624px;
+}
+
+.page-title {
+  margin: 19px 0 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: $font-size-h3;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+.fieldset {
+  &.name-field {
+    padding-top: 27px;
+  }
+
+  &.remove-field {
+    padding-top: 16px;
+  }
+
+  &__description {
+    margin: 0;
+    color: #7a7a7a;
+    font-size: $font-size-micro-2;
+    line-height: 20px;
+
+    &.logo-description {
+      margin-bottom: 6px;
+    }
+
+    &.name-description {
+      margin-bottom: 8px;
+    }
+  }
+
+  .business-logo-picker {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo-preview {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+
+    &.preview-hidden {
+      visibility: hidden;
+    }
+
+    &__image {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    &__name {
+      margin-left: 8px;
+      font-size: 16px;
+    }
+  }
+
+  .logo-picker {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    height: 40px;
+
+    &__action {
+      display: flex;
+      justify-content: center;
+      font-size: $font-size-large-2;
+      cursor: pointer;
+    }
+
+    .hidden {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .remove-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    &__text {
+      font-size: $font-size-large-2;
+    }
+  }
+
+  .custom-spinner {
+    display: inline-block;
+    stroke: $color-white;
+  }
+}
+
+.dark {
+  .business-logo-picker, .remove-button {
+    background-color: #1c1d1e;
+  }
+
+  .page-title, .business-name {
+    color: #ffffff;
+  }
+
+  .logo-preview {
+    &__name {
+      color: #ffffff;
+    }
+  }
+}
+.transparent {
+  .business-logo-picker, .remove-button {
+    background-color: #1c1d1e;
+  }
+
+  .page-title, .business-name {
+    color: #ffffff;
+  }
+
+  .logo-preview {
+    &__name {
+      color: #ffffff;
+    }
+  }
+}
+.light {
+  .business-logo-picker, .remove-button {
+    background-color: #ffffff;
+  }
+
+  .page-title, .business-name {
+    color: #000000;
+  }
+
+  .logo-preview {
+    &__name {
+      color: #000000;
+    }
+  }
+}
+

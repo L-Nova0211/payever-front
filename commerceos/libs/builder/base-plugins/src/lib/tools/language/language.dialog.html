@@ -1,0 +1,15 @@
+<div
+  *ngFor="let item of languages"
+  class="option"
+  [class.active]="(language$ | async) === item.language"
+  (click)="setValue(item)"
+  [class.disabled]="!item.active"
+>
+  <peb-shop-editor-languages class="option__icon" [language]="item.language"></peb-shop-editor-languages>
+  <div class="option__label">{{ item.language }}</div>
+</div>
+
+<div class="option" (click)="openLanguageSidebar()">
+  <peb-editor-language-settings-icon class="option__icon"></peb-editor-language-settings-icon>
+  <div class="option__label">Manage languages</div>
+</div>

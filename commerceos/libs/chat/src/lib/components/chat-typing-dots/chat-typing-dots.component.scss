@@ -1,0 +1,53 @@
+.typing-dots-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.typing-dots {
+  background: #fff;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 3px;
+  height: 3px;
+}
+
+.typing-dots-1 {
+  animation: dotsanimation1 1s infinite;
+}
+
+.typing-dots-2 {
+  animation: dotsanimation2 1s infinite;
+}
+
+.typing-dots-3 {
+  animation: dotsanimation3 1s infinite;
+}
+
+@keyframes dotsanimation1 {
+  0% { transform: scale(1) }
+  33% { transform: scale(2) }
+  66% { transform: scale(1) }
+  100% { transform: scale(1) }
+}
+
+@keyframes dotsanimation2 {
+  0% { transform: scale(1) }
+  33% { transform: scale(1) }
+  66% { transform: scale(2) }
+  100% { transform: scale(1) }
+}
+
+@keyframes dotsanimation3 {
+  0% { transform: scale(1) }
+  33% { transform: scale(1) }
+  66% { transform: scale(1) }
+  100% { transform: scale(2) }
+}
+
+.userTyping {
+  display: flex;
+  text-overflow: ellipsis;
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+<div class="actions-list view-{{typeView}} {{theme}}">
+  <ng-container *ngFor="let action of uiActions; trackBy: trackByFn; let i = index">
+    <ng-container *ngIf="action.type === ActionTypeUIEnum.Button">
+      <div class="action-item" (click)="onSelected(i)">
+        <ng-container *ngTemplateOutlet="actionBody; context:{action: action}"></ng-container>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="action.type === ActionTypeUIEnum.Link">
+      <a class="action-item" target="_blank" [href]="action.href">
+        <ng-container *ngTemplateOutlet="actionBody; context:{action: action}"></ng-container>
+      </a>
+    </ng-container>
+    <ng-container *ngIf="action.type === ActionTypeUIEnum.LinkWithCallback">
+      <a class="action-item" (click)="onClickLink($event, action)">
+        <ng-container *ngTemplateOutlet="actionBody; context:{action: action}"></ng-container>
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <button class="action-item" *ngIf="isShowMore" (click)="clickMore.emit()">
+    <div class="action-item__icon">
+      <img class="more-icon" [src]="moreIcon">
+    </div>
+    <span>
+      {{ 'transactions.details.actions.more' | translate}}
+    </span>
+  </button>
+</div>
+
+<ng-template #actionBody let-action="action">
+    <div class="action-item__icon">
+      <img [ngClass]="action?.class" [src]="action.icon" alt="">
+    </div>
+    <span>
+      {{action.labelTranslated || action.label | translate}}
+    </span>
+</ng-template>

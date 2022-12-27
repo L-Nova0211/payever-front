@@ -1,0 +1,78 @@
+.pe-bootstrap {
+  .field-tags-input {
+    .form-widget.form-design {
+      & > .form-control {
+        height: $grid-unit-y * 4;
+
+        .ui-tags-input {
+          @include pe_flexbox;
+          height: $grid-unit-y * 4;
+          padding: (($grid-unit-y - 2) / 2) 0;
+
+          .ui-tags-dropdown {
+            @include pe_flexbox;
+
+            .dropdown-menu {
+              margin: 0;
+
+              .dropdown-item {
+                @include pe_inline-flex;
+                @include pe_align-items(baseline);
+                @include pe_justify-content(space-between);
+                width: 100%;
+                padding: $grid-unit-y / 2 $pe_hgrid_gutter / 2;
+
+                &:not(:last-child) {
+                  border-bottom: 1px solid $color-gray-3;
+                }
+
+                .ui-tags-dropdown-menu-label {
+                  display: inline-block;
+                  white-space: nowrap;
+                  @include text-overflow();
+                }
+              }
+            }
+          }
+
+          .ui-tags-container {
+            @include pe_flexbox;
+
+            .ui-tags-input-tag {
+              @include pe_flexbox;
+              @include pe_align-items(center);
+              border-radius: $border-radius-base;
+              background-color: $color-blue;
+              padding: 0 $pe_hgrid_gutter / 2;
+              height: $grid-unit-y * 3 - 2;
+
+              &:not(:first-child) {
+                margin-left: $pe_hgrid_gutter / 2;
+              }
+
+              .ui-tags-input-tag-value {
+                @include text-overflow;
+                @include payever_user_select;
+                display: block;
+                color: $color-white;
+                font-size: 14px;
+              }
+
+              .ui-tags-input-tag-remove {
+                display: block;
+                margin-left: $pe_hgrid_gutter / 2;
+                padding: 0;
+              }
+            }
+          }
+
+          input {
+            min-width: $pe_hgrid_gutter * 7;
+            padding: 0 0 0 $pe_hgrid_gutter / 2;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}

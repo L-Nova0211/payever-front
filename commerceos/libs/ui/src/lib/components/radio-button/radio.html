@@ -1,0 +1,31 @@
+<div class="radio-button-container">
+  <div class="radio-button-wrapper">
+    <div class="cdk-visually-hidden">
+      <input
+        #rb
+        type="radio"
+        [attr.id]="inputId"
+        [attr.name]="name"
+        [attr.value]="value"
+        [attr.tabindex]="tabindex"
+        [checked]="checked"
+        (change)="onChange($event)"
+        (focus)="onInputFocus($event)"
+        (blur)="onInputBlur($event)"
+        [disabled]="disabled"
+      />
+    </div>
+    <div
+      (click)="handleClick($event, rb, true)"
+      [ngClass]="checked ? 'radio-box checked' : 'radio-box unchecked'"
+      role="radio"
+    >
+      <svg class="radio-box__radio-check" *ngIf="checked">
+        <use xlink:href="#icon-ui-checkbox"></use>
+      </svg>
+    </div>
+  </div>
+  <label (click)="select($event)" class="label-text">
+    <ng-content></ng-content>
+  </label>
+</div>

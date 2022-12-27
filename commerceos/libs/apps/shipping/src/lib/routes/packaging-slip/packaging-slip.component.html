@@ -1,0 +1,133 @@
+<div class="pe-shipping-package-slip-table-wrapper">
+  <div class="package-slip-controls">
+    <div></div>
+    <div class="package-slip-controls__label">
+      <span class="title-text">{{ 'shipping-app.package_slip.title' | translate }}</span>
+    </div>
+    <div class="package-slip-controls__buttons">
+<!--      should be implemented later -->
+<!--      <button class="package-slip-controls__buttons-open">{{ 'shipping-app.actions.open' | translate }}</button>-->
+<!--      <button class="package-slip-controls__buttons-dropdown">-->
+<!--        <mat-icon svgIcon="button-more"></mat-icon>-->
+<!--      </button>-->
+    </div>
+  </div>
+
+  <div class="package-slip-preview">
+    <ng-container>
+      <table class="main-table" id="slip">
+        <thead class="name-table">
+          <tr>
+            <th class="mail-title">{{ business?.name }}</th>
+          </tr>
+        </thead>
+
+        <tbody class="main-body">
+          <tr class="data-table">
+            <td class="date">
+              <div>
+                <p class="title text-uppercase" translate>{{ 'shipping-app.package_slip.date' | translate }}</p>
+                <p class="value">{{ data?.processedAt | date }}</p>
+              </div>
+              <div>
+                <p class="title text-uppercase" translate>{{ 'shipping-app.package_slip.order_id' | translate }}</p>
+                <p class="value">{{ shippingOrderId }}</p>
+              </div>
+            </td>
+            <td class="address line">
+              <p class="title">{{ 'shipping-app.package_slip.ship_to' | translate }}</p>
+              <p class="value">{{ data?.to?.name }}</p>
+              <p class="info">{{ data?.to?.streetNumber }}, {{ data?.to?.streetName }}</p>
+              <p class="info">
+                {{ data?.to?.zipCode }}, {{ data?.to?.city }},
+                {{ data?.to?.countryCode }}
+              </p>
+            </td>
+            <td class="address" *ngIf="data && data.billingAddress">
+              <p class="title text-uppercase" translate>{{ 'shipping-app.package_slip.bill_to' | translate }}</p>
+              <p class="value">{{ data?.billingAddress?.name }}</p>
+              <p class="info">
+                {{ data?.billingAddress?.streetNumber }},
+                {{ data?.billingAddress?.streetName }}
+              </p>
+              <p class="info">
+                {{ data?.billingAddress?.zipCode }}, {{ data?.billingAddress?.city }},
+                {{ data?.billingAddress?.countryCode }}
+              </p>
+            </td>
+            <!-- <td class="order-id">
+            </td> -->
+          </tr>
+
+          <tr class="product-table">
+            <thead>
+              <td colspan="2" class="product-table-left-title text-uppercase" translate>
+                {{ 'shipping-app.package_slip.product' | translate }}
+              </td>
+              <td class="product-table-middle-title text-uppercase" translate>{{ 'shipping-app.package_slip.qty' | translate }}</td>
+              <td class="product-table-right-title text-uppercase" translate>{{ 'shipping-app.package_slip.price' | translate }}</td>
+            </thead>
+            <tbody class="product-body">
+              <tr class="product-item" *ngFor="let product of data?.products">
+                <td class="image">
+                  <img *ngIf="product.image" border="0" src="{{ product.image }}" width="24" height="24" />
+                </td>
+                <td class="title">
+                  <p class="value">{{ product.name }}</p>
+                  <p class="description">{{ product.description }}</p>
+                </td>
+                <td class="product-element">
+                  <p class="value">{{ packageSlip.count_items }}</p>
+                </td>
+                <td class="product-element">
+                  <p class="value">{{ product.price }}</p>
+                </td>
+              </tr>
+
+              <tr class="price price-margin">
+                <td class="label">
+                  <p translate>{{ 'shipping-app.package_slip.subtotal' | translate }} without VAT</p>
+                </td>
+                <td class="price-value">
+                  <p>
+                    {{ (totalPrice / (1 + taxes / 100)).toFixed(2) }}
+                  </p>
+                </td>
+              </tr>
+              <tr class="price">
+                <td class="label">
+                  <p class="total-table-title text-uppercase" translate>
+                    VAT {{ taxes }}% of
+                    {{ (totalPrice / (1 + taxes / 100)).toFixed(2) }}
+                  </p>
+                </td>
+                <td class="price-value">
+                  <p>
+                    {{ (taxes === 0 ? totalPrice : totalPrice / taxes).toFixed(2) }}
+                  </p>
+                </td>
+              </tr>
+              <tr class="price">
+                <td class="label total-background-label">
+                  <p class="total-table-title total text-uppercase" translate>{{ 'shipping-app.package_slip.total' | translate }}</p>
+                </td>
+                <td class="price-value total-background-price-value">
+                  <p class="value total">{{ totalPrice.toFixed(2) }}</p>
+                </td>
+              </tr>
+            </tbody>
+          </tr>
+
+          <tr class="footer-table">
+            <td>
+              <p class="bottom-description">
+                {{ business?.companyAddress?.brand }}, {{ business?.companyAddress?.country }}, {{ business?.companyAddress?.zipCode }},
+                {{ business?.companyAddress?.street }}
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div>

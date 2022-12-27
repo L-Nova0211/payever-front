@@ -1,0 +1,22 @@
+<div class="access">
+  <pe-new-platform-header theme="dark"></pe-new-platform-header>
+  <div class="access__content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<ng-template #authDialogTpl>
+  <pe-personal-login-layout
+    [withoutForgot]="true"
+    (successLoginOn)="onSuccessLogin()"
+    (registerOn)="onRegister()"
+  ></pe-personal-login-layout>
+</ng-template>
+
+<ng-template #registerDialogTpl>
+  <entry-layout [entryLogo]="null">
+    <entry-create-personal-form
+      (eventOn)="onPersonalFormEvent($event)"
+    ></entry-create-personal-form>
+  </entry-layout>
+</ng-template>

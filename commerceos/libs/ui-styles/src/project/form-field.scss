@@ -1,0 +1,25 @@
+//
+// form-fieldset field styles independent of any outer classes
+// Use in fieldset.fieldSettings.classList
+//
+
+.pe-bootstrap {
+  .form-field-full-width .mat-form-field {
+    width: 100%;
+  }
+  
+  .form-field-white {
+    .pe-input .mat-form-field-infix .mat-input-element {
+      color: $color-secondary;
+      caret-color: $color-secondary;
+    }
+  
+    .pe-input .mat-form-field-infix .mat-form-field-label {
+      color: $color-white;
+    }
+  
+    .pe-input .mat-form-field .mat-form-field-wrapper .mat-form-field-underline {
+      background-color: $color-white;
+    }
+  }
+}

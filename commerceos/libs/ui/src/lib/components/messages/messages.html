@@ -1,0 +1,13 @@
+<div class="message-wrapper" [class.warning]="color === 'warning'" [class.confirm]="color === 'confirm'">
+  <div class="message-icon" [class.hide]="!showIcon">
+    <svg class="message-icon__warning">
+      <use xlink:href="#icon-ui-warning"></use>
+    </svg>
+  </div>
+  <div class="message">
+    <span class="message__text">{{message}}</span>
+  </div>
+  <div class="message-button">
+    <ng-content selector="button"></ng-content>
+  </div>
+</div>

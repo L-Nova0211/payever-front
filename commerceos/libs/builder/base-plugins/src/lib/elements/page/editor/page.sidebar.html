@@ -1,0 +1,64 @@
+<div class="form" *ngIf="form">
+  <form [formGroup]="form" novalidate>
+
+    <peb-slide-toggle formControlName="root">Home page</peb-slide-toggle>
+
+    <div class="form__row">
+      <div class="group__row">
+        <label class="group__label">
+          Page name
+        </label>
+      </div>
+      <input type="text"
+        placeholder="Name"
+        formControlName="name"
+        #nameInput
+        (keydown.enter)="pageNameInputEnterHandler($event)"
+      />
+    </div>
+
+    <div class="form__row">
+      <div class="group__row">
+        <label class="group__label">
+          Link type
+        </label>
+      </div>
+      <peb-select
+        class="field-control"
+        formControlName="type"
+        [options]="PageTypes"
+      ></peb-select>
+    </div>
+
+    <div class="form__row">
+      <div class="group__row">
+        <label class="group__label">
+          Page link
+        </label>
+      </div>
+      <input type="text"
+             placeholder="Link"
+             formControlName="link"
+             [attr.disabled]="form.get('root').value ? true : null"
+             #linkInput
+             (keydown.enter)="pageLinkInputEnterHandler($event)"
+      >
+    </div>
+
+    <div class="form__row">
+      <div class="form__seo" (click)="openSeoSidebar()">
+        <span>SEO</span>
+        <svg width="9" height="4" viewBox="0 0 7 3" style="overflow: unset; transform: rotate(-90deg);">
+          <path fill="none" fill-rule="evenodd" stroke="#7a7a7a" d="M0 3L3.5 0 7 3" transform="rotate(-180 3.5 1.5)"/>
+        </svg>
+      </div>
+    </div>
+
+    <peb-restrict-access-form></peb-restrict-access-form>
+
+    <div class="form__row add">
+      <button (click)="addSection()" type="button">Add section</button>
+    </div>
+
+  </form>
+</div>

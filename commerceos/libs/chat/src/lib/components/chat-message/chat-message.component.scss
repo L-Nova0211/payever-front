@@ -1,0 +1,394 @@
+.pe-chat-message {
+  display: flex;
+  margin-top: 8px;
+  padding: 0 14px;
+  user-select: text;
+
+  &.selected-messages-mode {
+    cursor: pointer;
+  }
+
+  &:not(.selected-messages-mode):hover {
+    .message-header {
+      &__reply {
+        opacity: 1;
+      }
+    }
+  }
+
+  .sticky-date-container {
+    width: 100px !important;
+    margin: auto !important;
+    padding: 7px !important;
+    margin-top: 10px !important;
+  }
+
+  .sticky-event-container {
+    background-color: #131414;
+    width: fit-content !important;
+    margin: auto !important;
+    padding: 12px !important;
+    margin-top: 10px !important;
+  }
+
+  .message-container {
+    color: #fff;
+    width: 100%;
+    margin: 0 4px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: 0.4s all 0s cubic-bezier(0, 0.84, 0.48, 1.03);
+
+    &_selected {
+      background-color: rgba(3, 113, 226, 0.5) !important;
+      border-color: #0371e2;
+    }
+
+    &_template {
+      background: none !important;
+      box-shadow: none !important;
+      border-radius: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      padding: 0;
+      width: max-content;
+    }
+
+    &.pointer {
+      cursor: pointer;
+    }
+  }
+
+  .template {
+    background: none !important;
+  }
+
+  .date-separator {
+    text-align: center;
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    word-wrap: break-word;
+    color: #ffffff;
+  }
+
+  .flex-active {
+    display: flex;
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+
+  .message-person {
+    flex: 1;
+    position: relative;
+
+    &__time {
+      display: flex;
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: normal;
+      text-align: right;
+      right: 30px;
+      bottom: 10px;
+      align-self: flex-end;
+      color: #cccccc;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    &__message-pinned {
+      margin-right: 4px;
+      height: 14px;
+    }
+
+    &__edited {
+      margin-right: 6px;
+      font-size: 12px;
+      line-height: 1.14;
+      font-weight: normal;
+      color: #cccccc;
+    }
+
+    time {
+      font-size: 14px;
+      line-height: 1.14;
+      font-weight: normal;
+      text-align: right;
+      color: #cccccc;
+      cursor: pointer;
+    }
+  }
+
+  .link-message {
+    width: 100%;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    border-radius: 12px;
+
+    &__title {
+      margin: 4px 0 1px 24px;
+      color: #ffffff;
+    }
+
+    &__detail {
+      margin: 8px 0 0 32px;
+      padding: 7px;
+      position: relative;
+    }
+
+    &__dash {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -8px;
+      width: 2px;
+      height: 100%;
+      border-radius: 2px;
+      background-color: #0371e2;
+    }
+
+    &__content {
+      margin: 0;
+      color: #ffffff;
+
+      & > a {
+        color: #0371e2;
+      }
+    }
+  }
+
+  .invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 132px;
+    transform: translateY(15%);
+    opacity: 0;
+
+    img {
+      border-radius: 9px;
+      width: 36px;
+      object-fit: cover;
+      height: 36px;
+    }
+
+    &__content {
+      margin: 8px 0 0;
+      padding: 0 25px;
+      max-width: 296px;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #7a7a7a;
+    }
+  }
+
+  .toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    width: 100%;
+
+    &__content {
+      margin: 0 16px 0 0;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: normal;
+      color: #eeeeee;
+    }
+
+    &__close {
+      cursor: pointer;
+
+      & .mat-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .navigate-to {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+
+    &__content {
+      margin: 0 16px 0 0;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: normal;
+      color: #eeeeee;
+    }
+
+    &__visited-icon {
+      cursor: pointer;
+
+      & .mat-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &:not(.visited) &__visited-icon {
+      display: none;
+    }
+  }
+
+  .link-preview {
+    margin: 8px 0 0 24px;
+    height: 81px;
+    width: 312px;
+    max-width: calc(100% - 24px);
+    border-radius: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.mobile-view {
+    .link-message {
+      &__title {
+        margin: 4px 0 1px 0;
+      }
+
+      &__detail {
+        margin: 8px 0 0 8px;
+      }
+    }
+
+    .link-preview {
+      margin: 8px 0 0 0;
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  @media all and (max-width: 728px) {
+    .link-message {
+      &__title {
+        margin: 4px 0 1px 0;
+      }
+
+      &__detail {
+        margin: 8px 0 0 8px;
+      }
+    }
+
+    .link-preview {
+      margin: 8px 0 0 0;
+      width: auto;
+      max-width: none;
+    }
+  }
+}
+
+.light .pe-chat-message {
+  .message-header {
+    &__from {
+      color: #1c1d1e;
+    }
+
+    time {
+      color: #1c1d1e;
+    }
+  }
+
+  .link-message {
+    &__title {
+      color: #1c1d1e;
+    }
+
+    &__content {
+      color: #1c1d1e;
+    }
+  }
+
+  .invitation {
+    &__content {
+      color: #1c1d1e;
+    }
+  }
+
+  .toast {
+    &__content {
+      color: #1c1d1e;
+    }
+  }
+
+  .navigate-to {
+    &__content {
+      color: #1c1d1e;
+    }
+  }
+
+  .message-container.dark {
+    .message-header {
+      &__from {
+        color: #ffffff;
+      }
+
+      time {
+        color: #ffffff;
+      }
+    }
+
+    .link-message {
+      &__title {
+        color: #ffffff;
+      }
+
+      &__content {
+        color: #ffffff;
+      }
+    }
+
+    .invitation {
+      &__content {
+        color: #ffffff;
+      }
+    }
+
+    .toast {
+      &__content {
+        color: #ffffff;
+      }
+    }
+
+    .navigate-to {
+      &__content {
+        color: #ffffff;
+      }
+    }
+  }
+}

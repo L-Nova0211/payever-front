@@ -1,0 +1,33 @@
+<div class="store-stats">
+  <div class="store-stats-flex">
+    <div class="store-stats-title">
+      {{statsTitle}}
+    </div>
+    <div class="store-stats-counter" [class.store-stats-counter-smaller]="statsCounterSmaller">
+      {{statsCounter}}
+    </div>
+  </div>
+  <div>
+    <div class="store-products-title">{{productsTitle}}</div>
+    <div class="store-best-products">
+
+      <ng-container [ngSwitch]="products && products.length > 0">
+
+        <ng-container *ngSwitchCase="true">
+          <ng-container *ngFor="let product of products; first as isFirst">
+            <mat-divider *ngIf="!isFirst" [vertical]="true"></mat-divider>
+            <div class="store-best-products-item">
+              <div class="store-best-product-title">{{product.name}}</div>
+              <!-- TODO will be used when product variant be here -->
+              <!--<div class="store-best-product-description">{{product.description}}</div>-->
+            </div>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="false">
+          {{ 'widgets.store.no-products' | translate }}
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

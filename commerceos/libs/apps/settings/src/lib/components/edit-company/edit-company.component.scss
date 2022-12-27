@@ -1,0 +1,13 @@
+.columns {
+  display: flex;
+  width: 100%;
+
+  .two-column-input {
+    width: 50%;
+  }
+
+  .divider {
+    width: 1px;
+    border-left: 1px solid #24272e;
+  }
+}

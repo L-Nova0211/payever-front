@@ -1,0 +1,18 @@
+<div class="grid-overview-box {{theme}}">
+  <div class="items-wrap" *ngIf="selectedItems.length">
+    <div class="items-wrap__thumbnail">
+      <img *ngIf="item.type === 'item'" [src]="item.image">
+      <mat-icon *ngIf="item.type === 'folder'" svgIcon="folder-icon"></mat-icon>
+    </div>
+    <div class="items-wrap__content">
+      <div class="content-title">{{ titles }}</div>
+      <div class="content-count">{{ selectedItems.length }} {{'grid.overlay.items' | translate}}</div>
+    </div>
+  </div>
+  <ng-scrollbar visibility="hover" appearance="compact">
+    <pe-folders
+      (selectedFolder)="onSelectFolder($event)"
+    >
+    </pe-folders>
+  </ng-scrollbar>
+</div>

@@ -1,0 +1,56 @@
+id: apple-category-page
+name: Category Page
+variant: category
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-category-page
+  type: document
+  children:
+
+    - id: body
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: body-category
+          type: shop-category
+
+stylesheets:
+  desktop:
+    apple-category-page: {}
+    # ----------------------------------
+    # Desktop Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 1024
+    body-category:
+      slot: absolute
+
+  tablet:
+    apple-category-page: {}
+    # ----------------------------------
+    # Tablet Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 768
+    body-category:
+      slot: absolute
+
+  mobile:
+    apple-category-page: {}
+    # ----------------------------------
+    # Mobile Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+      width: 360
+    body-category:
+      slot: absolute
+context: {}

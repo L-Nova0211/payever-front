@@ -1,0 +1,27 @@
+<peb-form-background *ngIf="order">
+  <ng-template [ngTemplateOutlet]="dataRow" [ngTemplateOutletContext]="{
+      label: 'transactions.form.verify.labels.paid',
+      value: ((order.transaction.amount_left || 0) | currency:order.transaction.currency:undefined:undefined:locale)
+    }">
+  </ng-template>
+  <ng-template [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{ label: 'transactions.details.billing.name', value: billingAddressName }">
+  </ng-template>
+  <ng-template [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{ label: 'transactions.details.billing.email', value: order.billing_address.email }">
+  </ng-template>
+  <ng-container *ngIf="birthday">
+    <ng-template [ngTemplateOutlet]="dataRow"
+      [ngTemplateOutletContext]="{ label: 'transactions.form.shipping_goods.labels.birthday', value: birthday }">
+    </ng-template>
+  </ng-container>
+  <ng-template [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{ label: 'transactions.details.billing.address', value: billingAddressLine }">
+  </ng-template>
+</peb-form-background>
+<ng-template #dataRow let-label="label" let-value="value">
+  <div class="section-item">
+    <div class="section-item__label" *ngIf="label">{{ label | translate}} </div>
+    <div class="section-item__value" *ngIf="value">{{ value }}</div>
+  </div>
+</ng-template>

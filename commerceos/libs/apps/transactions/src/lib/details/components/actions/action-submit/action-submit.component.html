@@ -1,0 +1,5 @@
+<div class="position-relative" *ngIf="isLoading">
+  <button class="overlay__button overlay__button_loading" type="button" disabled>Loading...</button>
+</div>
+<button class="overlay__button" type="button" [disabled]="isLoading"
+[class.transparent]="isLoading" (click)="clicked.emit()">{{ label | translate }}</button>

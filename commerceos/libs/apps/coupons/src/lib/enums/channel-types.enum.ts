@@ -1,0 +1,16 @@
+export enum ChannelTypes {
+  Amazon = 'amazon',
+  Autoscout24 = 'autoscout24',
+  Dropshipping = 'dropshipping',
+  Ebay = 'ebay',
+  Facebook = 'facebook',
+  FinanceExpress = 'finance_express',
+  Instagram = 'instagram',
+  Internal = 'internal',
+  Link = 'link',
+  Market = 'market',
+  Marketing = 'marketing',
+  Mobilede = 'mobilede',
+  Pos = 'pos',
+  Shop = 'shop',
+}

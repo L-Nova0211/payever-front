@@ -1,0 +1,13 @@
+<form class="form" [formGroup]="formGroup">
+  <div class="group__row">
+    <label class="group__label">
+      <span>Function</span>
+    </label>
+  </div>
+  <div class="group__row">
+    <div class="link-to__button" (click)="pick()">
+      <span>{{ (integrationTitle$ | async | titlecase) || 'None' }}</span>
+      <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow"></mat-icon>
+    </div>
+  </div>
+</form>

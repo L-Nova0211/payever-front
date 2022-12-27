@@ -1,0 +1,917 @@
+id: template-front-page
+element:
+  id: template-front-page
+  type: document
+  children:
+    - id: main-topnav
+      type: section
+      children:
+        - id: main-topnav-grid
+          type: grid
+          children:
+            - id: main-topnav-logo
+              type: image
+              data:
+                src: https://payeverproduction.blob.core.windows.net/builder/ce8be1f1-50c8-4fc4-ba0e-7cd9875b1fb1-ThinkRedLogo.jpg
+            - id: main-topnav-cart
+              type: shop-cart
+    - id: main-shape
+      type: line
+      data:
+        stroking: true
+        shadowing: true
+    - id: section-1
+      type: section
+      children:
+        - id: title-section-grid
+          type: grid
+          children:
+          - id: section-1-image
+            type: image
+            data:
+              src: https://payeverproduction.blob.core.windows.net/builder/0b823adf-3636-450d-aedd-e71d260f099d-eltern-ipad-klasse.png
+          - id: title-text-grid
+            type: grid
+            children:
+              - id: title-text
+                type: text
+                data:
+                  text: Willkommen im Bestellportal der iPad-Klassen.
+              - id: first-text
+                type: text
+                data:
+                  text: Bestellen Sie Ihr Paket mit der gewünschten Ausführung (32 oder 128 GB) und Farbe (Silber, Gold, Grau), inkl. Schutzhülle und Logitech Crayon sowie ergänzendes Zubehör.
+              - id: second-text
+                type: text
+                data:
+                  text: Die Bezahlung erfolgt wahlweise mittels Lastschrift, Vorkasse oder per monatlicher Ratenzahlung (0% Finanzierung).
+              - id: link-text
+                type: text
+                data:
+                  text: Mehr Informationen zur Ratenfinanzierung >
+    - id: title-section-1
+      type: section
+      children:
+        - id: title-section-1-grid
+          type: grid
+          children:
+          - id: sub-title-1
+            type: text
+            data:
+              text: Wählen Sie Ihr Paket
+    - id: products-section-1
+      type: section
+      children:
+        - id: products-section-1-grid
+          type: grid
+          children:
+            - id: products-section-1-element-grid-1
+              type: grid
+              children:
+                - id: product-section-1-item-1-title
+                  type: text
+                  data:
+                    text: iPad Paket 32
+                - id: product-section-1-item-1
+                  type: shop-products
+            - id: products-section-1-element-grid-2
+              type: grid
+              children:
+              - id: product-section-1-item-2-title
+                type: text
+                data:
+                  text: iPad Paket 32
+              - id: product-section-1-item-2
+                type: shop-products
+    - id: title-section-2
+      type: section
+      children:
+      - id: title-section-2-grid
+        type: grid
+        children:
+        - id: sub-title-2
+          type: text
+          data:
+            text: Ergänzendes Zubehör
+    - id: products-section-2
+      type: section
+      children:
+      - id: products-section-2-grid
+        type: grid
+        children:
+        - id: product-section-2-item-1
+          type: shop-products
+        - id: product-section-2-item-2
+          type: shop-products
+        - id: product-section-2-item-3
+          type: shop-products
+    - id: main-footer
+      type: section
+      children:
+        - id: main-footer-grid-1
+          type: grid
+          children:
+            - id: footer-left-grid-1
+              type: grid
+              children:
+                - id: left-main-footer-title-1
+                  type: text
+                  data:
+                    text: ThinkRED
+                - id: left-main-footer-title-2
+                  type: text
+                  data:
+                    text: Beratung für Schulträger und Schulen
+                - id: left-main-footer-text
+                  type: text
+                  data:
+                    text: IT-Ausstattungen für Bildungseinrichtungen sind unser Fachgebiet! Mit ThinkRED haben Sie einen starken Partner und Prozessbegleiter, der Sie auf dem Weg zu einer digitalen Schule begleitet. Als Wegbegleiter für den DigitalPakt Schule unterstützen wir Schulträger und Schulen ganzheitlich. Wir beraten Sie persönlich und individuell, gerne auch vor Ort. Unsere Zentrale befindet sich in Bochum. Darüber hinaus sind wir an weiteren Standorten in Deutschland vertreten. Für Ihren Erfolg!
+            - id: footer-right-grid-1
+              type: grid
+              children:
+                - id: right-title
+                  type: text
+                  data:
+                    text: Kontakt
+                - id: right-info
+                  type: text
+                  data:
+                    text: 'ThinkRed <br> Gesellschaft für digitale Bildung mit beschränkter Haftung: <br> Lise-Meitner-Allee 6, 44801 Bochum'
+                - id: main-phone-grid
+                  type: grid
+                  children:
+                    - id: main-phone-image
+                      type: image
+                      data:
+                        src: 'https://payeverproduction.blob.core.windows.net/builder/0ef2b8e5-18aa-402c-822d-6a7bbe40f015-phoneclipart.png'
+                    - id: main-phone-number
+                      type: text
+                      data:
+                        text: '+49 234 333672170 00'
+                - id: main-email-grid
+                  type: grid
+                  children:
+                    - id: main-email-image
+                      type: image
+                      data:
+                        src: 'https://payeverproduction.blob.core.windows.net/builder/8bcc9467-5c2f-43e9-b005-0e9a705ad851-mailclipart.png'
+                    - id: main-email-number
+                      type: text
+                      data:
+                        text: 'education@thinkred.de'
+    - id: main-footer-line
+      type: line
+    - id: second-main-footer
+      type: section
+      children:
+      - id: main-footer-grid-2
+        type: grid
+        children:
+          - id: main-copyrightl
+            type: text
+            data:
+              text: '© ThinkRED 2019 - 2020'
+          - id: main-copyrightl-2
+            type: text
+            data:
+              text: 'Impressum     Datenschutz'
+
+
+stylesheet:
+  desktop:
+    #NAVBAR
+    main-topnav:
+      height: 160
+    main-topnav-grid:
+      direction: horizontal
+      cells: left:auto space1:1fr center:auto space2:1fr right:auto
+    main-topnav-logo:
+      slot: center
+      width: 369
+      height: 100
+    main-topnav-cart:
+      slot: right
+    main-shape:
+      width: 1338
+      margin: 20
+    #FIRST SECTION
+    title-section-grid:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    section-1-image:
+      slot: left
+      width: 570
+    title-text-grid:
+      slot: right
+      direction: vertical
+      cells: first:auto space:1fr second:auto space1:1fr third:auto space2:1fr fourth:auto
+    title-text:
+      slot: first
+      width: 100%
+      fontWeight: 700
+      fontSize: 47
+      textAlign: left
+      fontFamily: Roboto sans-serif
+    first-text:
+      slot: second
+      fontSize: 16
+      textAlign: left
+      fontFamily: "open sans"
+    second-text:
+      slot: third
+      fontSize: 16
+      textAlign: left
+      fontFamily: "open sans"
+    link-text:
+      slot: fourth
+      fontSize: 16
+      textAlign: left
+      color: '#f00046'
+      fontFamily: "open sans"
+    # IMG SECTION
+    title-section-1:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 246
+    title-section-1-grid:
+      direction: vertical
+      cells: space1:1fr title:1fr space2:1fr
+    sub-title-1:
+      slot: title
+      color: white
+      fontSize: 52
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCTS
+    products-section-1-grid:
+      cells: product1:1fr product2:1fr
+      direction: horizontal
+    products-section-1-element-grid-1:
+      slot: product1
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-1:
+      slot: product
+      itemWidth: 275
+      itemHeight: 400
+    product-section-1-item-1-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 39
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    products-section-1-element-grid-2:
+      slot: product2
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-2:
+      slot: product
+      itemWidth: 275
+      itemHeight: 400
+    product-section-1-item-2-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 39
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    # IMG SECTION 2
+    title-section-2:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 246
+    title-section-2-grid:
+      direction: vertical
+      cells: space1:1fr title:1fr space2:1fr
+    sub-title-2:
+      slot: title
+      color: white
+      fontSize: 52
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCT SECTION 2
+    products-section-2:
+      margin: '50px 0px'
+    products-section-2-grid:
+      cells: first:1fr second:1fr third:1fr
+      direction: horizontal
+    product-section-2-item-1:
+      slot: first
+      itemWidth: 280
+      itemHeight: 300
+    product-section-2-item-2:
+      slot: second
+      itemWidth: 280
+      itemHeight: 300
+    product-section-2-item-3:
+      slot: third
+      itemWidth: 280
+      itemHeight: 300
+    main-footer-grid-1:
+      cells: left:1.5fr space:0.5fr right:1fr
+      direction: horizontal
+    main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 50px 0 20px 0
+    second-main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 20px 0 80px 0px
+    main-footer-grid-2:
+      direction: horizontal
+      cells: left:1fr space:1fr right:1fr
+    footer-left-grid-1:
+      slot: left
+      direction: vertical
+      cells: title:1fr title2:1fr space:1fr text:auto
+    left-main-footer-title-1:
+      slot: title
+      fontSize: 20
+      fontFamily: "open sans"
+      color: white
+      textAlign: left
+      fontWeight: 700
+    left-main-footer-title-2:
+      slot: title2
+      fontSize: 20
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      fontWeight: 700
+    left-main-footer-text:
+      slot: text
+      textAlign: left
+      fontSize: 14
+      fontFamily: "open sans"
+      color: white
+    footer-right-grid-1:
+      slot: right
+      direction: vertical
+      cells: title:1fr space:1fr contact:auto space2:1fr mobile:1fr main-email:1fr
+    right-title:
+      slot: title
+      fontSize: 21
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      fontWeight: 700
+    right-info:
+      slot: contact
+      fontSize: 14
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+    main-phone-grid:
+      slot: mobile
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-phone-image:
+      slot: image
+      width: 30
+      height: 30
+      margin: 0 10px 10px 0
+    main-phone-number:
+      slot: text
+      fontSize: 15
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-email-grid:
+      slot: main-email
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-email-image:
+      slot: image
+      width: 30
+      height: 30
+      margin: 0 10px 10px 0
+    main-email-number:
+      slot: text
+      fontSize: 15
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-footer-line:
+      width: 1338
+      stroking: true
+      backgroundColor: white
+      wrapperBackground: '#1c2b3e'
+      height: 1
+    main-copyrightl:
+      slot: left
+      fontSize: 14
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+    main-copyrightl-2:
+      slot: right
+      fontSize: 14
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+  tablet:
+    main-topnav-grid:
+      direction: horizontal
+      cells: space1:1fr center:1fr space2:0.5fr right:0.5fr
+    main-topnav-logo:
+      slot: center
+      width: 250
+      height: 70
+    main-topnav-cart:
+      slot: right
+    main-shape:
+      width: 682
+      margin: 20
+    title-section-grid:
+      direction: horizontal
+      cells: left:1fr right:1fr
+    section-1-image:
+      slot: left
+      width: 360
+    title-text-grid:
+      slot: right
+      direction: vertical
+      cells: first:auto space:1fr second:auto space1:1fr third:auto space2:1fr fourth:auto
+    title-text:
+      slot: first
+      width: 100%
+      fontWeight: 700
+      fontSize: 27
+      textAlign: left
+      fontFamily: Roboto sans-serif
+    first-text:
+      slot: second
+      fontSize: 11
+      textAlign: left
+      fontFamily: "open sans"
+    second-text:
+      slot: third
+      fontSize: 11
+      textAlign: left
+      fontFamily: "open sans"
+    link-text:
+      slot: fourth
+      fontSize: 11
+      textAlign: left
+      color: '#f00046'
+      fontFamily: "open sans"
+      # IMG SECTION
+    title-section-1:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 74
+    title-section-1-grid:
+      direction: vertical
+      cells: space1:0.5fr title:1fr space2:1fr
+    sub-title-1:
+      slot: title
+      color: white
+      fontSize: 30
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCTS
+    products-section-1-grid:
+      cells: product1:1fr product2:1fr
+      direction: horizontal
+    products-section-1-element-grid-1:
+      slot: product1
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-1:
+      slot: product
+      itemWidth: 240
+      itemHeight: 320
+    product-section-1-item-1-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 25
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    products-section-1-element-grid-2:
+      slot: product2
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-2:
+      slot: product
+      itemWidth: 240
+      itemHeight: 320
+    product-section-1-item-2-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 25
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    # IMG SECTION 2
+    title-section-2:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 74
+    title-section-2-grid:
+      direction: vertical
+      cells: space1:0.5fr title:1fr space2:1fr
+    sub-title-2:
+      slot: title
+      color: white
+      fontSize: 30
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCT SECTION 2
+    products-section-2:
+      margin: '50px 0px'
+    products-section-2-grid:
+      cells: first:1fr second:1fr third:1fr
+      direction: horizontal
+    product-section-2-item-1:
+      slot: first
+      itemWidth: 150
+      itemHeight: 190
+    product-section-2-item-2:
+      slot: second
+      itemWidth: 150
+      itemHeight: 190
+    product-section-2-item-3:
+      slot: third
+      itemWidth: 150
+      itemHeight: 190
+    # main-footer
+    main-footer-grid-1:
+      cells: space1:0.2fr left:1.5fr space:0.2fr right:1fr
+      direction: horizontal
+    main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 10px 0 20px 0
+    second-main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 10px 0 30px 0px
+    main-footer-grid-2:
+      direction: horizontal
+      cells: space1:1fr left:1fr space:1fr right:1fr
+    footer-left-grid-1:
+      slot: left
+      direction: vertical
+      cells: title:1fr title2:1fr space:1fr text:auto
+    left-main-footer-title-1:
+      slot: title
+      fontSize: 12
+      fontFamily: "open sans"
+      color: white
+      textAlign: left
+      fontWeight: 700
+    left-main-footer-title-2:
+      slot: title2
+      fontSize: 12
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      fontWeight: 700
+    left-main-footer-text:
+      slot: text
+      textAlign: left
+      fontSize: 10
+      fontFamily: "open sans"
+      color: white
+    footer-right-grid-1:
+      slot: right
+      direction: vertical
+      cells: title:1fr space:1fr contact:auto space2:1fr mobile:1fr main-email:1fr
+    right-title:
+      slot: title
+      fontSize: 12
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      fontWeight: 700
+    right-info:
+      slot: contact
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+    main-phone-grid:
+      slot: mobile
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-phone-image:
+      slot: image
+      width: 22
+      height: 22
+      margin: 0 10px 10px 0
+    main-phone-number:
+      slot: text
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-email-grid:
+      slot: main-email
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-email-image:
+      slot: image
+      width: 22
+      height: 22
+      margin: 0 10px 10px 0
+    main-email-number:
+      slot: text
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-footer-line:
+      width: 682
+      stroking: true
+      backgroundColor: white
+      wrapperBackground: '#1c2b3e'
+      height: 1
+    main-copyrightl:
+      slot: left
+      fontSize: 10
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+    main-copyrightl-2:
+      slot: right
+      fontSize: 10
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+  mobile:
+    main-topnav-grid:
+      direction: horizontal
+      cells: space:.5fr space1:1fr center:auto space2:1fr right:.5fr
+    main-topnav-logo:
+      slot: center
+      width: 145
+      height: 40
+    main-shape:
+      width: 1
+    title-section-grid:
+      direction: vertical
+      cells: left:1fr right:1fr
+    section-1-image:
+      slot: left
+      width: 360
+    title-text-grid:
+      slot: right
+      direction: vertical
+      cells: first:auto space:1fr second:auto space1:1fr third:auto space2:1fr fourth:auto
+    title-text:
+      slot: first
+      width: 'calc(100% - 60px)'
+      fontWeight: 700
+      fontSize: 22
+      textAlign: left
+      fontFamily: "playfair display"
+      margin: 0 30 0 30
+    first-text:
+      slot: second
+      fontSize: 13
+      textAlign: left
+      fontFamily: "open sans"
+      width: 'calc(100% - 60px)'
+      margin: 0 30 0 30
+    second-text:
+      slot: third
+      fontSize: 13
+      width: 'calc(100% - 60px)'
+      textAlign: left
+      fontFamily: "open sans"
+      margin: 0 30 0 30
+    link-text:
+      slot: fourth
+      fontSize: 13
+      textAlign: left
+      width: 'calc(100% - 60px)'
+      color: '#f00046'
+      fontFamily: "open sans"
+      margin: 0 30 0 30
+    # IMG SECTION
+    title-section-1:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 57
+    title-section-1-grid:
+      direction: vertical
+      cells: space1:0.5fr title:1fr space2:1fr
+    sub-title-1:
+      slot: title
+      color: white
+      fontSize: 22
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCTS
+    products-section-1-grid:
+      cells: product1:1fr product2:1fr
+      direction: vertical
+    products-section-1-element-grid-1:
+      slot: product1
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-1:
+      slot: product
+      itemWidth: 300
+      itemHeight: 400
+    product-section-1-item-1-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 22
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    products-section-1-element-grid-2:
+      slot: product2
+      direction: vertical
+      cells: space:1fr header:1fr product:auto
+    product-section-1-item-2:
+      slot: product
+      itemWidth: 300
+      itemHeight: 400
+    product-section-1-item-2-title:
+      slot: header
+      fontWeight: 700
+      fontSize: 22
+      width: 100%
+      textAlign: center
+      fontFamily: Roboto sans-serif
+    # IMG SECTION 2
+    title-section-2:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      height: 57
+    title-section-2-grid:
+      direction: vertical
+      cells: space1:0.5fr title:1fr space2:1fr
+    sub-title-2:
+      slot: title
+      color: white
+      fontSize: 22
+      fontFamily: "playfair display"
+      fontWeight: 700
+      textAlign: center
+      width: 100%
+    # PRODUCT SECTION 2
+    products-section-2: {}
+    products-section-2-grid:
+      cells: first:1fr second:1fr third:1fr
+      direction: vertical
+    product-section-2-item-1:
+      slot: first
+      itemWidth: 270
+      itemHeight: 300
+    product-section-2-item-2:
+      slot: second
+      itemWidth: 270
+      itemHeight: 300
+    product-section-2-item-3:
+      slot: third
+      itemWidth: 270
+      itemHeight: 300
+    # main-footer
+    main-footer-grid-1:
+      cells: left:1fr space:0.1fr right:1fr
+      direction: vertical
+    main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 10px 50px 20px 50px
+      width: 'calc(100% - 100px)'
+    second-main-footer:
+      backgroundColor: '#1c2b3e'
+      padding: 10px 50px 20px 50px
+      width: 'calc(100% - 100px)'
+    main-footer-grid-2:
+      direction: vertical
+      cells: left:1fr space:1fr right:1fr
+    footer-left-grid-1:
+      slot: left
+      direction: vertical
+      cells: title:1fr title2:1fr space:1fr text:auto
+    left-main-footer-title-1:
+      slot: title
+      fontSize: 12
+      fontFamily: "Roboto, sans-serif"
+      color: white
+      textAlign: left
+      fontWeight: 700
+    left-main-footer-title-2:
+      slot: title2
+      fontSize: 12
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+      fontWeight: 700
+    left-main-footer-text:
+      slot: text
+      textAlign: left
+      fontSize: 10
+      fontFamily: "open sans"
+      color: white
+    footer-right-grid-1:
+      slot: right
+      direction: vertical
+      cells: title:1fr space:1fr contact:auto space2:1fr mobile:1fr main-email:1fr
+    right-title:
+      slot: title
+      fontSize: 12
+      textAlign: left
+      fontFamily: "Roboto, sans-serif"
+      color: white
+      fontWeight: 700
+    right-info:
+      slot: contact
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+    main-phone-grid:
+      slot: mobile
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-phone-number:
+      slot: text
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-email-grid:
+      slot: main-email
+      cells: image:auto text:1fr
+      direction: horizontal
+    main-email-number:
+      slot: text
+      fontSize: 10
+      textAlign: left
+      fontFamily: "open sans"
+      color: white
+      textDecoration: underline
+    main-footer-line:
+      width: 320
+      stroking: true
+      backgroundColor: white
+      wrapperBackground: '#1c2b3e'
+      margin: 0 0 0 20px
+      height: 1
+    main-copyrightl:
+      slot: right
+      fontSize: 10
+      textAlign: center
+      fontFamily: "Roboto, sans-serif"
+      width: 100%
+      color: white
+    main-copyrightl-2:
+      slot: left
+      fontSize: 10
+      textAlign: center
+      width: 100%
+      fontFamily: "Roboto, sans-serif"
+      color: white
+
+context:
+  main-topnav-cart:
+    state: 'ready'
+    data: []
+  product-section-1-item-1:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 32 GB'
+      prices:
+        regular: '460'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  product-section-1-item-2:
+    state: 'ready'
+    data:
+    - title: 'iPad Paket 128 GB'
+      prices:
+        regular: '560'
+      image: 'https://payeverproduction.blob.core.windows.net/products/f3eafe4b-0ff0-4d8e-9cce-50e57021c9cb-Screenshot2020-03-03at17.30.54.png'
+  product-section-2-item-1:
+    state: 'ready'
+    data:
+      - title: 'Apple Care+ für iPad'
+        prices:
+          regular: '79'
+        image: 'https://payeverproduction.blob.core.windows.net/products/11c8a92e-14e2-433a-b2b7-45075fd6c683-AppleCare+.png'
+  product-section-2-item-2:
+    state: 'ready'
+    data:
+      - title: 'Schutzglas für iPad 10,2'
+        prices:
+          regular: '39'
+        image: 'https://payeverproduction.blob.core.windows.net/products/80d67c27-8dce-45ca-9287-808fcdc8ae9d-AlphaGlassiPad7gen102.jpg'
+  product-section-2-item-3:
+    state: 'ready'
+    data:
+      - title: 'Logitech Keys-To-Go'
+        prices:
+          regular: '67'
+        image: 'https://payeverproduction.blob.core.windows.net/products/2c80bf6f-275b-4a55-9335-55fb53b44de1-logitech-keys-to-go-portable-wireless-keyboard-2018.png'

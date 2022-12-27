@@ -1,0 +1,1346 @@
+{
+  "dashboard": {
+    "apps": {
+      "checkout": "Checkout",
+      "connect": "Connect",
+      "shipping": "Shipping",
+      "products": "Products",
+      "pos": "Pos",
+      "transactions": "Transactions",
+      "settings": "Settings",
+      "marketing": "Marketing",
+      "store": "Store",
+      "contacts": "Contacts"
+    }
+  },
+  "actions": {
+    "open": "Open",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "loading": "Loading...",
+    "add": "Add",
+    "no": "No",
+    "onload":"Loading...",
+    "delete_from_group": "Delete from group",
+    "yes": "Yes",
+    "invite": "Invite",
+    "template": "Template",
+    "select_all": "Select all",
+    "deselect_all": "Deselect all"
+  },
+  "assets": {
+    "legal_form": {
+      "LEGAL_FORM_AG": "Public Limited Company",
+      "LEGAL_FORM_EG": "Registered Cooperative",
+      "LEGAL_FORM_EINZELUNTERN": "Individual Enterprise",
+      "LEGAL_FORM_EINZELUNTERNAHMER": "Individual Enterprise",
+      "LEGAL_FORM_EK": "Sole Trader",
+      "LEGAL_FORM_EV": "Registered Association",
+      "LEGAL_FORM_GBR": "Civil Law Partnership",
+      "LEGAL_FORM_GMBH": "Limited Liability Company",
+      "LEGAL_FORM_KG": "Limited Partnership",
+      "LEGAL_FORM_OHG": "General Partnership",
+      "LEGAL_FORM_SONSTIGES": "Other",
+      "LEGAL_FORM_UG": "Limited"
+    },
+    "business_status": {
+      "REGISTERED_BUSINESS": "Registered Business",
+      "SOLO_ENTREPRENEUR": "Solo Entrepreneur"
+    },
+    "status": {
+      "BUSINESS_STATUS_JUST_LOOKING": "Just looking around",
+      "BUSINESS_STATUS_HAVE_IDEA": "I have an idea want to get started",
+      "BUSINESS_STATUS_TURN_EXISTING": "Turning an existing project into a business",
+      "BUSINESS_STATUS_GROWING_BUSINESS": "Growing an existing business",
+      "BUSINESS_STATUS_REPLACE_BUSINESS": "Replace my business with payever"
+    },
+    "product": {
+      "BUSINESS_PRODUCT_RETAIL_B2C": "Physical goods for private customers (Retail B2C)",
+      "BUSINESS_PRODUCT_RETAIL_B2B": "Physical goods for business customers (Retail B2B)",
+      "BUSINESS_PRODUCT_GIDITAL_GOODS": "Digital goods",
+      "BUSINESS_PRODUCT_SERVICES": "Services",
+      "BUSINESS_PRODUCT_OVERNIGHT_STAY": "Overnight stay",
+      "BUSINESS_PRODUCT_MEALS": "Meals",
+      "BUSINESS_PRODUCT_FOOD": "Food",
+      "BUSINESS_PRODUCT_DRINKS": "Drinks",
+      "BUSINESS_PRODUCT_OTHERS": "Others"
+    },
+    "industry": {
+      "OWN": "Own",
+      "BRANCHE_ART_CRAFT": "Arts & Crafts",
+      "BRANCHE_AUTOMOTIVE": "Automotive",
+      "BRANCHE_BABY": "Baby",
+      "BRANCHE_CARE": "Beauty & Personal Care",
+      "BRANCHE_BOOKS": "Books",
+      "BRANCHE_COMPUTER": "Computers",
+      "BRANCHE_ELECTRONICS": "Electronics",
+      "BRANCHE_FASHION": "Fashion",
+      "BRANCHE_HEALTH_HOUSEHOLD": "Health & Household",
+      "BRANCHE_HOME_KITCHEN": "Home & Kitchen",
+      "BRANCHE_LUGGAGE": "Luggage",
+      "BRANCHE_TV": "Movies & TV",
+      "BRANCHE_MUSIC": "Music, CDs & Vinyl",
+      "BRANCHE_PET_SUPPLIES": "Pet Supplies",
+      "BRANCHE_SPORTS": "Sports & Outdoors",
+      "BRANCHE_TOOLS": "Tools & Home Improvement",
+      "BRANCHE_TOYS": "Toys & Games",
+      "BRANCHE_VIDEO_GAMES": "Video Games",
+      "BRANCHE_OTHER": "Others",
+      "BRANCHE_FINISHING_PRODUTS": "Abrasive & Finishing Products",
+      "BRANCHE_ADDITIVE_PRODUCTS": "Additive Manufacturing Products",
+      "BRANCHE_DOOR_PRODUTS": "Commercial Door Products",
+      "BRANCHE_CUTTING_TOOLS": "Cutting Tools",
+      "BRANCHE_FASTENERS": "Fasteners",
+      "BRANCHE_FILTRATION": "Filtration",
+      "BRANCHE_FOOD_SUPPLIES": "Food Service Equipment & Supplies",
+      "BRANCHE_PNEUMATICS": "Hydraulics, Pneumatics & Plumbing",
+      "BRANCHE_ELECTRICAL": "Industrial Electrical",
+      "BRANCHE_HARDWARE": "Industrial Hardware",
+      "BRANCHE_HAND_TOOLS": "Industrial Power & Hand Tools",
+      "BRANCHE_JANITORIAL_SUPPLIES": "Janitorial & Sanitation Supplies",
+      "BRANCHE_SCIENCE_PRODUTS": "Lab & Scientific Products",
+      "BRANCHE_MATERIAL_HANDLINGS": "Material Handling Products",
+      "BRANCHE_HEALTH": "Occupational Health & Safety Products",
+      "BRANCHE_SHIPPING_SUPPLIES": "Packaging & Shipping Supplies",
+      "BRANCHE_POWER_TRANSMISSION": "Power Transmission Products",
+      "BRANCHE_DENTAL_SUPPLIES": "Professional Dental Supplies",
+      "BRANCHE_MEDICAL_SUPPLIES": "Professional Medical Supplies",
+      "BRANCHE_RAW_MATERIALS": "Raw Materials",
+      "BRANCHE_RETAIL_STORE": "Retail Store Fixtures & Equipment",
+      "BRANCHE_ROBOTICS": "Robotics",
+      "BRANCHE_SCIENCE_EDUCATION": "Science Education",
+      "BRANCHE_ADHESIVES": "Tapes, Adhesives & Sealants",
+      "BRANCHE_MEASURE": "Test, Measure & Inspect",
+      "BRANCHE_DIGITAL_MUSIC": "Digital Music",
+      "BRANCHE_DIGITAL_VIDEOS": "Digital Videos",
+      "BRANCHE_SOFTWARE": "Software",
+      "BRANCHE_GAMES": "Games",
+      "BRANCHE_CONSULTING": "Consulting",
+      "BRANCHE_CAR_REPAIR": "Car Repair",
+      "BRANCHE_NAIL_STUDIO": "Nail Studio",
+      "BRANCHE_LOCKSMITH": "Locksmith",
+      "BRANCHE_HAIR_STYLIST": "Hair Stylist",
+      "BRANCHE_TOURISM": "Tourism",
+      "BRANCHE_HOTEL": "Hotel",
+      "BRANCHE_MOTEL": "Motel",
+      "BRANCHE_BED_BRAKFAST": "Bed & Breakfast",
+      "BRANCHE_RESTAURANT": "Restaurant",
+      "BRANCHE_FOOD_TRACK": "Food Truck",
+      "BRANCHE_SUPERMARKET": "Supermarket",
+      "BRANCHE_BAR": "Bar",
+      "BRANCHE_CAFE": "Cafe",
+      "BRANCHE_CLUB": "Club"
+    },
+    "employees": {
+      "RANGE_1": "1-5 employees",
+      "RANGE_2": "6-18 employees",
+      "RANGE_3": "19-99 employees",
+      "RANGE_4": "100-349 employees",
+      "RANGE_5": "350-1499 employees",
+      "RANGE_6": "1500+ employees"
+    },
+    "sales": {
+      "RANGE_1": "€0 EUR (I just started)",
+      "RANGE_2": "up to €5000 EUR",
+      "RANGE_3": "€5000 EUR to €50.000 EUR",
+      "RANGE_4": "€50.000 EUR to $250.000 EUR",
+      "RANGE_5": "€250.000 EUR to $1.000.000 EUR",
+      "RANGE_6": "€1.000.000 EUR+"
+    },
+    "currencies": {
+      "CHF": "Swiss Franc",
+      "DKK": "Danish Krone",
+      "EUR": "Euro",
+      "GBP": "British Pound",
+      "NOK": "Norwegian Krone",
+      "SEK": "Swedish Krona",
+      "USD": "US Dollar"
+    },
+    "languages": {}
+  },
+  "errors": {
+    "forbidden": "You don't have permission to perform this action!"
+  },
+  "info_boxes": {
+    "headers": {
+      "business": {
+        "label": "Business Settings"
+      },
+      "personal": {
+        "label": "Personal Settings"
+      }
+    },
+    "panels": {
+      "business_info": {
+        "title": "Business Info"
+      },
+      "business_details": {
+        "title": "Business Details",
+        "menu_list": {
+          "currency": {
+            "title": "Currency"
+          },
+          "company": {
+            "title": "Company"
+          },
+          "contact": {
+            "title": "Contact"
+          },
+          "contact_email": {
+            "title": "Contact e-mails"
+          },
+          "address": {
+            "title": "Address"
+          },
+          "bank": {
+            "title": "Bank"
+          },
+          "taxes": {
+            "title": "Taxes"
+          },
+          "purchases": {
+            "title": "Purchases"
+          },
+          "subscription": {
+            "title": "Subscriptions"
+          }
+        }
+      },
+      "wallpaper": {
+        "title": "Wallpaper",
+        "items": "wallpapers",
+        "search_wallpapers" : "Search wallpapers",
+        "tabs": {
+          "my_wallpapers": "My Wallpapers",
+          "all_wallpapers": "All Wallpapers",
+          "gallery": "Gallery"
+        },
+        "add_wallpaper_thumbnail": "+ Add wallpaper",
+        "add_wallpaper_button": "Add wallpaper",
+        "empty_message": "You have no wallpapers yet.",
+        "empty_question": "Would you like to add one?",
+        "uploading" : "Uploading",
+        "set_action_result" : {
+          "success": "Wallpaper has been set",
+          "error": "Wallpaper has not been set"
+        },
+        "sort_by_action": {
+          "name": "Name",
+          "oldest": "Oldest",
+          "newest": "Newest",
+          "sort_by": "Sort by"
+        },
+        "context_menu": {
+          "title": "Options"
+        },
+        "single_selected_action": {
+          "set": "SET"
+        },
+        "data_grid": {
+          "name": "Name",
+          "industry": "Industry",
+          "multiple_actions": {
+            "choose": "Choose action",
+            "delete": "Delete"
+          },
+          "sidebar_bottom_button": {
+            "name": "Folder action",
+            "action": "Add new folder"
+          }
+        }
+      },
+      "affiliates": {
+        "title": "Affiliates"
+      },
+      "employee": {
+        "title": "Employee"
+      },
+      "notifications": {
+        "title": "Notifications"
+      },
+      "billing": {
+        "title": "Billing"
+      },
+      "general": {
+        "title": "General",
+        "modal_label": "Settings",
+        "menu_list": {
+          "language": {
+            "title": "Language"
+          },
+          "password": {
+            "title": "Password"
+          },
+          "ownership": {
+            "title": "Transfer business ownership",
+            "success": "Success, invitation sent"
+          },
+          "personal_information": {
+            "title": "Personal information"
+          },
+          "email_notifications": {
+            "title": "Email notifications"
+          },
+          "shipping_address": {
+            "title": "Shipping address",
+            "add_button": "Add additional address"
+          },
+          "authentication_2fa": {
+            "title": "2FA authentication"
+          },
+          "change_password": {
+            "title": "Change password"
+          },
+          "wallpapers": {
+            "title": "Wallpapers"
+          },
+          "color_and_style": {
+            "title": "Color and Style",
+            "headline": "Here you can add your company colors. They will adjust for all applications.",
+            "header": "Theme",
+            "colors": "Colors",
+            "primaryColor": "Primary color",
+            "secondaryColor": "Secondary color",
+            "chooseColor": "Choose color"
+          }
+        }
+      },
+      "policies": {
+        "title": "Policies",
+        "placeholder": "Description text",
+        "menu_list": {
+          "legal": {
+            "title": "Legal"
+          },
+          "disclaimer": {
+            "title": "Disclaimer"
+          },
+          "refund_policy": {
+            "title": "Refund policy"
+          },
+          "shipping_policy": {
+            "title": "Shipping policy"
+          },
+          "privacy": {
+            "title": "Privacy"
+          }
+        },
+        "dialog": {
+          "legal": {
+            "title": "Legal text",
+            "placeholder": "Paste here"
+          },
+          "disclaimer": {
+            "title": "Disclaimer text",
+            "placeholder": "Paste here"
+          },
+          "refund_policy": {
+            "title": "Refund policy text",
+            "placeholder": "Paste here"
+          },
+          "shipping_policy": {
+            "title": "Shipping policy text",
+            "placeholder": "Paste here"
+          },
+          "privacy": {
+            "title": "Privacy text",
+            "placeholder": "Paste here"
+          }
+        }
+      },
+      "themes": {
+        "title": "Appearance",
+        "automatic": "Automatic",
+        "theme_list": {
+          "dark": {
+            "title": "Dark"
+          },
+          "default": {
+            "title": "Default"
+          },
+          "light": {
+            "title": "Light"
+          }
+        }
+      }
+
+    },
+    "modals": {
+      "currency": {
+        "label": "Your currency"
+      }
+    }
+  },
+  "form": {
+    "create_form": {
+      "currency": {
+        "label": "Currency",
+        "placeholder": "Currency"
+      },
+      "company": {
+        "company_name": {
+          "label": "Company name",
+          "placeholder": "Company name"
+        },
+        "legal_form": {
+          "label": "Business name & legal form",
+          "placeholder": "Business name & legal form"
+        },
+        "employees": {
+          "label": "Number of employees",
+          "placeholder": "Employee"
+        },
+        "business_status": {
+          "label": "Business Status",
+          "placeholder": "Status"
+        },
+        "status": {
+          "label": "Status",
+          "placeholder": "Status"
+        },
+        "sales": {
+          "label": "Sales",
+          "placeholder": "Sales"
+        },
+        "product": {
+          "label": "Product",
+          "placeholder": "Product"
+        },
+        "industry": {
+          "label": "Industry",
+          "placeholder": "Industry"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Phone"
+        },
+        "url_web": {
+          "label": "Website(Optional)",
+          "placeholder": "URL to your website"
+        }
+      },
+      "contact": {
+        "salutation": {
+          "label": "Salutation",
+          "placeholder": "Salutation"
+        },
+        "first_name": {
+          "label": "First Name",
+          "placeholder": "First Name"
+        },
+        "last_name": {
+          "label": "Last Name",
+          "placeholder": "Last Name"
+        },
+        "phone": {
+          "label": "Phone number (Optional)",
+          "placeholder": "Phone"
+        },
+        "fax": {
+          "label": "Fax (Optional)",
+          "placeholder": "Fax"
+        },
+        "additional_phone": {
+          "label": "Additional phone number (Optional)",
+          "placeholder": "Additional phone number"
+        },
+        "panels": {
+          "details": {
+            "label": "Details"
+          },
+          "emails": {
+            "label": "Emails"
+          }
+        },
+        "email": {
+          "label": "Email (Optional)",
+          "placeholder": "Enter e-mail address here",
+          "button": "Add additional"
+        },
+        "position": {
+          "label": "Position",
+          "placeholder": "Position"
+        }
+      },
+      "contact_email": {
+        "contact_email": {
+          "label": "Alternative email",
+          "placeholder": "Alternative email"
+        },
+        "new_contact_email": "New contact e-mail",
+        "edit_contact_email": "Edit contact e-mail",
+        "delete_email_title": "Deleting Email",
+        "delete_email_description": "Do you really want to delete your email?"
+      },
+      "address": {
+        "googleAutocomplete": {
+          "label": "Google Autocomplete",
+          "placeholder": "Address line"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Country"
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "City"
+        },
+        "street": {
+          "label": "Street",
+          "placeholder": "Street"
+        },
+        "zip_code": {
+          "label": "ZIP Code",
+          "placeholder": "ZIP Code"
+        },
+        "apartment": {
+          "label": "Apartment, suite, etc",
+          "placeholder": "Apartment, suite, etc"
+        },
+        "new_address": {
+          "label": "Add new address",
+          "placeholder": "Add new address"
+        },
+        "google_autocomplete": {
+          "label": "Google Autocomplete",
+          "placeholder": "Google Autocomplete"
+        }
+      },
+      "bank": {
+        "bankAccount": {
+          "owner": {
+            "label": "Account holder",
+            "placeholder": "Account holder"
+          },
+          "bankName": {
+            "label": "Bank name (Optional)",
+            "placeholder": "Bank name"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Country"
+          },
+          "city": {
+            "label": "City",
+            "placeholder": "City"
+          },
+          "bic": {
+            "label": "BIC",
+            "placeholder": "BIC"
+          },
+          "iban": {
+            "label": "IBAN",
+            "placeholder": "IBAN"
+          },
+          "bankCode": {
+            "label": "Bank code (Optional)",
+            "placeholder": "Bank code"
+          },
+          "routingNumber": {
+            "label": "Routing number",
+            "placeholder": "Routing number"
+          },
+          "accountNumber": {
+            "label": "Account number",
+            "placeholder": "Account number"
+          }
+        }
+      },
+      "email_notifications": {
+        "reports": {
+          "label": "Reports",
+          "period": {
+            "label": "Period",
+            "items": {
+              "never": {
+                "label": "Never"
+              },
+              "once-a-day": {
+                "label": "Send Daily"
+              },
+              "once-a-week": {
+                "label": "Send Weekly"
+              },
+              "once-a-month": {
+                "label": "Send Monthly"
+              }
+            }
+          }
+        },
+        "apps": {
+          "label": "Apps",
+          "select": {
+            "never": "Never",
+            "by_events": "By events"
+          },
+          "no_content": "No apps",
+          "shipping": {
+            "label": "Shipping",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "coupons": {
+            "label": "Coupons",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "checkout": {
+            "label": "Checkout",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "connect": {
+            "label": "Connect",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "products": {
+            "label": "Products",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "pos": {
+            "label": "Point of sale",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "transactions": {
+            "label": "Transactions",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "settings": {
+            "label": "Settings",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "marketing": {
+            "label": "Marketing",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "shop": {
+            "label": "Shop",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "contacts": {
+            "label": "Contacts",
+            "value": {
+              "label": "Notify"
+            }
+          },
+          "cart": {
+            "label": "Cart",
+            "value": {
+              "label": "Notify"
+            }
+          }
+        },
+        "payever": {
+          "label": "Updates from payever",
+          "product_update": {
+            "label": "News about payever product and feature updates"
+          },
+          "get_more": {
+            "label": "Tips on getting more out of payever"
+          },
+          "missed": {
+            "label": "Things you missed since your last logged into payever"
+          },
+          "partner_news": {
+            "label": "News partner products and other third party services"
+          },
+          "research": {
+            "label": "Participation in payever research surveys"
+          },
+          "events": {
+            "label": "Tips on payever events"
+          }
+        }
+      },
+      "taxes": {
+        "taxes": {
+          "companyRegisterNumber": {
+            "label": "Company register number (Optional)",
+            "placeholder": "Company register number"
+          },
+          "taxId": {
+            "label": "Tax ID (Optional)",
+            "placeholder": "Tax ID"
+          },
+          "taxNumber": {
+            "label": "Tax number (Optional)",
+            "placeholder": "Tax number"
+          },
+          "turnoverTaxAct": {
+            "label": "Turnover tax act",
+            "placeholder": "Turnover tax act"
+          }
+        }
+      },
+      "language": {
+        "label": "Language",
+        "placeholder": "Language"
+      },
+      "password": {
+        "current_password": {
+          "label": "Current Password",
+          "placeholder": "Current Password"
+        },
+        "new_password": {
+          "label": "New Password",
+          "placeholder": "New Password"
+        },
+        "repeat_password": {
+          "label": "Repeat Password",
+          "placeholder": "Repeat Password"
+        }
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email"
+      },
+      "personal_information": {
+        "logo": {
+          "add_media": "Add Media"
+        },
+
+        "salutation": {
+          "label": "Salutation",
+          "placeholder": "Salutation",
+          "mr": "Mr.",
+          "mrs": "Mrs."
+        },
+        "first_name": {
+          "label": "First Name",
+          "placeholder": "First Name"
+        },
+        "last_name": {
+          "label": "Last Name",
+          "placeholder": "Last Name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Phone"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "E-mail"
+        },
+        "date_time": {
+          "label": "Date From"
+        },
+        "birthday": {
+          "label": "Birthday",
+          "placeholder": "Birthday"
+        }
+      },
+      "business": {
+        "edit_business_label": "Edit Business",
+        "delete_business": "Delete Business",
+        "delete_business_label": "Deleting Business",
+        "delete_business_question": "Do you really want to delete your business? Because all data will be lost and you will not be able to restore it.",
+        "logo": {
+          "label": "Logo",
+          "placeholder": "Logo"
+        },
+        "name": {
+          "label": "Business name",
+          "placeholder": "Business name"
+        }
+      },
+      "personal": {
+        "delete_user": "Delete User",
+        "delete_user_label": "Deleting User",
+        "delete_user_question": "Do you really want to delete your account? Because all data will be lost and you will not be able to restore it.",
+        "edit_label": "Edit Personal",
+        "first_name": {
+          "label": "First name",
+          "placeholder": "First name"
+        },
+        "last_name": {
+          "label": "Last name",
+          "placeholder": "Last name"
+        }
+      },
+      "groups": {
+        "label": "Groups",
+        "placeholder": "Groups",
+        "editing": {
+          "label": "Editing",
+          "title": "Groups Editing",
+          "add_employee": "Add Employee",
+          "count_members": "{{ count }} members",
+          "count_users": "{{ count }} users"
+        },
+        "full_access": {
+          "label": "Full app access"
+        },
+        "creating": {
+          "label": "Creating"
+        },
+        "deleting": {
+          "label": "Deleting"
+        },
+        "reading": {
+          "label": "Reading"
+        },
+        "name": {
+          "label": "Group name",
+          "placeholder": "Group name"
+        }
+      },
+      "employee": {
+        "create": {
+          "title": "Create employee"
+        },
+        "edit": {
+          "title": "Edit employee"
+        },
+        "delete": {
+          "title": "Delete employees"
+        },
+        "context_menu": {
+          "title": "Options"
+        },
+        "status": "Status",
+        "name": "Name",
+        "search": "Search",
+        "info": "Info",
+        "apps_access": "Apps Access",
+        "options": {
+          "invited": "Invited",
+          "active": "Active",
+          "saved": "Saved"
+        },
+        "validation": {
+          "email": "Email address already exists",
+          "group": "This group already exists"
+        },
+        "save": {
+          "confirmation_message": "Employee details are saved. You can now invite the user",
+          "updated_message": "Employee successfully updated",
+          "activation_sent": "Activation link is sent to the employee successfully",
+          "delete_employee": "Employee details are deleted successfully",
+          "delete_group": "Group Details are deleted successfully"
+        },
+        "error": "Something went wrong, try again",
+        "email": {
+          "label": "Mail",
+          "placeholder": "Mail"
+        },
+        "position": {
+          "label": "Position",
+          "placeholder": "Position",
+          "options": {
+            "cashier": "Cashier",
+            "sales": "Sales",
+            "marketing": "Marketing",
+            "staff": "Staff",
+            "admin": "Admin",
+            "others": "Others"
+          }
+        },
+        "groups": {
+          "label": "Groups",
+          "placeholder": "Groups"
+        },
+        "full_access": {
+          "label": "Full app access",
+          "placeholder": "Full app access"
+        },
+        "creating": {
+          "label": "Creating",
+          "placeholder": "Creating"
+        },
+        "editing": {
+          "label": "Editing",
+          "placeholder": "Editing"
+        },
+        "reading": {
+          "label": "Reading",
+          "placeholder": "Reading"
+        },
+        "deleting": {
+          "label": "Deleting",
+          "placeholder": "Deleting"
+        }
+      },
+      "group": {
+        "add_group": "Add group",
+        "edit_group": "Edit group",
+        "full_access": "Full Access",
+        "no_access": "No Access",
+        "custom_access": "Custom Access",
+        "save": {
+          "confirmation_message": "Group details are saved successfully",
+          "updated_message": "Employee successfully updated",
+          "activation_sent": "Activation link is sent to the employee successfully",
+          "delete_group": "Group details are deleted successfully"
+        },
+        "employee": "Employees",
+        "access": "Access",
+        "groups": "Groups",
+        "groups_lower": "groups",
+        "delete": "Delete groups",
+        "add_to_group": "Add to group",
+        "employee_name": "Employee name"
+      },
+      "errors": {
+        "is_require": "is require",
+        "password": "Password is required, should have more 8 characters,have symbol and upper case char",
+        "incorrect_pass": "is incorrect, please use your current",
+        "phone_pattern": "should be min 6 numbers, and start with +",
+        "email_not_unique": "Email should be unique",
+        "email_pattern": "should be correct"
+      }
+    }
+  },
+  "forms": {
+    "error": {
+      "validator": {
+        "invalid": "Value invalid",
+        "required": "Field is required",
+        "email": {
+          "invalid": "Invalid email",
+          "not_unique": "Email should be unique"
+        },
+        "user": {
+          "not_unique": "Name should be unique"
+        },
+        "name": {
+          "not_unique": "Name should be unique"
+        },
+        "password": {
+          "invalid": "Invalid password",
+          "minlength": "Password should be 8 or more characters"
+        }
+      },
+      "unauthorized": {
+        "invalid_credentials": "Invalid credentials"
+      }
+    }
+  },
+  "welcome": {
+    "title": "Welcome to Settings App! Set up your data",
+    "message": "Here you can add applications which will help you to grow up your Business."
+  },
+  "confirm": {
+    "close_page": "Are you sure you want to close this page?",
+    "close_page_subtitle": "Changes will be lost",
+    "delete_employees": "The selected employees will be deleted",
+    "delete_groups": "The selected employees will be deleted",
+    "proceed": "Do you want to proceed?",
+    "policies": {
+      "close_policy": "Do you really want to close editing the policy?",
+      "close_policy_sub": "Because all data will be lost when unsaved and you will not be able to restore it",
+      "template": "This will replace the data with the template and you will not be able to restore it.",
+      "template_sub": "Do you really want to continue.",
+      "save": "Saved successfully"
+    }
+  },
+  "snack_bar": {
+    "filter_limit": "Only one filter is allowed by column"
+  },
+  "common": {
+    "forms": {
+      "validations": {
+        "required": "Field is required",
+        "email": {
+          "invalid": "Invalid email",
+          "not_unique": "Email should be unique"
+        },
+        "pattern": {
+          "mobile_phone": "Incorrect phone number"
+        }
+      },
+      "placeholders": {
+        "enter_value": "Enter value"
+      }
+    },
+    "constants": {
+      "employee_positions": {
+        "cashier": "Cashier",
+        "sales": "Sales",
+        "marketing": "marketing",
+        "staff": "Staff",
+        "admin": "Admin",
+        "others": "Others"
+      },
+      "employee_statuses": {
+        "inactive": "Inactive",
+        "invited": "Invited",
+        "active" : "Active"
+      }
+    }
+  },
+  "sidebar": {
+    "title": "Settings",
+    "sections": {
+      "navigation": {
+        "title": "Navigation",
+        "panels": {
+          "business_info": "Business info",
+          "business_details": "Business details",
+          "wallpaper": "Wallpaper",
+          "employees": "Employees",
+          "policies": "Policies",
+          "general": "General",
+          "appearance": "Appearance",
+          "billing": "Billing"
+        }
+      }
+    }
+  },
+  "pages": {
+    "business_info": {
+      "title": "Business info",
+      "fields": {
+        "logo": {
+          "label": "Logo",
+          "action": "Upload new",
+          "empty": "No logo uploaded"
+        },
+        "business_name": {
+          "label": "Business name"
+        }
+      },
+      "action": "Delete Business"
+    },
+    "wallpaper": {
+      "sidebar": {
+        "title": "Wallpapers"
+      }
+    },
+    "employees": {
+      "sidebar": {
+        "title": "Employees",
+        "groups": {
+          "options": {
+            "permissions": "Permissions"
+          },
+          "duplicate_message_1": "Name ",
+          "duplicate_message_2": " of groups is already exist."
+        },
+        "sections": {
+          "position": {
+            "title": "Position",
+            "panels": {
+              "accountant": "Accountant",
+              "manager": "Manager",
+              "staff": "Staff",
+              "developers": "Developers",
+              "designers": "Designers"
+            }
+          }
+        }
+      },
+      "datagrid": {
+        "common": {
+          "import": "Import",
+          "employee": "Employee",
+          "download_csv": "Download CSV",
+          "choose_action": "Choose action",
+          "select_all": "Select all",
+          "unselect": "Unselect",
+          "delete_employees": "Delete employees",
+          "resend": "Resend",
+          "delete_employees_group": "Delete employees from group",
+          "sort_actions": {
+            "name": "Name",
+            "positions": "Position",
+            "email": "Email",
+            "sort_by": "Sort by",
+            "status": "Status"
+          }
+        },
+        "navbar_filters": {
+          "name": "Name"
+        },
+        "sidebar": {
+          "menu_title": "Employee Groups",
+          "new_group": "New Group"
+        },
+        "grid": {
+          "add-new": "Add new",
+          "card-open": "Open",
+          "card-edit": "Edit",
+          "card-label": "New"
+        },
+        "list": {
+          "name": "Name",
+          "position": "Position",
+          "mail": "Mail",
+          "status": "Status",
+          "active": "Active",
+          "inactive": "Inactive",
+          "invited": "Invited",
+          "resend": "Resend",
+          "edit": "Edit"
+        }
+      }
+    }
+  },
+  "dialogs": {
+    "welcome": {
+      "title": "payever Settings",
+      "label": "Customize your settings.",
+      "confirm": "Get Started",
+      "decline": "Back to Dashboard",
+      "agreement": "Hereby I confirm the Terms and Pricing of the payever Settings."
+    },
+    "business_delete": {
+      "title": "Are you sure?",
+      "label": "Do you really want to delete your business? All data will be lost and you will not be able to restore it.",
+      "confirm": "Delete Business",
+      "decline": "Go Back"
+    },
+    "window_exit": {
+      "title": "Are you sure?",
+      "label": "Do you really want to close this window? All data will be lost and you will not be able to restore it.",
+      "confirm": "Yes",
+      "decline": "No"
+    },
+    "item_delete": {
+      "title": "Are you sure?",
+      "label": "Do you really want to delete this item? All data will be lost and you will not be able to restore it.",
+      "confirm": "Delete",
+      "decline": "No"
+    },
+    "wallpaper_delete": {
+      "title": "Are you sure?",
+      "single": "wallpaper",
+      "multiple": "wallpapers",
+      "label": "Do you want to delete this {{item}}?",
+      "confirm": "Delete",
+      "decline": "No"
+    },
+    "new_group": {
+      "title": {
+        "add": "Add group",
+        "edit": "Edit group",
+        "permissions": "Group Permissions"
+      }
+    },
+    "new_employee": {
+      "title": {
+        "add": "Add employee",
+        "edit": "Edit employee"
+      },
+      "action_result": {
+        "success": {
+          "edit": "Success! You have edited an employee.",
+          "add": "Success! You have added an employee.",
+          "invited": "Success! You have invited an employee."
+        },
+        "error": "Something went wrong, try again",
+        "errors": {
+          "email": {
+            "invalid": "Email is not valid",
+            "invited": "This email belongs to another user in this business. Please note that each user must have its own unique email address.",
+            "is_own": "This email you entered equals the registration email of this account. Please note that employee accounts each need an own email address, you can not re-use the email you have used for registering the business."
+          }
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "done": "Done"
+      },
+      "panels": {
+        "general": {
+          "title": "General",
+          "logo": {
+            "add_media": "Add media",
+            "status": "Status"
+          },
+          "position": {
+            "label": "Position"
+          },
+          "first_name": {
+            "label": "First Name"
+          },
+          "last_name": {
+            "label": "last Name"
+          },
+          "mobile_phone": {
+            "label": "Mobile Phone"
+          },
+          "email": {
+            "label": "Email"
+          },
+          "company": {
+            "label": "Company"
+          },
+          "address": {
+            "label": "Address"
+          },
+          "city": {
+            "label": "City"
+          },
+          "state": {
+            "label": "State"
+          },
+          "zip": {
+            "label": "ZIP"
+          },
+          "country": {
+            "label": "Country"
+          }
+        },
+        "app_items_rights": {
+          "title": "Apps Access",
+          "custom_access": "Custom Access",
+          "full_access": "Full Access",
+          "no_access": "No Access",
+          "reading": "Reading",
+          "creating": "Creating",
+          "editing": "Editing",
+          "deleting": "Deleting"
+        },
+        "additional": {
+          "title": "Additional"
+        }
+      }
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "all_blogs": {
+      "title": "All blogs"
+    },
+    "all_checkouts": {
+      "title": "All checkouts"
+    },
+    "all_invoices": {
+      "title": "All invoices"
+    },
+    "all_plans": {
+      "title": "All plans"
+    },
+    "all_shops": {
+      "title": "All shops"
+    },
+    "all_sites": {
+      "title": "All sites"
+    },
+    "all_terminals": {
+      "title": "All terminals"
+    },
+    "apperance": {
+      "title": "Apperance"
+    },
+    "business_settings": {
+      "title": "Business"
+    },
+    "domains": {
+      "title": "Domains",
+      "payever_domain": {
+        "creation_date": {
+          "label": "Creation date",
+          "placeholder": "Enter date"
+        },
+        "domain": {
+          "label": "Domain",
+          "placeholder": "Enter domain"
+        },
+        "provider": {
+          "label": "Provider",
+          "placeholder": "Enter provider"
+        },
+        "title": "payever domain"
+      },
+      "personal_domain": {
+        "creation_date": {
+          "label": "Creation date",
+          "placeholder": "Enter date"
+        },
+        "domain": {
+          "label": "Domain",
+          "placeholder": "Enter domain"
+        },
+        "provider": {
+          "label": "Provider",
+          "placeholder": "Enter provider"
+        },
+        "title": "Personal domain"
+      },
+      "existing_domain": {
+        "first_step": {
+          "enter_domain": {
+            "label": "Enter the domain you want to connect",
+            "placeholder": "Enter domain"
+          },
+          "info": "To connect your domain, you need to log in to your provider account and change your settings. Follow the provider step-by-step instructions to get started.",
+          "verify_info": "Verify the connection to make sure your domain is set up correctly."
+        },
+        "second_step": {
+          "c_name": {
+            "title": "CNAME (www)",
+            "current_cname": "Current cname",
+            "required_cname": "Required cname"
+          },
+          "info": "Some providers take a few minutes to update their settings. Try verifying again, or add your domain now and check back later for connection updates.",
+          "record_a": {
+            "title": "A record (@)",
+            "current_ip": "Current IP address",
+            "required_ip": "Required IP address"
+          }
+        },
+        "title": "Existing domain"
+      },
+      "actions": {
+        "add_domain": "Add domain",
+        "cancel": "Cancel",
+        "connect": "Connect",
+        "copy": "Copy",
+        "done": "Done",
+        "remove_domain": "Remove domain",
+        "verify_connection": "Verify connection"
+      },
+      "errors": {
+        "entered_incorrectly": "entered incorrectly. Check that you’ve entered the required values, and verify your connection again.",
+        "incorrect_name": "Domain name is not correct",
+        "min_name_length": "Domain name should have at least 3 characters",
+        "must_be_not_empty": "Domain can not be empty",
+        "not_connected": "Domain not connected"
+      },
+      "messages": {
+        "no_domains_connected": "No domains connected",
+        "successfuly_connected": "Domain connected successfuly"
+      }
+    },
+    "embed_links": {
+      "title": "Embed links"
+    },
+    "general_settings": {
+      "title": "General"
+    },
+    "policies_settings": {
+      "title": "Policies"
+    },
+    "publishing": {
+      "title": "Publishing",
+      "setting_livestatus": {
+        "title": "Live status"
+      }
+    },
+    "safety": {
+      "title": "Safety"
+    },
+    "social": {
+      "title": "Social"
+    }
+  }
+}

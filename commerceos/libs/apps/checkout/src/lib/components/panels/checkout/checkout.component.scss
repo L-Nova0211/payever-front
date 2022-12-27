@@ -1,0 +1,314 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+panel-checkout, .checkout-content__wrapper, checkout-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+$regular-text-color: darken(#ffffff, 10%);
+$regular-light-text-color: #111111;
+$content-light-background-color: #ffffff;
+$content-transparent-background-color: rgba(0, 0, 0, 0.3);
+
+pe-checkout-wrapper-by-channel-set-id {
+  .pe-checkout-wrapper-layout.layout-with-paddings {
+    .ui-layout-app.fill-viewport {
+      top: 0; // 32px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+}
+
+.checkout-panel-header {
+  border-radius: 12px 12px 0 0;
+  background-color: #1c1d1e;
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin: 0 4px;
+    color: $regular-text-color;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 0 10px;
+    outline: 0;
+    transition: 0.2s;
+    background-color: #585858;
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    margin-right: 4px;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &-menu {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 11px 16px 1px 16px;
+    min-width: 267px;
+    max-width: 267px;
+    align-items: flex-start;
+    color: $regular-text-color;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1c1d1e;
+
+    &.sub-menu {
+      min-width: 120px;
+    }
+
+    &__title {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 5px 0;
+
+      &-icon {
+        height: 24px;
+        width: 24px;
+        color: #636363;
+        cursor: pointer;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      &.selectable {
+        cursor: pointer;
+      }
+    }
+
+    &__item-content {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      padding: 10px 0 10px 0;
+      max-width: 100%;
+      overflow: hidden;
+      background-color: initial;
+
+      & .icon {
+        height: 20px;
+        width: 20px;
+
+        svg {
+          height: 20px;
+          width: 20px;
+        }
+
+        &.with-background {
+          background-color: #86868b;
+          border-radius: 5px;
+        }
+      }
+
+      &.selectable {
+        cursor: pointer;
+      }
+    }
+
+    &__name {
+      font-family: Roboto, sans-serif;
+      flex-grow: 1;
+      margin: 0 8px;
+      font-size: 16px;
+      color: $regular-text-color;
+      max-width: 234px;
+    }
+  }
+}
+
+.checkout-main-content {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0 0 12px 12px;
+  // This one we need for wrapper
+  // Wrapper has "position: fixed" but this command makes it
+  //  to be part of .checkout-main-content instead of filling whole page.
+  transform: translateX(0);
+  overflow: hidden;
+
+  root-checkout-wrapper{
+    display: block;
+  }
+}
+
+.checkout-mat-menu + * .cdk-overlay-pane {
+  margin-top: 3px;
+
+  .mat-menu-panel {
+    min-width: 64px;
+    max-width: 360px;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    border-radius: 16px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
+    background-color: #1c1d1e;
+    -webkit-mask-image: none;
+
+    .mat-menu-content {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: #2b2c2d;
+    }
+  }
+}
+
+.cdk-overlay-container {
+  .checkout-mat-menu-light.cdk-overlay-backdrop + .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane {
+    margin-top: 3px;
+
+    .mat-menu-panel {
+      min-width: 64px;
+      max-width: 360px;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      border-radius: 16px;
+      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
+      background-color: $content-light-background-color;
+      -webkit-mask-image: none;
+
+      .mat-menu-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: $content-light-background-color;
+
+        .checkout-header-menu {
+          background-color: $content-light-background-color;
+          color: $regular-light-text-color;
+
+          .checkout-header-menu__name {
+            color: $regular-light-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-container {
+  .checkout-mat-menu-transparent.cdk-overlay-backdrop + .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane {
+    margin-top: 3px;
+
+    .mat-menu-panel {
+      min-width: 64px;
+      max-width: 360px;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      border-radius: 16px;
+      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.4);
+      background-color: $content-transparent-background-color;
+      -webkit-mask-image: none;
+
+      .mat-menu-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: $content-transparent-background-color;
+
+        .checkout-header-menu {
+          background-color: $content-transparent-background-color;
+          color: $regular-text-color;
+
+          .checkout-header-menu__name {
+            color: $regular-text-color;
+          }
+
+          .checkout-header-menu__title-icon {
+            color: #e6e6e6;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  pe-checkout-wrapper-by-channel-set-id {
+    .pe-checkout-wrapper-layout.layout-with-paddings {
+      .ui-layout-app.fill-viewport {
+        left: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .checkout-panel-header {
+    padding: 0 4px;
+  }
+
+  panel-checkout {
+    padding-bottom: 16px;
+  }
+}
+
+.checkout-panel-header-menu {
+  padding: 12px 16px 6px 16px;
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      &::before {
+        background-color: #0371e2 !important;
+        border-radius: 8px;
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 4px;
+        right: -6px;
+        bottom: 4px;
+      }
+    }
+  }
+
+  &__item-content {
+    position: relative;
+  }
+}

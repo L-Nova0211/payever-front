@@ -1,0 +1,15 @@
+<pe-search
+  [showSpinner]="isLoading$ | async"
+  [empty]="!hasValue && !emptySearch"
+  [searchString]="searchString"
+  (onChange)="_onSearch($event)">
+</pe-search>
+<pe-search-results
+  [withHeading]="true"
+  [groups]="groups"
+  [empty]="!hasValue"
+  (onChoose)="onClickResult($event)">
+  <ng-container empty-content>
+    <empty-search-box></empty-search-box>
+  </ng-container>
+</pe-search-results>

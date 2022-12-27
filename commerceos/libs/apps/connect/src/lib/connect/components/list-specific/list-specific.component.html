@@ -1,0 +1,43 @@
+<pe-overlay-container *ngIf="list$"
+                      class="fixed"
+                      [contentScrollable]="true"
+                      [showHeader]="false"
+                      [withPadding]="false"
+                      [showSpinner]="!(list$ | async)"
+                      (onClose)="onClose()">
+  <ng-container content>
+    <div class="modal-general">
+      <mat-list [disableRipple]="true" class="mat-list-transparent mat-list-padding-md mat-list-transparent-bold">
+        <ng-container *ngFor="let item of ((list$ | async) || [])">
+          <mat-list-item class="mat-list-item-no-padding-left">
+            <div class="mat-list-item-flex">
+
+              <div class="mat-list-item-col-2 cursor-pointer payment-title">
+                <svg class="icon icon-16">
+                  <use [attr.xlink:href]="item.displayOptions.icon"></use>
+                </svg>
+                <span class="pe-truncate-text">
+                  {{ item.displayOptions.title | translate }}
+                </span>
+              </div>
+
+              <div class="mat-list-item-col text-right action-wrapper">
+                <button mat-raised-button
+                        type="button"
+                        (click)="item._status?.installed ? openIntegration(item) : installIntegrationDirectly(item)"
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        color="muted-light">
+                  <pe-progress-button-content [loading]="isInstalling(item)" [spinnerDiameter]="15">
+                    {{ item._status?.installed ? ('actions.open' | translate) : ('actions.install' | translate) }}
+                  </pe-progress-button-content>
+                </button>
+              </div>
+            </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-list>
+    </div>
+  </ng-container>
+</pe-overlay-container>

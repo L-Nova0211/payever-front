@@ -1,0 +1,1397 @@
+id: apple-main-page
+name: Main Page
+variant: front
+type: replica
+master: null
+data: {}
+template:
+  id: apple-main-page
+  type: document
+  children:
+    - id: upper-banner
+      type: section
+      children:
+        - id: upper-block
+          type: block
+          children:
+            - id: upper-text
+              type: text
+              data:
+                text: 'Shop online and get free, no‑contact delivery, Specialist help, and more.'
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-find-store
+          type: block
+          children:
+            - id: find-store-title
+              type: text
+              data:
+                text: Find a store
+            - id: find-store-search
+              type: block
+              children:
+                - id: find-store-search-box
+                  type: block
+                - id: find-store-search-field
+                  type: block
+                  children:
+                    - id: find-store-search-field-label
+                      type: text
+                      data:
+                        text: <label for="store-search">Search field</label>
+                    - id: find-store-search-field-input
+                      type: text
+                      data:
+                        text: >-
+                          <input  id="store-search" style="display: block;
+                          border: none; margin: 0px 0px; width: 85%;"
+                          type="search" role="combobox" placeholder="City and
+                          State or Zip">
+            - id: second-section-find-store-link
+              type: text
+              data:
+                text: >-
+                  <a href="/retail/storelist/" style="display: block;
+                  text-decoration: none; color: white;">Complete store list &gt;</a>
+
+    - id: third-section
+      type: section
+      children:
+        - id: card-main
+          type: block
+          children:
+            - id: card-block-item
+              type: block
+              children:
+                - id: card-block-item-title
+                  type: text
+                  data:
+                    text: We’re putting safety first as<br/>  we reopen our stores.
+                - id: card-block-item-grid
+                  type: block
+                  children:
+                    - id: card-block-item-grid-item-1
+                      type: block
+                      children:
+                        - id: card-block-item-grid-item-1-image
+                          type: image
+                          data:
+                            src: >-
+                              https://www.apple.com/v/retail/includes/promo/d/images/retail-info/face_covering_icon_large.png
+                        - id: card-block-item-grid-item-1-text
+                          type: text
+                          data:
+                            text: Face coverings<br/>(will be provided)
+                    - id: card-block-item-grid-item-2
+                      type: block
+                      children:
+                        - id: card-block-item-grid-item-2-image
+                          type: image
+                          data:
+                            src: >-
+                              https://www.apple.com/v/retail/includes/promo/d/images/retail-info/touchless_temperature_icon_large.png
+                        - id: card-block-item-grid-item-2-text
+                          type: text
+                          data:
+                            text: Touchless<br/>temperature checks
+                    - id: card-block-item-grid-item-3
+                      type: block
+                      children:
+                        - id: card-block-item-grid-item-3-image
+                          type: image
+                          data:
+                            src: >-
+                              https://www.apple.com/v/retail/includes/promo/d/images/retail-info/store_occupancy_icon_large.png
+                        - id: card-block-item-grid-item-3-text
+                          type: text
+                          data:
+                            text: Limiting store<br/>occupancy
+                    - id: card-block-item-grid-item-4
+                      type: block
+                      children:
+                        - id: card-block-item-grid-item-4-image
+                          type: image
+                          data:
+                            src: >-
+                              https://www.apple.com/v/retail/includes/promo/d/images/retail-info/social_distancing_icon_large.png
+                        - id: card-block-item-grid-item-4-text
+                          type: text
+                          data:
+                            text: Social<br/>distancing
+                    - id: card-block-item-grid-item-5
+                      type: block
+                      children:
+                        - id: card-block-item-grid-item-5-image
+                          type: image
+                          data:
+                            src: >-
+                              https://www.apple.com/v/retail/includes/promo/d/images/retail-info/deep_cleaning_icon_large.png
+                        - id: card-block-item-grid-item-5-text
+                          type: text
+                          data:
+                            text: Continuous deep<br/>cleaning
+                - id: card-block-item-footer
+                  type: block
+                  children:
+                    - id: card-block-item-footer-text
+                      type: text
+                      data:
+                        text: >-
+                          <p style="text-align: center">
+                          Questions about safety measures at our stores?
+                          <a href="/shop/browse/store/temporary_closures"
+                          style="display: inline-block; text-decoration: none;">
+                          See FAQs  &gt;</a>
+                          </p>
+    - id: card-info
+      type: section
+      children:
+        - id: card-info-item-1
+          type: block
+          children:
+            - id: card-info-item-1-logo
+              type: image
+              data:
+                src: >-
+                  https://www.apple.com/v/retail/includes/promo/d/images/retail-info/aos_icons_large.png
+            - id: card-info-item-1-title
+              type: text
+              data:
+                text: All that you love<br>about Apple.<br>All online.
+            - id: card-info-item-1-content
+              type: text
+              data:
+                text: "That means the same great products<br>and services.
+                  And Apple Specialists<br>ready to help you right here."
+            - id: card-info-item-1-footer
+              type: text
+              data:
+                text: >-
+                  <a href="https://www.apple.com/shop" style="display:
+                  block; text-decoration: none; text-align: center;
+                  width: 100%;">Learn more &gt;</a>
+        - id: card-info-item-2
+          type: block
+          children:
+            - id: card-info-item-2-logo
+              type: image
+              data:
+                src: >-
+                  https://www.apple.com/v/retail/includes/promo/d/images/retail-info/taa_at_home_icon_large.png
+            - id: card-info-item-2-title
+              type: text
+              data:
+                text: >-
+                  Fun how-to videos<br>to help you get<br>creative at
+                  home.
+            - id: card-info-item-2-footer
+              type: text
+              data:
+                text: >-
+                  <a
+                  href="https://www.apple.com/today/feature/today-at-home/"
+                  style="display: block; text-decoration: none;
+                  text-align: center; width: 100%;">Watch now &gt;</a>
+        - id: card-info-item-3
+          type: block
+          children:
+            - id: card-info-item-3-logo
+              type: text
+              data:
+                text: Genius Support
+            - id: card-info-item-3-title
+              type: text
+              data:
+                text: 'No matter what<br>you need, we’re<br>here for you.'
+            - id: card-info-item-3-content
+              type: text
+              data:
+                text: >-
+                  <p>Get help from our experts via phone, chat, or email
+                  or at our store locations. From setting up your device
+                  to recovering your Apple ID to replacing a screen,
+                  we’re here to support you.</p>
+            - id: card-info-item-3-footer
+              type: text
+              data:
+                text: >-
+                  <a href="https://getsupport.apple.com/"
+                  style="display: block; text-decoration: none;
+                  text-align: center; width: 100%;">Get started &gt;</a>
+        - id: card-info-item-4
+          type: block
+          children:
+            - id: card-info-item-4-logo
+              type: image
+              data:
+                src: >-
+                  https://www.apple.com/v/retail/includes/promo/d/images/retail-info/genius_support_large.png
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: banner
+          type: carousel
+          options:
+            scale: 89
+          data:
+            images:
+              - >-
+                https://www.apple.com/retail/find-a-store/images/hero_brussels_large.jpg
+              - >-
+                https://www.apple.com/retail/find-a-store/images/hero_parc66_large.jpg
+              - >-
+                https://www.apple.com/retail/find-a-store/images/hero_michiganave_large.jpg
+
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 20 400
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#333'
+      fontSize:  12
+    # ----------------------------------
+    # Desktop Second section
+    # ----------------------------------
+    second-section:
+      backgroundColor: black
+    second-section-find-store:
+      display: grid
+      alignItems: center
+    find-store-title:
+      color: white
+      fontSize: 40
+      lineHeight: 52
+      width: 300
+      fontWeight: 600
+      letterSpacing: 0em
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      backgroundColor: transparent
+      margin: 10 450
+    find-store-search:
+      display: grid
+      gridTemplateColumns: 40 320
+      height: 35
+      width: 350
+      margin: 0 380
+      backgroundColor: white
+    find-store-search-box:
+      backgroundColor: white
+      backgroundImage: >-
+        https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__fca9mfoh8a2q_large.png
+      backgroundSize: auto
+      backgroundRepeat: no-repeat
+      display: block
+      margin: 0
+      width: 40
+      height: 35
+    find-store-search-field:
+      boder: none
+      width: 300
+      display: block
+    find-store-search-field-label:
+      clip: 'rect(1, 1, 1, 1)'
+      overflow: hidden
+      height: 1
+      width: 1
+      border: 0
+      clipPath: inset(0 0 99.9% 99.9%)
+      backgroundColor: '#a52343'
+      display: none
+    find-store-search-field-input:
+      border: none
+      width: 300
+      margin: 7 0
+    store-search:
+      border: none
+      width: 300
+    second-section-find-store-link:
+      margin: 15 0 20 500
+      width: 200
+      backgroundColor: tomate
+      fontSize: 17
+    # ----------------------------------
+    # Desktop Third section
+    # ----------------------------------
+    third-section:
+      backgroundColor: '#f5f5f7'
+    card-main:
+      width: 1024
+    card-block-item:
+      display: grid
+      backgroundColor: white
+    card-block-item-title:
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 40
+      lineHeight: 78
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 1024
+      margin: 10 0 0
+    card-block-item-grid:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      marginTop: 10
+    card-block-item-grid-item-1:
+      display: grid
+      width: 512
+      backgroundColor: transparent
+    card-block-item-grid-item-1-image:
+      margin: 20 200
+      height: auto
+      width: 80
+    card-block-item-grid-item-1-text:
+      margin: 5 200
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      width: 300
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-2:
+      display: grid
+      width: 512
+      backgroundColor: transparent
+    card-block-item-grid-item-2-image:
+      margin: 20 200
+      width: 40
+      height: auto
+    card-block-item-grid-item-2-text:
+      margin: 5 200
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      width: 300
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-3:
+      display: grid
+      width: 512
+      backgroundColor: transparent
+    card-block-item-grid-item-3-image:
+      margin: 20 200
+      height: auto
+      width: 80
+    card-block-item-grid-item-3-text:
+      margin: 5 200
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      width: 300
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-4:
+      display: grid
+      width: 512
+      backgroundColor: transparent
+    card-block-item-grid-item-4-image:
+      margin: 20 200
+      height: auto
+      width: 80
+    card-block-item-grid-item-4-text:
+      margin: 5 200
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      width: 300
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-5:
+      display: grid
+      width: 512
+      backgroundColor: transparent
+    card-block-item-grid-item-5-image:
+      margin: 20 200
+      height: auto
+      width: 80
+    card-block-item-grid-item-5-text:
+      margin: 5 200
+      width: 300
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-footer:
+      textAlign: center
+      marginTop: 50
+      marginBottom: 20
+      marginLeft: 300
+      width: 400
+    # ----------------------------------
+    # Desktop Card-info section
+    # ----------------------------------
+    card-info:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+      width: 1024
+    card-info-item-1:
+      display: grid
+      width: 512
+      height: 400
+      margin: 20 0 10 0
+      backgroundColor: white
+    card-info-item-1-logo:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 21
+      width: 200
+      fontWeight: 600
+      textAlign: center
+      margin: 30 0 0 150
+    card-info-item-1-title:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 24
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 600
+      letterSapcing: '-.022em'
+      width: 400
+      margin: 10 0 0 70
+    card-info-item-1-content:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 17
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      width: 384
+      margin: 10 0 0 80
+    card-info-item-1-footer:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 17
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      width: 384
+      margin: 10 0 20 80
+    card-info-item-2:
+      display: grid
+      width: 512
+      height: 400
+      margin: 20 0 10 0
+      backgroundColor: white
+    card-info-item-2-logo:
+      display: block
+      width: 460
+      height: 60
+      margin: 40 0 0 30
+    card-info-item-2-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.4
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      width: 460
+      margin: 10 0 0 30
+      textAlign: center
+    card-info-item-2-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      width: 460
+      margin: 10 0 0 30
+    card-info-item-3:
+      display: grid
+      width: 512
+      height: 400
+      margin: 10 0 10 0
+      backgroundColor: white
+    card-info-item-3-logo:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 21
+      lineHeight: 1.23
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      width: 460
+      textAlign: center
+      margin: 35 0 0 40
+    card-info-item-3-title:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 24
+      lineHeight: 1.2
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      width: 460
+      margin: 10 0 0 40
+    card-info-item-3-content:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 17
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      width: 384
+      margin: 10 47 0 80
+    card-info-item-3-footer:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 17
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      width: 384
+      margin: 10 0 0 80
+    card-info-item-4:
+      display: grid
+      width: 512
+      height: 400
+      margin: 10 0 10 0
+      backgroundColor: white
+    card-info-item-4-logo:
+      display: block
+      width: 630
+      height: 400
+    # ----------------------------------
+    # Desktop Forth section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      height: 420
+      backgroundColor: '#f5f5f7'
+      width: 1024
+    banner:
+      display: block
+
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 20 230
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#333'
+      fontSize:  12
+    # ----------------------------------
+    # Tablet Second section
+    # ----------------------------------
+    second-section:
+      backgroundColor: black
+    second-section-find-store:
+      display: grid
+      alignItems: center
+      justifySelf: center
+      gridTemplateRows: auto
+      gridTemplateColumns: auto
+    find-store-title:
+      color: white
+      fontSize: 40
+      lineHeight: 52
+      fontWeight: 600
+      letterSpacing: 0em
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      backgroundColor: transparent
+      margin: 10 300
+    find-store-search:
+      display: grid
+      gridTemplateColumns: 40 320
+      height: 35
+      width: 350
+      margin: 0 250
+      backgroundColor: white
+    find-store-search-box:
+      backgroundColor: white
+      backgroundImage: >-
+        https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__fca9mfoh8a2q_large.png
+      backgroundSize: auto
+      backgroundRepeat: no-repeat
+      display: block
+      padding: 0
+      margin: 0
+      width: 40
+      height: 35
+    find-store-search-field:
+      boder: none
+      width: 300
+      display: block
+    find-store-search-field-label:
+      display: none
+    find-store-search-field-input:
+      border: none
+      width: 300
+      margin: 7 0
+    store-search:
+      border: none
+      width: 300
+    second-section-find-store-link:
+      margin: 10 350
+      color: white
+      backgroundColor: tomate
+      width: 174
+      fontSize: 17
+
+    # ----------------------------------
+    # Tablet Third section
+    # ----------------------------------
+    third-section:
+      backgroundColor: '#f5f5f7'
+    card-main:
+      display: grid
+      backgroundColor: white
+      margin: 40 0 0 0
+      borderRadius: 28
+      overflow: hidden
+      width: 768
+    card-block-item:
+      display: grid
+      backgroundColor: white
+    card-block-item-title:
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 40
+      lineHeight: 78
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      marginTop: 0
+      textAlign: center
+      alignSelf: center
+      width: auto
+      margin: 0 0 20
+    card-block-item-grid:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: auto
+      justifyContent: center
+      alignContent: center
+      marginTop: 10
+    card-block-item-grid-item-1:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 768
+      backgroundColor: transparent
+    card-block-item-grid-item-1-image:
+      margin: 20 320
+      height: auto
+    card-block-item-grid-item-1-text:
+      margin: 5 320
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-2:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 768
+      backgroundColor: transparent
+    card-block-item-grid-item-2-image:
+      margin: 20 320
+      height: auto
+    card-block-item-grid-item-2-text:
+      margin: 5 320
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-3:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 768
+      backgroundColor: transparent
+    card-block-item-grid-item-3-image:
+      margin: 20 320
+      height: auto
+    card-block-item-grid-item-3-text:
+      margin: 5 320
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-4:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 768
+      backgroundColor: transparent
+    card-block-item-grid-item-4-image:
+      margin: 20 320
+      width: 88px
+      height: auto
+    card-block-item-grid-item-4-text:
+      margin: 5 320
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-5:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 768
+      backgroundColor: transparent
+    card-block-item-grid-item-5-image:
+      margin: 4 320
+      height: auto
+    card-block-item-grid-item-5-text:
+      margin: 20 320
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-footer-text:
+      textAlign: center
+      width: 400
+      margin: 10 170
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,sans-serif
+      fontSize: 14
+      fontWeight: 400
+    # ----------------------------------
+    # Tablet Card-info section
+    # ----------------------------------
+    card-info:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      backgroundColor: '#f5f5f7'
+      width: 768
+      margin: 15 0
+    card-info-item-1:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: auto
+      justifyContent: center
+      alignContent: center
+      width: 384
+      margin: 20 0 10 0
+      backgroundColor: white
+    card-info-item-1-logo:
+      display: block
+      width: 238
+      height: 60
+      marginTop: 20
+    card-info-item-1-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.2
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 250
+      margin: 17 70
+    card-info-item-1-content:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      textAlign: center
+      alignSelf: center
+      width: 250
+      margin: 0 80
+    card-info-item-1-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 0 20
+      padding: 20
+    card-info-item-2:
+      display: grid
+      width: 384
+      borderRadius: 25%
+      margin: 20 0 10 0
+      backgroundColor: white
+    card-info-item-2-logo:
+      display: block
+      width: 238
+      height: 60
+      marginTop: 20
+    card-info-item-2-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.4
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      width: 300
+      margin: 17 50
+    card-info-item-2-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      width: 250
+      margin: 0 50
+      padding: 20
+    card-info-item-3:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: auto
+      justifyContent: center
+      alignContent: center
+      width: 384
+      margin: 10 0 10 0
+      backgroundColor: white
+    card-info-item-3-logo:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 21
+      lineHeight: 1.23
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 20 0 0 50
+    card-info-item-3-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.2
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 0 50
+    card-info-item-3-content:
+      display: block
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 17
+      textAlign: center
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      width: 300
+      margin: 10 0 0 50
+    card-info-item-3-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      width: 250
+      margin: 20 0 0 70
+    card-info-item-4:
+      display: grid
+      width: 384
+      padding: 0
+      borderRadius: 25%
+      margin: 10 0 10 0
+      backgroundColor: white
+    card-info-item-4-logo:
+      display: block
+      width: 384
+      height: auto
+    # ----------------------------------
+    # Table Forth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      width: 768
+    banner:
+      display: block
+
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#fff'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 20 40
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#333'
+      fontSize:  12
+    # ----------------------------------
+    # Mobile Second section
+    # ----------------------------------
+    second-section:
+      backgroundColor: black
+      width: 360
+      height: 180
+      margin: 0
+      padding: 45 0 0
+    second-section-find-store:
+      display: grid
+      alignItems: center
+      justifySelf: center
+      gridTemplateRows: auto
+      gridTemplateColumns: auto
+    find-store-title:
+      color: white
+      fontSize: 28
+      width: 160
+      lineHeight: 32
+      letterSpacing: 0.196
+      fontWeight: 600
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      backgroundColor: transparent
+      margin: 10 0 20 100
+    find-store-search:
+      display: grid
+      gridTemplateColumns: 40 320
+      height: 35
+      width: 300
+      margin: 0 30
+      backgroundColor: white
+    find-store-search-box:
+      backgroundColor: white
+      backgroundImage: >-
+        https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__fca9mfoh8a2q_large.png
+      backgroundSize: auto
+      #   backgroundPosition: 8px -48px
+      backgroundRepeat: no-repeat
+      display: block
+      padding: 0
+      margin: 0
+      width: 40
+      height: 35
+    find-store-search-field:
+      boder: none
+      width: 300
+      display: block
+    find-store-search-field-label:
+      clip: 'rect(1, 1, 1, 1)'
+      overflow: hidden
+      height: 1
+      width: 1
+      padding: 0
+      border: 0
+      clipPath: inset(0 0 99.9% 99.9%)
+      backgroundColor: '#a52343'
+      display: none
+    find-store-search-field-input:
+      border: none
+      width: 200
+      margin: 7 0
+    store-search:
+      border: none
+      width: 300
+    second-section-find-store-link:
+      margin: 10 100
+      color: white
+      width: 156
+      backgroundColor: tomate
+      fontSize: 17
+
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      gridTemplateColumns: 1fr
+      backgroundColor: '#f5f5f7'
+      width: 360
+    card-main:
+      display: grid
+      position: initial
+      backgroundColor: white
+      width: 360
+      margin: 10 22 10 0
+      padding: 0
+      borderRadius: 28
+      overflow: hidden
+    card-block-item:
+      display: grid
+      gridTemplateRows: auto
+      gridTemplateColumns: auto
+      margin: 0
+      padding: 0 0 20 0
+    card-block-item-title:
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 20
+      lineHeight: 1.25
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 0 5 55 20
+    card-block-item-grid:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: auto
+      justifyContent: center
+      alignContent: center
+      marginTop: 10
+    card-block-item-grid-item-1:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 40
+      margin: 10
+      backgroundColor: transparent
+    card-block-item-grid-item-1-image:
+      margin: 4 20
+      width: 88
+      height: auto
+    card-block-item-grid-item-1-text:
+      margin: 5 20
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-2:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 40
+      margin: 10
+      backgroundColor: transparent
+    card-block-item-grid-item-2-image:
+      margin: 0 20
+      width: 36
+      height: auto
+    card-block-item-grid-item-2-text:
+      margin: 5 20
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-3:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 40
+      margin: 10
+      backgroundColor: transparent
+    card-block-item-grid-item-3-image:
+      margin: 4 20
+      width: 88
+      height: auto
+    card-block-item-grid-item-3-text:
+      margin: 5 20
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-4:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 40
+      margin: 10
+      backgroundColor: transparent
+    card-block-item-grid-item-4-image:
+      margin: 4 20
+      width: 88
+      height: auto
+    card-block-item-grid-item-4-text:
+      margin: 5 20
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-grid-item-5:
+      display: grid
+      gridTemplateRows: 1fr
+      gridTemplateColumns: 1fr
+      width: 40
+      margin: 10
+      backgroundColor: transparent
+    card-block-item-grid-item-5-image:
+      margin: 4 20
+      width: 88
+      height: auto
+    card-block-item-grid-item-5-text:
+      margin: 5 20
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif
+      fontSize: 14
+      lineHeight: 1.1
+      fontWeight: 400
+    card-block-item-footer-text:
+      textAlign: center
+      width: 230
+      margin: 10 60
+      fontFamily: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,sans-serif
+      fontSize: 14
+      fontWeight: 400
+
+    # ----------------------------------
+    # Mobile Card-info section
+    # ----------------------------------
+    card-info:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      width: 360
+    card-info-item-1:
+      display: grid
+      width: 360
+      borderRadius: 15
+      margin: 0
+      backgroundColor: white
+    card-info-item-1-logo:
+      display: block
+      width: 214
+      height: auto
+    card-info-item-1-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 26
+      lineHeight: 20
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 0 30
+    card-info-item-1-content:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 0
+    card-info-item-1-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 10 0 40 0
+    card-info-item-2:
+      display: grid
+      width: 360
+      borderRadius: 25%
+      margin: 0
+      backgroundColor: white
+    card-info-item-2-logo:
+      display: block
+      width: 238
+      height: 60
+    card-info-item-2-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.2
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 17 0
+    card-info-item-2-content:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      textAlign: center
+      alignSelf: center
+      width: 300
+      margin: 0 20
+    card-info-item-2-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 0 0 40 0
+    card-info-item-3:
+      display: grid
+      width: 360
+      borderRadius: 15
+      margin: 0
+      backgroundColor: white
+    card-info-item-3-logo:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 20
+      lineHeight: 1.23
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 0
+    card-info-item-3-title:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 24
+      lineHeight: 1.2
+      fontWeight: 600
+      letterSapcing: '-.025em'
+      textAlign: center
+      alignSelf: center
+      width: 360
+      margin: 10 0
+    card-info-item-3-content:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 1.4
+      fontWeight: 400
+      letterSapcing: '-.022em'
+      textAlign: center
+      width: 300
+      margin: 10 0 0 30
+    card-info-item-3-footer:
+      display: block
+      fontFamily: >-
+        SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+      fontSize: 17
+      lineHeight: 25
+      fontWeight: 400
+      letterSapcing: '-.037em'
+      textAlign: center
+      alignSelf: center
+      width: 150
+      margin: 0 80
+      padding: 20
+    card-info-item-4:
+      display: grid
+      width: 360
+      borderRadius: 15
+      margin: 0
+      backgroundColor: white
+    card-info-item-4-logo:
+      width: 360
+    fourth-section:
+      display: grid
+      height: 200
+      width: 360
+    banner:
+      display: block
+context: {}

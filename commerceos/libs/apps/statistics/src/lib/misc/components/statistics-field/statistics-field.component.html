@@ -1,0 +1,13 @@
+<div class="field" (click)="openFieldFunc(this.id, readonly)">
+  <div class="field__body">
+    <span class="field__body-input">{{ title }}</span>
+    <span class="field__body-options" [class.error]="errorMessage">{{
+      errorMessage ? errorMessage : (optionsSelected | selectedOptions)
+    }}</span>
+    <div class="field__arrow">
+      <svg>
+        <use href="#icon-ui-arrow-open"></use>
+      </svg>
+    </div>
+  </div>
+</div>

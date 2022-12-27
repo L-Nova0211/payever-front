@@ -1,0 +1,49 @@
+<div>
+  <form class="form-container" [formGroup]="addWidgetForm">
+    <peb-expandable-panel
+      headerLabel="{{ 'statistics.form_fields.expandable_panels.preview' | translate }}"
+      isContentOpen="true"
+    >
+      <div class="statistics-preview" *ngIf="widgetService.viewType$ | async as viewType">
+        <peb-widget-wrapper [class]="widgetService.selectedWidgetSize" [config]="widgetConfig"></peb-widget-wrapper>
+      </div>
+    </peb-expandable-panel>
+
+    <peb-expandable-panel
+      headerLabel="{{ 'statistics.form_fields.expandable_panels.content' | translate }}"
+      isContentOpen="true"
+    >
+      <peb-form-background>
+        <peb-form-field-input label="{{ 'statistics.form_fields.widget_name' | translate }}" appearance="label">
+          <input placeholder="" formControlName="name" />
+        </peb-form-field-input>
+      </peb-form-background>
+      <form formArrayName="fields">
+        <ng-container *ngFor="let control of getControls(); let i = index">
+          <peb-statistics-field
+            *ngIf="widgetService.viewType === 'LineGraph' && i === 2; else normalFields"
+            [ngClass]="theme"
+            [title]="control.value"
+            [readonly]="false"
+            [openFieldFunc]="openFieldForm.bind(this)"
+            [id]="i"
+            [optionsSelected]="widgetService?.fieldForms[i] ? widgetService?.fieldForms[i] : null"
+            [errorMessage]="lineGraphDataRequired ? 'Line graph data required' : null"
+          ></peb-statistics-field>
+          <ng-template #normalFields>
+            <peb-statistics-field
+              [ngClass]="theme"
+              [title]="control.value"
+              [readonly]="true"
+              [openFieldFunc]="openFieldForm.bind(this)"
+              [id]="i"
+              [optionsSelected]="widgetService?.fieldForms[i] ? widgetService?.fieldForms[i] : null"
+            ></peb-statistics-field>
+          </ng-template>
+        </ng-container>
+      </form>
+    </peb-expandable-panel>
+  </form>
+
+  <button class="remove-btn" (click)="onRemove()">Remove widget</button>
+</div>

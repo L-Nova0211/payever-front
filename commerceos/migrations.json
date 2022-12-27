@@ -1,0 +1,18 @@
+{
+  "migrations": [
+    {
+      "version": "10.5.0-beta.0",
+      "description": "Update eslint config and builder to extend from new Nx Angular presets and lint templates",
+      "factory": "./src/migrations/update-10-5-0/add-template-support-and-presets-to-eslint",
+      "package": "@nrwl/angular",
+      "name": "add-template-support-and-presets-to-eslint"
+    },
+    {
+      "version": "11.0.0-beta.13",
+      "description": "Update builder configurations and dependencies",
+      "factory": "./src/migrations/update-11-0-0/update-builders-config",
+      "package": "@nrwl/angular",
+      "name": "update-11-0-0"
+    }
+  ]
+}

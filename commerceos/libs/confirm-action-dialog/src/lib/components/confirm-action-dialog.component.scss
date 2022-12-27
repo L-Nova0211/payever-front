@@ -1,0 +1,139 @@
+.confirm-action-dialog {
+  padding: 12px;
+  font-family: Roboto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  min-height: 305px;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 50%);
+  border: 1px solid #3b3b3b;
+  background-color: rgba(36,39,46,.85);
+
+  &__icon {
+    margin-top: 23px;
+    margin-bottom: 18px;
+  }
+
+  .mat-dialog-container {
+    max-width: 408px;
+    padding: 20px 12px;
+    border-radius: 12px;
+    background-color: rgba(36, 39, 46, 0.85);
+    backdrop-filter: blur(50px);
+  }
+
+  &.light {
+    .mat-dialog-container {
+      background: white;
+    }
+  }
+
+  &.transparent {
+    .mat-dialog-container {
+      background: rgba(28, 29, 30, 0.3);
+    }
+  }
+
+  &__title {
+    font-family: Roboto;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.21;
+    margin-bottom: 8px;
+
+
+    &.light {
+      color: black;
+    }
+  }
+
+  &__subtitle {
+    font-family: Roboto;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 18px;
+
+
+    &.light {
+      color: black;
+    }
+  }
+
+  &__projected-content {
+    max-width: 260px;
+  }
+
+  &__buttons {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .button {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      color: #fff;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      padding: 8px 0;
+      margin-bottom: 8px;
+      width: 228px;
+      height: 36px;
+      border-radius: 6px;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 700;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      cursor: pointer;
+
+      &:active,
+      &:focus,
+      &:hover {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+
+      &.light {
+        color: black;
+        background: #f2f2f2;
+      }
+
+      &.red {
+        background-color: #eb4653;
+        color: white !important;
+      }
+    }
+  }
+
+  &.light {
+    background: #f7f7f7;
+
+    .button {
+      &:last-of-type {
+        background-color: #e3e3e3;
+      }
+    }
+  }
+}

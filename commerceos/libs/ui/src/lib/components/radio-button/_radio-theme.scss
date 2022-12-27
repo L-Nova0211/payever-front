@@ -1,0 +1,14 @@
+@mixin peb-radio-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+
+  .radio-button-container {
+    label {
+      &.label-text {
+        color: $text-color;
+      }
+    }
+  }
+}

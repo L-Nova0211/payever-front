@@ -1,0 +1,120 @@
+//
+// Form mixins
+// --------------------------------------------------
+
+@mixin form-field() {
+    border: 1px solid $color-gray-4;
+    background-color: $color-white;
+    border-radius: $mat-form-field-border-radius;
+    font-size: $font-size-base;
+    color: $color-grey-2;
+    padding: 0 $mat-form-field-padding;
+  }
+
+  @mixin mat-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+
+
+  @mixin panel-item() {
+    color: $color-grey-2;
+    font-weight: $font-weight-light;
+    font-size: $font-size-base;
+    line-height: $mat-form-field-height;
+
+    &.mat-selected:not(.mat-option-multiple) {
+      background-color: $color-grey-6;
+      color: $color-black-pe;
+    }
+
+    &:hover:not(.mat-option-disabled),
+    &:focus:not(.mat-option-disabled)  {
+      background-color: $color-light-gray-hover-rgba;
+    }
+
+    .mat-option-ripple {
+      display: none;
+    }
+  }
+
+  @mixin panel() {
+    @include box-shadow($box-shadow);
+    border-radius: $border-radius-base * 2;
+    @include screen-xs(){
+      -webkit-overflow-scrolling: auto;
+    }
+  }
+
+
+  // Mixins for borders in form-table
+  // ---------------------------------
+
+  @mixin calc-grid-column-table($index, $class, $type) {
+    @if ($type == width) and ($index > 0) {
+      .col-#{$class}-#{$index} {
+        width: calc(#{percentage(($index / $grid-columns))} - 1px);
+      }
+    }
+    @if ($type == push) and ($index > 0) {
+      .col-#{$class}-push-#{$index} {
+        left: percentage(($index / $grid-columns));
+      }
+    }
+    @if ($type == push) and ($index == 0) {
+      .col-#{$class}-push-0 {
+        left: auto;
+      }
+    }
+    @if ($type == pull) and ($index > 0) {
+      .col-#{$class}-pull-#{$index} {
+        right: percentage(($index / $grid-columns));
+      }
+    }
+    @if ($type == pull) and ($index == 0) {
+      .col-#{$class}-pull-0 {
+        right: auto;
+      }
+    }
+    @if ($type == offset) {
+      .col-#{$class}-offset-#{$index} {
+        margin-left: percentage(($index / $grid-columns));
+      }
+    }
+  }
+
+  @mixin loop-grid-columns-table($columns, $class, $type) {
+    @for $i from 0 through $columns {
+      @include calc-grid-column-table($i, $class, $type);
+    }
+  }
+
+  @mixin make-grid-table($class) {
+    @include loop-grid-columns-table($grid-columns, $class, width);
+    @include loop-grid-columns-table($grid-columns, $class, pull);
+    @include loop-grid-columns-table($grid-columns, $class, push);
+    @include loop-grid-columns-table($grid-columns, $class, offset);
+  }
+
+  @mixin form-table-borders($border-color) {
+
+    .pe-form-fieldset {
+      display: block;
+    }
+    .form-fieldset {
+      border-radius: ceil($border-radius-base * 1.5);
+      box-shadow: inset 0 0 0 1px $border-color;
+      overflow: hidden;
+      position: relative;
+      padding-top: 0;
+      margin-bottom: $grid-unit-y * 2;
+      .row {
+        > [class*=col] {
+          border-width: 1px;
+          border-style: solid;
+          border-color: transparent $border-color $border-color transparent;
+        }
+      }
+    }
+  }

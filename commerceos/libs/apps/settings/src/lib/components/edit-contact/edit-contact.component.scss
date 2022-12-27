@@ -1,0 +1,38 @@
+.columns {
+  display: flex;
+  width: 100%;
+
+  .two-column-input {
+    width: 50%;
+    input {
+      width: 160px;
+    }
+  }
+}
+
+.column-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-columns: 33.2%;
+}
+.divider {
+  width: 1px;
+  border-left: 1px solid #24272e;
+}
+
+.divider-border {
+  border-left: 1px solid #24272e;
+  border-right: 1px solid #24272e;
+}
+
+.email-picker {
+  .picket-container {
+    .picker-item-container {
+      &__item {
+        &__buttons {
+          min-width: unset;
+        }
+      }
+    }
+  }
+}

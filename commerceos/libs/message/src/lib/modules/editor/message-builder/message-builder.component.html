@@ -1,0 +1,100 @@
+<div class="message-container">
+  <pe-new-platform-header class="overlay-header"></pe-new-platform-header>
+
+  <div class="message__content">
+      <peb-editor
+        class="pe-builder-styles"
+        [data]="data$ | async">
+      </peb-editor>
+  </div>
+
+  <div class="message__footer" [ngClass]="theme" #chatFooter>
+    <input #attachFile
+      type="file"
+      accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf"
+      (change)="onFileChange($event)"
+      multiple="true"
+      hidden>
+    <input #attachImage
+      type="file"
+      accept="image/jpeg,image/png,image/gif,image/svg+xml"
+      (change)="onImageChange($event)"
+      multiple="true"
+      hidden>
+    <pe-chat-form
+      [attachMenuItems]="attachMenuItems"
+      [sender]="sender"
+      [showSendButton]="true"
+      [messageAppColor]="messageAppColor"
+      [accentColor]="accentColor"
+      [showMenuIcons]="true"
+      [canSendEmpty]="true"
+      [customFormFieldActions]="formFieldActions"
+      [isChatDisabled]="true"
+
+      (send)="sendMessage($event)"
+      (channelChange) = "onChannelChange($event)"
+    ></pe-chat-form>
+  </div>
+</div>
+
+<ng-template #attachMenu>
+  <div class="message-menu__header">
+    <div class="message-menu__title">
+      {{ 'attach' | uppercase }}
+    </div>
+    <div class="message-menu__close" (click)="onCloseMenu(attachMenu)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.2 -0.2 20 20">
+        <path
+          fill="currentColor"
+          d="M9.75 0c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S0
+            15.135 0 9.75 4.365 0 9.75 0zm4.303 5.447c-.325-.324-.833-.354-1.19-.088l-.103.088-3.01
+            3.01-3.01-3.01-.102-.088c-.358-.266-.866-.236-1.19.088-.358.357-.358.936 0 1.293l3.009 3.01-3.01
+            3.01-.081.094c-.273.358-.246.871.081 1.199.325.324.833.354 1.19.088l.103-.088 3.01-3.011 3.01
+            3.01.102.09c.358.265.866.235 1.19-.09.358-.356.358-.935 0-1.292l-3.01-3.01
+            3.01-3.01.082-.094c.273-.358.246-.871-.081-1.199z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="message-menu__buttons">
+    <button class="message-menu__button" mat-menu-item (click)="onAttachFile()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <g fill="none" fill-rule="evenodd">
+          <rect width="20" height="20" fill="#86868B" rx="5"/>
+          <path
+            fill="#FFF"
+            d="M15.912 9.343l-2.628 2.627c-1.45 1.452-3.804 1.452-5.255 0-.228-.227-.407-.484-.564-.749L8.686
+              10c.058-.059.13-.092.199-.132.084.289.231.562.458.789.725.724 1.903.724 2.627
+              0l2.628-2.628c.724-.724.724-1.903 0-2.627-.724-.725-1.903-.725-2.628
+              0l-.934.935c-.758-.295-1.575-.375-2.37-.258l1.99-1.99c1.452-1.452 3.805-1.452 5.256 0 1.45 1.45 1.45
+              3.803 0 5.254zm-6.948 4.32l-.935.935c-.724.724-1.903.724-2.627 0-.725-.724-.725-1.903
+              0-2.628l2.627-2.627c.725-.725 1.903-.725 2.628 0
+              .226.227.373.5.459.788.069-.04.14-.073.198-.131l1.22-1.22c-.155-.267-.335-.522-.564-.75-1.45-1.451-3.803
+              -1.451-5.255 0l-2.627 2.627c-1.45 1.451-1.45 3.804 0 5.255 1.451 1.45 3.804 1.45 5.255
+              0l1.991-1.991c-.795.117-1.612.037-2.37-.258z"
+          />
+        </g>
+      </svg>
+      <span>File</span>
+    </button>
+    <button class="message-menu__button" mat-menu-item (click)="onAttachImage()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <g fill="none" fill-rule="evenodd">
+          <rect width="20" height="20" fill="#86868B" rx="5"/>
+          <g fill="#FFF">
+            <path
+              d="M12.333 0c.918 0 1.663.772 1.667 1.728v8.537c0 .958-.746 1.735-1.667 1.735H1.667C.747 12 0 11.223 0
+                10.265v-8.53C0 .777.746 0 1.667 0zm-.355.754H2.022c-.685 0-1.24.564-1.244
+                1.263V9.66l3.966-4.013c.29-.292.75-.29 1.033 0l2.178 2.22c.289.293.75.291 1.033
+                0l.815-.827c.289-.292.748-.29 1.03 0l2.39 2.436V2.023c0-.7-.558-1.269-1.245-1.269zM8.52 2.753c.66 0
+                1.197.558 1.197 1.246S9.18 5.245 8.52 5.245c-.66 0-1.197-.558-1.197-1.246S7.86 2.753 8.52 2.753z"
+              transform="translate(3.000000, 4.000000)"
+            />
+          </g>
+        </g>
+      </svg>
+      <span>Picture</span>
+    </button>
+  </div>
+</ng-template>

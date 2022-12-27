@@ -1,0 +1,174 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "./../../panels/page-container";
+
+.overlay-widget .pe-info-box-container-fixed.scp-settings {
+  width: 100%;
+  min-height: fit-content;
+
+  .pe-info-box {
+    min-width: 100%;
+    padding: 0;
+
+    .mat-list.scp-settings-item {
+      width: 100%;
+
+      .mat-list-item {
+        cursor: default;
+
+        &.action-item {
+          cursor: pointer;
+        }
+
+        .mat-list-item-content .mat-list-item-flex {
+          background-color: #1c1d1e;
+
+          &.csp-form-table-container {
+            padding: 0;
+
+            .csp-form-table {
+              height: 100%;
+              width: 100%;
+              display: flex;
+              justify-content: flex-start;
+
+              .csp-settings-input {
+                height: 100%;
+                flex-grow: 1;
+                background-color: #111111;
+
+                .label-input-content-wrapper {
+                  .label-container.form-label {
+                    .label-text {
+                      line-height: normal;
+                    }
+                  }
+                }
+              }
+
+              &_submit-button {
+                height: 100%;
+                min-width: 105px;
+                padding: 0 12px;
+                background-color: #1c1d1e;
+                font-family: Roboto, sans-serif;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.33;
+                letter-spacing: normal;
+                color: #0091df;
+                border: none;
+                outline: none;
+                text-align: right;
+
+                &:focus, :active {
+                  outline: none;
+                }
+              }
+            }
+          }
+
+          .mat-list-item-col {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            &.text-right {
+              flex-grow: 0;
+              flex-basis: 100px;
+              justify-content: flex-end;
+
+              button {
+                font-size: 12px;
+                line-height: 1.33;
+                text-align: right;
+                color: #eb4653;
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.scp-validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #eb4653;
+  color: $regular-text-color;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-weight: 300;
+  transition: .2s;
+  overflow: hidden;
+
+  &-visible {
+    margin-top: 12px;
+    height: 38px;
+    max-height: 38px;
+    padding: 0 12px;
+    transition: .2s;
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-light .pe-info-box-container-fixed.scp-settings .content-wrapper {
+    background-color: transparent;
+
+    .mat-list.scp-settings-item .mat-list-item .mat-list-item-flex {
+      color: $regular-light-text-color;
+      background-color: $content-light-background-color;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      &.csp-form-table-container .csp-form-table {
+        .csp-settings-input {
+          background-color: $content-light-background-color;
+
+          .label-container.form-label .label-text {
+            color: $regular-light-text-color;
+          }
+        }
+
+        &_submit-button {
+          background-color: $content-light-button-background-color;
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-transparent .pe-info-box-container-fixed.scp-settings .content-wrapper {
+    background-color: transparent;
+
+    .mat-list.scp-settings-item .mat-list-item .mat-list-item-flex {
+      color: $regular-text-color;
+      background-color: $content-transparent-background-color;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      &.csp-form-table-container .csp-form-table {
+        .csp-settings-input {
+          background-color: $content-transparent-background-color;
+
+          .label-container.form-label .label-text {
+            color: $regular-text-color;
+          }
+        }
+
+        &_submit-button {
+          background-color: $content-transparent-button-background-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div
+  class="creating-channel-steps-main"
+  [formGroup]="mainInfoGroup"
+>
+  <peb-logo-picker
+    buttonLabel="{{ 'message-app.channel.form.photo' | translate }}"
+    (file)="changeAvatar($event)"
+    [image]="avatar"
+    (deleteLogo)="deleteAvatar()"
+  ></peb-logo-picker>
+  <peb-form-field-input
+    [animated]="true"
+    appearance="label"
+    class="peb-form-field-input"
+    [errorMessage]="errors.title.errorMessage"
+    [isFieldInvalid]="errors.title.hasError"
+    [label]="getNameLabel()"
+  >
+    <input
+      (blur)="checkErrors('title')"
+      (focus)="resetErrors('title')"
+      formControlName="title"
+      type="text"
+    />
+  </peb-form-field-input>
+  <peb-form-field-input
+    [animated]="true"
+    appearance="label"
+    class="peb-form-field-input"
+    label="{{ 'message-app.channel.form.description' | translate }}"
+  >
+    <input formControlName="description" type="text"/>
+  </peb-form-field-input>
+</div>

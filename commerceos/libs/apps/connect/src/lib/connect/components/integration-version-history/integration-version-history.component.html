@@ -1,0 +1,50 @@
+<div *ngIf="integration" class="integration-all-versions">
+
+  <!-- Integration header -->
+  <div class="header">
+    <div class="header__icon">
+      <svg class="icon icon-128">
+        <use [attr.xlink:href]="integration.displayOptions.icon"></use>
+      </svg>
+    </div>
+    <div class="header__text-container">
+      <div class="header__main-title">
+        {{ integration.displayOptions.title | translate }}
+      </div>
+      <div class="header__description">
+        {{ integration.installationOptions.price | translate }}
+      </div>
+      <div class="header__author">
+        {{ integration.installationOptions.developer | translate }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Back button -->
+  <div class="back-container">
+      <button mat-raised-button
+        (click)="back()"
+        color="muted-light"
+        class="spec-cancel-button"
+        [class.mat-button-rounded]="true"
+        [class.mat-button-md]="true">
+        {{ 'integration_versions_page.back' | translate }}
+    </button>
+  </div>
+
+  <!-- Versions list -->
+  <div class="versions-container">
+    <div *ngFor="let version of versions" class="version">
+      <div class="version__title">
+        <div class="version__number">
+          {{ version.version }}
+        </div>
+        <div class="version__date">
+          {{ version.versionDate }}
+        </div>
+      </div>
+      <div [innerHTML]="version.description" class="version__notes">
+      </div>
+    </div>
+  </div>
+</div>

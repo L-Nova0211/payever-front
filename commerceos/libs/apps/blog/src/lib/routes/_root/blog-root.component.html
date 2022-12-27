@@ -1,0 +1,92 @@
+<ng-container *ngIf="translationsReady$|async">
+<div class="nav-content">
+  <pe-grid [theme]="theme">
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'blog-app.sidebar.title'|translate"
+      [disableSkeleton]="true"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [selectFolder]="selectFolder"
+        [folders]="treeData"
+        [disableSkeleton]="true"
+        (selectedFolder)="navigateToLink($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+
+    <pe-grid-content
+      [showMobileFooter]="false"
+      [mobileTitle]="mobileTitle$ | async"
+      [showMobileTitle]="showMobileTitle$ | async"
+      [style.overflow]="selectFolder?.data?.link == 'settings' ? 'hidden' : 'unset'"
+    >
+      <div style="position: relative; height: 100%">
+        <router-outlet></router-outlet>
+      </div>
+    </pe-grid-content>
+  </pe-grid>
+  <!-- <ng-container *ngIf="!isSidebarClosed">
+    <div
+      class="sidebar-wrap"
+      [@sidebarAnimation]="{value: gridAnimationState$ | async, params: { sidebarWidth: 254 }}"
+      >
+      <pe-sidebar
+      style="margin-right:0"
+        [ngClass]="theme"
+        [sidebarFilters]="filters"
+        (selectFilters)="navigateTolLink($event)"
+      >
+      </pe-sidebar>
+    </div>
+  </ng-container>
+
+    <div
+      *ngIf="{
+      animationState: gridAnimationState$ | async,
+      animationProgress: gridAnimationProgress$ | async
+    } as animation"
+      class="grid-content__right"
+      style="overflow: hidden; height:calc(100% + 10px);margin-right: 16px"
+      [@gridAnimation]="{value: animation.animationState, params: { sidebarWidth: 16 }}"
+      (@gridAnimation.done)="gridAnimationProgress = SidebarAnimationProgress.Done"
+      (@gridAnimation.start)="gridAnimationProgress = SidebarAnimationProgress.Start"
+    >
+      <div style="position: relative;height:calc(100% - 10px)">
+        <router-outlet></router-outlet>
+      </div>
+    </div> -->
+</div>
+
+<!-- <pe-sidebar-filters-wrapper #filters
+>
+  <pe-sidebar-header title="Blog" (closeSidebar)="toggleSidebar()"></pe-sidebar-header>
+  <pe-sidebar-filter-wrapper
+    [expandable]="true"
+    [active]="false"
+    [title]="'blog-app.navigation.title'|translate"
+  >
+    <pe-tree-sidebar-filter
+      [ngTemplateOutlet]="nodeImageTemplate"
+      [ngTemplateOutletContext]="{node:treeData}"
+    >
+      <ng-template #nodeImageTemplate let-node="node">
+        <div (click)="navigateTolLink('dashboard')" class="sidebar-item" [class.active]="getActiveLink('dashboard')">
+          <div class="item-icon">
+            <img [src]="blog?.picture" alt="" *ngIf="blog?.picture">
+            <div *ngIf="!blog?.picture" class="abbreviation">
+              <span class="abbreviation__name">{{ blog?.name | abbreviation }}</span>
+            </div>
+          </div>
+          <span class="blog_name">{{blog?.name}}</span>
+        </div>
+          <div *ngFor="let item of node" (click)="navigateTolLink(item.id)"
+          class="sidebar-item" [class.active]="getActiveLink(item.id)">
+            <img [src]="item.image" alt="" class="sidebar-item__icon">
+              {{item.name|translate}}
+          </div>
+      </ng-template>
+    </pe-tree-sidebar-filter>
+  </pe-sidebar-filter-wrapper>
+</pe-sidebar-filters-wrapper> -->
+</ng-container>

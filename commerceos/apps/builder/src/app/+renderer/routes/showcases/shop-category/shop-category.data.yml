@@ -1,0 +1,469 @@
+variant1:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 3
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: true
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+
+variant2:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 2
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: false
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+
+variant3:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 1
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: false
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+variant4:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 3
+        mode: 'dark'
+        borderColor: '#444'
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: false
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+variant5:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 2
+        mode: 'dark'
+        borderColor: '#444'
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: false
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+variant6:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 1
+        mode: 'dark'
+        borderColor: '#444'
+  context:
+    '@category':
+      state: 'ready'
+      data:
+        title: 'Cases & Protection'
+        image: '/assets/showcase-images/products/4.png'
+        shownFilters: false
+        filters:
+          -
+            name: 'Product Type'
+            active: true
+            disabled: false
+            children:
+              -
+                name: Battery Cases
+                active: true
+                disabled: false
+              -
+                name: Films
+                active: false
+                disabled: false
+              -
+                name: Folios
+                active: false
+                disabled: false
+              -
+                name: Organizers
+                active: false
+                disabled: false
+              -
+                name: Wallets
+                active: false
+                disabled: false
+          -
+            name: 'iPhone Compatibility'
+            active: true
+            disabled: false
+            children:
+              -
+                name: iPhone 11 Pro
+                active: true
+                disabled: false
+              -
+                name: iPhone 11 Pro Max
+                active: false
+                disabled: true
+              -
+                name: iPhone 11
+                active: false
+                disabled: true
+        products:
+          -
+            title: 'iPhone 11 Silicone Case'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/5.png'
+          -
+            title: 'MacBook Pro 2019'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/6.png'
+          -
+            title: 'IPad Pro'
+            prices:
+              regular: '$39.00'
+            image: '/assets/showcase-images/products/7.png'
+
+variant7:
+  layout:
+    id: element
+    type: shop-category
+  stylesheet:
+    all:
+      element:
+        columns: 3
+  context:
+    '@category':
+      state: 'empty'

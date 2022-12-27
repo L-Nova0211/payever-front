@@ -1,0 +1,24 @@
+<div class="peb-datetime-picker-wrapper" ngClass="{{theme + '-datepicker'}}">
+  <div class="peb-datetime-picker-wrapper__header">
+    <span class="peb-datetime-picker-wrapper__header-title">{{config.headerTitle ? config.headerTitle : ''}}</span>
+    <svg class="peb-datetime-picker-wrapper__header-icon" (click)="onCancel()">
+      <use xlink:href="#icon-ui-close-circle"></use>
+    </svg>
+  </div>
+  <div class="peb-datepicker-calendar__calendar">
+    <mat-calendar
+      #calendar
+      (selectedChange)="selectedChangeOn($event)"
+      [comparisonStart]="dateStart"
+      [comparisonEnd]="dateEnd"
+      [selected]="range"
+      [maxDate]="maxDate"
+      [minDate]="minDate"
+      [dateFilter]="dateFilter"
+      class="peb-datepicker"
+    ></mat-calendar>
+  </div>
+  <div class="peb-datepicker-actions">
+    <button class="peb-datepicker-actions__apply" (click)="onApply()">Apply</button>
+  </div>
+</div>

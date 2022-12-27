@@ -1,0 +1,172 @@
+<form
+  [class.post-editor__loading]="loading"
+  [formGroup]="postForm"
+  [ngClass]="theme"
+>
+  <peb-expandable-panel
+    [headerLabel]="'social-app.post_editor.general' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-select 
+        formControlName="type"
+        [label]="'social-app.post_editor.post_type.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let postType of postTypes"
+          [label]="'social-app.post_editor.post_type.' + postType.label | translate"
+          [value]="postType.value"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+
+    <div class="margin"></div>
+    <ng-container [ngSwitch]="postForm.controls.type.value">
+      <pe-media-editor
+        *ngSwitchCase="postTypesEnum.Media"
+        [blobs]="postForm.controls.media.value"
+        [businessId]="businessId"
+        (changeMedia)="onMediaChange($event)"
+        [incorrectMedia]="incorrectFile$ | async"
+        [postLoading]="true"
+        [theme]="theme"
+        (warning)="showWarning($event)"
+      ></pe-media-editor>
+      <peb-form-background *ngSwitchCase="postTypesEnum.Product">
+        <pe-search
+          [errorMessage]="('social-app.post_editor.product.error')| translate"
+          (filterChanged)="setFilter($event, 'products')"
+          [isFieldInvalid]="postForm.controls.products.invalid"
+          [items]="filteredItems(postForm.controls.products) | async"
+          [label]="('social-app.post_editor.product.label') | translate"
+          [placeholder]="('social-app.post_editor.product.placeholder') | translate"
+          (selected)="addToArray($event, postForm.controls.products)"
+        ></pe-search>
+        <pe-search-list>
+          <pe-search-list-item
+            *ngFor="let item of postForm.controls.products.value; let i = index; trackBy: trackItem"
+            [image]="item?.images[0]"
+            [removeButtonLabel]="'social-app.actions.remove'"
+            (remove)="removeFromArray(postForm.controls.products, i)"
+          >{{ item.title }}</pe-search-list-item>
+        </pe-search-list>
+      </peb-form-background>
+    </ng-container>
+
+    <div class="margin"></div>
+    <peb-form-background>
+      <peb-form-field-textarea
+        appearance="label"
+        [errorMessage]="'social-app.post_editor.content.error' | translate"
+        [isFieldInvalid]="postForm.controls.content.invalid"
+        [label]="'social-app.post_editor.content.label' | translate"
+      >
+        <textarea
+          formControlName="content"
+          [placeholder]="'social-app.post_editor.content.placeholder' | translate"
+          rows="6"
+        ></textarea>
+      </peb-form-field-textarea>
+    </peb-form-background>
+  </peb-expandable-panel>
+  
+  <!-- Channels box -->
+  <peb-expandable-panel
+    *ngIf="integrationsList$ | async as integrations"
+    [headerLabel]="'social-app.post_editor.channels.label' | translate"
+    [isContentOpen]="true"
+  >
+    <pe-list-section
+      [actionButtonType]="toggleButtonType"
+      [category]="integrationsCategory"
+      [integrations]="integrations"
+      (hovered)="checkCorrect($event)"
+      [isInForm]="true"
+      [listType]="integrationListType"
+      (switched)="switchChannel($event)"
+      [translateItemsTitle]="false"
+      [upperCase]="true"
+    ></pe-list-section>
+    
+    <peb-messages
+      *ngIf="!integrations.length"
+      color="warning"
+      [message]="'social-app.post_editor.channels.errors.no_connected_channels' | translate"
+    ></peb-messages>
+    <div
+      *ngIf="postForm.controls.channelSet.invalid"
+      class="margin"
+    >
+      <peb-messages
+        color="warning"
+        [message]="'social-app.post_editor.channels.errors.channels_expected' | translate"
+      ></peb-messages>
+    </div>
+    <div class="margin">
+      <button pe-form-button
+        (click)="addIntegration()"
+      >
+        {{ 'social-app.actions.add_integration' | translate }}
+      </button>
+    </div>
+  </peb-expandable-panel>
+
+  <!-- Post Campaing box -->
+  <peb-expandable-panel
+    [headerLabel]="'social-app.post_editor.campaign' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-checkbox
+        formControlName="setScheduleDate"
+        type="label"
+      >
+        {{ 'social-app.post_editor.set_schedule_date' | translate }}
+      </peb-checkbox>
+      <ng-container *ngIf="postForm.controls.setScheduleDate.value">
+        <peb-form-field-input
+          appearance="label"
+          (click)="openDatepicker(postForm.controls.scheduleDate)"
+          [errorMessage]="'social-app.post_editor.date.error' | translate"
+          [isFieldInvalid]="postForm.controls.scheduleDate.invalid"
+          [label]="'social-app.post_editor.date.label' | translate"
+        >
+          <input readonly
+            formControlName="scheduleDate"
+            [placeholder]="'social-app.post_editor.date.placeholder' | translate"
+            [textMask]="maskRule(dateMask)"
+            type="text"
+          />
+          <div class="suffix-icon">
+            <mat-icon svgIcon="calendar"></mat-icon>
+          </div>
+        </peb-form-field-input>
+        <peb-form-field-input
+          appearance="label"
+          (click)="openTimepicker($event, postForm.controls.scheduleTime)"
+          [errorMessage]="'social-app.post_editor.time.error' | translate"
+          [isFieldInvalid]="postForm.controls.scheduleTime.invalid"
+          [label]="'social-app.post_editor.time.label' | translate"
+        >
+          <input pe-input-time
+            formControlName="scheduleTime"
+            [placeholder]="'social-app.post_editor.time.placeholder' | translate"
+            [textMask]="maskRule(timeMask)"
+            type="text"
+          />
+          <div class="suffix-icon">
+            <mat-icon svgIcon="time"></mat-icon>
+          </div>
+        </peb-form-field-input>
+      </ng-container>
+    </peb-form-background>
+
+    <div class="margin"></div>
+      <button pe-form-button
+        (click)="onSave(false)"
+      >
+        {{ 'social-app.actions.publish' | translate }}
+      </button>
+  </peb-expandable-panel>
+</form>

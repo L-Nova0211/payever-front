@@ -1,0 +1,79 @@
+<div class="time-picker-wrapper {{config.theme}}">
+  <div class="time-picker" [ngClass]="{'active': activeModal}">
+    <div class="time-picker__header">
+      <div class="time-picker__selected-time"
+           (touchstart)="timeTouchStart($event)"
+           (touchmove)="timeTouchMove($event)"
+           (touchend)="timeTouchEnd($event)"
+      >
+          <div class="time-picker__hour" (touchstart)="hourClick()"
+          (click)="hourClick()" [attr.disabled]="(config.onlyMinute) ? 'disabled' : null"
+            [ngClass]="{'selected' : clockType == 'hour'}"
+               (mousewheel)="timeScrollChange($event)"
+               [@.disabled]="isHourAnimationDisabled">
+            <div class="time-picker__time-wrapper" [@timeMove]="{
+              value: time.getTime(ClockType.Hour, ClockFormat.Clock24),
+              params: { offset: 7 - (time.getTime(ClockType.Hour, ClockFormat.Clock24) * 24) }
+            }">
+              <span *ngFor="let i of hours()" [ngClass]="{ 'current': time.getTime(ClockType.Hour,
+               ClockFormat.Clock24) === i }">{{i}}</span>
+            </div>
+            <input class="time-picker__hour-input"
+                   [(ngModel)]="inputTime.hour"
+                   (keypress)="typeFilter($event)"
+                   (keyup)="typeTime($event)"
+            />
+          </div>
+          <span class="time-picker__seprator">{{separator()}}</span>
+          <div class="time-picker__minute" (touchstart)="minuteClick()" (click)="minuteClick();"
+               [@.disabled]="isMinuteAnimationDisabled"
+               (mousewheel)="timeScrollChange($event)"
+               [attr.disabled]="(config.onlyHour) ? 'disabled' : null"
+               [ngClass]="{'selected' : clockType == 'minute'}">
+            <div class="time-picker__time-wrapper" [@timeMove]="{
+              value: time.getTime(ClockType.Minute),
+              params: { offset: 7 - (time.getTime(ClockType.Minute) * 24) }
+            }">
+              <span *ngFor="let i of minutes()" [ngClass]="{ 'current': time.getTime(ClockType.Minute) === i.minNum }">
+                {{i.minString}}
+              </span>
+            </div>
+            <input class="time-picker__minute-input" type="text"
+                   [(ngModel)]="inputTime.minute"
+                   (keypress)="typeFilter($event)"
+                   (keyup)="typeTime($event)"
+            />
+          </div>
+      </div>
+      <div class="time-picker__selected-ampm">
+        <div class="time-picker__am" (click)="setAM();" [attr.disabled]="(config.onlyPM) ? 'disabled' : null"
+        [ngClass]="{'selected' : time.ampm == period.AM}">{{period.AM}}</div>
+        <div class="time-picker__pm" (click)="setPM();" [attr.disabled]="(config.onlyAM) ? 'disabled' : null"
+        [ngClass]="{'selected' : time.ampm == period.PM}">{{period.PM}}</div>
+      </div>
+    </div>
+    <div class="time-picker__content">
+        <div class="time-picker__clock" [ngClass]="{'time-picker__clock_hide': changeToMin}"
+             (mousewheel)="timeScrollChange($event)"
+             (mousemove)="getDegree($event);"
+             (mousedown)="updateClockDown($event)"
+             (mouseup)="setTime();">
+          <button *ngFor="let clock of clockObject"
+            class="hours-minutes"
+            [ngClass]="{'active' : nowTime == clock.time}"
+            [id]="'timepicker-item-id-' + clock.time"
+            [disabled]="checkDisabled(clock.time)"
+            [ngStyle]="{top: clock.top, left: clock.left, color: nowTime == clock.time ? config.arrowStyle.color :  '', background: nowTime == clock.time ? config.arrowStyle.background : 'transparent'}">
+            {{clock.time}}
+          </button>
+          <div class="time-picker__clock-origin" [ngStyle]="{ background: config.arrowStyle.background}"></div>
+          <div id="tpc-arrow" class="time-picker__clock-arrow" [ngStyle]="getClockArrowStyle()">
+            <span [ngStyle]="{ background: config.arrowStyle.background }"></span>
+          </div>
+        </div>
+    </div>
+    <div class="time-picker__footer">
+      <button (click)="applyTime();" class="peb-ref-dialog-close">Apply</button>
+    </div>
+  </div>
+</div>

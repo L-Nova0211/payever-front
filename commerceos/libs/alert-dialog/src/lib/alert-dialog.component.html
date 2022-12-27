@@ -1,0 +1,72 @@
+<pe-alert-dialog-styles></pe-alert-dialog-styles>
+
+<div class="alert-dialog__container">
+  <ng-container
+    [ngTemplateOutlet]="rowTpl"
+    [ngTemplateOutletContext]="{ template: data?.icon, defaultTemplate: iconTpl }"
+  ></ng-container>
+  <ng-container
+    [ngTemplateOutlet]="rowTpl"
+    [ngTemplateOutletContext]="{ template: data?.title, defaultTemplate: titleTpl }"
+  ></ng-container>
+  <ng-container
+    [ngTemplateOutlet]="rowTpl"
+    [ngTemplateOutletContext]="{ template: data?.subtitle, defaultTemplate: subtitleTpl }"
+  ></ng-container>
+  <ng-container
+    [ngTemplateOutlet]="rowTpl"
+    [ngTemplateOutletContext]="{ template: data?.actions, defaultTemplate: actionsTpl }"
+  ></ng-container>
+</div>
+
+<ng-template #rowTpl let-template="template" let-defaultTemplate="defaultTemplate">
+  <ng-container
+    *ngIf="isTemplateRef(template); else defaultTpl"
+    [ngTemplateOutlet]="template"
+    [ngTemplateOutletContext]="{ dialogRef: dialogRef }"
+  ></ng-container>
+  <ng-template #defaultTpl>
+    <ng-container [ngTemplateOutlet]="defaultTemplate"></ng-container>
+  </ng-template>
+</ng-template>
+
+<ng-template #iconTpl>
+  <div class="alert-dialog__icon-container" *ngIf="data?.icon">
+    <ng-container *ngIf="isString(data.icon)">
+      <ng-container [ngSwitch]="data.icon">
+        <svg width="61" height="56" viewBox="0 0 61 56" *ngSwitchCase="PeAlertDialogIcon.Alert">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#FFBE00">
+              <path d="M34.43 1.003c1.284.721 2.345 1.783 3.066 3.067l22.452 39.975c2.17 3.864.797 8.757-3.068 10.927-1.2.674-2.553 1.028-3.93 1.028H8.049C3.616 56 .023 52.407.023 47.975c0-1.377.354-2.73 1.028-3.93L23.502 4.07c2.17-3.864 7.063-5.238 10.927-3.067zm-3.947 41.186c-1.19 0-2.086.322-2.692.967-.605.644-.908 1.442-.908 2.393 0 .951.303 1.738.908 2.362.606.623 1.503.935 2.692.935 1.189 0 2.091-.312 2.708-.935.616-.624.925-1.411.925-2.362 0-.95-.309-1.749-.925-2.393-.617-.645-1.52-.967-2.708-.967zm3.038-25.537h-6.407l.43 22.394h5.515l.462-22.394z" transform="translate(-190 -78) translate(190 78)"/>
+            </g>
+          </g>
+        </svg>
+      </ng-container>
+    </ng-container>
+    <ng-template #saveHtmlIconTpl>
+      <div [outerHTML]="data.icon"></div>
+    </ng-template>
+  </div>
+</ng-template>
+
+<ng-template #titleTpl>
+  <div class="alert-dialog__title" *ngIf="data?.title">{{ data.title }}</div>
+</ng-template>
+
+<ng-template #subtitleTpl>
+  <div class="alert-dialog__subtitle" *ngIf="data?.subtitle">{{ data.subtitle }}</div>
+</ng-template>
+
+<ng-template #actionsTpl>
+  <div class="alert-dialog__actions" *ngIf="data?.actions?.length">
+    <button
+      class="alert-dialog__action"
+      *ngFor="let action of data.actions"
+      [style.background-color]="action.bgColor"
+      [style.color]="action.color"
+      (click)="invokeAction($event, action)"
+    >
+      {{ action.label }}
+    </button>
+  </div>
+</ng-template>

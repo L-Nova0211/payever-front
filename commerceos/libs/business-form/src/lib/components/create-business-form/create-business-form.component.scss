@@ -1,0 +1,30 @@
+
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+.dark {
+  @include peb-theme($theme-dark);
+
+  .two-column-form-wrapper {
+    border-top: 1px solid rgba(36, 39, 46, 0.85);
+  }
+}
+.light {
+  @include peb-theme($theme-light);
+
+  .two-column-form-wrapper {
+    border-top: 1px solid rgba(155, 155, 155, 0.2);;
+  }
+}
+.transparent {
+  @include peb-theme($theme-transparent);
+
+  .two-column-form-wrapper {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+

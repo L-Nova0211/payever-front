@@ -1,0 +1,93 @@
+<div class="rating-reviews">
+  <div class="rating-reviews__title">
+    <div class="rating-reviews__title-text">
+      {{ 'integration_full_page.ratings_reviews.title' | translate }}
+    </div>
+
+    <div *ngIf="integration.reviews?.length" class="rating-reviews__side-buttons">
+      <div class="rating-reviews__link" (click)="navigate('reviews')">{{ 'integration_full_page.ratings_reviews.see_all' | translate }}</div>
+    </div>
+  </div>
+
+  <!-- Ratings -->
+  <div *ngIf="integration.avgRating" class="ratings">
+    <div class="ratings__current">
+      <div class="ratings__big-rating">
+        {{ integration.avgRating | number : '1.1-1' }}
+      </div>
+      <div class="ratings__out-rating">
+        {{ 'integration_full_page.ratings_reviews.out_of' | translate }} 5
+      </div>
+    </div>
+    <div class="ratings__total">
+      <div class="ratings__total-count">
+        {{ integration.ratingsCount }} {{ 'integration_full_page.ratings_reviews.ratings' | translate }}
+      </div>
+      <div class="ratings__rating-lines">
+        <connect-integration-rating-lines [ratingsArray]="ratingsArray"></connect-integration-rating-lines>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rate/Write review bar -->
+  <div *ngIf="installed" class="rating-bar">
+    <div class="rating-bar__rate">
+      <div>{{ 'integration_full_page.ratings_reviews.click_to_rate' | translate }}</div>
+      <connect-integration-rating-stars class="rating-bar__stars" [currentRating]="currentUserRating" [iconClass]="'icon-24'" (selectRating)="selectRating($event)"></connect-integration-rating-stars>
+    </div>
+
+    <div class="rating-bar__review">
+      <div class="rating-bar__link" (click)="navigate('write-review')">{{ 'integration_full_page.ratings_reviews.write_review' | translate }}</div>
+    </div>
+  </div>
+
+  <!-- Empty bar -->
+  <div *ngIf="!installed && !integration.reviews?.length">
+    {{ 'integration_full_page.ratings_reviews.no_ratings' | translate }}
+  </div>
+
+  <!-- Reviews cards -->
+  <div class="reviews">
+    <div *ngFor="let review of shortReviews" class="reviews__item">
+      <mat-card class="review-card">
+        <mat-card-title>
+          <div class="review-card__header">
+            <div class="review-card__title">
+              <div class="review-card__title-text">
+                {{ review.title }}
+              </div>
+              <div class="review-card__rating">
+                <connect-integration-rating-stars [readonly]="true" [currentRating]="review.rating">
+                </connect-integration-rating-stars>
+              </div>
+            </div>
+            <div class="review-card__info">
+              <div class="review-card__date">
+                {{ review.reviewDate | date }}
+              </div>
+              <div class="review-card__author">
+                {{ review.userFullName }}
+              </div>
+            </div>
+          </div>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="review-card__content">
+            {{ review.text }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- Dialog template -->
+<ng-template #confirmRating>
+    <pe-info-box-confirm class="confirm-rating-dialog"
+    [title]=""
+    [subtitle]="'integration_full_page.rating_confirm_dialog.subtitle' | translate"
+    [cancelButtonTitle]="false"
+    [confirmButtonTitle]="'integration_full_page.rating_confirm_dialog.confirm' | translate"
+    (onConfirm)="confirmRatingDialog()">
+  </pe-info-box-confirm>
+</ng-template>

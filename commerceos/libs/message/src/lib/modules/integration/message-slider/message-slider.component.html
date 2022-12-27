@@ -1,0 +1,18 @@
+<div class="pe-message-slider">
+  <p class="pe-message-slider__label" *ngIf="label">{{label}}</p>
+  <div class="pe-message-slider__container">
+    <mat-slider class="pe-message-slider__slider"
+                [min]="min"
+                [max]="max"
+                [step]="step"
+                [color]="color"
+                [(ngModel)]="unitValue"
+                (input)="changingValue($event)"
+                (change)="changedValue($event)"
+    ></mat-slider>
+    <div class="pe-message-slider__value-set">
+      <input class="pe-message-slider__value" type="text" [(ngModel)]="unitValue"/>
+      <span class="pe-message-slider__unit">{{unit}}</span>
+    </div>
+  </div>
+</div>

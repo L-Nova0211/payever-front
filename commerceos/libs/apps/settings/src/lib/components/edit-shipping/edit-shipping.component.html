@@ -1,0 +1,78 @@
+<pe-edit-shipping-styles></pe-edit-shipping-styles>
+<form class="form-container" [ngClass]="theme" [formGroup]="shippingForm">
+    <ng-container *ngFor="let item of address.controls; index as i">
+        <div class="form-margins" [formGroup]="address.controls[i]">
+            <peb-form-background>
+                <peb-form-field-input label="{{ 'form.create_form.address.googleAutocomplete.label' | translate }}" appearance="label">
+                    <input matGoogleMapsAutocomplete
+                           [type]="'address'"
+                           (onAutocompleteSelected)="onAutocompleteSelected($event, i)"
+                           placeholder="{{'form.create_form.address.googleAutocomplete.label' | translate}}"
+                           [value]="addressArray[i]"
+                           formControlName="address"
+                    />
+                </peb-form-field-input>
+                <div class="columns">
+                    <peb-select
+                            class="two-column-input"
+                            selectType="label"
+                            label="{{ 'form.create_form.address.country.label' | translate }}"
+                            formControlName="country"
+                            [isFieldInvalid]="address.controls[i].get('country').invalid"
+                            [errorMessage]="getErrorMessage('country')"
+                    >
+                        <peb-select-option class="select-options" *ngFor="let item of countries" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+                    </peb-select>
+                    <div class="divider"></div>
+                    <peb-form-field-input
+                      class="two-column-input" label="{{ 'form.create_form.address.city.label' | translate }}"
+                      appearance="label"
+                      [isFieldInvalid]="address.controls[i].get('city').invalid"
+                      [errorMessage]="getErrorMessage('city')"
+                    >
+                        <input placeholder="{{ 'form.create_form.address.city.placeholder' | translate }}"
+                               formControlName="city" />
+                    </peb-form-field-input>
+                </div>
+                <div class="columns">
+                    <peb-form-field-input
+                      class="two-column-input"
+                      label="{{ 'form.create_form.address.street.label' | translate }}"
+                      appearance="label"
+                      [isFieldInvalid]="address.controls[i].get('street').invalid"
+                      [errorMessage]="getErrorMessage('street')">
+                        <input type="text"
+                               placeholder="{{ 'form.create_form.address.street.placeholder' | translate }}"
+                               formControlName="street"
+                        />
+                    </peb-form-field-input>
+                    <div class="divider"></div>
+                    <peb-form-field-input
+                      class="two-column-input"
+                      label="{{ 'form.create_form.address.zip_code.label' | translate }}"
+                      appearance="label"
+                      [isFieldInvalid]="address.controls[i].get('zipCode').invalid"
+                      [errorMessage]="getErrorMessage('zip_code')"
+                    >
+                        <input type="number"
+                               placeholder="{{ 'form.create_form.address.zip_code.placeholder' | translate }}"
+                               formControlName="zipCode"
+                        />
+                    </peb-form-field-input>
+                </div>
+            </peb-form-background>
+            <div class="remove-button" *ngIf="i > 0">
+                <button peb-button class="remove-shipping-button" (click)="removeAddress(i)">
+                    {{ 'actions.delete' | translate }}
+                </button>
+            </div>
+        </div>
+    </ng-container>
+    <div class="add-button">
+        <button peb-button
+                class="new-rate-button"
+                (click)="addNewRate()">
+            {{ 'info_boxes.panels.general.menu_list.shipping_address.add_button' | translate }}
+        </button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+<div class="simple-numbers">
+  <div class="simple-numbers__top">
+    <div class="simple-numbers__title">{{ config?.dataSource[0][0]?.text?.toUpperCase() || 'TRANSACTIONS' }}</div>
+    <div class="simple-numbers__right">
+      <span *ngIf="editMode" class="done-btn" (click)="onEditMode()">Done</span>
+    </div>
+  </div>
+  <ng-container *ngIf="!editMode">
+    <div class="simple-numbers__period">{{ config?.dataSource[0][2]?.text }}</div>
+    <div class="simple-numbers__main">
+      {{
+        config?.dataSource[1][0]?.text
+          ? config?.dataSource[1][0]?.text
+          : (config?.dataSource[1][0]?.value | number: '.0-2')
+      }}
+      {{ config?.dataSource[1][0]?.currency ? config?.dataSource[1][0]?.currency : config?.dataSource[1][0]?.percent }}
+    </div>
+    <div class="simple-numbers__profit">
+      {{
+        config?.dataSource[1][1]?.text
+          ? config?.dataSource[1][1]?.text
+          : (config?.dataSource[1][1]?.value | number: '.0-2')
+      }}
+      {{ config?.dataSource[1][1]?.currency ? config?.dataSource[1][1]?.currency : config?.dataSource[1][1]?.percent }}
+    </div>
+  </ng-container>
+</div>

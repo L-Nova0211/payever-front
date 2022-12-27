@@ -1,0 +1,9 @@
+<peb-viewer
+  *ngIf="(type$ | async) === 'fixtures'"
+  [themeCompiled]="themeCompiled$ | async"
+></peb-viewer>
+
+<peb-viewer
+  *ngIf="(type$ | async) === 'themes'"
+  [themeSnapshot]="themeSnapshot$ | async"
+></peb-viewer>

@@ -1,0 +1,54 @@
+:host {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32px;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .separator {
+    width: 1px;
+    height: 18px;
+    margin: 0px -7px 0px;
+    object-fit: contain;
+    border: solid 1px #262728;
+  }
+  .left {
+    margin-left: 5px;
+  }
+
+  .flag-color {
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    &__icon {
+      height: 4px;
+      width: 16px;
+    }
+  }
+
+  .notification {
+    height: 16px;
+    width: 16px;
+    color: rgb(100, 101, 102);
+  }
+}
+
+.color-block {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}

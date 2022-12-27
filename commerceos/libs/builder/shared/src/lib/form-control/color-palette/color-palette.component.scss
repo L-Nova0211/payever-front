@@ -1,0 +1,36 @@
+:host  {
+  display: block;
+}
+
+.colors-grid {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4px;
+
+  .color {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    justify-content: center;
+    height: 52px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .2s;
+    border: none;
+    outline: none;
+    color: inherit;
+
+    &.active::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(black, 0.25);
+    }
+  }
+}

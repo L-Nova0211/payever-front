@@ -1,0 +1,75 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.capture.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.capture.actions.capture"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background>
+      <peb-button-toggle
+        label="{{ 'transactions.form.capture.labels.full' | translate }}"
+        [spacer]="true"
+        [disabled]="!actionData?.partialAllowed"
+        [checked]="!actionData?.partialAllowed"
+        labelPosition="before"
+        (changed)="onToggleAmount($event)"
+      ></peb-button-toggle>
+      <peb-select
+        selectType="label"
+        [class.disabled]="captureTypeField?.disabled"
+        [disabled]="isChangeTypeDisabled"
+        [label]="'transactions.form.capture.labels.capture_option' | translate"
+        formControlName="captureType"
+      >
+        <peb-select-option
+          [value]="types[0].toString()"
+          [label]="'transactions.form.capture.labels.select_amount' | translate"
+        >
+        </peb-select-option>
+        <peb-select-option
+          *ngIf="order.cart.items.length > 0"
+          [value]="types[1].toString()"
+          [label]="'transactions.form.capture.labels.select_items' | translate"
+        >
+        </peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        *ngIf="captureTypeField.value == types[0]"
+        [isFieldInvalid]="form.get('amount')?.invalid"
+        [errorMessage]="
+          'transactions.form.capture.fields.amount.errors.limits'
+            | translate
+              : {
+                  min: 0 | currency: order.transaction.currency:undefined:undefined:locale,
+                  max: captureTotal | currency: order.transaction.currency:undefined:undefined:locale
+                }
+        "
+        [class.disabled]="amountField?.disabled"
+        label="{{ 'transactions.form.capture.fields.amount.placeholder' | translate }}"
+        appearance="label"
+      >
+        <input
+          type="number"
+          pebInput
+          placeholder="{{
+            'transactions.form.capture.fields.amount.label'
+              | translate
+                : {
+                    amount: captureTotal | currency: order.transaction.currency:undefined:undefined:locale
+                  }
+          }}"
+          formControlName="amount"
+        />
+      </peb-form-field-input>
+      <pe-refund-product-picker
+        *ngIf="captureTypeField.value == types[1]"
+        [theme]="theme"
+        [data]="products"
+        placeholder="Search"
+      >
+      </pe-refund-product-picker>
+    </peb-form-background>
+  </form>
+</pe-action-container>

@@ -1,0 +1,53 @@
+
+.container {
+    padding: 0 0 16px;
+}
+
+.connection-info {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    color: #ffffff;
+    margin-bottom: 13px;
+    margin-left: 11px;
+}
+
+.setting-button{
+    padding: 12px 0;
+    border-radius: 12px;
+    background-color: #1c1d1e;
+    width: 100%;
+    display: block;
+    border: 0;
+    outline: 0;
+    color: #0091df;
+    font-size: 12px;
+    margin:16px 0 8px
+}
+
+.footer-info{
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    color: #7a7a7a;
+    margin-left: 11px;
+}
+.suffix.coppy-button{
+    background-color: transparent;
+    color:#0091df;
+    justify-content: center;
+    cursor:pointer
+}
+input.error{
+    color:
+    #eb4653
+}
+
+.light {
+    .connection-info{
+        color:black
+    }
+    .setting-button{
+        background-color:#fafafa
+    }
+}

@@ -1,0 +1,1 @@
+export * from './message-chat-permissions.component';

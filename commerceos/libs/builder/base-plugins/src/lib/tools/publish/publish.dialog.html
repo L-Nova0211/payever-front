@@ -1,0 +1,123 @@
+<div class="publish-dialog">
+  <div class="theme-data">
+    <div class="upload-logo" (click)="logoFileInput.click()">
+      <input
+        #logoFileInput
+        class="upload-logo__input"
+        type="file"
+        accept="image/*"
+        [disabled]="isLoading"
+        (change)="onLogoUpload($event)"
+      />
+      <ng-container *ngIf="!isLoading">
+        <ng-container *ngIf="!shopPicture">
+          <peb-editor-add-image-icon class="upload-logo__icon"></peb-editor-add-image-icon>
+          <span class="upload-logo__label">Logo</span>
+        </ng-container>
+        <div #logoWrapper *ngIf="shopPicture" class="upload-logo__picture">
+          <img
+            #logo
+            [class.large-then-parent]="isLargeThenParent"
+            [src]="shopPicture"
+            (load)="onLogoLoad()"
+          />
+        </div>
+      </ng-container>
+      <mat-progress-spinner
+        *ngIf="isLoading"
+        class="upload-logo__spinner mat-spinner-themed"
+        [strokeWidth]="2"
+        [diameter]="22"
+        [value]="uploadProgress"
+      ></mat-progress-spinner>
+    </div>
+
+    <div class="form">
+      <div class="field">
+        <div class="field__label">Name:</div>
+        <input class="field__input"
+          [(ngModel)]="shopNameValue"
+        />
+        <button
+          class="field__button"
+          [disabled]="!shopNameValue.length"
+          (click)="onChangeShopName()"
+        >
+          Change
+        </button>
+      </div>
+      <div class="field">
+        <div class="field__label">Version:</div>
+        <input class="field__input"
+          autofocus
+          [(ngModel)]="versionName"
+          [disabled]="isVersionCreating"
+          (keydown.enter)="versionName?.length && !isVersionCreating && onCreateVersion(versionName)"
+        />
+        <button
+          class="field__button"
+          [class.field__button--loading]="isVersionCreating"
+          [disabled]="!versionName?.length || (hasActiveBackgroundTasks$ | async)"
+          (click)="onCreateVersion(versionName)"
+        >
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="versions">
+    <ng-container *ngIf="!isVersionsLoading">
+      <div *ngFor="let version of versions$ | async" class="version" [class.version--selected]="version.published">
+        <button class="version__actions" [matMenuTriggerFor]="versionMenu">
+          <peb-editor-dots-icon></peb-editor-dots-icon>
+        </button>
+        <div class="version__theme-name">
+          <span class="version__name">{{ currentShopName$ | async }}</span>
+          <span *ngIf="version.isActive && !version.published" class="version__active-indicator"></span>
+          <span *ngIf="version.published" class="version__published-indicator"></span>
+        </div>
+        <div class="version__right-info">
+          <span class="version__info version__number">{{ version.name }}</span>
+          <span class="version__info">{{ version.createdAt | date:'dd/MM/yy' }}</span>
+          <span class="version__info">{{ version.createdAt | date:'hh:mm' }}</span>
+        </div>
+        <mat-menu #versionMenu="matMenu">
+          <button
+            mat-menu-item
+            [disabled]="version.isActive"
+            [disableRipple]="true"
+            (click)="onSelectVersion(version.id)">
+            Restore
+          </button>
+          <button
+            mat-menu-item
+            [disabled]="version.published"
+            [disableRipple]="true"
+            (click)="onPublishVersion(version.id)"
+          >
+            Publish
+          </button>
+          <button
+            mat-menu-item
+            [disabled]="version.published || version.isActive"
+            [disableRipple]="true"
+            (click)="onDeleteVersion(version.id)"
+          >
+            Delete
+          </button>
+        </mat-menu>
+      </div>
+    </ng-container>
+    <div
+      *ngIf="isVersionsLoading"
+      class="versions__spinner"
+    >
+      <mat-spinner
+        class="mat-spinner-themed"
+        [strokeWidth]="4"
+        [diameter]="44"
+      >
+      </mat-spinner>
+    </div>
+</div>
+</div>

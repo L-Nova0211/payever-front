@@ -1,0 +1,59 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $appName := printf "%s-job" $chartName }}
+
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: {{ $appName}}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: frontend
+    type: job
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "1"
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        app: {{ $appName }}
+        tier: frontend
+        type: job
+    spec:
+      priorityClassName: {{ $values.priorityClass }}
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: {{ $values.image.pullSecretName }}
+
+      containers:
+        - name: dist
+          image: {{ $values.image.dist }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/job.sh" ]
+
+          resources:
+{{ if eq .Values.deploy.env "test" }}
+{{ toYaml $values.resourcestest.app | indent 12 }}
+{{ else if eq .Values.deploy.env "stage" }}
+{{ toYaml $values.resourcesstage.app | indent 12 }}
+{{ else }}
+{{ toYaml $values.resourceslive.app | indent 12 }}
+{{ end }}
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: micro-url-map
+            - secretRef:
+                name: {{ $chartName }}
+
+          env:
+            - name: KUBERNETES_DEPLOYED
+              value: "{{ now }}"
+            - name: MICRO_CHECKOUT_VERSION
+              value: "{{ $values.microCheckoutVersion }}"

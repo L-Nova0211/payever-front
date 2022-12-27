@@ -1,0 +1,151 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  display: block;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.statistics-form {
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em 1.25em;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__cancel,
+  &__done {
+    font-size: 1.125em;
+    line-height: 1.5em;
+    margin: 0 1em;
+  }
+
+  &__cancel {
+    color: #78787d;
+  }
+
+  &__done {
+    color: #0091df;
+  }
+
+  &__title {
+    color: #f5f5f7;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 1em;
+    text-align: center;
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.small {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  box-sizing: border-box;
+  height: 201px;
+  width: 201px;
+
+  @media (max-width: 1600px) {
+    flex-basis: calc(25% - 20px);
+  }
+
+  @media (max-width: 1440px) {
+    flex-basis: calc(33.3% - 20px);
+  }
+
+  @media (max-width: 1024px) {
+    flex-basis: calc(50% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: calc(100% - 20px);
+  }
+}
+
+.medium {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  box-sizing: border-box;
+  height: 201px;
+  width: 418px;
+
+  @media (max-width: 1600px) {
+    flex-basis: calc(25% - 20px);
+  }
+
+  @media (max-width: 1440px) {
+    flex-basis: calc(33.3% - 20px);
+  }
+
+  @media (max-width: 1024px) {
+    flex-basis: calc(50% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: calc(100% - 20px);
+  }
+}
+
+.large {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  box-sizing: border-box;
+  height: auto;
+  width: 418px;
+
+  @media (max-width: 1600px) {
+    flex-basis: calc(25% - 20px);
+  }
+
+  @media (max-width: 1440px) {
+    flex-basis: calc(33.3% - 20px);
+  }
+
+  @media (max-width: 1024px) {
+    flex-basis: calc(50% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: calc(100% - 20px);
+  }
+}

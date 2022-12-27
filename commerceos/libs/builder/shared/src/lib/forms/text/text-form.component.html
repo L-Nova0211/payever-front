@@ -1,0 +1,93 @@
+<form class="form" [formGroup]="textForm">
+  <div class="group__row">
+    <label class="group__label">
+      Font
+    </label>
+  </div>
+
+  <div class="group__row">
+    <button class="sidebar__button sidebar__button--details" type="button" (click)="showFontsList()">
+      {{ fontFamily$ | async }}
+      <mat-icon class="sidebar__icon sidebar__icon__arrow" svgIcon="arrow"></mat-icon>
+    </button>
+  </div>
+
+  <div class="group__row" [formGroup]="fontStyleForm">
+    <div class="toggle-group">
+      <peb-button-toggle formControlName="bold">
+        <mat-icon class="font-style-icon" svgIcon="font-style-bold"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle formControlName="italic">
+        <mat-icon class="font-style-icon" svgIcon="font-style-italic"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle formControlName="underline">
+        <mat-icon class="font-style-icon" svgIcon="font-style-underline"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle formControlName="strike">
+        <mat-icon class="font-style-icon" svgIcon="font-style-line-through"></mat-icon>
+      </peb-button-toggle>
+    </div>
+  </div>
+
+  <div class="group__row">
+    <label class="group__label">
+      Color
+    </label>
+    <div class="peb-fill" (click)="showTextColorForm()">
+      <div class="peb-fill__thumbnail" *ngIf="textColor$ | async as style" [ngStyle]="style">
+        <mat-icon svgIcon="no-color" class="peb-fill__no-color" *ngIf="!style.backgroundColor"></mat-icon>
+      </div>
+      <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+    </div>
+  </div>
+
+  <div class="group__row">
+    <label class="group__label">
+      Size
+    </label>
+    <peb-number-input-spinbutton
+      class="row__control row__control--right control sidebar__spinbutton"
+      formControlName="fontSize"
+      [min]="1"
+      [max]="100"
+      units="px"
+    ></peb-number-input-spinbutton>
+  </div>
+
+  <div class="group__row">
+    <label class="group__label">
+      Alignment
+    </label>
+  </div>
+
+  <div class="group__row">
+    <peb-button-toggle-group class="toggle-group" formControlName="textJustify">
+      <peb-button-toggle [value]="justify.Left">
+        <mat-icon class="font-style-icon" svgIcon="font-alignment-left"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle [value]="justify.Center">
+        <mat-icon class="font-style-icon" svgIcon="font-alignment-center"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle [value]="justify.Right">
+        <mat-icon class="font-style-icon" svgIcon="font-alignment-right"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle [value]="justify.Justify">
+        <mat-icon class="font-style-icon" svgIcon="font-alignment-justify"></mat-icon>
+      </peb-button-toggle>
+    </peb-button-toggle-group>
+  </div>
+
+  <div class="group__row">
+    <peb-button-toggle-group class="toggle-group vertical-align" formControlName="verticalAlign">
+      <peb-button-toggle [value]="align.Top">
+        <mat-icon class="icon" svgIcon="vertical-alignment-top"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle [value]="align.Center">
+        <mat-icon class="icon" svgIcon="vertical-alignment-middle"></mat-icon>
+      </peb-button-toggle>
+      <peb-button-toggle [value]="align.Bottom">
+        <mat-icon class="icon" svgIcon="vertical-alignment-bottom"></mat-icon>
+      </peb-button-toggle>
+    </peb-button-toggle-group>
+  </div>
+</form>

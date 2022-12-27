@@ -1,0 +1,11 @@
+<div class="style-modal-container theme-{{theme}}">
+  <div class="pe-info-box-container-fixed color-styles-info-box">
+    <mat-list [disableRipple]="true" novalidate class="mat-list-transparent mat-list-transparent-bold">
+      <ng-container *ngFor="let item of items; trackBy: trackByItems;">
+        <pe-style-item *ngIf="isShowScreen(item)" [theme]="theme" [control]="parentForm.get(item.controlName)"
+          [type]="item.type" [labelTranslateKey]="item.labelKey" [buttonLabelTranslateKey]="item?.buttonLabelKey">
+        </pe-style-item>
+      </ng-container>
+    </mat-list>
+  </div>
+</div>

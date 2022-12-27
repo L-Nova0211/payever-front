@@ -1,0 +1,14 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.pe-info-box-container-stepper-fixed { // TODO Move to uikit for stepper
+  min-height: calc(100vh - 90px - #{2 * $grid-unit-y}) !important; // 90px is stepper height
+  margin-top: 2 * $grid-unit-y;
+
+  ::ng-deep {
+    // To fix long payment method name cut (TODO move to connect app sdk)
+    .mat-list-item-col:last-child {
+      max-width: 92px;
+    }
+  }
+}

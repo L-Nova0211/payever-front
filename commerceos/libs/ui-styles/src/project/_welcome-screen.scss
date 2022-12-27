@@ -1,0 +1,50 @@
+.pe-bootstrap {
+  .pe-welcome-screen {
+    &-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 100%;
+      @include payever_transform_translate(-50%, -50%);
+      @include pe_flexbox;
+      @include pe_justify-content(space-between);
+      @include pe_flex-direction(column);
+      @include pe_align-items(center);
+      align-items: center;
+    }
+
+    &-icon {
+      color: $color-white-grey-5;
+    }
+
+    &-title {
+      margin-top: $margin-base-y * 3;
+      font-size: $font-size-large-1 * 1.5;
+      line-height: $line-height-large;
+      font-weight: bold;
+      text-align: center;
+      min-width: $grid_unit-x * 20;
+      max-width: $grid_unit-x * 30;
+      width: 100%;
+      color: $color-white-grey-7;
+    }
+
+    &-message {
+      max-width: $grid_unit-x * 26;
+      width: 100%;
+      margin-top: $padding-base-vertical;
+      font-size: $font-size-large-3;
+      text-align: center;
+      color: $color-white-grey-7;
+    }
+
+    &-button {
+      width: $grid-unit-x * 15;
+      height: $grid-unit-x * 3;
+      border-radius: $btn-border-radius-large;
+      margin-top: $margin-base-y * 3;
+      font-weight: bold;
+    }
+
+  }
+}

@@ -1,0 +1,52 @@
+.status-pane {
+  display: flex;
+  justify-content: space-between;
+  min-width: 129px;
+
+  &__button {
+    padding: 4px 0;
+    display: flex;
+    justify-content: center;
+    width: 51px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    outline: none;
+    border: 1px solid transparent;
+  }
+
+  &__status-button {
+    background-color: #eb4653;
+
+    &.active {
+      background-color: #069d3b;
+    }
+
+    &.invited {
+      background-color: #3a3941;
+      color: #a6a5ac;
+    }
+  }
+
+
+
+  &__edit-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+
+    &:active, &:hover {
+      border-color: #fff;
+    }
+  }
+
+  &__resend-button {
+    background-color: #0371e2;
+    cursor: pointer;
+
+    &:active, &:hover {
+      border-color: #fff;
+    }
+  }
+}

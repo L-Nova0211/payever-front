@@ -1,0 +1,20 @@
+<div class="search-scroll-container"
+  peScrollHide
+  [hideHorizontalScrollbar]="true">
+  <button mat-button
+    class="mat-button-no-padding close-button"
+    [class.out]="outInProgress"
+    matTooltip="{{'tooltips.close' | translate}}"
+    matTooltipClass="mat-tooltip-transparent-dark-xs"
+    (document:keydown.esc)="navigateToDashboard()"
+    (click)="navigateToDashboard()">
+    <svg class="icon icon-14">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-x-16"></use>
+    </svg>
+    <span class="text">{{ 'actions.close' | translate }}</span>
+  </button>
+  <div class="search-box-wrapper" [class.out]="outInProgress">
+    <search-box-user *ngIf="!(isAdmin$ | async)" [searchString]="searchString"></search-box-user>
+    <search-box-admin *ngIf="(isAdmin$ | async)" [searchString]="searchString"></search-box-admin>
+  </div>
+</div>

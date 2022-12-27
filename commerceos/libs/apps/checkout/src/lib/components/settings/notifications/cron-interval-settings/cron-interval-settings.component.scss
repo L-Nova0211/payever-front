@@ -1,0 +1,136 @@
+@import "./../../../panels/page-container";
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .cron-interval-error {
+    color: #EB4653;
+    font-size: 12px;
+  }
+  .overlay-widget .cron-interval-settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &_container {
+      &-invalid {
+        border: 1px solid #EB4653;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 12px;
+      overflow: hidden;
+
+      peb-form-field-input .label-input-content-wrapper {
+        background-color: $forms-background-color;
+
+        .label-container {
+          .label-text, .input-field {
+            color: $regular-text-color;
+          }
+        }
+
+        .suffix {
+          background-color: $content-background-color;
+          color: $regular-text-color;
+          justify-content: center;
+          min-width: 75px;
+        }
+      }
+    }
+
+    &_item {
+      width: 50%;
+      box-sizing: border-box;
+      border-bottom: 1px solid $menu-item-border-color;
+
+      &:nth-of-type(2n - 1) {
+        border-right: 1px solid $menu-item-border-color;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &_item_fullwidth {
+      border-right: none !important;
+      width: 100%;
+    }
+
+    &_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background-color: $content-background-color;
+      min-width: 40px;
+      min-height: 163px;
+      margin-left: 12px;
+      cursor: pointer;
+
+      svg {
+        height: 20px;
+        width: 17px;
+        color: #EB4653;
+      }
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-light .cron-interval-settings {
+    &_container {
+      peb-form-field-input .label-input-content-wrapper {
+        background-color: $content-light-button-background-color;
+
+        .label-container {
+          .label-text, .input-field {
+            color: $regular-light-text-color;
+          }
+        }
+
+        .suffix {
+          background-color: $regular-light-secondary-text-color;
+          color: $regular-light-text-color;
+        }
+      }
+    }
+
+    &_item {
+      border-color: $content-light-border-color;
+
+      &:nth-of-type(2n - 1) {
+        border-color: $content-light-border-color;
+      }
+    }
+
+    &_button {
+      background-color: $content-light-background-color;
+    }
+  }
+}
+
+.cdk-overlay-backdrop.settings-modal + .cdk-global-overlay-wrapper {
+  .overlay-transparent .cron-interval-settings {
+    &_container {
+      peb-form-field-input .label-input-content-wrapper {
+        background-color: $content-transparent-background-color;
+
+        .suffix {
+          background-color: $content-transparent-button-background-color;
+        }
+      }
+    }
+
+    &_item {
+      border-color: $content-transparent-border-color;
+
+      &:nth-of-type(2n - 1) {
+        border-color: $content-transparent-border-color;
+      }
+    }
+
+    &_button {
+      background-color: $content-transparent-background-color;
+    }
+  }
+}

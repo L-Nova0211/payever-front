@@ -1,0 +1,181 @@
+<pe-new-platform-header class="review-publish-dialog__platform-header"></pe-new-platform-header>
+<div style="margin-left: 50px;" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu"></div>
+
+<mat-menu #menu="matMenu" class="screen-menu">
+  <div class="screen-menu__header">
+    <div class="screen-menu__title">
+      {{ 'screen' | uppercase }}
+    </div>
+    <mat-icon class="screen-menu__close" svgIcon="button-close"></mat-icon>
+  </div>
+  <button (click)="onView('desktop')" class="screen-menu__button" [class.active]="screen === 'desktop'" mat-menu-item>
+    <mat-icon svgIcon="desktop" class="screen-menu__icon"></mat-icon>
+    <span>Desktop</span>
+  </button>
+  <button (click)="onView('tablet')" class="screen-menu__button" [class.active]="screen === 'tablet'" mat-menu-item>
+    <mat-icon svgIcon="tablet" class="screen-menu__icon"></mat-icon>
+    <span>Tablet</span>
+  </button>
+  <button (click)="onView('mobile')" class="screen-menu__button" [class.active]="screen === 'mobile'" mat-menu-item>
+    <mat-icon svgIcon="mobile" class="screen-menu__icon"></mat-icon>
+    <span>Mobile</span>
+  </button>
+</mat-menu>
+<div class="main-container" *ngIf="totalPages.length; else noPages">
+  <ng-container>
+    <ng-container *ngIf="!isSidebarClosed">
+      <div
+        class="sidebar-wrap"
+        [@sidebarAnimation]="{value: gridAnimationState$ | async, params: { sidebarWidth: 315 }}"
+        >
+        <pe-sidebar
+          style="margin: 0 0 0 8px;"
+          [sidebarFilters]="filters">
+        </pe-sidebar>
+      </div>
+    </ng-container>
+
+    <pe-sidebar-filters-wrapper #filters>
+      <pe-sidebar-header title="History" [allowClose]="false"></pe-sidebar-header>
+      <pe-sidebar-filter-wrapper
+        [expandable]="true"
+        [active]="true">
+        <pe-tree-sidebar-filter
+          [ngTemplateOutlet]="nodeImageTemplate"
+          [ngTemplateOutletContext]="{node:treeData}">
+          <ng-template #nodeImageTemplate let-node="node">
+            <div *ngFor="let item of node"
+              (click)="onSelectPage(item, $event)"
+              class="sidebar-item"
+              [class.active]="getActiveNode(item)">
+              <div class="sidebar-item__info">
+                <!-- <button mat-icon-button class="sidebar-item__menu" [matMenuTriggerFor]="itemMenu" (click)="$event.stopPropagation()">
+                  <svg>
+                    <use [attr.xlink:href]="'#icon-dots-v-24'"></use>
+                  </svg>
+                  <mat-menu #itemMenu="matMenu" backdropClass="dashboard__backdrop" [classList]="'dashboard__menu dark'">
+                    <button
+                      class="mat-menu-btn"
+                      mat-menu-item
+                      (click)="onEdit(item)">
+                      Edit
+                    </button>
+                    <button
+                      class="mat-menu-btn"
+                      mat-menu-item>
+                      Action
+                    </button>
+                  </mat-menu>
+                </button> -->
+                <div class="sidebar-item__name">
+                  {{ item?.name }}
+                </div>
+                <!-- <div class="sidebar-item__active" *ngIf="isActiveNode(item)">
+                </div> -->
+              </div>
+              <div class="sidebar-item__timestamp" [class.active]="isActiveNode(item)">
+                <span class="sidebar-item__date">
+                  {{ item.data.date }}
+                </span>
+                <span class="sidebar-item__time">
+                  {{ item.data.time }}
+                </span>
+              </div>
+            </div>
+          </ng-template>
+        </pe-tree-sidebar-filter>
+      </pe-sidebar-filter-wrapper>
+    </pe-sidebar-filters-wrapper>
+
+    <div class="theme-versions-container" #versions>
+      <ng-container *ngIf="(preview$ | async) as preview">
+        <div class="draft preview"
+          #draftPreview>
+          <div class="dashboard-header draft">
+            <div class="dashboard-header__title">Draft</div>
+            <button class="dashboard-header__menu" (click)="onFullscreenChange(0)">
+              <ng-container *ngIf="!fullscreens[0]; then openFullscreen else exitFullscreen">
+              </ng-container>
+            </button>
+          </div>
+
+          <div class="dashboard-viewer-container">
+            <mat-spinner
+              *ngIf="!preview.current || (screenChanging$ | async)"
+              class="mat-spinner-themed dashboard-spinner"
+              [strokeWidth]="2"
+              [diameter]="22"
+            ></mat-spinner>
+
+            <div class="scrollbar" *ngIf="!(screenChanging$ | async)">
+              <peb-viewer
+                *ngIf="preview.current && currentPage; else deletedPage"
+                class="dashboard-viewer"
+                [themeSnapshot]="preview.current"
+                [screen]="screen"
+              ></peb-viewer>
+            </div>
+          </div>
+        </div>
+        <div class="current-version preview"
+          #currentVersionPreview>
+          <div class="dashboard-header">
+            <div class="dashboard-header__title">Currently published</div>
+            <button class="dashboard-header__menu" (click)="onFullscreenChange(1)">
+              <ng-container *ngIf="!fullscreens[1]; then openFullscreen else exitFullscreen">
+              </ng-container>
+            </button>
+          </div>
+
+          <div class="dashboard-viewer-container">
+            <mat-spinner
+              *ngIf="!preview.published || (screenChanging$ | async)"
+              class="mat-spinner-themed dashboard-spinner"
+              [strokeWidth]="2"
+              [diameter]="22"
+            ></mat-spinner>
+
+            <div class="scrollbar" *ngIf="!(screenChanging$ | async)">
+              <peb-viewer
+                *ngIf="preview.published && publishedPage; else missingPage"
+                class="dashboard-viewer"
+                [themeCompiled]="preview.published"
+                [screen]="screen"
+              ></peb-viewer>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #noPages>
+  <div class="no-pages">
+    There are no unpublished changes to review
+    <span class="no-pages__back" (click)="onBack()">
+      Return to editor
+    </span>
+  </div>
+</ng-template>
+
+<ng-template #deletedPage>
+  <div class="missing-page">
+    This page is deleted.
+  </div>
+</ng-template>
+<ng-template #missingPage>
+  <div class="missing-page">
+    This page is not published.
+  </div>
+</ng-template>
+
+
+<ng-template #openFullscreen>
+  <mat-icon svgIcon="openFullscreen" class="icon"></mat-icon>
+</ng-template>
+<ng-template #exitFullscreen>
+  <mat-icon svgIcon="closeFullscreen" class="icon"></mat-icon>
+
+</ng-template>

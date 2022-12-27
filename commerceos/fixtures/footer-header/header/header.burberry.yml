@@ -1,0 +1,203 @@
+id: header-page
+variant: front
+data: {}
+template:
+  id: burberry-main-page
+  type: document
+  children:
+    - id: upper-banner
+      type: section
+      children:
+        - id: upper-block
+          type: block
+          children:
+            - id: upper-text
+              type: text
+              data:
+                text: 'Header text'
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-logo
+          type: logo
+          data:
+            text: PAYEVER
+        - id: header-menu
+          type: menu
+          data:
+            routes:
+              - title: HOME
+                route: /
+              - title: CATALOGUE
+                route: /category
+              - title: ABOUT US
+                route: /about
+              - title: CONTACT
+                route: /category
+        - id: header-cart
+          type: shop-cart
+
+stylesheets:
+  desktop:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Desktop Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#000'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 0 400
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#fff'
+      fontSize:  12
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 64
+      position: sticky
+      top: 0
+      zIndex: 1
+      width: 1024
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    header-logo:
+      fontSize: 24
+      width: 150
+      textAlign: left
+      fontWeight: 700
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      margin: 20 0 0 40
+      gridArea: 1 / 1 / 1 / 1
+    header-menu:
+      fontSize: 12
+      fontWeight: 700
+      width: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: 0 0 0 30
+    header-cart:
+      width: 24
+      height: 30
+      margin: 15 0 0 200
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+
+  tablet:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Tablet Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#000'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 0 230
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#fff'
+      fontSize:  12
+
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      fontSize: 16
+      fontWeight: 800
+      width: 150
+      textAlign: left
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: 12 12
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      margin: 0 0 0 580
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile Upper-banner
+    # ----------------------------------
+    upper-banner:
+      display: grid
+      height: 40
+      backgroundColor: '#000'
+    upper-block:
+      display: grid
+    upper-text:
+      margin: 15 0 0 40
+      width: 320
+      textAlign: center
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#fff'
+      fontSize:  12
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      display: grid
+      zIndex: 1
+      position: sticky
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      fontSize: 16
+      width: 130
+      textAlign: left
+      fontWeight: 800
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 10 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 500
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      color: '#000'
+      margin: 12 0 0 20
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 25
+      height: 50
+      margin: 0 0 0 180
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+context: {}

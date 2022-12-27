@@ -1,0 +1,17 @@
+<div class="product-wrapper"
+     [class.product-small]="small">
+    <div class="product-image" [style.background-image]="imageSrc">
+        <pe-progress-button-content spinnerColor="black" [loading]="loading">
+        </pe-progress-button-content>
+    </div>
+    <div class="product-info">
+        <span class="product-title">{{titlePart1 | truncate: [12]}}</span>
+        <span class="product-title" *ngIf="titlePart2">{{titlePart2 | truncate: [12]}}</span>
+        <!--
+        <span class="product-quantity"><b>{{quantity}}</b> {{(quantity === 1 ? 'widgets.store.product.item' : 'widgets.store.product.items') | translate}}</span>
+        <span class="product-lastbuy">{{lastBuy}}</span>
+        -->
+        <span class="product-price">{{price | currency:currency}}</span>
+    </div>
+</div>
+

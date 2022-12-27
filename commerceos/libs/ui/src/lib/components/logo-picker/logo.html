@@ -1,0 +1,38 @@
+<div class="logo-picker-wrapper">
+  <div class="image">
+    <div class="image__spinner" [class.hide]="!isImageLoading">
+      <mat-spinner class="mat-spinner-themed" diameter="30"></mat-spinner>
+    </div>
+    <div class="image__background" [class.hide]="image">
+      <svg class="no-image-logo" *ngIf="!abbrevation" [class.hide]="isImageLoading">
+        <use xlink:href="#icon-ui-no-image"></use>
+      </svg>
+      <p *ngIf="abbrevation" [class.hide]="isImageLoading">{{abbrevation}}</p>
+    </div>
+    <img src="{{image}}" class="logo" [class.hide]="!image" />
+    <div
+      class="delete-logo"
+      [class.hide]="!image"
+      (click)="deleteLogo.emit()">
+      <svg>
+        <use xlink:href="#icon-x-round-white-cross-24"></use>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <label class="picker-button" [attr.for]="inputId">
+      <svg class="picker-button__icon">
+        <use xlink:href="#icon-ui-add-media"></use>
+      </svg>
+      <span class="picker-button__label">{{buttonLabel}}</span>
+    </label>
+    <input
+      type="file"
+      [attr.id]="inputId"
+      [attr.name]="inputId"
+      class="cdk-visually-hidden"
+      accept="image/png, image/jpeg, image/png, image/svg+xml"
+      (change)="fileChangeEvent($event)"
+    />
+  </div>
+</div>

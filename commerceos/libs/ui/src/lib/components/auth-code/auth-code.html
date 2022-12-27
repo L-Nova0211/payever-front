@@ -1,0 +1,7 @@
+<div class="auth-code-wrapper">
+  <ng-container *ngFor="let control of digitFormArray.controls; index as i">
+    <div class="digit-wrapper">
+      <input [type]="type" [formControl]="digitFormArray.controls[i]" (input)="numberOnly($event, i)" maxlength="1" />
+    </div>
+  </ng-container>
+</div>

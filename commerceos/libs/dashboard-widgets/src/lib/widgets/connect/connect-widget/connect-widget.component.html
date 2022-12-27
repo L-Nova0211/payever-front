@@ -1,0 +1,97 @@
+<pe-widget *ngIf="widget" [widget]="widget" [theme]="theme"></pe-widget>
+<!--TODO: Remove after approving WIDGET-1, COSF-343-->
+<!--<widget-card-->
+<!--  [appCode]="appName"-->
+<!--  [title]="'widgets.connect.title' | translate"-->
+<!--  [iconSrc]="iconUrl | iconsPngUrl"-->
+<!--  [installIconSrc]="installIconUrl | iconsPngUrl"-->
+<!--  [learMoreUrl]="widget?.helpUrl"-->
+<!--  [showSpinner]="showSpinner$ | async"-->
+<!--  [showButtonSpinner]="showButtonSpinner$ | async"-->
+<!--  (onClick)="onOpenButtonClick()"-->
+<!--&gt;-->
+<!--  <div class="connect-apps-wrapper"-->
+<!--    [class.short]="isShortTopList$ | async">-->
+<!--    <div class="connect-apps-title">{{ 'widgets.connect.list-title' | translate }}</div>-->
+<!--    <div class="connect-apps-list">-->
+<!--      <div *ngFor="let integr of topIntegrations$ | async"-->
+<!--           [attr.title]="integr.integration.displayOptions.title | translate"-->
+<!--           [class]="'integration ' + integr.integration.name"-->
+<!--           (click)="onGoToIntegration(integr)">-->
+<!--        <svg class="icon icon-24">-->
+<!--          <use [attr.xlink:href]="integr.integration.displayOptions.icon"></use>-->
+<!--        </svg>-->
+<!--      </div>-->
+<!--      <div></div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;-->
+<!--    <div *ngFor="let integr of topIntegrations$ | async"-->
+<!--      class="connect-apps-item"-->
+<!--      (click)="onGoToIntegration(integr)">-->
+<!--      <div class="connect-apps-item-wrapper"-->
+<!--          [class.disabled]="(integrationWithSpinner$ | async) === integr.integration.name">-->
+<!--        <svg class="icon icon-32 santander">-->
+<!--          <use [attr.xlink:href]="integr.integration.displayOptions.icon"></use>-->
+<!--        </svg>-->
+<!--        <div class="connect-apps-item-install">-->
+<!--          <div class="img-circle icon-16">-->
+<!--            <svg class="icon icon-8 icon-install-app">-->
+<!--              <use xlink:href="#icon-install-app"></use>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <span class="pe-truncate-text connect-apps-item-title"-->
+<!--            [attr.title]="integr.integration.displayOptions.title | translate"-->
+<!--          >{{ integr.integration.displayOptions.title | translate}}</span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div *ngIf="(integrationWithSpinner$ | async) === integr.integration.name"-->
+<!--          class="connect-apps-item-spinner">-->
+<!--        <mat-spinner [diameter]="26" [strokeWidth]="2"></mat-spinner>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &ndash;&gt;-->
+
+<!--    <button mat-raised-button *ngIf="!(topIntegrations$ | async)?.length"-->
+<!--      disabled="true" type="button"-->
+<!--      class="connect-app-button dashboard-widget-button mat-button-rect-md"-->
+<!--      color="muted-transparent-themed"-->
+<!--    >-->
+<!--      {{'widgets.connect.all_installed' | translate}}-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  <widget-action-button class="connect-widget-button" [loading]="showEditButtonSpinner$ | async"-->
+<!--                        [title]="'widgets.connect.actions.add-connect' | translate" (onClick)="onConnectAddClick()"-->
+<!--  ></widget-action-button>-->
+<!--&lt;!&ndash;-->
+<!--  <ng-container more>-->
+<!--    <div class="connect-apps-wrapper more" [class.short]="isShortMoreList$ | async">-->
+<!--      <div *ngFor="let integr of moreIntegrations$ | async"-->
+<!--           class="connect-apps-item"-->
+<!--           (click)="onGoToIntegration(integr)">-->
+
+<!--        <div class="connect-apps-item-wrapper"-->
+<!--             [class.disabled]="(integrationWithSpinner$ | async) === integr.integration.name">-->
+<!--          <svg class="icon icon-24">-->
+<!--            <use [attr.xlink:href]="integr.integration.displayOptions.icon"></use>-->
+<!--          </svg>-->
+<!--          <div class="img-circle icon-16">-->
+<!--            <svg class="icon icon-8 icon-install-app">-->
+<!--              <use xlink:href="#icon-install-app"></use>-->
+<!--            </svg>-->
+<!--          </div>-->
+
+<!--          <span class="pe-truncate-text connect-apps-item-title"-->
+<!--                [attr.title]="integr.integration.displayOptions.title | translate"-->
+<!--          >{{ integr.integration.displayOptions.title | translate }}</span>-->
+<!--        </div>-->
+
+<!--        <div *ngIf="(integrationWithSpinner$ | async) === integr.integration.name"-->
+<!--             class="connect-apps-item-spinner">-->
+<!--          <mat-spinner [diameter]="26" [strokeWidth]="2"></mat-spinner>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ng-container>&ndash;&gt;-->
+<!--</widget-card>-->

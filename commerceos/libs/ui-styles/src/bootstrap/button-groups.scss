@@ -1,0 +1,93 @@
+//
+// Button Groups
+// ----------------------------
+
+.pe-bootstrap {
+  .btn-group {
+
+    & > .btn-lg + .dropdown-toggle {
+      padding-right: $pe_hgrid_gutter/2;
+      padding-left: $pe_hgrid_gutter/2;
+    }
+
+    &.open .dropdown-toggle {
+      @include box-shadow(none);
+    }
+
+    &-vertical > .btn {
+      &:first-child:not(:last-child) {
+        @include border-top-radius($border-radius-base);
+      }
+
+      &:last-child:not(:first-child) {
+        @include border-bottom-radius($border-radius-base);
+      }
+    }
+
+    &-dark {
+      background-color: $color-dark-gray;
+      color: $color-white;
+
+      & > .btn,
+      & > .btn-group > .btn {
+        border-radius: 0;
+        margin: 0;
+        border: none;
+        background-color: $color-dark-gray;
+
+        &:not(:first-child) {
+          border-right: 0.5px solid;
+        }
+
+        &:not(:last-child) {
+          border-right-color: $color-black;
+        }
+
+        &.active {
+          cursor: default;
+          border: none;
+          background-color: $color-black;
+
+          &:focus, &:hover {
+            color: $color-white;
+          }
+        }
+
+        & + &.active {
+          border: none;
+        }
+
+        &:not(.active) {
+          &:focus, &:hover {
+            color: $color-white;
+            background-color: $color-gray;
+          }
+        }
+      }
+
+      &-icon-hover {
+        @include payever_vertical_align_middle;
+        width: 100%;
+
+        & > .btn,
+        & > .btn-group > .btn {
+          background-color: transparent;
+          outline: 0;
+          color: $color-gray-2;
+
+          &.active {
+            color: $color-white;
+          }
+
+          &:not(.active) {
+            &:hover, &:focus {
+              color: $color-light-gray-1;
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

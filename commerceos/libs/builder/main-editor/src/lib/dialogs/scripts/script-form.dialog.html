@@ -1,0 +1,88 @@
+<div class="script-dialog">
+  <form [formGroup]="form" class="script-dialog__form">
+    <div class="script-dialog__header">
+      <div class="script-dialog__header-action script-dialog__header-action--cancel" (click)="submitForm(false)">Cancel</div>
+      <div class="script-dialog__title">
+        <span>{{ title }}</span>
+      </div>
+      <div class="script-dialog__header-action script-dialog__header-action--success" (click)="submitForm(true)">Done</div>
+    </div>
+    <div class="script-dialog__content">
+      <div class="script-dialog__fields">
+        <div class="script-dialog__field">
+          <peb-select
+            class="script-dialog__field-select"
+            formControlName="page"
+            selectType="label"
+            [animated]="true"
+            label="Page"
+          >
+            <peb-select-option
+              *ngFor="let option of pageOptions; let i = index"
+              [label]="option.name"
+              [value]="option.value"
+              [class]="'peb-select-option ' + theming">
+            </peb-select-option>
+          </peb-select>
+        </div>
+      </div>
+      <div class="script-dialog__fields">
+        <div class="script-dialog__field">
+          <peb-select
+            class="script-dialog__field-select"
+            formControlName="triggerPoint"
+            selectType="label"
+            [animated]="true"
+            label="Trigger point"
+          >
+            <peb-select-option
+              *ngFor="let option of triggerPointOptions; let i = index"
+              [label]="option.name"
+              [value]="option.value"
+              [class]="'peb-select-option ' + theming">
+            </peb-select-option>
+          </peb-select>
+        </div>
+      </div>
+      <div class="script-dialog__fields">
+        <div class="script-dialog__field">
+          <peb-form-field-input class="script-dialog__field-input" label="Name" appearance="label" [animated]="true">
+            <input placeholder="" formControlName="name" id="name" name="name" type="text"/>
+          </peb-form-field-input>
+        </div>
+        <div class="script-dialog__field script-dialog__field-big">
+          <peb-form-field-textarea class="script-dialog__field-textarea" label="Content" appearance="label">
+            <textarea formControlName="content" name="content"></textarea>
+          </peb-form-field-textarea>
+        </div>
+      </div>
+    </div>
+    <div class="script-dialog__actions" *ngIf="data?.script">
+      <div class="script-dialog__action" (click)="removeScript()">
+        <span>Remove script</span>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #confirmDialogTpl>
+  <div class="script-dialog__confirm">
+    <div class="script-dialog__confirm-icon">
+      <mat-icon svgIcon="alert"></mat-icon>
+    </div>
+    <div class="script-dialog__confirm-title">
+      Are you sure?
+    </div>
+    <div class="script-dialog__confirm-subtitle">
+      Do you really want to close this window? Because all data will be lost when unsaved and you will not be able to restore it.
+    </div>
+    <div class="script-dialog__confirm-actions">
+      <div class="script-dialog__confirm-action script-dialog__confirm-action--confirm" (click)="confirmDialogRef?.close(true)">
+        Yes
+      </div>
+      <div class="script-dialog__confirm-action script-dialog__confirm-action--reject" (click)="confirmDialogRef?.close(false)">
+        No
+      </div>
+    </div>
+  </div>
+</ng-template>

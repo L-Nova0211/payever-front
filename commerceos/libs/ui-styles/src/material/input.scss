@@ -1,0 +1,106 @@
+//
+// Input
+// ----------------------------
+
+@include mat-input-theme($theme);
+
+
+.pe-bootstrap {
+  .pe-input {
+    &-search {
+      padding: 0 0 5px 0;
+
+      .mat-form-field {
+        font-size: 26px;
+        width: 100%;
+
+        .mat-form-field-label {
+          color: $color-white-grey-2;
+        }
+        .mat-input-element {
+          caret-color: $color-secondary;
+          color: $color-secondary;
+          font-size: inherit;
+        }
+      }
+
+      .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+      .icon-search {
+        color: $color-secondary-3;
+      }
+
+      .mat-form-field-prefix {
+        margin-left: $grid-unit-x;
+      }
+
+      .mat-form-field-infix {
+        border-top: 0;
+        padding-top: 0.4375em; // standard
+      }
+
+      .mat-form-field-underline {
+        display: none;
+      }
+
+      &-dark {
+        .mat-form-field {
+          background-color: $color-primary-3;
+          border-radius: 8px;
+        }
+      }
+    }
+    &.pe-code-input {
+      width: $grid-unit-y*4;
+      display: block;
+
+      .mat-form-field {
+        display: block;
+
+        .mat-form-field-flex {
+          background-color: $color-secondary-2;
+          border-radius: $border-radius-large;
+          height: $grid-unit-y*4;
+
+          .mat-form-field-infix {
+            border-top-width: 8px;
+
+            .mat-input-element {
+              color: $color-secondary-8;
+              caret-color: $color-secondary-8;
+              text-align: center;
+            }
+
+            .mat-input-with-addon-inline-prepend-wrapper {
+              padding: 0 $padding-xs-horizontal;
+            }
+          }
+        }
+
+        &.mat-focused {
+          .mat-form-field-flex {
+            box-shadow: inset 0 0 0 2px $color-secondary-3;
+          }
+        }
+
+        .mat-form-field-underline {
+          display: none;
+        }
+
+        .mat-form-field-subscript-wrapper {
+          display: none;
+        }
+      }
+
+      @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+        width: $grid-unit-y*3;
+        .mat-form-field .mat-form-field-flex {
+          height: $grid-unit-y*3;
+        }
+      }
+
+    }
+  }
+}

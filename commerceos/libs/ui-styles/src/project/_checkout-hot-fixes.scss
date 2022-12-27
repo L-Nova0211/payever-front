@@ -1,0 +1,33 @@
+.pe-bootstrap {
+  pe-locales-switcher {
+    .mat-button {
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  checkout-main-layout {
+    .ui-layout-content-main {
+      height: 100%;
+    }
+  }
+
+  checkout-main-layout {
+    .ui-layout-content .ui-layout-content-main {
+      padding-top: 0 !important;
+    }
+  }
+
+  checkout-main-layout {
+    .ui-layout-header {
+      .payever-logo {
+        width: ceil($grid-unit-x * 9);
+        max-width: 95%;
+        height: auto !important;
+      }
+    }
+  }
+}

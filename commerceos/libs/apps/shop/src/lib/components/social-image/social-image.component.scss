@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    width: 100%;
+}
+.container {
+    margin: 0 29px 10px;
+    .footer-info {
+        font-size: 12px;
+        font-weight: normal;
+        color: #7a7a7a;
+        padding: 8px 12px;
+    }
+}

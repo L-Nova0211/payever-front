@@ -1,0 +1,17 @@
+.pe-bootstrap {
+  .terminal-list {
+    border-bottom: $border-light-gray-2;
+    padding: $grid-unit-y * 2 0;
+    .form-control-toggle.input-sm + label {
+      vertical-align: middle;
+    }
+    &:last-child {
+      border: none;
+    }
+    @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+      .text-right {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<form *ngIf="formGroup" [formGroup]="formGroup">
+  <span class="motion">{{ title }}</span>
+  <div class="type" (click)="showDetail()">
+    <div class="type__title">
+      {{ getEventType() }}
+    </div>
+    <div class="type__arrow">
+      <svg width="9" height="4" viewBox="0 0 7 3" style="overflow: unset; transform: rotate(-90deg);">
+        <path fill="none" fill-rule="evenodd" stroke="#7a7a7a" d="M0 3L3.5 0 7 3" transform="rotate(-180 3.5 1.5)"/>
+      </svg>
+    </div>
+  </div>
+</form>

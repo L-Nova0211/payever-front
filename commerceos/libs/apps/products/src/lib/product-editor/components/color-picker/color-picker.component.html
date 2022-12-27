@@ -1,0 +1,32 @@
+<div class="backdrop" (click)="closeColorPicker()"></div>
+<div class="overlay">
+  <div class="overlay__header">
+    <button class="overlay__button overlay__button_grey" (click)="closeColorPicker()">{{ 'cancel' | translate }}</button>
+    <span class="overlay__title">{{ 'add_color' | translate }}</span>
+    <button class="overlay__button" (click)="onSubmit()">{{ 'save' | translate }}</button>
+  </div>
+  <div class="overlay__body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+      <div class="color-field">
+        <pe-color-picker
+          [format]="colorPickerFormat.HEX"
+          [formControlRef]="form.controls['colorHex']"
+          class='color-picker'
+        ></pe-color-picker>
+        <peb-form-field-input
+          label="{{ 'variantEditor.colorPicker.placeholders.colorValue' | translate }}"
+          appearance="label"
+          [animated]='true'
+        >
+          <input formControlName="colorHex" type="text"/>
+        </peb-form-field-input>
+      </div>
+      <peb-form-field-input
+        label="{{ 'placeholders.colorName' | translate }}"
+        appearance="label"
+      >
+        <input formControlName="colorName" type="text">
+      </peb-form-field-input>
+    </form>
+  </div>
+</div>

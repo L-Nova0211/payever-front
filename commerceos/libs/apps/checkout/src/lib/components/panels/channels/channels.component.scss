@@ -1,0 +1,48 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+@import "../page-container.scss";
+
+:host {
+  min-height: fit-content;
+}
+
+@media (max-width: 720px) {
+  .add-button {
+    max-width: calc(100% - 20px);
+    // margin: 8px 10px !important;
+  }
+}
+
+.page__container {
+  height: 100%;
+  width: 560px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.pe-info-box-container-fixed.pe-checkout-channels {
+  min-height: fit-content;
+  flex-direction: column;
+}
+
+.button-with-spinner {
+  margin-top: 4px;
+
+  .mat-progress-spinner-light {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.mat-list-item:nth-of-type(2) {
+  .mat-list-item-col .icon-menu-wrapper .icon-menu-item.icon-margin-fixed {
+    margin: 4px 2px 2px 4px;
+  }
+}
+
+.checkout-container.light-checkout-theme .checkout-content {
+  .add-button {
+    background-color: $content-light-background-color;
+  }
+}

@@ -1,0 +1,136 @@
+$background-skeleton: #444;
+
+:host {
+  font-family: Roboto, sans-serif;
+  // display: flex;
+  // align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  color: #fff;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  .grid-row {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px 0;
+
+    &:not(.light) {
+      color: white;
+    }
+
+    &.light {
+      color: black;
+    }
+  }
+}
+
+.sidebar-item__icon{
+  height:24px;
+  width:24px
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.campaign-grid {
+  display: flex;
+  height: 100%;
+
+  &__list {
+    margin: 29px;
+    margin-right: 16px;
+    width: 100%;
+    max-height: 90%;
+    overflow-y: auto;
+  }
+}
+
+pe-data-grid-item {
+
+  .item-header {
+    z-index: 1;
+  }
+}
+
+.invoice {
+  &__container {
+    display: flex;
+    width: 100%;
+
+    &.color {
+      background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &.gray {
+      align-items: center;
+      background-image: linear-gradient(to bottom, #ededf4, #aeb0b7 98%);
+      justify-content: center;
+      svg{
+        width:80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    span {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+
+  &__info {
+    background-color: #2b2c2d;
+    padding: 11px 12px 7px;
+  }
+
+  &__title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__description {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    margin-top: 5px;
+    min-height: 15px;
+  }
+}
+
+.invoice-image {
+  box-sizing: border-box;
+  font-weight: 700;
+  color: rgba(0,0,0,.2);
+  text-align: center;
+  background-color: #fff;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  svg {
+    display: flex;
+    width: 72px;
+    height: 72px;
+    color: #007dfe;
+    margin: 0 auto;
+  }
+}

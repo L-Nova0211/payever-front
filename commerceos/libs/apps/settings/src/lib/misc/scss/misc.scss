@@ -1,0 +1,36 @@
+//
+// Misc mixins
+// --------------------------------------------------
+
+@mixin generate-padding($spaceamounts) {
+    @each $space in $spaceamounts {
+      .padding-#{$space} {
+        padding: #{$space}px !important;
+      }
+    }
+  }
+  
+  @mixin generate-padding-top($spaceamounts) {
+    @each $space in $spaceamounts {
+      .padding-top-#{$space} {
+        padding-top: #{$space}px !important;
+      }
+    }
+  }
+  
+  @mixin generate-margin($spaceamounts) {
+    @each $space in $spaceamounts {
+      .margin-#{$space} {
+        margin: #{$space}px !important;
+      }
+    }
+  }
+  
+  @mixin generate-margin-bottom($spaceamounts) {
+    @each $space in $spaceamounts {
+      .margin-bottom-#{$space} {
+        margin-bottom: #{$space}px !important;
+      }
+    }
+  }
+  

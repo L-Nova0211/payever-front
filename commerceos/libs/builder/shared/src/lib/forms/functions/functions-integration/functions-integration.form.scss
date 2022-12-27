@@ -1,0 +1,100 @@
+@import "../../../../../../../../libs/builder/styles/src/lib/styles/variables";
+
+:host {
+  padding-bottom: 15px;
+}
+
+.remove-links {
+  cursor: pointer;
+  padding: 6px 31px;
+  border-radius: 6px;
+  background-color: #37363b;
+  text-align: center;
+}
+
+.group {
+  &__wrapper {
+    padding: 15px;
+  }
+}
+
+.integrations {
+  &__scroll {
+    flex: 1;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100% - 75px);
+
+    .functions-tree {
+      background-color: transparent;
+      margin: 0 12px;
+
+      .light {
+        color: black;
+      }
+
+      .dark {
+        color: white;
+      }
+
+      .functions-tree-invisible {
+        display: none;
+      }
+
+      ul,
+      li {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+      }
+
+      .mat-nested-tree-node div[role=group] {
+        padding-left: 20px;
+      }
+
+      div[role=group] > .mat-tree-node {
+        padding-left: 20px;
+      }
+
+      .mat-tree-node, .mat-nested-tree-node {
+        color: inherit;
+        min-height: 32px;
+
+        .node-toggle-button {
+          height: 24px;
+          width: 24px;
+          line-height: 24px;
+        }
+
+        .mat-button-wrapper {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+        }
+
+        .arrow-icon {
+          width: 8px;
+          height: 8px;
+          font-size: 0;
+          transition: all 0.15s ease-out;
+          margin-bottom: 10px;
+
+          &.down {
+            transform: rotate(90deg);
+            margin: 0 0 3px 5px;
+          }
+        }
+      }
+
+      .integration-title {
+        cursor: pointer;
+      }
+    }
+  }
+}

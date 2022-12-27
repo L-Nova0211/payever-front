@@ -1,0 +1,1 @@
+export * from './message-invite-root.component';

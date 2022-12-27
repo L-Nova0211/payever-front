@@ -1,0 +1,10 @@
+<form [formGroup]="gridLayoutForm">
+  <div class="group__row">
+    <label>Cols</label>
+    <peb-number-input-spinbutton formControlName="colCount" [min]="1" [max]="64"></peb-number-input-spinbutton>
+  </div>
+  <div class="group__row">
+    <label>Rows</label>
+    <peb-number-input-spinbutton formControlName="rowCount" [min]="1" [max]="64"></peb-number-input-spinbutton>
+  </div>
+</form>

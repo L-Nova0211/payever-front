@@ -1,0 +1,94 @@
+<div
+  peFileDrop
+  [class.container__dragging]="isDragging"
+  (onFileOver)="onFileOver($event)"
+  (onFileDrop)="onFileDrop($event)"
+>
+
+
+  <div class="picture-wrapper" [style.minHeight]="!pictures.length || loading ? '213px' : 'auto'">
+    <ng-container *ngIf="!loading">
+      <svg *ngIf="isDragging || pictures.length === 0" width="102" height="86" viewBox="0 0 102 86">
+        <defs>
+          <path id="yxzp67f59a" d="M0 0L87.344 0 87.344 71.913 0 71.913z"/>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <g opacity=".1" transform="translate(-630 -237) translate(630 237) translate(14.63 13.5)">
+            <mask id="8q9il7temb" fill="#fff">
+              <use xlink:href="#yxzp67f59a"/>
+            </mask>
+            <path fill="#000" d="M10.398 2.08h66.548c4.594 0 8.318 3.725 8.318 8.318V59.27L69.293 43.298c-1.884-1.9-4.954-1.915-6.853-.031l-.03.031-5.45 5.428c-1.894 1.905-4.976 1.915-6.88.023l-.024-.023L35.5 34.168c-1.895-1.907-4.974-1.917-6.881-.022l-.023.022L2.08 60.476v-50.12c.022-4.578 3.74-8.276 8.318-8.276M76.946 0H10.398C4.656 0 0 4.655 0 10.398v51.117c0 5.742 4.656 10.398 10.398 10.398h66.548c5.744 0 10.398-4.656 10.398-10.398V10.357C87.32 4.63 82.673 0 76.946 0" mask="url(#8q9il7temb)"/>
+            <path fill="#000" d="M53.154 11.314c4.124 0 7.468 3.341 7.468 7.465s-3.344 7.466-7.468 7.466c-4.122 0-7.466-3.342-7.466-7.466 0-4.124 3.344-7.465 7.466-7.465" mask="url(#8q9il7temb)"/>
+          </g>
+          <path fill="#000" fill-opacity=".1" fill-rule="nonzero" d="M75.923 0c5.47 0 10.03 3.913 11.057 9.111H84.58c-.954-3.79-4.3-6.615-8.324-6.764l-.334-.006h-64.65c-4.822 0-8.754 3.843-8.926 8.654l-.006.33V61.24c0 4.611 3.455 8.41 7.9 8.924v2.353C4.615 72.006.184 67.34.006 61.6L0 61.24V11.325C0 5.191 4.853.195 10.914.006L11.272 0h64.651z" transform="translate(-630 -237) translate(630 237)"/>
+        </g>
+      </svg>
+      <div *ngIf="pictures.length === 0 && !isDragging">
+        <p translate>drag_and_drop_images</p>
+      </div>
+      <img  *ngIf="pictures.length > 0 && !isDragging" [src]="previewImageUrl" alt='main picture' class="picture-main">
+    </ng-container>
+
+    <div *ngIf="isDragging" (click)="isDragging=false">
+      <p translate>you_can_drop_image</p>
+    </div>
+
+    <mat-progress-spinner
+      *ngIf="loading"
+      style="stroke: rgba(0, 0, 0, .2) !important"
+      [strokeWidth]="2"
+      [diameter]="64"
+      [value]="uploadProgress"
+      [mode]="'determinate'"
+    ></mat-progress-spinner>
+  </div>
+
+  <input type="file" (change)="onFileChange($event)" #pictureUploader multiple>
+
+  <div
+    *ngIf="pictures.length > 0"
+    #picturesScroll
+    class="picture-list"
+    [class.picture-list-space-between]="pictures.length > displayImagesCount"
+  >
+    <div
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="onDropSortImg($event)"
+      style="display: flex">
+      <div
+        *ngFor="let img of pictures | slice:imagesStartIndex:imagesStartIndex + displayImagesCount; let i = index"
+        #imageContainer
+        class="picture-item"
+        cdkDrag
+        cdkDragLockAxis="x"
+        cdkDragBoundary=".picture-item"
+        (click)="changePreview(img)"
+        (cdkDragStarted)="onStartSortImg()">
+        <div class="picture-image" [class.main]="img === pictures[0]">
+          <img class="drag-handler" [loadImage]="img | mediaUrl:'products':'thumbnail'" alt="" />
+          <div class="picture-delete-image" (click)="deleteImage(img)">
+            <svg height="10" width="10">
+              <use xlink:href="#icon-close-bold-12"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="picture-add-button"
+      (click)="pictureUploader.click()"
+    >
+      <svg width="29" height="24" viewBox="0 0 29 24">
+        <g fill="none" fill-rule="evenodd" opacity=".1">
+          <g fill="#FFF" fill-rule="nonzero">
+            <path d="M561.548 437c1.901 0 3.444 1.545 3.452 3.456v17.074c0 1.916-1.545 3.47-3.452 3.47h-22.096c-1.906 0-3.452-1.554-3.452-3.47v-17.06c0-1.917 1.546-3.47 3.452-3.47zm0 .694h-22.096c-1.52 0-2.754 1.234-2.762 2.762v16.727l8.804-8.78.008-.008c.633-.632 1.655-.628 2.284.008l4.834 4.858.007.008c.633.632 1.656.628 2.285-.008l1.81-1.811.01-.01c.63-.63 1.65-.624 2.275.01l5.303 5.33v-16.31c0-1.533-1.237-2.776-2.762-2.776zm-7.9 3.082c1.37 0 2.48 1.115 2.48 2.491 0 1.376-1.11 2.492-2.48 2.492-1.368 0-2.479-1.116-2.479-2.492s1.11-2.491 2.48-2.491z" transform="translate(-536 -437)"/>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div class="button" (click)="pictureUploader.click()">{{ 'add_media' | translate }}</div>
+</div>

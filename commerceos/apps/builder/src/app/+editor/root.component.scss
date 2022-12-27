@@ -1,0 +1,26 @@
+.pages {
+  display: block;
+}
+
+.theme-type-badge {
+  display: inline-block;
+  height: min-content;
+  color: #333;
+  padding: 0 0.75em 0.25em;
+  border-radius: .5em;
+  font-size: .875em;
+
+  &--not-set {
+    background: white;
+    cursor: pointer;
+  }
+
+  &--template {
+    color: #bebebe;
+    background: #145ccc;
+  }
+
+  &--application {
+    background: #cc1c14;
+  }
+}

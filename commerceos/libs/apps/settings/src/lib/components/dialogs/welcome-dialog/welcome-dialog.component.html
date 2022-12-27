@@ -1,0 +1,24 @@
+<div class="welcome-container">
+  <img class="welcome-container__icon" src="assets/icons/settings-gear.svg" alt="">
+  <h1 class="welcome-container__title">{{ 'dialogs.welcome.title' | translate }}</h1>
+  <p class="welcome-container__text">{{ 'dialogs.welcome.label' | translate }}</p>
+
+  <div class="actions-section">
+    <button
+      peb-button
+      color="confirm"
+      class="action-button actions-section__confirm"
+      [disabled]="showLoader"
+      (click)="continue()"
+    >
+      <div class="action-button-data">
+        <mat-spinner *ngIf="showLoader" class="custom-spinner" diameter="20"></mat-spinner>
+        {{ 'dialogs.welcome.confirm' | translate }}
+      </div>
+    </button>
+    <button peb-button color="form" class="action-button actions-section__decline" (click)="back()">
+      {{ 'dialogs.welcome.decline' | translate }}
+    </button>
+    <p class="actions-section__agreement">{{ 'dialogs.welcome.agreement' | translate }}</p>
+  </div>
+</div>

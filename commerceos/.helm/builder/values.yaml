@@ -1,0 +1,92 @@
+namespace: default
+builderClientDeploy: true
+priorityClass: app-10stars
+microCheckoutVersion: 1.0.0
+replicas:
+  http: 6
+  consumer: 6
+
+image:
+  nodejs: registry.devpayever.com/frontend/builder-shop-client
+  dist: registry.devpayever.com/frontend/builder-shop-client
+  pullSecretName: regsecret
+
+service:
+  externalPort: 80
+  containerPort: 3000
+  statusPort: 3000
+
+resourcestest:
+  app:
+    requests:
+      cpu: 10m
+      memory: 50Mi
+    limits:
+      memory: 150Mi
+  consumer:
+    requests:
+      cpu: 10m
+      memory: 50Mi
+    limits:
+      memory: 150Mi
+resourcesstage:
+  app:
+    requests:
+      cpu: 10m
+      memory: 50Mi
+    limits:
+      memory: 150Mi
+  consumer:
+    requests:
+      cpu: 10m
+      memory: 50Mi
+    limits:
+      memory: 150Mi
+resourceslive:
+  app:
+    requests:
+      cpu: 64m
+      memory: 150Mi
+    limits:
+      memory: 500Mi
+  consumer:
+    requests:
+      cpu: 150m
+      memory: 400Mi
+    limits:
+      memory: 2Gi
+
+
+hpa:
+  cpu:
+    tarUti: 75
+  mem:
+    tarUti: 85
+
+builderClientApps:
+  builderInvoiceClient:
+    name: invoice
+  builderShopClient:
+    name: shop
+    secondaryContainerPort: 3001
+    secondaryExternalPort: 8081
+  builderPosClient:
+    name: pos
+  builderSiteClient:
+    name: site
+    secondaryContainerPort: 3001
+    secondaryExternalPort: 8081
+  builderMailClient:
+    name: mail
+  builderBlogClient:
+    name: blog
+    secondaryContainerPort: 3001
+    secondaryExternalPort: 8081
+  builderAffiliatesClient:
+    name: affiliates
+    secondaryContainerPort: 3001
+    secondaryExternalPort: 8081
+  builderSubscriptionsClient:
+    name: subscriptions
+    secondaryContainerPort: 3001
+    secondaryExternalPort: 8081

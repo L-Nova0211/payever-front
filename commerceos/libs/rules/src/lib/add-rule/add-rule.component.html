@@ -1,0 +1,89 @@
+<div *ngIf='ruleForm' class='add-rule' [ngClass]="theme">
+  <form [formGroup]='ruleForm'>
+    <peb-form-background>
+      <peb-form-field-input [label]="'rule.name' | translate" appearance='label' animated='true'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.name?.errors?.required"
+        [errorMessage]="'rule.name-required' | translate">
+        <input pebInput formControlName='name' />
+      </peb-form-field-input>
+      <peb-form-field-input [label]="'rules.description' | translate" appearance='label' animated='true'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.description?.errors?.required"
+        [errorMessage]="'rules.description-required' | translate">
+        <input pebInput formControlName='description' />
+      </peb-form-field-input>
+    </peb-form-background>
+    <pe-add-rule-when
+      [theme]="theme"
+      [ifList]="ifList"
+      [showErrors]="showErrors"
+      [allConditions]="conditionList"
+      [valuesField]="valuesField"
+      [ruleForm]="ruleForm"
+    ></pe-add-rule-when>
+    <div class='add-rule__actions-title'>{{'rules.do' | translate}}</div>
+    <peb-form-background>
+      <peb-select selectType='label' [label]="'rules.action' | translate" animated='true' formControlName='action'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.action?.errors?.required"
+        [errorMessage]="'rules.action-required' | translate">
+        <peb-select-option *ngFor='let item of actionList' [label]="item.label | translate" [value]='item.value'>
+        </peb-select-option>
+      </peb-select>
+      <peb-select *ngIf="actionFiled.value !== 'send'" selectType='label' [label]="'rules.folder' | translate"
+        animated='true' formControlName='folderId'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.folderId?.errors?.required"
+        [errorMessage]="'rules.folder-required' | translate">
+        <peb-select-option *ngFor='let item of folderList' [label]="item.name" [value]='item._id'>
+        </peb-select-option>
+      </peb-select>
+      <peb-select *ngIf="actionFiled.value === 'send'" selectType='label' [label]="'rules.channel' | translate"
+        animated='true' formControlName='channel'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.channel?.errors?.required"
+        [errorMessage]="'rules.channel-required' | translate">
+        <peb-select-option *ngFor='let item of channelList' [label]="item.label | translate" [value]='item.value'>
+        </peb-select-option>
+      </peb-select>
+    </peb-form-background>
+
+    <ng-container *ngIf="actionFiled.value === 'send'">
+      <pe-rule-create-message></pe-rule-create-message>
+
+      <peb-form-background >
+        <peb-select selectType='label' label="start" animated='true' formControlName='start'
+          [isFieldInvalid]="showErrors && ruleForm?.controls?.start?.errors?.required"
+          [errorMessage]="'rules.action-required' | translate">
+          <peb-select-option
+            *ngFor="let start of startList"
+            [label]="start.label | translate"
+            [value]="start.value"
+          ></peb-select-option>
+          <!-- <peb-select-option label="Choose Time" value='time'></peb-select-option> -->
+        </peb-select>
+        <ng-container *ngIf="ruleForm.get('start').value === 'time'">
+          <peb-form-field-input [label]="'rules.date' | translate" appearance="label" (click)="onOpenDatepicker($event)"
+            [isFieldInvalid]="showErrors && dateControl.errors?.required"
+            [errorMessage]="'rules.date-required' | translate">
+            <input pebInput placeholder="DD/MM/YYYY" [formControl]="dateControl" readonly />
+            <div class="suffix-icon">
+              <svg>
+                <use xlink:href="#icon-settings-datepicker"></use>
+              </svg>
+            </div>
+          </peb-form-field-input>
+          <peb-form-field-input class="pe-coupons-form-field" [label]="'rules.time' | translate" appearance="label"
+            [isFieldInvalid]="showErrors && timeControl.errors?.required"
+            [errorMessage]="'rules.time-required' | translate">
+            <input #time peInputTime placeholder="HH:MM" [textMask]="{mask: timMask, guide: false, showMask: false}"
+              (focusout)="onChangeTime(time.value);"
+              [formControl]="timeControl"
+              type="text" />
+            <div class="suffix-icon">
+              <svg>
+                <use xlink:href="#icon-settings-time"></use>
+              </svg>
+            </div>
+          </peb-form-field-input>
+        </ng-container>
+      </peb-form-background>
+    </ng-container>
+  </form>
+</div>

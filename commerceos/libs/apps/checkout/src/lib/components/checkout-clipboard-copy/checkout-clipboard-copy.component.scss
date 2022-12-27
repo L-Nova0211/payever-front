@@ -1,0 +1,28 @@
+@import "../panels/page-container.scss";
+
+.pe-info-box-container-fixed.clipboard-copy-container {
+  min-height: fit-content;
+  flex-direction: column;
+  width: 100%;
+
+  pe-info-box.pe-info-box {
+    width: 100%;
+    min-width: fit-content;
+
+    mat-card.mat-card {
+      width: 100%;
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+.clipboard-copy-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 9px 16px;
+  width: 100%;
+  color: $regular-text-color;
+}

@@ -1,0 +1,308 @@
+@import "../../../../../ui-styles/src/pe_skeleton.scss";
+
+:host {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  z-index: 3;
+  width: calc(100% + var(--scrollWidth));
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: auto;
+}
+
+.grid-skeleton-container {
+  width: calc(100% / var(--columns));
+  padding: 8px;
+
+  .grid-skeleton-item {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    background: $skeleton-bg-dark;
+    overflow: hidden;
+
+    .thumbnail {
+      width: 100;
+      height: var(--image-height);
+      background: $skeleton-color-dark;
+    }
+
+    .bottom {
+      padding: 12px;
+
+      &__line {
+        width: 115px;
+        height: 10px;
+        border-radius: 3px;
+        background: $skeleton-color-dark;
+        @include skeleton-animation();
+        margin-top: 1px;
+      }
+
+      &__rectangle {
+        width: 100%;
+        height: 27px;
+        border-radius: 5px;
+        background: $skeleton-color-dark;
+        @include skeleton-animation();
+        margin-top: 10px;
+      }
+
+      .bottom__row {
+        display: flex;
+        justify-content: space-between;
+
+        .ellipse {
+          width: 60px;
+          height: 24px;
+          border-radius: 5px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+          margin-top: 17px;
+        }
+
+        .circle {
+          width: 24px;
+          height: 24px;
+          border-radius: 12px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+          margin-top: 17px;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    position: relative;
+    width: calc((100% - 16px) / var(--columns));
+    background: $skeleton-bg-dark;
+    margin-left: 8px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+
+    &.last-row {
+      margin-bottom: 0;
+    }
+  }
+
+  .grid-skeleton-mobile {
+    display: flex;
+    width: 100%;
+    padding: 14px;
+
+    .mobile-thumbnail {
+      width: 42px;
+      min-width: 42px;
+      height: 42px;
+      background: $skeleton-color-dark;
+      @include skeleton-animation();
+      border-radius: 8px;
+    }
+
+    .mobile-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-right: 8px;
+      margin-left: 14px;
+      position: relative;
+      width: calc(100% - 58px);
+
+      .skeleton-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 22px;
+
+        .line {
+          &.first-line {
+            width: 25%;
+          }
+          &.last-line {
+            width: 75%;
+          }
+        }
+
+        .line,
+        .square {
+          width: 45%;
+          height: 12px;
+          border-radius: 3px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+
+          &.even {
+            width: 60%;
+          }
+        }
+
+        .full-line {
+          width: 100%;
+          height: 12px;
+          border-radius: 3px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+
+          &.even {
+            width: 60%;
+          }
+        }
+
+        .ellipse,
+        .rectangle {
+          width: 60%;
+          min-width: 100px;
+          height: 24px;
+          border-radius: 12px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .dots-button {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 20px;
+      height: 10px;
+      margin: 3px 0 7px 22px;
+      border-radius: 3px;
+      background: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+  }
+
+  &.transparent {
+    .grid-skeleton-container {
+      &.mobile {
+        background: $skeleton-bg-transparent;
+      }
+
+      .grid-skeleton-item {
+        background: $skeleton-bg-transparent;
+
+        .thumbnail {
+          background: $skeleton-color-transparent;
+        }
+
+        .bottom {
+          &__line {
+            background: $skeleton-color-transparent;
+          }
+
+          &__rectangle {
+            background: $skeleton-color-transparent;
+          }
+
+          .bottom__row {
+            display: flex;
+            justify-content: space-between;
+
+            .ellipse {
+              background: $skeleton-color-transparent;
+            }
+
+            .circle {
+              background: $skeleton-color-transparent;
+            }
+          }
+        }
+      }
+
+      .grid-skeleton-mobile {
+        .mobile-thumbnail {
+          background: $skeleton-color-transparent;
+        }
+
+        .mobile-content {
+          .skeleton-item {
+            .line,
+            .square {
+              background: $skeleton-color-transparent;
+            }
+
+            .full-line {
+              background: $skeleton-color-transparent;
+            }
+
+            .ellipse,
+            .rectangle {
+              background: $skeleton-color-transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    &.grid-skeleton-container {
+      &.mobile {
+        background: $skeleton-bg-light;
+      }
+
+      .grid-skeleton-item {
+        background-color: #f7f7f7;
+
+        .thumbnail {
+          background: $skeleton-color-light;
+        }
+
+        .bottom {
+          &__line {
+            background: $skeleton-color-light;
+          }
+
+          &__rectangle {
+            background: $skeleton-color-light;
+          }
+
+          .bottom__row {
+            display: flex;
+            justify-content: space-between;
+
+            .ellipse {
+              background: $skeleton-color-light;
+            }
+
+            .circle {
+              background: $skeleton-color-light;
+            }
+          }
+        }
+      }
+
+      .grid-skeleton-mobile {
+        .mobile-thumbnail {
+          background: $skeleton-color-light;
+        }
+
+        .mobile-content {
+          .skeleton-item {
+            .line,
+            .square {
+              background: $skeleton-color-light;
+            }
+
+            .full-line {
+              background: $skeleton-color-light;
+            }
+
+            .ellipse,
+            .rectangle {
+              background: $skeleton-color-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}

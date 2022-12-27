@@ -1,0 +1,466 @@
+id: apple-contacts-page
+name: Contacts Page
+variant: contact
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-contacts-page
+  type: document
+  children:
+    - '@header-footer/header.asos.yml'
+    - id: content-section
+      type: section
+      children:
+        - id: content-section-block
+          type: block
+          children:
+            - id: content-section-block-first
+              type: block
+              children:
+                - id: content-section-block-first-title
+                  type: text
+                  data:
+                    text: CONTACT US
+                - id: content-section-block-first-description
+                  type: text
+                  data:
+                    text: We are experiencing high contact volumes,<br>and waiting times may be longer than usual.<br> Please also note deliveries are currently <br> taking longer than usual. To check the status <br> of an order, please visit your orders page. <br> Thank you for your patience.
+                - id: content-section-block-first-line
+                  type: line
+            - id: content-section-wrapper
+              type: block
+              children:
+                - id: content-section-block-second
+                  type: block
+                  children:
+                    - id: content-section-block-second-contact1
+                      type: block
+                      children:
+                        - id: content-section-block-second-contact1-icon
+                          type: image
+                          data:
+                            src: 'https://www.nike.com/help/static/phone.png'
+                        - id: content-section-block-second-contact1-title
+                          type: text
+                          data:
+                            text: PRODUCTS & ORDERS
+                        - id: content-section-block-second-contact1-description
+                          type: text
+                          data:
+                            text: <div>+31 (0) 207219453</div><div>9:00 - 18:00</div><div>Monday - Saturday</div>
+                    - id: content-section-block-second-contact2
+                      type: block
+                      children:
+                        - id: content-section-block-second-contact2-icon
+                          type: image
+                          data:
+                            src: 'https://www.nike.com/help/static/phone.png'
+                        - id: content-section-block-second-contact2-title
+                          type: text
+                          data:
+                            text: PRODUCTS & ORDERS
+                        - id: content-section-block-second-contact2-description
+                          type: text
+                          data:
+                            text: <div>+31 (0) 123456789</div><div>9:00 - 18:00</div><div>Monday - Saturday</div>
+                    - id: content-section-block-second-contact3
+                      type: block
+                      children:
+                        - id: content-section-block-second-contact3-icon
+                          type: image
+                          data:
+                            src: 'https://www.nike.com/help/static/phone.png'
+                        - id: content-section-block-second-contact3-title
+                          type: text
+                          data:
+                            text: PRODUCTS & ORDERS
+                        - id: content-section-block-second-contact3-description
+                          type: text
+                          data:
+                            text: <div>+31 (0) 123456789</div><div>9:00 - 18:00</div><div>Monday - Saturday</div>
+                    - id: content-section-block-second-contact4
+                      type: block
+                      children:
+                        - id: content-section-block-second-contact4-icon
+                          type: image
+                          data:
+                            src: 'https://www.nike.com/help/static/phone.png'
+                        - id: content-section-block-second-contact4-title
+                          type: text
+                          data:
+                            text: PRODUCTS & ORDERS
+                        - id: content-section-block-second-contact4-description
+                          type: text
+                          data:
+                            text: <div>+31 (0) 207219453</div><div>9:00 - 18:00</div><div>Monday - Saturday</div>
+        - '@header-footer/footer.asos.yml'
+stylesheets:
+  desktop:
+    apple-contacts-page:
+    # ----------------------------------
+    # Desktop Content Section
+    # ----------------------------------
+    content-section: {}
+    content-section-block:
+      margin: 0
+      backgroundColor: '#fff'
+    content-section-block-first-title:
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 32
+      fontWeight: 700
+      margin: 24 0 0 24
+    content-section-block-first-description:
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      textAlign: left
+      margin: 12 0 0 24
+      width: 1000
+    content-section-block-first-line:
+      height: 1
+      backgroundColor: '#e5e5e5'
+      width: 975
+      margin: 12 0
+
+    content-section-wrapper:
+      display: grid
+    content-section-block-second:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    content-section-block-second-contact1:
+      margin: 0 0 20 0
+      width: 512
+    content-section-block-second-contact1-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 230
+    content-section-block-second-contact1-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 100
+    content-section-block-second-contact1-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 100
+
+    content-section-block-second-contact2:
+      margin: 0 0 20 0
+      width: 512
+    content-section-block-second-contact2-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 230
+    content-section-block-second-contact2-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 100
+    content-section-block-second-contact2-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 100
+
+    content-section-block-second-contact3:
+      margin: 0 0 40 0
+      width: 512
+    content-section-block-second-contact3-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 230
+    content-section-block-second-contact3-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 100
+    content-section-block-second-contact3-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 100
+
+    content-section-block-second-contact4:
+      margin: 0 0 40 0
+      width: 512
+    content-section-block-second-contact4-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 230
+    content-section-block-second-contact4-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 100
+    content-section-block-second-contact4-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 100
+
+  tablet:
+    apple-contacts-page: {}
+    # ----------------------------------
+    # Tablet Content Section
+    # ----------------------------------
+    content-section: {}
+    content-section-block:
+      margin: 28 0
+      backgroundColor: '#fff'
+    content-section-block-first-title:
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 32
+      fontWeight: 700
+      margin: 24 0 0 24
+    content-section-block-first-description:
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      textAlign: left
+      margin: 12 0 0 24
+      width: 768
+    content-section-block-first-line:
+      height: 1
+      backgroundColor: '#e5e5e5'
+      width: 700
+      margin: 12 auto
+    content-section-block-second:
+      display: grid
+      gridTemplateColumns: repeat(2, minmax(0, 1fr))
+      gridTemplateRows: repeat(2, minmax(0, 1fr))
+      margin: 48 0
+    content-section-block-second-contact1:
+      margin: 24 auto
+      width: 768
+    content-section-block-second-contact1-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 180
+    content-section-block-second-contact1-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 50
+    content-section-block-second-contact1-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 50
+
+    content-section-block-second-contact2:
+      margin: 24 0
+      width: 384
+    content-section-block-second-contact2-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 180
+    content-section-block-second-contact2-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 50
+    content-section-block-second-contact2-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 50
+
+    content-section-block-second-contact3:
+      margin: 24 0
+      width: 384
+    content-section-block-second-contact3-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 180
+    content-section-block-second-contact3-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 50
+    content-section-block-second-contact3-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 50
+
+    content-section-block-second-contact4:
+      margin: 24 0
+      width: 384
+    content-section-block-second-contact4-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 180
+    content-section-block-second-contact4-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 24
+      fontWeight: 700
+      margin: 8 50
+    content-section-block-second-contact4-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 50
+
+  mobile:
+    apple-contacts-page: {}
+    # ----------------------------------
+    # Mobile Content Section
+    # ----------------------------------
+    content-section: {}
+    content-section-block:
+      margin: 28 30
+      backgroundColor: '#fff'
+    content-section-block-first-title:
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 28
+      fontWeight: 700
+      margin: 24 0 0 24
+    content-section-block-first-description:
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      textAlign: left
+      margin: 12 0 0 24
+      width: 360
+    content-section-block-first-line:
+      height: 1
+      backgroundColor: '#e5e5e5'
+      width: 975
+      margin: 12 0
+    content-section-block-second:
+      display: grid
+      gridTemplateColumns: 1fr
+      margin: 48 0
+    content-section-block-second-contact1:
+      margin: 24 auto
+    content-section-block-second-contact1-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 100
+    content-section-block-second-contact1-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 18
+      fontWeight: 700
+      margin: 8 0
+      width: 300
+    content-section-block-second-contact1-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0
+      width: 300
+
+    content-section-block-second-contact2:
+      margin: 24 30
+    content-section-block-second-contact2-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 100
+    content-section-block-second-contact2-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 18
+      fontWeight: 700
+      margin: 8 0
+      width: 300
+    content-section-block-second-contact2-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0
+      width: 300
+
+    content-section-block-second-contact3:
+      margin: 24 30
+    content-section-block-second-contact3-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 100
+    content-section-block-second-contact3-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 18
+      fontWeight: 700
+      margin: 8 0
+      width: 300
+    content-section-block-second-contact3-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0 0
+      width: 300
+
+    content-section-block-second-contact4:
+      margin: 24 30
+    content-section-block-second-contact4-icon:
+      width: 50
+      height: 50
+      margin: 0 0 0 100
+    content-section-block-second-contact4-title:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#000'
+      fontSize: 18
+      fontWeight: 700
+      margin: 8 0
+      width: 300
+    content-section-block-second-contact4-description:
+      display: block
+      fontFamily: 'Helvetica Neue'
+      color: '#828282'
+      fontSize: 14
+      fontWeight: 400
+      margin: 0
+      width: 300
+
+context: {}

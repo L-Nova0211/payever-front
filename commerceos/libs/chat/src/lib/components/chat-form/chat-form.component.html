@@ -1,0 +1,555 @@
+<pe-attach-menus-styles></pe-attach-menus-styles>
+<div [class.file-over]="fileOver" [ngClass]="theme">
+    <div class="emoji-backdrop"
+      [ngClass]="{
+        'emoji-backdrop-display': emojiBackdropDisplay,
+        'emoji-backdrop-display-none': !emojiBackdropDisplay
+      }"
+      (mouseleave)="leavePickerEmoji()"
+      (mouseenter)="cancelEmojiEmojiBackdropDisplayChange()"
+    >
+      <div class="emoji-container"
+        [ngClass]="{
+          'opacity-none': !emojiBackdropOpacity
+        }"
+        [@inOutAnimation]="isEmojiPickerVisible"
+        [style.background-color]="messageAppColor">
+        <div class="emoji-header">
+          <div class="emoji-tabs">
+            <button class="emoji-button" [style.background-color]="accentColor">
+              Emoji
+            </button>
+          </div>
+          <svg class="close-icon" (click)="closeEmojiMenu()" height="24" width="24">
+            <use xlink:href="#icon-apps-overlay-close"></use>
+          </svg>
+        </div>
+        <emoji-mart
+          class="emoji-mart emoji-mart-dark"
+          [showPreview]="false"
+          [darkMode]="true"
+          [emojiTooltip]="true"
+          [set]="'apple'"
+          [perLine]="7"
+          [emojisToShowFilter]="showEmoji"
+          [totalFrequentLines]="2"
+          [skin]="2"
+          (emojiSelect)="addEmoji($event)"
+          title="Choose your emoji"
+          [emojiSize]="25"
+        >
+        </emoji-mart>
+      </div>
+    </div>
+  <ng-container *ngIf="editMessageMenuTrigger">
+    <div
+      class="edit-message-menu"
+      [class.show]="editMessageMenuTrigger"
+      (click)="openEditMessageMenu()"
+      [style.width]="editMessageMenuWidth"
+    >
+      <div class="edit-message-menu__header">
+        <button class="edit-message-menu__header__cancel" (click)="closeEditMessageMenu()">Cancel</button>
+        <span class="plus-menu__header__title">Edit message</span>
+        <button class="edit-message-menu__header__send" style="color: #0371e2;" (click)="sendMessage()">Send</button>
+      </div>
+      <div class="edit-message-menu__item">
+        <svg  height="24" width="24">
+          <use xlink:href="#icon-messaging-edit"></use>
+        </svg>
+        <span>{{ editingMessage }}</span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="forwardMessageMenuTrigger">
+    <pe-chat-forward-menu
+      [theme]="theme"
+      [forwardMessage]="forwardMessage"
+      (openChangeRecipientOverlay)="openChangeRecipient()"
+      (closeForwardMessageMenuEvent)="closeForwardMessageMenu()"
+      (showNameOnForwardMessageEvent)="showForwardMessageAuthor($event)"
+    ></pe-chat-forward-menu>
+  </ng-container>
+  <ng-container *ngIf="showForm">
+    <div *ngIf="droppedFiles?.length" class="dropped-files">
+      <ng-container *ngFor="let file of droppedFiles">
+        <div *ngIf="file.urlStyle" [style.background-image]="file.urlStyle">
+          <span class="remove" (click)="removeFile(file)">&times;</span>
+        </div>
+
+        <div>
+          <span class="remove" (click)="removeFile(file)">&times;</span>
+        </div>
+      </ng-container>
+    </div>
+    <div class="rte"></div>
+
+    <div #chatFooter class="row chat-footer" [style.background-color]="messageAppColor">
+      <div *ngIf="showMenuIcons" class="menu-icon">
+        <mat-icon class="menu-icon__icon" svgIcon="message-menu"></mat-icon>
+      </div>
+      <div *ngIf="!showMenuIcons" class="avatar">
+        <div *ngIf="avatarStyle" class="avatar__img" [style.backgroundImage]="avatarStyle"></div>
+        <div *ngIf="!avatarStyle" class="avatar__initials">
+          {{ sender[0] | uppercase }}
+        </div>
+      </div>
+
+      <div class="form-field" [formGroup]="chatForm">
+        <div class="form-field__wrapper">
+          <div *ngIf="replyMessage" class="form-field-reply">
+            <mat-icon class="form-field-reply__close" (click)="cancelReplyMessage()" svgIcon="close"></mat-icon>
+            <div class="form-field-reply__dash" [style.background-color]="accentColor"></div>
+            <div class="form-field-reply__group">
+              <div class="form-field-reply__preview" *ngIf="previewReplyImage()"
+                   [style.background-image]="previewReplyImage()"></div>
+              <div [style.--textareaWidth.px]="textareaWidth(textareaMessage)">
+                <p class="form-field-reply__label">{{replyMessage?.name}}</p>
+                <p class="form-field-reply__content">{{replyMessage?.content}}</p>
+              </div>
+            </div>
+          </div>
+          <textarea #textareaMessage
+                    autofocus
+                    cdkTextareaAutosize
+                    maxlength="10000"
+                    #autosize="cdkTextareaAutosize"
+                    formControlName="textarea"
+                    [class.with-button]="showSendButton"
+                    [disabled]="isChatDisabled"
+                    [placeholder]="placeholder"
+                    (blur)="blur()"
+                    (keydown)="onKeyDown($event)"
+                    (keyup)="onKeyUp($event)"
+                    (input)="onInput($event)"
+                    (contextmenu)="chatFormContextMenu.emit($event)"
+          ></textarea>
+        </div>
+        <div class="form-field__actions">
+          <ng-container *ngIf="customFormFieldActions">
+            <button class="form-field__button"
+            *ngFor="let action of customFormFieldActions"
+              (click)="onFormFieldActionClick(action)">
+              <svg *ngIf="action.iconId"
+                class="form-field__icon"
+                [style.height]='action.iconSize'
+                [style.width]='action.iconSize'
+                [style.color]="action.iconColor">
+                <use [attr.xlink:href]="'#' + action.iconId"></use>
+              </svg>
+              {{ action.title }}
+            </button>
+          </ng-container>
+
+          <ng-container *ngIf="!customFormFieldActions">
+            <button
+              class="form-field__emoji-button"
+              (mouseenter)="hoverSmily()"
+              (mouseleave)="leaveSmily();"
+              (click)="clickSmily()"
+            >
+              <mat-icon
+                [ngClass]="{ 'active': checkEmojiState() }"
+                svgIcon="emoji">
+              </mat-icon>
+            </button>
+
+            <button
+              class="form-field__attach-button"
+              (click)="openMenu(attachMenu)"
+              (mouseenter)="isAttachVisible = true"
+              (mouseleave)="isAttachVisible = false"
+            >
+              <mat-icon
+                [ngClass]="{ 'active': isAttachVisible }"
+                svgIcon="attach">
+              </mat-icon>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+
+      <button *ngIf="showSendButton" (click)="sendMessageButtonClick()"
+        class="form-field__send-button{{(messageFull || canSendEmpty || !!replyMessage) ? ' message-full' : ''}}"
+        [style.background-color]="accentColor">
+        <mat-icon svgIcon="send-message"></mat-icon>
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showEmailForm">
+    <div #chatFooter class="row" [style.background-color]="messageAppColor">
+      <div class="avatar">
+        <div *ngIf="avatarStyle" class="avatar__img" [style.backgroundImage]="avatarStyle"></div>
+        <div *ngIf="!avatarStyle" class="avatar__initials">
+          {{ sender[0] | uppercase }}
+        </div>
+      </div>
+      <ng-content select="pe-mail-actions"></ng-content>
+    </div>
+  </ng-container>
+
+  <div class="logo-footer" [style.background-color]="messageAppColor">
+    <mat-icon class="logo-footer__icon" svgIcon="message-app-color"></mat-icon>
+  </div>
+</div>
+
+<ng-template #appsMenu>
+  <div class="attach-menu" [class.show]="menuTrigger" [style.width]="menuWidth$ | async">
+    <div class="attach-menu__header">
+      <button class="attach-menu__header__cancel" (click)="closeMenu()">Cancel</button>
+      <span class="plus-menu__header__title">Apps</span>
+    </div>
+    <div class="attach-menu__item" *ngFor="let item of appsMenuItems" (click)="chooseAppsMenu(item)">
+      <ng-container [ngSwitch]="item">
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.FacebookMessenger">
+          <span>Facebook Messenger</span>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-apps-facebook-28"></use>
+          </svg>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.WhatsApp">
+          <span>WhatsApp</span>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-apps-whatsapp-28"></use>
+          </svg>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.Instagram">
+          <span>Instagram</span>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-apps-instagram-28"></use>
+          </svg>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.LiveChat">
+          <span>Live Chat</span>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-apps-live-chat-28"></use>
+          </svg>
+        </ng-container>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="appsMenuItems.length === 0">
+      <div class="attach-menu__item center" (click)="openConnect()">
+        <span>{{'message-app.message-integration.add' | translate}}</span>
+        </div>
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #appsMenuDetail>
+  <div
+    class="attach-menu"
+    [class.show]="menuTrigger"
+    [style.width]="menuWidth$ | async"
+  >
+    <div class="attach-menu__header">
+      <button class="attach-menu__header__cancel" (click)="closeMenu()">Cancel</button>
+      <span class="plus-menu__header__title" [ngSwitch]="appsMenuDetailItem">
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.WhatsApp">WhatsApp</ng-container>
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.FacebookMessenger">Facebook Messager</ng-container>
+        <ng-container *ngSwitchCase="peChatChannelMenuItem.LiveChat">Live Chat</ng-container>
+      </span>
+    </div>
+    <div
+      *ngFor="let item of appsImages[appsMenuDetailItem]"
+      class="attach-menu__item apps"
+      (click)="chooseAppsDetailMenu(item)"
+    >
+      <img [src]="item" alt="">
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #attachMenu>
+  <div
+    class="attach-menu"
+    [class.show]="menuTrigger"
+    [style.background-color]="messageAppColor"
+    [style.width]="menuWidth$ | async"
+  >
+    <div class="attach-menu__header">
+      <button class="attach-menu__header__cancel" (click)="closeMenu()">Cancel</button>
+      <span class="plus-menu__header__title">Add</span>
+    </div>
+    <div
+      *ngFor="let item of attachMenuItems"
+      class="attach-menu__item"
+      (click)="chooseAttachMenu(item)"
+    >
+      <ng-container [ngSwitch]="item">
+        <ng-container *ngSwitchCase="peChatAttachMenuItem.App">
+          <span>Apps</span>
+          <mat-icon svgIcon="attach-app"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatAttachMenuItem.File">
+          <span>File</span>
+          <mat-icon svgIcon="attach-file"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatAttachMenuItem.PhotoOrVideo">
+          <span>Photo or Video</span>
+          <mat-icon svgIcon="attach-photo"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatAttachMenuItem.Product">
+          <span>Product</span>
+          <mat-icon svgIcon="attach-product"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatAttachMenuItem.Box">
+          <span>Box</span>
+          <mat-icon svgIcon="attach-box"></mat-icon>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #dropBox>
+  <div
+    class="drop-box__wrapper"
+    [style.width]="menuWidth$ | async"
+    >
+    <pe-drop-box
+      *ngFor="let box of dropBoxItems"
+      class="pe-drop-box"
+      [icon]="box.icon"
+      [height]="box.height"
+      [width]="box.width"
+      [subtitle]="box.subtitle | translate"
+      (drop)="onDropFiles($event, box.type, box.compression)"
+      >
+    </pe-drop-box>
+  </div>
+</ng-template>
+
+<ng-template #addFileUpload>
+  <pe-file-upload
+    [messageAppColor]="messageAppColor"
+    [secondLevelMenuTrigger]="menuTrigger"
+    [addPhotoVideoWidth]="menuWidth$ | async"
+    [type]="type"
+    [droppedFiles]="dropFiles"
+    [compression]="compression"
+    (cancel)="closeMenu()"
+    (send)="sendFiles($event)"
+    [draftMessage]="messageText"
+    (draftMessageChange)="draftMessageChange($event)"
+></pe-file-upload>
+</ng-template>
+
+<ng-template #boxMenu>
+  <div
+    class="attach-menu"
+    [class.show]="menuTrigger"
+    [style.background-color]="messageAppColor"
+    [style.width]="menuWidth$ | async"
+  >
+    <div class="attach-menu__header">
+      <button class="attach-menu__header__cancel" (click)="closeMenu()">Cancel</button>
+      <span class="plus-menu__header__title">Box</span>
+    </div>
+    <div
+      *ngFor="let item of boxMenuItems"
+      class="attach-menu__item"
+      (click)="chooseBoxMenu(item)"
+    >
+      <ng-container [ngSwitch]="item">
+        <ng-container *ngSwitchCase="peChatBox.Small">
+          <span>Small box</span>
+          <mat-icon svgIcon="small-box"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="peChatBox.Large">
+          <span>Large box</span>
+          <mat-icon svgIcon="large-box"></mat-icon>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #addSmallBox>
+  <div
+    class="plus-menu"
+    [class.show]="menuTrigger"
+    [formGroup]="smallBoxForm"
+    [style.background-color]="messageAppColor"
+    [style.width]="menuWidth$ | async"
+  >
+    <div class="plus-menu__header">
+      <button class="plus-menu__header__cancel" (click)="closeSmallBoxMenu()">Cancel</button>
+      <span class="plus-menu__header__title">Small box</span>
+      <button class="plus-menu__header__send" (click)="sendSmallBox()">Send</button>
+    </div>
+    <div class="plus-menu__text">
+      <peb-form-field-input
+        [animated]="true"
+        appearance="label"
+        class="peb-form-field-input"
+        [errorMessage]="smallBoxForm.controls.text.errors?.required ? 'Required field' : null"
+        [isFieldInvalid]="!!(boxFormSubmited && smallBoxForm.controls.text.errors)"
+        [label]="'Text'"
+      >
+        <input formControlName="text" type="text" name="" placeholder=""/>
+        <div>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-messaging-box-text"></use>
+          </svg>
+        </div>
+      </peb-form-field-input>
+    </div>
+    <div class="plus-menu__url">
+      <pe-chat-autocomplete
+        [items]="smallBoxUrlItems"
+        label="URL"
+        (selected)="smallBoxUrlSelected($event)"
+      ></pe-chat-autocomplete>
+    </div>
+    <div class="plus-menu__dropdown">
+      <peb-select
+        [animated]="true"
+        class="peb-select"
+        formControlName="icon"
+        [hideArrow]="true"
+        [label]="'Select icon'"
+        [placeholder]="'No icon'"
+        [selectType]="'label'"
+      >
+        <peb-select-option
+          *ngFor="let item of smallBoxIcon"
+          class="peb-select-option"
+          [icon]="item.icon"
+          [label]="item.label"
+          [value]="item.value"
+        ></peb-select-option>
+      </peb-select>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #addLargeBox>
+  <div
+    class="plus-menu"
+    [class.show]="menuTrigger"
+    [formGroup]="largeBoxForm"
+    [style.background-color]="messageAppColor"
+    [style.width]="menuWidth$ | async"
+  >
+    <div class="plus-menu__header">
+      <button class="plus-menu__header__cancel" (click)="closeLargeBoxMenu()">Cancel</button>
+      <span class="plus-menu__header__title">Information Box</span>
+      <button class="plus-menu__header__send" (click)="sendLargeBox()">Send</button>
+    </div>
+    <input #informationBoxUploader hidden
+      accept="image/*"
+      (change)="informationBoxChange(informationBoxUploader.files)"
+      type="file"
+    >
+    <div
+      class="plus-menu__drop-photo"
+      [class.plus-menu__drop-photo_over]="dragOver"
+      [class.plus-menu__drop-photo_error]="!!(boxFormSubmited && largeBoxForm.controls.image.errors)"
+      (click)="informationBoxUploader.click()"
+      (dragover)="onFileOver($event)"
+      (dragleave)="onFileLeave($event)"
+      (drop)="onFileDrop($event)"
+    >
+      <mat-icon *ngIf="!largeBoxForm.value.image" svgIcon="missing-large-box"></mat-icon>
+      <img *ngIf="largeBoxForm.value.image" [src]="largeBoxForm.value.image" alt="" height="100%">
+    </div>
+    <div class="plus-menu__add-more">
+      <button class="plus-menu__header__send" (click)="informationBoxUploader.click()">Upload image</button>
+    </div>
+    <div class="plus-menu__text">
+      <peb-form-field-input
+        [animated]="true"
+        [appearance]="'label'"
+        class="peb-form-field-input"
+        [errorMessage]="largeBoxForm.controls.text.errors?.required ? 'Required field' : null"
+        [isFieldInvalid]="!!(boxFormSubmited && largeBoxForm.controls.text.errors)"
+        [label]="'Text'"
+      >
+        <input formControlName="text" type="text" name="" placeholder=""/>
+        <div>
+          <svg height="28" width="28">
+            <use xlink:href="#icon-messaging-box-text"></use>
+          </svg>
+        </div>
+      </peb-form-field-input>
+    </div>
+  </div>
+</ng-template>
+
+<mat-menu #menu="matMenu" class="message-menu">
+  <div class="message-menu__header">
+    <div class="message-menu__title">
+      {{ 'channel' | uppercase }}
+    </div>
+    <div class="message-menu__close">
+      <mat-icon class="message-menu__close-icon" svgIcon="message-menu-close"></mat-icon>
+    </div>
+  </div>
+  <!-- <button mat-menu-item
+      class="message-menu__button"
+      [class.active]="selectedMessageChannel === 'facebook'"
+      (click)="selectMessageChannel('facebook')"
+  >
+    <mat-icon svgIcon="facebook"></mat-icon>
+    <span>Facebook</span>
+  </button>
+  <button mat-menu-item
+    class="message-menu__button"
+    [class.active]="selectedMessageChannel === 'instagram'"
+    (click)="selectMessageChannel('instagram')"
+  >
+    <mat-icon svgIcon="instagram"></mat-icon>
+    <span>Instagram</span>
+  </button>
+  <button mat-menu-item
+    class="message-menu__button"
+    [class.active]="selectedMessageChannel === 'whatsapp'"
+    (click)="selectMessageChannel('whatsapp')"
+  >
+    <mat-icon svgIcon="whatsapp"></mat-icon>
+    <span>WhatsApp</span>
+  </button>
+  <button mat-menu-item
+    class="message-menu__button"
+    [class.active]="selectedMessageChannel === 'telegram'"
+    (click)="selectMessageChannel('telegram')"
+  >
+    <mat-icon svgIcon="telegram"></mat-icon>
+    <span>Telegram</span>
+  </button> -->
+  <button mat-menu-item
+    class="message-menu__button"
+    [class.active]="selectedMessageChannel === 'sms'"
+    (click)="selectMessageChannel('sms')"
+  >
+    <mat-icon class="message-menu__icon" svgIcon="sms"></mat-icon>
+    <span>SMS</span>
+  </button>
+  <button mat-menu-item
+    class="message-menu__button"
+    [class.active]="selectedMessageChannel === 'email'"
+    (click)="selectMessageChannel('email')"
+  >
+    <mat-icon class="message-menu__icon" svgIcon="email"></mat-icon>
+    <span>Email</span>
+  </button>
+</mat-menu>
+
+<ng-template #tagMenu>
+  <div class="pe-chat-tag-list" [class.show]="menuTrigger" [style.width]="menuWidth$ | async">
+    <div class="pe-chat-tag-list__scroll-wrapper">
+      <div class="pe-chat-tag-list__wrapper">
+        <pe-chat-header-tag
+          *ngFor="let item of tagItems; let i = index"
+          [accentColor]="accentColor"
+          [chat]="item"
+          class="pe-chat-tag-list__row"
+          [class.pe-chat-tag-list__row_active]="i === arrowkeyLocation"
+          (mousedown)="onSelectTag(item)"
+          draggable="false"
+        ></pe-chat-header-tag>
+      </div>
+    </div>
+  </div>
+</ng-template>

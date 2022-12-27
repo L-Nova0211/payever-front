@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="40" viewBox="0 0 30 40">
+  <defs>
+    <linearGradient id="document-a" x1="59.53%" x2="30.153%" y1="0%" y2="108.154%">
+      <stop offset="0%" stop-color="#20BFFF"/>
+      <stop offset="100%" stop-color="#117FF8"/>
+    </linearGradient>
+    <radialGradient id="document-c" cx="72.765%" cy="23.549%" r="61.628%" fx="72.765%" fy="23.549%" gradientTransform="matrix(.72062 .6015 -.5991 .8821 .344 -.41)">
+      <stop offset="0%" stop-color="#00106D"/>
+      <stop offset="99.915%" stop-color="#00106D" stop-opacity="0"/>
+    </radialGradient>
+    <path id="document-b" d="M17.7248647,10.9704641 C17.7248647,14.2731951 17.7248647,15.9449029 17.7248647,15.9855875 L10.2387339,15.9855875 C0,16.159719 0,8.52356959 0,5.84358769 L0,0 C0.105917078,0 2.0369326,0 5.79304656,0 L17.7248647,10.9704641 Z"/>
+    <linearGradient id="document-d" x1="66.943%" x2="-162.406%" y1="7.732%" y2="417.728%">
+      <stop offset="0%" stop-color="#1FB8FE"/>
+      <stop offset="100%" stop-color="#1386F9"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="url(#document-a)" d="M3.38118132,40 C1.51648352,39.9959204 0,38.490566 0,36.6445691 L0,3.3554309 C0,1.50943396 1.51751374,0.00407955125 3.37912088,0 L18.0681818,0 L18.2554945,4.96685365 C18.2554945,8.2508924 20.9546703,10.9229985 24.271978,10.9229985 L30,10.9704641 L30,36.6445691 C30,38.4946456 28.4793956,40 26.6105769,40 L3.38118132,40 Z"/>
+    <g transform="translate(12.275)">
+      <mask id="document-e" fill="#fff">
+        <use xlink:href="#document-b"/>
+      </mask>
+      <use fill="url(#document-c)" xlink:href="#document-b"/>
+      <path fill="url(#document-d)" d="M17.6837188,10.8198891 C17.7119294,10.8499164 17.7248647,10.9094373 17.7248647,10.9704641 L10.7011602,10.9704641 C7.99402878,10.9704641 5.79304656,8.79155534 5.79304656,6.11157345 L5.79304656,0 C5.97055039,0 6.0892959,0.0197831061 6.15092985,0.064532142 L17.6837188,10.8198891 Z" mask="url(#document-e)"/>
+    </g>
+    <rect width="20.445" height="1.998" x="4.718" y="20.318" fill="#FFF" rx=".999"/>
+    <rect width="11.42" height="1.998" x="4.718" y="25.017" fill="#FFF" rx=".999"/>
+    <rect width="20.445" height="1.998" x="4.718" y="15.619" fill="#FFF" rx=".999"/>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+:host {
+  align-items: center;
+  display: flex;
+  padding: 24px 12px;
+  min-height: 305px;
+  width: 260px;
+}
+
+.integrations-installed {
+
+  width: 100%;
+
+  &__icon {
+    color: #00B640;
+    display: block;
+    height: 64px;
+    margin: 0 auto;
+    width: 64px;
+  }
+
+  &__title,
+  &__message {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.21;
+    margin-top: 18px;
+  }
+
+  &__message {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+
+  &__actions {
+    margin-top: 10px;
+  }
+
+  &__button {
+    appearance: none;
+    border-radius: 6px;
+    border: none;
+    height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px auto 0;
+    width: 100%;
+    color: #ffffff;
+
+    &.blue {
+      background-color: #2482e7;
+
+      &:hover {
+        background-color: rgba(36, 130, 231, .8);
+      }
+    }
+
+    &.gray {
+      background-color: #6f7279;
+
+      &:hover {
+        background-color: rgba(111, 114, 121, 0.8);
+      }
+    }
+  }
+}

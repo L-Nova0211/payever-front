@@ -1,0 +1,87 @@
+@import "../../../../styles/src/lib/styles/variables";
+
+$border-radius: 5px;
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  background-color: #1c1d1e;
+  border-radius: 12px 12px 0 0;
+
+  &.skeleton {
+    .tool {
+      cursor: initial;
+
+      &__icon,
+      &__value {
+        position: relative;
+        overflow: hidden;
+        background-color: $background-skeleton;
+        color: transparent;
+        animation: skeleton 1s ease-in-out forwards infinite;
+        animation-direction: alternate;
+      }
+
+      &__icon * {
+        opacity: 0;
+      }
+
+      &__label {
+        visibility: hidden;
+      }
+
+    }
+
+    .tools-group {
+      &__label {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.tools-container {
+  display: flex;
+  align-items: center;
+  min-width: 90px;
+  &--left {
+    padding-left: 10px;
+    .tool {
+      padding: 0 5px;
+    }
+  }
+}
+
+.tools-screen {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+}
+
+.tools-brush {
+  margin-left: auto;
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 0.2;
+    transform: translateY(6px) scale(0.98);
+  }
+  85%, 100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  :host {
+    height: 40px;
+  }
+}
+
+@media screen and (max-device-width: 820px) and (orientation: landscape) {
+  :host {
+    height: 40px;
+  }
+}

@@ -1,0 +1,59 @@
+// max-width(479px)
+// ----------------------
+@media(max-width: $viewport-breakpoint-xs-2 - 1) {
+  $field-height: $grid-unit-y * 6;
+
+  .pe-bootstrap {
+    .form-table {
+      pe-form-fieldset, .pe-form-fieldset, .form-fieldset-container {
+        &.transparent {
+
+          .form-fieldset {
+
+            .no-right-border {
+              border-right: none;
+            }
+
+            .left-top {
+              border-top-left-radius: 6px;
+            }
+
+            .right-top {
+              border-top-right-radius: 6px;
+            }
+
+            .row > [class*=col] {
+              min-height: $field-height;
+
+              .mat-form-field-textarea {
+                .mat-form-field-wrapper {
+                  height: auto;
+                }
+              }
+
+              .mat-form-field {
+                font-size: 14px;
+              }
+
+              pe-input-password {
+
+                .input-password-errors {
+                  width: 80%;
+                  ul {
+
+                    &::before {
+
+                    }
+                    li {
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

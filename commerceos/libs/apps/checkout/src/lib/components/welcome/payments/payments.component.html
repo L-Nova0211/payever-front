@@ -1,0 +1,10 @@
+<div class="pe-info-box-container-fixed pe-info-box-container-stepper-fixed install-payments-list-wrap">
+  <!--
+  <ng-template #container></ng-template>
+  -->
+  <install-payments-list
+    (onLoadings)="onLoadingsChanged($event)"
+    (onInstalledCount)="onInstalledCountChanged($event)"
+    (onOpenIntegration)="onOpenIntegration($event)"
+  ></install-payments-list>
+</div>

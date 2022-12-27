@@ -1,0 +1,1920 @@
+id: privacy-page
+name: Privacy
+variant: privacy
+type: replica
+master: ~
+data: {}
+template:
+  id: privacy-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+
+            - id: header-menu
+              type: menu
+              data:
+                routes:
+                  - title: "SHOP"
+                    route: /category
+                  - title: "CHARGING"
+                    route: /category/charging
+                  - title: "VEHICLE ACCESSORIES"
+                    route: /category/vehicle
+                  - title: "PARTS"
+                    route: /category/parts
+                  - title: "APPAREL"
+                    route: /category/apparel
+                  - title: "LIFESTYLE"
+                    route: /category/lifestyle
+
+            - id: header-cart
+              type: shop-cart
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-title
+              type: text
+              data:
+                text: 'Legal'
+
+    - id: block-section
+      type: section
+      children:
+        - id: block
+          type: block
+          meta:
+            deletable: false
+          children:
+            - id: second-section
+              type: block
+              meta:
+                deletable: false
+              children:
+                - id: second-block-title
+                  type: text
+                  data:
+                    text: 'Privacy'
+                - id: second-block1
+                  type: block
+                  children:
+                    - id: second-block1-title
+                      type: text
+                      data:
+                        text: 'Customer Privacy Notice'
+                    - id: second-block1-desc
+                      type: text
+                      data:
+                        text: 'Get to know our Privacy Notice and your choices about how information is used. This notice is designed to provide transparency into our privacy practices, in a format that is easy to read, understand and navigate. Reference each section to get an overview of how we collect, use, share, and safeguard your information, or click learn more to expand and view the full Customer Privacy Notice.'
+
+                - id: second-block2
+                  type: block
+                  children:
+                    - id: second-block2-title
+                      type: text
+                      data:
+                        text: 'Information We May Collect'
+                    - id: second-block2-box
+                      type: block
+                      children:
+                        - id: second-box2-desc
+                          type: text
+                          data:
+                            text: 'We collect three main types of information related to you or your use of our products and services:<br><br>
+
+                                  (1) Information from or about you or your devices<br>
+                                  (2) Information from or about your Opel vehicle<br>
+                                  (3) Information from or about your Opel energy products<br><br>
+
+                                  Depending on the Opel products and services you request, own, or use, not all of these types of information may be applicable. Learn more.'
+
+                - id: second-block3
+                  type: block
+                  children:
+                    - id: second-block3-title
+                      type: text
+                      data:
+                        text: 'How We May Use Your Information'
+                    - id: second-block3-box
+                      type: block
+                      children:
+                        - id: second-box3-desc
+                          type: text
+                          data:
+                            text: 'We may use information we collect to:<br><br>
+
+                                  (1) Communicate with you<br>
+                                  (2) Fulfill our products and services<br>
+                                  (3) Improve and enhance development of our products and services<br><br>
+
+                                  This includes contacting you (or other necessary parties) to advise you of important safety-related information, to notify first responders in the event of an accident involving your vehicle, present products and offers tailored to you, or to respond to your inquiries and fulfill your requests for product information, newsletters, or other events. Learn more.'
+
+                - id: second-block4
+                  type: block
+                  children:
+                    - id: second-block4-title
+                      type: text
+                      data:
+                        text: 'Sharing Your Information'
+                    - id: second-block4-box
+                      type: block
+                      children:
+                        - id: second-box4-desc
+                          type: text
+                          data:
+                            text: 'We may share information with:<br><br>
+
+                                (1) Our service providers and business partners when necessary to perform services on our or on your behalf<br>
+                                (2) Third parties you authorize<br>
+                                (3) Other third parties as required by law<br><br>
+
+                                Some examples of when we may share your information include, payment processing, order fulfillment, product installation, customer service, marketing, financing, service or repair, and other similar services. Learn more.'
+
+                - id: second-block5
+                  type: block
+                  children:
+                    - id: second-block5-title
+                      type: text
+                      data:
+                        text: 'Choice and Transparency'
+                    - id: second-block5-box
+                      type: block
+                      children:
+                        - id: second-box5-desc
+                          type: text
+                          data:
+                            text: 'We enable you to access and control the data that we collect, use and share from or about you, or your use of our products or services, including through device permissions, in-app settings, marketing opt-outs, and disabling collection of certain vehicle data. Learn more.'
+
+                - id: second-block6
+                  type: block
+                  children:
+                    - id: second-block6-title
+                      type: text
+                      data:
+                        text: 'How to Contact Us'
+                    - id: second-block6-box
+                      type: block
+                      children:
+                        - id: second-box6-desc
+                          type: text
+                          data:
+                            text: 'For questions or comments, to opt out from certain services, or to submit a data privacy request, please contact us.'
+
+                - id: second-block7
+                  type: block
+                  children:
+                    - id: second-block7-title
+                      type: text
+                      data:
+                        text: 'Choice and Transparency'
+                    - id: second-block7-box
+                      type: block
+                      children:
+                        - id: second-box7-desc
+                          type: text
+                          data:
+                            text: 'We enable you to access and control the data that we collect, use and share from or about you, or your use of our products or services, including through device permissions, in-app settings, marketing opt-outs, and disabling collection of certain vehicle data. Learn more.'
+
+                - id: second-block8
+                  type: block
+                  children:
+                    - id: second-block8-title
+                      type: text
+                      data:
+                        text: 'Opel Updates'
+                    - id: second-block8-box
+                      type: block
+                      children:
+                        - id: second-box8-desc
+                          type: text
+                          data:
+                            text: 'Opel Updates are emails, calls or messages via the Opel app (all of them referred to as ‘messages’) that provide more information on Opel products, services and regional events. Opel Updates may be tailored to your needs and interests that we may infer from your interaction with us. We are requesting this consent on our own behalf and that of our regional subsidiaries. You can withdraw your consent to receive commercial electronic messages at any time by clicking "unsubscribe" at the bottom of these emails or Opel app message, or letting our customer representative know about your decision. Some messages directly related to a Opel purchase cannot be opted out of.'
+                    - id: second-block8-text
+                      type: text
+                      data:
+                        text: 'Opel, Inc<br>
+                              Attn: Legal,<br>
+                              45500 Fremont Boulevard<br>
+                              Fremont, CA 94538<br>
+                              (650) 681-5000'
+
+                - id: second-block9
+                  type: block
+                  children:
+                    - id: second-block9-title
+                      type: text
+                      data:
+                        text: 'Terms of Use'
+                    - id: second-block9-box
+                      type: block
+                      children:
+                        - id: second-box9-link1
+                          type: text
+                          data:
+                            text: "<a href='#' style='color:#393c41;'>Payment Terms for Services</a>"
+                        - id: second-box9-link2
+                          type: text
+                          data:
+                            text: "<a href='#' style='color:#393c41;'>Premium Connectivity Subscription Agreement</a>"
+                        - id: second-box9-link3
+                          type: text
+                          data:
+                            text: "<a href='#' style='color:#393c41;'>Supercharger Fair Use Policy<a/>"
+                        - id: second-box9-link4
+                          type: text
+                          data:
+                            text: "<a href='#' style='color:#393c41;'>Opel Intellectual Property</a>"
+
+                - id: second-block10
+                  type: block
+                  children:
+                    - id: second-block10-title
+                      type: text
+                      data:
+                        text: 'Payment Terms for Services'
+                    - id: second-block10-box
+                      type: block
+                      children:
+                        - id: second-box10-desc
+                          type: text
+                          data:
+                            text: 'These Terms of Service describe your agreement to pay for future services and charges. Opel may amend these terms and any changes are effective when posted to this page.<br>
+                            <br>The services or charges described below may result in charges to you, even if someone else is using your vehicle. Opel may collect payment from you, including by using the credit card saved in your Opel Account.Charges may include taxes as required by law. You will be able to review a summary of transactions in your Opel Account. If we are unable to collect payment, we may contact you based on your information on file, or may request payment when we are performing services for you.'
+
+                - id: second-block11
+                  type: block
+                  children:
+                    - id: second-block11-title
+                      type: text
+                      data:
+                        text: 'Idle Fee'
+                    - id: second-block11-box
+                      type: block
+                      children:
+                        - id: second-box11-desc
+                          type: text
+                          data:
+                            text: "In consideration of others who need to use a Supercharger, we ask that you move your vehicle when it
+                            is finished charging. To encourage this, you will incur an idle fee for the time your car remains parked in
+                            a charging stall after it is finished charging. We will waive the idle fee if your car is moved within five
+                             minutes after it is finished charging, and the idle fee will not accumulate while less than half of the
+                             charging stalls at your location are occupied. All vehicles are subject to idle fees, regardless of when
+                             your vehicle was purchased. To avoid idle fees, we recommend you monitor your vehicle while using a
+                             Supercharger and encourage you to use the Opel mobile app to track your vehicle's charge status."
+
+                - id: second-block12
+                  type: block
+                  children:
+                    - id: second-block12-title
+                      type: text
+                      data:
+                        text: 'Pay Per Use'
+                    - id: second-block12-box
+                      type: block
+                      children:
+                        - id: second-box12-desc
+                          type: text
+                          data:
+                            text: "All vehicles ordered after January 15, 2017, and vehicles ordered by January 15, 2017 but built after April 15, 2017, are enabled for Supercharging on a pay per use basis. Any credits for free Supercharging that are given with the purchase of a vehicle, including any annual renewal of credits, expire upon the sale or transfer of the vehicle and are not transferable to any subsequent vehicle owner, or to any other vehicle. Credits for Supercharging expire after a set period of time and do not rollover into future periods."
+
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-block1
+          type: block
+          children:
+            - id: third-block1-title
+              type: text
+              data:
+                text: "Privacy"
+            - id: third-block1-link1
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Customer Privacy Notice</a>"
+            - id: third-block1-link2
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Updates</a>"
+
+        - id: third-block2
+          type: block
+          children:
+            - id: third-block2-title
+              type: text
+              data:
+                text: "Terms of Use"
+            - id: third-block2-link1
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Payment Terms for Services</a>"
+            - id: third-block2-link2
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Premium Connectivity Subscription</a>"
+            - id: third-block2-link3
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Agreement</a>"
+            - id: third-block2-link4
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Supercharger Fair Use Policy</a>"
+            - id: third-block2-link5
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Intellectual Property</a>"
+
+        - id: third-block3
+          type: block
+          children:
+            - id: third-block3-title
+              type: text
+              data:
+                text: "Policy"
+            - id: third-block3-link1
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Human Rights and Conflict Minerals</a>"
+            - id: third-block3-link2
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Policy</a>"
+            - id: third-block3-link3
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Open Source</a>"
+            - id: third-block3-link4
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Patent Pledge</a>"
+            - id: third-block3-link5
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Recall</a>"
+            - id: third-block3-link6
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Conflict Minerals Report</a>"
+            - id: third-block3-link7
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Supplier Code of Conduct</a>"
+            - id: third-block3-link8
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel UK Modern Slavery Act</a>"
+            - id: third-block3-link9
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Transparency Statement</a>"
+            - id: third-block3-link10
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Worldwide Bribery and Anti-Corruption Policy</a>"
+            - id: third-block3-link11
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Unsupported or Salvaged Vehicle Policy</a>"
+
+        - id: third-block4
+          type: block
+          children:
+            - id: third-block4-title
+              type: text
+              data:
+                text: "Information Security"
+            - id: third-block4-link1
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Security Vulnerability Reporting Policy</a>"
+            - id: third-block4-link2
+              type: text
+              data:
+                text: "<a href='#' style='color:#393c41;'>Opel Security Researcher Hall of Fame</a>"
+    - id: footer
+      type: section
+      children:
+        - id: footer-block
+          type: block
+          children:
+            - id: footer-section-link1
+              type: text
+              data:
+                text: "Opel © 2020"
+            - id: footer-section-link2
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/privacy" style="color: #fff; text-decoration: none;">Privacy & Legal</a>'
+            - id: footer-section-link3
+              type: text
+              data:
+                text: '<a href="#" peb-link-action="navigate.internal-page" peb-link-payload="/find-us" style="color: #fff; text-decoration: none;">Contact</a>'
+            - id: footer-section-payever
+              type: image
+              data:
+                src: 'https://payeverproduction.blob.core.windows.net/builder/e7af555f-c086-4150-af78-5ea2971d1b8d-Whitepowered.png'
+
+stylesheets:
+  desktop:
+    privacy-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+    header-logo:
+      width: 150
+      height: 80
+    header-menu:
+      fontFamily: Gillsans, sans-serif
+      color: '#000'
+      fontWeight: bold
+      margin: 5 20 0 80
+    header-cart:
+      width: 20
+      height: 46
+      margin: 15 20 0 40
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#000'
+    header-mobile-menu: {}
+
+    first-section:
+      backgroundColor: '#f4f4f4'
+    block-section:
+      backgroundColor: '#f4f4f4'
+    third-section:
+      backgroundColor: '#f4f4f4'
+
+
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 400 1fr
+      marginLeft: 20
+      backgroundColor: '#f4f4f4'
+    first-section-title:
+      width: 100
+      fontSize: 30
+      margin: 50 0 20 0
+      fontFamily: Roboto
+    first-block-link1:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+    first-block-link2:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+    first-block-link3:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+    first-block-link4:
+      fontFamily: Roboto
+      color: '#d0d1d2'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+    first-block-link5:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+    first-block-link6:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 100
+
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    block:
+      display: grid
+      gridTemplateColumns: 1fr 400
+      backgroundColor: '#f4f4f4'
+    second-section:
+      width: 500
+      marginLeft: 20
+    second-block-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      color: '#666'
+      fontSize: 30
+    second-block1:
+      width: 500
+    second-block1-title:
+      fontFamily: Roboto
+      marginBottom: 20
+      marginTop: 40
+      width: 500
+      color: '#666'
+      fontSize: 28
+    second-block1-desc:
+      fontFamily: Roboto
+      width: 500
+      marginBottom: 30
+      fontSize: 14
+
+    second-block2:
+      width: 500
+      marginLeft: 20
+    second-block2-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginBottom: 20
+      fontSize: 16
+    second-block2-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box2-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block3:
+      width: 500
+      marginLeft: 20
+    second-block3-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block3-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box3-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block4:
+      width: 500
+      marginLeft: 20
+    second-block4-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block4-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box4-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block5:
+      width: 500
+      marginLeft: 20
+    second-block5-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block5-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box5-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block6:
+      width: 500
+      marginLeft: 20
+    second-block6-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block6-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box6-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block7:
+      width: 500
+      marginLeft: 20
+    second-block7-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block7-box:
+      backgroundColor: '#f7f7f7'
+      width: 500
+    second-box7-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block8:
+      width: 500
+      marginLeft: 20
+    second-block8-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-box8-desc:
+      fontFamily: Roboto
+      width: 480
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+    second-block8-text:
+      width: 500
+      marginTop: 30
+      marginBottom: 20
+
+    second-block9:
+      width: 500
+      marginLeft: 20
+    second-block9-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 500
+      color: '#666'
+      fontSize: 30
+    second-block9-box:
+      width: 500
+    second-box9-link1:
+      fontSize: 14
+      width: 500
+      marginBottom: 10
+    second-box9-link2:
+      fontSize: 14
+      width: 500
+      marginBottom: 10
+    second-box9-link3:
+      fontSize: 14
+      width: 500
+      marginBottom: 10
+    second-box9-link4:
+      fontSize: 14
+      width: 500
+      marginBottom: 10
+
+    second-block10:
+      width: 500
+      marginLeft: 20
+    second-block10-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 500
+      color: '#666'
+      fontSize: 28
+    second-block10-box:
+      width: 500
+    second-box10-desc:
+      fontFamily: Roboto
+      width: 500
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block11:
+      width: 500
+      marginLeft: 20
+    second-block11-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block11-box:
+      width: 500
+    second-box11-desc:
+      fontFamily: Roboto
+      width: 500
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block12:
+      width: 500
+      marginLeft: 20
+    second-block12-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block12-box:
+      width: 500
+    second-box12-desc:
+      fontFamily: Roboto
+      width: 500
+      marginTop: 30
+      marginBottom: 60
+      fontSize: 14
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-block1:
+      width: 400
+      backgroundColor: '#f4f4f4'
+    third-block1-title:
+      width: 400
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 60
+      color: '#666'
+      fontSize: 16
+    third-block1-link1:
+      width: 400
+    third-block1-link2:
+      width: 400
+      marginBottom: 30
+
+    third-block2:
+      width: 400
+    third-block2-title:
+      width: 400
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block2-link1:
+      width: 400
+    third-block2-link2:
+      width: 400
+    third-block2-link3:
+      width: 400
+    third-block2-link4:
+      width: 400
+    third-block2-link5:
+      width: 400
+      marginBottom: 30
+
+    third-block3:
+      width: 400
+    third-block3-title:
+      width: 400
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block3-link1:
+      width: 400
+    third-block3-link2:
+      width: 400
+    third-block3-link3:
+      width: 400
+    third-block3-link4:
+      width: 400
+    third-block3-link5:
+      width: 400
+    third-block3-link6:
+      width: 400
+    third-block3-link7:
+      width: 400
+    third-block3-link8:
+      width: 400
+    third-block3-link9:
+      width: 400
+    third-block3-link10:
+      width: 400
+    third-block3-link11:
+      width: 400
+      marginBottom: 30
+
+    third-block4:
+      width: 400
+    third-block4-title:
+      width: 400
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block4-link1:
+      width: 400
+    third-block4-link2:
+      width: 400
+    # ----------------------------------
+    # Desktop Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+      width: 1024
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      color: '#fff'
+      fontSize: auto
+      width: 90
+    footer-section-link2:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 100
+    footer-section-link3:
+      margin: 10 0 10 0
+      backgroundColor: 'transparent'
+      fontSize: auto
+      width: 90
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+
+  tablet:
+
+    first-section:
+      backgroundColor: '#f4f4f4'
+    block-section:
+      backgroundColor: '#f4f4f4'
+    third-section:
+      backgroundColor: '#f4f4f4'
+
+
+    privacy-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 100 1fr 75
+    header-logo:
+      width: 100
+      height: 40
+      color: '#242424'
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 15 20
+    header-menu:
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 22 20 10 12
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 12 20 10 560
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 300 1fr
+      marginLeft: 20
+    first-section-title:
+      width: 150
+      fontSize: 28
+      fontWeight: 500
+      color: '#171a20'
+      fontFamily: Roboto
+      margin: 50 0 20 20
+    first-block-link1:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+    first-block-link2:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+    first-block-link3:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+    first-block-link4:
+      fontFamily: Roboto
+      color: '#d0d1d2'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+    first-block-link5:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+    first-block-link6:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginTop: 110
+      width: 65
+
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    block:
+      display: grid
+      gridTemplateColumns: 1fr 300
+    second-section:
+      width: 400
+      marginLeft: 20
+    second-block-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      color: '#666'
+      fontSize: 30
+    second-block1:
+      width: 400
+    second-block1-title:
+      fontFamily: Roboto
+      marginBottom: 20
+      marginTop: 40
+      width: 400
+      color: '#666'
+      fontSize: 28
+    second-block1-desc:
+      fontFamily: Roboto
+      width: 380
+      marginBottom: 30
+      fontSize: 14
+
+    second-block2:
+      width: 400
+      marginLeft: 20
+    second-block2-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginBottom: 20
+      fontSize: 16
+    second-block2-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box2-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block3:
+      width: 400
+      marginLeft: 20
+    second-block3-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block3-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box3-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block4:
+      width: 400
+      marginLeft: 20
+    second-block4-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block4-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box4-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block5:
+      width: 400
+      marginLeft: 20
+    second-block5-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block5-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box5-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block6:
+      width: 400
+      marginLeft: 20
+    second-block6-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block6-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box6-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block7:
+      width: 400
+      marginLeft: 20
+    second-block7-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block7-box:
+      backgroundColor: '#f7f7f7'
+      width: 400
+    second-box7-desc:
+      fontFamily: Roboto
+      width: 380
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block8:
+      width: 400
+      marginLeft: 20
+    second-block8-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-box8-desc:
+      fontFamily: Roboto
+      width: 400
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+    second-block8-text:
+      width: 400
+      marginTop: 30
+      marginBottom: 20
+
+    second-block9:
+      width: 400
+      marginLeft: 20
+    second-block9-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 400
+      color: '#666'
+      fontSize: 30
+    second-block9-box:
+      width: 400
+    second-box9-link1:
+      fontSize: 14
+      width: 400
+      marginBottom: 10
+    second-box9-link2:
+      fontSize: 14
+      width: 400
+      marginBottom: 10
+    second-box9-link3:
+      fontSize: 14
+      width: 400
+      marginBottom: 10
+    second-box9-link4:
+      fontSize: 14
+      width: 400
+      marginBottom: 10
+
+    second-block10:
+      width: 400
+      marginLeft: 20
+    second-block10-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 400
+      color: '#666'
+      fontSize: 28
+    second-block10-box:
+      width: 400
+    second-box10-desc:
+      fontFamily: Roboto
+      width: 400
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block11:
+      width: 400
+      marginLeft: 20
+    second-block11-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block11-box:
+      width: 400
+    second-box11-desc:
+      fontFamily: Roboto
+      width: 400
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block12:
+      width: 400
+      marginLeft: 20
+    second-block12-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block12-box:
+      width: 400
+    second-box12-desc:
+      fontFamily: Roboto
+      width: 400
+      marginTop: 30
+      marginBottom: 60
+      fontSize: 14
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-block1:
+      width: 300
+    third-block1-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 60
+      color: '#666'
+      fontSize: 16
+    third-block1-link1:
+      width: 300
+    third-block1-link2:
+      width: 300
+      marginBottom: 30
+
+    third-block2:
+      width: 300
+    third-block2-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block2-link1:
+      width: 300
+    third-block2-link2:
+      width: 300
+    third-block2-link3:
+      width: 300
+    third-block2-link4:
+      width: 300
+    third-block2-link5:
+      width: 300
+      marginBottom: 30
+
+    third-block3:
+      width: 300
+    third-block3-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block3-link1:
+      width: 300
+    third-block3-link2:
+      width: 300
+    third-block3-link3:
+      width: 300
+    third-block3-link4:
+      width: 300
+    third-block3-link5:
+      width: 300
+    third-block3-link6:
+      width: 300
+    third-block3-link7:
+      width: 300
+    third-block3-link8:
+      width: 300
+    third-block3-link9:
+      width: 300
+    third-block3-link10:
+      width: 300
+    third-block3-link11:
+      width: 300
+      marginBottom: 30
+
+    third-block4:
+      width: 300
+    third-block4-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block4-link1:
+      width: 300
+    third-block4-link2:
+      width: 300
+    # ----------------------------------
+    # Tablet Footer
+    # ----------------------------------
+    footer:
+      backgroundColor: '#000'
+    footer-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 1 / 8 / 1 / 8
+
+  mobile:
+    privacy-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+
+    block-section:
+      backgroundColor: '#f4f4f4'
+
+
+
+    header:
+      backgroundColor: 'rgba(225, 225, 225)'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 100 1fr 50
+    header-logo:
+      width: 80
+      height: 50
+      fontSize: 20
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      gridArea: 1 / 1 / 1 / 1
+      margin: 0 0 0 10
+    header-menu:
+      fontSize: 16
+      fontWeight: 600
+      fontFamily: Gillsans, sans-serif
+      color: '#242424'
+      margin: 12 0 10 10
+      width: 25
+      height: 25
+      gridArea: 1 / 3 / 1 / 3
+    header-cart:
+      width: 20
+      height: 46
+      margin: 3 0 0 170
+      backgroundColor: '#fff'
+      borderWidth: 3
+      borderColor: '#242424'
+      gridArea: 1 / 2 / 1 / 2
+    header-mobile-menu: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      width: 360
+      backgroundColor: '#f4f4f4'
+    first-section-block: {}
+    first-section-title:
+      width: 150
+      fontSize: 28
+      fontWeight: 500
+      color: '#171a20'
+      fontFamily: Roboto
+      margin: 50 0 20 20
+    first-block-link1:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      width: 60
+      marginBottom: 20
+    first-block-link2:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      width: 60
+      marginBottom: 20
+    first-block-link3:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      width: 60
+      marginBottom: 20
+    first-block-link4:
+      fontFamily: Roboto
+      color: '#d0d1d2'
+      fontSize: 13
+      width: 60
+      marginBottom: 20
+    first-block-link5:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      width: 60
+      marginBottom: 20
+    first-block-link6:
+      fontFamily: Roboto
+      color: '#393c41'
+      fontSize: 13
+      marginBottom: 20
+      width: 60
+
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    block:
+      width: 360
+    second-section:
+      width: 340
+    second-block-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      marginLeft: 10
+      color: '#666'
+      fontSize: 30
+    second-block1:
+      width: 350
+      marginLeft: 10
+    second-block1-title:
+      fontFamily: Roboto
+      marginBottom: 20
+      marginTop: 40
+      width: 340
+      color: '#666'
+      fontSize: 28
+    second-block1-desc:
+      fontFamily: Roboto
+      width: 340
+      marginBottom: 30
+      fontSize: 14
+
+    second-block2:
+      width: 360
+    second-block2-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block2-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box2-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block3:
+      width: 360
+    second-block3-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block3-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box3-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block4:
+      width: 360
+    second-block4-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block4-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box4-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block5:
+      width: 360
+    second-block5-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block5-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box5-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block6:
+      width: 360
+    second-block6-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block6-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box6-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block7:
+      width: 360
+    second-block7-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block7-box:
+      backgroundColor: '#f7f7f7'
+      width: 340
+      marginLeft: 10
+    second-box7-desc:
+      fontFamily: Roboto
+      width: 330
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+
+    second-block8:
+      width: 360
+    second-block8-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-box8-desc:
+      fontFamily: Roboto
+      width: 340
+      marginTop: 30
+      marginLeft: 10
+      marginBottom: 30
+      fontSize: 14
+    second-block8-text:
+      width: 340
+      marginLeft: 10
+      marginTop: 30
+      marginBottom: 20
+
+    second-block9:
+      width: 360
+    second-block9-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 340
+      color: '#666'
+      fontSize: 30
+    second-block9-box:
+      width: 340
+      marginLeft: 10
+    second-box9-link1:
+      fontSize: 14
+      width: 340
+      marginBottom: 10
+    second-box9-link2:
+      fontSize: 14
+      width: 340
+      marginBottom: 10
+    second-box9-link3:
+      fontSize: 14
+      width: 340
+      marginBottom: 10
+    second-box9-link4:
+      fontSize: 14
+      width: 340
+      marginBottom: 10
+
+    second-block10:
+      width: 360
+    second-block10-title:
+      fontFamily: Roboto
+      marginBottom: 30
+      marginTop: 40
+      width: 340
+      marginLeft: 10
+      color: '#666'
+      fontSize: 28
+    second-block10-box:
+      width: 340
+      marginLeft: 10
+    second-box10-desc:
+      fontFamily: Roboto
+      width: 340
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block11:
+      width: 360
+    second-block11-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      marginTop: 20
+      width: 340
+      marginLeft: 10
+      marginBottom: 20
+      fontSize: 16
+    second-block11-box:
+      width: 340
+      marginLeft: 10
+    second-box11-desc:
+      fontFamily: Roboto
+      width: 340
+      marginTop: 30
+      marginBottom: 30
+      fontSize: 14
+
+    second-block12:
+      width: 360
+    second-block12-title:
+      fontWeight: bold
+      fontFamily: Roboto
+      color: '#666'
+      width: 340
+      marginLeft: 10
+      marginTop: 20
+      marginBottom: 20
+      fontSize: 16
+    second-block12-box:
+      width: 340
+      marginLeft: 10
+    second-box12-desc:
+      fontFamily: Roboto
+      width: 340
+      marginTop: 30
+      marginBottom: 60
+      fontSize: 14
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      width: 360
+      backgroundColor: '#f4f4f4'
+    third-block1:
+      width: 300
+      marginLeft: 10
+    third-block1-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 60
+      color: '#666'
+      fontSize: 16
+    third-block1-link1:
+      width: 300
+    third-block1-link2:
+      width: 300
+      marginBottom: 30
+
+    third-block2:
+      width: 300
+      marginLeft: 10
+    third-block2-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block2-link1:
+      width: 300
+    third-block2-link2:
+      width: 300
+    third-block2-link3:
+      width: 300
+    third-block2-link4:
+      width: 300
+    third-block2-link5:
+      width: 300
+      marginBottom: 30
+
+    third-block3:
+      width: 300
+      marginLeft: 10
+    third-block3-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block3-link1:
+      width: 300
+    third-block3-link2:
+      width: 300
+    third-block3-link3:
+      width: 300
+    third-block3-link4:
+      width: 300
+    third-block3-link5:
+      width: 300
+    third-block3-link6:
+      width: 300
+    third-block3-link7:
+      width: 300
+    third-block3-link8:
+      width: 300
+    third-block3-link9:
+      width: 300
+    third-block3-link10:
+      width: 300
+    third-block3-link11:
+      width: 300
+      marginBottom: 30
+
+    third-block4:
+      width: 300
+      marginLeft: 10
+    third-block4-title:
+      width: 300
+      fontFamily: Roboto
+      marginBottom: 10
+      marginTop: 40
+      color: '#666'
+      fontSize: 16
+    third-block4-link1:
+      width: 300
+    third-block4-link2:
+      width: 300
+      marginButton: 50
+
+    # ----------------------------------
+    # Mobile Footer
+    # ----------------------------------
+    footer:
+      width: 360
+      backgroundColor: '#000'
+    footer-block:
+      width: 360
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      gridTemplateRows: 1fr 1fr
+    footer-section-link1:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#fff'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link2:
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+      backgroundColor: 'transparent'
+      margin: 20 0 0 20
+    footer-section-link3:
+      margin: 20 0 0 0
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link4:
+      margin: 20 0 0 20
+      textAlign: left
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+    footer-section-link5:
+      margin: 20 0 0 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link6:
+      margin: 20 0 0 20
+      textAlign: left
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      backgroundColor: 'transparent'
+    footer-section-link7:
+      backgroundColor: 'transparent'
+      margin: 20 0 20 20
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-link8:
+      margin: 20 0 20 20
+      backgroundColor: 'transparent'
+      color: '#5c5e62'
+      fontSize: auto
+      width: 90
+      textAlign: left
+    footer-section-payever:
+      width: 170
+      height: 35
+      gridArea: 2 / 2 / 2 / 2
+context: {}

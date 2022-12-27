@@ -1,0 +1,611 @@
+{
+  "actions": {
+    "open_checkout": "Open {{checkoutName}}",
+    "open": "Open",
+    "copy": "Copy",
+    "copy_to_clipboard": "Copy to clipboard",
+    "save": "Save",
+    "edit": "Edit",
+    "create": "Create",
+    "createNew": "Create new",
+    "continue": "Continue",
+    "close": "Close",
+    "goBack": "Go Back",
+    "cancel": "Cancel",
+    "return": "Return",
+    "delete": "Delete",
+    "remove": "Remove",
+    "addPlus": "+ Add",
+    "add": "Add",
+    "enterValue": "Enter value",
+    "addCheckoutPlus": "+ Add Checkout",
+    "read": "Read",
+    "skip": "Skip",
+    "set_as_default": "Set as Default",
+    "switch_checkout": "Switch Checkout",
+    "loading": "Loading ..."
+  },
+  "header": {
+    "all_folders": "All folders"
+  },
+  "errors": {
+    "badRequest": "Bad Request",
+    "cannotBeEmpty": "Value should not be empty",
+    "phoneExists": "Checkout with a phone number {{phoneNumber}} already exists",
+    "unknown": "Unknown error",
+    "forbidden": "You don't have permission to perform this action!"
+  },
+  "unitOfMeasurement": {
+    "pixels": "Pixels (px)"
+  },
+  "create_checkout": {
+    "name": {
+      "placeholder": "Checkout name",
+      "label": "Checkout name"
+    },
+    "logo": {
+      "label": "Logo",
+      "placeholder": "Logo",
+      "addLogo": "Add Logo"
+    },
+    "title": {
+      "add": "Create new",
+      "edit": "Edit Checkout"
+    },
+    "buttons": {
+      "create": "Create",
+      "deleteCheckout": "Delete Checkout"
+    },
+    "done": "Done",
+    "checkoutNameExist": "Checkout with the same name already exists",
+    "unknown_checkout": "Unknown checkout",
+    "validation": {
+      "validName": "Checkout name is valid",
+      "newLogoValid": "Checkout logo is valid",
+      "errors": {
+        "required": "Checkout name required",
+        "longName": "Checkout name is too long",
+        "unavailableName": "Checkout name not available",
+        "oldName": "Name is not changed"
+      }
+    }
+  },
+  "setCheckoutAsDefault": {
+    "done": "This checkout has become default!"
+  },
+  "info_boxes": {
+    "checkoutAppName": "Checkout",
+    "edit": {
+      "title": "Edit",
+      "phoneNumber": {
+        "placeholder": "Phone number",
+        "label": "Phone number"
+      },
+      "message": {
+        "placeholder": "Message",
+        "label": "Message"
+      }
+    },
+    "main": {
+      "addNewCheckout": "Add new checkout",
+      "switchCheckout": "Switch checkout",
+      "setCheckoutAsDefault": "Set as default",
+      "langDefault": "{{lang}} (default)"
+    },
+    "testingMode": "Testing mode on",
+    "panels": {
+      "paymentOptions": "Payment options",
+      "channels": "Channels",
+      "connect": "Connect",
+      "sections": "Sections",
+      "settings": "Settings"
+    }
+  },
+  "channels": {
+    "bubble": {
+      "name": "Bubble",
+      "visibility": "Visibility",
+      "checkoutOverlay": "Checkout Overlay",
+      "calculatorPlusOverlay": "Calculator + Overlay",
+      "example": {
+        "text": "Hi! Would you prefer to pay €55",
+        "button": "Finance calculator",
+        "xClose": "x close"
+      }
+    },
+    "button": {
+      "height": "Height",
+      "name": "Button",
+      "textSize": "Text size",
+      "textColor": "Text color",
+      "buttonColor": "Button color",
+      "alignment": "Alignment",
+      "corners": "Corners",
+      "visibility": "Visibility",
+      "adaptive": "Adaptive",
+      "checkoutOverlay": "Checkout Overlay",
+      "calculatorPlusOverlay": "Calculator + Overlay",
+      "width": "Width",
+      "example": {
+        "button": "Get it now from 50 /mo",
+        "text": "Eff.rate 9.90%, 3,000 per 72 mo, total 3,946"
+      }
+    },
+    "directLink": {
+      "copied": "Copied"
+    },
+    "calculator": {
+      "name": "Calculator",
+      "textColor": "Text color",
+      "buttonColor": "Button color",
+      "linkColor": "Link Color",
+      "frameColor": "Frame Color",
+      "backgroundColor": "Background Color",
+      "visibility": "Visibility",
+      "adaptive": "Adaptive",
+      "checkoutOverlay": "Checkout Overlay",
+      "calculatorPlusOverlay": "Calculator + Overlay",
+      "size": "Size",
+      "order": {
+        "title": "Sort rates by price",
+        "asc": "Ascending",
+        "desc": "Descending"
+      },
+      "example": {
+        "monthlyAmount": "Monthly Amount",
+        "value": "€53",
+        "duration": "72 months",
+        "total": "Total €530"
+      }
+    },
+    "generateHtml": {
+      "title": "Text Link HTML",
+      "copy": "Copy Code",
+      "copied": "Copied",
+      "text": "Generate HTML"
+    },
+    "pos": {
+      "title": "Point of Sale App",
+      "noTerminal": "You don't have any terminal"
+    },
+    "shop": {
+      "title": "Shop App",
+      "noShop": "You don't have any shop"
+    },
+    "textLink": {
+      "name": "Text Link",
+      "textSize": "Text size",
+      "alignment": "Alignment",
+      "linkColor": "Link Color",
+      "visibility": "Visibility",
+      "adaptive": "Adaptive",
+      "checkoutOverlay": "Checkout Overlay",
+      "calculatorPlusOverlay": "Calculator + Overlay",
+      "height": "Height",
+      "example": {
+        "title": "Get it now from 50 /mo",
+        "text": "Eff.rate 9.90%, 3,000 per 72 mo, total 3,946"
+      },
+      "width": "Width",
+      "action.openConnect": "Connect",
+      "noConnectionMessage": "Please install and enable a supported payment by Finance Express"
+    },
+    "errors": {
+      "channel-set-not-found": "Channel set with type \"finance_express\" not found for current checkout",
+      "payment-option-not-set": "Payment options not set in current checkout",
+      "cannot-fetch-payment-options": "Cannot fetch payment options",
+      "cannot-get-calculation": "Cannot get calculations from server",
+      "input-max-length": "Maximum value is {{value}}",
+      "input-min-length": "Minimal value is {{value}}",
+      "input-wrong-value": "Wrong value",
+      "cannot-fetch-token-for-se": "Cannot get token for Santander Installemnt SE"
+    }
+  },
+  "sections": {
+    "sectionDetails": {
+      "order": {
+        "title": "Order"
+      },
+      "send_to_device": {
+        "title": "Send To Device"
+      },
+      "user": {
+        "title": "User Details"
+      },
+      "address": {
+        "title": "Address"
+      },
+      "choosePayment": {
+        "title": "Choose Payment"
+      },
+      "payment": {
+        "title": "Payment Details"
+      },
+      "shipping": {
+        "title": "Shipping"
+      },
+      "coupons": {
+        "title": "Coupons"
+      }
+    },
+    "step1Description": "Step 1 (Shopping Cart Details)",
+    "step2Description": "Step 2 (Customer & payment details)",
+    "step3Description": "Step 3 (Confirmation)",
+    "step4Description": "Description for step 4",
+    "stepEdit": "Edit step {{number}}",
+
+    "stepNumber": "Step {{number}}",
+    "stepDescription": "Step description",
+    "confirmation": "Confirmation",
+    "noAvailableSections": "No available sections",
+    "infoBoxTitle": "Sections",
+    "errors": {
+      "update": "Error occured while update sections information",
+      "couponsMustBeBeforePayments": "Coupons should be placed before payment",
+      "choosePaymentBeforePayments": "Choose payment should be placed before payment",
+      "get": "Error occured while get sections information"
+    }
+  },
+  "deleteModal": {
+    "title": "Deleting Checkout",
+    "titleSuccess": "Success!",
+    "text": "Do you really want to delete your checkout? Because all data will be lost and you will not be able to restore it.",
+    "textSuccess": "You have successfully deleted checkout."
+  },
+  "paymentOptions": {
+    "santander": "Santander",
+    "other": "Other"
+  },
+  "connect": {
+    "qr": {
+      "title": "QR",
+      "imageTitle": "Pay Now"
+    },
+    "addNew": "Connect new"
+  },
+  "warning-modal": {
+    "actions": {
+      "yes": "yes",
+      "no": "no"
+    },
+    "title": "Changing styles",
+    "description": "Do you really want to close without saving styles? Because all data will be lost when unsaved and you will not be able to restore it."
+  },
+  "settings": {
+    "callbacks": {
+      "title": "Callbacks and webhook",
+      "sections": {
+        "callbacks": "Callbacks",
+        "webhook": "Webhook"
+      },
+      "controls": {
+        "cancelUrl": "Cancel URL",
+        "failureUrl": "Failure URL",
+        "noticeUrl": "Notice URL",
+        "pendingUrl": "Pending URL",
+        "successUrl": "Success URL"
+      },
+      "errors": {
+        "cancelUrl": {
+          "required": "This is a required field.",
+          "pattern": "URL requires https:// or http://"
+        },
+        "failureUrl": {
+          "required": "This is a required field.",
+          "pattern": "URL requires https:// or http://"
+        },
+        "noticeUrl": {
+          "required": "This is a required field.",
+          "pattern": "URL requires https:// or http://"
+        },
+        "pendingUrl": {
+          "required": "This is a required field.",
+          "pattern": "URL requires https:// or http://"
+        },
+        "successUrl": {
+          "required": "This is a required field.",
+          "pattern": "URL requires https:// or http://"
+        }
+      },
+      "warning-modal": {
+        "actions": {
+          "yes": "yes",
+          "no": "no"
+        },
+        "title": "Callbacks and webhook",
+        "description": "Do you really want to close without saving changes? Because all data will be lost when unsaved and you will not be able to restore it."
+      }
+    },
+    "customerAccount": {
+      "listTitle": "Customer account",
+      "listDescription": "Account are optional"
+    },
+    "colorAndStyle": {
+      "listTitle": "Color and style",
+      "listDescription": "",
+      "title": "Color and style",
+
+      "actions": {
+        "enable": "Enable color & styles",
+        "reset": "Reset styles",
+        "changeColor": "Change color",
+        "changeHeight": "Change height",
+        "changeCorner": "Change corner",
+        "change": "Change",
+        "changeAlignment": "Change alignment",
+        "show_demo": "Show demo",
+        "hide_demo": "Hide demo"
+      },
+
+      "screen": {
+        "title": "Screen",
+        "values": {
+          "desktop": "Desktop",
+          "mobile": "Mobile"
+        }
+      },
+
+      "panelBusinessHeader": {
+        "title": "Business header",
+        "titleColors": "Fill color",
+        "titleSizes": "Height",
+        "controls": {
+          "businessHeaderBackgroundColor": "Fill color",
+          "businessHeaderBorderColor": "Borders",
+          "businessHeaderDesktopHeight": "Height",
+          "businessHeaderMobileHeight": "Height"
+        }
+      },
+      "panelLogo": {
+        "title": "Logo",
+        "modals": {
+          "alignment": "Alignment",
+          "padding": "Padding"
+        },
+        "controls": {
+          "businessLogoWidth": "Width",
+          "businessLogoHeight": "Height",
+          "businessLogoPaddingTop": "Padding top",
+          "businessLogoPaddingRight": "Padding right",
+          "businessLogoPaddingBottom": "Padding bottom",
+          "businessLogoPaddingLeft": "Padding left",
+          "businessLogoAlignment": {
+            "title": "Alignment",
+            "values": {
+              "left": "Left",
+              "center": "Center",
+              "right": "Right"
+            }
+          }
+        }
+      },
+      "panelPage": {
+        "title": "Page",
+        "titleBackgroundColor": "Fill color",
+        "titleTextColor": "Text color",
+        "controls": {
+          "pageBackgroundColor": "Fill",
+          "pageLineColor": "Lines",
+          "pageTextPrimaryColor": "Primary",
+          "pageTextSecondaryColor": "Secondary",
+          "pageTextLinkColor": "Link"
+        }
+      },
+      "panelButtons": {
+        "title": "Buttons",
+        "titleColors": "Colors",
+        "titleCorners": "Corners",
+        "controls": {
+          "buttonBackgroundColor": "Fill",
+          "buttonBackgroundDisabledColor": "Disabled",
+          "buttonTextColor": "Text"
+        }
+      },
+      "panelButtonsSecondary": {
+        "title": "Buttons Secondary",
+        "titleColors": "Colors",
+        "titleCorners": "Corners",
+        "controls": {
+          "buttonBackgroundColor": "Fill",
+          "buttonBackgroundDisabledColor": "Disabled",
+          "buttonTextColor": "Text"
+        }
+      },
+      "panelInputs": {
+        "title": "Inputs",
+        "titleBackgroundColor": "Fill color",
+        "titleTextColor": "Text color",
+        "titleCorners": "Corners",
+        "controls": {
+          "inputBackgroundColor": "Fill",
+          "inputBorderColor": "Border",
+          "inputTextPrimaryColor": "Primary",
+          "inputTextSecondaryColor": "Secondary"
+        }
+      }
+    },
+    "csp": {
+      "listTitle": "CSP allowed hosts",
+      "listDescription": "",
+      "title": "CSP allowed hosts",
+      "unknownError": "Unknown error",
+      "host": {
+        "label": "Host",
+        "placeholder": "Type Host"
+      },
+      "validation": {
+        "unavailableHost": "Host name not available"
+      }
+    },
+    "channelSetId": {
+      "listTitle": "Channel Set ID",
+      "listDescription": ""
+    },
+    "languages": {
+      "listTitle": "Language",
+      "listDescription": "",
+      "title": "Add Language",
+      "noLanguages": "No languages available",
+      "default": "Default",
+      "setAsDefault": "Set as Default",
+      "selectDefault": "Please select a default language"
+    },
+    "policies": {
+      "listTitle": "Policies",
+      "listDescription": "",
+      "title": "Manage policies",
+      "noPolicies": "No policies available"
+    },
+    "phoneNumber": {
+      "listTitle": "Phone number",
+      "listDescription": ""
+    },
+    "message": {
+      "listTitle": "Message",
+      "listDescription": ""
+    },
+    "notifications": {
+      "listTitle": "Notifications",
+      "listDescription": "",
+      "general": "General",
+      "settings": {
+        "daysOfWeek": {
+          "sunday": "Sunday",
+          "monday": "Monday",
+          "tuesday": "Tuesday",
+          "wednesday": "Wednesday",
+          "thursday": "Thursday",
+          "friday": "Friday",
+          "saturday": "Saturday"
+        },
+        "status": {
+          "on": "ON",
+          "off": "Off"
+        },
+        "providerApi" : "Payment Service Provider API",
+        "credentialValidation" : "API Credential Validation",
+        "notificationFailures" : "Payment Notification Failures",
+        "invalidCredentials" : "Invalid Credentials",
+        "transactionAlerts" : "Transaction Alerts",
+        "addFrame" : "Add new time frame",
+        "notification" : "Notification",
+        "reminder" : "Reminder",
+        "starts" : "Starts",
+        "ends" : "Ends",
+        "startTime" : "Start time",
+        "endTime" : "End time",
+
+        "paymentNotificationFailed": "Payment notification failed",
+        "pspApiFailed": "PSP Api failed",
+        "paymentOptionCredentialsInvalid": "Payment Option Credentials Invalid",
+        "apiKeysInvalid": "Api keys invalid",
+        "lastTransactionTime": "Last transaction time",
+
+        "sendEmailAfterInterval": {
+          "label": "Send email after interval",
+          "options": {
+            "0": "Never",
+            "5": "In 5 minutes",
+            "10": "In 10 minutes",
+            "30": "In 30 minutes",
+            "60": "In 1 hour",
+            "120": "In 2 hours",
+            "180": "In 3 hours",
+            "360": "In 6 hours",
+            "720": "In 12 hours"
+          }
+        },
+        "updateInterval": {
+          "label": "Update interval",
+          "options": {
+            "never": "Never",
+            "every5minutes": "Every 5 minutes",
+            "everyHour": "Every hour",
+            "every24Hours": "Every 24 hours"
+          }
+        },
+        "repeatFrequencyInterval": {
+          "label": "Repeat frequency interval",
+          "options": {
+            "0": "Never",
+            "5": "Every 5 minutes",
+            "10": "Every 10 minutes",
+            "20": "Every 20 minutes",
+            "30": "Every 30 minutes",
+            "40": "Every 40 minutes",
+            "50": "Every 50 minutes",
+            "60": "Every hour"
+          }
+        }
+      }
+    },
+    "testingMode": {
+      "listTitle": "Testing mode",
+      "listDescription": "",
+      "listButton": "Test Payments",
+      "title": "How to test"
+    }
+  },
+  "checkoutSwitcher": {
+    "listTitle": "Further Checkouts",
+    "title": "All checkouts"
+  },
+  "channelsList": {
+    "directLink": "Direct Link",
+    "payByLink": "Pay by Link",
+    "textLink": "Text Link",
+    "button": "Button",
+    "calculator": "Calculator",
+    "two-field-calculator": "Two Fields Calculator",
+    "bubble": "Bubble",
+    "shop": "Shop",
+    "marketing": "Marketing",
+    "pos": "Point of Sale",
+    "banner": "Banner"
+  },
+  "integrationConnection": {
+    "default": "Default"
+  },
+  "channelSetDefaultNames": {
+    "pos": "Point of Sale",
+    "shop": "Shop",
+    "link": "Link",
+    "finance_express": "Finance Express",
+    "api": "Api",
+    "shopify": "Shopify",
+    "presta": "Prestashop",
+    "commercetools": "Commercetools",
+    "jtl": "JTL",
+    "dandomain": "DanDomain",
+    "xt_commerce": "xt:Commerce",
+    "plentymarkets": "Plentymarkets"
+  },
+  "directLinkEditing": {
+    "title": "Pay By Link Editing",
+    "menuTitle": "Options",
+    "actions": {
+      "copyLink": "Copy link",
+      "copyWithPrefilled": "Copy prefilled link",
+      "emailLink": "E-mail prefilled link",
+      "qr": "QR"
+    }
+  },
+  "rootCheckoutWrapper": {
+    "mail": {
+      "subject": "Checkout link",
+      "body": "Dear customer,<br>{{businessName}} would like to invite you to pay online via payever. Please click the link below in order to pay for your purchase at {{businessName}}. <br>{{paymentLink}} <br>For any questions to {{businessName}} regarding the purchase itself, please reply to this email, for technical questions or questions regarding your payment, please email support@payever.de."
+    },
+    "copied": "Link successfully copied!"
+  },
+  "stepper": {
+    "details": {
+      "title": "Upload logo and set name for your checkout"
+    },
+    "payments": {
+      "title": "Choose payments"
+    },
+    "preview": {
+      "title": "Your checkout preview"
+    }
+  }
+}

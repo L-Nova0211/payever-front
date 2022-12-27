@@ -1,0 +1,31 @@
+<div class="pe-builder-header-menu" [ngClass]="theme">
+  <!-- header -->
+  <div class="pe-builder-header-menu__header">
+    <div class="pe-builder-header-menu__title">
+      {{ menuData.title | translate | uppercase }}
+    </div>
+    <div class="pe-builder-header-menu__close-button" (click)="onCloseClick()">
+      <mat-icon svgIcon="x-button"></mat-icon>
+    </div>
+  </div>
+  <!-- body -->
+  <div *ngIf="menuData.options" class="pe-builder-header-menu__body">
+    <ng-container *ngFor="let item of menuData.options">
+      <div
+        class="pe-builder-header-menu__item"
+        [class.active]="item.active"
+        [class.disabled]="item.disabled"
+        (click)="setValue(item)"
+      >
+        <div *ngIf="item.image" class="pe-builder-header-menu__item-icon">
+          <img [src]="item.image">
+        </div>
+        <div class="pe-builder-header-menu__item-title">{{ item.title | titlecase }}</div>
+      </div>
+      <div *ngIf="item.lineAfter" class="pe-builder-header-menu__divider"></div>
+    </ng-container>
+  </div>
+  <div *ngIf="actionPublish" class="pe-builder-header-menu__body">
+    <pe-builder-header-menu-publish></pe-builder-header-menu-publish>
+  </div>
+</div>

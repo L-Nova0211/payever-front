@@ -1,0 +1,37 @@
+:host {
+  &.is-mobile {
+    margin-left: 0;
+
+    .cell-preview {
+      width: fit-content;
+    }
+  }
+
+  .cell-badge {
+    display: block;
+    text-align: center;
+    appearance: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 1.33;
+    padding: 4px 15px;
+    text-transform: capitalize;
+    width: 100px;
+    height: fit-content;
+    min-height: 23px;
+
+    @media (max-width: 720px) {
+      width: fit-content;
+      height: 20px;
+    }
+
+    &.light {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

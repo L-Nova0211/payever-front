@@ -1,0 +1,15 @@
+<div *ngFor="let container of containers" class="skeleton-container {{theme}}">
+  <div class="skeleton-item">
+    <div class="headline"></div>
+  </div>
+  <ng-container *ngFor="let folder of folders" [ngTemplateOutlet]="folderItem"></ng-container>
+</div>
+
+<ng-template #folderItem>
+  <div class="skeleton-item">
+    <div class="folder">
+      <div class="folder__icon"></div>
+      <div class="folder__name"></div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,28 @@
+<div class="button-toggle-container" [class.toggle-label]="labelPosition === 'before'">
+  <div
+    class="button-toggle"
+    [class.toggle-checked]="checked"
+    [class.toggle-disabled]="disabled"
+    [class.toggle-focus]="isFocused"
+    (click)="onClick($event, cb)"
+  >
+    <div class="cdk-visually-hidden">
+      <input
+        #cb
+        type="checkbox"
+        [attr.id]="inputId"
+        [checked]="checked"
+        (change)="onInputChange($event)"
+        (focus)="onFocus($event)"
+        (blur)="onBlur($event)"
+        [disabled]="disabled"
+        [required]="required"
+      />
+    </div>
+    <span class="button-toggle-slider"></span>
+  </div>
+  <div [class.spacer]="spacer"></div>
+  <span [class.label-before]="labelPosition === 'before'" [class.label-after]="labelPosition === 'after'"
+    >{{label}}</span
+  >
+</div>

@@ -1,0 +1,25 @@
+<form [ngClass]="theme" [formGroup]="styleForm">
+    <div class="style-container">
+        <div class="headline">
+            <span>{{'info_boxes.panels.general.menu_list.color_and_style.headline' | translate}}</span>
+        </div>
+        <peb-form-background>
+            <peb-color-picker-form
+                    class="primary"
+                    formControlName="primaryColor"
+                    label="{{'info_boxes.panels.general.menu_list.color_and_style.primaryColor' | translate}}"
+                    buttonLabel="{{'info_boxes.panels.general.menu_list.color_and_style.chooseColor' | translate}}"
+            >
+            </peb-color-picker-form>
+            <div class="divider"></div>
+            <peb-color-picker-form
+                    [theme]="theme"
+                    class="secondary"
+                    formControlName="secondaryColor"
+                    label="{{'info_boxes.panels.general.menu_list.color_and_style.secondaryColor' | translate}}"
+                    buttonLabel="{{'info_boxes.panels.general.menu_list.color_and_style.chooseColor' | translate}}"
+            >
+            </peb-color-picker-form>
+        </peb-form-background>
+    </div>
+</form>

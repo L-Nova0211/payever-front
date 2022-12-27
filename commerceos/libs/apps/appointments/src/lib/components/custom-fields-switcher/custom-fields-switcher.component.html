@@ -1,0 +1,78 @@
+<div class="pe-appointments-custom-fields">
+  <div class="pe-appointments-custom-fields__switcher">
+    <ng-container [ngSwitch]="field.type">
+      <ng-container *ngSwitchCase="fieldTypesEnum.Text">
+        <peb-form-field-input
+          [animated]="animated"
+          appearance="label"
+          [label]="field.title"
+        >
+          <input type="text" [(ngModel)]="field.value" />
+        </peb-form-field-input>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="fieldTypesEnum.Checkbox">
+        <peb-button-toggle
+          [label]="field.title"
+          labelPosition="before"
+          [(ngModel)]="field.value"
+          [spacer]="true"
+        ></peb-button-toggle>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="fieldTypesEnum.Paragraph">
+        <peb-form-field-textarea
+          appearance="label"
+          class="pe-appointments-custom-fields__textarea"
+          [label]="field.title"
+        >
+          <textarea #textarea
+            (keyup)="autoTextareaGrow(textarea)"
+            [(ngModel)]="field.value"
+          ></textarea>
+        </peb-form-field-textarea>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="fieldTypesEnum.RadioButton">
+        <div class="pe-appointments-custom-fields__radio-buttons">
+          <peb-radio
+            *ngFor="let option of field.defaultValues"
+            [checked]="field.value === option"
+            [name]="option"
+            [(ngModel)]="field.value"
+            [value]="option"
+          >{{ option }}</peb-radio>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchDefault>
+        <peb-select
+          [label]="field.title"
+          [multiple]="field.type === fieldTypesEnum.Multiselect"
+          [(ngModel)]="field.value"
+          selectType="label"
+        >
+          <peb-select-option 
+            *ngFor="let option of field.defaultValues"
+            [label]="option"
+            [value]="option"
+          ></peb-select-option>
+        </peb-select>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="pe-appointments-custom-fields__controls">
+    <button
+      class="pe-appointments-custom-fields__edit-button"
+      (click)="editField()"
+    >
+      {{ 'appointments-app.actions.edit' | translate }}
+    </button>
+    <button
+      class="pe-appointments-custom-fields__remove-button"
+      (click)="removeField()"
+    >
+      &ndash;
+    </button>
+  </div>  
+</div>

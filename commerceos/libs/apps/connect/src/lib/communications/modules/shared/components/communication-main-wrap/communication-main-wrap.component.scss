@@ -1,0 +1,13 @@
+@import "../../../../../../assets/imports";
+
+:host {
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  @include pe_justify-content(center);
+}
+
+:host ::ng-deep {
+  .regular-2 {
+    color: $color-white;
+  }
+}

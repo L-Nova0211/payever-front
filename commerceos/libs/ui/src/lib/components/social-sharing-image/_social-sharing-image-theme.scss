@@ -1,0 +1,38 @@
+@mixin peb-social-sharing-image-theme($theme-config) {
+  $primary: map-get($theme-config, primary);
+  $accent: map-get($theme-config, accent);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+  $spinner: map-get($theme-config, spinner);
+
+  .social-sharing-image-wrapper {
+    background-color: $primary;
+
+    .image-upload {
+      &__spinner {
+        .mat-progress-spinner circle, .mat-spinner circle {
+          stroke: $spinner;
+        }
+      }
+      &__button {
+        @if $text-color == #000 {
+          background-color: rgba(150, 150, 150, 0.3);
+        } @else {
+          background-color: $accent;
+        }
+
+        .upload-button {
+          &__label {
+            color: $text-color;
+          }
+        }
+      }
+    }
+
+    .data {
+      span {
+        color: $text-color;
+      }
+    }
+  }
+}

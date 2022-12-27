@@ -1,0 +1,18 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .payment-main-wrap-container .payment-documents-container {
+    .mat-raised-button.mat-button-base.upload-button {
+      background-color: transparent;
+      font-size: 12px;
+    }
+
+    .mat-expansion-panel-header {
+      padding-left: 10px;
+    }
+
+    .mat-expansion-panel-content {
+      height: 1px;
+    }
+  }
+}

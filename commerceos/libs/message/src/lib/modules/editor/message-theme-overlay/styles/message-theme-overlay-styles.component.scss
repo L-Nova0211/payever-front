@@ -1,0 +1,23 @@
+.message-theme-overlay {
+  .message-close-button {
+    width: 51px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.91;
+    letter-spacing: normal;
+    padding: 0 !important;
+    background-color: #57585a;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 6px;
+  }
+
+  .scrollbar {
+    overflow-x: hidden !important;
+  }
+
+}

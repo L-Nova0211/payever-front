@@ -1,0 +1,38 @@
+<div class="message-attachments">
+  <div
+    *ngIf="messageObj?.loadingHash"
+    class="message-attachments__upload"
+  >
+    <mat-spinner
+      class="message-attachments__upload-spinner"
+      [diameter]="40"
+      [strokeWidth]="2"
+    ></mat-spinner>
+  </div>
+  <ng-container
+    [ngTemplateOutlet]="isNotMedia() ? fileList : mediaList"
+    [ngTemplateOutletContext]="{ files: groupFiles }"
+  ></ng-container>
+</div>
+<pe-chat-message-text
+  [class.reply]="reply"
+  [class.not-reply]="notReply"
+  [sender]="sender"
+  [date]="date"
+  [dateFormat]="dateFormat"
+  [message]="message"
+></pe-chat-message-text>
+
+<ng-template #fileList let-files="files">
+  <pe-chat-message-file-list
+    [files]="files"
+    [theming]="theme"
+  ></pe-chat-message-file-list>
+</ng-template>
+
+<ng-template #mediaList let-files="files">
+  <pe-chat-message-media-list
+    [files]="files"
+    [theming]="theme"
+  ></pe-chat-message-media-list>
+</ng-template>

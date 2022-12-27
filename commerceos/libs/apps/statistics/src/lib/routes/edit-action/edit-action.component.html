@@ -1,0 +1,8 @@
+<div
+    class="edit__button"
+    *ngFor="let action of actions"
+    [class.item__button-loading]="action && (action.isLoading$ | async)"
+    (click)="onAction($event, action)">
+    <mat-spinner class="item__button-spinner mat-spinner-themed" [strokeWidth]="2" [diameter]="18"></mat-spinner>
+    <span class="item__button-content">{{ action?.label }}</span>
+</div>

@@ -1,0 +1,39 @@
+<ng-container *ngIf="(data$ | async)"></ng-container>
+<div class="overlay-wrapper" [ngStyle]="(style$ | async).overlayWrapper">
+  <div class="overlay" [ngStyle]="(style$ | async).overlay"></div>
+</div>
+
+<div
+  class="video-container"
+  *ngIf="isVideo$|async as video"
+  [ngStyle]="(style$ | async).videoContainer"
+>
+  <div class="video-wrap" [ngStyle]="(style$ | async).videoWrapper">
+    <video
+      class="video-player"
+      [class.loaded]="videoLoaded || !video?.preview"
+      [ngStyle]="(style$ | async).video"
+      [controls]="video?.controls"
+      [autoplay]="video?.autoplay"
+      [loop]="video?.loop"
+      [muted]="!video?.sound"
+      [src]="video?.source"
+      (canplay)="onLoaded()"
+      #video
+    ></video>
+
+    <img
+      #img
+      alt=""
+      class="preview-player"
+      *ngIf="!videoLoaded && video?.preview"
+      [ngStyle]="(style$ | async).video"
+      [src]="video.preview"
+      (error)="img.style.display = 'none'"
+    />
+  </div>
+</div>
+
+<div id="main-slot" #wrapper [ngStyle]="(style$ | async).wrapper" [class.main-slot__none-events]="options.readOnly && (data$ | async).controls">
+  <ng-container pebRendererChildrenSlot></ng-container>
+</div>

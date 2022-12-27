@@ -1,0 +1,27 @@
+
+.loading-spinner-wrapper {
+  display: none;
+  justify-content: center;
+
+  &.show {
+    display: flex;
+  }
+}
+
+.loading-spinner {
+  width: 3.5em !important;
+  height: 3.5em !important;
+  position: absolute;
+  top: calc(50% - 3.5em / 2);
+}
+
+::ng-deep .loading-spinner {
+  circle {
+    stroke: black !important;
+  }
+
+  svg {
+    height: 3.5em !important;
+    width: 3.5em !important;
+  }
+}

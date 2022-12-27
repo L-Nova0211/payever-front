@@ -1,0 +1,185 @@
+.pe-bootstrap {
+  .nav {
+    > li {
+      > a {
+        padding: $grid-unit-y * 2 $pe_hgrid_gutter/2;
+        &:hover,
+        &:focus {
+          background-color: $color-very-light-gray;
+          color: $color-blue;
+        }
+      }
+      &.disabled > a {
+        color: $color-light-gray-1;
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          color: $color-light-gray-1;
+        }
+      }
+    }
+    .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $color-very-light-gray;
+        border-color: $color-blue;
+      }
+    }
+    .nav-divider {
+      margin: $grid-unit-y 0;
+      background-color: $color-light-gray-2;
+    }
+  }
+  .nav-tabs {
+    border-bottom: $border-light-gray-2;
+    > li {
+      float: left;
+      margin: 0 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      > a {
+        line-height: $grid-unit-y * 4;
+        padding: 0;
+        border: 0 none;
+        color: $color-gray;
+        position: relative;
+        margin-right: 0;
+        border-radius: 0;
+        &:after {
+          content: '';
+          display: none;
+          height: 1px;
+          width: 100%;
+          left: 0;
+          bottom: -1px;
+          background: $color-black;
+          position: absolute;
+        }
+        &:hover {
+          color: $color-black;
+          background: transparent;
+        }
+      }
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $color-black;
+          background-color: transparent;
+          border: 0 none;
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .nav-pills > li > a {
+    border-radius: $border-radius-base;
+    height: $grid-unit-y * 3;
+    line-height: $grid-unit-y * 3;
+    border: none;
+    padding: 0 $pe_hgrid_gutter/2;
+  }
+  .nav-pills > li {
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  .nav-pills > li.active > a,
+  .nav-pills > li.active > a:hover,
+  .nav-pills > li.active > a:focus {
+    color: $color-white;
+    background-color: $color-blue;
+  }
+  .nav-stacked > li {
+    float: none;
+    border: $border-light-gray-2;
+    border-bottom-width: 0;
+    margin: 0;
+    &:first-child {
+      border-radius: $border-radius-base $border-radius-base 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 $border-radius-base $border-radius-base;
+      border-bottom-width: 1px;
+    }
+  }
+  .nav-stacked > li > a {
+    border: none;
+    line-height: $grid-unit-y * 3;
+    height: $grid-unit-y * 3;
+    text-align: center;
+    &:after {
+      opacity: 0;
+    }
+  }
+  .nav-stacked > li.active > a,
+  .nav-stacked > li.active > a:hover,
+  .nav-stacked > li.active > a:focus {
+    background: $color-very-light-gray;
+  }
+  .tab-content > .tab-pane {
+    display: none;
+    padding-top: $grid-unit-y;
+  }
+  .tab-content > .active {
+    display: block;
+  }
+  .nav-tabs .dropdown-menu {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .united {
+    .nav.nav-pills {
+      border: 1px solid $color-light-gray-2-rgba;
+      display: inline-block;
+      border-radius: 18px;
+      padding: 0 5px;
+      .nav-item {
+        margin: 0;
+        position: relative;
+        .nav-link {
+          border-radius: 0;
+          width: 60px;
+          text-align: center;
+          color: $color-dark-gray;
+          &:hover, &:focus, &:active {
+            background: transparent;
+          }
+        }
+        &:first-child {
+          .nav-link {
+            border-radius: 18px 0 0 18px;
+          }
+        }
+        &:last-child {
+          .nav-link {
+            border-radius: 0 18px 18px 0;
+          }
+        }
+        &.active {
+          .nav-link {
+            color: $color-white;
+            background: transparent;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            bottom: 0;
+            right: -5px;
+            background: $color-dark-gray;
+            border-radius: 18px;
+          }
+        }
+      }
+    }
+  }
+}

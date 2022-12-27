@@ -1,0 +1,166 @@
+:host {
+  display: block;
+  width: 100vw;
+
+  @media (min-width: 521px) {
+    width: 426px;
+  }
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 22px 12px 22px;
+
+  @media (min-width: 521px) {
+    display: grid;
+    grid-template-columns: 43px 1fr 43px;
+    padding: 19px 24px 8px;
+  }
+
+  button {
+    appearance: none;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.2857142857;
+    padding: 0;
+
+    @media (max-width: 520px) {
+      display: none;
+    }
+
+    &.cancel {
+      color: #7a7a7a;
+      margin-right: auto;
+      max-width: 43px;
+    }
+
+    &.done {
+      color: #0091df;
+      margin-left: auto;
+      max-width: 33px;
+    }
+  }
+
+  span {
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+
+    @media (min-width: 521px) {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+  }
+
+  svg {
+    @media (min-width: 521px) {
+      display: none;
+    }
+  }
+}
+
+.body {
+  padding: 12px 12px 8px;
+
+  ul {
+    border-radius: 12px;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  
+    li {
+      border-radius: 12px;
+      cursor: pointer;
+  
+      @media (min-width: 521px) {
+        background-color: #111111;
+        border-radius: 0;
+      }
+  
+      &.active {
+        div.arrow { display: none; }
+        div.checkbox { display: flex; };
+  
+        @media (max-width: 520px) {
+          background-color: #0371e2;
+  
+          div.arrow { display: flex; }
+          div.checkbox { display: none; }
+        }
+      }
+  
+      &:hover {
+        @media (min-width: 521px) {
+          background-color: rgba(17, 17, 17, 0.5);
+        }
+      }
+  
+      &:not(:last-of-type) {
+        margin-bottom: 1px;
+      }
+
+      .item-wrapper {
+        align-items: center;
+        display: flex;
+        padding: 12px;
+        pointer-events: all;
+
+        @media (min-width: 521px) {
+          padding: 12px 16px 12px 12px;
+          pointer-events: none;
+        }
+      }
+  
+      span {
+        color: white;
+        flex: 1;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+        margin-right: 6px;
+        
+        @media (min-width: 521px) {
+          font-size: 14px;
+        }
+      }
+
+      div.arrow {
+        display: flex;
+
+        @media (min-width: 521px) {
+          display: none;
+        }
+
+        svg {
+          color: white;
+        }
+      }
+  
+      div.checkbox {
+        align-items: center;
+        justify-content: center;
+        height: 16px;
+        margin-left: 6px;
+        position: relative;
+        display: none;
+        width: 16px;
+  
+        .box {
+          position: absolute;
+        }
+  
+        .check {
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<div class="page" [ngClass]="theme">
+  <h1 class="page__title">{{ 'shipping-app.forms.local_pickup.title' | translate }}</h1>
+  <form [formGroup]="localPickupForm">
+    <div class="group">
+      <span class="group__label">{{ 'shipping-app.forms.local_pickup.location_status' | translate }}</span>
+      <div class="group__item" [ngClass]="localPickupForm.get('shippingOrigin').value ? 'content-top' : 'content-center'">
+        <div class="group__icon-wrapper">
+          <mat-icon class="group__icon-wrapper__item-icon" svgIcon="shipping-location-icon"></mat-icon>
+        </div>
+        <div class="group__item-label" *ngIf="localPickupForm.get('shippingOrigin').value">
+          {{ localPickupForm.get('shippingOrigin').value.name }},
+          {{ localPickupForm.get('shippingOrigin').value.streetName }}
+          {{ localPickupForm.get('shippingOrigin').value.streetNumber }},
+          {{ localPickupForm.get('shippingOrigin').value.zipCode }}
+          {{ localPickupForm.get('shippingOrigin').value.city }},
+          {{ localPickupForm.get('shippingOrigin').value.countryCode | country }}
+        </div>
+        <div class="group__item-label" *ngIf="!localPickupForm.get('shippingOrigin').value">
+          <span>{{ 'shipping-app.forms.add_shipping_pickup' | translate }}</span>
+        </div>
+        <div class="group__item-right-content">
+          <button peb-text-button color="confirm" (click)="openEditLocationModal()">
+            {{
+              localPickupForm.get('shippingOrigin').value
+                ? ('shipping-app.actions.edit' | translate)
+                : ('shipping-app.actions.add' | translate)
+            }}
+          </button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="group__item">
+        <peb-checkbox formControlName="hasLocalPickup">{{ 'shipping-app.forms.local_pickup.has_local_pickup' | translate }}</peb-checkbox>
+      </div>
+      <span class="group__label-bottom">
+        {{ 'shipping-app.forms.local_delivery.delivery_prices' | translate }} {{ currency | currencySymbol: true }} ({{ currency }}).
+        <a class="link" (click)="nagivateToCurrency()">{{ 'shipping-app.forms.local_delivery.change_currency' | translate }}</a>
+      </span>
+    </div>
+    <ng-container *ngIf="localPickupForm.get('hasLocalPickup').value">
+      <div class="group">
+        <span class="group__label">{{ 'shipping-app.forms.local_pickup.expected_pickup' | translate }}</span>
+        <peb-select selectType="full" formControlName="pickUpTime">
+          <peb-select-option class="select-options" *ngFor="let option of pickUpTimes" value="{{ option.value }}" label="{{ option.label }}"></peb-select-option>
+        </peb-select>
+      </div>
+
+      <div class="group">
+        <span class="group__label">{{ 'shipping-app.forms.local_pickup.order_ready' | translate }}</span>
+        <peb-form-field-textarea>
+          <textarea
+            id="pickUpMessage"
+            formControlName="pickUpMessage"
+            [placeholder]="'shipping-app.forms.local_pickup.pickup_instructions_placeholder' | translate"
+            rows="4"
+            (blur)="updateLocalDelivery()"
+          ></textarea>
+        </peb-form-field-textarea>
+        <span class="group__label-bottom">{{ 'shipping-app.forms.local_pickup.pickup_instructions' | translate }}</span>
+      </div>
+    </ng-container>
+  </form>
+</div>

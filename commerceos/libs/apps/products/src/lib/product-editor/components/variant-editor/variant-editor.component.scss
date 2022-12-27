@@ -1,0 +1,183 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  .backdrop {
+    background-color: unset;
+  }
+}
+
+.variant-editor-modal {
+  display: flex;
+  max-height: calc(100% - 32px);
+  width: calc(100% - 20px);
+  justify-content: center;
+}
+
+.overlay {
+  &__body {
+    padding: 0 12px;
+    max-height: calc(100% - 71px);
+    overflow: scroll;
+    form {
+      overflow: unset !important;
+    }
+    .expandable-panel {
+      display: block;
+      margin-top: 16px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    &-messages {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+}
+
+.option {
+  &__list {
+    display: grid;
+    grid-row-gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    & .cdk-drag-placeholder {
+      display: flex !important;
+      flex-direction: row !important;
+      visibility: hidden !important;
+      height: 100%;
+      & div {
+        visibility: hidden !important;
+      }
+    }
+    & .cdk-drag-animating {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+
+  &__list.cdk-drop-list-dragging &__item:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &__item-container{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    peb-form-background {
+      width: 100%;
+    }
+    & > div {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__item {
+    flex-grow: 1;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__handle,
+  &__fields,
+  &__remove {
+    border-radius: 12px;
+  }
+
+  &__handle,
+  &__remove {
+    background-color: #111111;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.8;
+    }
+  }
+
+  &__handle {
+    .mat-icon {
+      width: 16px;
+    }
+  }
+
+  &__remove {
+    .mat-icon {
+      width: 16px;
+      height: 18px;
+    }
+  }
+
+  &__add {
+    border-radius: 12px;
+    height: 40px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-bottom: 12px;
+  }
+}
+
+.variant {
+  &__fields {
+    border-radius: 12px;
+    display: grid;
+    grid-gap: 1px;
+    overflow: hidden;
+
+    &-button-toggle {
+      padding: 2px 4px;
+      background-color: #111111;
+    }
+
+    .calendar-image {
+      margin-right: 5px;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+  &__sale {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &-form-field-input {
+      width: 100%;
+    }
+  }
+
+  &__sku-barcode {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1px;
+  }
+}

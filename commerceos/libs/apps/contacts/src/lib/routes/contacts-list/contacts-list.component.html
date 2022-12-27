@@ -1,0 +1,107 @@
+<div hidden>
+	<input #csvFileInput
+    type="file"
+    class="file-input"
+		accept="text/plain, .csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+		(change)="onExport($event)"
+  />
+	<input #xmlFileInput
+    type="file"
+    class="file-input"
+    accept="text/xml"
+    (change)="onExport($event)"
+  />
+</div>
+<pe-grid
+  [theme]="theme"
+  [items]="gridItems$ | async"
+>
+	<pe-grid-sidenav #sideNav
+    [sidenavTitle]="'contacts-app.sidebar.title' | translate"
+    [sidenavMenu]="foldersSidenavMenu"
+		(menuItemSelected)="menuItemSelected($event)"
+  >
+		<pe-folders
+			[sideNav]="sideNav"
+      [rootFolder]="rootFolder"
+      [folders]="foldersTree$ | async"
+      [selectFolder]="selectedFolder"
+      [isLoading]="isFoldersLoading$ | async"
+      (selectedDefaultFolder)="onSelectFolder($event)"
+      (selectedFolder)="onSelectFolder($event)"
+      (selectedRootFolder)="onSelectFolder($event)"
+      (createFolder)="folderAction($event, folderActions.Create)"
+      (updateFolder)="folderAction($event, folderActions.Update)"
+      (deleteFolder)="folderAction($event, folderActions.Delete)"
+      (createHeadline)="folderAction($event, folderActions.Create)"
+      (updateHeadline)="folderAction($event, folderActions.Update)"
+      (deleteHeadline)="folderAction($event, folderActions.Delete)"
+      (positionsChanged)="onPositionsChanged($event)"
+    ></pe-folders>
+	</pe-grid-sidenav>
+	<pe-grid-content
+    [mobileTitle]="mobileTitle$ | async"
+    (moveToFolder)="moveToFolder($event)"
+  >
+		<pe-grid-toolbar
+      *ngIf="toolbar$ | async as toolbar"
+      [totalItems]="paginator.total"
+      [viewAdd]="!popupMode"
+      [viewMenu]="viewMenu"
+      (filtersChange)="filtersChange($event)"
+      [filterConfig]="toolbar.filterConfig"
+			[customMenus]="toolbar.customMenus"
+      [optionsMenu]="toolbar.optionsMenu"
+      (optionsChange)="optionsChange($event)"
+      [sortMenu]="toolbar.sortMenu"
+      (sortChange)="sortChange($event)"
+      (viewChange)="viewChange($event)"
+      (create)="createByHand()"
+    ></pe-grid-toolbar>
+		<pe-grid-viewport
+      [selectable]="true"
+      [viewportTitle]="viewportTitle"
+      [defaultLayout]="gridLayout"
+      [contextMenu]="viewportContextMenu"
+      [allowSetQueryPArams]="true"
+      (itemContextSelect)="itemContextSelect($event)"
+		>
+			<pe-grid-list
+        [viewAdd]="!popupMode && showAddNewItem"
+        [scrollBottomOffset]="scrollBottomOffset"
+        [isLoading]="isLoading$ | async"
+        (create)="createByHand()"
+        (scrolledToEnd)="scrolledToEnd()"
+			>
+				<ng-template let-item="item">
+					<pe-grid-item
+            [peDropIntoFolder]="dropIntoFolder(item)"
+            [item]="item"
+            [itemContextMenu]="itemContextMenu"
+            (actionClick)="actionClick($event)"
+            (itemClick)="actionClick($event)"
+            (moveToFolder)="moveToFolder($event)"
+            (moveToRootFolder)="moveToFolder($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          ></pe-grid-item>
+				</ng-template>
+			</pe-grid-list>
+			<pe-grid-table
+        [isLoading]="isLoading$ | async"
+        [displayedColumns]="tableDisplayedColumns"
+        [scrollBottomOffset]="scrollBottomOffset"
+        (scrolledToEnd)="scrolledToEnd()"
+			>
+				<ng-template let-item="item">
+					<pe-table-row
+            [item]="item"
+            (actionClick)="actionClick($event)"
+            (rowClicked)="actionClick($event)"
+            [itemContextMenu]="itemContextMenu"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+					></pe-table-row>
+				</ng-template>
+			</pe-grid-table>
+		</pe-grid-viewport>
+	</pe-grid-content>
+</pe-grid>

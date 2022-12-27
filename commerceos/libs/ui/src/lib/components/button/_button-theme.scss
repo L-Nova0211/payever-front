@@ -1,0 +1,9 @@
+@mixin pe-button-theme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $button-text: map-get($theme-config, button-text);
+
+  .pe-form-button {
+    background-color: $accent;
+    color: $button-text;
+  }
+}

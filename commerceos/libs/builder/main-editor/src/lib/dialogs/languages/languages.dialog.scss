@@ -1,0 +1,102 @@
+.languages-dialog {
+
+  &__wrapper {
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgba(36, 39, 46, 0.85);
+    padding: 12px;
+    min-width: 400px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-cancel {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7a7a7a;
+    cursor: pointer;
+  }
+
+  &__header-done {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #0091df;
+    cursor: pointer;
+  }
+
+  &__header-title {
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__body {
+    margin-top: 10px  ;
+  }
+
+  &__options {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__option {
+    display: flex;
+    padding: 12px;
+    background-color: #111111;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(36, 39, 46, 0.85);
+    }
+
+    &:hover {
+      background-color: #0371e2;
+    }
+  }
+
+  &__option-title {
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  &__option-icon {
+    margin-left: auto;
+    height: 19px;
+    width: 19px;
+  }
+}
+
+::ng-deep {
+  .languages-dialog {
+    border-radius: 12px;
+    overflow: hidden;
+
+    mat-dialog-container {
+      background-color: transparent !important;
+    }
+  }
+}

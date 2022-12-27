@@ -1,0 +1,45 @@
+<ng-container *ngIf="!isMobileListWithMobileView">
+  <div class="grid-skeleton-container {{theme}}" *ngFor="let item of items">
+    <div class="grid-skeleton-item">
+      <div class="thumbnail"></div>
+      <div class="bottom">
+        <div class="bottom__line"></div>
+        <div class="bottom__rectangle"></div>
+        <div class="bottom__row">
+          <div class="ellipse"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="isMobileListWithMobileView">
+  <div
+    *ngFor="let item of items; let firstRow = first; let lastRow = last"
+    class="grid-skeleton-container mobile {{theme}}"
+    [class.first-row]="firstRow"
+    [class.last-row]="lastRow"
+  >
+    <div class="grid-skeleton-mobile">
+      <div class="mobile-thumbnail"></div>
+      <div class="mobile-content">
+        <ng-container
+          *ngFor="let column of displayColumnsData; let i = index; let firstLine = first; let lastLine = last"
+        >
+          <div
+            *ngIf="i <= defaultShow"
+            class="skeleton-item"
+          >
+            <div
+              class="line"
+              [class.first-line]="firstLine"
+              [class.last-line]="lastLine || i === defaultShow "
+            ></div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="dots-button"></div>
+    </div>
+  </div>
+</ng-container>
+

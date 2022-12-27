@@ -1,0 +1,22 @@
+<div class="settings" [ngClass]="theme">
+  <div class="page-header">{{ 'social-app.connect.title' | translate }}</div>
+  <div class="scrollbar">
+    <div class="content">
+      <!-- SOCIAL MEDIA ACCOUNTS -->
+      <section class="settings__section">
+        <div class="settings__section__header">{{ 'social-app.connect.accounts.title' | translate }}</div>
+        <pe-social-connect-list [notOverlay]="true"></pe-social-connect-list>
+      </section>
+      <div class="margin"></div>
+      <section class="settings__section">
+        <button 
+          class="new-button"
+          peb-button 
+          color="form" 
+          style="width: 100%" 
+          (click)="openConnectApp()"
+        >{{ 'social-app.actions.add_integration' | translate }}</button>
+      </section>
+    </div>
+  </div>
+</div>

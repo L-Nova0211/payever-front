@@ -1,0 +1,26 @@
+:host {    
+    height: 100%;
+  }
+  .container{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  .delete-button{
+    padding: 12px 123px;
+    border-radius: 12px;
+    background-color: #1c1d1e;
+    width: 100%;
+    display: block;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    color: #eb4653;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 17px;
+    &.light{
+      background-color: #fafafa;
+    }
+}

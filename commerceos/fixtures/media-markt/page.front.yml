@@ -1,0 +1,255 @@
+id: media-markt-category-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: media-markt-category-page
+  type: document
+  children:
+    - id: nav-section
+      type: section
+      children:
+        - id: nav-grid
+          type: block
+          children:
+            - id: buttons-wrapper
+              type: block
+              children:
+                - id: nav-amount-button
+                  type: button
+                  data:
+                    text: Amount
+                    action:
+                      type: checkout.open-amount
+                - id: nav-qr-button
+                  type: button
+                  data:
+                    text: QR
+                    action:
+                      type: checkout.open-qr
+            - id: nav-grid-logo
+              type: logo
+              data:
+                src: https://payevertesting.blob.core.windows.net/products/094e979d-56a5-4c24-8cbb-99dfdf7176e2-media-markt-logo.png
+            - id: nav-grid-cart
+              type: shop-cart
+
+    - id: content
+      type: section
+      children:
+        - id: content-category
+          type: pos-catalog
+    - id: space
+      type: section
+    - id: bottom-controls
+      type: section
+      children:
+        - id: mobile-amount-button
+          type: button
+          data:
+            text: Amount
+            action:
+              type: checkout.open-amount
+        - id: mobile-qr-button
+          type: button
+          data:
+            text: QR
+            action:
+              type: checkout.open-qr
+
+stylesheets:
+  desktop:
+    nav-section:
+      position: sticky
+      top: 0
+      zIndex: 100
+    nav-grid:
+      direction: horizontal
+      gridTemplateColumns: 148 1fr 148
+      display: grid
+      slot: absolute
+      backgroundColor: '#000'
+      height: 55
+    nav-grid-logo:
+      width: 200
+      height: 22
+      flexDirection: column
+      alignContent: center
+      margin: 17 auto 0
+    nav-grid-cart:
+      width: 24
+      height: 55
+      backgroundColor: '#fff'
+      fill: transparent
+      stroke: '#fff'
+      strokeWidth: 2
+      margin: 0 25 0 auto
+    nav-qr-button:
+      background: rgba(255, 255, 255, 0.4)
+      borderStyle: none
+      borderRadius: 5
+      width: 74
+      height: 28
+      left: 8
+      fontSize: 13
+    nav-amount-button:
+      background: rgba(255, 255, 255, 0.4)
+      borderStyle: none
+      borderRadius: 5
+      width: 74
+      height: 28
+      fontSize: 13
+    buttons-wrapper:
+      display: grid
+      width: 148
+      justifyContent: 'space-between'
+      alignItems: center
+      margin: 0 0 0 21
+      gridTemplateColumns: 1fr 1fr
+
+    bottom-controls:
+      display: none
+    content-category:
+      slot: absolute
+      categoryHeaderDisplay: none
+      top: 55
+    space:
+      height: 50
+
+  tablet:
+    nav-section:
+      position: sticky
+      top: 0
+      zIndex: 100
+    nav-grid:
+      direction: horizontal
+      gridTemplateColumns: 148 1fr 148
+      display: grid
+      backgroundColor: '#000'
+      height: 55
+    nav-grid-logo:
+      display: center
+      width: 200
+      height: 22
+      flexDirection: column
+      alignContent: center
+      margin: 17 auto 0
+    nav-grid-cart:
+      width: 24
+      height: 55
+      backgroundColor: '#fff'
+      fill: transparent
+      stroke: '#fff'
+      strokeWidth: 2
+      margin: 0 25 0 auto
+    nav-qr-button:
+      background: rgba(255, 255, 255, 0.4)
+      borderStyle: none
+      borderRadius: 5
+      width: 74
+      height: 28
+      left: 8
+      fontSize: 13
+    nav-amount-button:
+      background: rgba(255, 255, 255, 0.4)
+      borderStyle: none
+      borderRadius: 5
+      width: 74
+      height: 28
+      fontSize: 13
+    buttons-wrapper:
+      display: grid
+      width: 148
+      justifyContent: 'space-between'
+      alignItems: center
+      margin: 0 0 0 21
+      gridTemplateColumns: 1fr 1fr
+    bottom-controls:
+      display: none
+
+    content-category:
+      slot: absolute
+      categoryHeaderDisplay: none
+      columns: 2
+      top: 55
+    space:
+      height: 50
+
+  mobile:
+    nav-section:
+      display: grid
+      backgroundColor: '#000'
+      height: 93
+      position: sticky
+      top: 0
+      zIndex: 100
+
+    nav-grid:
+      direction: horizontal
+      gridTemplateColumns: 1fr 1fr 1fr
+      display: grid
+      width: 1
+    nav-grid-logo:
+      width: 156
+      height: 17.5
+      margin: 64 auto 0 auto
+    nav-grid-cart:
+      width: 24
+      height: 55
+      margin: 37 11.5 0 64
+      backgroundColor: '#fff'
+      fill: transparent
+      stroke: '#fff'
+      strokeWidth: 2
+    buttons-wrapper:
+      visibility: hidden
+      justifyContent: 'space-between'
+      alignItems: center
+      margin: 0 0 0 21
+    bottom-controls:
+      display: grid
+      position: sticky
+      bottom: 0
+      height: 124
+      backgroundColor: '#f5f4f7'
+      justifyContent: space-around
+      alignItems: center
+      gridTemplateColumns: 1fr 1fr
+    mobile-amount-button:
+      display: grid
+      width: 160
+      height: 72
+      border-radius: 6
+      borderStyle: none
+      background: '#ffffff'
+      color: '#000000'
+      marginLeft: 10
+      marginRight: 5
+      marginTop: 26
+      gridArea: 1
+    mobile-qr-button:
+      display: grid
+      borderStyle: none
+      width: 160
+      height: 72
+      border-radius: 6
+      background: '#ffffff'
+      color: '#000000'
+      marginRight: 10
+      marginLeft: 10
+      marginTop: 26
+      gridArea: 1
+
+    content-category:
+      columns: 2
+      categoryHeaderDisplay: none
+      top: 93
+    space:
+      height: 50
+
+
+
+
+context: {}

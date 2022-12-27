@@ -1,0 +1,120 @@
+.welcome-screen {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 260px;
+  height: 305px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+
+  &__content {
+    max-width: 520px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+    @media (max-width: 520px) {
+      max-width: 100%;
+    }
+
+    &--image {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 18px;
+
+      &:not(.commerceos) {
+        max-width: 86px;
+        max-height: 86px;
+        height: 65px;
+        width: 65px;
+      }
+
+      &.commerceos {
+        height: 32px;
+        width: 128px;
+      }
+    }
+
+    &--title {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    &--description {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    &--button {
+      text-align: center;
+      color: #ffffff;
+      border: none;
+      padding: 8px 0;
+      margin-bottom: 8px;
+      width: 228px;
+      height: 36px;
+      border-radius: 6px;
+      background-color: #eb4653;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      &:hover{
+        opacity: .9;
+      }
+    }
+
+    &--button-dashboard {
+      background-image: none;
+      background-color: #6f7279;
+      &:hover{
+        opacity: .9;
+      }
+    }
+  }
+}
+
+.welcome_dark {
+  background-color: #1c1c1e;
+}
+
+.welcome_light {
+  background-color: #ffffff;
+}
+
+.welcome_transparent {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+  outline:0;
+}
+

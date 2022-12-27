@@ -1,0 +1,102 @@
+.checkout-confirm-modal {
+  &__container {
+    min-width: 420px;
+    max-width: 420px;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #45474d;
+    padding: 65px 36px;
+  }
+
+  &__icon {
+    svg {
+      width: 61px;
+      height: 61px;
+    }
+
+    &_danger {
+      color: #FFBE00;
+    }
+
+    &_success {
+      color: #00B640;
+    }
+  }
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin: 15px 0;
+  }
+
+  &__description {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    margin: 8px 0;
+    color: darken(#ffffff, 10%);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 8px;
+  }
+
+  &__action-item {
+    height: 32px;
+    width: 216px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    &.danger-color {
+      background-color: #eb4653;
+    }
+
+    &.success-color {
+      background-color: #0371e2;
+    }
+  }
+
+  &__action-label {
+    margin: 0 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

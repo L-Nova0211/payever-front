@@ -1,0 +1,287 @@
+.skeleton-container {
+    width: 100%;
+    .space {
+        padding: 18px;
+        width: 100%;
+        display: none;
+        @media(max-width: 720px) {
+            padding: 0;
+            height: 72px;
+            display: block;
+        }
+    }
+
+    &.dark {
+        @media(max-width: 720px) {
+            background-color: #24272E;
+        }
+        .space {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &.transparent-dark, &.transparent {
+        @media(max-width: 720px) {
+            background-color: rgba(36, 39, 46, 0.8);
+        }
+        .space {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &.light {
+        @media(max-width: 720px) {
+            background-color: #F3F2F8;
+        }
+        .space {
+            background-color: #FAFAFA;
+        }
+    }
+
+    .widget-item {
+        -webkit-backdrop-filter: blur(44.1856px);
+        backdrop-filter: blur(44.1856px);
+        background-color: #1C1D1E;
+        padding: 15px 18px;
+        margin-bottom: 18px;
+        border-radius: 20px;
+        width: 100%;
+        &.hide-mobile {
+            @media screen and (max-width: 720px) {
+                display: none;
+            }
+        }
+
+        .skeleton-item {
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.3);
+            animation-name: widgetSkeleton;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .box {
+            width: 128px;
+            height: 24px;
+            animation-duration: 4s;
+            @media screen and (max-width: 720px) {
+                width: 215px;
+                height: 27px;
+            }
+        }
+
+        .large-box {
+            width: 284px;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .small-box {
+            width: 100px;
+            height: 12px;
+            margin-top: 10px;
+        }
+
+        .skeleton_grid {
+            margin-top: 22px;
+            display: grid;
+            width: 100%;
+            grid-gap: 22px;
+            grid-template-columns: repeat(6, 1fr);
+            @media (max-width: 599px) {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            @media (max-width: 499px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            @media (max-width: 399px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .app-skeleton {
+            .icon-skeleton {
+                margin: auto;
+                width: 68px;
+                height: 68px;
+                margin-bottom: 6px;
+                animation: widgetSkeletonsmall 4s linear infinite;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 12px;
+            }
+            .title-skeleton {
+                margin: auto;
+                width: 68px;
+                height: 10px;
+                animation-duration: 8s;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .widget-mobile-grid {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 16px 43px 16px;
+        gap: 14px;
+        @media(max-width: 720px) {
+            display: grid;
+        }
+        .card-skeleton {
+            border-radius: 12px;
+            overflow: hidden;
+            // width: 184px;
+            height: 196px;
+            .skeleton-img {
+                width: 100%;
+                height: 104px;
+            }
+            .small-box {
+                width: 115px;
+                height: 10px;
+                margin: 9px 8px 0 8px;
+                border-radius: 3px;
+            }
+            .box {
+                width: calc(100% - 16px);
+                height: 20px;
+                margin: 6px 8px 0 8px;
+                border-radius: 5px;
+            }                                                           
+            .skeleton-footer {
+                width: calc(100% - 16px);
+                margin: 11px 8px 0 8px;
+                display: flex;
+                justify-content: space-between;
+                .skeleton-left-btns {
+                    width: 62px;
+                    height: 24px;
+                    border-radius: 1000px;
+                }
+                .skeleton-right-btns {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 1000px;
+                }
+            }
+        }
+    }
+
+    &.dark {
+        .widget-mobile-grid {
+            background: #24272E;
+            .card-skeleton {
+                background-color: #1C1D1E;
+                .skeleton-img {
+                    background: rgba(0, 0, 0, 0.3);
+                }
+                .small-box {
+                    background: rgba(0, 0, 0, 0.3);
+                }
+                .box {
+                    background: rgba(0, 0, 0, 0.3);
+                }                                                           
+                .skeleton-footer {
+                    .skeleton-left-btns {
+                        background: rgba(0, 0, 0, 0.3);
+                    }
+                    .skeleton-right-btns {
+                        background: rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
+    &.transparent, &.transparent-dark {
+        .widget-mobile-grid {
+            background: rgba(36, 39, 46, 0.8);
+            .card-skeleton {
+                background-color: rgba(28, 29, 30, 0.6);
+                .skeleton-img {
+                    background: rgba(0, 0, 0, 0.3);
+                }
+                .small-box {
+                    background: rgba(0, 0, 0, 0.3);
+                }
+                .box {
+                    background: rgba(0, 0, 0, 0.3);
+                }                                                           
+                .skeleton-footer {
+                    .skeleton-left-btns {
+                        background: rgba(0, 0, 0, 0.3);
+                    }
+                    .skeleton-right-btns {
+                        background: rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+        .widget-item {
+            -webkit-backdrop-filter: blur(75px);
+            backdrop-filter: blur(75px);
+            background-color: rgba(28, 29, 30, 0.6);
+            .skeleton-item {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            .app-skeleton {
+                .icon-skeleton {
+                    background-color: rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+    &.light {
+        .widget-mobile-grid {
+            background: #F3F2F8;
+            .card-skeleton {
+                background-color: #FFFFFF;
+                .skeleton-img {
+                    background: #DFDFDF;
+                }
+                .small-box {
+                    background: #DFDFDF;
+                }
+                .box {
+                    background: #DFDFDF;
+                }                                                           
+                .skeleton-footer {
+                    .skeleton-left-btns {
+                        background: #DFDFDF;
+                    }
+                    .skeleton-right-btns {
+                        background: #DFDFDF;
+                    }
+                }
+            }
+        }
+        .widget-item {
+            -webkit-backdrop-filter: blur(75px);
+            backdrop-filter: blur(75px);
+            background-color: rgba(255, 255, 255, 0.5);
+            .skeleton-item {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+            .app-skeleton {
+                .icon-skeleton {
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+}
+
+@keyframes widgetSkeleton {
+    0% {
+        background-position: -190px 0;
+    }
+    100% {
+        background-position: 190px 0;
+    }
+}
+
+@keyframes widgetSkeletonsmall {
+    0% {
+        background-position: 50%% 0%;
+    }
+}

@@ -1,0 +1,7 @@
+.pe-bootstrap {
+  .container .jumbotron,
+  .container-fluid .jumbotron {
+    padding-right: $pe_hgrid_gutter/2;
+    padding-left: $pe_hgrid_gutter/2;
+  }
+}

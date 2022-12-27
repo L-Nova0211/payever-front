@@ -1,0 +1,13 @@
+<div
+  [class.textbox-container-wrapper]="appearance !== 'label'"
+  [class.textbox-label-container-wrapper]="appearance === 'label'"
+>
+  <span
+    *ngIf="appearance === 'label'"
+    class="label-text"
+    [class.is-invalid]="isFieldInvalid"
+  >
+    {{ isFieldInvalid ? errorMessage : label }}
+  </span>
+  <ng-content></ng-content>
+</div>

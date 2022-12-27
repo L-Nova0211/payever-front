@@ -1,0 +1,41 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.form-margins {
+  margin-bottom: 16px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    peb-messages {
+      margin-top: 4px;
+    }
+  }
+}
+
+.cdk-overlay-pane {
+  margin-top: 0;
+}
+
+.select-options {
+  span {
+    font-size: 12px;
+  }
+}
+
+.prefix {
+  font-size: 14px;
+}

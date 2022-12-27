@@ -1,0 +1,9 @@
+<div [ngClass]="widgetTheme">
+      <div class="coupon_code">
+        {{ widget.data[0].title }}
+      </div>
+      <span *ngIf="widget.data[0].subtitle" class ="description_col">{{ widget.data[0].subtitle }} OFF</span>
+      <div *ngIf="!widget.data?.length">
+        {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+      </div>
+</div>

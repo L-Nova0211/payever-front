@@ -1,0 +1,94 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+
+.active {
+  background-color: #0371e2;
+}
+
+.locale-switcher-link {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 7px;
+  display: flex;
+  padding:4px 9px ;
+  margin-bottom: 6px;
+  font-weight: 500;
+
+  &:not(.active):hover {
+    background-color:rgba(56, 59, 66, 1);
+  }
+
+  .lang-icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+  }
+}
+
+::ng-deep .locales-switcher-menu .mat-menu-content {
+  padding: 16px 8px 21px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(36, 39, 46, 1);
+  width: 191px;
+  .header{
+    font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin: 0 8px 10px;
+  }
+}
+
+.locales-switcher-button{
+  appearance: none;
+  border: 0;
+  outline: 0;
+
+  @media (max-width: 520px) {
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.33;
+    color: #7a7a7a;
+    margin: 0 auto;
+
+    .name {
+      align-items: center;
+      display: flex;
+
+      svg {
+        margin-left: 4px;
+      }
+    }
+
+    .code {
+      display: none;
+    }
+  }
+
+  @media (min-width: 521px) {
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    color: white;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    font-weight: 500;
+    background-color: rgba(36, 39, 46, 0.85);
+    
+    &:hover{
+      background-color: rgba(56, 59, 66, 0.85);
+    }
+
+    .name {
+      display: none;
+    }
+  }
+
+}
+

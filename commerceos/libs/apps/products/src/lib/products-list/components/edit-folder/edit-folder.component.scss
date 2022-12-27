@@ -1,0 +1,11 @@
+.container {
+  margin-top: 16px;
+}
+
+peb-form-background {
+  display: block;
+
+  & + peb-form-background {
+    margin-top: 12px;
+  }
+}

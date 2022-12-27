@@ -1,0 +1,25 @@
+:host {
+  position: relative;
+  pointer-events: none;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 9999999;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.guidelines {
+  position: absolute;
+  width: -webkit-fill-available;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+
+  path, polyline {
+    fill: none;
+    stroke: #eeca00;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+}

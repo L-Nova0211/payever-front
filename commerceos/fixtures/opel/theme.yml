@@ -1,0 +1,30 @@
+name: Opel
+
+data:
+  productPages: /products/:productId
+  categoryPages: /category/:categoryId
+
+routing:
+  - routeId: 'shop-tesla-page-route'
+    url: /
+    pageId: shop-tesla-page
+  - routeId: find-us-tesla-page-route
+    url: /find-us
+    pageId: find-us-tesla-page
+  - routeId: privacy-page-route
+    url: /privacy
+    pageId: privacy-page
+
+context:
+  '#logo':
+    service: company
+    method: getLogo
+    params: []
+    usedBy: []
+
+pages:
+  - shop
+  - find-us
+  - privacy
+  - product
+  - category

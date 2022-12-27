@@ -1,0 +1,21 @@
+<peb-autocomplete-styles></peb-autocomplete-styles>
+
+<div class="autocomplete__wrapper">
+  <div class="autocomplete__value">
+    <div class="prefix" *ngIf="prefix">{{ prefix }}</div>
+    <input #input [formControl]="control" [placeholder]="placeholder" (keyup.enter)="onEnter()" [style.text-align]="textAlign" [matAutocomplete]="auto"/>
+    <div class="suffix" *ngIf="suffix">{{ suffix }}</div>
+  </div>
+
+  <mat-autocomplete #auto="matAutocomplete" class="autocomplete__options scrollbar" (optionSelected)="pushOption($event)">
+    <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option.value">
+      {{ option.name }}
+    </mat-option>
+  </mat-autocomplete>
+</div>
+
+<div class="autocomplete__selected">
+  <div class="autocomplete__selected-option" *ngFor="let selected of selectedOptions$ | async">
+    <span>{{ selected.name }}</span><mat-icon svgIcon="button-close" (click)="removeOption(selected)"></mat-icon>
+  </div>
+</div>

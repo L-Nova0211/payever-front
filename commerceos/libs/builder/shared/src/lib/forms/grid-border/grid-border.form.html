@@ -1,0 +1,39 @@
+<form class="form" [formGroup]="formGroup">
+  <div class="group">
+    <div class="group__row">
+      <label class="group__label">
+        Borders
+      </label>
+    </div>
+    <div class="group__row">
+      <div class="cell-border__grid">
+        <peb-button-toggle *ngFor="let option of options" [formControl]="formGroup.get('options.' + option)" [toggle]="true">
+          <mat-icon [svgIcon]="'grid-border-' + option"></mat-icon>
+        </peb-button-toggle>
+      </div>
+    </div>
+
+    <div class="group__row">
+      <label class="group__label">
+        Border color
+      </label>
+      <div class="peb-fill" (click)="showBorderColorForm()">
+        <div class="peb-fill__thumbnail" [ngStyle]="borderColor$ | async"></div>
+        <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+      </div>
+    </div>
+
+    <div class="group__row">
+      <label class="group__label">
+        Border width
+      </label>
+      <peb-number-input-spinbutton
+        class="sidebar__spinbutton"
+        formControlName="width"
+        [min]="1"
+        [max]="6"
+        units="px"
+      ></peb-number-input-spinbutton>
+    </div>
+  </div>
+</form>

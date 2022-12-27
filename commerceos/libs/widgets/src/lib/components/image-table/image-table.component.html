@@ -1,0 +1,21 @@
+<div [ngClass]="widgetTheme">
+  <ng-container *ngFor="let item of widget.data">
+     <ng-container *ngIf="!item.logo" >
+      <div class="flex-col" >
+        <span class="img style_div">
+          {{ item.title | abbreviation }}
+        </span>
+        <div class="text_item_div text_item">{{item?.title}}</div>
+    </div>
+    </ng-container>
+    <ng-container *ngIf="item.logo">
+      <div class="flex-col" >
+        <img [src]="item?.logo" alt=""  class="img">
+        <div class="text_item_div text_item">{{item?.title}}</div>
+    </div>
+    </ng-container>
+    <ng-container *ngIf="!widget.data?.length">
+      {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+    </ng-container>
+  </ng-container>  
+</div>

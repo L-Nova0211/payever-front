@@ -1,0 +1,69 @@
+<ng-container *ngIf="(editControl$|async); then optionsTemplate; else formTemplate">
+</ng-container>
+
+<ng-template #optionsTemplate>
+  <peb-languages-list [options]="options" (selected)="selectLanguage($event)"></peb-languages-list>
+</ng-template>
+
+<ng-template #formTemplate>
+  <form [formGroup]="languagesFormService.languageForm">
+    <div class="group">
+      <div
+        *ngFor="let item of languagesFormService.languageForm.get('languages').value"
+        (click)="languagesFormService.changeLanguageActive(item.language, !item.active)"
+        class="group__row active-language"
+      >
+        <div class="active-language__checkbox">
+          <span class="active-language__input">
+            <ng-container *ngIf="item.active; then checkedTpl; else uncheckedTpl"></ng-container>
+          </span>
+          <span class="active-language__label" style="text-transform: capitalize;">{{ item.language | titlecase}}</span>
+        </div>
+      </div>
+
+     <div class="form__row" *ngIf="(languagesFormService.languageForm.get('languages').value)?.length">
+        <span>Add new language</span>
+        <div class="form__content">
+          <div class="languages__button" (click)="pickLanguagesToAdd()">
+            <span>{{ 'Choose' }}</span>
+            <mat-icon class="icon" svgIcon="arrow-right" ></mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <span>Main language</span>
+        <div class="form__content">
+          <div class="languages__button" (click)="pickLanguages()">
+            <span>{{
+              languagesFormService.languageForm.get('defaultLanguage')?.value
+              ? (languagesFormService.languageForm.get('defaultLanguage')?.value | titlecase )
+              : 'Choose'
+            }}</span>
+            <mat-icon class="icon" svgIcon="arrow-right"></mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <span>Edit language</span>
+        <div class="form__content">
+          <div class="languages__button" (click)="editLanguage()">
+            <span>{{
+              PebLanguagesData[(languagesFormService.locale$|async)]?.name | titlecase
+            }}</span>
+            <mat-icon class="icon" svgIcon="arrow-right"></mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+</ng-template>
+
+<ng-template #checkedTpl>
+  <mat-icon class="icon" svgIcon="checked"></mat-icon>
+</ng-template>
+
+<ng-template #uncheckedTpl>
+  <mat-icon class="icon" svgIcon="unchecked"></mat-icon>
+</ng-template>

@@ -1,0 +1,62 @@
+<form 
+  novalidate   
+  *ngIf="form && ((fieldset && fieldset.length) || nestedElements)"
+  [formGroup]="form"
+  (onSubmit)="onSubmit($event)"
+  class="form-table form-table-no-margin info-box-generator-form"
+>
+  <pe-form-fieldset 
+    class="transparent info-box-generator-form__fieldset"
+    [isSubmitted]="isSubmitted"
+    [fields]="fieldset"
+    [formGroup]="form"
+    [formStyle]="'transparent'"
+  ></pe-form-fieldset>
+
+  <ng-container *ngIf="nestedElements">
+    <mat-accordion #subAccordion *ngIf="nestedElements?.accordion">
+      <ng-container *ngFor="let item of nestedElements?.accordion; let i = index">
+        <mat-expansion-panel hideToggle #subPanel [ngClass]="['mat-expansion-panel-dark', 'mat-expansion-panel--nested']">
+          <mat-expansion-panel-header collapsedHeight="40px"
+                                      expandedHeight="40px">
+            <mat-panel-title>
+              {{ item.title }}
+            </mat-panel-title>
+            <div class="mat-expansion-panel-spacer"></div>
+            <svg class="icon icon-16 icon-plus">
+              <use xlink:href="#icon-plus-softy-16"></use>
+            </svg>
+            <svg class="icon icon-16 icon-minus">
+              <use xlink:href="#icon-minus-softy-16"></use>
+            </svg>
+          </mat-expansion-panel-header>
+          <mat-list class="mat-list-transparent">
+            <ng-container>
+              <mat-list-item class="mat-list-item-no-padding">
+                <pe-form-fieldset class="transparent info-box-generator-form__fieldset"
+                                  [isSubmitted]="isSubmitted"
+                                  [fields]="item.fieldset"
+                                  [formGroup]="form"
+                                  [formStyle]="'transparent'"
+                ></pe-form-fieldset>
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </ng-container>
+
+  <button *ngIf="action"
+          mat-raised-button
+          class="mat-button-block info-box-generator-form__button"
+          type="submit"
+  >
+    <pe-progress-button-content [loading]="loading"
+                                [spinnerDiameter]="26"
+                                [spinnerStrokeWidth]="2"
+    >
+      {{ action.text }}
+    </pe-progress-button-content>
+  </button>
+</form>

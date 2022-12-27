@@ -1,0 +1,18 @@
+<div
+  class="builder-container"
+  [class.dashboard-container]="isDashboardRoute"
+  [class.below-welcome-stepper]="peSimpleStepperService.isVisible$ | async">
+  <div class="dashboard-content dashboard-scroll-wrapper data-grid-scroll-container products-app-content"
+    [class.b-dark]="this.theme === PeThemeEnum.DARK || this.theme === 'default'"
+    [class.b-light]="this.theme === PeThemeEnum.LIGHT"
+    [class.b-transparent]="this.theme === PeThemeEnum.TRANSPARENT">
+    <pe-new-platform-header *ngIf="!(peSimpleStepperService.isVisible$ | async)" id="products-header" class="products-header"
+      [class.b-dark]="this.theme === PeThemeEnum.DARK || this.theme === 'default'"
+      [class.b-light]="this.theme === PeThemeEnum.LIGHT"
+      [class.b-transparent]="this.theme === PeThemeEnum.TRANSPARENT"
+      [isLoading]="isGlobalLoading"
+    >
+    </pe-new-platform-header>
+    <router-outlet></router-outlet>
+  </div>
+</div>

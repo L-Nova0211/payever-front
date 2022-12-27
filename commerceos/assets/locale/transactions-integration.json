@@ -1,0 +1,278 @@
+{
+  "integrations": {
+    "communications": {
+      "twilio": {
+        "title": "Twilio"
+      },
+      "qr": {
+        "title": "QR"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "device-payments": {
+        "title": "Device Payments"
+      },
+      "instagram-posts": {
+        "title": "Instagram Posts"
+      },
+      "linkedin-social": {
+        "title": "Linkedin Social"
+      },
+      "youtube-social": {
+        "title": "Youtube Social"
+      },
+      "twitter-social": {
+        "title": "Twitter Social"
+      },
+      "facebook-posts": {
+        "title": "Facebook Posts"
+      }
+    },
+    "messaging": {
+      "facebook-messenger": {
+        "title": "Facebook Messenger"
+      },
+      "instagram-messenger": {
+        "title": "Facebook Messenger"
+      },
+      "instagram_messenger": {
+        "title": "Facebook Messenger"
+      },
+      "whatsapp": {
+        "title": "WhatsApp"
+      },
+      "telegram": {
+        "title": "Telegram"
+      },
+      "live_chat": {
+        "title": "Live chat"
+      }
+    },
+    "shipping": {
+      "dhl": {
+        "title": "DHL"
+      },
+      "hermes": {
+        "title": "Hermes"
+      },
+      "ups": {
+        "title": "Ups"
+      }
+    },
+    "shopsystems": {
+      "presta": {
+        "title": "PrestaShop"
+      },
+      "shopware": {
+        "title": "Shopware"
+      },
+      "jtl": {
+        "title": "JTL"
+      },
+      "oxid": {
+        "title": "OXID"
+      },
+      "xt_commerce": {
+        "title": "xt:Commerce"
+      },
+      "shopify": {
+        "title": "Shopify"
+      },
+      "dandomain": {
+        "title": "DanDomain"
+      },
+      "plentymarkets": {
+        "title": "Plentymarkets"
+      },
+      "api": {
+        "title": "API"
+      },
+      "magento": {
+        "title": "Magento"
+      },
+      "woo_commerce": {
+        "title": "WooCommerce"
+      },
+      "commercetools": {
+        "title": "Commercetools"
+      },
+      "shop": {
+        "title": "Shop"
+      },
+      "link": {
+        "title": "Link"
+      }
+    },
+    "payments": {
+      "title": "Payments",
+      "pos": {
+        "title": "POS"
+      },
+      "invoice": {
+        "title": "Invoice"
+      },
+      "groups": {
+        "santander": "Santander",
+        "payex": "PayEx",
+        "stripe": "Stripe"
+      },
+      "paymill_creditcard": {
+        "title": "PayMill Credit Card"
+      },
+      "paymill_directdebit": {
+        "title": "PayMill Direct Debit"
+      },
+      "paypal": {
+        "title": "PayPal"
+      },
+      "stripe": {
+        "title": "Stripe Credit Card"
+      },
+      "swedbank_invoice": {
+        "title": "Swedbank Invoice"
+      },
+      "swedbank_creditcard": {
+        "title": "Swedbank CreditCard"
+      },
+      "openbank": {
+        "title": "OpenBank"
+      },
+      "stripe_directdebit": {
+        "title": "Stripe Direct Debit"
+      },
+      "sofort": {
+        "title": "Sofortüberweisung"
+      },
+      "santander_installment": {
+        "title": "Santander Installment"
+      },
+      "santander_installment_at": {
+        "title": "Santander Installment AT"
+      },
+      "santander_installment_uk": {
+        "title": "Santander Installment UK"
+      },
+      "santander_factoring_de": {
+        "title": "Santander installment factoring"
+      },
+      "santander_pos_factoring_de": {
+        "title": "Santander installment factoring POS"
+      },
+      "santander_ccp_installment": {
+        "title": "Santander Comfort Card Plus"
+      },
+      "santander_invoice_de": {
+        "title": "Santander Invoice"
+      },
+      "santander_pos_invoice_de": {
+        "title": "Santander Invoice POS"
+      },
+      "santander_pos_invoice_no": {
+        "title": "Santander Invoice POS NO"
+      },
+      "santander_pos_installment": {
+        "title": "Santander Installment POS"
+      },
+      "santander_pos_installment_dk": {
+        "title": "Santander Installment POS DK"
+      },
+      "santander_pos_installment_no": {
+        "title": "Santander Installment POS NO"
+      },
+      "santander_pos_installment_uk": {
+        "title": "Santander Installment POS UK"
+      },
+      "cash": {
+        "title": "Wire transfer"
+      },
+      "santander_installment_dk": {
+        "title": "Santander installment DK"
+      },
+      "santander_installment_no": {
+        "title": "Santander Installment / BuyNowPayLater"
+      },
+      "santander_installment_nl": {
+        "title": "Santander Installment NL"
+      },
+      "santander_installment_se": {
+        "title": "Santander Installment SE"
+      },
+      "payex_faktura": {
+        "title": "PayEx Invoice / Faktura"
+      },
+      "payex_creditcard": {
+        "title": "PayEx Credit Card"
+      },
+      "subscriptions": {
+        "title": "Subscriptions"
+      },
+      "santander_pos_installment_se": {
+        "title": "Santander Installment POS"
+      },
+      "santander_invoice_no": {
+        "title": "Santander Invoice"
+      },
+      "apple_pay": {
+        "title": "Apple Pay"
+      },
+      "google_pay": {
+        "title": "Google Pay"
+      },
+      "google_wallet": {
+        "title": "Google Wallet"
+      },
+      "instant_payment": {
+        "title": "Instant Payment"
+      }
+    },
+    "products": {
+      "ebay": {
+        "title": "eBay"
+      },
+      "google_shopping": {
+        "title": "Google Shopping"
+      },
+      "amazon": {
+        "title": "Amazon",
+        "description": "Amazon products"
+      },
+      "external-inventory": {
+        "title": "API"
+      },
+      "mobilede": {
+        "title": "MobileDe"
+      },
+      "autoscout": {
+        "title": "Autoscout"
+      },
+      "autoscout24": {
+        "title": "Autoscout24"
+      },
+      "facebook": {
+        "title": "Facebook"
+      },
+      "facebook-posts": {
+        "title": "Facebook Posts"
+      },
+      "instagram-posts": {
+        "title": "Instagram Posts"
+      },
+      "instagram": {
+        "title": "Instagram"
+      },
+      "twitter": {
+        "title": "Twitter"
+      },
+      "youtube": {
+        "title": "Youtube"
+      },
+      "linkedin": {
+        "title": "Linkedin"
+      },
+      "pos": {
+        "title": "POS"
+      }
+    }
+  }
+}

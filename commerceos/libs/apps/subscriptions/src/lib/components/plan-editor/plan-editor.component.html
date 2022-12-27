@@ -1,0 +1,192 @@
+<form
+  [class.form__loading]="loading"
+  [formGroup]="subscriptionPlanForm" 
+  [ngClass]="theme"
+>
+  <!-- PLAN NAME START -->
+  <div style="padding: 0 12px 16px">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="'subscriptions-app.plan_editor.errors.plan_title' | translate"
+        [isFieldInvalid]="subscriptionPlanForm.controls.name.invalid"
+        [label]="'subscriptions-app.plan_editor.title_field.label' | translate"
+      >
+        <input
+          formControlName="name"
+          [placeholder]="'subscriptions-app.plan_editor.title_field.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </div>
+  <!-- PLAN NAME END -->
+
+  <!-- PRODUCTS START -->
+  <peb-expandable-panel
+    [headerLabel]="'subscriptions-app.plan_editor.products.label' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-select
+        formControlName="appliesTo"
+        [label]="'subscriptions-app.plan_editor.applies_to.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of appliesTo"
+          [label]="('subscriptions-app.plan_editor.applies_to.' + option.label) | translate"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+      <ng-container [ngSwitch]="subscriptionPlanForm.controls.appliesTo.value">
+        <ng-template
+          *ngSwitchCase="planAppliesTo.SpecificProducts"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Products,
+            control: subscriptionPlanForm.controls.products
+          }"
+        ></ng-template>
+        <ng-template
+          *ngSwitchCase="planAppliesTo.SpecificCategories"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Categories,
+            control: subscriptionPlanForm.controls.categories
+          }"
+        ></ng-template>
+      </ng-container>
+    </peb-form-background>
+  </peb-expandable-panel>
+  <!-- PRODUCTS END -->
+
+  <!-- SUBSCRIBERS START -->
+  <peb-expandable-panel
+    [headerLabel]="'subscriptions-app.plan_editor.subscribers.label' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-select
+        formControlName="subscribersEligibility"
+        [label]="'subscriptions-app.plan_editor.eligibility.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of subscribersEligibility"
+          [label]="('subscriptions-app.plan_editor.eligibility.' + option.label) | translate"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+      <ng-container [ngSwitch]="subscriptionPlanForm.controls.subscribersEligibility.value">
+        <ng-template
+          *ngSwitchCase="planEligibility.SpecificSubscribers"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.Subscribers,
+            control: subscriptionPlanForm.controls.subscribers
+          }"
+        ></ng-template>
+        <ng-template
+          *ngSwitchCase="planEligibility.SpecificGroupsOfSubscribers"
+          [ngTemplateOutlet]="searchItems"
+          [ngTemplateOutletContext]="{
+            arrayName: arrayNames.GroupsOfSubscribers,
+            control: subscriptionPlanForm.controls.groups
+          }"
+        ></ng-template>
+      </ng-container>
+    </peb-form-background>
+  </peb-expandable-panel>
+  <!-- SUBSCRIBERS END -->
+
+  <!-- PAYMENTS START -->
+  <peb-expandable-panel
+    [headerLabel]="'subscriptions-app.plan_editor.payments.label' | translate"
+    [isContentOpen]="true"
+  >
+    <pe-list-section
+      [actionButtonType]="toggleButtonType"
+      [category]="paymentsCategory"
+      [integrations]="subscribedChannelSets$ | async"
+      [isInForm]="true"
+      [listType]="integrationList"
+      [upperCase]="false"
+      (switched)="switchChannel($event)"
+    ></pe-list-section>
+    <peb-messages
+      *ngIf="!(subscribedChannelSets$ | async).length"
+      [color]="'warning'"
+      [message]="'No connected payment options' | translate"
+      [showIcon]="true"
+    ></peb-messages>
+  </peb-expandable-panel>
+  <!-- PAYMENTS END -->
+
+  <!-- BILLING START -->
+  <peb-expandable-panel
+    [headerLabel]="'subscriptions-app.plan_editor.billing.label' | translate"
+    [isContentOpen]="true"
+  >
+    <!-- TRIAL PERIOD START -->
+    <peb-form-background>
+      <peb-checkbox
+        formControlName="trialPeriod"
+        type="label"
+      >{{ 'subscriptions-app.plan_editor.billing.trial_period.label' | translate }}</peb-checkbox>
+      <peb-form-field-input
+        *ngIf="subscriptionPlanForm.controls.trialPeriod.value"
+        appearance="label"
+        [errorMessage]="'subscriptions-app.plan_editor.errors.trial_period' | translate"
+        [isFieldInvalid]="subscriptionPlanForm.controls.trialPeriodDuration.invalid"
+        [label]="'subscriptions-app.plan_editor.billing.trial_period.duration' | translate"
+      >
+        <input
+          formControlName="trialPeriodDuration"
+          [placeholder]="'subscriptions-app.plan_editor.billing.trial_period.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <!-- TRIAL PERIOD END -->
+
+    <!-- BILLING INTERVAL START -->
+    <div [style.margin-top.px]="16"></div>
+    <peb-form-background>
+      <peb-select
+        formControlName="billingInterval"
+        [label]="'subscriptions-app.plan_editor.billing.label' | translate"
+        selectType="label"
+      >
+        <peb-select-option
+          *ngFor="let option of intervalOptions"
+          [label]="('subscriptions-app.plan_editor.billing.periods.' + option.label) | translate"
+          [value]="option.value"
+        ></peb-select-option>
+      </peb-select>
+    </peb-form-background>
+    <!-- BILLING INTERVAL END -->
+  </peb-expandable-panel>
+  <!-- BILLING END -->
+</form>
+
+<ng-template #searchItems
+  let-arrayName="arrayName"
+  let-control="control"
+>
+  <pe-search
+    [errorMessage]="('subscriptions-app.plan_editor.' + arrayName + '.error')| translate"
+    (filterChanged)="setFilter($event, arrayName)"
+    [isFieldInvalid]="control.invalid"
+    [items]="filteredItems(control) | async"
+    [label]="('subscriptions-app.plan_editor.' + arrayName + '.label') | translate"
+    [placeholder]="('subscriptions-app.plan_editor.' + arrayName + '.placeholder') | translate"
+    (selected)="addToArray($event, control)"
+  ></pe-search>
+  <pe-search-list>
+    <pe-search-list-item
+      *ngFor="let item of control.value; let i = index; trackBy: trackItem"
+      [image]="item?.image"
+      [removeButtonLabel]="'subscriptions-app.actions.remove'"
+      (remove)="removeFromArray(control, i)"
+    >{{ item.title }}</pe-search-list-item>
+  </pe-search-list>
+</ng-template>

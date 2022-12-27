@@ -1,0 +1,77 @@
+.pricing {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-column-gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__row {
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
+
+    &__inputs {
+      display: grid;
+      grid-gap: 1px;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      margin-bottom: 1px;
+    }
+
+    &__autocomplete {
+      overflow: hidden;
+      margin-top: 1px;
+    }
+
+    .form-field {
+      div {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.main-form-field-input {
+  .suffix {
+    min-width: auto;
+  }
+}
+
+.remove,
+.add {
+  border-radius: 12px;
+  font-size: 12px;
+  height: 40px;
+  outline: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.remove {
+  color: #eb4653 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .mat-icon {
+    width: 16px;
+    height: 18px;
+  }
+}
+
+.label-input-content-wrapper .label-container .label-text {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.body-messages {
+  margin-bottom: 8px;
+
+  peb-messages{
+    display: block;
+    margin-top: 3px;
+  }
+}

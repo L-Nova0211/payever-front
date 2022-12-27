@@ -1,0 +1,30 @@
+element:
+  id: gb-doc-1
+  type: document
+  children:
+    - id: gd-section-1
+      type: section
+      children: []
+    - id: gd-section-2
+      type: section
+      children:
+        - id: gd-section-2-wrapper
+          type: block
+    - id: gd-section-3
+      type: section
+      children: []
+stylesheet:
+  all:
+    gd-section-1:
+      backgroundColor: '#abc'
+      height: 50
+    gd-section-2:
+      backgroundColor: '#bcd'
+      height: 100
+    gd-section-2-wrapper:
+      backgroundColor: '#def'
+      height: 100
+    gd-section-3:
+      backgroundColor: '#abc'
+      height: 50
+context: {}

@@ -1,0 +1,38 @@
+<div class="header">
+  <button (click)="cancel()" class="cancel">Cancel</button>
+  <span>Language</span>
+  <button (click)="done()" class="done">Done</button>
+  <svg (click)="done()" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+      <g fill="#636363">
+        <path d="M11.7 0c6.462 0 11.7 5.238 11.7 11.7 0 6.462-5.238 11.7-11.7 11.7C5.238 23.4 0 18.162 0 11.7 0 5.238 5.238 0 11.7 0zm5.163 6.537c-.39-.39-.999-.425-1.428-.106l-.123.106-3.612 3.612-3.612-3.612-.123-.106c-.43-.319-1.039-.284-1.428.106-.428.428-.428 1.123 0 1.551l3.612 3.612-3.612 3.612-.085.096c-.341.43-.313 1.057.085 1.455.39.39.999.425 1.428.106l.123-.106 3.612-3.612 3.612 3.612.123.106c.43.319 1.039.284 1.428-.106.428-.428.428-1.123 0-1.551L13.251 11.7l3.612-3.612.085-.096c.341-.43.313-1.057-.085-1.455z" transform="translate(-368 -56) translate(368 56)"/>
+      </g>
+    </g>
+  </svg>
+</div>
+<div class="body">
+  <ul>
+    <li
+      *ngFor="let locale of data.locales"
+      [class.active]="locale.code === data.currentLocale.code"
+      (click)="data.currentLocale = locale"
+    >
+      <div class="item-wrapper" (click)="done(locale)">
+        <span>{{ locale.name }}</span>
+        <div class="arrow">
+          <svg height="20" width="10">
+            <use xlink:href="#icon-ui-arrow-open"></use>
+          </svg>
+        </div>
+        <div class="checkbox">
+          <svg class="box" height="16" width="16">
+            <use xlink:href="#icon-ui-checkbox"></use>
+          </svg>
+          <svg class="check" height="6" width="8">
+            <use xlink:href="#icon-ui-check"></use>
+          </svg>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,125 @@
+.pe-list-section {
+  &__item,
+  &__item-title,
+  &__item-button,
+  &__add-button {
+    font-size: 16px;
+  }
+
+  &__item-description {
+    display: none;
+    font-size: 12px;
+    margin-right: 12px;
+
+    &.show-description {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__item-right-block {
+    display: flex;
+  }
+
+  &__group-header {
+    display: block;
+    font-size: 11px;
+    height: 20px;
+    margin-bottom: 6px;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    height: 44px;
+    padding-left: 12px;
+    position: relative;
+    justify-content: space-between;
+
+    &.show-navigate-button {
+      padding-right: 12px;
+    }
+
+    &.hover {
+      cursor: pointer;
+    }
+
+    &.hover:hover,
+    &.selected {
+      .pe-list-section__item-description {
+        display: block;
+      }
+    }
+  }
+
+  &__click-area {
+    position: absolute;
+  }
+
+  &__item-label {
+    display: flex;
+  }
+
+  &__item-image {
+    align-items: center;
+    display: flex;
+  }
+  &__item-abbreviation,
+  &__item-icon {
+    border-radius: 5px;
+    height: 24px;
+    margin-right: 12px;
+    min-width: 24px;
+    width: 24px;
+  }
+
+  &__item-abbreviation {
+    align-items: center;
+    background-color: #86868B;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  &__item-title {
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+
+  &__item-button,
+  &__add-button {
+    cursor: pointer;
+    align-self: center;
+    font-weight: 400;
+  }
+
+  &__add-button {
+    border: 0;
+    height: 40px;
+    width: 100%;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__item-arrow-right {
+    width: 8px;
+  }
+
+  &__click-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.form {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.maxheight {
+  overflow-x: hidden;
+}

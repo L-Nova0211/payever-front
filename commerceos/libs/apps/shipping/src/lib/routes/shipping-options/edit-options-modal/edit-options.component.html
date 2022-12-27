@@ -1,0 +1,199 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="shippingForm">
+  <peb-expandable-panel isContentOpen="true" [headerLabel]="'shipping-app.forms.zone_dialog.headers.zone' | translate">
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-form-field-input
+          [label]="'shipping-app.forms.zone_dialog.name.label' | translate"
+          appearance="label"
+          [isFieldInvalid]="shippingForm.get('name').invalid"
+          [errorMessage]="'shipping-app.forms.zone_dialog.errors.zone' | translate"
+        >
+          <input pebInput [placeholder]="'shipping-app.forms.zone_dialog.name.placeholder' | translate" formControlName="name" />
+        </peb-form-field-input>
+      </peb-form-background>
+    </div>
+
+    <div class="form-margins">
+      <peb-form-background>
+        <peb-country-picker class="country-picker"
+                            #countryPicker
+                            placeholder="Select countries"
+                            [externalCountries]="countriesAutocomplete"
+                            (removed)="removeCountry($event);"
+                            (changed)="changeCountry($event);"
+                            [isFieldInvalid]="shippingForm.get('countries').invalid"
+                            [errorMessage]="'shipping-app.forms.zone_dialog.errors.countries' | translate"
+                            formControlName="countries">
+        </peb-country-picker>
+      </peb-form-background>
+    </div>
+  </peb-expandable-panel>
+
+  <peb-expandable-panel isContentOpen="true" [headerLabel]="'shipping-app.forms.zone_dialog.headers.rate' | translate">
+    <ng-container *ngFor="let rate of rates.controls; index as i">
+      <div class="form-margins" [formGroup]="rates.controls[i]">
+        <peb-form-background>
+          <peb-select selectType="label" [label]="'shipping-app.forms.zone_dialog.type.label' | translate" formControlName="rateType">
+            <peb-select-option class="select-options" *ngFor="let item of rateTypes" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+          </peb-select>
+          <ng-container *ngIf="rate.get('rateType').value === rateTypeEnum.CUSTOM">
+            <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.rate_name.label' | translate" appearance="label">
+              <input
+                pebInput
+                [placeholder]="'shipping-app.forms.zone_dialog.rate_name.placeholder' | translate"
+                formControlName="name"
+              />
+            </peb-form-field-input>
+            <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.rate_price.label' | translate" appearance="label">
+              <input
+                type="number"
+                pebInput
+                [placeholder]="'shipping-app.forms.zone_dialog.rate_price.placeholder' | translate"
+                formControlName="ratePrice"
+                (keypress)="numeric.transform($event)"
+              />
+              <div class="suffix">
+                <p>{{ currencyName }} {{ (currency) }}</p>
+              </div>
+            </peb-form-field-input>
+            <peb-select
+              selectType="label"
+              [label]="'shipping-app.forms.zone_dialog.conditions.label' | translate"
+              formControlName="conditions"
+              (changed)="conditionsChange($event, rate)"
+            >
+              <peb-select-option
+                class="select-options"
+                *ngFor="let condition of conditions"
+                [value]="condition.value"
+                [label]="condition.label"
+              ></peb-select-option>
+            </peb-select>
+            <ng-container *ngIf="rate.get('conditions').value === conditionsEnum.ITEM_WEIGHT">
+              <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.min_weight.label' | translate" appearance="label">
+                <input
+                  pebInput
+                  type="number"
+                  min="0"
+                  [placeholder]="'shipping-app.forms.zone_dialog.min_weight.placeholder' | translate"
+                  formControlName="minWeight"
+                  (keypress)="numeric.transform($event)"
+                />
+                <div class="suffix">
+                  <p>Kilograms (kg)</p>
+                </div>
+              </peb-form-field-input>
+              <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.max_weight.label' | translate" appearance="label">
+                <input
+                  pebInput
+                  type="number"
+                  min="0"
+                  [placeholder]="'shipping-app.forms.zone_dialog.max_weight.placeholder' | translate"
+                  formControlName="maxWeight"
+                  (keypress)="numeric.transform($event)"
+                />
+                <div class="suffix">
+                  <p>Kilograms (kg)</p>
+                </div>
+              </peb-form-field-input>
+            </ng-container>
+            <ng-container *ngIf="rate.get('conditions').value === conditionsEnum.ORDER_PRICE">
+              <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.min_price.label' | translate" appearance="label">
+                <input
+                  pebInput
+                  type="number"
+                  min="0"
+                  [placeholder]="'shipping-app.forms.zone_dialog.min_price.placeholder' | translate"
+                  formControlName="minPrice"
+                  (keypress)="numeric.transform($event)"
+                />
+                <div class="suffix">
+                  <p>{{ currencyName }} {{ (currency) }}</p>
+                </div>
+              </peb-form-field-input>
+              <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.max_price.label' | translate" appearance="label">
+                <input
+                  type="number"
+                  min="0"
+                  pebInput
+                  [placeholder]="'shipping-app.forms.zone_dialog.max_price.placeholder' | translate"
+                  formControlName="maxPrice"
+                  (keypress)="numeric.transform($event)"
+                />
+                <div class="suffix">
+                  <p>{{ currencyName }} {{ (currency) }}</p>
+                </div>
+              </peb-form-field-input>
+            </ng-container>
+
+            <peb-select
+              selectType="label"
+              [label]="'shipping-app.forms.zone_dialog.shipping_speed.label' | translate"
+              formControlName="shippingSpeed"
+            >
+              <peb-select-option class="select-options" *ngFor="let item of shippingSpeed" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+            </peb-select>
+          </ng-container>
+          <ng-container *ngIf="rate.get('rateType').value === rateTypeEnum.CARRIER">
+            <peb-select selectType="label" [label]="'shipping-app.forms.zone_dialog.type.label' | translate" (changed)="carrierTypeChanged($event)" formControlName="carrier">
+              <peb-select-option class="select-options" *ngFor="let item of carriers" value="{{ item.value }}" label="{{ item.label }}"></peb-select-option>
+            </peb-select>
+            <peb-checkbox type="label" formControlName="autoShow">
+              {{ 'shipping-app.forms.zone_dialog.autoShow' | translate }}
+            </peb-checkbox>
+            <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.fee_percantage.label' | translate" appearance="label">
+              <input
+                type="number"
+                pebInput
+                [placeholder]="'shipping-app.forms.zone_dialog.fee_percantage.placeholder' | translate"
+                formControlName="handleFeePercent"
+              />
+              <div class="suffix">
+                <p>Percent (%)</p>
+              </div>
+            </peb-form-field-input>
+            <peb-form-field-input [label]="'shipping-app.forms.zone_dialog.fee_flat.label' | translate" appearance="label">
+              <input
+                type="number"
+                pebInput
+                [placeholder]="'shipping-app.forms.zone_dialog.fee_flat.placeholder' | translate"
+                formControlName="handleFeeFlat"
+              />
+              <div class="suffix">
+                <p>{{ currencyName }} {{ (currency) }}</p>
+              </div>
+            </peb-form-field-input>
+          </ng-container>
+        </peb-form-background>
+        <div class="form-disclamer" *ngIf="rate.get('rateType').value === rateTypeEnum.CARRIER">
+          <span>{{ 'shipping-app.forms.zone_dialog.disclamer' | translate }}</span>
+        </div>
+
+        <div class="remove-button" *ngIf="i > 0">
+          <button peb-button class="remove-rate-button" (click)="removeRate(i)">
+            {{ 'shipping-app.forms.zone_dialog.remove_rate' | translate }}
+          </button>
+        </div>
+
+        <div class="form-margins__error">
+          <peb-messages
+            *ngIf="rate.get('minWeight')?.errors && !rate.get('minWeight')?.hasError('required')"
+            [message]="'shipping-app.forms.zone_dialog.errors.max_weight' | translate"
+          ></peb-messages>
+          <peb-messages
+            *ngIf="rate.get('minPrice')?.errors && !rate.get('minPrice')?.hasError('required')"
+            [message]="'shipping-app.forms.zone_dialog.errors.max_price' | translate"
+          ></peb-messages>
+          <peb-messages
+            *ngIf="rate?.invalid &&
+            !rate.get('minWeight')?.hasError('max') && !rate.get('minPrice')?.hasError('max')"
+            [message]="'shipping-app.forms.zone_dialog.errors.rates' | translate"
+          ></peb-messages>
+        </div>
+      </div>
+    </ng-container>
+    <div class="form-margins">
+      <button peb-button class="new-rate-button" (click)="addNewRate()">{{ 'shipping-app.forms.zone_dialog.add_rate' | translate }}</button>
+    </div>
+  </peb-expandable-panel>
+</form>

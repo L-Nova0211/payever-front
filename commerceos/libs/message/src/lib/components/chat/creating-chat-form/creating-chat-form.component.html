@@ -1,0 +1,40 @@
+
+<div class="chat-form__header">
+  <div>
+    <span *ngIf="this.stepIndex < 1" (click)="cancel()">{{ 'message-app.sidebar.cancel' | translate }}</span>
+  </div>
+  <p>{{ title }}</p>
+  <div class="right">
+    <span (click)="nextStep()"
+          [class.loading-btn]="loadingStyle" class="blue">{{ nextButton }}</span>
+  </div>
+</div>
+<div class="chat-form__content" #formContent>
+  <mat-tab-group
+    [selectedIndex]="stepIndex"
+    (animationDone)="animationDone()"
+    animationDuration="200ms"
+  >
+    <mat-tab class="main-info">
+      <pe-creating-chat-steps-main
+        (goBack)="step = null"
+        [chatType]="messageChatType"
+        (chatInfo)="typeChat($event)"
+        [step]="step"
+        [chatClass]="peOverlayData.chatClass"
+      ></pe-creating-chat-steps-main>
+    </mat-tab>
+    <mat-tab class="additional-info">
+      <pe-creating-chat-steps-contact
+        [chatType]="messageChatType"
+        [type]="channelPublic"
+        [code]="code"
+        [invitationId]="invitationId"
+        [chatClass]="peOverlayData.chatClass"
+        [step]="step"
+        (changeStep)="changeStep($event)"
+        [animationTypeStepDoneTrigger]="animationTypeStepDoneTrigger"
+      ></pe-creating-chat-steps-contact>
+    </mat-tab>
+  </mat-tab-group>
+</div>

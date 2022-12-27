@@ -1,0 +1,17 @@
+<form class="form" [formGroup]="formGroup">
+  <editor-expandable-panel
+    [opened]="opened"
+  >
+    <ng-container slot="header">
+      <span>{{ label }}</span>
+    </ng-container>
+    <ng-container slot="body">
+      <div class="group">
+        <div class="group__row">
+          <textarea formControlName="description" type="text" class="textarea" (blur)="blurred.emit()"></textarea>
+        </div>
+      </div>
+    </ng-container>
+  </editor-expandable-panel>
+
+</form>

@@ -1,0 +1,82 @@
+@mixin pe-list-theme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $button-text: map-get($theme-config, button-text);
+  $hover: map-get($theme-config, hover);
+  $hover-text: map-get($theme-config, hover-text);
+  $label-color: map-get($theme-config, label-color);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+
+  .pe-list-container__title {
+    color: $text-color;
+  }
+
+  .pe-list-section__item.hover:hover {
+    background-color: $hover;
+
+    .pe-list-section {
+      &__item-title
+      &__item-description {
+        color: $hover-text;
+      }
+    }
+
+    svg {
+      color: $hover-text;
+      fill: $hover-text;
+    }
+  }
+
+  .pe-list-section {
+    &__divider:not(:last-child) {
+      border-bottom: 1px solid $separator;
+    }
+
+    &__group-header {
+      color: $label-color;
+    }
+
+    &__item,
+    &__item-title {
+      color: $text-color;
+    }
+
+    &__item {
+      background-color: $accent;
+      
+      &.form {
+        background-color: transparent;
+      }
+
+      svg {
+        color: $text-color;
+        fill: $text-color;
+      }
+
+      &.selected {
+        background-color: $hover;
+
+        .pe-list-section {
+          &__item-title
+          &__item-description {
+            color: $hover-text;
+          }
+        }
+    
+        svg {
+          color: $hover-text;
+          fill: $hover-text;
+        }
+      }
+    }
+
+    &__item-button,
+    &__add-button {
+      color: $button-text;
+    }
+
+    &__add-button {
+      background-color: $accent;
+    }
+  }
+}

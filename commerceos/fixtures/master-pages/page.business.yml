@@ -1,0 +1,1171 @@
+id: apple-business-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: nike-main-page
+  type: document
+  children:
+    - id: wwdc-banner
+      type: section
+      children:
+        - id: wwdc-banner-text
+          type: text
+          data:
+            text: <span peb-link-type="internal" peb-link-path="https://developer.apple.com/news/?id=pfrza0y1"> WWDC20 enterprise update check out new sessions and resources </span>
+
+
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-background-description
+          type: text
+          data:
+            text: The most powerful products for business are the ones people already love to use.
+        - id: first-section-background-mark
+          type: text
+          data:
+            text: "<p>Apple products help employees work more simply and productively,
+            solve problems creatively, and collaborate with a shared purpose. And they're
+            all designed to work together beautifully. When people have the power to work the
+            way they want, with the tools they love, they can do their best work.</p>"
+
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-background
+          type: block
+          children: []
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-image
+          type: block
+          children: []
+        - id: third-section-content
+          type: block
+          children:
+            - id: third-section-content-label
+              type: text
+              data:
+                text: Products and Platforms
+            - id: third-section-content-title
+              type: text
+              data:
+                text: '<div>Technology designed for all the ways your
+                        employees want to work.</div>'
+            - id: third-section-content-description
+              type: text
+              data:
+                text: Today's business world has never been more mobile. So,
+                  we create products that give employees everything they
+                  need to make better business decisions, wherever they
+                  are. With the most intuitive, secure, and powerful
+                  products, as well as the hundreds of thousands of apps
+                  on the App Store, your team will stay connected, share
+                  ideas, and get more done.
+            - id: third-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Learn more about our products and platforms</a></font>
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-content
+          type: block
+          children:
+            - id: fourth-section-content-label
+              type: text
+              data:
+                text: IT
+            - id: fourth-section-content-title
+              type: text
+              data:
+                text: '<div>Devices that are as easy to deploy as they are to use.</div>'
+            - id: fourth-section-content-description
+              type: text
+              data:
+                text: We provide a comprehensive set of frameworks for IT to
+                  manage every part of the device lifecycle, from
+                  integration to deployment and management. With the
+                  right tools in place, IT can focus on what's most
+                  important — enabling users to be productive.
+            - id: fourth-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Learn more about IT</a></font>
+
+        - id: fourth-section-image
+          type: block
+          children: []
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-image
+          type: block
+          children: []
+        - id: fifth-section-content
+          type: block
+          children:
+            - id: fifth-section-content-label
+              type: text
+              data:
+                text: Partners
+            - id: fifth-section-content-title
+              type: text
+              data:
+                text: "<div>The world’s experts in enterprise are also our partners.</div>"
+            - id: fifth-section-content-description
+              type: text
+              data:
+                text: To help give your employees the best experience on
+                  iPhone, iPad, and Mac, we've partnered with some of
+                  the world’s leading companies in enterprise services.
+                  Whether you’re looking for mobile strategy consulting,
+                  app development support, back-end system</br>
+                  integration, or corporate network services, you’ll have
+                  access to experts around the world.
+            - id: fifth-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Learn more about our partners</a></font>
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-content
+          type: block
+          children:
+            - id: sixth-section-content-label
+              type: text
+              data:
+                text: Success Stories
+            - id: sixth-section-content-title
+              type: text
+              data:
+                text: '<div>Real success in the real world.</div>'
+            - id: sixth-section-content-description
+              type: text
+              data:
+                text: 'iPhone, iPad, and Mac are helping organizations around
+                       the world uncover new opportunities across lines of
+                       business and drive significant change in every industry.'
+            - id: sixth-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Watch success stories</a></font>
+
+        - id: sixth-section-image
+          type: block
+          children: []
+
+
+    - id: seventh-section
+      type: section
+      children:
+        - id: seventh-section-content-1
+          type: block
+          children:
+            - id: seventh-section-content-1-title
+              type: text
+              data:
+                text: '<div>Provide the tools that employees love.</div>'
+            - id: seventh-section-content-1-description
+              type: text
+              data:
+                text: When employees have access to the best products for
+                  work, they’re happier and more engaged. That's why
+                  more businesses are embracing iPhone, iPad, and Mac.
+                  With a new model for support and deployment, it's
+                  easier than ever to offer employees the choice of Apple.
+            - id: seventh-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Learn more</a></font>
+
+        - id: seventh-section-content-2
+          type: block
+          children:
+            - id: seventh-section-content-2-title
+              type: text
+              data:
+                text: '<div>Do something great with apps.</div>'
+            - id: seventh-section-content-2-description
+              type: text
+              data:
+                text: Whether you’re starting with built-in apps, exploring
+                  third-party apps, or building your own custom apps, the
+                  possibilities are endless. Discover apps for every task
+                  on the App Store and learn more about tools to build
+                  your custom apps for your business.
+            - id: seven-section-link
+              type: text
+              data:
+                text: <font color="#0070c9"><a href="#">Get started</a></font
+
+    - id: last-section
+      type: section
+      children:
+        - id: last-section-background
+          type: block
+          children:
+            - id: last-section-image
+              type: block
+              children: []
+            - id: last-section-background-description
+              type: text
+              data:
+                text: Learn more about <br> how to buy.
+            - id: last-section-background-mark
+              type: text
+              data:
+                text: Whether you’re part of a global enterprise or have a small company of your own, we can connect you with
+                  the right reseller, carrier, or business expert to help you integrate Apple technology into your company.
+
+
+stylesheets:
+  desktop:
+    nike-main-page: {}
+    wwdc-banner:
+      backgroundColor: '#295ec6'
+      height: 80
+      width: 1024
+      top: 0
+      display: grid
+      gridTemplateColumns: 150 1fr 100
+    wwdc-banner-text:
+      fontSize: 18
+      color: '#fff'
+      width: 1050
+      textAlign: center
+      display: grid
+      margin: 25 0 0 0
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section: {}
+    first-section-background:
+      backgroundColor: '#f5f5f7'
+    first-section-background-description:
+      color: '#111'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 48
+      textAlign: center
+      fontWeight: 700
+      width: 653
+      margin: 0 0 0 200
+    first-section-background-mark:
+      color: '#333'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      textAlign: center
+      fontWeight: 500
+      margin: 20 0 0 130
+      width: 766
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-background:
+      slot: absolute
+      display: grid
+      height: 800
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/hero/hero__cqqnryp7as9y_large.jpg'
+      backgroundSize: cover
+      backgroundColor: '#f5f5f7'
+      margin: 0
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      gridTemplateColumns: 1fr 1fr
+    third-section-image:
+      width: 512
+      height: 490
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/productsandplatform/products_platform__s913gioqh12m_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 30 0
+    third-section-content:
+      display: grid
+      margin: 50 20 0 30
+    third-section-content-label:
+      margin: 50 0 0 0
+      fontFamily: 'Helvetica Neue'
+      width: 200
+      fontSize: 21
+      fontWeight: 400
+    third-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      width: 360
+      color: '#000'
+      textAlign: left
+      fontWeight: 600
+    third-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 0
+      fontSize: 17
+      color: '#333'
+      width: 400
+      textAlign: justify
+      fontWeight: 400
+    third-section-link:
+      fontSize: 17
+      width: 350
+      margin: 20 0 0 0
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      gridTemplateColumns: 1fr 1fr
+    fourth-section-image:
+      width: 512
+      height: 490
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/it/simple_scale__bs13ernkb3ea_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0
+    fourth-section-content:
+      display: grid
+      margin: 70 0 0 25
+    fourth-section-content-label:
+      margin: 0 0 0 0
+      width: 30
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      fontWeight: 400
+    fourth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      width: 370
+      textAlign: left
+      fontWeight: 600
+    fourth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 0
+      fontSize: 17
+      color: '#333'
+      width: 390
+      textAlign: left
+      fontWeight: 400
+    fourth-section-link:
+      fontSize: 17
+      margin: 20 0 0 0
+      width: 155
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      gridTemplateColumns: 1fr 1fr
+    fifth-section-image:
+      width: 512
+      height: 490
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/partners/partners__ftsgwbh6crmi_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0
+    fifth-section-content:
+      display: grid
+      margin: 20 20 0 30
+    fifth-section-content-label:
+      margin: 50 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      width: 70
+      fontWeight: 400
+    fifth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      margin: 0
+      textAlign: left
+      width: 385
+      fontWeight: 600
+    fifth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 0
+      fontSize: 17
+      color: '#333'
+      width: 377
+      textAlign: left
+      fontWeight: 400
+    fifth-section-link:
+      fontSize: 17
+      width: 235
+      margin: 20 0 0 0
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      gridTemplateColumns: 1fr 1fr
+    sixth-section-image:
+      width: 512
+      height: 570
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/successstories/success_stories__im0eie28jlui_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0 40 0
+    #   gridArea: 1 / 1 / 1 / 1
+    sixth-section-content:
+      display: grid
+      margin: 60 0 0 0
+    sixth-section-content-label:
+      margin: 100 0 0 0
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      width: 135
+      fontWeight: 400
+    sixth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      width: 317
+      textAlign: left
+      fontWeight: 600
+    sixth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 385
+      fontWeight: 400
+      margin: 0 0 20 0
+    sixth-section-link:
+      fontSize: 17
+      width: 175
+      margin: 0
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+      height: 420
+      gridTemplateColumns: 1fr 1fr
+      margin: 100 0 0 0
+    seventh-section-content-1:
+      display: grid
+      margin: 100 30 0 0
+      borderWidth: 3
+    seventh-section-content-1-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      width: 365
+      textAlign: left
+      fontWeight: 600
+    seventh-section-content-1-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 380
+      fontWeight: 400
+      margin: 10 0 0 0
+    seventh-section-content-2:
+      display: grid
+      margin: 100 0 0 40
+      borderWidth: 3
+    seventh-section-content-2-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      width: 333
+      textAlign: left
+      fontWeight: 600
+    seventh-section-content-2-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 380
+      fontWeight: 400
+      margin: 10 0 0 0
+    seventh-section-link:
+      fontSize: 17
+      width: 90
+    seven-section-link:
+      fontSize: 17
+      width: 90
+    # ----------------------------------
+    # Desktop Last Section
+    # ----------------------------------
+    last-section: {}
+    last-section-image:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/howtobuy/icon_lockup__eq9of5qw5csy_large.png'
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 215
+      height: 83
+      margin: 50 80 20 530
+    last-section-background:
+      slot: absolute
+      display: grid
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundColor: '#f5f5f7'
+    last-section-background-description:
+      color: '#111'
+      fontFamily: 'SF Pro Displa'
+      fontSize: 48
+      width: 375
+      fontWeight: 700
+      textAlign: center
+      margin: 0 30 20 450
+    last-section-background-mark:
+      color: '#333'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 24
+      width: 500
+      textAlign: center
+      fontWeight: 500
+      margin: 0 30 150 400
+
+  tablet:
+    nike-main-page: {}
+    wwdc-banner:
+      backgroundColor: '#295ec6'
+      height: 80
+      width: 768
+      top: 0
+      display: grid
+      gridTemplateColumns: 150 1fr 100
+    wwdc-banner-text:
+      fontSize: 17
+      color: '#fff'
+      width: 768
+      textAlign: center
+      margin: 25 0 0 0
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section: {}
+    first-section-background:
+      slot: absolute
+      display: grid
+      gridTemplateRows: 1fr 1fr 1fr
+      height: 500
+      backgroundSize: cover
+      backgroundColor: '#f5f5f7'
+    first-section-background-description:
+      display: grid
+      width: 476
+      gridTemplateColumns: 1fr 1fr 1fr 1fr
+      color: '#111'
+      fontFamily: 'SF Pro Displa'
+      fontSize: 35
+      textAlign: center
+      fontWeight: 700
+      margin: 80 0 0 150
+    first-section-background-mark:
+      display: grid
+      color: '#333'
+      fontFamily: 'Helvetica Neue'
+      gridTemplateColumns: 1fr 1fr
+      fontSize: 18
+      fontWeight: 500
+      textAlign: center
+      margin: 35 100
+      width: 574
+
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-background:
+      width: 768
+      display: grid
+      gridTemplateRows: 1fr 1fr 1fr
+      height: 800
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/hero/hero__cqqnryp7as9y_large.jpg'
+      backgroundSize: cover
+      backgroundColor: '#f5f5f7'
+
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    third-section-image:
+      width: 768
+      height: 570
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/productsandplatform/products_platform__s913gioqh12m_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-content:
+      display: grid
+      margin: 40 0 0 200
+    third-section-content-label:
+      margin: 20 0 10 0
+      fontFamily: 'Helvetica Neue'
+      width: 300
+      fontSize: 21
+      fontWeight: 400
+    third-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      width: 354
+      textAlign: left
+      fontWeight: 600
+    third-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 0
+      fontSize: 17
+      color: '#333'
+      width: 381
+      textAlign: justify
+      fontWeight: 400
+    third-section-link:
+      fontSize: 17
+      width: 344
+      margin: 20 0 0 0
+    # ------------------
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    fourth-section-image:
+      width: 768
+      height: 570
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/it/simple_scale__bs13ernkb3ea_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0
+      gridArea: 1 / 1 / 1 / 1
+    fourth-section-content:
+      display: grid
+      margin: 40 0 0 200
+    fourth-section-content-label:
+      margin: 0 0 0 0
+      width: 30
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      fontWeight: 400
+    fourth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      textAlign: left
+      width: 370
+      fontWeight: 600
+    fourth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0
+      fontSize: 17
+      color: '#333'
+      width: 386
+      textAlign: left
+      fontWeight: 400
+    fourth-section-link:
+      fontSize: 17
+      margin: 20 0 0 0
+      width: 153
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    fifth-section-image:
+      width: 768
+      height: 570
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/partners/partners__ftsgwbh6crmi_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0
+    fifth-section-content:
+      display: grid
+      margin: 40 0 0 200
+    fifth-section-content-label:
+      margin: 20 0 0 0
+      fontFamily: 'Helvetica Neue'
+      width: 70
+      fontSize: 21
+      fontWeight: 400
+    fifth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      width: 383
+      color: '#000'
+      textAlign: left
+      fontWeight: 600
+    fifth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 0
+      fontSize: 17
+      width: 377
+      color: '#333'
+      textAlign: left
+      fontWeight: 400
+    fifth-section-link:
+      fontSize: 17
+      margin: 20 0 0 0
+      width: 231
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    sixth-section-image:
+      width: 768
+      height: 570
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/successstories/success_stories__im0eie28jlui_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    sixth-section-content:
+      display: grid
+      margin: 40 0 50 200
+    sixth-section-content-label:
+      margin: 20 0 0 0
+      fontFamily: 'Helvetica Neue'
+      width: 131
+      fontSize: 21
+      fontWeight: 400
+    sixth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 40
+      color: '#000'
+      textAlign: left
+      fontWeight: 600
+      width: 317
+    sixth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      fontWeight: 400
+      width: 381
+      margin: 20 0 0 0
+    sixth-section-link:
+      fontSize: 17
+      width: 171
+      margin: 20 0 0 0
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      backgroundColor: '#ffff'
+      height: 250
+      margin: 100 0 100 0
+    seventh-section-content-1:
+      display: grid
+      margin: 50 0 0 200
+      borderWidth: 3
+    seventh-section-content-1-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 30
+      color: '#000'
+      width: 274
+      textAlign: left
+      fontWeight: 600
+    seventh-section-content-1-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 380
+      fontWeight: 400
+      margin: 20 0
+    seventh-section-content-2:
+      display: grid
+      margin: 0 0 0 200
+      borderWidth: 3
+    seventh-section-content-2-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 30
+      color: '#000'
+      textAlign: left
+      width: 250
+      fontWeight: 600
+    seventh-section-content-2-description:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 340
+      fontWeight: 400
+      margin: 20 0
+    seventh-section-link:
+      fontSize: 17
+      width: 86
+      margin: 10 0
+    seven-section-link:
+      fontSize: 17
+      width: 85
+      margin: 20 0
+    # ----------------------------------
+    # Tablet Last Section
+    # ----------------------------------
+    last-section: {}
+    last-section-image:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/howtobuy/icon_lockup__eq9of5qw5csy_large.png'
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 215
+      height: 83
+      margin: 50 80 20 300
+    last-section-background:
+      display: grid
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundColor: '#f5f5f7'
+    last-section-background-description:
+      color: '#111'
+      fontFamily: 'SF Pro Displa'
+      fontSize: 30
+      textAlign: center
+      fontWeight: 700
+      width: 233
+      margin: 0 30 20 280
+    last-section-background-mark:
+      color: '#333'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 20
+      fontWeight: 500
+      textAlign: center
+      width: 415
+      margin: 0 30 100 200
+
+  mobile:
+    nike-main-page: {}
+    wwdc-banner:
+      backgroundColor: '#295ec6'
+      height: 80
+      width: 100%
+      top: 0
+      display: grid
+      gridTemplateColumns: 150 1fr 100
+    wwdc-banner-text:
+      fontSize: 14
+      color: '#fff'
+      width: 360
+      textAlign: center
+      display: grid
+      margin: 20 0 0 0
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 300
+      backgroundColor: '#f5f5f7'
+    first-section-background-description:
+      display: grid
+      color: '#111'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 25
+      fontWeight: 700
+      margin: 40 0 30 10
+      width: 300
+    first-section-background-mark:
+      fontSize: 17
+      color: '#111'
+      fontFamily: Helvetica Neue,Helvetica,Arial,sans-serif
+      fontWeight: 300
+      margin: 0 0 40 10
+      width: 320
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section: {}
+    second-section-background:
+      width: 360
+      margin: 20 0 0 0
+      display: grid
+      height: 400
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/hero/hero__cqqnryp7as9y_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundColor: '#f5f5f7'
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    #   gridTemplateColumns: 1fr 1fr
+    third-section-image:
+      width: 360
+      height: 350
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/productsandplatform/products_platform__s913gioqh12m_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 20 0
+    third-section-content:
+      display: grid
+      margin: 50 10
+    third-section-content-label:
+      margin: 20 0 10 10
+      fontFamily: 'Helvetica Neue'
+      width: 160
+      fontSize: 21
+      fontWeight: 400
+    third-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      marginLeft: 10
+      width: 300
+      color: '#000'
+      textAlign: left
+      fontWeight: 600
+    third-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      width: 330
+      textAlign: justify
+      fontWeight: 400
+    third-section-link:
+      fontSize: 15
+      width: 330
+      margin: 20 0 0 10
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    fourth-section-image:
+      width: 360
+      height: 350
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/it/simple_scale__bs13ernkb3ea_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    fourth-section-content:
+      display: grid
+      margin: 10 auto 20 auto
+    fourth-section-content-label:
+      margin: 20 0 10 10
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      fontWeight: 400
+      width: 100
+    fourth-section-content-line:
+      margin: 0 0 0 10
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      width: 300
+      fontWeight: 400
+    fourth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      color: '#000'
+      marginLeft: 10
+      width: 330
+      textAlign: left
+      fontWeight: 600
+    fourth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 330
+      fontWeight: 400
+    fourth-section-link:
+      fontSize: 17
+      margin: 20 0 0 10
+      width: 300
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    fifth-section-image:
+      width: 360
+      height: 350
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/partners/partners__ftsgwbh6crmi_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40 0
+    fifth-section-content:
+      display: grid
+      margin: 10 0 20 10
+    fifth-section-content-label:
+      margin: 20 0 10 10
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      fontWeight: 400
+      width: 100
+    fifth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      color: '#000'
+      marginLeft: 10
+      width: 330
+      textAlign: left
+      fontWeight: 600
+    fifth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 330
+      fontWeight: 400
+    fifth-section-link:
+      fontSize: 17
+      margin: 20 0 0 10
+      width: 300
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      backgroundColor: '#f7f7f7'
+    sixth-section-image:
+      width: 360
+      height: 350
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/successstories/success_stories__im0eie28jlui_large.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 40 0 40 0
+      gridArea: 1 / 1 / 1 / 1
+    sixth-section-content:
+      display: grid
+      margin: 10 0 20 20
+    sixth-section-content-label:
+      margin: 20 0 10 10
+      fontFamily: 'Helvetica Neue'
+      fontSize: 21
+      fontWeight: 400
+      width: 200
+    sixth-section-content-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      color: '#000'
+      marginLeft: 10
+      width: 330
+      textAlign: left
+      fontWeight: 600
+    sixth-section-content-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 330
+      fontWeight: 400
+    sixth-section-link:
+      fontSize: 17
+      margin: 20 0 0 10
+      width: 300
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      backgroundColor: '#f5f5f7'
+    seventh-section-content-1:
+      display: grid
+      margin: 10 0 20 20
+    seventh-section-content-1-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      color: '#000'
+      marginLeft: 10
+      width: 330
+      textAlign: left
+      fontWeight: 600
+    seventh-section-content-1-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 330
+      fontWeight: 400
+    seventh-section-content-2:
+      display: grid
+      margin: 10 0 20 20
+    seventh-section-content-2-title:
+      fontFamily: 'Helvetica Neue'
+      fontSize: 28
+      color: '#000'
+      marginLeft: 10
+      width: 330
+      textAlign: left
+      fontWeight: 600
+    seventh-section-content-2-description:
+      fontFamily: 'Helvetica Neue'
+      margin: 20 0 0 10
+      fontSize: 17
+      color: '#333'
+      textAlign: left
+      width: 330
+      fontWeight: 400
+    seventh-section-link:
+      fontSize: 17
+      margin: 20 0 0 10
+      width: 300
+    seven-section-link:
+      fontSize: 17
+      margin: 20 0 0 10
+      width: 300
+
+    # ----------------------------------
+    # Mobile Last Section
+    # ----------------------------------
+    last-section: {}
+    last-section-image:
+      display: grid
+      backgroundImage: 'https://www.apple.com/v/business/b/images/business/overview/howtobuy/icon_lockup__eq9of5qw5csy_large.png'
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 215
+      height: 83
+      margin: 50 80 20 80
+    last-section-background:
+      display: grid
+      backgroundSize: cover
+      backgroundPosition: center
+      backgroundColor: '#f5f5f7'
+    last-section-background-description:
+      color: '#111'
+      fontFamily: 'SF Pro Displa'
+      fontSize: 30
+      width: 330
+      textAlign: center
+      fontWeight: 700
+      margin: 0 30 0 30
+    last-section-background-mark:
+      color: '#333'
+      fontFamily: 'Helvetica Neue'
+      fontSize: 17
+      textAlign: center
+      width: 330
+      fontWeight: 500
+      margin: 0 30 100 30
+
+
+context: {}

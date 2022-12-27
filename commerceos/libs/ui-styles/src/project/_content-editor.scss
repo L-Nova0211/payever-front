@@ -1,0 +1,62 @@
+.pe-bootstrap {
+
+  .canvas-top, .canvas-middle, .canvas-bottom {
+
+    .canvas-placeholder {
+      @include pe_flexbox;
+      @include pe_justify-content(center);
+      @include pe_align-items(center);
+      @include pe_flex-direction(column);
+      height: $grid-unit-y * 12;
+      background-color: $color-grey-7;
+  
+      &-title {
+        font-weight: $font-weight-bold;
+        font-size: $font-size-large-1;
+        color: $color-grey-2;
+      }
+
+      &-error {
+        background-color: $color-red-2;
+        font-size: $font-size-large-2;
+        color: $color-red-1;
+        font-weight: $font-weight-medium;
+    
+        .canvas-placeholder-title {
+          color: $color-red-1;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      &-drop-section-icon {
+        width: $grid-unit-x * 11;
+        height: $grid-unit-y * 5;
+      }
+    }
+  }
+
+  .canvas-middle {
+
+    .canvas-placeholder {
+      height: $grid-unit-y * 24;
+      background-color: unset;
+    }
+  }
+
+  // overrides for hiding editor header items on mobiles
+  .has-mobile-area-tools:not(.has-mobile-panel-container) {
+    .mat-toolbar-area-tools {
+      display: -webkit-box !important;
+      display: -webkit-flex !important;
+      display: -moz-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+    }
+  }
+
+  .has-mobile-area-tools.has-mobile-panel-container {
+    .mat-toolbar-area-tools {
+      display: none !important;
+    }
+  }
+}

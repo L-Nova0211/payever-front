@@ -1,0 +1,42 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .plugin-downloads-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $content-background-color;
+
+    &__title {
+      margin-left: 12px;
+      border-bottom: 1px solid $menu-item-border-color;
+      color: $regular-text-color;
+    }
+  }
+
+  .sections-step-buttons .mat-raised-button.mat-button-base {
+    margin-top: 0;
+  }
+
+  .overlay-light {
+    .plugin-downloads-container {
+      background-color: $content-light-background-color;
+
+      &__title {
+        border-bottom: 1px solid $content-light-border-color;
+        color: $regular-light-text-color;
+      }
+    }
+  }
+
+  .overlay-transparent {
+    .plugin-downloads-container {
+      background-color: $content-transparent-background-color;
+
+      &__title {
+        border-bottom: 1px solid $content-transparent-border-color;
+      }
+    }
+  }
+}

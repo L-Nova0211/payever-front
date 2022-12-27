@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+}
+
+input {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 4px 20px 4px 8px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #ffffff;
+  height: 28px;
+  margin: 0;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    // box-shadow: 0 0 1px 1px rgba(255,255,255,0.4);
+  }
+
+  &::placeholder {
+    color: rgba(255,255,255,.2);
+ }
+}

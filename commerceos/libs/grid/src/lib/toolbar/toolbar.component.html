@@ -1,0 +1,87 @@
+<div class="pe-grid-toolbar__row">
+  <div
+    class="pe-grid-toolbar__filters"
+    [class.mobile-view]="isMobileView"
+    [class.loading]="isGlobalLoading"
+    (click)="openMobileSearch()"
+  >
+    <mat-icon *ngIf="!isGlobalLoading" class="mobile-filter" svgIcon="filter-icon"></mat-icon>
+    <ng-container *ngTemplateOutlet="filterForm"></ng-container>
+    <mat-icon
+      *ngIf="viewAdd && !isGlobalLoading"
+      class="create-item"
+      svgIcon="create-icon"
+      (click)="$event.stopPropagation(); create.emit()"
+    ></mat-icon>
+  </div>
+
+  <div class="pe-grid-toolbar__actions" *ngIf="!isGlobalLoading" @fadeInAnimation>
+    <ng-container *ngFor="let customMenu of customMenus">
+      <mat-icon
+        *ngIf="customMenu.icon" class="fill"
+        [svgIcon]="customMenu.icon"
+        (click)="openCustomMenu($event.target, customMenu)">
+      </mat-icon>
+      <span
+        *ngIf="customMenu.title"
+        class="custom-menu-title"
+        (click)="openCustomMenu($event.target, customMenu)"
+      >
+        {{ customMenu.title | translate }}
+      </span>
+    </ng-container>
+    <div>
+      <span>
+        <ng-container *ngIf="countSelectedItems; then selected else total"></ng-container>
+        <ng-template #selected>
+          <b>{{ countSelectedItems }}</b>
+          <span class="mr-0">{{ 'grid.content.toolbar.selected' | translate }}</span>
+        </ng-template>
+        <ng-template #total>
+          <b>
+            {{ countItems }}
+            <ng-container *ngIf="totalItems !== undefined">
+              {{ 'grid.content.toolbar.of' | translate }}
+              {{ totalItems }}
+            </ng-container>
+          </b> <span class="mr-0">{{ 'grid.content.toolbar.items' | translate }}</span>
+        </ng-template>
+      </span>
+      <button
+        *ngIf="countSelectedItems && optionsMenu"
+        class="pe-grid-toolbar__button"
+        (click)="openOptionsMenu($event)"
+      >{{ 'grid.content.toolbar.options' | translate }}</button>
+    </div>
+    <mat-icon
+      *ngIf="hasColumnsItems"
+      svgIcon="columns-switcher-icon"
+      (click)="openColumnSwitcher($event.target)"
+    ></mat-icon>
+    <mat-icon class="fill" [svgIcon]="sortIcon" (click)="openSortMenu($event.target)"></mat-icon>
+    <mat-icon *ngIf="!hideLayoutSwitcher" [svgIcon]="layoutIcon" (click)="openViewMenu($event.target)"></mat-icon>
+  </div>
+</div>
+
+<div *ngIf="searchItems?.length" class="pe-grid-toolbar__row">
+  <div class="pe-grid-toolbar__chip-list">
+    <div *ngFor="let item of searchItems; let i = index;" class="pe-grid-toolbar__chip">
+      <span>
+        {{ this.toolbarService.getFilterKeyFormatted(item, filterConfig) || 'All' }}
+        {{ this.toolbarService.getFilterConditionFormatted(item, filterConfig) | lowercase }}:
+        {{ this.toolbarService.getFilterValueFormatted(item, filterConfig) }}
+      </span>
+      <mat-icon svgIcon="small-close-icon" (click)="removeFilter(i)"></mat-icon>
+    </div>
+  </div>
+</div>
+
+<ng-template #filterForm>
+  <pe-toolbar-filter
+    *ngIf="filterConfig"
+    [class]="theme"
+    [mobileView]="isMobileView"
+    [filterConfig]="filterConfig"
+    (addedFilter)="addedFilter($event)"
+  ></pe-toolbar-filter>
+</ng-template>

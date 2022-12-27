@@ -1,0 +1,21 @@
+<div class="label" (click)="clickLabel.emit()">
+  <img *ngIf="image" [src]="image" [alt]="label">
+  <svg *ngIf="icon">
+    <use [attr.xlink:href]="icon"></use>
+  </svg>
+  <span *ngIf="label">{{ label }}</span>
+</div>
+<div class="arrow" (click)="clickArrow.emit()">
+  <svg width="28" height="24" viewBox="0 0 28 24">
+    <g fill="none" fill-rule="evenodd">
+      <g fill="#37363B">
+        <path
+          d="M94 0c6.627 0 12 5.373 12 12s-5.373 12-12 12H78V0h16zm1.554 9.397l-.084.073L91
+            13.939l-4.47-4.47c-.266-.266-.683-.29-.976-.072l-.084.073c-.267.266-.29.683-.073.976l.073.084 5
+            5c.266.267.683.29.976.073l.084-.073 5-5c.293-.293.293-.767 0-1.06-.266-.267-.683-.29-.976-.073z"
+          transform="translate(-1262 -724) translate(1184 724)"
+        />
+      </g>
+    </g>
+  </svg>
+</div>

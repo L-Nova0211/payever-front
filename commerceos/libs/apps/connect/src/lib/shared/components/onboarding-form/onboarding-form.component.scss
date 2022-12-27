@@ -1,0 +1,17 @@
+@import "../../../../assets/imports";
+
+:host ::ng-deep .no-border-radius {
+  border-radius: 0 !important;
+}
+
+:host ::ng-deep .mat-expansion-panel .mat-expansion-panel-header svg {
+  color: #e6e5e5 !important;
+}
+
+:host ::ng-deep .mat-expansion-panel.mat-expanded .icon-plus {
+  display: none;
+}
+
+:host ::ng-deep .mat-expansion-panel:not(.mat-expanded) .icon-minus {
+  display: none;
+}

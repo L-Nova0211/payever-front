@@ -1,0 +1,18 @@
+<div class="backdrop" (click)="closeTypePicker()"></div>
+<div class="overlay">
+  <div class="overlay__header">
+    <button class="overlay__button overlay__button_grey" (click)="closeTypePicker()">{{ 'cancel' | translate }}</button>
+    <span class="overlay__title">{{ 'typePicker.chooseOption' | translate }}</span>
+    <button class="overlay__button"></button>
+  </div>
+  <div class="overlay__body">
+    <div class="wrapper">
+      <ng-container content>
+        <div *ngFor="let option of possibleOptions; let i = index" class="option">
+          <span>{{ option.label | translate }}</span>
+          <button (click)="onAdd(option.type)">{{'add' | translate}}</button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

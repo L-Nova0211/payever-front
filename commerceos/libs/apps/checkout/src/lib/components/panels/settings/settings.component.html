@@ -1,0 +1,121 @@
+<div class="page__container">
+
+  <div class="page__main-title" translate="">info_boxes.panels.settings</div>
+
+  <ng-container *ngIf="onlyContent" [ngTemplateOutlet]="body"></ng-container>
+
+  <div class="pe-info-box-container-fixed pe-checkout-settings" *ngIf="!onlyContent">
+    <pe-info-box
+      class="pe-info-box-header-padding"
+      [fixed]="false"
+      [transparent]="true"
+      [withHeader]="false"
+      [withFooter]="false"
+      [withPadding]="true"
+      [notFullwidthOnMobile]="true"
+      [roundBorder]="true">
+      <ng-container content>
+        <ng-container [ngTemplateOutlet]="body"></ng-container>
+      </ng-container>
+    </pe-info-box>
+  </div>
+
+  <div class="page__title" translate>checkoutSwitcher.title</div>
+
+  <checkout-switcher></checkout-switcher>
+
+</div>
+
+<ng-template #body>
+  <mat-list
+    class="mat-list-settings mat-list-transparent mat-list-transparent-bold settings-mat-list"
+    [disableRipple]="true">
+    <ng-container *ngFor="let settingsItem of settingsMenu$ | async; let last = last">
+      <mat-list-item
+        [class.action-item]="!settingsItem.isHideButton"
+        [class.show-description]="!settingsItem.hideDescription"
+        (click)="!settingsItem.isHideButton ? onSettingsClickButton(settingsItem) : null">
+        <div class="mat-list-item-col">
+          <div class="icon-menu-wrapper">
+            <svg class="icon icon-16 icon-menu-item">
+              <use [attr.xlink:href]="settingsItem.icon"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="mat-list-item-flex no-left-padding settings-title-item">
+          <div class="mat-list-item-col">
+            <span class="pe-truncate-text">{{ settingsItem.title | translate }}</span>
+          </div>
+        </div>
+        <div class="mat-list-item-flex settings-description-item">
+          <div class="mat-list-item-col">
+            <div class="pe-truncate-text settings-description"
+                 translate>
+                <span *ngIf="settingsItem.name === 'phoneNumber'">
+                      {{ (currentCheckout$ | async)?.settings.phoneNumber }}
+                    </span>
+              <span *ngIf="settingsItem.name === 'message'">
+                  {{ (currentCheckout$ | async)?.settings.message }}
+                </span>
+              <span *ngIf="settingsItem.name === 'channelSetId'">
+                  {{ channelSetId }}
+                </span>
+              <span
+                *ngIf="settingsItem.description && (settingsItem.description | translate) && settingsItem.description !== (settingsItem.description | translate)">
+                      {{ settingsItem.description | translate }}
+                    </span>
+            </div>
+          </div>
+        </div>
+        <div class="mat-list-item-flex aligned-right fit-content no-right-padding">
+          <div
+            *ngIf="!settingsItem?.isHideButton && settingsItem.buttonAsLink"
+            class="mat-list-item-open-icon">
+            <svg>
+              <use xlink:href="#icon-arrow-right-2-16"></use>
+            </svg>
+          </div>
+          <ng-container
+            *ngIf="settingsItem?.nameButton && (settingsItem?.nameButton | translate) && settingsItem?.nameButton !== (settingsItem?.nameButton | translate)">
+            <button *ngIf="enableToggle.testingMode && settingsItem.isToggleButton"
+                    class="mat-button-rounded mat-button-xs hidden"
+                    mat-raised-button
+                    color="muted-light"
+                    (click)="onSettingsClickButton(settingsItem)">
+              <span class="text-wrapper pe-truncate-text">Testing mode</span>
+            </button>
+            <div *ngIf="settingsItem?.isToggleButton"
+                 class="toggle-wrap">
+              <mat-slide-toggle [checked]="enableToggle[settingsItem.name]"
+                                (change)="onToggle(settingsItem)"></mat-slide-toggle>
+            </div>
+          </ng-container>
+          <div class="settings-button-container">
+            <pe-progress-button-content
+              *ngIf="!settingsItem?.isHideButton && settingsItem.url && (settingsLoadingAction$ | async) === settingsItem.url"
+              [loading]="false"
+              [spinnerDiameter]="15"
+              [spinnerStrokeWidth]="2"
+              [spinnerLight]="true">
+              {{ settingsItem?.nameButton | translate }}
+            </pe-progress-button-content>
+            <ng-container *ngIf="settingsItem.name === 'channelSetId'">
+              <button mat-raised-button
+                      [class.mat-button-rounded]="true"
+                      [class.mat-button-xs]="true"
+                      [class.copied]="copied$ | async"
+                      class="expansion-list-button"
+                      type="button"
+                      color="muted-light"
+                      (click)="onCopyClick(channelSetId)">
+                {{ ((copied$ | async) ? 'channels.directLink.copied' : 'actions.copy') | translate }}
+              </button>
+            </ng-container>
+          </div>
+        </div>
+
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-list>
+</ng-template>

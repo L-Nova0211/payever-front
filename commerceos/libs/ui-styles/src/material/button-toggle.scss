@@ -1,0 +1,227 @@
+//
+// Button Toggle
+// ----------------------------
+
+@include mat-button-theme($theme);
+
+.pe-bootstrap {
+
+  .mat-button-toggle {
+    font-size: $font-size-small;
+    font-family: $font-family-sans-serif;
+    color: $color-secondary-2;
+    line-height: $grid-unit-y * 2;
+    background-color: $color-secondary-7;
+
+
+    // Elements
+    // ----------------
+
+    &-label {
+      margin: 0;
+      font-weight: $font-weight-regular;
+
+      &-content {
+        line-height: $grid-unit-y * 2;
+      }
+    }
+
+
+    // Elements
+    // ----------------
+
+    & + .mat-button-toggle {
+      margin-left: 1px;
+    }
+
+
+    // Material Button Group
+    // ------------------------
+
+    &-group {
+      box-shadow: none;
+      border-radius: $border-radius-base * 4;
+
+      &[disabled] {
+        .mat-button-toggle {
+          color: $color-secondary-5;
+
+          .mat-button-toggle-label-content {
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      &.mat-button-toggle-group-appearance-standard {
+        .mat-button-toggle-appearance-standard {
+          .mat-button-toggle-label-content {
+            line-height: $grid-unit-y * 2;
+          }
+        }
+      }
+
+      &:not(.mat-button-toggle-group-icon) {
+        .mat-button-toggle {
+          min-width: $grid-unit-x * 8;
+        }
+      }
+
+      &-wrapper {
+        @include pe_flexbox();
+
+        &-center {
+          @include pe_justify-content(center);
+        }
+
+        &-right {
+          @include pe_justify-content(flex-end);
+        }
+
+        &-labeled {
+          @include pe_flex-direction(column);
+        }
+
+        &-label {
+          @include material-label();
+        }
+      }
+
+
+      //# Style Variations
+
+      &-icon {
+        box-shadow: inherit;
+        border-radius: $border-radius-base;
+
+        .mat-button-toggle {
+          background-color: transparent;
+          color: $color-secondary-0;
+
+          &-checked {
+            background-color: transparent;
+          }
+        }
+
+        .mat-button-toggle {
+          &-label {
+            margin: 0;
+
+            &-content {
+              padding: 0 $padding-xs-horizontal;
+              color: $color-secondary-5;
+            }
+          }
+
+          &-checked  {
+            .mat-button-toggle-label {
+              &-content {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+
+      &-volumetric {
+        background: $color-secondary-1;
+        border-radius: $border-radius-large;
+
+        .mat-button-toggle {
+          margin: 2px;
+          background-color: transparent;
+
+          &-checked {
+            box-shadow: 0 3px 1px -2px $color-secondary-5, 0 2px 2px 0 $color-secondary-5, 0 1px 5px 0 $color-secondary-5;
+            background: $color-primary;
+            border-radius: $border-radius-large - 1px;
+          }
+
+          &-button {
+            color: $color-secondary-0;
+            font-weight: $font-weight-medium;
+          }
+
+          &-label {
+            &-content {
+              padding: $grid-unit-y/3 $grid-unit-x*2 $grid-unit-y/4;
+            }
+          }
+        }
+
+        @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+          .mat-button-toggle-label-content {
+            font-size: calc(100% - 1px);
+            padding: $grid-unit-y/4 $grid-unit-x*0.7 $grid-unit-y/4;
+          }
+        }
+      }
+
+      //# Color Variations
+
+      &-dark {
+        .mat-button-toggle:not(.mat-button-toggle-checked) {
+          background-color: $color-primary-4;
+        }
+      }
+
+      &-transparent {
+        border-radius: $border-radius-base * 3;
+
+        .mat-button-toggle {
+          background-color: $color-primary-1;
+          color: $color-secondary;
+          min-width: $grid-unit-y * 9;
+          text-align: center;
+
+          &-label {
+            &-content {
+              line-height: normal;
+              font-size: $font-size-micro-2;
+              font-weight: $font-weight-bold;
+            }
+          }
+
+          &-checked {
+            background-color: $color-primary-2;
+          }
+        }
+      }
+    }
+
+
+    // Checked State
+    // ------------------------
+
+    &-checked {
+      color: $color-primary-7;
+      background-color: $color-secondary-2;
+    }
+  }
+
+  // Force white style for checkout wrapper (Norway payment)
+
+  .mat-button-toggle-group-volumetric-force-white-theme {
+
+    background: rgba($color-black, 0.1) !important;
+
+    .mat-button-toggle {
+      color: $color-white-grey-2 !important;
+
+      &-checked {
+        box-shadow: 0 3px 1px -2px rgba(17, 17, 17, 0.35), 0 2px 2px 0 rgba(17, 17, 17, 0.35), 0 1px 5px 0 rgba(17, 17, 17, 0.35) !important;
+        background: $color-white !important;
+      }
+      &-button {
+        color: $color-black-pe !important;
+      }
+
+      &-group {
+        &[disabled] {
+          .mat-button-toggle {
+            color: $color-secondary-5 !important;
+          }
+        }
+      }
+    }
+  }
+}

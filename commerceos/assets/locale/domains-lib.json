@@ -1,0 +1,88 @@
+{
+  "domains-lib": {
+    "actions": {
+      "add_domain": "Add domain",
+      "cancel": "Cancel",
+      "connect": "Connect",
+      "copy": "Copy",
+      "done": "Done",
+      "remove_domain": "Remove domain",
+      "verify_connection": "Verify connection"
+    },
+    "apm_errors": {
+      "add_domain": "Failed to create a domain",
+      "check_domain": "Failed to check the domain",
+      "delete_domain": "Failed to delete domain",
+      "get_all_domains": "Failed to get list of domains",
+      "update_domain": "Failed to update the domain",
+      "valid_domain": "Failed to valid the domain"
+    },
+    "errors": {
+      "entered_incorrectly": "entered incorrectly. Check that you’ve entered the required values, and verify your connection again.",
+      "incorrect_name": "Domain name is not correct",
+      "is_not_live": "{accessUrl} is not live",
+      "min_name_length": "Domain name should have at least 3 characters",
+      "must_be_not_empty": "Domain can not be empty",
+      "not_connected": "Domain not connected"
+    },
+    "messages": {
+      "no_domains_connected": "No domains connected",
+      "successfuly_connected": "Domain connected successfuly"
+    },
+    "existing_domain": {
+      "first_step": {
+        "enter_domain": {
+          "label": "Enter the domain you want to connect",
+          "placeholder": "Enter domain"
+        },
+        "info": "To connect your domain, you need to log in to your provider account and change your settings. Follow the provider step-by-step instructions to get started.",
+        "verify_info": "Verify the connection to make sure your domain is set up correctly."
+      },
+      "second_step": {
+        "c_name": {
+          "title": "CNAME (www)",
+          "current_cname": "Current cname",
+          "required_cname": "Required cname"
+        },
+        "info": "Some providers take a few minutes to update their settings. Try verifying again, or add your domain now and check back later for connection updates.",
+        "record_a": {
+          "title": "A record (@)",
+          "current_ip": "Current IP address",
+          "required_ip": "Required IP address"
+        }
+      },
+      "title": "Existing domain"
+    },
+    "payever_domain": {
+      "creation_date": {
+        "label": "Creation date",
+        "placeholder": "Enter date"
+      },
+      "domain": {
+        "label": "Domain",
+        "placeholder": "Enter domain"
+      },
+      "provider": {
+        "label": "Provider",
+        "placeholder": "Enter provider"
+      },
+      "title": "payever domain"
+    },
+    "personal_domain": {
+      "creation_date": {
+        "label": "Creation date",
+        "placeholder": "Enter date"
+      },
+      "domain": {
+        "label": "Domain",
+        "placeholder": "Enter domain"
+      },
+      "provider": {
+        "label": "Provider",
+        "placeholder": "Enter provider"
+      },
+      "title": "Personal domain"
+    },
+    "title": "Domains"
+  }
+}

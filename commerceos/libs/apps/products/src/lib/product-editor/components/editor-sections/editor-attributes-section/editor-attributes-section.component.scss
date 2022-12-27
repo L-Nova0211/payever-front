@@ -1,0 +1,49 @@
+.attribute {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-column-gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__row {
+    border-radius: 12px;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: hidden;
+
+    & > * {
+      min-width: 0;
+    }
+
+    .form-field {
+      div {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.remove,
+.add {
+  border-radius: 12px;
+  font-size: 12px;
+  height: 40px;
+  outline: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.remove {
+  color: #eb4653 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mat-icon {
+    width: 16px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,41 @@
+:host {
+  display: inline-flex;
+  height: 28px;
+}
+
+.input-value {
+  display: flex;
+  border-radius: 6px;
+  font-size: 11px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  padding: 0 6px;
+  color: #ffffff;
+  user-select: none;
+
+  .units {
+    display: flex;
+    padding: 0 4px 0 10px;
+    align-items: center;
+    color: #7a7a7a;
+  }
+}
+
+input {
+  appearance: none;
+  color: inherit;
+  font-size: 11px;
+  line-height: normal;
+  background: transparent;
+  text-align: right;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+}
+
+:host(.multiple) .input-value {
+  font-style: italic;
+  color: #757575;
+}

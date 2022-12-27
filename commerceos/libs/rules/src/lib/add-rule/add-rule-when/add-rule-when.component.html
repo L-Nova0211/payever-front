@@ -1,0 +1,84 @@
+<div>
+  <div class='add-rule__actions-title'>{{'rules.when' | translate}}</div>
+  <peb-form-background>
+    <two-column-form [formGroup]="ruleForm">
+      <peb-select
+        selectType='label' [label]="'rules.if' | translate" animated='true' formControlName='field'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.field?.errors?.required"
+        [errorMessage]="'rules.if-required' | translate"
+      >
+        <peb-select-option *ngFor='let item of ifList' [label]="(item.label) | translate" [value]='item.fieldName'>
+        </peb-select-option>
+      </peb-select>
+      <peb-select
+        selectType='label' [label]="'rules.condition' | translate" animated='true'
+        [disabled]="!fieldIsSelected"
+        formControlName='condition'
+        [isFieldInvalid]="showErrors && ruleForm?.controls?.condition?.errors?.required"
+        [errorMessage]="'rules.condition-required' | translate"
+      >
+        <peb-select-option *ngFor='let item of conditionList' [label]="item.label | translate" [value]='item.value'>
+        </peb-select-option>
+      </peb-select>
+    </two-column-form>
+
+    <peb-form-field-input
+      [class.hidden]="!isFormFieldInput"
+      [label]="'Choose' | translate" appearance='label' animated='true'
+      [isFieldInvalid]="showErrors && valuesField.errors?.required"
+      [errorMessage]="'rules.type-required' | translate"
+    >
+      <input
+        class="a1"
+        [class.hidden]="fieldType !== PeFilterType.String && fieldType !== PeFilterType.Number"
+        [(ngModel)]="typeField"
+        [disabled]="!fieldIsSelected"
+        [type]="fieldType === PeFilterType.Number ? 'number' : 'text'"
+        (keydown.enter)="onAddValue()"
+        (blur)="onAddValue()"
+      />
+
+      <input
+        class="a2"
+        [readonly]="true"
+        [class.hidden]="fieldType !== PeFilterType.Date"
+        type="datetime"
+        (click)="openDatepicker($event)"
+        #dateToInput
+      />
+      <div class="suffix-icon"
+            [class.hidden]="fieldType !== PeFilterType.Date">
+        <svg class="calendar-image" height="24" (click)="openDatepicker({ target: dateToInput })">
+          <use xlink:href="#icon-settings-datepicker"></use>
+        </svg>
+      </div>
+    </peb-form-field-input>
+    <peb-select
+      [class.hidden]="!isFormFieldSelect"
+      selectType='label' [label]="'Choose' | translate" animated='true'
+      [(ngModel)]="typeField"
+      [disabled]="!fieldIsSelected"
+      [isFieldInvalid]="showErrors && valuesField.errors?.required"
+      [errorMessage]="'rules.condition-required' | translate"
+      (changed)="onAddValue()">
+      <peb-select-option *ngFor="let item of typeOptionsList" [label]="item.label | translate" [value]="item.value">
+      </peb-select-option>
+    </peb-select>
+
+    <div class='chips-container' *ngIf="valuesField.value?.length">
+      <div class='chips-data'>
+        <ng-container *ngFor='let type of valuesField.value; let i = index'>
+          <span class='chip'>
+            {{ formatValue(type) }}
+            <span class='chip__close-icon' (click)='onChipDelete(i)'>
+              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fit='' height='100%' width='100%'
+                    preserveAspectRatio='xMidYMid meet' focusable='false'>
+                <use xlink:href="#icon-chip-close" />
+              </svg>
+            </span>
+          </span>
+        </ng-container>
+      </div>
+    </div>
+  </peb-form-background>
+</div>

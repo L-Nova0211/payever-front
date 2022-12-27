@@ -1,0 +1,34 @@
+name: Nike
+
+data:
+  productPages: /products/:productId
+  categoryPages: /category/:categoryId
+
+routing:
+  - routeId: nike-main-page-route
+    url: /
+    pageId: nike-main-page
+  - routeId: nike-about-page-route
+    url: /about
+    pageId: nike-about-page
+  - routeId: nike-contacts-page-route
+    url: /contacts
+    pageId: nike-contacts-page
+  - routeId: nike-not-found-page-route
+    url: /404
+    pageId: nike-not-found-page
+
+context:
+  '#logo':
+    service: company
+    method: getLogo
+    params: []
+    usedBy: []
+
+pages:
+  - front
+  - product
+  - category
+  - about
+  - contacts
+  - not-found

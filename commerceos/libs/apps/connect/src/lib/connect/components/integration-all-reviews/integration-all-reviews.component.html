@@ -1,0 +1,69 @@
+<div *ngIf="integration" class="integration-all-reviews">
+
+  <!-- Integration header -->
+  <div class="header">
+    <div class="header__icon">
+      <svg class="icon icon-128">
+        <use [attr.xlink:href]="integration.displayOptions.icon"></use>
+      </svg>
+    </div>
+    <div class="header__text-container">
+      <div class="header__main-title">
+        {{ integration.displayOptions.title | translate }}
+      </div>
+      <div class="header__description">
+        {{ integration.installationOptions.price | translate }}
+      </div>
+      <div class="header__author">
+        {{ integration.installationOptions.developer | translate }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Back button -->
+  <div class="back-container">
+      <button mat-raised-button
+        (click)="back()"
+        color="muted-light"
+        class="spec-cancel-button"
+        [class.mat-button-rounded]="true"
+        [class.mat-button-md]="true">
+        {{ 'integration_all_reviews_page.back' | translate }}
+    </button>
+  </div>
+
+  <!-- Reviews list -->
+  <div *ngIf="integration.reviews?.length" class="reviews">
+      <div *ngFor="let review of integration.reviews" class="reviews__item">
+        <mat-card class="review-card">
+          <mat-card-title>
+            <div class="review-card__header">
+              <div class="review-card__title">
+                <div class="review-card__title-text">
+                  {{ review.title }}
+                </div>
+                <div class="review-card__rating">
+                  <connect-integration-rating-stars [readonly]="true" [currentRating]="review.rating">
+                  </connect-integration-rating-stars>
+                </div>
+              </div>
+              <div class="review-card__info">
+                <div class="review-card__date">
+                  {{ review.reviewDate | date}}
+                </div>
+                <div class="review-card__author">
+                  {{ review.userFullName }}
+                </div>
+              </div>
+            </div>
+          </mat-card-title>
+          <mat-card-content>
+            <div class="review-card__content">
+              {{ review.text }}
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div *ngIf="!integration.reviews?.length">{{ 'integration_all_reviews_page.no_ratings' | translate }}</div>
+</div>

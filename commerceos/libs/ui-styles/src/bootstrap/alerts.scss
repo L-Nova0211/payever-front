@@ -1,0 +1,13 @@
+//
+// Alert
+// ----------------------------
+
+.pe-bootstrap {
+  .alert {
+    margin-bottom: $grid-unit-y * 2;
+
+    &-dismissable, &-dismissible {
+      padding-right: 34px;
+    }
+  }
+}

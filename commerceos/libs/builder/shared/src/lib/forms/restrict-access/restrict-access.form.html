@@ -1,0 +1,79 @@
+<div class="restrict-access">
+  <form class="restrict-access__form" [formGroup]="form">
+    <peb-slide-toggle formControlName="restrict">Restrict access to the page</peb-slide-toggle>
+
+    <ng-container *ngIf="form.get('restrict').value">
+      <div class="form__row">
+        <div class="group__row">
+          <label class="group__label">
+            Type
+          </label>
+        </div>
+        <peb-select
+          class="field-control"
+          formControlName="type"
+          label="Restrict Access"
+          [options]="typeOptions"
+        ></peb-select>
+      </div>
+
+      <ng-container [ngSwitch]="form.get('type').value">
+        <ng-container *ngSwitchCase="PebRestrictType.Password" [ngTemplateOutlet]="passwordForm"></ng-container>
+        <ng-container *ngSwitchCase="PebRestrictType.Groups" [ngTemplateOutlet]="groupsForm"></ng-container>
+        <ng-container *ngSwitchCase="PebRestrictType.Customers" [ngTemplateOutlet]="customersForm"></ng-container>
+      </ng-container>
+    </ng-container>
+  </form>
+</div>
+
+<ng-template #passwordForm>
+  <div class="form__row">
+    <div class="group__row">
+      <label class="group__label">
+        Password
+      </label>
+    </div>
+    <peb-input
+      class="field-control"
+      type="password"
+      [formControl]="form.get('additional.password')"
+      textAlign="left"
+    ></peb-input>
+  </div>
+</ng-template>
+
+<ng-template #customersForm>
+  <div class="form__row">
+    <div class="group__row">
+      <label class="group__label">
+        Specific customers
+      </label>
+    </div>
+    <peb-autocomplete
+      class="field-control"
+      [formControl]="form.get('additional.customers')"
+      textAlign="left"
+      [options]="customersOptions$ | async"
+      [selectedOptions]="selectedCustomers$ | async"
+      (inputValueChange)="customersInputChange($event)"
+    ></peb-autocomplete>
+  </div>
+</ng-template>
+
+<ng-template #groupsForm>
+  <div class="form__row">
+    <div class="group__row">
+      <label class="group__label">
+        Specific groups of customers
+      </label>
+    </div>
+    <peb-autocomplete
+      class="field-control"
+      [formControl]="form.get('additional.groups')"
+      textAlign="left"
+      [options]="groupsOptions$ | async"
+      [selectedOptions]="selectedGroups$ | async"
+      (inputValueChange)="groupsInputChange($event)"
+    ></peb-autocomplete>
+  </div>
+</ng-template>

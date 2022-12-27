@@ -1,0 +1,35 @@
+:host {
+  display: inline-block;
+  margin-left: 8px;
+
+  .message {
+    &__icon {
+      height: 24px;
+      width: 24px;
+    }
+
+    &__notifications {
+      padding: 0 5px;
+      margin: auto;
+      position: absolute;
+      right: -6px;
+      bottom: 0;
+      min-width: 12px;
+      height: 12px;
+      font-size: 9px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 12px;
+      letter-spacing: normal;
+      text-align: center;
+      border-radius: 16px;
+      color: #fff;
+      background: #ED3A2D;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

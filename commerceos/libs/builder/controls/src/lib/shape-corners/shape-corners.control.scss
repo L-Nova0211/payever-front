@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: all;
+  width: 50%;
+}
+
+input {
+  font-size: inherit;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  height: 8px;
+  margin-top: -4px;
+  background-color: transparent;
+  align-self: center;
+  z-index: 999;
+
+  &.hidden {
+    display: none;
+  
+    &::-webkit-slider-thumb {
+      pointer-events: none;
+    }
+  }
+}
+
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #00f67d;
+  border: none;
+  border-radius: 50%;
+  cursor: ew-resize;
+  pointer-events: all;
+  width: 8px;
+  height: 8px;
+  object-fit: contain;
+  z-index: 999;
+}
+
+input::-moz-range-thumb {
+  background: #00f67d;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  width: 8px;
+  height: 8px;
+  object-fit: contain;
+  z-index: 999;
+}

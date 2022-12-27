@@ -1,0 +1,16 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+:host {
+  @include pe_flexbox;
+  @include pe_flex-direction(column);
+  @include pe_justify-content(space-between);
+  font-size: $font-size-micro-2;
+  line-height: normal;
+  font-weight: normal;
+  padding-bottom: 2px;
+
+  &.one-element {
+    @include pe_justify-content(center);
+  }
+}

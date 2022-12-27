@@ -1,0 +1,12 @@
+name: Media markt
+data:
+  categoryPages: /category/:categoryId
+  productPages: /products/:productId
+routing:
+  - routeId: media-markt-category-page
+    url: /
+    pageId: media-markt-category-page
+context: {}
+pages:
+  - front
+  - product

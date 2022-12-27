@@ -1,0 +1,85 @@
+<ng-container *ngIf="pages && (loading$ | async) === false; else skeletonTemplate">
+  <div class="pages-title">
+    <span>Pages</span>
+    <svg [style.opacity]="deviceService.isMobile ? 1 : 0" (click)="closePageNavigation()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g fill="none" fill-rule="evenodd">
+          <g fill="#636363">
+              <g>
+                  <path d="M11.7 0c6.462 0 11.7 5.238 11.7 11.7 0 6.462-5.238 11.7-11.7 11.7C5.238 23.4 0 18.162 0 11.7 0 5.238 5.238 0 11.7 0zm5.163 6.537c-.39-.39-.999-.425-1.428-.106l-.123.106-3.612 3.612-3.612-3.612-.123-.106c-.43-.319-1.039-.284-1.428.106-.428.428-.428 1.123 0 1.551l3.612 3.612-3.612 3.612-.085.096c-.341.43-.313 1.057.085 1.455.39.39.999.425 1.428.106l.123-.106 3.612-3.612 3.612 3.612.123.106c.43.319 1.039.284 1.428-.106.428-.428.428-1.123 0-1.551L13.251 11.7l3.612-3.612.085-.096c.341-.43.313-1.057-.085-1.455z" transform="translate(-368 -46) translate(368 46)"/>
+              </g>
+          </g>
+      </g>
+    </svg>
+  </div>
+  <div class="pages scrollbar" pebAutoHideScrollBar>
+    <peb-page-list
+      [pages]='mainPages'
+      [totalPages]="pages"
+      [activePageSnapshot]='activePageSnapshot'
+      [isSelectedAll]="isSelectedAll"
+      (openMenu)="openContextMenu($event)"
+      (expandCollapse)="switchExpandCollapse($event)"
+      (execCommand)="actionCommand($event)"
+    ></peb-page-list>
+  </div>
+  <button class="add-button" (click)="onCreate()">
+    <div>
+      <peb-editor-plus-icon></peb-editor-plus-icon>
+    </div>
+  </button>
+</ng-container>
+
+
+<!--onclick bellow without function fix hover effect in safari browser, don't remove please-->
+<ng-template #skeletonTemplate>
+  <div class="pages">
+    <div *ngFor="let i of skeletonPages" class="page page--skeleton" onclick="">
+      <div class="page__preview"></div>
+      <div class="page__name"></div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #pageMenu>
+  <div class="page__menu">
+    <div class="page__menu__header">
+      <div class="page__menu__title">Options</div>
+      <div class="page__menu__close" (click)="onCloseClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+          <g fill="none" fill-rule="evenodd">
+            <path fill="#636363"
+                  d="M9.75 0c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S0 15.135 0 9.75 4.365 0 9.75 0zm4.303 5.447c-.325-.324-.833-.354-1.19-.088l-.103.088-3.01 3.01-3.01-3.01-.102-.088c-.358-.266-.866-.236-1.19.088-.358.357-.358.936 0 1.293l3.009 3.01-3.01 3.01-.081.094c-.273.358-.246.871.081 1.199.325.324.833.354 1.19.088l.103-.088 3.01-3.011 3.01 3.01.102.09c.358.265.866.235 1.19-.09.358-.356.358-.935 0-1.292l-3.01-3.01 3.01-3.01.082-.094c.273-.358.246-.871-.081-1.199z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <ul>
+      <li *ngIf="contextMenuPage.type === pageType.Master" (click)="forkPage(contextMenuPage)">
+        Fork
+      </li>
+      <li (click)="newSlide(contextMenuPage, onCreatePage)"> {{ contextMenuPage.type === pageType.Replica ? "New Slide"
+        : "New Master Slide" }}</li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" (click)="skipSlide(contextMenuPage)">{{contextMenuPage.skip
+        ? "Unskip Slide" : "Skip Slide"}}</li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" [class.disabled]="isExpandDisabled(contextMenuPage)"
+        (click)="expandPage(contextMenuPage)">Expand</li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" [class.disabled]="isCollapseDisabled(contextMenuPage)"
+        (click)="collapsePage(contextMenuPage)">Collapse</li>
+      <li (click)="cutPage(contextMenuPage)">Cut</li>
+      <li (click)="copyPage(contextMenuPage)">Copy</li>
+      <li (click)="pastePage(contextMenuPage)">Paste</li>
+      <li style="color: #eb4653;" *ngIf="isPageRemovable(contextMenuPage)"
+        [class.disabled]="isDeleteDisabled(contextMenuPage)" (click)="deletePage(contextMenuPage)">
+        Delete
+      </li>
+      <li (click)="duplicatePage(contextMenuPage)">Duplicate</li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" (click)="selectAllPage()">Select All</li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" (click)="editMasterSlide(contextMenuPage)">
+        Edit Master Slide...
+      </li>
+      <li *ngIf="contextMenuPage.type === pageType.Replica" [class.disabled]="isExpandDisabled(contextMenuPage)"
+        (click)="reapplyMaster(contextMenuPage)">Reapply Master to Slide</li>
+    </ul>
+  </div>
+</ng-template>

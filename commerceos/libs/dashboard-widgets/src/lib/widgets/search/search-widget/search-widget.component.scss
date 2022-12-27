@@ -1,0 +1,202 @@
+@import "pe_variables.scss";
+@import "pe_mixins.scss";
+
+.widget-wrapper {
+  // background-color: $color-primary-8;
+  border-radius: 16px;
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.3);
+  display: block;
+  margin-bottom: 1.35em;
+  position: relative;
+  z-index: 1;
+  &.dark {
+    background-color: #1C1D1E !important;
+    -webkit-backdrop-filter: blur(44.1856px);
+    backdrop-filter: blur(44.1856px);
+  }
+  &.transparent, &.transparent-dark {
+    background-color: rgba(28, 29, 30, 0.6) !important;
+    -webkit-backdrop-filter: blur(75px);
+    backdrop-filter: blur(75px);
+  }
+  &.light {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    -webkit-backdrop-filter: blur(75px);
+    backdrop-filter: blur(75px);
+  }
+}
+
+@supports (backdrop-filter: blur(30px)) or (-webkit-backdrop-filter: blur(30px)) {
+  .widget-wrapper {
+    //background-color: $color-secondary-3;
+  }
+}
+
+.widget-card {
+  height: 100%;
+  display: flex;
+  padding: 15px 16px;
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.icon-search {
+  color: $color-secondary-3;
+}
+
+.search-text {
+  color: white;
+  font-size: 17px;
+  vertical-align: -1px;
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.light {
+  .search-text {
+    color: black;
+  }
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $color-secondary-3;
+  text-transform: uppercase;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $color-secondary-3;
+  text-transform: uppercase;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $color-secondary-3;
+  text-transform: uppercase;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.search-widget-buttons {
+  display: flex;
+  align-items: center;
+  min-width: 88px;
+  justify-content: space-between;
+}
+
+.search-widget-close {
+  padding: 0px !important;
+  height: 22px;
+  width: 22px;
+  background-color: var(--color-secondary-2, rgba(17, 17, 17, 0.2));
+  color: white;
+}
+
+.search-widget-button {
+  font-weight: 500;
+  font-size: 12px;
+  background-color: var(--color-secondary-2, rgba(17, 17, 17, 0.2));
+  color: white;
+}
+
+.search-widget-icon {
+  display: flex;
+  align-items: center;
+}
+
+.dark, .transparent, .transparent-dark {
+  .search-widget-icon {
+    svg {
+      fill: #FFFFFF;
+    }
+  }
+}
+
+.light {
+  .search-widget-icon {
+    svg {
+      fill: #000000;
+    }
+  }
+}
+
+.dark,
+.default {
+  &.widget-wrapper {
+		background-color: #1C1D1E;
+		-webkit-backdrop-filter: blur(41.1856px);
+		backdrop-filter: blur(41.1856px);
+  }
+  .search-widget-button,
+  .search-widget-close {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+}
+.light {
+  &.widget-wrapper {
+		background-color: rgba(255, 255, 255, 0.5);
+		-webkit-backdrop-filter: blur(75px);
+		backdrop-filter: blur(75px);
+  }
+
+  .icon-search {
+    color: #000000;
+  }
+
+  .search-widget-button,
+  .search-widget-close {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000000;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000000;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #000000;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #000000;
+  }
+}
+.transparent {
+  &.widget-wrapper {
+		background-color: rgba(28, 29, 30, 0.6);
+		-webkit-backdrop-filter: blur(75px);
+		backdrop-filter: blur(75px);
+
+    @supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+      background-color: rgba(36, 39, 46, 0.96) !important;
+    }
+  }
+  .search-widget-button,
+  .search-widget-close {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+}

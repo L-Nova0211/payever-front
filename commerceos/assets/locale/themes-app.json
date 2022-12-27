@@ -1,0 +1,117 @@
+{
+  "builder-themes": {
+    "actions": {
+      "add_album": "Add Folder",
+      "delete": "Delete",
+      "delete_album": "Delete Album",
+      "delete_theme": "Delete Theme",
+      "deselect_all": "Deselect All",
+      "done": "Done",
+      "duplicate": "Duplicate",
+      "cancel": "Cancel",
+      "close": "Close",
+      "copy": "Copy",
+      "edit": "Edit",
+      "get": "Get",
+      "install": "Install",
+      "open": "Open",
+      "reset": "Reset",
+      "save": "Save",
+      "saving": "Saving...",
+      "select_all": "Select All"
+    },
+    "apm_errors": {
+      "create_application_theme": "Failed to create an application theme",
+      "create_theme_album": "Failed to create a theme album",
+      "delete_template_theme": "Failed to delete template theme",
+      "delete_theme_album": "Failed to delete theme album",
+      "duplicate_template_theme": "Failed to duplicate the template theme",
+      "duplicate_theme_album": "Failed to duplicate the theme album",
+      "get_template_item_themes": "Failed to get items of template theme",
+      "get_template_list": "Failed to get the template list",
+      "get_template_themes": "Failed to get the list of template themes",
+      "get_theme_album_by_ancestor": "Failed to get the theme album by ancestor",
+      "get_theme_album_by_id": "Failed to get the theme album by id",
+      "get_theme_album_by_parent": "Failed to get the theme album by parent",
+      "get_theme_base_album": "Failed to get the base theme album",
+      "get_theme_by_album": "Failed to get themes by album",
+      "get_theme_by_id": "Failed to get the theme by id",
+      "get_themes_by_template_id": "Failed to get the theme by template id",
+      "get_themes_list": "Failed to get the list of themes",
+      "instant_install_template_theme": "Failed to deal instant install the template theme",
+      "install_template_theme": "Failed to install the template theme",
+      "link_theme_to_album": "Failed to link the theme to  the album",
+      "switch_template_theme": "Failed to switch template theme",
+      "unlink_theme": "Failed to unlink the theme",
+      "update_theme": "Failed to update the theme",
+      "update_theme_album": "Failed to update the theme album"
+    },
+    "confirm_dialog": {
+      "cancel": {
+        "theme_editor": {
+          "editing": {
+            "title": "Editing theme",
+            "subtitle": "Do you really want to close editing a theme? All data will be lost and you will not be able to restore it"
+          }
+        }
+      },
+      "delete": {
+        "items": {
+          "title": "Delete items",
+          "subtitle": "Are you sure you want to delete selected items?"
+        },
+        "theme": {
+          "title": "Delete theme",
+          "subtitle": "Are you sure you want to delete selected theme?"
+        },
+        "themes": {
+          "title": "Delete themes",
+          "subtitle": "Are you sure you want to delete selected themes?"
+        }
+      }
+    },
+    "fields": {
+      "all_themes": "All Themes",
+      "name": "Name"
+    },
+    "messages": {
+      "active": "Active",
+      "installed": "Installed",
+      "not_installed": "Not Installed",
+      "album_deleted": "Album successfully deleted",
+      "album_not_deleted": "Cannot delete album",
+      "album_duplicated": "Album successfully duplicated",
+      "album_not_duplicated": "Cannot duplicate album",
+      "items_deleted": "Selected items successfully deleted",
+      "items_not_deleted": "Cannot delete items",
+      "theme_deleted": "Theme successfully deleted",
+      "themes_deleted": "Themes successfully deleted",
+      "theme_not_delete_active_theme": "Cannot delete active theme",
+      "themes_not_delete_active_theme": "Cannot delete a active theme",
+      "theme_not_deleted": "Cannot delete theme",
+      "theme_duplicated": "Theme successfully duplicated",
+      "theme_not_duplicated": "Cannot duplicate theme",
+      "theme_installed": "Theme successfully installed",
+      "theme_switched": "Theme successfully switched"
+    },
+    "notify": {
+      "all_selected_items": "All selected items",
+      "all_selected_folders": "All selected folders",
+      "all_selected_themes": "All selected themes",
+      "successfuly_deleted": "successfuly deleted",
+      "successfuly_updated": "successfuly updated",
+      "theme": "Theme"
+    },
+    "theme_editor": {
+      "name": {
+        "label": "Theme title",
+        "placeholder": "Enter theme title",
+        "error": "Theme title is required"
+      },
+      "themes_market": {
+        "label": "payever Themes Market"
+      }
+    },
+    "title": "Themes"
+  }
+}

@@ -1,0 +1,66 @@
+<div cdkDropList class="page-list" (cdkDropListDropped)="dropped($event)">
+  <div cdkDrag class="page-box"
+    *ngFor="let page of pages trackBy: trackByPage"
+    (cdkDragMoved)="dragMoved($event)"
+    [cdkDragDisabled]="isMobile">
+
+    <ng-container *ngIf="screen$ | async as screen">
+      <div class="dragPlaceHolder" *cdkDragPlaceholder></div>
+      <div style="display: flex;">
+        <peb-editor-triangle-right-icon class={{showExpandArrow(page)}} (click)="switchExpandCollapse(page)"
+        ></peb-editor-triangle-right-icon>
+        <div class="page"
+          (click)="onSelect(page)"
+          (contextmenu)="openContextMenu($event, page)"
+          [class.page--active]="isActivePage$(page.id) | async"
+          [page--selected]="isSelectedPage$(page.id) | async"
+        >
+          <ng-container *ngIf="!page.skip; else skipPage">
+            <ng-container
+              *ngIf="getPageSnapshot(page.id) as pageSnapshot else imagePagePreview">
+              <div
+                [ngClass]="getPreviewClassName(page)"
+                [style.width.px]="previewOptions.width"
+                [style.height.px]="previewOptions.height"
+              >
+                <div
+                  class="disable-text-selection"
+                  style="transform-origin: top left; width: max-content; height: max-content; cursor: pointer;"
+                  [innerHTML]="content$ | async"
+                  [style.transform]="scale$ | async"
+                ></div>
+              </div>
+            </ng-container>
+
+            <ng-template #imagePagePreview>
+              <div
+                [ngClass]="getPreviewClassName(page)"
+                [style.width.px]="previewOptions.width"
+                [style.height.px]="previewOptions.height"
+                [style.backgroundImage]="page?.data?.preview && page.data.preview[screen] ? 'url(' + page.data.preview[screen] + ')' : ''"
+              ></div>
+            </ng-template>
+
+            <div class={{getPageNameClassName(page)}}>{{ page.name }}</div>
+          </ng-container>
+          <ng-template #skipPage>
+            <div class={{getSkipClassName(page)}}>
+              <hr class="rounded">
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </ng-container>
+
+    <peb-page-list
+      *ngIf="hasChild(page) && page?.expand"
+      [totalPages]="totalPages"
+      [pages]='getChildPages(page)'
+      [parentPage]='page'
+      [activePageSnapshot]='activePageSnapshot'
+      (openMenu)="_openContextMenu($event)"
+      (execCommand)="actionCommand($event)"
+      style="padding-left:10px;"
+    ></peb-page-list>
+  </div>
+</div>

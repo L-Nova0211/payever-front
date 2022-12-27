@@ -1,0 +1,26 @@
+<ng-container *ngIf="(snapshot$ | async) as snapshot">
+  <peb-renderer
+    #renderer
+    [context]="snapshot?.context"
+    [element]="snapshot?.template"
+    (interacted)="onInteraction($event)"
+    [options.defaultLocale]="defaultLanguage"
+    [options.interactions]="true"
+    [options.locale]="language$ | async"
+    [options.readOnly]="true"
+    [options.scale]="scale$ | async"
+    [options.screen]="screen$ | async"
+    [stylesheet]="snapshot?.stylesheet"
+  ></peb-renderer>
+</ng-container>
+
+<peb-client-password
+  *ngIf="pagePassword$ | async as pass"
+  (submitOn)="onPagePasswordSubmit($event)"
+  [variant]="pass"
+></peb-client-password>
+
+<peb-client-not-found
+  *ngIf="pageNotFound$ | async"
+  subject="Page"
+></peb-client-not-found>

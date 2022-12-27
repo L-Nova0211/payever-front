@@ -1,0 +1,32 @@
+
+<div [ngClass]="widgetTheme">
+  <div class="column">
+    <div>
+      <p class="title">
+        {{ widget.data[0].title | translate }}
+      </p>
+      <p class="subtitle">
+        {{ widget.data[0].subtitle | translate }}
+      </p>
+    </div>
+    <div>
+      <p class="title">
+        {{ widget.data[1].title | translate }}
+      </p>
+      <p class="subtitle">
+        {{ widget.data[1].subtitle | translate }}
+      </p>
+    </div>
+    <div>
+      <p class="title">
+        {{ widget.data[2].title | translate }}
+      </p>
+      <p class="subtitle">
+        {{ widget.data[2].subtitle | translate }}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="!widget.data?.length">
+    {{ (widget.noDataTitle  | loadTranslate | async) || 'No data' }}
+  </div>
+</div>

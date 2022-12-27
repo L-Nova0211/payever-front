@@ -1,0 +1,76 @@
+<pe-grid [theme]="theme" [items]="gridItems$ | async" [embedMod]="true">
+  <pe-grid-content
+    (deleteItems)="onContentDelete($event)"
+  >
+    <pe-grid-toolbar
+      [totalItems]="totalItems$ | async"
+      [viewMenu]="viewMenu"
+      (filtersChange)="onSearchChanged($event)"
+      [filterConfig]="toolbar.filterConfig"
+      [optionsMenu]="toolbar.optionsMenu"
+      (optionsChange)="optionsChange($event)"
+      [sortMenu]="toolbar.sortMenu"
+      (sortChange)="sortChange($event)"
+      (viewChange)="viewChange($event)"
+      (create)="createByHand()"
+    ></pe-grid-toolbar>
+    <pe-grid-viewport
+      [selectable]="true"
+      [viewportTitle]="viewportTitle"
+      [openSidebarFunc]="openSidebarFunc"
+      [defaultLayout]="gridLayout$ | async"
+      [contextMenu]="viewportContextMenu$ | async"
+      [allowSetQueryPArams]="true"
+      (itemContextSelect)="onViewportContextMenu($event)"
+    >
+      <pe-grid-list
+        noItemsPlaceholder="profiles"
+        [viewAdd]="true"
+        [scrollBottomOffset]="200"
+        [isLoading]="isLoading$ | async"
+        (create)="createByHand()"
+        (scrolledToEnd)="scrollBottom()"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            [item]="item"
+            [itemContextMenu]="itemContextMenu$ | async"
+            (actionClick)="actionClick($event)"
+            (itemClick)="actionClick($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          >
+          </pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+      <pe-grid-table
+        noItemsPlaceholder="profiles"
+        [isLoading]="isLoading$ | async"
+        [displayedColumns]="displayedColumns"
+        [scrollBottomOffset]="50"
+        (scrolledToEnd)="scrollBottom()"
+      >
+        <ng-template let-item="item">
+          <pe-table-row
+            [item]="item"
+            [itemContextMenu]="itemContextMenu$ | async"
+            (actionClick)="actionClick($event)"
+            (rowClicked)="actionClick($event)"
+            (itemContextSelect)="onItemContentContextMenu($event)"
+          >
+            <ng-template #bottomLine>
+              <pe-action-btn
+                [item]="item"
+                [inMobile]="true"
+                (actionClick)="actionClick($event)"
+              ></pe-action-btn>
+            </ng-template>
+          </pe-table-row>
+        </ng-template>
+      </pe-grid-table>
+    </pe-grid-viewport>
+  </pe-grid-content>
+</pe-grid>
+
+<canvas #canvas [hidden]></canvas>
+
+<router-outlet></router-outlet>

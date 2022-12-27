@@ -1,0 +1,49 @@
+<div class="settings-panel">
+  <form>
+    <label>
+      <span>Scale</span>
+      <select
+        name="scale"
+        [ngModel]="scale"
+        (ngModelChange)="scaleChanged.emit($event)"
+      >
+        <option
+          *ngFor="let scale of availableScales"
+          [value]="scale"
+        >
+          {{ scale * 100 }}%
+        </option>
+      </select>
+    </label>
+    <label>
+      <span>Screen</span>
+      <select
+        name="screen"
+        [ngModel]="screen"
+        (ngModelChange)="screenChanged.emit($event)"
+      >
+        <option
+          *ngFor="let screen of availableScreens"
+          [value]="screen"
+        >
+          {{ screen }}
+        </option>
+      </select>
+    </label>
+    <label>
+      <span>Locale</span>
+      <select
+        name="locale"
+        [ngModel]="locale"
+        (ngModelChange)="localeChanged.emit($event)"
+      >
+        <option
+          *ngFor="let locale of availableLocales"
+          [value]="locale"
+        >
+          {{ locale }}
+        </option>
+      </select>
+    </label>
+  </form>
+</div>

@@ -1,0 +1,123 @@
+@import '../../../../../ui-styles/src/pe_skeleton.scss';
+
+.mobile-skeleton-wrapper {
+  width: 100%;
+  height: 70px;
+  background-color: $skeleton-bg-dark;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &.first-row {
+    border-radius: 12px 12px 0 0;
+  }
+
+  &.last-row {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background: $skeleton-color-dark;
+    @include skeleton-animation();
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: $skeleton-color-dark;
+    @include skeleton-animation();
+  }
+
+  .content {
+    width: 52%;
+    height: 50px;
+    margin-left: 12px;
+
+    &::before {
+      display: block;
+      content: "";
+      width: 105px;
+      height: 12px;
+      border-radius: 3px;
+      background: $skeleton-color-dark;
+      @include skeleton-animation();
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 105px;
+      height: 12px;
+      border-radius: 3px;
+      background: $skeleton-color-dark;
+      margin-top: 10px;
+      @include skeleton-animation();
+    }
+  }
+
+  .button {
+    background: $skeleton-color-dark;
+    width: 100px;
+    height: 24px;
+    border-radius: 12px;
+    @include skeleton-animation();
+  }
+
+  &.transparent {
+    background: $skeleton-bg-transparent;
+
+    .checkbox {
+      background: $skeleton-color-transparent;
+    }
+
+    .thumbnail {
+      background: $skeleton-color-transparent;
+    }
+
+    .content {
+      &::before {
+        background: $skeleton-color-transparent;
+      }
+
+      &::after {
+        background: $skeleton-color-transparent;
+      }
+    }
+
+    .button {
+      background: $skeleton-color-transparent;
+    }
+  }
+
+  &.light {
+    background: $skeleton-bg-light;
+
+    .checkbox {
+      background: $skeleton-color-light;
+    }
+
+    .thumbnail {
+      background: $skeleton-color-light;
+    }
+
+    .content {
+      &::before {
+        background: $skeleton-color-light;
+      }
+
+      &::after {
+        background: $skeleton-color-light;
+      }
+    }
+
+    .button {
+      background: $skeleton-color-light;
+    }
+  }
+}

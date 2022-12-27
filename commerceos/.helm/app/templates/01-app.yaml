@@ -1,0 +1,125 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $appName := printf "%s-%s" $chartName $values.issue | lower | replace "_" "-" | trimSuffix "-"   }}
+{{ $host := printf "%s.%s" $values.issue $values.domain | lower }}
+{{ $nginxMainConfigName := printf "frontend-nginx-main-config" }}
+{{ $nginxConfigName:= printf "frontend-nginx-config" }}
+{{ $urlMapConfigName:= printf "micro-url-map" }}
+{{- if .Values.deployToExclusive -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: frontend
+    type: http
+
+  annotations:
+    "werf.io/set-replicas-only-on-creation": "true"
+
+spec:
+  replicas: {{ $values.replicas.http }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: {{ $appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ $appName }}
+        tier: frontend
+        type: http
+
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
+    spec:
+      priorityClassName: {{ $values.priorityClass }}
+
+      imagePullSecrets:
+        - name: {{ $values.image.pullSecretName }}
+
+      terminationGracePeriodSeconds: 60
+
+      containers:
+        - name: nginx
+          image: {{ $values.image.nginx }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "/payever/deploy/deploy.sh" ]
+
+          ports:
+            - containerPort: {{ $values.service.containerPort }}
+              protocol: TCP
+              name: http
+
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/bash","-c","sleep 15; pkill master"]
+
+          livenessProbe:
+            httpGet:
+              path: /api/status
+              port: {{ $values.service.monitoringPort }}
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 30
+            failureThreshold: 30
+
+          readinessProbe:
+            httpGet:
+              path: /api/status
+              port: {{ $values.service.monitoringPort }}
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 220
+
+          volumeMounts:
+            - name: {{ $nginxConfigName }}
+              mountPath: /etc/nginx/cmconfig
+
+            - name: {{ $nginxMainConfigName }}
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+
+          resources:
+{{ if eq .Values.deploy.env "test" }}
+{{ toYaml $values.test.resources | indent 12 }}
+{{ else if eq .Values.deploy.env "stage" }}
+{{ toYaml $values.stage.resources | indent 12 }}
+{{ else }}
+{{ toYaml $values.live.resources | indent 12 }}
+{{ end }}
+
+          envFrom:
+            - configMapRef:
+                name: {{ $chartName }}
+            - configMapRef:
+                name: {{ $urlMapConfigName }}
+            - secretRef:
+                name: {{ $chartName }}
+
+          env:
+            - name: KUBERNETES_DEPLOYED
+              value: "{{ now }}"
+            - name: MICRO_CHECKOUT_VERSION
+              value: "{{ $values.microCheckoutVersion }}"
+            - name: MICRO_COMMERCEOS_VERSION
+              value: "{{ $values.microUrlCommerceosVersion }}"
+            - name: DEPLOY_TO_EXCLUSIVE
+              value: "{{ $values.deployToExclusive }}"
+      volumes:
+        - name: {{ $nginxConfigName }}
+          configMap:
+            name: {{ $nginxConfigName }}
+
+        - name: {{ $nginxMainConfigName }}
+          configMap:
+            name: {{ $nginxMainConfigName }}
+{{- end -}}

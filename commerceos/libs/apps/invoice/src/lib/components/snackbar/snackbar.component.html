@@ -1,0 +1,9 @@
+<ng-container *ngIf="data.icon">
+  <svg class="snackbar-icon">
+    <use [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'"
+         [attr.xlink:href]="data.icon">
+    </use>
+  </svg>
+</ng-container>
+
+<span>{{ data.text }}</span>

@@ -1,0 +1,28 @@
+//
+// Divider
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-divider {
+    color: $color-white-grey-1;
+
+    &-vertical {
+      display: inline;
+    }
+
+    &-indented {
+      margin-left: $grid-unit-x;
+      margin-right: $grid-unit-x;
+
+      &-small {
+        margin-left: floor($grid-unit-x / 2);
+        margin-right: floor($grid-unit-x / 2);
+      }
+    }
+
+    &-full-height {
+      height: 100%;
+    }
+  }
+}

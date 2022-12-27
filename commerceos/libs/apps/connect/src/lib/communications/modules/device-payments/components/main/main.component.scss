@@ -1,0 +1,143 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .device-payments-container {
+    min-width: 100%;
+    padding: 0;
+
+    .communication-main-wrap {
+      &__container {
+        border-radius: 12px;
+
+        .connect-payment-option-wrapper.pe-info-box {
+          padding: 0;
+
+          .info-box {
+            .mat-card {
+              border-radius: 0;
+
+              .mat-expansion-panel {
+                .mat-expansion-panel-body {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .mat-accordion .mat-expansion-panel .mat-expansion-panel-header .mat-expansion-indicator {
+          display: none;
+        }
+      }
+
+      &__settings {
+        background-color: $table-content-background-color;
+      }
+
+      &__settings-item {
+        .form-table .form-fieldset .row > [class*="col"]:last-of-type {
+          border-bottom: 1px solid $menu-item-border-color;
+          border-radius: 0;
+        }
+
+        &.no-border {
+          .form-table .form-fieldset .row > [class*="col"]:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .settings-save-button .mat-raised-button.mat-button-base {
+      max-width: calc(100% - 20px);
+      margin: 0 10px 16px;
+      border-radius: 12px;
+      width: 100%;
+      height: 40px;
+      background-color: $content-background-color;
+      padding: 10px;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      text-align: center;
+      color: #0091df;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .device-payments-button .create-account-btn {
+      margin-top: 16px;
+    }
+  }
+
+  .overlay-light {
+    .device-payments-container {
+      .communication-main-wrap {
+        &__settings {
+          background-color: $content-light-background-color;
+        }
+
+        &__settings-item {
+          .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:last-of-type {
+            border-bottom: 1px solid $content-light-border-color;
+          }
+        }
+      }
+
+      .settings-save-button .mat-raised-button.mat-button-base {
+        background-color: $content-light-background-color;
+      }
+    }
+  }
+
+  .overlay-transparent {
+    .device-payments-container {
+      .communication-main-wrap {
+        &__settings {
+          background-color: $content-transparent-background-color;
+        }
+
+        &__settings-item {
+          .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:last-of-type {
+            background-color: transparent !important;
+            border-bottom: 1px solid $content-transparent-background-color;
+          }
+
+          &.no-border .form-table pe-form-fieldset.transparent .form-fieldset .row > [class*="col"]:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .settings-save-button .mat-raised-button.mat-button-base {
+        background-color: $content-transparent-background-color;
+      }
+    }
+  }
+
+  .mat-select-panel {
+    backdrop-filter: blur(50px);
+
+    &.dark,
+    &.transparent {
+      background-color: rgba(28, 29, 30, 0.85) !important;
+    }
+
+    &.light {
+      background-color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .mat-option {
+      &.mat-active.mat-selected:not(.mat-option-multiple) {
+        background-color: #0084ff !important;
+      }
+
+      .mat-option-text {
+        color: white !important;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,78 @@
+@import "../../misc/styles/table.mixin.scss";
+.grid-table-body-cell {
+  @include TableGridCell();
+
+  &.last-row:first-child {
+    border-radius: 0 0 0 12px;
+  }
+  &.last-row:last-child {
+    border-radius: 0 0 12px 0;
+  }
+
+  &.head {
+    border-top: 0;
+  }
+
+  &.name div {
+    align-items: center;
+    display: flex;
+
+    img,
+    .mat-icon {
+      border-radius: 3.2px;
+      height: 32px;
+      margin-right: 16px;
+      width: 32px;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    .mat-icon {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 9px 7px;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 1.33;
+    }
+  }
+
+  &.action {
+    button {
+      appearance: none;
+      border-radius: 6px;
+      border-width: 0;
+      color: #fff;
+      cursor: pointer;
+      font-family: Roboto;
+      font-size: 12px;
+      line-height: 1.33;
+      padding: 4px 10px;
+      text-transform: capitalize;
+      width: 100%;
+      height: fit-content;
+    }
+  }
+
+  &.light {
+    background-color: #f7f7f7;
+    border-color: rgb(242, 242, 242) !important;
+    color: #000;
+
+    .checkbox {
+      background-color: rgba(0, 0, 0, 0.09);
+      border: 1px solid #fff;
+
+      &.active {
+        background-color: #0371e2;
+      }
+    }
+
+    &.head {
+      color: #9e9e9e;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="viewer__widget">
+  <div class="viewer__widget__header">
+    <div class="viewer__widget__title">Publish</div>
+    <div class="viewer__widget__close" (click)="onCloseClick()">
+      <mat-icon svgIcon="close"></mat-icon>
+    </div>
+  </div>
+  <div class="viewer__widget__body">
+    <mat-spinner *ngIf="this.loading" [diameter]="30" [strokeWidth]="2" class="mat-spinner-themed dashboard-spinner"></mat-spinner>
+    <div class="theme" *ngIf="!this.loading&&errorMsg">
+      <peb-messages [message]="errorMsg">
+
+      </peb-messages>
+    </div>
+    <div class="theme" *ngIf="!this.loading&&!errorMsg">
+      <div class="theme__image">
+        <div class="image__overlay" (click)="fileInput.click()">
+          <div class="round-container">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-apps-small-imgae"></use>
+            </svg>
+          </div>
+        </div>
+        <mat-spinner [diameter]="30" *ngIf="isPictureLoadingSubject|async" [strokeWidth]="2" class="mat-spinner-themed"></mat-spinner>
+
+        <img [src]="theme.picture" alt="" *ngIf="theme?.picture" (load)="onload()">
+        <img [src]="preview?.data?.preview?.desktop" alt=""  (load)="onload()"  *ngIf="!theme.picture && preview?.data?.preview?.desktop">
+
+      </div>
+
+      <div class="theme__body">
+            <input class="theme__name" placeholder="Theme name" [value]="theme?.name || ''" (blur)="updateThemeName($event.target?.value)">
+        <div class="theme__tags">
+          <mat-form-field class="tags-input">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let tag of tags; let i=index"
+                        [selectable]="true"
+                        [removable]="true"
+                        (removed)="remove(i)"
+              >
+                {{tag}}
+                <div matChipRemove>x</div>
+              </mat-chip>
+              <input
+                    placeholder="No tags"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="true"
+                    (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="theme__publish-btn radius__top"
+        [disabled]='publishing || !publishable'
+        (click)="onPublish()"
+        [class.disabled]="!publishable">
+        <span>Publish</span>
+      </button>
+    </div>
+    <div class="publishing" *ngIf="!this.loading && publishable && reviewable">
+      <div class="publishing__divider"></div>
+      <div class="publishing__button" (click)="onPublish()">
+        <mat-icon svgIcon="publish"></mat-icon>
+        <span class="span_left">Review Changes and Publish</span>
+      </div>
+      <div class="publishing__divider"></div>
+    </div>
+  </div>
+</div>
+
+<input
+  #fileInput
+  style="display: none"
+  type="file"
+  accept="image/*"
+  (change)="onImageUpload($event)"
+/>

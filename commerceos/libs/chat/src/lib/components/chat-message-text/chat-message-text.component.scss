@@ -1,0 +1,148 @@
+.flex-active {
+  .pe-chat-message-text {
+    .text {
+      margin-left: 0px !important;
+    }
+  }
+}
+
+.pe-chat-message-text {
+  width: 100%;
+
+  .text {
+    margin: 2px 0 0 32px;
+    width: calc(100% - 70px);
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    color: #ffffff;
+
+    a {
+      word-wrap: break-word;
+      word-break: break-all;
+      color: #0371e2;
+    }
+  }
+
+  //sign can be putting in message HTML
+  .sign {
+    margin: 2px 0 0 8px;
+    font-size: 10px;
+    font-weight: 400;
+    word-wrap: break-word;
+    color: #ffffff;
+  }
+
+  .text-message {
+    display: flex;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    border-radius: 12px;
+    cursor: pointer;
+
+    &__title {
+      margin: 4px 0;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    &__detail {
+      margin: 0 0 0 10px;
+      position: relative;
+    }
+
+    &__dash {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      border-radius: 2px;
+      background-color: #0371e2;
+    }
+
+    &__content {
+      margin: 0;
+      color: #ffffff;
+      width: 240px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      & > a {
+        color: #0371e2;
+      }
+    }
+  }
+
+  .text-preview {
+    margin: 4px 0 0 8px;
+    height: 28px;
+    width: 28px;
+    border-radius: 2px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media all and (max-width: 728px) {
+    .text-message {
+      &__title {
+        margin: 4px 0 1px 0;
+      }
+
+      &__detail {
+        margin: 8px 0 0 8px;
+      }
+    }
+
+    .text-preview {
+      margin: 8px 0 0 0;
+      width: auto;
+      max-width: none;
+    }
+  }
+}
+
+.light .pe-chat-message-text {
+
+  .text {
+    color: #1c1d1e;
+  }
+
+  .sign {
+    color: #1c1d1e;
+  }
+
+  .text-message {
+    &__title {
+      color: #1c1d1e;
+    }
+
+    &__content {
+      color: #1c1d1e;
+    }
+  }
+}
+
+.message-container.dark .pe-chat-message-text {
+
+  .text {
+    color: #ffffff;
+  }
+
+  .sign {
+    color: #ffffff;
+  }
+}

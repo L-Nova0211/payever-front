@@ -1,0 +1,45 @@
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+@import "~@pe/ui-kit/scss/pe_variables";
+
+.content {
+  @include pe_flexbox();
+  @include pe_flex-direction(column);
+  @include pe_align-items(center);
+  text-align: center;
+  padding: $padding-base-vertical * 9 $padding-base-horizontal * 3 $padding-base-vertical * 6 $padding-base-horizontal * 3;
+
+  h2 {
+    color: $color-secondary-0;
+  }
+
+  .descriptions {
+    padding-bottom: $padding-base-vertical * 4;
+    max-width: 100%;
+  }
+  .buttons {
+    min-width: 30%;
+    @include pe_flexbox;
+    @include pe_justify-content(space-between);
+
+    @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+      min-width: 50%;
+    }
+
+    button {
+      // TODO move to ui-kit
+      background-color: $color-white-grey-2 !important; 
+
+      &:hover {
+        background-color: $color-white-grey-3 !important;
+      }
+    }
+  }
+  .one-button {
+    &.buttons {
+      min-width: auto;
+      @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+        min-width: auto;
+      }
+    }
+  }
+}

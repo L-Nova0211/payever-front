@@ -1,0 +1,29 @@
+<mat-accordion class="mat-accordion-xl" *ngIf="!isVariantStatusConnected(paymentIndex)">
+  <form novalidate
+        autocomplete="off"
+        (ngSubmit)="onSubmit()"
+        class="form-table form-table-no-margin"
+        [formGroup]="form"
+        *ngIf="form">
+    <button #submitTriggerAuth id="submitTriggerAuth" name="submitButton" type="submit" class="native-submit"></button>
+    <pe-form-fieldset class="transparent"
+                      [hideDisabled]="true"
+                      [translationScope]="'categories.payments.form'"
+                      [errors]="(errorsNonFlat$ | async)['credentials'] || {}"
+                      [isSubmitted]="isSubmitted"
+                      [fields]="formScheme.fieldsets['credentials']"
+                      [formGroup]="form.get('credentials')"
+                      [formStyle]="'transparent'"
+    ></pe-form-fieldset>
+    <div *ngIf="isShowAdd()" class="add-one-button-wrap">
+      <button (click)="addOne()" class="mat-button-md mat-button-link" type="button" mat-button>
+        {{ 'actions.addPlus' | translate }}
+      </button>
+    </div>
+    <div class="create-account-btn">
+      <button mat-raised-button type="button" class="no-border" (click)="submitTriggerAuth.click()" [class.mat-button-block]="true">
+        <pe-progress-button-content [loading]="isLoading$ | async">{{ isDoReset() ? ('actions.reset_creds' | translate) : ('actions.connect' | translate) }}</pe-progress-button-content>
+      </button>
+    </div>
+  </form>
+</mat-accordion>

@@ -1,0 +1,87 @@
+.snackbar {
+  background-color: rgba(36, 39, 46, 0.85);
+  backdrop-filter: blur(50px);
+  border-radius: 24.5px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  &__row {
+    align-items: center;
+    display: flex;
+    margin-left: 7px;
+    margin-right: -7px;
+  }
+
+  &__spinner {
+    padding-left: 20px;
+    padding-right: 12px;
+    .spinner {
+      stroke: #0091df;
+    }
+  }
+
+  &__icon,
+  &__message {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  &__icon {
+    align-items: center;
+    display: flex;
+    .success {
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+
+  &__message {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    .bold-content {
+      font-weight: bold;
+    }
+  }
+
+  &__button{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    min-height: 50px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-show {
+      color: #0091df;
+      padding: 16px;
+      margin-left: 16px;
+      border-left: 1px solid #646464;
+    }
+    &-hide {
+      color: #7d7d7d;
+      padding: 16px;
+      margin-left: 16px;
+      border-left: 1px solid #646464;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-snack-bar-handset {
+    width: auto !important;
+  }
+  .cos-snackbar {
+    max-width: none;
+    background-color: transparent;
+  }
+}

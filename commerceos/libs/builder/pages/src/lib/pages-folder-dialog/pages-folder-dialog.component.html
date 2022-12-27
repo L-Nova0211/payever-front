@@ -1,0 +1,36 @@
+<div class="backdrop" (click)="close()"></div>
+<div class="overlay">
+  <div class="overlay__header">
+    <button class="overlay__button grey" (click)="close()">Cancel</button>
+    <span class="overlay__title">New Folder</span>
+    <button class="overlay__button" (click)="save()">Done</button>
+  </div>
+  <div class="overlay__body" [formGroup]="form">
+    <peb-select
+    class="input input__select"
+    formControlName="location"
+    selectType="label"
+    label="Location"
+    placeholder="New folder">
+      <peb-select-option
+        class="option"
+        [label]="rootFolder.name"
+        [value]="rootFolder"
+        style="padding-left: 11px; font-weight: 500;"
+      >
+      </peb-select-option>
+      <peb-select-option
+        class="option"
+        *ngFor="let folder of folders"
+        [label]="folder.name"
+        [value]="folder"
+        style="font-weight: 500;"
+        [style.paddingLeft.px]="(folder.ancestors.length + 3) * 11"
+      >
+      </peb-select-option>
+    </peb-select>
+    <peb-form-field-input class="input" label="Folder Name" appearance="label">
+      <input placeholder="Name" formControlName="name" type="text"/>
+    </peb-form-field-input>
+  </div>
+</div>

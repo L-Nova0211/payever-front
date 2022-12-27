@@ -1,0 +1,74 @@
+<div class="container" [ngClass]="config.theme">
+    <ng-container [ngTemplateOutlet]="step===1?first:second"></ng-container>
+</div>
+
+<ng-template #first >
+   <div *ngIf="errorMsg" style="padding: 0 12px 16px;">
+       <peb-messages [message]="errorMsg"></peb-messages>
+   </div>
+    <div style="padding: 0 12px 16px;">
+        <div class="connection-info">
+            To connect your domain, you need to log in to your provider account and change your settings.
+            Follow the provider step-by-step instructions to get started.
+        </div>
+
+        <peb-form-background >
+            <peb-form-field-input animated="true" label="Enter the domain you want to connect" appearance="label"
+            [isFieldInvalid]="!!this.error" [errorMessage]="this.error">
+                <input [(value)]="domainName" (input)="validateDomain($event)" placeholder="Enter domain" />
+              </peb-form-field-input>
+        </peb-form-background>
+        <button class="setting-button" (click)="verify()">Verify connection</button>
+        <div class="footer-info">
+            Verify the connection to make sure your domain is set up correctly.
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #second>
+    <div style="margin:0 12px 16px">
+        <peb-messages
+        [showIcon]="!isConnected"
+        [color]="isConnected?'confirm':'warning'"
+         [message]="isConnected
+         ? ('shop-app.messages.domain_connected' | translate)
+         : getfields(domainInfo)+( 'shop-app.messages.domain_incorrect' | translate )"></peb-messages>
+    </div>
+
+    <peb-expandable-panel headerLabel="A record (@)" [isContentOpen]="true">
+        <peb-form-background >
+            <peb-form-field-input input animated="true" label="Current IP address" appearance="label">
+                <input [value]="domainInfo.currentIp" disabled/>
+              </peb-form-field-input>
+
+              <peb-form-field-input input animated="true" label="Required IP address" appearance="label">
+                <input [(value)]="domainInfo.requiredIp"  disabled/>
+                <div class="suffix coppy-button" [cdkCopyToClipboard]="domainInfo.requiredIp">
+                    copy
+                  </div>
+              </peb-form-field-input>
+        </peb-form-background>
+    </peb-expandable-panel>
+
+
+    <peb-expandable-panel headerLabel="CNAME (www)" [isContentOpen]="true">
+        <peb-form-background >
+            <peb-form-field-input label="Current value" appearance="label">
+                <input [ngModel]="domainInfo.currentValue" disabled pebInput/>
+              </peb-form-field-input>
+
+              <peb-form-field-input label="Required value" appearance="label">
+                <input [ngModel]="domainInfo.requiredValue"  disabled pebInput/>
+                <div class="suffix coppy-button" [cdkCopyToClipboard]="domainInfo.requiredValue">
+                    copy
+                  </div>
+              </peb-form-field-input>
+        </peb-form-background>
+
+        <button class="setting-button" (click)="connect()">Add domain</button>
+        <div class="footer-info">
+            Some providers take a few minutes to update their settings. Try verifying again, or add your domain now and check back later for connection updates.
+        </div>
+    </peb-expandable-panel>
+
+</ng-template>

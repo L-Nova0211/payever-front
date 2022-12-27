@@ -1,0 +1,31 @@
+<div *ngIf="integrations.length" class="more">
+  <div class="more__title">
+    <div class="more__title-text">
+      {{ 'integration_full_page.more.title' | translate }}
+    </div>
+
+    <div class="more__link" (click)="navigate()">
+      {{ 'integration_full_page.more.see_all' | translate }}
+    </div>
+  </div>
+
+  <!-- Items list -->
+  <div class="more__items">
+    <div *ngFor="let item of integrations" class="more-item">
+      <div class="more-item__icon">
+        <svg class="icon icon-64">
+          <use [attr.xlink:href]="item.displayOptions.icon"></use>
+        </svg>
+      </div>
+      <div class="more-item__description">
+        <div>{{ item.displayOptions.title | translate }}</div>
+        <div class="more-item__subtitle">
+          {{ item.installationOptions.category | translate }}
+        </div>
+        <div class="more-item__button">
+          <integration-button [integration]="item"></integration-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

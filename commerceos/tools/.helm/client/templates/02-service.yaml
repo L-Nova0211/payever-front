@@ -1,0 +1,30 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $appName := $chartName }}
+
+{{ range $app := $values.builderClientApps }}
+  {{ $appName = printf "%s-%s" $chartName $app.name }}
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: {{ $appName }}
+
+  ports:
+    - protocol: TCP
+      port: {{ $values.service.externalPort }}
+      targetPort: {{ $values.service.containerPort }}
+      name: http
+---
+{{ end }}

@@ -1,0 +1,14 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+  <editor-description
+    [description]="description"
+    [invalid]="descriptionInvalid"
+    [placeholder]="'description.placeholders.description'"
+    (valueChanged)="onDescriptionChange($event)"
+  ></editor-description>
+</form>

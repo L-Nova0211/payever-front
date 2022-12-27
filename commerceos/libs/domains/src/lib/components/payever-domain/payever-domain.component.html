@@ -1,0 +1,46 @@
+<div class="pe-payever-domain" [ngClass]="theme" [formGroup]="payeverDomainForm">
+  <div class="pe-payever-domain__section">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="domainNameError | translate"
+        [isFieldInvalid]="payeverDomainForm.controls.domainName.invalid"
+        [label]="'domains-lib.payever_domain.domain.label' | translate"
+      >
+        <input
+          formControlName="domainName"
+          (ngModelChange)="validateDomain($event)"
+          [placeholder]="'domains-lib.payever_domain.domain.placeholder' | translate"
+        />
+        <div class="suffix">
+          <p>.{{ primaryHost }}</p>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+  </div>
+  <div class="pe-payever-domain__section">
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.payever_domain.creation_date.label' | translate"
+      >
+        <input readonly
+          formControlName="createdAt"
+          [placeholder]="'domains-lib.payever_domain.creation_date.placeholder' | translate"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.payever_domain.provider.label' | translate"
+      >
+        <input readonly
+          formControlName="provider"
+          [placeholder]="'domains-lib.payever_domain.provider.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+  </div>
+  <div *ngIf="errorMsg" class="pe-payever-domain__section">
+    <peb-messages [message]="errorMsg" [showIcon]="false"></peb-messages>
+  </div>
+</div>

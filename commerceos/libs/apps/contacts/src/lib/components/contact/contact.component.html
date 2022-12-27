@@ -1,0 +1,268 @@
+<div class="add-contact">
+  <div class="add-contact__loader" *ngIf="isLoading">
+    <mat-spinner [strokeWidth]="2" [diameter]="26"></mat-spinner>
+  </div>
+
+  <form [formGroup]="contactForm" [class.loading]="isLoading">
+    <peb-expandable-panel
+      [headerLabel]="'contacts-app.contact_editor.general' | translate"
+      [isContentOpen]="true"
+      [ngClass]="theme"
+    >
+      <div class="add-contact__preview">
+        <img
+          *ngIf="contactForm.value.imageUrl; else defaultImg"
+          alt=""
+          [src]="contactForm.value.imageUrl"
+        >
+
+        <ng-template #defaultImg>
+          <div class="add-contact__default-image">
+            <mat-progress-spinner
+              *ngIf="isLoadingImage"
+              class="add-contact__spinner mat-spinner-themed"
+              [strokeWidth]="2"
+              [value]="uploadProgress"
+              [diameter]="100"
+            ></mat-progress-spinner>
+            <img alt="Default photo" src="./assets/icons/default-photo.svg">
+          </div>
+        </ng-template>
+
+        <div class="add-contact__profile-wrapper">
+          <div class="add-contact__add-media-wrapper">
+            <div class="add-contact__add-media" (click)="fileInput.click()">
+              <svg class="plus-icon">
+                <use xlink:href="#icon-plus-circle-bold"></use>
+              </svg>
+              <span class="add-contact__add-media-label">
+                {{ 'contacts-app.actions.add_media' | translate }}
+              </span>
+              <input #fileInput 
+                accept="image/*"
+                (change)="addMedia($event)"
+                class="add-contact__upload-input"
+                hidden="true"
+                type="file"
+              />
+            </div>
+          </div>
+
+          <div class="add-contact__status-select-wrapper">
+            <peb-select
+            formControlName="status"
+            selectType="status"
+            selected="none"
+            [placeholder]="'contacts-app.actions.status.title' | translate"
+            >
+              <peb-select-option
+              *ngFor="let status of statusFields"
+              [style.width.px]="160"
+              [label]="status.name"
+              [value]="status.id"
+              [action]="status.action"
+              (callAction)="editStatus($event)"
+              ></peb-select-option>
+              <peb-select-action
+              (click)="addStatus()" 
+              class="pe-button"
+              [label]="'contacts-app.actions.status.add_status' | translate"
+              >
+              </peb-select-action>
+            </peb-select>
+          </div> 
+        </div>
+      </div>
+
+      <peb-form-background>
+        <peb-select
+          formControlName="type"
+          [label]="'contacts-app.contact_editor.type.title' | translate"
+          selectType="label"
+        >
+          <peb-select-option
+            *ngFor="let typeOption of typeOptions"
+            [label]="('contacts-app.contact_editor.type.' + typeOption.value) | translate"
+            [value]="typeOption.name"
+          ></peb-select-option>
+        </peb-select>
+        <ng-container *ngIf="contactForm.controls.type.value === contactTypes.Company">
+          <peb-form-field-input
+            appearance="label"
+            [label]="'contacts-app.contact_editor.type.company' | translate"
+          >
+            <input
+              formControlName="company"
+              type="text"
+            >
+          </peb-form-field-input>
+        </ng-container>
+
+        <two-column-form>
+          <peb-form-field-input
+            appearance="label"
+            [errorMessage]="'First name is required'"
+            [isFieldInvalid]="contactForm.controls.firstName.invalid"
+            [label]="'contacts-app.contact_editor.first_name' | translate"
+          >
+            <input
+              formControlName="firstName"
+              type="text"
+            >
+          </peb-form-field-input>
+          <peb-form-field-input
+            appearance="label"
+            [errorMessage]="'Last name is required'"
+            [isFieldInvalid]="contactForm.controls.lastName.invalid"
+            [label]="'contacts-app.contact_editor.last_name' | translate"
+          >
+            <input
+              formControlName="lastName"
+              type="text"
+            >
+          </peb-form-field-input>
+        </two-column-form>
+
+        <two-column-form>
+          <peb-form-field-input
+            appearance="label"
+            [errorMessage]="'Mobile phone is invalid'"
+            [isFieldInvalid]="contactForm.controls.mobilePhone.invalid"
+            [label]="'contacts-app.contact_editor.mobile_phone' | translate"
+          >
+            <input
+              formControlName="mobilePhone"
+              type="text"
+            >
+            <div matSuffix
+              *ngIf="contactForm.controls.mobilePhone.value"
+              class="add-contact__field-suffix"
+              (click)="telAnchor.click()"
+            >
+              <a
+                [attr.href]="'tel:' + contactForm.controls.mobilePhone.value"
+                style="display: none"
+                #telAnchor
+              ></a>
+              <span>{{ 'contacts-app.contact_editor.call' | translate }}</span>
+            </div>
+          </peb-form-field-input>
+          <peb-form-field-input
+            appearance="label"
+            [label]="'contacts-app.contact_editor.email' | translate"
+          >
+            <input
+              formControlName="email"
+              type="text"
+            >
+            <div matSuffix
+              *ngIf="contactForm.controls.email.value"
+              [cdkCopyToClipboard]="contactForm.controls.email.value"
+              class="add-contact__field-suffix"
+              (click)="copyEmail()"
+            >
+              <span>{{ 'contacts-app.contact_editor.copy' | translate }}</span>
+            </div>
+          </peb-form-field-input>
+        </two-column-form>
+
+        <peb-form-field-input
+          appearance="label"
+          [label]="'contacts-app.contact_editor.homepage' | translate"
+        >
+          <input
+            formControlName="homepage"
+            type="url"
+          >
+          <div
+            *ngIf="contactForm.controls.homepage.value"
+            class="add-contact__field-suffix"
+            (click)="visitHomepage()"
+            matSuffix
+          >
+            <span>{{ 'contacts-app.contact_editor.visit' | translate }}</span>
+          </div>
+        </peb-form-field-input>
+        
+        <peb-form-field-input
+          appearance="label"
+          [label]="'contacts-app.contact_editor.street' | translate"
+        >
+          <input peGoogleAutocomplete
+            (address)="addressOn($event)"
+            formControlName="street"
+            [placeholder]="'contacts-app.contact_editor.enter_location' | translate"
+            type="text"
+          >
+        </peb-form-field-input>
+
+        <two-column-form>
+          <peb-form-field-input
+            appearance="label"
+            [label]="'contacts-app.contact_editor.city' | translate"
+          >
+            <input
+              formControlName="city"
+              type="text"
+            >
+          </peb-form-field-input>
+          <peb-form-field-input
+            appearance="label"
+            [label]="'contacts-app.contact_editor.state' | translate"
+          >
+            <input
+              formControlName="state"
+              type="text"
+            >
+          </peb-form-field-input>
+        </two-column-form>
+
+        <two-column-form>
+          <peb-form-field-input
+            appearance="label"
+            [label]="'contacts-app.contact_editor.zip' | translate"
+          >
+            <input
+              formControlName="zip"
+              type="text"
+            >
+          </peb-form-field-input>
+          <peb-select
+            formControlName="country"
+            [label]="'contacts-app.contact_editor.country' | translate"
+            selected="none"
+            selectType="label"
+          >
+            <peb-select-option
+              *ngFor="let country of countries"
+              [label]="country.name"
+              [value]="country.name"
+            ></peb-select-option>
+          </peb-select>
+        </two-column-form>
+      </peb-form-background>
+
+      <peb-form-background *ngIf="customFields.length > 0" class="mt-12">
+          <ng-container *ngFor="let item of customFields; let i = index">
+            <div class="more-fields__item">
+              <pe-custom-fields-switcher [item]="item" [animated]="false"></pe-custom-fields-switcher>
+              <div class="more-fields__wrapper">
+                <button class="more-fields__field-edit" (click)="editField(i)">
+                  {{ 'contacts-app.actions.edit' | translate }}
+                </button>
+                <button class="more-fields__field-remove" (click)="removeField(i)">
+                  &ndash;
+                </button>
+              </div>
+            </div>
+          </ng-container>
+      </peb-form-background>
+
+      <button peb-button class="details__add-new peb-button peb-base-button" 
+        (click)="openCustomField()">
+        {{ 'contacts-app.actions.add-new-field' | translate }}
+      </button>
+
+    </peb-expandable-panel>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.svg-wrap {
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  &__icon {
+    height: 100%;
+    width: 100%;
+  }
+}

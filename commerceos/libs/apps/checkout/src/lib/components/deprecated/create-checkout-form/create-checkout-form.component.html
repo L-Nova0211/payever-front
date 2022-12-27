@@ -1,0 +1,66 @@
+<form
+  *ngIf="form"
+  class="form-container"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <div class="upload-logo">
+    <input
+      #fileInput
+      class="upload-logo__input"
+      type="file"
+      accept="image/*"
+      (change)="onLogoUpload($event)"
+    />
+    <ng-container *ngIf="isPictureLoading$ | async; else logoTemplate">
+      <mat-spinner
+        class="upload-logo__spinner mat-spinner-themed"
+        [strokeWidth]="2"
+        [diameter]="22"
+      ></mat-spinner>
+    </ng-container>
+    <ng-template #logoTemplate>
+      <div *ngIf="!form.get('logo').value" class="abbreviation">
+        <h2 class="abbreviation__name">{{ form.get('name').value | abbreviation }}</h2>
+      </div>
+      <div #logoWrapper *ngIf="form.get('logo').value" class="picture">
+        <img
+          #logo
+          class="picture__image"
+          [class.picture__image_large-then-parent]="isLargeThenParent"
+          [src]="form.get('logo').value"
+          (load)="onLoad()"
+        />
+      </div>
+    </ng-template>
+  </div>
+  <div class="add-logo">
+    <div class="add-logo__button" (click)="fileInput.click()">
+      <div class="add-logo__button-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#F5F5F7" fill-rule="nonzero">
+              <g>
+                <path
+                  d="M12 3.5c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm1 4h-2v3H8v2h2.999l.001 3h2v-3h3v-2h-3v-3z"
+                  transform="translate(-644 -346) translate(640 343)"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="add-logo__button-label">
+        {{'actions.add' | translate}} {{'create_checkout.logo.label' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div class="fields">
+    <peb-form-field-input
+      *ngIf="form"
+      class="checkout-name-input"
+      [label]="inputLabel"
+      appearance="label">
+      <input formControlName="name"/>
+    </peb-form-field-input>
+  </div>
+</form>

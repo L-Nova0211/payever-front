@@ -1,0 +1,39 @@
+.pe-bootstrap {
+  .pe-navbar,
+  pe-navbar,
+  pe-data-grid-toolbar {
+    $base-padding: $padding-base-horizontal * 2;
+    $mobile-padding: $padding-base-horizontal;
+
+    &.bottom-margin {
+      margin-bottom: 24px;
+    }
+
+    .mat-toolbar {
+      padding-left: $base-padding;
+      padding-right: $base-padding;
+
+      @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+        padding-left: $mobile-padding;
+        padding-right: $mobile-padding;
+      }
+    }
+  }
+
+  .pe-navbar {
+    .mat-toolbar > .scroll-container {
+      @include pe_flexbox();
+      min-width: 100%;
+      height: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+  }
+
+  .pe-navbar {
+    .mat-toolbar.mat-toolbar-editor {
+      padding-left: $padding-small-horizontal + $padding-xs-horizontal; // to interrupt the styles that are set above for avoid !important
+      padding-right: $grid-unit-x;
+    }
+  }
+}

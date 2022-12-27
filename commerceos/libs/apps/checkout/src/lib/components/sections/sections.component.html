@@ -1,0 +1,333 @@
+<div class="page__container">
+
+  <div class="page__main-title" translate="">actions.edit</div>
+
+  <div class="pe-info-box-container-fixed pe-checkout-sections">
+    <div class="page__title" translate>
+      sections.step1Description
+    </div>
+
+    <div class="pe-info-box-container-fixed no-paddings">
+      <pe-info-box
+        [title]="'sections.infoBoxTitle' | translate"
+        [fixed]="false"
+        [transparent]="true"
+        [withHeader]="false"
+        [withFooter]="false"
+        [withPadding]="false"
+        [notFullwidthOnMobile]="true"
+        [roundBorder]="true">
+        <ng-container content>
+
+          <mat-list
+            *ngIf="disabledSectionsStep !== 1"
+            class="mat-list-transparent mat-list-padding-base"
+            cdkDropList
+            [style.margin-left]="'0'"
+            [cdkDropListData]="stepsFirst"
+            (cdkDropListDropped)="dropSection($event, stepsFirst)">
+            <div
+              *ngFor="let section of stepsFirst"
+              cdkDrag
+              [cdkDragDisabled]="!!section.fixed || stepsFirst?.length < 2">
+              <div class="drag-placeholder" *cdkDragPlaceholder></div>
+              <mat-list-item class="sections-mat-list-item">
+                <div class="mat-list-item-flex">
+                  <div class="mat-list-item-col fit-content">
+                    <div class="icon-menu-wrapper sections-icon-wrapper">
+                      <svg class="icon icon-16 icon-menu-item">
+                        <use xlink:href="#icon-expand-16"></use>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="mat-list-item-col mat-list-item-flex">
+                        <span class="pe-truncate-text"
+                              translate>{{ 'sections.sectionDetails.' + section.code + '.title' }}</span>
+                  </div>
+                  <div class="mat-list-item-col fit-content text-right">
+                    <button
+                      mat-raised-button
+                      *ngIf="!section.fixed"
+                      [class.mat-button-rounded]="true"
+                      [class.mat-button-xs]="true"
+                      (click)="onDisableSection(section, 1)"
+                      class="expansion-list-button danger-color"
+                      type="button"
+                      color="muted-light">
+                      {{ 'actions.remove' | translate }}
+                    </button>
+                  </div>
+                </div>
+
+              </mat-list-item>
+            </div>
+
+          </mat-list>
+
+          <mat-list
+            *ngIf="disabledSectionsStep === 1"
+            class="mat-list-transparent mat-list-padding-base">
+            <ng-container *ngIf="stepsFirstDisabled?.length">
+              <div *ngFor="let section of stepsFirstDisabled">
+                <mat-list-item class="sections-mat-list-item">
+                  <div class="mat-list-item-flex">
+                    <div class="mat-list-item-col fit-content">
+                      <div class="icon-menu-wrapper">
+                        <svg class="icon icon-16 icon-menu-item">
+                          <use xlink:href="#icon-expand-16"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="mat-list-item-col mat-list-item-flex">
+                    <span
+                      class="pe-truncate-text"
+                      translate>
+                      {{ 'sections.sectionDetails.' + section.code + '.title' }}
+                    </span>
+                    </div>
+                    <div class="mat-list-item-col text-right">
+                      <button
+                        mat-raised-button
+                        *ngIf="!section.fixed"
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        (click)="onEnableSection(section, 1)"
+                        class="expansion-list-button danger-color"
+                        type="button"
+                        color="muted-light">
+                        {{ 'actions.add' | translate }}
+                      </button>
+                    </div>
+                  </div>
+
+                </mat-list-item>
+              </div>
+            </ng-container>
+            <ng-container
+              *ngIf="!stepsFirstDisabled || !stepsFirstDisabled.length"
+              [ngTemplateOutlet]="noAvailableSections">
+            </ng-container>
+
+          </mat-list>
+
+        </ng-container>
+      </pe-info-box>
+    </div>
+    <div
+      class="add-button"
+      (click)="onShowDisabledSections(1)">
+      <pe-progress-button-content
+        [spinnerDiameter]="15"
+        [spinnerStrokeWidth]="2"
+        [loading]="isSubmitting"
+        [spinnerLight]="theme !== 'light'">
+        <span
+          *ngIf="!isSubmitting">{{ (disabledSectionsStep === 1 ? 'actions.return' : 'sections.stepEdit') | translate:{number: 1} }}</span>
+      </pe-progress-button-content>
+    </div>
+
+    <div class="page__title" translate>
+      sections.step2Description
+    </div>
+
+    <div class="pe-info-box-container-fixed no-paddings">
+      <pe-info-box
+        [title]="'sections.infoBoxTitle' | translate"
+        [fixed]="false"
+        [transparent]="true"
+        [withHeader]="false"
+        [withFooter]="false"
+        [withPadding]="false"
+        [notFullwidthOnMobile]="true"
+        [roundBorder]="true">
+        <ng-container content>
+
+          <mat-list
+            *ngIf="disabledSectionsStep !== 2"
+            class="mat-list-transparent mat-list-padding-base"
+            cdkDropList
+            [style.margin-left]="'0'"
+            [cdkDropListData]="stepsSecond"
+            (cdkDropListDropped)="dropSection($event, stepsSecond)">
+            <div
+              *ngFor="let section of stepsSecond"
+              cdkDrag
+              [cdkDragDisabled]="!!section.fixed || stepsSecond?.length < 2">
+              <div class="drag-placeholder" *cdkDragPlaceholder></div>
+              <mat-list-item class="sections-mat-list-item">
+                <div class="mat-list-item-flex">
+                  <div class="mat-list-item-col fit-content">
+                    <div class="icon-menu-wrapper">
+                      <svg
+                        class="icon icon-16 icon-menu-item"
+                        [class.hidden-icon]="section.fixed">
+                        <use xlink:href="#icon-expand-16"></use>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="mat-list-item-col mat-list-item-flex">
+                    <span
+                      class="pe-truncate-text"
+                      translate>
+                      {{ 'sections.sectionDetails.' + section.code + '.title' }}
+                    </span>
+                  </div>
+                  <div class="mat-list-item-col fit-content text-right">
+                    <button
+                      mat-raised-button
+                      *ngIf="!section.fixed"
+                      [class.mat-button-rounded]="true"
+                      [class.mat-button-xs]="true"
+                      (click)="onDisableSection(section, 2)"
+                      class="expansion-list-button danger-color"
+                      type="button"
+                      color="muted-light">
+                      {{ 'actions.remove' | translate }}
+                    </button>
+                  </div>
+                </div>
+
+              </mat-list-item>
+            </div>
+
+          </mat-list>
+
+          <mat-list
+            *ngIf="disabledSectionsStep === 2"
+            class="mat-list-transparent mat-list-padding-base">
+            <ng-container *ngIf="stepsSecondDisabled?.length">
+              <div *ngFor="let section of stepsSecondDisabled">
+                <mat-list-item class="sections-mat-list-item">
+                  <div class="mat-list-item-flex">
+                    <div class="mat-list-item-col fit-content">
+                      <div class="icon-menu-wrapper">
+                        <svg
+                          class="icon icon-16 icon-menu-item hidden-icon">
+                          <use xlink:href="#icon-expand-16"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="mat-list-item-col mat-list-item-flex">
+                      <span
+                        class="pe-truncate-text"
+                        translate>
+                        {{ 'sections.sectionDetails.' + section.code + '.title' }}
+                      </span>
+                    </div>
+                    <div class="mat-list-item-col fit-content text-right">
+                      <button
+                        mat-raised-button
+                        *ngIf="!section.fixed"
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        (click)="onEnableSection(section, 2)"
+                        class="expansion-list-button danger-color"
+                        type="button"
+                        color="muted-light">
+                        {{ 'actions.add' | translate }}
+                      </button>
+                    </div>
+                  </div>
+
+                </mat-list-item>
+              </div>
+            </ng-container>
+            <ng-container
+              *ngIf="!stepsSecondDisabled || !stepsSecondDisabled.length"
+              [ngTemplateOutlet]="noAvailableSections">
+            </ng-container>
+
+          </mat-list>
+
+        </ng-container>
+      </pe-info-box>
+    </div>
+
+    <div
+      class="add-button"
+      (click)="onShowDisabledSections(2)">
+      <pe-progress-button-content
+        [spinnerDiameter]="15"
+        [spinnerStrokeWidth]="2"
+        [loading]="isSubmitting"
+        [spinnerLight]="theme !== 'light'">
+        <span
+          *ngIf="!isSubmitting">{{ (disabledSectionsStep === 2 ? 'actions.return' : 'sections.stepEdit') | translate:{number: 2} }}</span>
+      </pe-progress-button-content>
+    </div>
+
+    <div class="page__title" translate>
+      sections.step3Description
+    </div>
+    <div class="pe-info-box-container-fixed no-paddings">
+      <pe-info-box
+        [title]="'sections.infoBoxTitle' | translate"
+        [fixed]="false"
+        [transparent]="true"
+        [withHeader]="false"
+        [withFooter]="false"
+        [withPadding]="false"
+        [notFullwidthOnMobile]="true"
+        [roundBorder]="true">
+        <ng-container content>
+
+          <mat-list
+            *ngIf="disabledSectionsStep !== 3"
+            class="mat-list-transparent mat-list-padding-base"
+            cdkDropList
+            [style.margin-left]="'0'"
+            [cdkDropListData]="stepsFirst"
+            (cdkDropListDropped)="dropSection($event, stepsFirst)">
+            <mat-list-item class="sections-mat-list-item">
+              <div class="mat-list-item-flex">
+                <div class="mat-list-item-col fit-content">
+                  <div class="icon-menu-wrapper">
+                    <svg class="icon icon-16 icon-menu-item">
+                      <use xlink:href="#icon-expand-16"></use>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="mat-list-item-col mat-list-item-flex">
+                  <span class="pe-truncate-text" translate>sections.confirmation</span>
+                </div>
+              </div>
+
+            </mat-list-item>
+          </mat-list>
+
+          <mat-list
+            *ngIf="disabledSectionsStep === 3"
+            class="mat-list-transparent mat-list-padding-base">
+            <ng-container [ngTemplateOutlet]="noAvailableSections"></ng-container>
+          </mat-list>
+
+        </ng-container>
+      </pe-info-box>
+    </div>
+    <div
+      class="add-button"
+      (click)="onShowDisabledSections(3)">
+      {{ (disabledSectionsStep === 3 ? 'actions.return' : 'sections.stepEdit') | translate:{number: 3} }}
+    </div>
+  </div>
+</div>
+
+<ng-template #noAvailableSections>
+  <mat-list-item class="sections-mat-list-item">
+    <div class="mat-list-item-flex">
+      <div class="mat-list-item-col mat-list-item-flex">
+                    <span
+                      class="pe-truncate-text icon-menu-wrapper"
+                      translate>
+                      sections.noAvailableSections
+                    </span>
+      </div>
+    </div>
+
+  </mat-list-item>
+</ng-template>

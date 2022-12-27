@@ -1,0 +1,54 @@
+@import '../../../../../../styles/src/lib/styles/spinner';
+
+:host {
+  height: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+li {
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  background-color: #37363b;;
+  margin-bottom: 16px;
+  position: relative;
+  padding: 6px 8px;
+  justify-content: space-around;
+}
+
+li.disabled {
+  color: #7a7a7a;
+  cursor: default;
+}
+
+li:hover:not(.disabled) {
+  color: white;
+  background: #0371e2;
+}
+
+.effects {
+  display: grid;
+  grid-template-columns: auto 62px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.group {
+  margin-bottom: 10px;
+
+  &__select-label {
+    width: 100%;
+    font-size: smaller;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7a7a7a;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,10 @@
+<mat-spinner
+  *ngIf="loading"
+  [color]="spinnerColor"
+  [strokeWidth]="spinnerStrokeWidth"
+  [diameter]="spinnerDiameter"
+  [class.mat-progress-spinner-light]="spinnerLight">
+</mat-spinner>
+<div [class.hidden-content]="loading">
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,42 @@
+@use '~@angular/material/theming' as theming;
+@use '~@angular/cdk/overlay' as overlay;
+
+@include theming.mat-core();
+$custom-theme-primary: theming.mat-palette(theming.$mat-grey, 900);
+$custom-theme-accent: theming.mat-palette(theming.$mat-pink, A200, A100, A400);
+$custom-theme-warn: theming.mat-palette(theming.$mat-red);
+$custom-theme: theming.mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include theming.angular-material-theme($custom-theme);
+
+.cdk-overlay-container {
+  z-index: 20000; // same index used in commerceos
+}
+
+.mat-dialog-container,
+.mat-menu-panel {
+  background-color: #4e4e4e;
+  color: #fff;
+}
+
+.mat-menu-item {
+  color: #fff;
+}
+
+.themes-preview-dialog mat-dialog-container {
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 10px solid #777777;
+  overflow: initial;
+}
+
+.sandbox-dialog-backdrop {
+  background: rgba(196, 196, 255, 0.25);
+}
+
+.sandbox-dialog-panel {
+  .mat-dialog-container {
+    padding: 0;
+    background: none;
+  }
+}

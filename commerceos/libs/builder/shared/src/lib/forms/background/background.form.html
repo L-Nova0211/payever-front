@@ -1,0 +1,176 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" class="form">
+  <peb-editor-sidebar-tabs>
+    <peb-editor-sidebar-tab title="Preset" [active]="activeTab === PebBackgroundFormTab.Preset" *ngIf="!isImageContext && tabs[PebBackgroundFormTab.Preset]">
+      <peb-fill-preset [control]="formGroup.get('bgColor')"  (colorSelected)="blurred.emit()"></peb-fill-preset>
+    </peb-editor-sidebar-tab>
+
+    <peb-editor-sidebar-tab title="Color" [active]="activeTab === PebBackgroundFormTab.Color" *ngIf="!isImageContext && tabs[PebBackgroundFormTab.Color]">
+      <peb-picker formControlName="bgColor" (change)="blurred.emit()"></peb-picker>
+    </peb-editor-sidebar-tab>
+
+    <peb-editor-sidebar-tab title="Gradient" [active]="activeTab === PebBackgroundFormTab.Gradient" *ngIf="!isImageContext && tabs[PebBackgroundFormTab.Gradient]">
+      <div class="gradient-slider">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          formControlName="bgColorGradientStartPercent"
+          (click)="gradientActive = 'start'">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          formControlName="bgColorGradientStopPercent"
+          (click)="gradientActive = 'stop'">
+        <div
+          class="gradient-slider__track"
+          [style.background-image]="gradient"
+        ></div>
+        <div class="gradient-slider__container">
+          <div
+            class="thumb"
+            [class.thumb_active]="gradientActive === 'start'"
+            [style.marginLeft.%]="gradientStartPercent"
+            [style.backgroundColor]="gradientStartColor"
+          ></div>
+          <div
+            class="thumb"
+            [class.thumb_active]="gradientActive === 'stop'"
+            [style.marginLeft.%]="gradientStopPercent"
+            [style.backgroundColor]="gradientStopColor"
+          ></div>
+        </div>
+      </div>
+
+      <peb-picker *ngIf="gradientActive === 'start'" formControlName="bgColorGradientStart"></peb-picker>
+      <peb-picker *ngIf="gradientActive === 'stop'" formControlName="bgColorGradientStop"></peb-picker>
+
+      <div class="form-row">
+        <label>Angle</label>
+        <div class="combined-input-range">
+          <peb-range-input [min]="0" [max]="360" formControlName="bgColorGradientAngle"></peb-range-input>
+          <peb-number-input [min]="0" [max]="360" formControlName="bgColorGradientAngle" units="°"></peb-number-input>
+        </div>
+      </div>
+    </peb-editor-sidebar-tab>
+
+    <peb-editor-sidebar-tab title="Media" [active]="activeTab === PebBackgroundFormTab.Media" *ngIf="tabs[PebBackgroundFormTab.Media]">
+
+      <div class="type" *ngIf="!isImageContext">
+        <peb-select formControlName="mediaType" [options]="mediaTypes" [label]="'Upload Media'"></peb-select>
+      </div>
+
+      <div class="image" [class.image_hidden]="formGroup.value.mediaType === mediaType.None">
+        <div class="image__container">
+          <div *ngIf="bgImageLoading$ | async" class="spinner"></div>
+          <div class="image__thumbnail" *ngIf="thumbnail$ | async as thumbnail" [style.background-image]="'url(' + thumbnail + ')'"></div>
+          <input type="file" accept="image/jpeg,image/png,image/gif,image/svg+xml" #bgImageInput hidden (change)="changeBgInputHandler($event)">
+          <input type="file" accept="video/mp4,video/x-m4v,video/*" #videoInput hidden (change)="changeVideoInputHandler($event)"/>
+        </div>
+
+        <span (click)="changeMedia()" [class.disabled]="(bgImageLoading$ | async) || isImageContext">
+          <ng-container *ngIf="formGroup.value.bgImage; else uploadMedia">Change<br>Media</ng-container>
+          <ng-template #uploadMedia>Select<br>Media</ng-template>
+        </span>
+      </div>
+
+      <div class="sizes" *ngIf="formGroup.value.mediaType === mediaType.Image">
+        <ul>
+          <li
+            *ngFor="let size of imageSize"
+            (click)="formGroup.get('imageSize').patchValue(size)"
+            [class.active]="formGroup.get('imageSize').value.name === size.name"
+          >
+            <div class="sizes__icon">
+              <peb-editor-background-original-size-icon *ngIf="size.name === 'Original Size'"></peb-editor-background-original-size-icon>
+              <peb-editor-background-stretch-icon *ngIf="size.name === 'Stretch'"></peb-editor-background-stretch-icon>
+              <peb-editor-background-tile-icon *ngIf="size.name === 'Tile'"></peb-editor-background-tile-icon>
+              <peb-editor-background-scale-to-fill-icon *ngIf="size.name === 'Scale to Fill'"></peb-editor-background-scale-to-fill-icon>
+              <peb-editor-background-scale-to-fit-icon *ngIf="size.name === 'Scale to Fit'"></peb-editor-background-scale-to-fit-icon>
+            </div>
+            <span>{{ size.name }}</span>
+            <mat-icon class="sizes__applied" svgIcon="checkmark-blue"></mat-icon>
+          </li>
+        </ul>
+      </div>
+
+      <ng-container *ngIf="formGroup.value.mediaType === mediaType.Image">
+        <label class="label">Scale</label>
+        <div class="combined-input-range">
+          <peb-range-input
+            label="Scale"
+            [min]="0"
+            [max]="200"
+            formControlName="imageScale"
+          ></peb-range-input>
+          <peb-number-input
+            [min]="0"
+            [max]="200"
+            formControlName="imageScale"
+            units="%"
+          ></peb-number-input>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="component?.video?.form">
+        <div class="sizes" *ngIf="formGroup.value.mediaType === mediaType.Video">
+          <ul>
+            <li
+              *ngFor="let size of videoSize"
+              (click)="component?.video?.form.get('videoObjectFit').patchValue(size)"
+              [class.active]="component?.video?.form.get('videoObjectFit').value?.name === size.name"
+            >
+              <div class="sizes__icon">
+                <peb-editor-background-original-size-icon *ngIf="size.name === 'Original Size'"></peb-editor-background-original-size-icon>
+                <peb-editor-background-stretch-icon *ngIf="size.name === 'Stretch'"></peb-editor-background-stretch-icon>
+                <peb-editor-background-tile-icon *ngIf="size.name === 'Tile'"></peb-editor-background-tile-icon>
+                <peb-editor-background-scale-to-fill-icon *ngIf="size.name === 'Scale to Fill'"></peb-editor-background-scale-to-fill-icon>
+                <peb-editor-background-scale-to-fit-icon *ngIf="size.name === 'Scale to Fit'"></peb-editor-background-scale-to-fit-icon>
+              </div>
+              <span>{{ size.name }}</span>
+              <svg class="sizes__applied" width="16" height="12" viewBox="0 0 16 12">
+                <g fill="none" fill-rule="evenodd">
+                  <g fill="#0371E2" fill-rule="nonzero">
+                    <path d="M1326.939 250c-.205-.001-.4-.085-.543-.233l-4.17-4.24c-.301-.304-.301-.798-.001-1.102.3-.305.787-.305 1.087 0l3.627 3.688 9.75-9.885c.193-.197.476-.274.741-.201.266.072.473.282.544.55.07.27-.005.557-.2.754l-10.276 10.436c-.147.152-.35.236-.559.233z" transform="translate(-1322 -238)"/>
+                  </g>
+                </g>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <ng-container *ngIf="formGroup.value.mediaType === mediaType.Video">
+          <label class="label">Scale</label>
+          <div class="combined-input-range" [formGroup]="component?.video?.form">
+            <peb-range-input
+              label="Scale"
+              [min]="0"
+              [max]="200"
+              formControlName="videoScale"
+            ></peb-range-input>
+            <peb-number-input
+              [min]="0"
+              [max]="200"
+              formControlName="videoScale"
+              units="%"
+            ></peb-number-input>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="!isImageContext && formGroup.value.mediaType === mediaType.Image">
+        <div class="form__row_border">
+          <div class="group__row">
+            <label class="group__label">
+              Fill
+            </label>
+            <div class="peb-fill" (click)="showImageBackgroundForm()">
+              <div class="peb-fill__thumbnail" [ngStyle]="imageBackground$ | async"></div>
+              <mat-icon svgIcon="arrow" class="sidebar__icon sidebar__icon__arrow sidebar__icon__arrow--fill"></mat-icon>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </peb-editor-sidebar-tab>
+  </peb-editor-sidebar-tabs>
+</form>

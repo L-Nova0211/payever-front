@@ -1,0 +1,47 @@
+<form [formGroup]="seoForm" class="form">
+  <peb-editor-sidebar-tabs>
+    <peb-editor-sidebar-tab title="General">
+      <div class="form__row">
+        <span>Title</span>
+        <peb-editor-text-input formControlName="name"></peb-editor-text-input>
+      </div>
+
+      <div class="form__row">
+        <span>SEO Url</span>
+        <peb-editor-text-input formControlName="url"></peb-editor-text-input>
+        <div
+          *ngIf="seoForm.get('url').disabled"
+          style="width: 100%; font-size: 10px;"
+        >
+          You can't change front page url
+        </div>
+        <div *ngIf="seoForm.get('url')?.errors?.occupied" style="width: 100%; font-size: 10px;">Url is occupied.</div>
+      </div>
+
+      <div class="form__row">
+        <span>Description</span>
+        <peb-textarea formControlName="description"></peb-textarea>
+      </div>
+
+      <div class="form__row">
+        <peb-slide-toggle formControlName="showInSearchResults">Show in search results</peb-slide-toggle>
+      </div>
+    </peb-editor-sidebar-tab>
+    <peb-editor-sidebar-tab title="Advanced">
+      <div class="form__row">
+        <span>Canonical URL</span>
+        <peb-editor-text-input formControlName="canonicalUrl"></peb-editor-text-input>
+      </div>
+
+      <div class="form__row">
+        <span>Markup Data</span>
+        <peb-editor-text-input formControlName="markupData"></peb-editor-text-input>
+      </div>
+
+      <div class="form__row">
+        <span>Custom Meta Tags</span>
+        <peb-textarea formControlName="customMetaTags"></peb-textarea>
+      </div>
+    </peb-editor-sidebar-tab>
+  </peb-editor-sidebar-tabs>
+</form>

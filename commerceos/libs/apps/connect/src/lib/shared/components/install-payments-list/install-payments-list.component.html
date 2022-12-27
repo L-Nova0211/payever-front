@@ -1,0 +1,86 @@
+<pe-info-box [withHeader]="false"
+             [withPadding]="false"
+             [withFooter]="false"
+             [roundBorder]="true"
+             [notFullwidthOnMobile]="false"
+             [fixed]="false">
+  <ng-container content>
+    <mat-accordion multi="true">
+
+      <ng-container *ngFor="let item of items">
+        <mat-expansion-panel *ngIf="item.integrations.length === 1" [disabled]="true" hideToggle class="mat-expansion-panel-dark mat-expansion-panel-no-border-radius">
+          <mat-expansion-panel-header *ngIf="item.integrations[0] as integration"
+                                      collapsedHeight="48px"
+                                      expandedHeight="48px"
+                                      class="mat-expansion-panel-header-no-logo">
+
+            <mat-panel-title class="mat-expansion-panel-header-title-no-logo" [style.font-size]="'15px'">
+              <svg class="icon icon-24">
+                <use [attr.xlink:href]="integration.displayOptions.icon"></use>
+              </svg>
+              <span class="pe-truncate-text" translate>{{ integration.displayOptions.title | translate }}</span>
+            </mat-panel-title>
+
+            <div class="mat-expansion-panel-spacer"></div>
+            <ng-template [ngTemplateOutlet]="installButton" [ngTemplateOutletContext]="{ integration: integration }"></ng-template>
+
+          </mat-expansion-panel-header>
+
+          <mat-divider></mat-divider>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel *ngIf="item.integrations.length > 1" class="mat-expansion-panel-dark mat-expansion-panel-no-border-radius">
+          <mat-expansion-panel-header collapsedHeight="40px"
+                                      expandedHeight="40px"
+                                      class="mat-expansion-panel-header-no-logo">
+
+            <mat-panel-title class="mat-expansion-panel-header-title-no-logo" [style.font-size]="'15px'">
+              <svg class="icon icon-24">
+                <use [attr.xlink:href]="item.icon"></use>
+              </svg>
+              <span class="pe-truncate-text" translate>{{ item.title | translate }}</span>
+            </mat-panel-title>
+
+            <div class="mat-expansion-panel-spacer"></div>
+
+          </mat-expansion-panel-header>
+
+          <mat-list class="mat-list-transparent mat-list-padding-base">
+
+            <mat-list-item *ngFor="let integration of item.integrations" class="sections-mat-list-item">
+              <div class="mat-list-item-flex sections-section-item">
+                <div class="mat-list-item-col">
+                  <span class="pe-truncate-text" translate>{{ integration.displayOptions.title | translate }}</span>
+                </div>
+
+                <div class="mat-list-item-col mat-list-item-flex mat-list-item-flex-right sections-step-buttons">
+                  <ng-template [ngTemplateOutlet]="installButton" [ngTemplateOutletContext]="{ integration: integration }"></ng-template>
+                </div>
+              </div>
+            </mat-list-item>
+
+            <mat-divider></mat-divider>
+
+          </mat-list>
+
+        </mat-expansion-panel>
+      </ng-container>
+
+
+    </mat-accordion>
+
+  </ng-container>
+</pe-info-box>
+
+<ng-template #installButton let-integration="integration">
+  <button mat-raised-button
+          [class.mat-button-rounded]="true"
+          [class.mat-button-xs]="true"
+          class="install"
+          color="muted-light"
+          (click)="integration?._status?.installed ? openIntegration(integration) : install(integration)">
+    <pe-progress-button-content [spinnerDiameter]="15" [loading]="isInstalling(integration)">{{
+      integration?._status?.installed ? ('integrations.actions.open' | translate) : ('integrations.actions.install' | translate)
+      }}</pe-progress-button-content>
+  </button>
+</ng-template>

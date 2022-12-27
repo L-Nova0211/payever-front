@@ -1,0 +1,82 @@
+<pe-mail-toolbar-material-styles></pe-mail-toolbar-material-styles>
+<div class="message__mail-options" [formGroup]="form">
+  <div class="form-field">
+    <label class="label" for="name">To:</label>
+    <mat-chip-list #chipList aria-label="Fruit selection">
+        <mat-chip
+          *ngFor="let recipient of recipients; let i = index"
+          [selectable]="selectable"
+          (removed)="removeRecipientChip(i)">
+            {{ recipient }}
+            <mat-icon class="close-chip" svgIcon="button-close" matChipRemove></mat-icon>
+        </mat-chip>
+        <input
+          placeholder=""
+          class="input"
+          #input
+          [formControl]="recipientCtrl"
+          [matAutocomplete]="recipientAuto"
+          [matChipInputFor]="chipList"
+          [matChipInputAddOnBlur]="true"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (blur) = "addRecipientChip($event.value)"
+          (matChipInputTokenEnd)="addRecipientChip($event.value)">
+      </mat-chip-list>
+      <mat-autocomplete class="message__autocomplete" #recipientAuto="matAutocomplete">
+        <mat-option *ngFor="let contact of filteredContacts$ | async; let i = index; trackBy: trackContact"
+          class="option"
+          [value]="contact.value">
+          {{ contact.title }}
+        </mat-option>
+      </mat-autocomplete>
+    <div class="form-field__icon" (click)="openContactDialog()">
+      <mat-icon svgIcon="plus-in-circle"></mat-icon>
+    </div>
+  </div>
+  <div class="form-field">
+    <label class="label" for="name">Subject:</label>
+    <peb-form-field-input class="input" label="" appearance="label">
+      <input placeholder="" formControlName="subject" id="name" name="name" type="text"/>
+    </peb-form-field-input>
+  </div>
+  <div class="form-field" *ngIf="screenSize">
+    <label class="label" for="name">From:</label>
+    <peb-select #selectSender class="sender-select" formControlName="sender" placeholder="Sender email" panelClass="sender-select-panel">
+      <peb-select-option #optionSender class="peb-select-option" [theme]="theme" *ngFor="let sender of sendersList" [value]="sender.email" [label]="screenSize === pebScreen.Desktop ? sender.name + ' - ' + sender.email : sender.email"></peb-select-option>
+    </peb-select>
+    <div class="sender-select__dropdown" (click)="onSelectDropdown()">
+      <div class="sender-select__arrow up"></div>
+      <div class="sender-select__arrow down"></div>
+    </div>
+  </div>
+  <div class="form-field">
+    <label class="label" for="name">Test mail:</label>
+    <peb-form-field-input class="input" label="" appearance="label">
+      <input placeholder="" formControlName="testMailRecipient" id="name" name="name" type="text"/>
+    </peb-form-field-input>
+    <button class="send-test-mail-button" (click)="onSendTestMail()">
+      Send Test Mail
+    </button>
+  </div>
+  <div class="tools">
+    <div class="tools-container">
+      <peb-editor-actions-history-tool (execCommand)="execCommand.emit($event)"></peb-editor-actions-history-tool>
+      <peb-editor-zoom-tool (execCommand)="execCommand.emit($event)"></peb-editor-zoom-tool>
+    </div>
+
+    <div class="tools-container">
+      <peb-editor-shapes-tool
+        (execCommand)="execCommand.emit($event)"
+      ></peb-editor-shapes-tool>
+    </div>
+
+    <div class="tools-container">
+      <peb-editor-brush-tool
+        class="tools-brush"
+        *ngIf="screenSize !== pebScreen.Desktop"
+        (execCommand)="execCommand.emit($event)"
+      >
+      </peb-editor-brush-tool>
+    </div>
+  </div>
+</div>

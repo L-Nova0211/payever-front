@@ -1,0 +1,23 @@
+<div class="create-message">
+  <button *ngIf="!isCreated" class="create-message__btn" (click)="onCreateMessage()">
+    {{'rule.message.create_message' | translate}}
+  </button>
+
+  <div class="create-message__form" *ngIf="isCreated" [formGroup]="messageForm">
+    <peb-form-background>
+      <peb-form-field-input label="{Subject Name}" appearance='label' animated='true'>
+        <input pebInput formControlName='name' formControlName="subject" />
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class="action">
+      <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+        <use xlink:href="#icon-rule-edit"></use>
+      </svg>
+    </div>
+    <div class="action" (click)="onDelete()">
+      <svg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 0 16 18'>
+        <use xlink:href="#icon-rule-delete"></use>
+      </svg>
+    </div>
+  </div>
+</div>

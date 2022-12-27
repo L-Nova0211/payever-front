@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-210 -240) translate(194 116) translate(16 124)">
+                    <rect width="20" height="20" fill="#86868B" rx="5"/>
+                    <g fill="#FFF" stroke="#FFF" stroke-width=".818">
+                        <path d="M1.636.41l.19.8 4.787.478.445-1.186.354-.092c.32.013.608.147.82.359.222.222.359.528.359.867h0v8.728c0 .339-.137.645-.36.868-.222.222-.528.359-.867.359h0-5.728c-.339 0-.645-.137-.868-.36-.222-.222-.359-.528-.359-.867h0V1.636c0-.339.137-.645.36-.867.222-.222.528-.36.867-.36h0z" transform="translate(5.5 4)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

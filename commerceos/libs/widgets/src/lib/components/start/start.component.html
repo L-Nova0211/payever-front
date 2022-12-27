@@ -1,0 +1,33 @@
+<div [ngClass]="widgetTheme">
+  <div class="widget">
+    <div class="widget__content">
+      <div class="start__welcome">
+        <div class="start__image"
+             *ngIf="widget.installIconUrl || widget.iconUrl; else svgIcon"
+             [style.background-image]="'url(' + ( (widget.installIconUrl || widget.iconUrl) | iconsPngUrl ) + ')' | safeStyle"
+        ></div>
+        <ng-template #svgIcon>
+          <svg class="icon icon-54">
+            <use [attr.xlink:href]="widget.icon"></use>
+          </svg>
+        </ng-template>
+        <div class="start__title">
+          <h3>{{ widget.title | loadTranslate | async }}</h3>
+        </div>
+        <div class="start__sub-title">
+          {{ widget.subTitle }}
+        </div>
+      </div>
+      <div class="start__actions">
+        <div class="start__action" (click)="onInstallClick()">
+          <mat-spinner *ngIf="installLoading" class="widget__spinner mat-progress-spinner-light"
+          [strokeWidth]="2" [diameter]="26"></mat-spinner>
+          <div *ngIf="!installLoading">{{ (!widget.installedApp ? 'widgets.actions.get-started' : 'widgets.actions.continue-setup')  | loadTranslate | async }}</div>
+        </div>
+        <a class="start__action" *ngIf="!widget.installedApp" [href]="widget?.helpUrl || '#'" target="_blank">
+          {{ 'widgets.actions.learn-more' | loadTranslate | async }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

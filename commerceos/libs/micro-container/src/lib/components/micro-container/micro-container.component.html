@@ -1,0 +1,15 @@
+<!-- <pe-new-platform-header [ngClass]="theme"></pe-new-platform-header> -->
+
+<div class="background-blurred"></div>
+
+<div #micro id="micro-content" class="micro-content"
+  [ngClass] ="theme"
+  [class.below-header]="belowHeader"
+  [class.below-subheader]="belowSubheader"
+  [class.below-welcome-stepper]="(peStepperService.isActive$ | async) || (peSimpleStepperService.isVisible$ | async)"
+  [class.with-header-notification]="showAlertInHeader$ | async">
+</div>
+
+<div class="progress-spinner-container" [class.hidden]="(hideLoader$ | async) || isWelcomeStep">
+  <mat-spinner class="mat-progress-spinner-light" [strokeWidth]="2" [diameter]="32"></mat-spinner>
+</div>

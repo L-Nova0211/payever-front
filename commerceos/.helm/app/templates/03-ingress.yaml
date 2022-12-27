@@ -1,0 +1,52 @@
+{{ $chartName := .Chart.Name }}
+{{ $values := .Values }}
+{{ $files := .Files }}
+{{ $appName := printf "%s-%s" $chartName $values.issue | lower | replace "_" "-" | trimSuffix "-"   }}
+{{ $host := printf "%s.%s" $values.issue $values.domain | lower }}
+{{- if .Values.deployToExclusive -}}
+{{ if $values.issue }}
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: {{ $appName }}
+  namespace: {{ $values.namespace }}
+
+  labels:
+    app: {{ $appName }}
+    tier: app
+
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/use-http2: "true"
+    nginx.ingress.kubernetes.io/http2-push-preload: "true"
+    nginx.ingress.kubernetes.io/use-gzip: "true"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/gzip-types: "application/atom+xml application/javascript application/x-javascript application/json application/rss+xml application/vnd.ms-fontobject application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml application/font-woff2 font/woff2 image/svg+xml image/x-icon text/css text/plain text/x-component"
+
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      {{ range $files.Lines "static/ingress/cors-configuration-snippet" }}
+      {{ . }}{{ end }}
+
+
+spec:
+  rules:
+    - host: {{ $host | quote }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $appName }}
+                port:
+                  number: {{ $values.service.externalPort }}
+  tls:
+    - secretName: tls-test-devpayever-com
+      hosts:
+        - {{ $host | quote }}
+
+---
+{{- end }}
+{{- end -}}

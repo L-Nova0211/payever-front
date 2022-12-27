@@ -1,0 +1,43 @@
+elements:
+  id: button-doc-1
+  type: button
+
+
+stylesheet:
+  all:
+    button-doc-1:
+      width: 100
+      backgroundColor: red
+      padding: 10
+  second:
+    button-doc-1:
+      width: 120
+      backgroundColor: blue
+      padding: 10
+      borderRadius: 5
+      color: white
+  third:
+    button-doc-1:
+      width: 120
+      backgroundColor: green
+      padding: 10
+      color: white
+  fourth:
+    button-doc-1:
+      width: 120
+      backgroundColor: yellow
+      padding: 10
+      color: blue
+      borderRadius: 5
+  fifth:
+    button-doc-1:
+      width: 120
+      backgroundColor: '#c3c3c3'
+      padding: 10
+      color: blue
+      borderRadius: 20
+context:
+  button-doc-1:
+    state: 'ready'
+    data:
+      name: 'save'

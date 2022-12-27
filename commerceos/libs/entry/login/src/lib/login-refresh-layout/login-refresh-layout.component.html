@@ -1,0 +1,16 @@
+<entry-layout [hideLogo]="false">
+  <active-business
+    *ngIf="activeBusiness"
+    [logo]="activeBusiness?.logo | mediaUrl: 'images'"
+    [name]="activeBusiness?.name"
+    [city]="activeBusiness?.companyAddress?.city"
+    [firstName]="activeBusiness?.contactDetails?.firstName"
+    [lastName]="activeBusiness?.contactDetails?.lastName">
+  </active-business>
+  <entry-login
+    [username]="email"
+    [displayLoginWithEmail]="true"
+    (onSuccessLogin)="onSuccessLogin()"
+    (onSecondFactorCode)="onSecondFactorCode()">
+  </entry-login>
+</entry-layout>

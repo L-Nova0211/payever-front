@@ -1,0 +1,39 @@
+<div class="order-section" *ngIf="order" [ngClass]="theme">
+  <div class="section-item">
+    <div class="section-item__label">{{'transactions.sections.order.channel' | translate}} </div>
+    <div  class="section-item__value">{{ 'transactions.values.channels.' + order?.channel.name | translate }}</div>
+  </div>
+  <ng-template [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{
+      label: 'transactions.sections.order.payeverId',
+      value: order?.transaction.original_id
+    }"></ng-template>
+  <ng-template *ngIf="order._santanderApplicationNo" [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{
+      label: 'transactions.sections.order.santanderApplicationId',
+      value: order?._santanderApplicationNo}">
+  </ng-template>
+  <ng-template *ngIf="order._applicationNo" [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{
+      label: 'transactions.sections.order.applicationNo',
+      value: order?._applicationNo}"></ng-template>
+  <ng-template *ngIf="order._panId" [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{ label: 'transactions.sections.order.panId', value: order?._panId}"></ng-template>
+  <ng-template *ngIf="order.details?.order?.finance_id" [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{
+      label: 'transactions.sections.order.paymentId',
+      value: order?.details?.order?.finance_id}">
+  </ng-template>
+  <ng-template *ngIf="order.details?.order?.reference" [ngTemplateOutlet]="dataRow"
+    [ngTemplateOutletContext]="{
+      label: 'transactions.sections.order.reference',
+      value: order?.details?.order?.reference}">
+  </ng-template>
+</div>
+
+<ng-template #dataRow let-label="label" let-value="value">
+  <div class="section-item">
+    <div class="section-item__label" *ngIf="label">{{ label | translate}} </div>
+    <div  class="section-item__value" *ngIf="value">{{ value }}</div>
+  </div>
+</ng-template>

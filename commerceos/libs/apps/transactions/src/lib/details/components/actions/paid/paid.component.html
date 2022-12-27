@@ -1,0 +1,15 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.paid.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.paid.actions.confirm"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form !== null">
+    <peb-form-background>
+      <div class="note">{{ 'transactions.form.paid.note' | translate }}</div>
+    </peb-form-background>
+    <input formControlName="status" type="hidden" />
+  </form>
+</pe-action-container>

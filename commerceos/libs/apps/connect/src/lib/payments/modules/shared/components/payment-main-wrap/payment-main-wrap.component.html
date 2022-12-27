@@ -1,0 +1,191 @@
+<div class="payment-main-wrap-container" *ngIf="!(isAddingConnVariant$ | async)">
+  <pe-info-box
+      *ngIf="paymentData$ | async"
+      class="connect-payment-option-wrapper pe-info-box-header-padding"
+      [fixed]="false"
+      [transparent]="true"
+      [withHeader]="false"
+      [withFooter]="false"
+      [title]="('categories.payments.payment_methods.' + payment?.option?.payment_method) | translate"
+      [withPadding]="false"
+      [notFullwidthOnMobile]="false"
+      [roundBorder]="true"
+      (onClose)="handleClose()">
+    <ng-container content>
+      <div *ngIf="(isLoading$ | async)" class="loading-wrapper">
+        <!--
+        <mat-progress-spinner
+            [strokeWidth]="2"
+            [diameter]="32"
+            [mode]="'indeterminate'"
+            [value]="50">
+        </mat-progress-spinner>
+        -->
+      </div>
+      <mat-accordion class="wrapper">
+        <mat-expansion-panel #panel *ngIf="hasSectionAccount() && !forceHideSectionAccount"
+                             [class.mat-expansion-panel-dark]="true"
+                             [disabled]="!hasSectionAccountBody()"
+                             [attr.panel]="PanelEnum.account"
+                             [attr.filled]="getStep(StepEnum.additionalInfo)?.filled">
+          <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              class="mat-expansion-panel-header-no-logo">
+            <mat-panel-title translate>categories.payments.main.titles.account</mat-panel-title>
+
+            <mat-panel-description>
+              <svg>
+                <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+              </svg>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div *ngIf="hasSectionAccountBody()">
+            <ng-content select="[account]"></ng-content>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- This one only for SOFORT -->
+        <mat-expansion-panel #panel *ngIf="hasSectionExternalRegister() && hasExternalRegister"
+                             [class.mat-expansion-panel-dark]="true"
+                             [attr.panel]="PanelEnum.externalRegister"
+                             [attr.filled]="isSectionExternalRegisterFilled()">
+          <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              class="mat-expansion-panel-header-no-logo">
+            <mat-panel-title translate>categories.payments.main.titles.externalRegister</mat-panel-title>
+            <mat-panel-description>
+              <svg>
+                <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+              </svg>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-content select="[external-register]"></ng-content>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel #panel *ngIf="hasSectionDocuments()"
+                             [class.mat-expansion-panel-dark]="true"
+                             [attr.panel]="PanelEnum.documents"
+                             [attr.filled]="isSectionDocumentsFilled()">
+          <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              class="mat-expansion-panel-header-no-logo">
+            <mat-panel-title translate>categories.payments.main.titles.documents</mat-panel-title>
+            <mat-panel-description>
+              <svg>
+                <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+              </svg>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-content select="[payment-documents]"></ng-content>
+        </mat-expansion-panel>
+
+        <ng-container *ngFor="let variant of (paymentData$ | async).variants; let i = index">
+
+          <mat-expansion-panel #panel
+                               [class.mat-expansion-panel-dark]="true"
+                               [attr.panel]="PanelEnum.settings">
+            <mat-expansion-panel-header
+                collapsedHeight="40px"
+                expandedHeight="40px"
+                class="mat-expansion-panel-header-no-logo">
+
+              <mat-panel-title>
+                <span translate>{{ variant.name || 'categories.payments.default_variant' }}</span>
+              </mat-panel-title>
+
+              <mat-panel-description>
+
+                <button mat-raised-button
+                        *ngIf="isVariantStatusConnected(i)"
+                        class="connection-variant-disconnect"
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        color="muted-light"
+                        (click)="disconnectConnectionVariant($event, i)">
+                  <pe-progress-button-content [spinnerDiameter]="15"
+                                              [loading]="(processingConnVariant$ | async) === i">{{ 'actions.disconnect' | translate }}</pe-progress-button-content>
+                </button>
+
+                <button mat-raised-button
+                        *ngIf="i > 0"
+                        class="connection-variant-delete"
+                        [class.mat-button-rounded]="true"
+                        [class.mat-button-xs]="true"
+                        color="muted-light"
+                        style="position: absolute; right: 56px;"
+                        (click)="deleteConnectionVariant($event, i)">
+                  <pe-progress-button-content [spinnerDiameter]="15"
+                                              [loading]="(processingConnVariant$ | async) === i">{{ 'actions.delete' | translate }}</pe-progress-button-content>
+                </button>
+
+                <svg>
+                  <use [attr.xlink:href]="panel.expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+                </svg>
+              </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <ng-container *ngIf="hasSectionSettings(i)">
+              <ng-content select="[settings]"></ng-content>
+              <template [ngTemplateOutlet]="templateVariable"
+                        [ngTemplateOutletContext]="{type: 'settings', index: i}"></template>
+            </ng-container>
+
+            <ng-container *ngIf="hasSectionAuthentication(i) && !forceHideSectionAuthentication">
+              <ng-content select="[authentication]"></ng-content>
+              <template [ngTemplateOutlet]="templateVariable"
+                        [ngTemplateOutletContext]="{type: 'authentication', index: i}"></template>
+            </ng-container>
+
+            <ng-container *ngIf="hasSectionExternalRegistration(i)">
+              <ng-content select="[external-registration]"></ng-content>
+              <template [ngTemplateOutlet]="templateVariable"
+                        [ngTemplateOutletContext]="{type: 'external-registration', index: i}"></template>
+            </ng-container>
+
+            <ng-container *ngIf="hasSectionExternalAuthentication()">
+              <ng-content select="[external-authentication]"></ng-content>
+              <template [ngTemplateOutlet]="templateVariable"
+                        [ngTemplateOutletContext]="{type: 'external-authentication', index: i}"></template>
+            </ng-container>
+
+          </mat-expansion-panel>
+
+        </ng-container>
+
+        <mat-expansion-panel *ngIf="!hasExternalRegister && !hasExternalRegistration && !hasExternalAuth"
+                             class="mat-expansion-panel-dark mat-expansion-panel-no-border-radius"
+                             hideToggle>
+          <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              (click)="showConnectionVariantModal()"
+              class="mat-expansion-panel-header-no-logo">
+
+            <mat-panel-title class="mat-expansion-panel-header-title-no-logo text-centered">
+              <span class="add-button" translate>actions.add</span>
+            </mat-panel-title>
+
+            <div class="mat-expansion-panel-spacer"></div>
+
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </ng-container>
+  </pe-info-box>
+</div>
+
+<div *ngIf="isAddingConnVariant$ | async" class="payment-add-connection-variant-container">
+  <payment-add-connection-variant
+      [paymentMethod]="(payment$ | async).option?.payment_method"
+      (created)="onConnectionVariantAdded()"
+  ></payment-add-connection-variant>
+</div>
+
+<div class="uninstall-button">
+  <button (click)="this.uninstallService.uninstall(integration, loader$)">{{ 'actions.uninstall' | translate }}</button>
+</div>

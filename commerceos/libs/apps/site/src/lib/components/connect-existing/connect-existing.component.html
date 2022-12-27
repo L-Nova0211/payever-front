@@ -1,0 +1,86 @@
+<div class="container" [ngClass]="config.theme">
+  <ng-container [ngTemplateOutlet]="step === 1 ? first : second"></ng-container>
+</div>
+
+<ng-template #first>
+  <div *ngIf="errorMsg" class="container__child-padding">
+    <peb-messages [message]="errorMsg"></peb-messages>
+  </div>
+  <form [formGroup]="domainInfo">
+    <div class="container__child-padding">
+      <div class="connection-info">
+        {{ 'site-app.info.connection_info' | translate }}
+      </div>
+
+      <peb-form-background>
+        <peb-form-field-input
+          [animated]="true"
+          appearance="label"
+          class="peb-form-field-input"
+          [label]="'site-app.settings.enter_domain_label' | translate"
+          [errorMessage]="errors.domainName.errorMessage"
+          [isFieldInvalid]="errors.domainName.hasError"
+        >
+          <input
+            formControlName="domainName"
+            (blur)="checkErrors('domainName')"
+            (focus)="resetErrors('domainName')"
+            pebInput
+            type="text"
+          />
+        </peb-form-field-input>
+      </peb-form-background>
+      <button class="setting-button" (click)="verify()">{{ 'site-app.actions.verify_connection' | translate }}</button>
+      <div class="footer-info">
+        {{ 'site-app.info.connection_info_verify' | translate }}
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #second>
+  <div class="container__child-padding">
+    <peb-messages
+      [showIcon]="!isConnected"
+      [color]="messageColor"
+      [message]="message"
+    ></peb-messages>
+  </div>
+
+  <form [formGroup]="domainInfo">
+    <peb-expandable-panel headerLabel="A record (@)" [isContentOpen]="true">
+      <peb-form-background>
+        <peb-form-field-input [label]="'site-app.settings.current_ip_label' | translate" appearance="label">
+          <input formControlName="currentIp" disabled pebInput />
+        </peb-form-field-input>
+
+        <peb-form-field-input [label]="'site-app.settings.required_ip_label' | translate" appearance="label">
+          <input formControlName="requiredIp" disabled pebInput />
+          <div class="suffix coppy-button" [cdkCopyToClipboard]="domainInfo.controls.requiredIp.value">
+            {{ 'site-app.actions.copy' | translate }}
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+    </peb-expandable-panel>
+
+    <peb-expandable-panel headerLabel="CNAME (www)" [isContentOpen]="true">
+      <peb-form-background>
+        <peb-form-field-input [label]="'site-app.settings.current_value_label' | translate" appearance="label">
+          <input formControlName="currentValue" disabled pebInput />
+        </peb-form-field-input>
+
+        <peb-form-field-input [label]="'site-app.settings.required_value_label' | translate" appearance="label">
+          <input formControlName="requiredValue" disabled pebInput />
+          <div class="suffix coppy-button" [cdkCopyToClipboard]="domainInfo.controls.requiredValue.value">
+            {{ 'site-app.actions.copy' | translate }}
+          </div>
+        </peb-form-field-input>
+      </peb-form-background>
+
+      <button class="setting-button" (click)="connect()">{{ 'site-app.actions.create_domain' | translate }}</button>
+      <div class="footer-info">
+        {{ 'site-app.info.connection_info_footer' | translate }}
+      </div>
+    </peb-expandable-panel>
+  </form>
+</ng-template>

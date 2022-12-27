@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+  position: fixed;
+}
+
+.access {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #24272e;
+
+  &__content {
+    height: 100%;
+    padding: 0 12px;
+  }
+}

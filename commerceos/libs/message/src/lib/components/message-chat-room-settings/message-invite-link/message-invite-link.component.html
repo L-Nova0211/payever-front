@@ -1,0 +1,19 @@
+<div class="invite-link">
+  <div class="invite-link__link">
+    <peb-form-field-input
+      class="peb-form-field-input"
+      [appearance]="'label'"
+      label="{{ 'message-app.channel.settings.invite-link' | translate }}"
+      [animated]="false"
+      [isFieldInvalid]="errors.invitationCode.hasError"
+      [errorMessage]="errors.invitationCode.message | titlecase"
+    >
+      <span class="invite-link__root-link" >{{ inviteLink }}</span>
+      <input #inputLink [class.invite-link__input-disable]="true" type="text" [attr.disabled]="true"/>
+    </peb-form-field-input>
+  </div>
+  <button
+    class="invite-link__copy"
+    [class.success]="copied"
+    (click)="copyLink()">{{linkTextButton}}</button>
+</div>

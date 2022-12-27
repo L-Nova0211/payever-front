@@ -1,0 +1,48 @@
+<mat-list-item class="mat-list-item-no-padding-left">
+  <div
+    class="mat-list-item-flex no-padding"
+    #itemFlex
+    (click)="buttonMenuAlignmentTrigger._elementRef.nativeElement.click()"
+  >
+    <div class="mat-list-item-col">
+      <div class="form-fieldset">
+        <button
+          #buttonMenuAlignmentTrigger
+          mat-raised-button
+          [matMenuTriggerFor]="menuAlignment"
+          (click)="$event.stopPropagation()"
+        >
+          <svg class="icon icon-18">
+            <use [attr.xlink:href]="alignmentIcons[selectedAlignment]"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mat-list-item-col">
+      <span translate>{{ labelTranslateKey }}</span>
+      <svg class="arrow-open">
+        <use xlink:href="#icon-ui-arrow-open"></use>
+      </svg>
+    </div>
+    <mat-menu
+      #menuAlignment="matMenu"
+      class="mat-menu-dark style-modal"
+      [style.width.px]="itemFlex.clientWidth"
+      [backdropClass]="theme !== 'dark' ? 'checkout-corner-button-' + theme : 'checkout-corner-button'"
+    >
+      <button
+        [style.width.px]="itemFlex.clientWidth - 24"
+        *ngFor="let alignment of alignmentIcons | keyvalue"
+        (click)="setSelectedAlignment(alignment.key)"
+        mat-menu-item
+      >
+        <svg class="icon icon-18">
+          <use [attr.xlink:href]="alignment.value"></use>
+        </svg>
+        <span class="mat-list-item-content" translate>
+          {{ 'settings.colorAndStyle.panelLogo.controls.businessLogoAlignment.values.' + alignment.key }}
+        </span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-list-item>

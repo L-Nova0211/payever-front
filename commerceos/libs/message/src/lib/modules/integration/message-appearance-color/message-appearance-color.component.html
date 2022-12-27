@@ -1,0 +1,38 @@
+<div class="box-color" [style.background-color]="accentColor" *ngIf="!addNewColorSet">
+  <div class="box-color__settings{{ selected ? ' selected' : ''}}">
+    <div class="box-color__round">
+      <svg class="box-color__dots" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
+        <g
+          transform="matrix(0.67501688,0,0,0.67501688,3.5,7.09973)"
+          style="fill:#000000;fill-rule:evenodd;fill-opacity:1"
+          id="g3802"
+        >
+          <g
+            style="fill:#000000;fill-rule:nonzero;fill-opacity:1"
+            id="g3800"
+          >
+            <path
+              style="fill:#000000;fill-opacity:1"
+              id="path3798"
+              transform="translate(-618,-102)"
+              d="m 619.333,102 c 0.737,0 1.334,0.597 1.334,1.333 0,0.737 -0.597,1.334 -1.334,1.334 -0.736,0
+                -1.333,-0.597 -1.333,-1.334 0,-0.736 0.597,-1.333 1.333,-1.333 z m 5.334,0 c 0.736,0 1.333,0.597
+                1.333,1.333 0,0.737 -0.597,1.334 -1.333,1.334 -0.737,0 -1.334,-0.597 -1.334,-1.334 0,-0.736
+                0.597,-1.333 1.334,-1.333 z m 5.333,0 c 0.736,0 1.333,0.597 1.333,1.333 0,0.737 -0.597,1.334
+                -1.333,1.334 -0.736,0 -1.333,-0.597 -1.333,-1.334 0,-0.736 0.597,-1.333 1.333,-1.333 z"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="add-color-set" *ngIf="addNewColorSet">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>

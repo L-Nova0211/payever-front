@@ -1,0 +1,36 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+checkout-layout .pe-direct-link-wrapper-menu {
+  background-color: transparent !important;
+  .mat-menu-content {
+    background-color: $color-black-pe !important;
+    .mat-menu-item {
+      color: $color-white-pe !important;
+    }
+    .mat-menu-item .icon {
+      color: $color-white-pe !important;
+    }
+  }
+  .mat-button-wrapper {
+    min-width: 20px;
+  }
+  .mat-button-wrapper .icon {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 99px;
+    background-color: $color-white-grey-2;
+  }
+}
+checkout-layout .pe-direct-link-wrapper-menu-loader {
+  .mat-button-wrapper {
+    min-width: 20px;
+  }
+}
+
+checkout-layout .pe-checkout-app-header-dots-icon .section-button__icon {
+  margin-top: -1px;
+  background: #585858;
+  border-radius: 999px;
+}

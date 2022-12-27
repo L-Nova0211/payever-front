@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="xMidYMin slice" width="100%" viewBox="0 0 20 20">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-67 -236) translate(51 51) translate(16 185)">
+                    <rect width="20" height="20" fill="#86868B" rx="5"/>
+                    <path fill="#FFF" fill-rule="nonzero" d="M10.001 17c.87 0 1.582-.646 1.582-1.436H8.419c0 .79.704 1.436 1.582 1.436zm4.746-4.308v-3.59c0-2.204-1.297-4.049-3.56-4.537v-.488c0-.596-.53-1.077-1.186-1.077-.657 0-1.187.481-1.187 1.077v.488c-2.27.488-3.56 2.326-3.56 4.538v3.59l-1.02.925c-.498.453-.15 1.228.554 1.228h10.418c.704 0 1.06-.775.561-1.228l-1.02-.926z" transform="matrix(-1 0 0 1 20 0)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

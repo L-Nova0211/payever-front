@@ -1,0 +1,25 @@
+<div
+  *ngIf="(file.loaded$ | async) === null"
+  class="message-attachment__thumbnail"
+  (click)="file.action()"
+>
+  <img *ngIf="file.isImage" alt="" [src]="file.url + '-thumbnail'"/>
+  <div class="message-attachment-loader__preloader">
+    <div class="message-attachment-loader__loading">
+      <ng-container *ngIf="file.loadProgress$ | async as progress; else download">
+        <mat-spinner
+          class="message-attachment-loader__spinner"
+          [diameter]="40"
+          mode="determinate"
+          strokeWidth="2"
+          [value]="progress"
+        ></mat-spinner>
+        <mat-icon class="message-attachment-loader__abort-loading" svgIcon="abort-loading"></mat-icon>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #download>
+  <mat-icon class="message-attachment-loader__download" svgIcon="download"></mat-icon>
+</ng-template>

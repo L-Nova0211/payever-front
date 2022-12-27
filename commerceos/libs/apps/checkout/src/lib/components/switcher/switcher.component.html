@@ -1,0 +1,72 @@
+<div class="pe-info-box-container-fixed">
+  <pe-info-box
+    class="pe-info-box-header-padding"
+    [fixed]="false"
+    [transparent]="true"
+    [withHeader]="false"
+    [withFooter]="false"
+    [withPadding]="false"
+    [notFullwidthOnMobile]="true"
+    [roundBorder]="true">
+    <ng-container content>
+      <ng-container [ngTemplateOutlet]="body"></ng-container>
+    </ng-container>
+  </pe-info-box>
+</div>
+
+<div
+  class="add-button"
+  (click)="openAddCheckoutModal()">
+  {{ 'actions.createNew' | translate }}
+</div>
+
+<ng-template #body>
+
+  <mat-list class="mat-list-transparent">
+
+
+    <ng-container *ngFor="let checkout of (checkouts$ | async)">
+      <ng-container>
+        <mat-list-item
+          class="action-item"
+          (click)="openEditCheckoutModal(checkout)">
+          <div class="mat-list-item-col">
+            <div class="checkout-icon-wrapper">
+              <div *ngIf="!checkout.logo || hasCheckoutLogoErrors(checkout._id)" class="checkout-abbreviation">
+                {{checkout?.name | abbreviation}}
+              </div>
+              <img
+                *ngIf="checkout.logo && !hasCheckoutLogoErrors(checkout._id)"
+                class="checkout-image"
+                [src]="checkout.logo"
+                (error)="checkoutsWithLogoErrors.push(checkout._id)">
+            </div>
+          </div>
+          <div class="mat-list-item-flex no-left-padding">
+            <div class="mat-list-item-col">
+              <span class="pe-truncate-text">{{ checkout.name | translate }}</span>
+            </div>
+          </div>
+          <div class="mat-list-item-flex aligned-right no-right-padding">
+            <div class="mat-list-item-open-icon">
+              <svg>
+                <use xlink:href="#icon-arrow-right-2-16"></use>
+              </svg>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider class="mat-divider-full-width"></mat-divider>
+      </ng-container>
+    </ng-container>
+  </mat-list>
+
+</ng-template>
+
+<checkout-create
+  *ngIf="isModalOpen"
+  [createMode]="isCreateMode"
+  [checkoutUuid]="this.selectedCheckoutUuid$.value"
+  (resetCheckout)="resetCheckout()"
+  (closeModal)="isModalOpen = false"
+  (openCheckout)="openSavedCheckout()"
+></checkout-create>

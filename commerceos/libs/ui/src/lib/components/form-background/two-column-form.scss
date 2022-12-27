@@ -1,0 +1,24 @@
+.two-column-form-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  peb-form-field-input {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  peb-checkbox {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  peb-select {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  peb-button-toggle {
+    flex: 1;
+    max-width: 50%;
+  }
+}

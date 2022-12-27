@@ -1,0 +1,434 @@
+.pe-bootstrap {
+  .modal,
+  &.modal {
+    text-align: center;
+    background-color: rgba($color-very-light-gray, .94);
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -4px;
+    }
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      background-color: rgba($color-black, .94);
+      &:before {
+        display: none;
+      }
+    }
+    &.fade .modal-dialog {
+      @include translate(0, 100%);
+      @include transition-transform($animation-duration-slide-out ease-out);
+      @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+        @include transition-duration($animation-duration-slide-out-mobile);
+      }
+    }
+    &.in .modal-dialog {
+      @include translate(0, 0);
+      @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+        @include transition-duration($animation-duration-slide-out-mobile);
+      }
+    }
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    float: none;
+    padding: 0 $pe_hgrid_gutter;
+    & > .modal-close {
+      position: absolute;
+      right: 0;
+      top: -34px;
+    }
+    &[class*="col-"] > .modal-close {
+      right: $pe_hgrid_gutter;
+    }
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      padding: 0 $pe_hgrid_gutter/2;
+      display: block;
+      position: fixed;
+      left: 0;
+      bottom: $pe_hgrid_gutter/2;
+      margin: 0;
+      & > .modal-close, &[class*="col-"] > .modal-close {
+        right: $pe_hgrid_gutter/2;
+        .btn {
+          color: $color-gray-2;
+          &:hover, &:focus {
+            color: $color-white !important;
+          }
+        }
+      }
+      &.dismiss-button {
+        bottom: 60px;
+        margin: 0 0 $pe_hgrid_gutter/2 0;
+        .modal-content {
+          max-height: calc(100vh - #{$pe_hgrid_gutter/2} - #{$grid-unit-y * 4} - 60px);
+        }
+        .modal-footer {
+          [data-dismiss] {
+            position: absolute;
+            bottom: -46px - $pe_hgrid_gutter/2;
+            left: (-$pe_hgrid_gutter/4);
+            right: 0;
+            height: 46px;
+            line-height: 46px;
+            background: #fff !important;
+            display: block;
+            z-index: 1090;
+            width: calc(100% + #{$pe_hgrid_gutter}/2);
+            margin: 0;
+            border-radius: 8px;
+            font-size: 17px;
+            color: $color-blue;
+            &:focus, &:hover {
+              opacity: .8;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: $viewport-breakpoint-ipad) {
+      & > .modal-close, &[class*="col-"] > .modal-close {
+        right: $pe_hgrid_gutter;
+      }
+    }
+  }
+
+  .modal-content {
+    border-radius: $border-radius-base * 2;
+    box-shadow: $icon-shadow-large;
+    border: 0 none;
+    @include box-shadow(none);
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - #{$pe_hgrid_gutter/2} - #{$grid-unit-y * 4});
+      z-index: 1;
+      h2 {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .modal-header {
+    padding: 0 $pe_hgrid_gutter * 1.5;
+    border-bottom: $border-light-gray-2;
+    height: $grid-unit-y * 5;
+    line-height: $grid-unit-y * 5 - 1;
+    position: relative;
+    font-size: 0;
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      padding: 0 $pe_hgrid_gutter/2;
+      & + .modal-body {
+        max-height: calc(100vh - #{$grid-unit-y * 10});
+      }
+    }
+    .close {
+      position: absolute;
+      float: none;
+      width: 16px;
+      height: 16px;
+      font-size: 14px;
+      top: 10px;
+      opacity: 1;
+      color: $color-light-gray-1;
+      right: 10px;
+      margin-top: 0;
+      &:hover {
+        color: $color-dark-gray;
+      }
+    }
+  }
+
+  .modal-title {
+    line-height: inherit;
+  }
+
+  .modal-body {
+    padding: $grid-unit-y * 2 $pe_hgrid_gutter * 1.5;
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      padding: $grid-unit-y $pe_hgrid_gutter/2;
+      max-height: 100vh;
+      overflow: auto;
+    }
+    &.zero-padding {
+      padding: 0!important;
+    }
+  }
+
+  .modal-dialog .modal-footer {
+    text-align: right;
+    border-top: $border-light-gray-2;
+    height: $grid-unit-y * 5;
+    padding: 0 $pe_hgrid_gutter * 1.5;
+    font-size: 0;
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      padding: 0 $pe_hgrid_gutter/2;
+      height: auto;
+      .btn {
+        margin: 0 (-$pe_hgrid_gutter/2);
+        height: 52px;
+        line-height: 52px;
+        display: block;
+        width: calc(100% + #{$pe_hgrid_gutter});
+        font-weight: normal;
+        font-size: 17px;
+        border-radius: 0 0 8px 8px;
+        &:focus, &:hover {
+          background: $color-very-light-gray !important;
+          opacity: .8;
+        }
+      }
+
+    }
+  }
+
+  .modal-footer {
+    .btn {
+      margin-top: ($grid-unit-y * 5 - $grid-unit-y * 3 - 1) / 2;
+      &.btn-link:last-child {
+        margin-right: -$pe_hgrid_gutter/2;
+      }
+      &.btn-lg {
+        margin-top: ($grid-unit-y * 5 - $grid-unit-y * 4 - 1) / 2;
+        &:last-child {
+          margin-right: -$pe_hgrid_gutter;
+        }
+      }
+      &.btn-sm {
+        margin-top: ($grid-unit-y * 5 - $grid-unit-y * 3 + 4 - 1) / 2;
+      }
+      &.btn-xs {
+        margin-top: ($grid-unit-y * 5 - $grid-unit-y * 2 - 1) / 2;
+      }
+    }
+  }
+
+  .modal.modal-confirm {
+    .modal-body {
+      padding-top: $grid-unit-y;
+      padding-bottom: $grid-unit-y;
+    }
+  }
+
+  .modal.modal-notify {
+    .modal-body {
+      padding-top: $grid-unit-y * 4;
+      padding-bottom: $grid-unit-y;
+      .icon {
+        color: $color-gray-2;
+      }
+    }
+    &.notify-warning {
+      .modal-content {
+        .icon {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $viewport-breakpoint-xs-2) {
+    .modal-dialog {
+      margin: $grid-unit-y * 4 auto;
+    }
+    .modal-content {
+      box-shadow: $icon-shadow-large;
+    }
+  }
+
+  .modal-dialog.modal-lg {
+    @include full_screen;
+    & > .modal-content {
+      border-radius: $border-radius-base * 2;
+      @include full_screen;
+      & > .modal-header {
+        padding: 0 $pe_hgrid_gutter;
+        @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+          padding: 0 $pe_hgrid_gutter/2;
+        }
+        & > .modal-title {
+          text-align: center;
+          text-transform: capitalize;
+          display: inline-block;
+          vertical-align: middle;
+          max-width: 100%;
+          @include text-overflow;
+          @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+            font-size: 14px;
+          }
+        }
+        .close {
+          position: relative;
+          top: auto;
+          right: auto;
+          width: auto;
+          height: $grid-unit-y * 3;
+          line-height: $grid-unit-y * 3;
+          margin: $grid-unit-y 0;
+        }
+        & + .modal-body {
+          top: $grid-unit-y * 5;
+          .sidebar {
+            top: 0;
+            border-bottom-right-radius: $border-radius-base * 2;
+            background: transparent;
+          }
+        }
+      }
+      & > .modal-body {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+        padding: $grid-unit-y * 2 $pe_hgrid_gutter;
+        @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+          padding: $grid-unit-y $pe_hgrid_gutter/2;
+          h2 {
+            font-size: 22px;
+            font-weight: 300;
+          }
+        }
+        iframe {
+          border: none;
+        }
+      }
+      & > .modal-footer {
+        display: none;
+      }
+    }
+
+    &.modal-lg-new {
+      top: $grid-unit-y * 5;
+      right: 40px;
+      left: 40px;
+      bottom: $grid-unit-y * 3;
+      & > .modal-content {
+        border-radius: $border-radius-base * 2;
+        box-shadow: 0 2px 28px rgba(50,50,50,0.1);
+        & > .modal-header {
+          &.modal-header-blue {
+            background: $color-blue;
+            color: $color-white;
+            border-radius: $border-radius-base *2 $border-radius-base *2 0 0;
+            .btn {
+              color: $color-white;
+              &.btn-lg span {
+                margin-left: 0;
+              }
+              &:hover, &:focus, &:active {
+                color: $color-white !important;
+                opacity: .75;
+              }
+            }
+            .text-secondary {
+              color: $color-white;
+              opacity: .75;
+            }
+          }
+        }
+      }
+      & > .modal-title {
+        position: absolute;
+        top: -37px;
+        left: 0;
+        .btn {
+          svg, span {
+            color: $color-gray-2;
+          }
+          &:hover {
+            svg, span {
+              color: $color-black;
+            }
+          }
+        }
+      }
+      @media (max-width: $viewport-breakpoint-sm-4) {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: $grid-unit-y * 4;
+        & > .modal-content {
+          border-radius: $border-radius-base * 2 $border-radius-base * 2 0 0;
+        }
+
+        & > .modal-title {
+          left: auto;
+          right: $pe_hgrid_gutter/2;
+          .btn:hover {
+            svg, span {
+              color: $color-white;
+            }
+          }
+        }
+
+        & > .modal-close {
+          right: $pe_hgrid_gutter;
+        }
+      }
+      @media (min-width: $viewport-breakpoint-md-1 + 1) {
+        right: auto;
+        width: 1200px;
+        left: 50%;
+        margin-left: -600px;
+      }
+    }
+    &.modal-lg-auto-height { // this is a temporary fix. need to cleanup/refactor modal css down the line
+      position: static;
+      display: inline-block;
+      margin-left: auto;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+
+      > .modal-content {
+        position: static;
+
+        > .modal-body {
+          position: static;
+          overflow: initial;
+        }
+      }
+    }
+  }
+
+  .modal.modal-bg-gray {
+    background: $color-grey-4;
+
+    .modal-content {
+      background: $color-light-gray-3;
+    }
+  }
+
+  @media screen and (max-width: $viewport-breakpoint-xs-2 - 1) {
+    &.modal-open .ui-layout-content-main {
+      overflow-y: hidden !important; // specificity here don't help because element with .ui-layout-content-main has ng attributes
+    }
+  }
+}
+
+.modal-open {
+  .pe-bootstrap {
+    .modal {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+// Fixing position: fixed for IE
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .pe-bootstrap .modal {
+    position: -ms-page;
+  }
+}

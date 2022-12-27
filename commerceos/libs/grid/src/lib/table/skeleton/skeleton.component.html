@@ -1,0 +1,51 @@
+<ng-container *ngIf="isMobile && !isTableWidthScroll then mobileRow else rowTemplate"></ng-container>
+
+<ng-template #rowTemplate>
+  <div
+    *ngFor="let row of rows; let firstRow = first; let lastRow = last"
+    class="skeleton-wrapper {{theme}}"
+    [class.is-table-width-scroll]="isMobile && isTableWidthScroll"
+  >
+    <div
+      class="skeleton-container"
+      [class.first-row]="firstRow"
+      [class.last-row]="lastRow"
+      *ngIf="isSelectable"
+    >
+      <div *ngIf="!firstRow" class="skeleton-item small-circle first-cell"></div>
+    </div>
+    <div
+      *ngFor="let column of displayedColumns; let i = index; let firstCell = first; let lastCell = last"
+      class="skeleton-container"
+      [class.first-row]="firstRow"
+      [class.last-row]="lastRow"
+      [class.first-cell]="!isSelectable && firstCell"
+      [class.last-cell]="lastCell"
+      [ngStyle]="{
+        width: (isTableWidthScroll && isMobile) ? getWidth(column, i) : 'auto',
+        minWidth: (isTableWidthScroll && isMobile) ? getWidth(column, i) : 'auto'
+      }"
+    >
+      <div
+        *ngIf="!firstRow"
+        class="skeleton-item {{getSkeletonType(column)}}"
+      ></div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #mobileRow>
+  <div
+    *ngFor="let row of rows; let firstRow = first; let lastRow = last"
+    class="mobile-skeleton-wrapper {{theme}}"
+    [class.first-row]="firstRow"
+    [class.last-row]="lastRow"
+  >
+    <div
+      class="checkbox"
+      *ngIf="isSelectable"
+    ></div>
+    <div class="thumbnail"></div>
+    <div class="content"></div>
+    <div class="button"></div>
+  </div>
+</ng-template>

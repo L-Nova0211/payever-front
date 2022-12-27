@@ -1,0 +1,45 @@
+name: Payever Shop
+
+data:
+  productPages: /products/:productId
+  categoryPages: /category/:categoryId
+
+routing:
+  - routeId: payever-shop-page
+    url: /
+    pageId: payever-shop-page
+  - routeId: impressum-payever-shop-page
+    url: /impressum
+    pageId: impressum-payever-shop-page
+  - routeId: datenschutzerklarung-payever-shop-page
+    url: /datenschutz
+    pageId: datenschutzerklarung-payever-shop-page
+  - routeId: agb-payever-shop-page
+    url: /agb
+    pageId: agb-payever-shop-page
+  - routeId: widerruf-payever-shop-page
+    url: /widerruf
+    pageId: widerruf-payever-shop-page
+  - routeId: liefer-payever-shop-page
+    url: /lieferung-versand
+    pageId: liefer-payever-shop-page
+  - routeId: info-payever-shop-page
+    url: /information
+    pageId: info-payever-shop-page
+
+context:
+  '#logo':
+    service: company
+    method: getLogo
+    params: []
+    usedBy: []
+
+pages:
+  - home
+  - impressum
+  - datenschutz
+  - agb
+  - widerruf
+  - lieferung-versand
+  - information
+  - product

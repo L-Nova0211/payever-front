@@ -1,0 +1,35 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  [title]="'Html renderer check: Desktop'"
+  [element]="(content$ | async).elements"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  [title]="'Html renderer check: Tablet'"
+  [element]="(content$ | async).elements"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  [title]="'Html renderer check: Mobile'"
+  [element]="(content$ | async).elements"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop2"
+  [title]="'Html renderer check: Desktop scaled'"
+  [element]="(content$ | async).elements"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 0.8, locale: 'en' }"
+></sandbox-renderer-preview>

@@ -1,0 +1,840 @@
+id: pages-about
+type: document
+children:
+  - id: header
+    area: header
+    type: section
+    style:
+      backgroundColor: rgba(0,0,0,0.8)
+      height: 45px
+    children:
+      - id: header-block
+        type: block
+        style:
+          display:
+            desktop: block
+            tablet: block
+            mobile: none
+          width: 100%
+          height: 45px
+          textAlign: center
+        children:
+          - id: header-link-1
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+          - id: header-link-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Support
+            style:
+              display: inline-block
+              margin: 15px 30px
+              color: "#f5f5f7"
+              fontSize: 15
+  - id: hero1
+    area: hero
+    type: section
+    style:
+      backgroundImage: https://www.apple.com/jobs/images/about/hero/desktop.jpg
+      backgroundSize: cover
+      backgroundRepeat: no-repeat
+      height: 
+        desktop: 700px
+        tablet: 500px
+        mobile: 400px
+  - id: hero-1
+    type: section
+    style:
+      top: 0
+    children:
+      - id: hero-1-block
+        type: block
+        style:
+          height: 100%
+          maxWidth:
+            desktop: 768px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+          padding: 
+            desktop: 90px 15px
+            tablet: 60px 15px
+            mobile: 30px 15px
+          textAlign: center
+        children: 
+          - id: hero-1-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: We bring amazing people together to make amazing things happen.
+            style:
+              color: "#000"
+              fontSize: 
+                desktop: 48
+                tablet: 48
+                mobile: 32
+              lineHeight: 1.04
+          - id: hero-1-content
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: We’re a diverse collective of thinkers and doers, continuously reimagining our products and practices to help people do what they love in new ways. That innovation is inspired by a shared commitment to great work — and to each other. Because learning from the people here means we’re learning from the best.
+            style:
+              top: 
+                desktop: 35
+                tablet: 35
+                mobile: 15
+              color: "#000"
+              fontSize: 
+                desktop: 24
+                tablet: 24
+                mobile: 19
+              lineHeight: 1.04
+  - id: hero2
+    area: hero
+    type: section
+    style:
+      backgroundColor: "#354973"
+    children:
+      - id: hero-2-block
+        type: block
+        style: 
+          height: 100%
+          maxWidth:
+            desktop: 768px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+          padding: 
+            desktop: 65px 0
+            tablet: 25px 0
+            mobile: 25px
+        children: 
+          - id: hero-2-block-block
+            type: block
+            style:
+              top: 0
+            children: 
+              - id: hero-2-block-2-title
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Come work where sentences start with “What if…?”
+                style:
+                  fontSize: 
+                    desktop: 48
+                    tablet: 48
+                    mobile: 32
+                  color: "#FFF"
+          - id: hero-2-block-2-content
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Everyone here is an innovator, or an innovator-to-be. That’s how we create the kinds of products and experiences that few ever imagine. For example, engineers here developed frameworks that have transformed the speed and accuracy of medical research. Others figured out how people in wheelchairs can track their activity with Apple Watch to promote their fitness. Our retail teams revolutionized the industry by reinventing the entire customer experience. And each day at lunch, the environmentally friendly pizza box patented by a chef in our café reminds us that innovation comes from everyone in every role at Apple.
+            style:
+              fontSize: 
+                desktop: 20
+                tablet: 20
+                mobile: 19
+              top: 20
+              color: "#FFF"
+              lineHeight: 26px
+      - id: hero-2-block-2
+        type: block
+        style:
+          display: inline-block
+          width: 350px
+          backgroundColor: "#fff"
+  - id: images-1
+    type: block
+    style:
+      backgroundColor: "#354973"
+      height:
+        desktop: 800
+        tablet: 620
+        mobile: 600
+    children:
+      - id: images-1-grid
+        area: images
+        type: grid
+        style:
+          items: 2
+          direction: 
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 800
+            tablet: 600
+            mobile: 1050
+        children:
+          - id: image-1
+            area: image
+            type: block
+            style:
+              backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-1-left/desktop.jpg
+              backgroundSize: 
+                desktop: contain
+                tablet: contain
+                mobile: cover
+              backgroundRepeat: no-repeat
+              height: 
+                desktop: 100%
+                tablet: 700px
+                mobile: 100%
+              slot: cell-1
+          - id: image-2-grid
+            area: image
+            type: grid
+            style:
+              items: 2
+              direction: column
+              height: 
+                desktop: 734
+                tablet: 500
+                mobile: 500
+              slot: cell-2
+            children:
+              - id: image-2-1
+                area: image
+                type: block
+                style: 
+                  backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-1-right-top/desktop.jpg
+                  backgroundSize: 
+                    desktop: contain
+                    tablet: contain
+                    mobile: cover
+                  backgroundRepeat: no-repeat
+                  height: 
+                    desktop: 100%
+                    tablet: 400px
+                    mobile: 100%
+                  slot: cell-1
+              - id: image-2-2
+                area: image
+                type: block
+                style: 
+                  top: 20
+                  backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-1-right-bottom/desktop.jpg
+                  backgroundSize:
+                    desktop: contain
+                    tablet: contain
+                    mobile: cover
+                  backgroundRepeat: no-repeat
+                  height: 
+                    desktop: 100%
+                    tablet: 400px
+                    mobile: 100%
+                  slot: cell-2
+  - id: hero3
+    area: hero
+    type: section
+    style:
+      height: unset
+    children:
+      - id: hero-2-block
+        type: block
+        style: 
+          height: 100%
+          padding: 
+            desktop: 90px 0px
+            tablet: 90px 0px
+            mobile: 15px
+          maxWidth:
+            desktop: 768px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+        children: 
+          - id: hero-2-block-block
+            type: block
+            style:
+              width: 
+                desktop: 600px
+                tablet: 600px
+                mobile: unset
+            children: 
+              - id: hero-2-block-2-title
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Share an idea and watch it grow.
+                style:
+                  fontSize: 
+                    desktop: 48
+                    tablet: 48
+                    mobile: 32
+                  color: "#000"
+          - id: hero-2-block-2-content
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: "Every new product, service, or feature we invent is the result of people working together to make each other’s ideas stronger. That happens here because every one of us strives toward a common goal — creating the best customer experiences. Just one example: The incredibly advanced camera features in every new iPhone are not the result of a few dozen people. They’re the product of hundreds of optical technology experts who complement each other’s thinking. Multiply that effort across every feature in every Apple product, and you’ll get an idea of how important collaboration is here."
+            style:
+              fontSize: 
+                desktop: 20
+                tablet: 20
+                mobile: 19
+              top: 
+                desktop: 20
+                tablet: 20
+                mobile: 20
+              color: "#000"
+              lineHeight: 26px
+      - id: hero-2-block-2
+        type: block
+        style:
+          display: inline-block
+          width: 350px
+          backgroundColor: "#fff"
+  - id: hero-4
+    type: section
+    style: 
+      backgroundImage: https://www.apple.com/jobs/images/about/share/desktop.jpg
+      backgroundSize: 
+        desktop: cover
+        tablet: cover
+        mobile: contain
+      backgroundPosition: center
+      backgroundRepeat: no-repeat
+      height: 
+        desktop: 750px
+        tablet: 750px
+        mobile: 350px
+      width: 100vw    
+  - id: hero-5
+    area: hero
+    type: section
+    style:
+      backgroundColor: "#3b6c59"
+    children:
+      - id: hero-5-block
+        type: block
+        style: 
+          padding: 
+            desktop: 50px 0px
+            tablet: 50px 0px
+            mobile: 15px
+          maxWidth:
+            desktop: 768px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+        children: 
+          - id: hero-5-block-block
+            type: block
+            style:
+              top: 0
+            children: 
+              - id: hero-5-block-2-title
+                type: text
+                fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+                text: Join a company with business practices as innovative as its products.
+                style:
+                  fontSize: 
+                    desktop: 48
+                    tablet: 48
+                    mobile: 32
+                  color: "#FFF"
+          - id: hero-2-block-2-content
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: For every product we create, we consider the impact it will make — on our customers, on our people, and on our planet. Which is why we go deep into our supply chain to help safeguard the human rights of the people who make our products. We invest in education programs so that people everywhere have the opportunity to realize their potential. We build assistive technology into all our products to make them accessible to people with disabilities. And we lead the industry with efforts to reduce our impact on climate change, find ways to use greener materials, and conserve the Earth’s valuable resources.
+            style:
+              fontSize: 
+                desktop: 20
+                tablet: 20
+                mobile: 19
+              top: 
+                desktop: 30
+                tablet: 30
+                mobile: 20
+              color: "#FFF"
+              lineHeight: 26px
+      - id: hero-2-block-2
+        type: block
+        style:
+          display: inline-block
+          width: 350px
+          backgroundColor: "#fff"
+  - id: images-2
+    type: block
+    style:
+      backgroundColor: "#3b6c59"
+      height:
+        desktop: 800
+        tablet: 620
+        mobile: 600
+    children:
+      - id: images-2-grid
+        area: images
+        type: grid
+        style:
+          items: 2
+          direction:
+            desktop: row
+            tablet: row
+            mobile: column
+          height: 
+            desktop: 800
+            tablet: 600
+            mobile: 1050
+        children:
+          - id: images-2-1
+            area: image
+            type: block
+            style:
+              backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-2-left/desktop.jpg
+              backgroundSize: 
+                desktop: contain
+                tablet: contain
+                mobile: cover
+              backgroundRepeat: no-repeat
+              height: 
+                desktop: 100%
+                tablet: 700px
+                mobile: 500px
+              slot: cell-1
+          - id: images-2-2-grid
+            area: image
+            type: grid
+            style:
+              items: 2
+              direction: column
+              height: 
+                desktop: 734
+                tablet: 500
+                mobile: 500
+              slot: cell-2
+            children:
+              - id: images-2-2-1
+                area: image
+                type: block
+                style: 
+                  backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-2-right-top/desktop.jpg
+                  backgroundSize: 
+                    desktop: contain
+                    tablet: contain
+                    mobile: cover
+                  backgroundRepeat: no-repeat
+                  height:
+                    desktop: 100%
+                    tablet: 400px
+                    mobile: 200px
+                  slot: cell-1
+              - id: images-2-2-2
+                area: image
+                type: block
+                style: 
+                  top: 20
+                  backgroundImage: https://www.apple.com/jobs/images/about/a-image-grid-2-right-bottom/desktop.jpg
+                  backgroundSize: 
+                    desktop: contain
+                    tablet: contain
+                    mobile: cover
+                  backgroundRepeat: no-repeat
+                  height: 
+                    desktop: 100%
+                    tablet: 400px
+                    mobile: 200px
+                  slot: cell-2
+  - id: hero-6
+    area: hero
+    type: section
+    style: 
+      height: unset
+    children:
+      - id: hero-6-text
+        type: block
+        style: 
+          top: 50
+          maxWidth: 
+            desktop: 750px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+          padding: 
+            desktop: unset
+            tablet: unset
+            mobile: 15px
+          zIndex: 1
+        children:
+          - id: hero-6-title
+            type: text
+            text: Discover even more benefits of doing what you love.
+            style: 
+              fontSize: 
+                desktop: 40
+                tablet: 40
+                mobile: 32
+              fontWeight: 600
+              lineHeight: 42px
+          - id: hero-6-content
+            type: text
+            text: Apple’s most important resource, our soul, is our people. Apple benefits help further the well-being of our employees and their families in meaningful ways. No matter where you work at Apple, you can take advantage of our health and wellness resources and time-away programs. We’re proud to provide stock grants to employees at all levels of the company, and we also give employees the option to buy Apple stock at a discount — both offer everyone at Apple the chance to share in the company’s success. You’ll discover many more benefits of working at Apple, such as programs that match your charitable contributions, reimburse you for continuing your education, and give you special employee pricing on Apple products.*
+            style:
+              top: 20
+              fontSize: 
+                desktop: 20
+                tablet: 19
+                mobile: 19
+              lineHeight: 26px
+              fontWeight: 400
+  - id: hero-6.1
+    type: section
+    style: 
+      backgroundImage: https://www.apple.com/jobs/images/about/discover/desktop.jpg
+      backgroundSize: 
+        desktop: cover
+        tablet: contain
+        mobile: contain
+      backgroundPosition: center
+      backgroundRepeat: no-repeat
+      width: 100vw
+      height: 
+        desktop: 750px
+        tablet: 650px
+        mobile: 360px
+      left: 
+        desktop: -90
+      top: 
+        desktop: -340
+        tablet: -100
+        mobile: 0
+  - id: hero-7
+    type: section
+    style:
+      top: 12px
+    children:
+      - id: hero-7-block
+        type: block
+        style:
+          maxWidth:
+            desktop: 768px
+            tablet: 600px
+            mobile: unset
+          margin: auto
+          padding: 
+            desktop: 90px 0px
+            tablet: 60px 0px
+            mobile: 30px 15px
+          textAlign: center
+        children: 
+          - id: hero-7-title
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Join a worldwide company that reflects the whole wide world.
+            style:
+              color: "#000"
+              fontSize: 
+                desktop: 48
+                tablet: 48
+                mobile: 32
+              lineHeight: 1.04
+          - id: hero-7-content
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Our customers are all over the world, so it’s by design that Apple employees are all over the world, too. And we know our ability to continue creating the world’s most innovative products depends on people who represent the variety of the human experience and who inspire us with great thinking. Because the wider the perspectives, the bigger the ideas.
+            style:
+              top: 35
+              color: "#000"
+              fontSize: 
+                desktop: 24
+                tablet: 19
+                mobile: 19
+              lineHeight: 1.04
+  - id: footer
+    area: footer
+    type: section
+    style:
+      background: "#f2f2f2"
+      padding: 30px 0
+    children:
+      - id: footer-col1
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 100px
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          verticalAlign: top
+          textAlign: left
+        children:
+          - id: footer-col1-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Einkaufen und mehr
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col1-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Mac
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPad
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iPhone
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Watch
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-6
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: TV
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-7
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-8
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: AirPods
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col1-9
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: HomePod
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col2
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col2-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Services
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col2-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Music
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple TV+
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Arcade
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col2-5
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: iCloud
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+      - id: footer-col3
+        type: block
+        style:
+          margin:
+            desktop: 0 100px 0 0
+            tablet: 0 50px 0 0
+            mobile: 0 20px 30px 20px
+          display:
+            desktop: inline-block
+            tablet: inline-block
+            mobile: block
+          textAlign: left
+          verticalAlign: top
+        children:
+          - id: footer-col3-header
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Apple Store
+            style:
+              color: black
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              fontWeight: 600
+              margin: 30px 0 10px 0
+          - id: footer-col3-2
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Store finden
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-3
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Genius Bar
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0
+          - id: footer-col3-4
+            type: text
+            fontFamily: SF-Pro, Helvetica Neue, Helvetica, Arial, sans-serif
+            text: Today at Apple
+            style:
+              fontSize:
+                desktop: 13
+                tablet: 15
+                mobile: 16
+              color: "#565656"
+              margin: 0 0 10px 0

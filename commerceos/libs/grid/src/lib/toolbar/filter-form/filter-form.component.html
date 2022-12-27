@@ -1,0 +1,59 @@
+<form *ngIf="filterForm" [formGroup]="filterForm">
+  <input
+    #keysRef
+    readonly
+    type="text"
+    placeholder="Filter"
+    class="filter"
+    [class.loading]="isGlobalLoading"
+    (click)="openOverlay($event.target, this.toolbarService.getFilterKeys(this.filterConfig), 'key');">
+  <input
+    #conditionsRef
+    [disabled]="!filterForm.get('key')?.value"
+    readonly
+    type="text"
+    placeholder="Contains"
+    class="condition"
+    [class.loading]="isGlobalLoading"
+    (click)="openOverlay($event.target, this.toolbarService
+      .getConditions(this.searchItem.filter, this.filterConfig), 'condition')">
+  <input
+    #valuesRef
+    [disabled]="isDisabled"
+    [readonly]="readOnly"
+    [type]="valueType === PeFilterType.Number ? 'number' : 'text'"
+    [placeholder]="placeholder"
+    [class.hidden]="valueIsBetween"
+    class="search"
+    [class.loading]="isGlobalLoading"
+    (click)="openValueOverlay($event, 'value')"
+    (change)="keyPress($event, 'value')"
+    (keyup)="keyPress($event,'value')">
+
+  <input
+    #valuesRefFrom
+    [readonly]="readOnly"
+    [type]="valueType === PeFilterType.Number ? 'number' : 'text'"
+    [placeholder]="isSearch ? getLabel('search_from') : getLabel('choose_from')"
+    [class.hidden]="!valueIsBetween"
+    class="search-from"
+    (click)="openValueOverlay($event, 'valueFrom')"
+    (change)="keyPress(null,'valueFrom')"
+    (keypress)="keyPress($event,'valueFrom')">
+  <input
+    #valuesRefTo
+    [readonly]="readOnly"
+    [type]="valueType === PeFilterType.Number ? 'number' : 'text'"
+    [placeholder]="isSearch ? getLabel('search_to') : getLabel('choose_to')"
+    [class.hidden]="!valueIsBetween"
+    class="search-to"
+    (click)="openValueOverlay($event, 'valueTo')"
+    (change)="keyPress(null,'valueTo')"
+    (keypress)="keyPress($event,'valueTo')">
+
+    <button
+      class="apply-button"
+      type="button"
+      (click)="applyFilter()"
+    >{{'grid.actions.apply' | translate}}</button>
+</form>

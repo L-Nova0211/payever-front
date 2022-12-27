@@ -1,0 +1,12 @@
+<div class="seller-section" *ngIf="order" [ngClass]="theme">
+  <div class="seller-section__row">
+    <div class="section-item col-6">
+      <div class="section-item__label">{{ 'transactions.sections.seller.name' | translate }}</div>
+      <div class="section-item__value">{{ sellerName || '---' }}</div>
+    </div>
+    <div class="section-item col-6">
+      <div class="section-item__label">{{ 'transactions.sections.seller.email' | translate }}</div>
+      <div class="section-item__value">{{ sellerEmail || '---' }}</div>
+    </div>
+  </div>
+</div>

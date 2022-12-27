@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+@import '~swiper/swiper-bundle';
+@include mat-core();
+
+$sandbox-primary: mat-palette($mat-indigo);
+$sandbox-accent: mat-palette($mat-pink, A200, A100, A400);
+$sandbox-warn: mat-palette($mat-red);
+$sandbox-theme: mat-light-theme((
+  color: (
+    primary: $sandbox-primary,
+    accent: $sandbox-accent,
+    warn: $sandbox-warn,
+  )
+));
+
+@include angular-material-theme($sandbox-theme);
+
+@import "theming/theming";
+@import "theming/all-theme";
+
+$theme-dark: peb-theme-choose("dark");
+$theme-light: peb-theme-choose("light");
+$theme-transparent: peb-theme-choose("transparent");
+
+@include peb-theme($theme-dark);
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+
+  &.dark { background-color: #24272e; }
+  &.light { background-color: #f3f2f8; }
+  &.transparent { background-color: #24272e; }
+}

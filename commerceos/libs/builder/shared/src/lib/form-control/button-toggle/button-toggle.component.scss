@@ -1,0 +1,22 @@
+:host {
+  color: #ffffff;
+  display: flex;
+  min-height: 28px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  .toggle-button {
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+:host(.toggle-button-checked) {
+  background-color: #0371e2;
+}

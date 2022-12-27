@@ -1,0 +1,23 @@
+.mat-progress-bar.pe-progress-bar[mode="determinate"] {
+  .mat-progress-bar-buffer {
+    background-color: $color-gray-2;
+  }
+
+  &.mat-accent {
+    .mat-progress-bar-fill {
+      background-color: $color-red;
+    }
+  }
+
+  &.mat-warn {
+    .mat-progress-bar-fill {
+      background-color: $color-orange;
+    }
+  }
+
+  &.mat-primary {
+    .mat-progress-bar-fill {
+      background-color: $color-green;
+    }
+  }
+}

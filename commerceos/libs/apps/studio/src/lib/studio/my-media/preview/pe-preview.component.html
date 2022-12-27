@@ -1,0 +1,88 @@
+<div [ngClass]="theme">
+  <div class="confirm-modal" [ngClass]="theme">
+    <div class="modal-header-preview">
+      <div class="cancel" (click)="closeDialog()">Cancel</div>
+      <div>
+        <h3>Image Details</h3>
+      </div>
+      <div class="save" (click)="closeDialog()">Save</div>
+    </div>
+    <div class="confirm-modal__container">
+      <peb-expandable-panel
+        class="peb-expandable-panel"
+        headerLabel="General"
+        [isContentOpen]="true"
+      >
+        <div class="image-upload__image">
+          <div [ngStyle]="{ 'background-image': 'url(' + detailImageData?.url + ')' }"></div>
+
+          <div class="media-uploader">
+            <div class="upload-media" (click)="downloadImage()">Get</div>
+          </div>
+        </div>
+        <form class="form" [formGroup]="form">
+          <div class="wrapper">
+            <div class="single-field">
+              <label> File Name </label>
+              <input type="text" formControlName="name" />
+            </div>
+            <div class="form-row">
+              <div class="half" formGroupName="mediaInfo">
+                <label> Dimensions </label>
+                <input type="text" formControlName="dimension" />
+              </div>
+              <div class="half" formGroupName="mediaInfo">
+                <label> Size </label>
+                <input type="text" formControlName="size" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="half">
+                <label> Duration </label>
+                <input type="text" formControlName="duration" />
+              </div>
+              <div class="half">
+                <label> Location </label>
+                <input type="text" formControlName="location" />
+              </div>
+            </div>
+            <div class="single-field">
+              <label> Owner </label>
+              <input type="text" formControlName="owner" />
+            </div>
+            <div class="single-field">
+              <label> Created </label>
+              <input type="text" [value]="formDate | date: 'hh:mm d MMMM y'" disabled />
+            </div>
+            <div class="form-row">
+              <div class="half">
+                <label> Opened by me </label>
+                <input type="text" [value]="formOpenByMeDate | date: 'hh:mm d MMMM y'" disabled />
+              </div>
+              <div class="half">
+                <label> Price </label>
+                <input type="text" formControlName="price" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="half">
+                <label> Modified </label>
+                <input type="text" [value]="formUpdatedDate | date: 'hh:mm d MMMM y'" disabled />
+              </div>
+              <div class="half">
+                <label> License </label>
+                <input type="text" formControlName="license" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </peb-expandable-panel>
+      <peb-expandable-panel
+        class="peb-expandable-panel"
+        headerLabel="Additional"
+        [isContentOpen]="false"
+      >
+      </peb-expandable-panel>
+    </div>
+  </div>
+</div>

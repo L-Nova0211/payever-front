@@ -1,0 +1,406 @@
+<pe-skeleton-header *ngIf="isLoading" [config$]="config$"></pe-skeleton-header>
+<ng-container *ngIf="(isHeaderHideByZeroHeight$ | async) !== true">
+  <ng-container *ngIf="(config$ | async) as config">
+    <ng-container *ngIf="!config.isHidden">
+      <div class="header-container" [class.subheader-mode]="config.isShowSubheader" [class.hidden]="isLoading">
+        <div class="section-left">
+          <ng-container *ngIf="!config.isShowShortHeader">
+            <ng-template
+              #mainItem
+              let-mainItem="mainItem"
+              let-subheaderMode="subheaderMode"
+              let-isShowMainItem="isShowMainItem"
+            >
+              <button class="main-item-button"
+                [class.subheader-mode]="subheaderMode"
+                [class.active-button]="mainItem.isActive"
+                *ngIf="isShowMainItem && mainItem"
+                (click)="mainItem.onClick && mainItem.onClick()"
+              >
+                <svg *ngIf="mainItem.iconType === 'vector'"
+                  [style.width]="mainItem?.iconSize || mainItem?.iconDimensions.width"
+                  [style.height]="mainItem?.iconSize  || mainItem?.iconDimensions.height">
+                  <use [attr.xlink:href]="mainItem.icon"></use>
+                </svg>
+                <img *ngIf="mainItem.iconType === 'raster'"
+                  [style.width]="mainItem?.iconSize || mainItem?.iconDimensions.width"
+                  [style.height]="mainItem?.iconSize  || mainItem?.iconDimensions.height"
+                  class="main-item-button__icon-raster" [src]="mainItem.icon">
+                <span *ngIf="mainItem.title"
+                  class="main-item-button__label white-space"
+                >{{ mainItem.title }}</span>
+              </button>
+            </ng-template>
+            <ng-container *ngIf="isMobile && config.mobileSidenavItems?.length && config.isShowMobileSidenavItems">
+              <ng-container *ngFor="let item of config.mobileSidenavItems">
+                <ng-container *ngTemplateOutlet="mainItem; context: {
+                  mainItem: item.item,
+                  subheaderMode: config.isShowSubheader,
+                  isShowMainItem: isShowMobileSidebar(item, config)
+                }"></ng-container>
+              </ng-container>
+            </ng-container>
+
+            <ng-container *ngTemplateOutlet="mainItem; context: {
+              mainItem: config.mainItem,
+              subheaderMode: config.isShowSubheader,
+              isShowMainItem: config.isShowMainItem
+            }"></ng-container>
+
+            <button class="dg-toggle"
+              *ngIf="config.isShowDataGridToggleComponent"
+              (click)="config.showDataGridToggleItem.onClick && config.showDataGridToggleItem.onClick()"
+            >
+              <svg
+                class="dg-toggle__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18">
+                <g fill="none" fill-rule="evenodd">
+                  <g>
+                    <g>
+                      <path
+                        stroke="#FFF"
+                        stroke-width="1.215"
+                        d="M14.46 15.966H1.506C.674 15.966 0 15.292 0 14.46V1.506C0 .675.674 0 1.506 0H14.46c.832 0 1.506.675 1.506 1.506V14.46c0 .832-.674 1.506-1.506 1.506z"
+                        transform="translate(-23 -59) translate(24 60)"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M5.62 5.435H1.84c-.336 0-.608-.272-.608-.608 0-.335.272-.608.608-.608h3.78c.336 0 .608.273.608.608 0 .336-.272.608-.608.608zm0 3.156H1.84c-.336 0-.608-.272-.608-.608 0-.335.272-.607.608-.607h3.78c.336 0 .608.272.608.607 0 .336-.272.608-.608.608zm0 3.156H1.84c-.336 0-.608-.272-.608-.608 0-.335.272-.607.608-.607h3.78c.336 0 .608.272.608.607 0 .336-.272.608-.608.608zM1.03 0C.46 0 0 .461 0 1.03v13.907c0 .568.461 1.03 1.03 1.03h6.43V0H1.03z"
+                        transform="translate(-23 -59) translate(24 60)"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </ng-container>
+
+          <ng-container *ngIf="config.isShowShortHeader">
+            <button class="main-item-button"
+              [class.subheader-mode]="config.isShowSubheader"
+              *ngIf="config.isShowShortHeader && config.shortHeaderTitleItem"
+              (click)="config.shortHeaderTitleItem.onClick && config.shortHeaderTitleItem.onClick()"
+              [class]="config.shortHeaderTitleItem.class">
+              <svg *ngIf="config.shortHeaderTitleItem.iconType === 'vector'"
+                [style.width]="config.shortHeaderTitleItem.iconSize"
+                [style.height]="config.shortHeaderTitleItem.iconSize">
+                <use [attr.xlink:href]="config.shortHeaderTitleItem.icon"></use>
+              </svg>
+              <img *ngIf="config.shortHeaderTitleItem.iconType === 'raster'"
+                class="main-item-button__icon-raster"
+                [style.width]="config.shortHeaderTitleItem.iconSize"
+                [style.height]="config.shortHeaderTitleItem.iconSize"
+                [src]="config.shortHeaderTitleItem.icon">
+              <span *ngIf="config.shortHeaderTitleItem.title"
+                class="main-item-button__label white-space" [class]="config.shortHeaderTitleItem.class">
+                {{ config.shortHeaderTitleItem.title }}
+              </span>
+            </button>
+
+            <ng-content select="[shortHeaderLeftMenuItemsSlot]"></ng-content>
+            <ng-container *ngIf="config.shortHeaderLeftMenuItems">
+              <ng-template [ngTemplateOutlet]="leftSectionItems"
+                [ngTemplateOutletContext]=
+                  "{ items: config.shortHeaderLeftMenuItems, isShowSubheader: config.isShowSubheader }"
+              ></ng-template>
+            </ng-container>
+          </ng-container>
+
+          <ng-content select="[leftSectionItemsSlot]"></ng-content>
+          <ng-container *ngIf="!config.isShowShortHeader">
+            <ng-template [ngTemplateOutlet]="leftSectionItems"
+              [ngTemplateOutletContext]="{ items: config.leftSectionItems, isShowSubheader: config.isShowSubheader }"
+            ></ng-template>
+          </ng-container>
+
+          <ng-content></ng-content>
+        </div>
+
+        <div class="section-right">
+          <ng-container *ngIf="!config.isShowShortHeader">
+
+            <button *ngIf="config.isShowBusinessItem"
+              [class.subheader-mode]="config.isShowSubheader"
+              class="section-button business-button"
+              (click)="config.businessItem.onClick && config.businessItem.onClick()"
+            >
+              <svg *ngIf="config.businessItem.iconType === 'vector'"
+                [style.width]="config.businessItem.iconSize"
+                [style.height]="config.businessItem.iconSize"
+              >
+                <use [attr.xlink:href]="config.businessItem.icon"></use>
+              </svg>
+              <img *ngIf="config.businessItem.iconType === 'raster'"
+              [style.width]="config.businessItem.iconSize"
+              [style.height]="config.businessItem.iconSize"
+                class="menu__logo business__logo" [src]="config.businessItem.icon">
+              <span *ngIf="config.businessItem.title && config.isShowBusinessItemText"
+                    class="white-space"
+                [class.section-button__label]="config.businessItem.icon"
+              >{{ config.businessItem.title }}</span>
+            </button>
+
+            <ng-content select="[rightSectionItemsSlot]"></ng-content>
+            <ng-template
+              [ngTemplateOutlet]="rightSectionItems"
+              [ngTemplateOutletContext]="{ items: config.rightSectionItems, isShowSubheader: config.isShowSubheader }"
+            ></ng-template>
+          </ng-container>
+
+          <button class="close-button" *ngIf="config.isShowCloseItem"
+            [class.subheader-mode]="config.isShowSubheader"
+            (click)="config.closeItem.onClick ? config.closeItem.onClick() : onCloseButtonClick()"
+            [class]="config.closeItem.class">
+            <svg *ngIf="config.closeItem.iconType === 'vector' && config.closeItem?.showIconBefore && !isShowSubheader"
+            [style.width]="config.closeItem.iconSize"
+                [style.height]="config.closeItem.iconSize"
+                [class]="{'show-before' : config.closeItem.showIconBefore }">
+              <use [attr.xlink:href]="config.closeItem.icon"></use>
+            </svg>
+            <svg *ngIf="config.closeItem.iconType === 'vector' && config.closeItem?.showIconBefore && isShowSubheader"
+            [style.width]="'24px'"
+            [style.height]="'24px'"
+                 [class]="{'icon-mobile' : isShowSubheader }">
+              <use [attr.xlink:href]="'#icon-menu-close-24'"></use>
+            </svg>
+            <span *ngIf="config.closeItem.title" class="white-space">{{ config.closeItem.title }}</span>
+            <svg *ngIf="config.closeItem.iconType === 'vector' && !config.closeItem?.showIconBefore"
+              [style.width]="config.closeItem.iconSize"
+              [style.height]="config.closeItem.iconSize">
+              <use [attr.xlink:href]="config.closeItem.icon"></use>
+            </svg>
+          </button>
+          <ng-content select="[shortHeaderRightMenuItemsSlot]"></ng-content>
+          <ng-container *ngIf="config.isShowShortHeader && config.shortHeaderRightMenuItems">
+            <ng-template [ngTemplateOutlet]="rightSectionItems"
+              [ngTemplateOutletContext]=
+                "{ items: config.shortHeaderRightMenuItems, isShowSubheader: config.isShowSubheader }"
+            ></ng-template>
+          </ng-container>
+        </div>
+      </div>
+      <div *ngIf="!config.isShowShortHeader" class="subheader-container"
+        [class.subheader-mode]="config.isShowSubheader">
+        <ng-container *ngFor="let item of config.leftSectionItems">
+          <button class="section-button" *ngIf="!item.children"
+            [class.active-button]="item.isActive"
+            (click)="item.onClick && item.onClick()"
+          >
+            <svg *ngIf="item.iconType === 'vector'" class="section-button__icon">
+              <use [attr.xlink:href]="item.icon"></use>
+            </svg>
+            <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+              [src]="item.icon">
+            <span *ngIf="item.title"
+                  class="white-space"
+              [class.section-button__label]="item.icon">{{ item.title }}</span>
+          </button>
+
+          <ng-container *ngIf="item.children">
+            <button class="section-button" [matMenuTriggerFor]="itemMenu">
+              <svg *ngIf="item.iconType === 'vector'" [style.width]="item.iconSize"
+                [style.height]="item.iconSize">
+                <use [attr.xlink:href]="item.icon"></use>
+              </svg>
+              <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+                [src]="item.icon">
+              <span *ngIf="item.title"
+                    class="white-space"
+                [class.section-button__label]="item.icon">{{ item.title }}</span>
+            </button>
+
+            <mat-menu #itemMenu="matMenu" [class]="'app-header-menu ' + theme">
+              <ng-template matMenuContent>
+                <button *ngFor="let menuItem of item.children" mat-menu-item
+                  (click)="menuItem.onClick && menuItem.onClick()"
+                >
+                  <svg *ngIf="menuItem.iconType === 'vector'"
+                    [style.width]="item.iconSize" [style.height]="item.iconSize">
+                    <use [attr.xlink:href]="menuItem.icon"></use>
+                  </svg>
+                  <img *ngIf="menuItem.iconType === 'raster'" class="menu__logo"
+                    [src]="menuItem.icon">
+                  <span *ngIf="menuItem.title"
+                    class="app-button__label white-space">{{ menuItem.title }}</span>
+                </button>
+              </ng-template>
+            </mat-menu>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #leftSectionItems let-items="items" let-isShowSubheader="isShowSubheader">
+    <ng-container *ngFor="let item of items">
+      <button class="section-button left-section-button"
+              [class.subheader-mode]="isShowSubheader"
+              [class.active-button]="item.isActive"
+              [class]="item.class || ''"
+              *ngIf="!item.children"
+              (click)="item.onClick && item.onClick($event)"
+      >
+        <mat-spinner *ngIf="item.isLoading" class="section-button__spinner"
+          [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter"
+        ></mat-spinner>
+        <svg *ngIf="item.iconType === 'vector'"
+            class="section-button__icon"
+            [class.section-button__hidden-content]="item.isLoading"
+            [style.width]="item.iconSize"
+            [style.height]="item.iconSize"
+        >
+          <use [attr.xlink:href]="item.icon"></use>
+        </svg>
+        <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+            [class.section-button__hidden-content]="item.isLoading"
+            [src]="item.icon"
+        >
+        <span *ngIf="item.title"
+              [class.section-button__hidden-content]="item.isLoading"
+              [class.section-button__label]="item.icon"
+              class="white-space"
+        >{{ item.title }}</span>
+      </button>
+
+      <ng-container *ngIf="item.children">
+        <button class="section-button left-section-button"
+                [class.subheader-mode]="isShowSubheader"
+                [class.active-button]="item.isActive"
+                [class]="item.class || ''"
+                [matMenuTriggerFor]="itemMenu"
+        >
+          <mat-spinner *ngIf="item.isLoading" class="section-button__spinner"
+            [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter"
+          ></mat-spinner>
+          <svg *ngIf="item.iconType === 'vector'"
+              class="section-button__icon"
+              [class.section-button__hidden-content]="item.isLoading"
+              [style.width]="item.iconSize"
+              [style.height]="item.iconSize"
+          >
+            <use [attr.xlink:href]="item.icon"></use>
+          </svg>
+          <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+              [class.section-button__hidden-content]="item.isLoading"
+              [src]="item.icon">
+          <span *ngIf="item.title"
+                [class.section-button__hidden-content]="item.isLoading"
+                [class.section-button__label]="item.icon"
+                class="white-space"
+          >{{ item.title }}</span>
+        </button>
+
+        <mat-menu #itemMenu="matMenu" class="shop-menu">
+          <ng-template matMenuContent>
+            <button *ngFor="let menuItem of item.children" mat-menu-item
+                    (click)="menuItem.onClick && menuItem.onClick()">
+              <svg *ngIf="menuItem.iconType === 'vector'"
+                  [style.width]="item.iconSize"
+                  [style.height]="item.iconSize">
+                <use [attr.xlink:href]="menuItem.icon"></use>
+              </svg>
+              <img *ngIf="menuItem.iconType === 'raster'" class="menu__logo"
+                  [src]="menuItem.icon">
+              <span *ngIf="menuItem.title"
+                    class="app-button__label white-space"
+              >{{ menuItem.title }}</span>
+            </button>
+          </ng-template>
+        </mat-menu>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #rightSectionItems let-items="items" let-isShowSubheader="isShowSubheader">
+    <ng-container *ngFor="let item of items">
+      <button class="section-button"
+              [class.active-button]="item.isActive"
+              [class]="item.class || ''"
+              *ngIf="!item.children"
+              (click)="item.onClick && item.onClick()"
+      >
+        <mat-spinner *ngIf="item.isLoading" class="section-button__spinner"
+          [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter"
+        ></mat-spinner>
+        <svg *ngIf="item.iconType === 'vector'"
+            class="section-button__icon"
+            [class.section-button__hidden-content]="item.isLoading"
+            [style.width]="item.iconSize"
+            [style.height]="item.iconSize"
+        >
+          <use [attr.xlink:href]="item.icon"></use>
+        </svg>
+        <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+            [class.section-button__hidden-content]="item.isLoading"
+            [src]="item.icon"
+        >
+        <span *ngIf="item.notifications"
+              [class.section-button__hidden-content]="item.isLoading"
+              [class.section-button__label]="item.icon"
+              class="notifications"
+        >{{ item.notifications }}</span>
+        <span *ngIf="item.title"
+              [class.section-button__hidden-content]="item.isLoading"
+              [class.section-button__label]="item.icon"
+              class="white-space"
+        >{{ item.title }}</span>
+      </button>
+
+      <ng-container *ngIf="item.children">
+        <button class="section-button"
+                [class.active-button]="item.isActive"
+                [class]="item.class || ''"
+                [matMenuTriggerFor]="itemMenu">
+          <mat-spinner *ngIf="item.isLoading" class="section-button__spinner"
+            [strokeWidth]="spinnerStrokeWidth" [diameter]="spinnerDiameter"
+          ></mat-spinner>
+          <svg *ngIf="item.iconType === 'vector'"
+              class="section-button__icon"
+              [class.section-button__hidden-content]="item.isLoading"
+              [style.width]="item.iconSize"
+              [style.height]="item.iconSize"
+          >
+            <use [attr.xlink:href]="item.icon"></use>
+          </svg>
+          <img *ngIf="item.iconType === 'raster'" class="menu__logo"
+              [class.section-button__hidden-content]="item.isLoading"
+              [src]="item.icon"
+          >
+          <span *ngIf="item.title"
+                [class.section-button__hidden-content]="item.isLoading"
+                [class.section-button__label]="item.icon"
+                class="white-space"
+          >{{ item.title }}</span>
+        </button>
+
+        <mat-menu #itemMenu="matMenu" [class]="'pe-header-menu '+theme">
+          <ng-template matMenuContent>
+            <div class="header">
+              <span style="font-size: 24px; font-weight: bold;">Menu</span>
+              <div class="close_btn">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                  <use xlink:href="#icon-close-16"></use>
+                </svg>
+              </div>
+            </div>
+            <button *ngFor="let menuItem of item.children" mat-menu-item
+                    (click)="menuItem.onClick && menuItem.onClick()"
+            >
+              <svg *ngIf="menuItem.iconType === 'vector'"
+                  [style.width]="item.iconSize"
+                  [style.height]="item.iconSize"
+              >
+                <use [attr.xlink:href]="menuItem.icon"></use>
+              </svg>
+              <img *ngIf="menuItem.iconType === 'raster'" class="menu__logo"
+                  [src]="menuItem.icon">
+              <span *ngIf="menuItem.title"
+                    [class.section-button__label]="item.icon"
+                    class="white-space"
+              >{{ menuItem.title }}</span>
+            </button>
+          </ng-template>
+        </mat-menu>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+</ng-container>

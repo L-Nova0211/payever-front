@@ -1,0 +1,103 @@
+{
+  "grid": {
+    "actions": {
+      "apply": "Apply",
+      "cancel": "Cancel",
+      "done": "Done",
+      "edit": "Edit",
+      "open": "Open",
+      "view": "View"
+    },
+    "labels" : {
+      "search": "Search",
+      "choose": "Choose",
+      "select": "Select",
+      "select_date": "Select date",
+      "select_time": "Select time",
+      "search_from": "Search from",
+      "choose_from": "Choose from",
+      "search_to": "Search to",
+      "choose_to": "Choose to"
+    },
+    "values": {
+      "filter_conditions": {
+        "is": "Is",
+        "isNot": "Is not",
+        "startsWith": "Starts with",
+        "endsWith": "Ends with",
+        "contains": "Contains",
+        "doesNotContain": "Does not contain",
+        "greaterThan": "Greater than",
+        "lessThan": "Less than",
+        "between": "Between",
+        "isDate": "Is",
+        "isNotDate": "Is not",
+        "afterDate": "After",
+        "beforeDate": "Before",
+        "betweenDates": "Between",
+        "isTime": "Is",
+        "isNotTime": "Is not"
+      }
+    },
+    "items": {
+      "preview": "Preview"
+    },
+    "content": {
+      "info": {
+        "of": "of",
+        "items": "items"
+      },
+      "toolbar": {
+        "select_all": "Select All",
+        "deselect_all": "Deselect All",
+        "move": "Move",
+        "delete": "Delete",
+        "options": "Options",
+        "selected": "selected",
+        "of": "of",
+        "items": "items",
+        "columns": "Columns",
+        "layout": "Layout",
+        "list": "List",
+        "grid": "Grid"
+      }
+    },
+    "overlay": {
+      "items": "items"
+    },
+    "context_menu": {
+      "add_folder": "Add folder",
+      "open_folder": "Open folder",
+      "open": "Open",
+      "copy": "Copy",
+      "delete": "Delete",
+      "duplicate": "Duplicate",
+      "edit": "Edit",
+      "paste": "Paste",
+      "title": "Options"
+    },
+    "toolbar": {
+      "items_options_menu": {
+        "delete": "Delete",
+        "deselect_all": "Deselect All",
+        "duplicate": "Duplicate",
+        "select_all": "Select All",
+        "title": "Options"
+      },
+      "sort_menu": {
+        "a_z": "A-Z",
+        "z_a": "Z-A",
+        "newest": "Newest",
+        "oldest": "Oldest",
+        "title": "Sort by"
+      }
+    },
+    "table_displayed_columns": {
+      "action": "Action",
+      "condition": "Condition",
+      "description": "Description",
+      "name": "Name",
+      "preview": "Preview"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+pe-message-overlay {
+  height: calc(100vh - 84px);
+  width: 328px;
+  max-height: 740px;
+  border-radius: 16px;
+
+  @media all and (max-width: 576px) {
+    height: calc(100vh - 84px);
+    width: calc(100vw - 32px);
+  }
+
+  .chat {
+    &__wrapper {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      -webkit-backdrop-filter: blur(50px);
+      backdrop-filter: blur(50px);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+      background-color: #131414;
+      opacity: 0;
+      pointer-events: auto;
+
+      &:not(.loaded) {
+      //  transform: translate(15%, -15%);
+        transition: 0.4s all 0s cubic-bezier(0, 0.43, 0.27, 0.84);
+      }
+
+      pe-message {
+        padding: 0 !important;
+        & > div {
+          padding: 0;
+        }
+
+        .chat-header {
+          &__search,
+          &__more {
+            display: none;
+          }
+        }
+      }
+
+      &.show {
+      //  transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      .chat-header__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        padding: 0 1px 1px 0;
+        top: 8px;
+        right: 16px;
+        width: 22px;
+        height: 22px;
+        border-radius: 11px;
+        background-image: linear-gradient(to bottom, #ff3b55, #ff274d);
+        z-index: 10;
+        cursor: pointer;
+
+        svg {
+          width: 11px;
+          height: 11px;
+          object-fit: contain;
+          box-shadow: 0 0 1px 0 #b6132e;
+        }
+      }
+    }
+  }
+}
+
+.pe-message-panel-class  {
+  pointer-events: none;
+}
+
+.add-photo-or-video {
+  peb-form-field-input {
+    .label-container:after {
+      display: none !important;
+    }
+  }
+}
+
+.cdk-global-overlay-wrapper {
+  .emoji-mart-scroll {
+    padding: 0 1px 6px 8px !important;
+  }
+  
+  .emoji-backdrop {
+    right: 0 !important;
+    left: 0 !important;
+    padding-left: 8px !important;
+    height: 50% !important;
+  }
+  
+  section.emoji-mart-dark {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,7 @@
+<div *ngIf="(isLoading$ | async) && isShowLoader" [class.spinner_32]="true">
+  <br><br><br><br>
+</div>
+
+<ng-container *ngIf="!(isLoading$ | async)">
+  <ng-content></ng-content>
+</ng-container>

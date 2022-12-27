@@ -1,0 +1,20 @@
+<svg width="100%" viewBox="0 0 158 182" fill="none">
+  <mask id="path-1-inside-1_16_41" fill="white">
+    <rect x="42" y="25" width="116" height="157" rx="6"></rect>
+  </mask>
+  <rect x="42" y="25" width="116" height="157" rx="6" fill="#E5E5E5" stroke="#7A7A7A" stroke-width="14"
+    mask="url(#path-1-inside-1_16_41)"></rect>
+  <line x1="63.5" y1="64.5" x2="122.5" y2="64.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="63.5" y1="90.5" x2="135.5" y2="90.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="63.5" y1="116.5" x2="135.5" y2="116.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="63.5" y1="142.5" x2="135.5" y2="142.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <mask id="path-6-inside-2_16_41" fill="white">
+    <rect width="116" height="157" rx="6"></rect>
+  </mask>
+  <rect width="116" height="157" rx="6" fill="#E5E5E5" stroke="#7A7A7A" stroke-width="14"
+    mask="url(#path-6-inside-2_16_41)"></rect>
+  <line x1="21.5" y1="36.5" x2="80.5" y2="36.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="21.5" y1="62.5" x2="93.5" y2="62.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="21.5" y1="88.5" x2="93.5" y2="88.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+  <line x1="21.5" y1="114.5" x2="93.5" y2="114.5" stroke="#7A7A7A" stroke-width="7" stroke-linecap="round"></line>
+</svg>

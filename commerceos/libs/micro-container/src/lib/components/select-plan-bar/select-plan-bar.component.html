@@ -1,0 +1,13 @@
+<div class="select-bar">
+  <div class="text">Your trial ends in {{pricingObj.daysLeft}} days</div>
+  <button mat-raised-button class="mat-button" color="muted-light">
+    <pe-progress-button-content [spinnerStrokeWidth]="2" [spinnerDiameter]="22" [loading]="spinner"
+      (click)="showPricing()">
+      <span>Select a plan</span>
+    </pe-progress-button-content>
+  </button>
+</div>
+
+<div class="iframe-preload">
+  <iframe [src]="pricingSrc"></iframe>
+</div>

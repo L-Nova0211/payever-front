@@ -1,0 +1,332 @@
+@import 'pe_variables.scss';
+@import 'pe_mixins.scss';
+@import '../../../ui/src/lib/components/theming/theming.scss';
+
+$theme-dark: peb-theme-choose('dark');
+$theme-light: peb-theme-choose('light');
+$theme-transparent: peb-theme-choose('transparent');
+
+.container {
+  &.dark {
+    // pe-dashboard-platform-header {
+      background-color: #1C1D1E !important;
+      color: white;
+    // }
+  }
+
+  &.transparent, &.transparent-dark {
+    // pe-dashboard-platform-header {
+      background-color: rgba(28, 29, 30, 0.6) !important;
+      -webkit-backdrop-filter: blur(75px);
+      backdrop-filter: blur(75px);
+      color: white;
+    // }
+  }
+
+  &.light {
+    // pe-dashboard-platform-header {
+      background-color: rgba(255, 255, 255, 0.5) !important;
+      -webkit-backdrop-filter: blur(75px);
+      backdrop-filter: blur(75px);
+      color: black;
+    // }
+  }
+}
+
+pe-header {
+  pe-dashboard-platform-header {
+    height: 44px!important;
+    @media (max-width:720px) {
+      height: 60px!important;
+    }
+  }
+
+  pe-user-avatar {
+    .user {
+      @include hover-wrapper;
+
+      cursor: pointer;
+
+      .user__name {
+        display: none;
+      }
+    }
+
+    &.dark:hover {
+      .user {
+        background-color: #3e4147;
+      }
+    }
+
+    &.transparent:hover, &.transparent-dark:hover {
+      .user {
+        background-color: #3e4147;
+      }
+    }
+
+    &.light:hover, &.transparent-light:hover {
+      .user {
+        background-color: #DFDFDF;
+      }
+    }
+  }
+
+  .header {
+    &__right-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    &__messages {
+      display: inline-block;
+      margin-left: 8px;
+      position: relative;
+      cursor: pointer;
+
+      pe-messages {
+        margin-left: 0;
+        @include hover-wrapper;
+
+        .message {
+          width: 100%;
+          height: 100%;
+        }
+
+        &.dark:hover {
+          background-color: #3e4147;
+        }
+
+        &.transparent:hover, &.transparent-dark:hover {
+          background-color: #3e4147;
+        }
+
+        &.light:hover, &.transparent-light:hover {
+          background-color: #DFDFDF;
+        }
+      }
+    }
+
+    &__mat-progress-spinner {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+
+
+  pe-notifications {
+    margin-left: 20px;
+  }
+
+  pe-search {
+    @include hover-wrapper;
+    cursor: pointer;
+
+    &.dark:hover {
+      background-color: #3e4147;
+    }
+
+    &.transparent:hover, &.transparent-dark:hover {
+      background-color: #3e4147;
+    }
+
+    &.light:hover, &.transparent-light:hover {
+      background-color: #DFDFDF;
+    }
+
+    .search {
+      padding: 0;
+    }
+  }
+
+  pe-main-menu {
+    margin-left: 10px;
+    cursor: pointer;
+    @include hover-wrapper;
+
+    &.dark:hover {
+      background-color: #3e4147;
+    }
+
+    &.transparent:hover, &.transparent-dark:hover {
+      background-color: #3e4147;
+    }
+
+    &.light:hover, &.transparent-light:hover {
+      background-color: #DFDFDF;
+    }
+
+    .main-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .back-to-dashboard {
+    align-items: center;
+    background-color: #585858;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: Roboto,sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    height: auto;
+    justify-content: center;
+    line-height: 12px;
+    margin-left: 4px;
+    max-height: 24px;
+    outline: none;
+    padding: 4px 6px;
+
+    span {
+      margin-left: 4px;
+    }
+  }
+}
+
+.icon-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.pe-bootstrap .mat-menu-dark-blurry .mat-menu-item {
+  color: $color-secondary;
+}
+
+.business-menu-item {
+  font-weight: 500;
+  padding-left: 12px;
+  line-height: 1.8em;
+  font-size: 14px;
+}
+.close_btn{
+  cursor: pointer;
+  width:20px;
+  height: 20px;
+  float: right;
+}
+//HACK: safari only
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+
+    .business-left {
+      line-height: 16px;
+    }
+  }
+}
+
+.circle-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 1000px;
+  &.hide-mobile {
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+  }
+}
+
+.horizontal-box {
+  width: 150px;
+  height: 12px;
+  border-radius: 3px;
+  @media screen and (max-width: 720px) {
+    height: 20px;
+  }
+}
+
+.square-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  &.show-mobile {
+    display: none;
+    @media screen and (max-width: 720px) {
+      display: block;
+    }
+  }
+}
+
+.loading-header-container {
+  height: 44px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .loading-business-switcher, .loading-button-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.dark {
+  .loading-header-container {
+    background-color: #1C1D1E;
+    .circle-box, .horizontal-box, .square-box {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    @media(max-width: 720px) {
+      background-color: #24272E;
+    }
+  }
+}
+
+.transparent, .transparent-dark {
+  .loading-header-container {
+    background-color: rgba(28, 29, 30, 0.6);
+    -webkit-backdrop-filter: blur(75px);
+    backdrop-filter: blur(75px);
+    .circle-box, .horizontal-box, .square-box {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    @media(max-width: 720px) {
+      background-color: rgba(36, 39, 46, 0.8);
+    }
+  }
+}
+
+.light {
+  .loading-header-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(75px);
+    backdrop-filter: blur(75px);
+    .circle-box, .horizontal-box, .square-box {
+      background-color: #DFDFDF;
+    }
+    @media(max-width: 720px) {
+      background-color: #F3F2F8;
+    }
+  }
+}
+
+.pe-header-menu {
+  &.dark {
+    background-color: map-get($theme-dark, dashboard-menu-bg-color);
+    border: map-get($theme-dark, dashboard-menu-border);
+    box-shadow: map-get($theme-dark, dashboard-menu-shadow);
+    backdrop-filter: map-get($theme-dark, dashboard-menu-blur);
+    color: #ffffff;
+  }
+  &.transparent, &.transparent-dark {
+    background-color: map-get($theme-transparent, dashboard-menu-bg-color);
+    border: map-get($theme-transparent, dashboard-menu-border);
+    box-shadow: map-get($theme-transparent, dashboard-menu-shadow);
+    backdrop-filter: map-get($theme-transparent, dashboard-menu-blur);
+    color: #ffffff;
+  }
+  &.light {
+    background-color: map-get($theme-light, dashboard-menu-bg-color);
+    border: map-get($theme-light, dashboard-menu-border);
+    box-shadow: map-get($theme-light, dashboard-menu-shadow);
+    backdrop-filter: map-get($theme-light, dashboard-menu-blur);
+    color: #000000;
+  }
+}

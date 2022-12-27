@@ -1,0 +1,1139 @@
+id: payever-shop-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: payever-shop-page
+  type: document
+  children:
+    - id: header
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: header-block
+          type: block
+          children:
+            - id: header-logo
+              type: logo
+            - id: header-cart
+              type: shop-cart
+
+    - id: hr-section1
+      type: section
+      children: []
+
+    - id: first-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-image
+              type: image
+              data:
+                src: "https://payeverproduction.blob.core.windows.net/builder/0b823adf-3636-450d-aedd-e71d260f099d-eltern-ipad-klasse.png"
+            - id: first-inner-block
+              type: block
+              children:
+                - id: first-block-title
+                  type: text
+                  data:
+                    text: "Willkommen im Bestellportal der Geschwister Scholl Gesamtschule Lünen!"
+                - id: first-block-desc
+                  type: text
+                  data:
+                    text: "Bestellen Sie hier das passende Education-Gerät mit entsprechendem Zubehör für Ihr Kind an der Geschwister Scholl Gesamtschule Lünen.
+                           Sie können mittels Vorkasse oder alternativ in bis zu 36 zinsfreien Monatsraten  bezahlen."
+                - id: first-block-link
+                  type: text
+                  data:
+                    text: "<a style='color: rgb(240, 0, 68); text-decoration: none; cursor: pointer' peb-link-action='navigate.internal-page' peb-link-payload='info-payever-shop-page'>Mehr informationen zur Ratenfinanzierung > </a>"
+
+    - id: second-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: second-section-text
+          type: text
+          data:
+            text: "Wählen Sie Ihr Paket"
+
+    - id: third-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-block1
+              type: block
+              children:
+                - id: third-block1-title
+                  type: text
+                  data:
+                    text: "Edu-Paket Surface Go 2"
+                - id: third-block1-list
+                  type: block
+                  children:
+                    - id: third-list-el1
+                      type: text
+                      data:
+                        text: "inkl. Microsoft Surface Go 2 (2020) Silber"
+                    - id: third-list-el2
+                      type: text
+                      data:
+                        text: "inkl. Surface Pencil Grau"
+                    - id: third-list-el3
+                      type: text
+                      data:
+                        text: "inkl. Type Cover Tastatur Schwarz"
+                    - id: third-list-el4
+                      type: text
+                      data:
+                        text: "Auf Wunsch optional mit Premium Garantie (3 Jahre)"
+            - id: third-block2
+              type: block
+              children:
+                - id: third-block2-product
+                  type: shop-products
+
+    - id: fourth-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-block1
+              type: block
+              children:
+                - id: fourth-block1-title
+                  type: text
+                  data:
+                    text: "Edu-Paket iPad Air"
+                - id: fourth-block1-list
+                  type: block
+                  children:
+                    - id: fourth-list-el1
+                      type: text
+                      data:
+                        text: "inkl. Apple iPad Air WIFI 64GB"
+                    - id: fourth-list-el2
+                      type: text
+                      data:
+                        text: "inkl. Apple Pencil 1st Generation"
+                    - id: fourth-list-el3
+                      type: text
+                      data:
+                        text: "Farbe: Silber, Space Grau oder Gold"
+                    - id: fourth-list-el4
+                      type: text
+                      data:
+                        text: "optional auf Wunsch: Premium Versicherung "
+            - id: fourth-block2
+              type: block
+              children:
+                - id: fourth-block2-product
+                  type: shop-products
+
+    - id: footer1-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer1
+          type: block
+          children:
+            - id: footer1-block1
+              type: block
+              children:
+                - id: footer1-block1-title
+                  type: text
+                  data:
+                    text: "ThinkRED: <br>
+                           Beratung für Schulträger und Schulen"
+                - id: footer1-block1-desc
+                  type: text
+                  data:
+                    text: "IT-Ausstattungen für Bildungseinrichtungen sind unser Fachgebiet! Mit ThinkRED haben Sie einen
+                    starken Partner und Prozessbegleiter, der Sie auf dem Weg zu einer digitalen Schule begleitet. Als Wegbegleiter
+                    für den DigitalPakt Schule unterstützen wir Schulträger und Schulen ganzheitlich. Wir beraten Sie persönlich und individuell, gerne auch vor Ort.
+                    Unsere Zentrale befindet sich in Bochum. Darüber hinaus sind wir an weiteren Standorten in Deutschland vertreten. Für Ihren Erfolg!"
+            - id: footer1-block2
+              type: block
+              children:
+                - id: footer1-block2-title
+                  type: text
+                  data:
+                    text: "Kontakt"
+                - id: footer1-block2-desc
+                  type: text
+                  data:
+                    text: "ThinkRed <br>Gesellschaft für digitale Bildung mit beschränkter Haftung:
+                           Lise-Meitner-Allee 6, 44801 Bochum"
+                - id: footer1-block2-phone
+                  type: text
+                  data:
+                    text: "+49 234 333672170 00"
+                - id: footer1-block2-telegram
+                  type: text
+                  data:
+                    text: "education@thinkred.de"
+
+    - id: hr-section2
+      type: section
+      children: []
+
+    - id: footer2-section
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: footer2
+          type: block
+          children:
+            - id: footer2-block1
+              type: block
+              children:
+                - id: footer2-block1-title
+                  type: text
+                  data:
+                    text: "© ThinkRED 2019 - 2020"
+            - id: footer2-block2
+              type: block
+              children:
+                - id: footer2-block2-link1
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='impressum-payever-shop-page'>Impressum</a>"
+                - id: footer2-block2-link2
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='datenschutzerklarung-payever-shop-page'>Datenschutz</a>"
+                - id: footer2-block2-link3
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='agb-payever-shop-page'>AGB</a>"
+                - id: footer2-block2-link4
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='widerruf-payever-shop-page'>Widerruf</a>"
+                - id: footer2-block2-link5
+                  type: text
+                  data:
+                    text: "<a style='color: #fff; text-decoration: none; cursor: pointer;' peb-link-action='navigate.internal-page' peb-link-payload='liefer-payever-shop-page'>Lieferung & Versand</a>"
+
+stylesheets:
+  desktop:
+    payever-shop-page: {}
+    # ----------------------------------
+    # Desktop Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      height: 100
+      position: sticky
+      top: 0
+      zIndex: 1
+    header-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    header-logo:
+      width: 370
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      margin: 15 0 0 327
+    header-cart:
+      width: 24
+      height: 30
+      margin: 40 20 20 200
+      backgroundColor: '#000'
+    header-mobile-menu: {}
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-image:
+      width: 612
+      height: 412
+      marginTop: 100
+    first-inner-block:
+      width: 412
+      marginTop: 150
+    first-block-title:
+      fontSize: 30
+      fontWeight: 700
+      width: 412
+      fontFamily: Roboto, sans-serif
+    first-block-desc:
+      width: 412
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    first-block-link:
+      width: 412
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 1024
+      height: 185
+    second-section-text:
+      color: '#fff'
+      width: 1024
+      textAlign: center
+      fontFamily: playfair display
+      fontSize: 45
+      marginTop: 70
+      fontWeight: 600
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1:
+      width: 512
+      marginTop: 80
+    third-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 512
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    third-block1-list:
+      width: 400
+      marginTop: 20
+    third-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    third-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    third-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    third-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    third-block2:
+      width: 512
+      marginTop: 80
+      marginBottom: 40
+    third-block2-product:
+      width: 475
+      height: 290
+      marginLeft: 18
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 400
+      itemHeight: 300
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-block1:
+      width: 512
+      marginTop: 100
+    fourth-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 512
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    fourth-block1-list:
+      width: 400
+      marginTop: 20
+    fourth-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    fourth-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    fourth-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    fourth-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 400
+      marginBottom: 10
+    fourth-block2:
+      width: 512
+      marginTop: 100
+      marginBottom: 40
+    fourth-block2-product:
+      width: 475
+      height: 290
+      marginLeft: 18
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 400
+      itemHeight: 300
+    # ----------------------------------
+    # Desktop Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 512
+    footer1-block1-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 400
+      marginLeft: 50
+    footer1-block2-title:
+      width: 400
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 380
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 380
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 1024
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 512
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 724
+    footer2-block2-link1:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+  tablet:
+    payever-shop-page: {}
+    # ----------------------------------
+    # Tablet Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 100 1fr 100
+      width: 768
+    header-logo:
+      width: 300
+      height: 100
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-image:
+      width: 384
+      height: 212
+      marginTop: 60
+    first-inner-block:
+      width: 384
+      marginTop: 60
+    first-block-title:
+      fontSize: 25
+      fontWeight: 700
+      width: 364
+      fontFamily: Roboto, sans-serif
+    first-block-desc:
+      width: 364
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    first-block-link:
+      width: 364
+      color: 'rgb(240, 0, 68)'
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+      marginBottom: 60
+
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 768
+      height: 90
+    second-section-text:
+      color: '#fff'
+      width: 768
+      textAlign: center
+      fontFamily: playfair display
+      fontSize: 35
+      marginTop: 30
+      fontWeight: 600
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-block1:
+      width: 364
+      marginLeft: 20
+      marginTop: 80
+    third-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 364
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    third-block1-list:
+      width: 364
+      marginTop: 20
+    third-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    third-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    third-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    third-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    third-block2:
+      width: 384
+      marginTop: 80
+      marginBottom: 40
+    third-block2-product:
+      width: 384
+      height: 290
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 400
+      itemHeight: 300
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-block1:
+      width: 364
+      marginLeft: 20
+      marginTop: 80
+    fourth-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 364
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    fourth-block1-list:
+      width: 364
+      marginTop: 20
+    fourth-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    fourth-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    fourth-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    fourth-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 364
+      marginBottom: 10
+    fourth-block2:
+      width: 384
+      marginTop: 80
+      marginBottom: 40
+    fourth-block2-product:
+      width: 384
+      height: 290
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      itemWidth: 400
+      itemHeight: 300
+    # ----------------------------------
+    # Tablet Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer1-block1:
+      width: 364
+      marginLeft: 20
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 364
+      marginBottom: 40
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 364
+      marginLeft: 20
+    footer1-block2-title:
+      width: 364
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 364
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 768
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    footer2-block1-title:
+      fontSize: 14
+      width: 235
+      marginLeft: 20
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 488
+    footer2-block2-link1:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+
+  mobile:
+    payever-shop-page: {}
+    # ----------------------------------
+    # Mobile Header
+    # ----------------------------------
+    header:
+      backgroundColor: '#fff'
+      zIndex: 1
+      position: sticky
+    header-block:
+      display: grid
+      gridTemplateColumns: 50 1fr 50
+      width: 360
+    header-logo:
+      width: 200
+      height: 80
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      gridArea: 1 / 2 / 1 / 2
+      margin: auto
+    header-cart:
+      width: 25
+      backgroundColor: '#000'
+      gridArea: 1 / 3 / 1 / 3
+      margin: auto
+    header-mobile-menu: {}
+
+    hr-section1:
+      display: grid
+      height: 1
+      backgroundColor: '#000'
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section-block:
+      width: 360
+    first-section-image:
+      width: 360
+      height: 212
+      marginTop: 30
+    first-inner-block:
+      width: 340
+      marginLeft: 20
+      marginTop: 30
+    first-block-title:
+      fontSize: 23
+      fontWeight: 700
+      width: 340
+      fontFamily: Roboto, sans-serif
+    first-block-desc:
+      width: 340
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+    first-block-link:
+      width: 340
+      color: 'rgb(240, 0, 68)'
+      marginTop: 20
+      fontFamily: Roboto, sans-serif
+      marginBottom: 40
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      backgroundImage: https://payeverproduction.blob.core.windows.net/builder/d8253deb-0f06-4b47-819e-3ccd41ab9bad-Screenshot2020-03-03at17.40.55.png
+      backgroundPosition: center
+      backgroundSize: cover
+      width: 360
+      height: 90
+    second-section-text:
+      color: '#fff'
+      width: 360
+      textAlign: center
+      fontFamily: playfair display
+      fontSize: 30
+      marginTop: 30
+      fontWeight: 600
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section-block:
+      width: 360
+      display: grid
+      gridTemplateRows: 280 300
+    third-block1:
+      width: 360
+      height: 200
+      marginTop: 80
+    third-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 340
+      marginLeft: 10
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    third-block1-list:
+      width: 340
+      marginLeft: 10
+      marginTop: 20
+    third-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    third-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    third-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    third-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    third-block2:
+      width: 360
+      height: 290
+      marginTop: 20
+      marginBottom: 40
+    third-block2-product:
+      width: 220
+      height: 290
+      productTemplateColumns: 1
+      productTemplateRows: 1
+      margin: auto
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section-block:
+      width: 360
+      display: grid
+      gridTemplateRows: 280 320
+    fourth-block1:
+      width: 360
+      marginTop: 80
+    fourth-block1-title:
+      fontWeight: 600
+      textAlign: left
+      width: 340
+      marginLeft: 10
+      fontFamily: Roboto, sans-serif
+      fontSize: 30
+    fourth-block1-list:
+      width: 340
+      marginLeft: 10
+      marginTop: 20
+    fourth-list-el1:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    fourth-list-el2:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    fourth-list-el3:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    fourth-list-el4:
+      fontWeight: 600
+      textAlign: left
+      fontFamily: Roboto, sans-serif
+      fontSize: 15
+      width: 340
+      marginBottom: 10
+    fourth-block2:
+      width: 360
+      height: 290
+      marginTop: 20
+      marginBottom: 40
+    fourth-block2-product:
+      width: 220
+      height: 290
+      margin: auto
+      productTemplateColumns: 1
+      productTemplateRows: 1
+
+    # ----------------------------------
+    # Mobile Footer Section
+    # ----------------------------------
+    footer1-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer1: {}
+    footer1-block1:
+      width: 350
+      marginLeft: 10
+    footer1-block1-title:
+      width: 300
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block1-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2:
+      width: 350
+      marginLeft: 10
+    footer1-block2-title:
+      width: 350
+      fontSize: 18
+      color: '#fff'
+      fontWeight: 600
+      marginTop: 20
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-desc:
+      fontSize: 14
+      color: '#fff'
+      width: 350
+      marginBottom: 30
+      fontFamily: Roboto, sans-serif
+    footer1-block2-phone:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    footer1-block2-telegram:
+      fontSize: 16
+      color: '#fff'
+      width: 300
+      marginBottom: 20
+      fontFamily: Roboto, sans-serif
+    hr-section2:
+      display: grid
+      height: 1
+      backgroundColor: '#fff'
+
+    footer2-section:
+      width: 360
+      backgroundColor: 'rgb(28, 43, 62)'
+    footer2: {}
+    footer2-block1:
+      width: 360
+    footer2-block1-title:
+      fontSize: 14
+      color: '#fff'
+      width: 280
+      marginLeft: 10
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2:
+      width: 350
+      marginLeft: 10
+    footer2-block2-link1:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link2:
+      fontSize: 14
+      width: 100
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link3:
+      fontSize: 14
+      width: 70
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link4:
+      fontSize: 14
+      width: 80
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+    footer2-block2-link5:
+      fontSize: 14
+      width: 130
+      marginTop: 10
+      marginBottom: 10
+      fontFamily: Roboto, sans-serif
+
+context:
+  third-block2-product:
+    service: products
+    method: getByIds
+    params:
+      - ['dce5729e-d773-432b-b01c-df485de5b706']
+  fourth-block2-product:
+    service: products
+    method: getByIds
+    params:
+      - ['4d805414-f68c-4786-9d92-3c086cd38631']

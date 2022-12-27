@@ -1,0 +1,74 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <button
+    #submitTrigger
+    id="submitTrigger"
+    name="submitButton"
+    type="submit"
+    hidden
+  ></button>
+  <div
+    class="attribute__wrapper"
+    formArrayName="attributes"
+    *ngFor="let attribute of attributesForm.controls; let i = index"
+  >
+    <div class="attribute__row" [formGroupName]="i">
+      <peb-select formControlName="type"
+                  label="{{ 'attributeEditor.type' | translate }}"
+                  selectType="label"
+                  class='form-field peb-select'
+                  [animated]='true'>
+        <peb-select-option
+          *ngFor="let option of attributeTypeOptions; let i = index"
+          [label]="option.label"
+          [value]="option.value"
+          class='peb-select-option'>
+        </peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        label="{{ 'attributeEditor.name' | translate }}"
+        appearance="label"
+        class='form-field'
+        [errorMessage]="'Name is required'"
+        [isFieldInvalid]="isSubmitted && attribute.controls.name.errors?.required"
+        [animated]='true'>
+        <input placeholder="{{ 'attributeEditor.name' | translate }}" formControlName="name" type="text"/>
+      </peb-form-field-input>
+
+      <div [class.color-field]="form.get('attributes').at(i).controls['type'].value === 'color'">
+        <pe-color-picker
+          *ngIf="form.get('attributes').at(i).controls['type'].value === 'color'"
+          [format]="colorPickerFormat.HEX"
+          [formControlRef]="form.get('attributes').at(i).controls['value']"
+          class='color-picker'
+        ></pe-color-picker>
+        <peb-form-field-input
+          label="{{ 'attributeEditor.value' | translate }}"
+          appearance="label"
+          class='form-field'
+          [errorMessage]="'Value is required'"
+          [isFieldInvalid]="isSubmitted && attribute.controls.value.errors?.required"
+          [animated]='true'>
+          <input
+            placeholder="{{ 'attributeEditor.value' | translate }}"
+            formControlName="value"
+            [type]="form.get('attributes').at(i).controls['type'].value === 'numeric' ? 'number' : 'text'"/>
+        </peb-form-field-input>
+      </div>
+
+    </div>
+    <button class="button remove" type="button" (click)="removeAttribute(i)">
+      <mat-icon svgIcon="remove-icon"></mat-icon>
+    </button>
+  </div>
+  <button
+    class="add"
+    type="button"
+    (click)="addAttribute()">
+    {{'add_attributes' | translate}}
+  </button>
+</form>

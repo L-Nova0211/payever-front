@@ -1,0 +1,53 @@
+id: apple-not-found-page
+name: Not found page
+variant: not-found
+type: replica
+master: ~
+data: {}
+template:
+  id: apple-not-found-page
+  type: document
+  children:
+
+    - id: body
+      type: section
+      meta:
+        deletable: false
+      children:
+        - id: body-text
+          type: text
+          data:
+            text: Page not found
+
+stylesheets:
+  desktop:
+    apple-not-found-page: {}
+    # ----------------------------------
+    # Desktop Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text: {}
+
+  tablet:
+    apple-not-found-page: {}
+    # ----------------------------------
+    # Tablet Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text: {}
+
+  mobile:
+    apple-not-found-page: {}
+    # ----------------------------------
+    # Mobile Body
+    # ----------------------------------
+    body:
+      height: 300
+      backgroundColor: '#f5f5f7'
+    body-text: {}
+
+context: {}

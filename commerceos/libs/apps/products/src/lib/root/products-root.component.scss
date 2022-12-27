@@ -1,0 +1,160 @@
+@import '~@pe/ui-kit/scss/pe_variables';
+
+
+$stepper-height: 65px;
+
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+cos-products-root {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  background: $color-background;
+
+  .scrollbar {
+    .grid-view-container {
+      margin-right: 0;
+    }
+  }
+
+
+  .dashboard-content {
+    overflow-y: hidden !important;
+  }
+
+  &.dark,
+  &.default {
+    background-color: #24272e;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+
+  &.light {
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+
+  &.transparent {
+    background-color: rgba(36, 39, 46, 0.3);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+}
+
+pe-products-autocomplete {
+  input {
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(0) scale(0.9166) !important;
+    }
+  }
+}
+
+#products-header {
+  margin: 0;
+  &.short-header {
+    padding: 0 20px;
+    background: #111;
+
+    ::ng-deep {
+      .header-container {
+        padding: 0;
+      }
+
+      .main-item-button {
+        padding-right: .8em;
+      }
+
+      .section-left {
+        height: 26px;
+
+        .section-button {
+          padding: 0 .8em 0 .8em;
+
+          &.active-button {
+            background-color: #ffffff33!important;
+          }
+        }
+      }
+    }
+
+    .header-container {
+
+      .close-button {
+        @media (max-width: 620px) {
+          padding: 4px 0px 4px 4px;
+        }
+
+        @media (min-width: 621px) {
+          padding: 4px 6px 4px 0;
+        }
+      }
+    }
+  }
+}
+
+.builder-container {
+  height: calc(100% - 0px);
+  position: relative;
+
+  lib-products {
+    display: block;
+    height: calc(100% - 58px);
+  }
+
+  &.below-welcome-stepper {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - #{$stepper-height});
+    top: $stepper-height;
+    transform: translateX(0);
+    bottom: 0;
+  }
+}
+
+.products-header,
+.products-app-content {
+  overflow-x: auto !important;
+  outline: none!important;
+
+  &.b-dark {
+    color: white;
+  }
+
+  &.b-light {
+    outline-style: solid;
+    outline-width: 1px;
+    color: black;
+  }
+
+  &.b-transparent {
+    color: white;
+  }
+}
+
+.mat-option {
+  &.mat-selected {
+    &.mat-active {
+      background: #0371e2 !important;
+    }
+  }
+}
+
+.sidebar-wrap {
+  pe-sidebar {
+    @media screen and (max-width: 720px) {
+      margin: 57px 0;
+      height: calc(100% - 57px);
+    }
+  }
+}

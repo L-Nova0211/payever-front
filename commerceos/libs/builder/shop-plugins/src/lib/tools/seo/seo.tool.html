@@ -1,0 +1,11 @@
+<button
+  [class.tool--active]="seoDialogOpened$ | async"
+  class="tool"
+  (click)="!loading && execCommand.emit({ type: 'toggleSeoSidebar' })"
+  [class.tool-loading]="loading"
+>
+  <div class="tool__icon">
+    <peb-editor-tool-seo-icon></peb-editor-tool-seo-icon>
+  </div>
+  <span class="tool__label">Seo</span>
+</button>

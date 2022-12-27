@@ -1,0 +1,64 @@
+<div *ngIf="chatMode" class="header">
+  <ng-content select="pe-chat-header"></ng-content>
+</div>
+<div *ngIf="!chatMode" class="unpin-message-header"
+  (click)="backToChat()"
+  >
+  <svg class="cross-icon"><use xlink:href="#icon-arrow-left-48"></use></svg>
+  <span class="pin-message-header">
+    {{pinCount}} pinned messages
+  </span>
+</div>
+<div class="scrollable" #scrollable [style.background-color]="bgColor" (scroll)="onScroll($event)">
+  <div class="messages">
+    <div
+      *ngIf="dateTag"
+      [@showBadgeAnimation]="showDateTag && dateTag ? 'show' : 'hidden'"
+      class="date-tag">{{ dateTag }}</div>
+    <div #messageContainer class="messages__container{{messages?.length > 10 ? '_over-list' : ''}}">
+        <pe-virtual-scroll-viewport
+          #pevirtualscrollviewport
+          (firstItemIndexChange)="firstItemIndexChange($event)"
+          (scrollIndexChange)="scrollIndexChange()
+          ">
+          <ng-content select="pe-chat-message"></ng-content>
+        </pe-virtual-scroll-viewport>
+      <p class="no-messages" *ngIf="!messages?.length">{{ noMessagesPlaceholder | translate }}</p>
+      <div
+        class="messages__container_scroll-bottom"
+        [class.show]="scrollBottom"
+        [style.background-color]="messagesBottomColor"
+        (click)="scrollListBottom()"
+      >
+        <span
+          *ngIf="unreadCount"
+          [@showBadgeAnimation]="unreadCount ? 'show' : 'hidden'"
+          class="messages__container_scroll-bottom_badge"
+        >{{ unreadCount > 50 ? '50+' : unreadCount }}</span>
+        <svg class="icon-16">
+          <use xlink:href="#icon-arrow-down-16"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="chatMode">
+  <div class="appearance-settings">
+    <ng-content select="pe-chat-appearance"></ng-content>
+  </div>
+  <div class="form">
+    <ng-content select="pe-chat-form"></ng-content>
+  </div>
+</ng-container>
+<div *ngIf="!chatMode" class="unpin-message">
+  <div class="unpin-message-link" *ngIf="pinCount > 1">
+    <span (click)="unpinAllMessage()" style="color: #eeeeee;">
+      {{'message-app.chat-unpin-all'|translate}} {{pinCount}} {{'message-app.chat-unpin-messages'|translate}}
+    </span>
+  </div>
+  <div class="unpin-message-link" *ngIf="pinCount <= 1">
+    <span (click)="unpinAllMessage()" style="color: #eeeeee;">
+      {{'message-app.chat-unpin'|translate}} {{pinCount}}  {{'message-app.chat-message'|translate}}
+    </span>
+  </div>
+</div>

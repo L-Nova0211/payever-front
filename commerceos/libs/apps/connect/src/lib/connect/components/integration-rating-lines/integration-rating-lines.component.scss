@@ -1,0 +1,41 @@
+.rating-lines {
+  width: 100%;
+  display: flex;
+}
+
+.stars {
+  &__star {
+    display: inline;
+    font-size: 10px;
+  }
+
+  &__line {
+    text-align: right;
+    line-height: 0.7;
+  }
+}
+
+.lines {
+  flex-grow: 1;
+  margin-left: 8px;
+  padding-top: 4px;
+  position: relative;
+
+  &__item {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    margin-bottom: 5.125px;
+    padding: 0;
+    border-radius: 2px;
+
+    &:before {
+      content:'';
+      background-color: white;
+      width: var(--custom);
+      height:4px;
+      position:absolute; 
+      border-radius: 2px;
+    }
+  }
+}

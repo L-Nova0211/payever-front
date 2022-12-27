@@ -1,0 +1,326 @@
+$lightThemeBG: hsla(0, 0%, 100%, 0.7);
+$lightThemeColor: #000;
+$lightThemeActive: #0371e2;
+
+$darkThemeBG: rgba(36, 39, 46, 1);
+$darkThemeDarken: #111111;
+$darkThemeLighten: #78787d;
+$darkThemeColor: #fff;
+$darkThemeActive: #0371e2;
+
+.time-picker-wrapper{
+  background: transparent;
+  transition: background 0.4s;
+  font-family: 'Roboto', sans-serif;
+  &.active{
+      background: rgba(0,0,0,0.3);
+  }
+  &.dark{
+    .time-picker{
+        background: $darkThemeBG;
+        &__header{
+            border-bottom: none;
+        }
+        &__selected-time, &__selected-ampm {
+            color: $darkThemeLighten;
+            div.selected{
+                color: #fff;
+            }
+        }
+        &__clock{
+            background: $darkThemeDarken;
+            > .hours-minutes {
+                color: #fff;
+              &[disabled] {
+                color: $darkThemeLighten;
+              }
+            }
+        }
+        &__footer{
+            border-top: none;
+            .peb-ref-dialog-close {
+                background: $darkThemeActive;
+                color: #fff;
+                &:hover{
+                    background: lighten($darkThemeActive, 10%);
+                }
+            }
+        }
+    }
+  }
+  &.light{
+    .time-picker{
+        background: #fff;
+        &__header{
+            border-bottom: 1px solid #e1e1e1;
+            .time-picker-selected-time{
+                color: #aaa;
+                div.selected{
+                    color: #000;
+                }
+            }
+            .time-picker-selected-ampm{
+                color: #aaa;
+                div.selected{
+                    color: #000;
+                }
+            }
+        }
+        &__clock{
+            background: #ededed;
+            > .hours-minutes {
+                color: #000;
+                &.active{
+                    background: $lightThemeBG;
+                    color: $lightThemeColor;
+                }
+            }
+            .time-picker-clock-origin {
+                background: $lightThemeBG;
+            }
+            .time-picker-clock-arrow {
+                background: $lightThemeBG;
+                span {
+                    background: $lightThemeBG;
+                }
+            }
+        }
+        &__footer{
+            border-top: 1px solid #e1e1e1;
+            .peb-ref-dialog-close{
+                background: #f1f1f1;
+                &:hover{
+                    background: #ddd;
+                }
+            }
+        }
+    }
+  }
+  &.transparent {
+      .time-picker {
+          backdrop-filter: blur(25px);
+
+          &__header {
+              border-bottom: none;
+          }
+
+          &__selected-time, &__selected-ampm {
+              color: $darkThemeLighten;
+
+              div.selected {
+                  color: #fff;
+              }
+          }
+
+          &__clock {
+              background: $darkThemeDarken;
+
+              > .hours-minutes {
+                  color: #fff;
+
+                  &[disabled] {
+                      color: $darkThemeLighten;
+                  }
+              }
+          }
+
+          &__footer {
+              border-top: none;
+
+              .peb-ref-dialog-close {
+                  background: $darkThemeActive;
+                  color: #fff;
+
+                  &:hover {
+                      background: lighten($darkThemeActive, 10%);
+                  }
+              }
+          }
+      }
+  }
+  .time-picker {
+      width: 246px;
+      height: auto;
+      box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+      border-radius: 12px;
+      transform: scale(0.5) !important;
+      transition: transform 0.3s, opacity 0.3s;
+      opacity: 0;
+      &.static{
+          margin: 0px !important;
+          box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 0 7px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+      }
+      &.active{
+          transform: scale(1) !important;
+          opacity: 1;
+      }
+      &__header{
+          padding: 8px 0 0;
+      }
+      &__selected-time{
+          padding: 4px 0;
+          display: flex;
+          justify-content: center;
+          text-align: end;
+          font-size: 24px;
+      }
+      &__hour,
+      &__minute {
+          position: relative;
+          width: 30px;
+          height: 38px;
+          overflow: hidden;
+          cursor: pointer;
+
+          &[disabled=true] {
+              cursor: default;
+          }
+      }
+      &__hour-input {
+          text-align: end;
+      }
+      &__hour-input,
+      &__minute-input {
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 24px;
+          font-size: 24px;
+          color: #fff;
+          background-color: #000;
+          border: 0;
+          border-radius: 6px;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+          box-sizing: border-box;
+      }
+      &__hour.selected:hover .time-picker__hour-input,
+      &__hour.selected:active .time-picker__hour-input,
+      &__hour.selected .time-picker__hour-input:focus {
+          opacity: 1;
+      }
+      &__minute.selected:hover .time-picker__minute-input,
+      &__minute.selected:active .time-picker__minute-input,
+      &__minute.selected .time-picker__minute-input:focus {
+          opacity: 1;
+      }
+      &__time-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          & > span {
+              line-height: 24px;
+
+              &:not(.current) {
+                  opacity: 0.3;
+              }
+          }
+      }
+      &__seprator {
+          line-height: 36px;
+      }
+      &__selected-ampm {
+          margin-top: 12px;
+          margin-bottom: -12px;
+          text-align: center;
+          font-size: 16px;
+          div{
+              display: inline-block;
+              padding: 0 5px;
+              cursor: pointer;
+              &[disabled=true] {
+                  cursor: default;
+              }
+          }
+      }
+      &__clock{
+          width: 120px;
+          height: 120px;
+          padding: 16px;
+          border-radius: 50%;
+          cursor: pointer;
+          margin: 16px auto;
+          position: relative;
+          user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          -webkit-user-select: none;
+          opacity: 1;
+          transform: scale(1);
+          -webkit-transition: opacity 0.3s, transform 0.3s;
+          -moz-transition: opacity 0.3s, transform 0.3s;
+          -o-transition: opacity 0.3s, transform 0.3s;
+          transition: opacity 0.3s, transform 0.3s;
+          .hours-minutes{
+              border: none;
+              position: absolute;
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              cursor: pointer;
+              font-size: 14px;
+              text-align: center;
+              padding: 0;
+              transition: all .2s;
+              z-index: 3;
+          }
+          &_hide{
+              opacity: 0;
+              transform: scale(0.8);
+          }
+      }
+      &__clock-origin{
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -3px;
+          margin-top: -3px;
+      }
+      &__clock-arrow{
+          width: 2px;
+          height: 41%;
+          position: absolute;
+          left: 0;
+          top: 14px;
+          right: 0;
+          margin: auto;
+          -webkit-transform-origin: top left;
+          transform-origin: bottom;
+          span{
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              right: -3px;
+          }
+      }
+      &__footer{
+          padding: 15px;
+          text-align: right;
+          .peb-ref-dialog-close{
+              padding: 10px;
+              width: 100%;
+              font-size: 14px;
+              border: transparent;
+              border-radius: 12px;
+              cursor: pointer;
+              box-sizing: border-box;
+          }
+      }
+  }
+}
+
+*{
+  outline: none;
+  box-sizing: content-box;
+}

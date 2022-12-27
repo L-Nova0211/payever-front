@@ -1,0 +1,136 @@
+<div class="pe-existing-domain" [ngClass]="theme">
+  <ng-container [ngTemplateOutlet]="step === 1 ? firstStep : secondStep"></ng-container>
+</div>
+
+<!-- FIRST STEP START -->
+<ng-template #firstStep [formGroup]="existingDomainForm">
+  <div
+    *ngIf="errorMsg$ | async as errorMsg"
+    class="pe-existing-domain__message"
+  >
+    <peb-messages [message]="errorMsg"></peb-messages>
+  </div>
+  <div class="pe-existing-domain__section">
+    <pe-subscript
+      [content]="'domains-lib.existing_domain.first_step.info' | translate"
+    ></pe-subscript>
+    <div class="pe-existing-domain__margin"></div>
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [errorMessage]="domainNameError | translate"
+        [isFieldInvalid]="existingDomainForm.controls.domainName.invalid"
+        [label]="'domains-lib.existing_domain.first_step.enter_domain.label' | translate"
+      >
+        <input
+          formControlName="domainName"
+          [placeholder]="'domains-lib.existing_domain.first_step.enter_domain.placeholder' | translate"
+        />
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class="pe-existing-domain__margin"></div>
+    <peb-form-background>
+      <button pe-form-button
+        (click)="verifyDomain()"
+        color="confirm"
+      >
+        {{ 'domains-lib.actions.verify_connection' | translate }}
+      </button>
+    </peb-form-background>
+    <div class="pe-existing-domain__margin"></div>
+    <pe-subscript
+      [content]="'domains-lib.existing_domain.first_step.verify_info' | translate"
+    ></pe-subscript>
+  </div>
+</ng-template>
+<!-- FIRST STEP END -->
+
+<!-- SECOND STEP START -->
+<ng-template #secondStep [formGroup]="existingDomainForm">
+  <div class="pe-existing-domain__message">
+    <peb-messages 
+      [color]="existingDomainForm.controls.isConnected.value ? 'confirm' : 'warning'"
+      [message]="existingDomainForm.controls.isConnected.value
+        ? ('domains-lib.messages.successfuly_connected' | translate)
+        : getFields(existingDomainForm.value)+('domains-lib.errors.entered_incorrectly' | translate)"
+      [showIcon]="!existingDomainForm.controls.isConnected.value"
+    ></peb-messages>
+  </div>
+  <!-- RECORD @A START -->
+  <peb-expandable-panel
+    [headerLabel]="'domains-lib.existing_domain.second_step.record_a.title' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.existing_domain.second_step.record_a.current_ip' | translate"
+      >
+        <input readonly
+          formControlName="currentIp"          
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.existing_domain.second_step.record_a.required_ip' | translate"
+      >
+        <input readonly
+          formControlName="requiredIp"
+        />
+        <div class="suffix">
+          <button peb-text-button
+            [cdkCopyToClipboard]="existingDomainForm.controls.requiredIp.value"
+            color="confirm"
+          >{{ 'domains-lib.actions.copy' | translate }}</button>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+  </peb-expandable-panel>
+  <!-- RECORD @A END -->
+
+  <!-- CNAME START -->
+  <peb-expandable-panel
+    [headerLabel]="'domains-lib.existing_domain.second_step.c_name.title' | translate"
+    [isContentOpen]="true"
+  >
+    <peb-form-background>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.existing_domain.second_step.c_name.current_cname' | translate"
+      >
+        <input readonly
+          formControlName="currentCname"
+        />
+      </peb-form-field-input>
+      <peb-form-field-input
+        appearance="label"
+        [label]="'domains-lib.existing_domain.second_step.c_name.required_cname' | translate"
+      >
+        <input readonly
+          formControlName="requiredCname"
+        />
+        <div class="suffix">
+          <button peb-text-button
+            [cdkCopyToClipboard]="existingDomainForm.controls.requiredCname.value"
+            color="confirm"
+          >{{ 'domains-lib.actions.copy' | translate }}</button>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+    <div class="pe-existing-domain__margin"></div>
+    <peb-form-background>
+      <button pe-form-button
+        (click)="connect()"
+        color="confirm"
+      >
+        {{ 'domains-lib.actions.connect' | translate }}
+      </button>
+    </peb-form-background>
+    <div class="pe-existing-domain__margin"></div>
+    <pe-subscript
+      [content]="'domains-lib.existing_domain.second_step.info' | translate"
+    ></pe-subscript>
+  </peb-expandable-panel>
+  <!-- CNAME END -->
+</ng-template>
+<!-- SECOND STEP END -->

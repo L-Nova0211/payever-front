@@ -1,0 +1,106 @@
+.product-autocomplete-panel {
+  border-radius: 12px !important;
+  margin-top: 4px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.27);
+  margin-left: -12px;
+
+  .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
+    background-color: inherit;
+
+    .mat-option-text {
+      background-color: inherit;
+    }
+  }
+
+  .mat-option {
+    height: 40px !important;
+    padding: 0 12px;
+    margin: 0;
+    border-radius: unset;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+
+    &:hover {
+      background-color: #0091df;
+    }
+
+    &:not(:first-of-type) {
+      &::before {
+        content: "";
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    .mat-option-text {
+      height: inherit;
+      display: flex;
+      align-items: center;
+      .option-container {
+        display: flex;
+        align-items: center;
+
+        &__image {
+          height: 32px;
+          width: 32px;
+          border-radius: 6.7px;
+          margin-right: 12px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            height: 32px;
+            width: 32px;
+          }
+        }
+
+        &__label {
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.33;
+          letter-spacing: normal;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+
+.product-picker-container {
+  .quantity-select {
+    .label-select-wrapper {
+      height: 44px;
+
+      .label-container {
+        .label-text {
+          font-family: Roboto !important;
+          color: #7a7a7a;
+          font-weight: 400 !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="container" [ngClass]="config.theme">
+  <div style="margin-bottom: 11px;">
+      <peb-form-background >
+          <peb-form-field-input [label]="'pos-app.settings.domain_label' | translate" appearance="label">
+              <input [ngModel]="domainConfig.domainName" (ngModelChange)="validateDomain($event)" pebInput [placeholder]="'pos-app.settings.domain_placeholder' | translate" />
+                <div class="suffix">
+          <p>.{{posHost}}</p>
+      </div>
+            </peb-form-field-input>
+      </peb-form-background>
+  </div>
+
+  <peb-form-background >
+      <peb-form-field-input [label]="'pos-app.settings.date_label' | translate" appearance="label">
+          <input [ngModel]="domainConfig.creationDate | date:'longDate'" disabled pebInput [placeholder]="'pos-app.settings.date_placeholder' | translate" />
+        </peb-form-field-input>
+        <peb-form-field-input [label]="'pos-app.settings.provider_label' | translate" appearance="label">
+          <input [(ngModel)]="domainConfig.provider"  disabled pebInput [placeholder]="'pos-app.settings.provider_placeholder' | translate" />
+        </peb-form-field-input>
+  </peb-form-background>
+
+  <div style="margin-top: 16px;"  *ngIf="errorMsg">
+    <peb-messages  [showIcon]="false" [message]="errorMsg"></peb-messages>
+  </div>
+
+</div>

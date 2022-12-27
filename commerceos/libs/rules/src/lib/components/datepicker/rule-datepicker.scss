@@ -1,0 +1,32 @@
+.datepicker {
+
+  &__header {
+    margin: 0 0.0625em 1.375em 0;
+  }
+
+  &__header-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__calendar-wrapper {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.75em;
+    padding-bottom: 0.75em;
+  }
+}
+
+.datepicker__calendar {
+  background-color: transparent;
+  display: block;
+  height: auto;
+  width: 17.875em;
+}
+
+

@@ -1,0 +1,303 @@
+//
+// Sidenav
+// ----------------------------
+
+.pe-bootstrap {
+
+  .mat-sidenav-container {
+    height: 100%;
+    overflow: visible;
+  }
+
+  .mat-sidenav {
+    @include sidenav-label;
+    overflow: hidden;
+    border-radius: $border-radius-base * 2;
+    margin: $grid-unit-x;
+    padding: $grid-unit-y * 4 0 0 0;
+    -webkit-font-smoothing: antialiased;
+
+    &-md {
+      width: $grid-unit-x * 32;
+    }
+
+    h3 {
+      font-size: $font-size-large-3;
+      color: $color-white-grey-9;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      margin-top: $grid-unit-y;
+    }
+
+    &-fit-content {
+
+      &.mat-drawer {
+        bottom: unset !important;
+      }
+
+      &.mat-sidenav.mat-drawer {
+        padding-bottom: $grid-unit-y * 2;
+      }
+    }
+
+    &-indents {
+      padding: 0 $grid-unit-x * 2;
+    }
+
+    &-paddings {
+      padding: 0 0 0 $grid-unit-x + 4px;
+
+      &-short {
+        padding: 0 0 0 $grid-unit-x;
+      }
+    }
+
+    &-close-button {
+      position: absolute;
+      right: 0;
+
+      .mat-button-wrapper {
+        line-height: $grid-unit-x * 2;
+      }
+    }
+
+    // Style variations
+    // -------------------
+    &-header {
+
+      &-left {
+        position: absolute;
+        left: $grid-unit-x;
+        height: $grid-unit-y * 4 + 4;
+        top: 0;
+        z-index: 2;
+
+        svg + span {
+          margin-left: 3px;
+        }
+      }
+
+      &-right {
+        position: absolute;
+        right: $grid-unit-x + 4;
+        height: $grid-unit-y * 4 + 4;
+        top: 0;
+        z-index: 2;
+      }
+    }
+
+    &-bottom-space {
+      margin-bottom: $grid-unit-y * 2;
+    }
+
+    &-dark {
+      background-color: $color-solid-grey-1;
+    }
+
+    &-transparent {
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none !important;
+    }
+
+    &-white {
+      color: $color-white;
+    }
+
+    &-text {
+      color: $color-white-grey-9;
+
+      &-section {
+        height: $grid-unit-y * 4;
+        line-height: $grid-unit-y * 4;
+        color: $color-white-grey-4;
+        font-size: $font-size-micro-2;
+      }
+    }
+
+    &-grey {
+      color: $color-white-grey-5;
+    }
+
+    .mat-sidenav-list.mat-list, .mat-sidenav-list.mat-nav-list {
+      background-color: transparent;
+      padding: 0;
+
+      .mat-list-item {
+        height: $grid-unit-y * 4;
+
+        &-content {
+          color: $color-white-pe;
+        }
+
+        .mat-list-item-content {
+          padding: 0 $grid-unit-x + 4 0 0;
+          @include pe_flexbox;
+          @include pe_justify-content(space-between);
+        }
+
+        .mat-list-item-not-visible {
+
+          .mat-tree-grey {
+            color: $color-white-grey-4;
+            fill: $color-white-grey-4;
+          }
+
+          .mat-tree-text {
+            color: $color-white-grey-4;
+          }
+        }
+      }
+    }
+
+    // Another components
+    // -------------------
+    .mat-tree-dark {
+      background-color: transparent;
+    }
+
+    .form-table {
+
+      .mat-tree-list {
+        padding: 0 16px 0 0;
+      }
+    }
+
+    &-toggle-buttons {
+      height: $grid-unit-y * 4;
+      @include pe_flexbox;
+      @include pe_justify-content(center);
+      @include pe_align-items(center);
+    }
+
+    .form-table .form-fieldset {
+
+      .row > [class*=col] > * {
+        width: 100%;
+      }
+    }
+
+    .mat-radio-label-content {
+      @include sidenav-label;
+    }
+
+    .mat-slide-toggle-content {
+      @include sidenav-label;
+    }
+
+    &-first-el {
+
+      .mat-button-focus-overlay {
+        background-color: transparent; // fix for bug - automatic focus first button after open sidenav
+      }
+    }
+
+    .mat-grid-tile {
+      background-color: $color-white;
+    }
+
+    .mat-slide-toggle-bar {
+      background-color: $color-white-grey-2;
+    }
+
+    .mat-tab-group {
+      margin-top: - $grid-unit-y * 4;
+    }
+
+    .mat-tab-body-wrapper {
+      margin: $grid-unit-y 16px 0 $grid-unit-x + 4px;
+    }
+
+    .mat-tab-body-content {
+      overflow: hidden;
+    }
+
+    .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+      display: none;
+    }
+
+    .mat-tab-header {
+      width: 100%;
+      background-color: $color-solid-grey-2;
+    }
+
+    .mat-tab-label {
+      min-width: 60px;
+      max-width: 60px;
+      padding: 0 $grid-unit-x;
+      opacity: 1;
+
+      &-active {
+        background-color: $color-solid-grey-1;
+      }
+    }
+
+    // Remove when available
+    // -------------------
+    &-button {
+
+      &-left {
+        width: $grid-unit-x * 5 - 2;
+
+      }
+
+      &-right {
+        width: $grid-unit-x * 2 - 2;
+        border-left: 1px solid $color-grey-5;
+      }
+
+      &-double {
+        background-color: $color-black;
+        color: $color-white-grey-4;
+
+        &:first-of-type {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+        &:last-of-type {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+
+        &-active {
+          background-color: $color-white-grey-4;
+
+          span {
+            color: $color-black;
+          }
+        }
+      }
+    }
+
+    .mat-grid-tile {
+      background-color: transparent;
+    }
+
+    .mat-sidenav-card {
+      padding: 0;
+      height: 100%;
+      position: relative;
+
+      .mat-card-footer {
+        margin: $grid-unit-y 0 0 0;
+        text-align: center;
+        color: $color-white-grey-4;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-light;
+        font-size: $font-size-small;
+      }
+
+      img {
+        margin: 0 auto;
+        border-radius: $border-radius-base * 2;
+      }
+    }
+  }
+
+  .mat-drawer {
+
+    &-content {
+      overflow: hidden;
+    }
+  }
+}

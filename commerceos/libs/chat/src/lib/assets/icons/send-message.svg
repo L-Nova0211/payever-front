@@ -1,0 +1,14 @@
+<svg _ngcontent-cxl-c267="" viewBox="0 0 16 16">
+  <defs _ngcontent-cxl-c267="">
+    <linearGradient _ngcontent-cxl-c267="" id="lgrad1" x1="36.298%" x2="67.128%" y1="21.956%" y2="66.948%">
+      <stop _ngcontent-cxl-c267="" offset="0%" stop-color="#FFF"></stop>
+      <stop _ngcontent-cxl-c267="" offset="100%" stop-color="#CBCBCB"></stop>
+    </linearGradient>
+    <linearGradient _ngcontent-cxl-c267="" id="lgrad2" x1="52.294%" x2="45.649%" y1="-13.668%" y2="120.379%">
+      <stop _ngcontent-cxl-c267="" offset="0%" stop-color="#FFF"></stop>
+      <stop _ngcontent-cxl-c267="" offset="100%" stop-color="#E1E1E1"></stop>
+    </linearGradient>
+  </defs>
+  <g _ngcontent-cxl-c267="" fill="none" fill-rule="evenodd">
+  <g _ngcontent-cxl-c267="" fill-rule="nonzero">
+  <g _ngcontent-cxl-c267=""><g _ngcontent-cxl-c267=""><g _ngcontent-cxl-c267=""><path _ngcontent-cxl-c267="" fill="#D2D2D2" d="M9.059 10.993l-1.82 1.22c-.158.108-.364.119-.533.028-.17-.09-.275-.267-.273-.46V9.764c-.002-.048.022-.094.063-.12.04-.027.093-.03.136-.008l2.408 1.111c.049.02.082.065.086.118.004.052-.022.103-.067.13z" transform="translate(-1234 -14) translate(1230 10) translate(4 4) translate(.002)"></path><path _ngcontent-cxl-c267="" fill="url(#lgrad1)" d="M6.513 9.915L.45 6.297c-.308-.183-.482-.529-.444-.885.038-.357.28-.658.62-.772L14.11.038c.305-.097.636.024.807.294.17.27.138.622-.08.855L6.513 9.915z" transform="translate(-1234 -14) translate(1230 10) translate(4 4) translate(.002)"></path><path _ngcontent-cxl-c267="" fill="url(#lgrad2)" d="M6.494 9.972s2.978 3.5 4.611 5.385c.236.269.607.376.95.274.343-.102.595-.394.646-.749L15.028.883c.08-.311-.06-.638-.342-.794-.281-.156-.632-.103-.855.13L6.528 8.941c-.279.282-.293.73-.034 1.03z" transform="translate(-1234 -14) translate(1230 10) translate(4 4) translate(.002)"></path></g></g></g></g></g></svg>

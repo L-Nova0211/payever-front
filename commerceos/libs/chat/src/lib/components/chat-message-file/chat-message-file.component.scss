@@ -1,0 +1,38 @@
+@import '../../../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin getMessageAttachmentsTheme($theme-config) {
+  .message-attachments__upload-spinner {
+    stroke: map-get($theme-config, active-text);
+  }
+}
+
+:host {
+  &.dark {
+    @include getMessageAttachmentsTheme($dark-theme);
+  }
+  &.light {
+    @include getMessageAttachmentsTheme($light-theme);
+  }
+  &.transparent {
+    @include getMessageAttachmentsTheme($transparent-theme);
+  }
+}
+
+.message-attachments {
+  position: relative;
+  width: 100%;
+
+  &__upload {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    max-height: 62px;
+    min-height: 62px;
+    padding: 4px 0;
+    width: 100%;
+  }
+}

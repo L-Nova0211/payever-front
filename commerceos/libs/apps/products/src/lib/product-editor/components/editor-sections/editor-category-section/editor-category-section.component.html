@@ -1,0 +1,34 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (submit)="onSubmit()"
+>
+  <button #submitTrigger id="submitTrigger" name="submitButton" type="submit" hidden></button>
+
+  <div class="wrapper">
+    <div class="form-field">
+      <pe-products-autocomplete
+        class='autocomplete'
+        #autocomplete
+        placeholder="{{ 'add_category' | translate }}"
+        label="{{ 'filters.labels.category' | translate }}"
+        [values]="categoryOptions"
+      ></pe-products-autocomplete>
+      <button (click)="addCategory(autocomplete.formControl.value); autocomplete.clear();">{{ 'add_category' | translate }}</button>
+    </div>
+
+    <ng-container *ngFor="let category of form.get('categories').value">
+      <div class="category">
+        <div>
+          <div class="category__name">
+            <span>{{ category }}</span>
+          </div>
+        </div>
+
+        <button (click)="removeCategory(category)">Remove</button>
+      </div>
+    </ng-container>
+  </div>
+
+</form>

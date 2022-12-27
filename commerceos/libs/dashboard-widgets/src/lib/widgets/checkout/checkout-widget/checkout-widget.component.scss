@@ -1,0 +1,174 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+:host {
+  margin-bottom: 1.35em;
+  display: block;
+}
+.checkout-widget-button {
+  width: 50%;
+  &:first-of-type {
+    margin-right: 12px;
+    text-align: left;
+  }
+}
+/*
+:host {
+  .checkout-container {
+    display: flex;
+    width: 100%;
+    padding-top: 12px;
+
+    store-info {
+      width: 50%;
+    }
+    .arrow-right {
+      margin: auto 0 auto auto;
+      position: relative;
+      right: -8px;
+      color: $color-secondary-4;
+      cursor: pointer;
+    }
+    .checkout-container__add-checkout {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      justify-content: flex-end;
+      overflow: hidden;
+
+      .mat-button-rect-md {
+        @media (max-width: $viewport-breakpoint-ipad - 1) {
+          width: 50px;
+        }
+
+        .add-checkout-wrapper {
+          padding: 0 12px;
+          overflow: hidden;
+
+          .add-checkout-icon {
+            margin: 0;
+          }
+        }
+        .add-checkout-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          & > span {
+            @media screen and (max-width: $viewport-breakpoint-sm-1 - 1) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .checkout-details-container {
+    @include pe_flexbox;
+    width: 100%;
+    flex-direction: row;
+    padding-top: $padding-large-horizontal;
+
+    .checkout-more-details {
+      @include pe_flexbox;
+      width: 50%;
+      flex-direction: column;
+
+      &.left-side {
+        padding-right: $padding-base-horizontal;
+        border-right: 1px solid $color-secondary-2;
+      }
+      &.right-side {
+        padding-left: $padding-base-horizontal;
+      }
+      .checkout-integration-title {
+        @include pe_flexbox;
+        @include pe_justify-content(space-between);
+        width: 100%;
+        padding-top: $padding-base-vertical;
+        padding-bottom: $padding-base-vertical;
+      }
+      .checkout-integration-wrapper {
+        @include pe_flexbox;
+        width: 100%;
+        padding-top: $padding-base-vertical * 2;
+        padding-bottom: $padding-base-vertical * 2;
+        .img-circle {
+          margin-left: 12px;
+        }
+        .checkout-integration-item {
+          display: inline-flex;
+          min-width: 14%;
+          max-width: 30%;
+          &:last-child {
+            margin-left: 10px;
+          }
+          &-spinner {
+            position: absolute;
+            top: 0%; // these styles to show spinner
+            left: 0%; // over the icon
+          }
+          .mat-button-wrapper {
+            display: inline-flex;
+          }
+          .checkout-integration-item-wrapper {
+            min-height: 24px;
+            .checkout-integration-item-title {
+              display: block;
+              margin-left: 0;
+              margin-top: 11px;
+              text-align: left;
+              width: 100%;
+            }
+          }
+        }
+        .checkout-integration-item {
+          @include pe_flexbox;
+          @include pe_flex-direction(column);
+          height: auto;
+          line-height: normal;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+          position: relative;
+          padding-right: $padding-xs-horizontal;
+
+          &-spinner {
+            position: absolute;
+            top: 5%;  // these styles to show spinner
+            left: 4%; // over the icon
+          }
+
+          &:hover {
+            .mat-button-focus-overlay {
+              background-color: transparent;
+              opacity: 0;
+            }
+          }
+
+          &-wrapper {
+            text-align: left;
+            &.disabled {
+              opacity: 0.2;
+            }
+            .checkout-integration-item-install {
+              @include pe_flexbox;
+              margin-top: 11px;
+            }
+            .checkout-integration-item-title {
+              font-size: $font-size-micro-1;
+              line-height: 1.83;
+              color: $color-secondary;
+              font-weight: normal;
+              margin-left: $padding-small-horizontal / 2;
+              width: calc(100% - #{$padding-large-horizontal});
+            }
+          }
+          .mat-button-focus-overlay {
+            background-color: transparent;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+*/

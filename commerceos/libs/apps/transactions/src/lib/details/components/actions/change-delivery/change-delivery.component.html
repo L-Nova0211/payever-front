@@ -1,0 +1,33 @@
+<pe-action-container
+  [titleTranslateKey]="translationsScope + '.heading'"
+  [theme]="theme"
+  [submitTitleTranslateKey]="translationsScope + '.actions.change'"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="onSubmit()"
+>
+  <form novalidate [formGroup]="form" *ngIf="form">
+    <peb-form-background>
+      <peb-select
+        selectType="label"
+        [label]="'transactions.form.edit_delivery.labels.weekOfDelivery.label' | translate"
+        formControlName="_weekOfDelivery_view"
+        (changed)="onChangeWeek($event)"
+      >
+        <peb-select-option *ngFor="let week of weeksOfDelivery" [value]="week.value" [label]="week.label">
+        </peb-select-option>
+      </peb-select>
+      <peb-form-field-input
+        *ngIf="form.get('weekOfDelivery')?.enabled"
+        [isFieldInvalid]="form.get('weekOfDelivery').invalid"
+        [label]="'transactions.form.edit_delivery.labels._weekOfDelivery_view.label' | translate"
+        appearance="label"
+      >
+        <input pebInput formControlName="weekOfDelivery" readonly />
+        <div class="suffix-icon">
+          <mat-icon svgIcon="datetime-picker" (click)="onOpenDatepicker($event)"></mat-icon>
+        </div>
+      </peb-form-field-input>
+    </peb-form-background>
+  </form>
+</pe-action-container>

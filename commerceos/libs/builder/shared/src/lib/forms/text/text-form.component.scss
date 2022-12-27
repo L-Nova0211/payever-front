@@ -1,0 +1,97 @@
+.font-row {
+  display: flex;
+  width: 100%;
+  margin: 5px 0 0 0;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+
+  &__control {
+    width: 100%;
+
+    &--right {
+      margin-left: 10px;
+    }
+
+    &--picker {
+      margin-left: auto;
+    }
+  }
+}
+
+.inline-controls {
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+
+  &__control {
+    display: flex;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.font-header {
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+
+  peb-select {
+    background: transparent;
+    max-width: max-content;
+
+    ::ng-deep span {
+      color: #0371e2;
+      text-align: right;
+    }
+  }
+}
+
+.font-body {
+  display: grid;
+  grid-column-gap: 6px;
+  grid-template-columns: auto 62px;
+}
+
+.toggle-group {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+
+  &.vertical-align {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+}
+
+.align-header {
+  margin-top: 18px;
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+}
+
+.align-body + .align-header {
+  padding-top: 40px;
+}
+
+.font-style-icon {
+  width: 13px;
+  height: 13px;
+  font-size: 0;
+}

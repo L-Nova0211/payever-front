@@ -1,0 +1,66 @@
+<div class="add-contacts" [formGroup]="additionalInfoGroup"> 
+  <div class="contact-form" #formContent>
+    <pe-picker
+    #pePicker
+    class="pe-picker"
+    label="{{ 'message-app.channel.form.add_member' | translate }}"
+    placeholder="{{ 'message-app.channel.form.search' | translate }}"
+    [lazyLoadData]="contacts$ | async"
+    [optionsItemWidth]="optionsItemWidth"
+    (onKeyUp)="onKeyUp($event)"
+    (changed)="onChange($event)"
+    formControlName="members"
+    (buttonClick)="addMember()"
+    buttonLabel="{{ 'message-app.channel.form.add_member' | translate }}"
+    >
+  </pe-picker>
+    <div class="errors">
+      <ng-template
+      *ngFor="let error of getErrors()"
+      > 
+        <peb-messages *ngIf="hasError(error)" [message]="getErrorMessage(error)"></peb-messages>
+      </ng-template>
+   
+      </div>
+  </div>
+  <div *ngIf="_invitationId && _code" class="contact-invite-link">
+    <div class="contact-invite-link__link">
+      <peb-form-background>
+        <peb-form-field-input
+        class="peb-form-field-input"
+        [appearance]="'label'"
+        label="{{ 'message-app.channel.settings.invite-link' | translate }}"
+        [animated]="false"
+        [isFieldInvalid]="hasError('invitation_code')"
+        [errorMessage]="getErrorMessage('invitation_code')"
+        >
+          <span
+          class="contact-invite-link__root-link"
+          >{{ getRootInvitationLink }}</span>
+            <input 
+            hidden="true"
+            #slugInput
+            type="text"
+            formControlName="invitationCode"
+            (focus)="onInvitationCodeFocus()"
+            (keyup)="keyUpSlugTyping($event)"
+            [class.private]="type === PeMessageChannelType.Private"
+            [class.public]="type === PeMessageChannelType.Public"
+            [attr.disabled]="type === PeMessageChannelType.Private ? true : null"/>
+            <div>
+              <button
+              class="contact-invite-link__copy"
+              [class.success]="copied"
+              (click)="copyLink()">{{ linkTextButton }}
+              </button>
+            </div>
+          </peb-form-field-input>
+        </peb-form-background>
+        <button 
+          class="contact-invite-link__skip"
+          (click)="close()">{{ 'message-app.channel.form.skip' | translate }}
+        </button>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="container" [ngClass]="config.theme">
+    <div class="toggle-container">
+        <div>Send reminders</div>
+        <peb-button-toggle [(ngModel)]="hasReminder" ></peb-button-toggle>
+    </div>
+<peb-form-background>
+    <peb-select [animated]="true" selectType="label" [(ngModel)]="frequency" label="Send reminders every" >
+        <peb-select-option value="1" label="1 day"></peb-select-option>
+        <peb-select-option value="3" label="3 days"></peb-select-option>
+    </peb-select>
+</peb-form-background>
+</div>

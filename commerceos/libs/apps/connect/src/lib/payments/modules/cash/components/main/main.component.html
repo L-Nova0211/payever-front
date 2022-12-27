@@ -1,0 +1,14 @@
+<payment-main-wrap [paymentMethod]="paymentMethod" [doOpenNextPanel$]="openNextPanel$" [doOpenPanel$]="openPanel$" [forceHideSectionAuthentication]="true">
+  <div account>
+    <account (onAdditionalInfoSaved)="onAdditionalInfoSaved()"></account>
+  </div>
+  <div payment-documents>
+    <payment-documents [paymentMethod]="paymentMethod" (onUploadSuccess)="onDocumentsUploaded()"></payment-documents>
+  </div>
+  <ng-template let-type="type" let-index="index">
+    <ng-container *ngIf="type === 'settings'">
+      <payment-settings-shopRedirectEnabled (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-shopRedirectEnabled>
+      <payment-settings-save-button [paymentMethod]="paymentMethod" [paymentIndex]="index" [data]="settingsOptionsData$ | async"></payment-settings-save-button>
+    </ng-container>
+  </ng-template>
+</payment-main-wrap>

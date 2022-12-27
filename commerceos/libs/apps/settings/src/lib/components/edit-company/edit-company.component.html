@@ -1,0 +1,88 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="companyForm">
+    <peb-form-background>
+        <peb-select selectType="label" label="{{ 'form.edit_form.company.legal_form.label' | translate }}"
+                    formControlName="legalForm">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of legalForms"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+        </peb-select>
+        <div class="columns">
+          <peb-select class="two-column-input"
+                      selectType="label" label="{{ 'form.edit_form.company.number_employees.label' | translate }}"
+                      formControlName="employeesRange">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of employees"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+          </peb-select>
+          <div class="divider"></div>
+          <peb-select class="two-column-input"
+                      selectType="label" label="{{ 'form.create_form.company.sales.label' | translate }}"
+                      formControlName="salesRange">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of sales"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+          </peb-select>
+        </div>
+        <div class="columns">
+          <peb-select selectType="label" class="two-column-input"
+                      label="{{ 'form.create_form.company.product.label' | translate }}"
+                      formControlName="product">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of products"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+          </peb-select>
+          <div class="divider"></div>
+          <peb-select class="two-column-input" selectType="label"
+                      label="{{ 'form.create_form.company.industry.label' | translate }}"
+                      formControlName="industry">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of industry"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+          </peb-select>
+        </div>
+        <peb-form-field-input class="two-column-input" label="{{ 'form.edit_form.company.website.label' | translate }}" appearance="label">
+            <input type="text"
+                   pebInput
+                   placeholder="{{ 'form.edit_form.company.website.placeholder' | translate }}"
+                   formControlName="urlWebsite"
+            />
+        </peb-form-field-input>
+    </peb-form-background>
+    <div class="form-margins__error">
+        <peb-messages
+                *ngIf="companyForm.get('legalForm').invalid"
+                message="{{ 'form.create_form.company.legal_form.label' | translate }}
+                         {{ 'form.create_form.errors.is_require' | translate }}"
+        ></peb-messages>
+      <peb-messages
+        *ngIf="companyForm.get('salesRange').invalid"
+        message="{{ 'form.create_form.company.sales.label' | translate }}
+                         {{ 'form.create_form.errors.is_require' | translate }}"
+      ></peb-messages>
+      <peb-messages
+        *ngIf="companyForm.get('employeesRange').invalid"
+        message="{{ 'form.create_form.company.employees.label' | translate }}
+                         {{ 'form.create_form.errors.is_require' | translate }}"
+      ></peb-messages>
+        <peb-messages
+                *ngIf="companyForm.get('product').invalid"
+                message="{{ 'form.create_form.company.product.label' | translate }}
+                         {{ 'form.create_form.errors.is_require' | translate }}"
+        ></peb-messages>
+        <peb-messages
+                *ngIf="companyForm.get('industry').invalid"
+                message="{{ 'form.create_form.company.industry.label' | translate }}
+                         {{ 'form.create_form.errors.is_require' | translate }}"
+        ></peb-messages>
+    </div>
+</form>

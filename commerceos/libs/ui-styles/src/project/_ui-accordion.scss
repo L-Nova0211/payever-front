@@ -1,0 +1,78 @@
+.pe-bootstrap {
+  .ui-accordion {
+    .panel-default {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      position: relative;
+      background-color: transparent;
+      min-height: 0;
+      max-width: none;
+      > .panel-heading {
+        padding: 0;
+        + .panel-collapse > .panel-body {
+          border: 0;
+        }
+      }
+      .panel-collapse {
+        > .panel-body {
+        }
+      }
+    }
+    .panel-title {
+      font-size: inherit;
+    }
+  }
+}
+
+.pe-bootstrap {
+  .ui-sidebar-accordion {
+    display: block;
+    color: $color-gray;
+    .panel-default {
+      border: 0;
+      border-bottom: $border-light-gray-2;
+      > .panel-heading {
+        background-color: transparent;
+        color: inherit;
+        border: 0;
+      }
+    }
+    .panel-body {
+      padding: 0;
+      margin-bottom: $margin-adjust * 4;
+    }
+
+    .accordion-toggle {
+      height: $grid-unit-y * 4;
+      line-height: $grid-unit-y * 4;
+      padding-right: $pe_hgrid_gutter;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        width: $icon-size-16;
+        height: $icon-size-16;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <polygon fill="#B3B3B3" points="16 7 9 7 9 0 7 0 7 7 0 7 0 9 7 9 7 16 9 16 9 9 16 9"></polygon></svg>');
+        position: absolute;
+        right: $margin-adjust;
+        top: 50%;
+        margin-top: -$icon-size-16/2;
+        @include payever_transition(transform, $animation-duration-slide-out/2, $animation-effect-ease-out);
+      }
+      &[aria-expanded="true"]:after {
+        @include payever_transform_rotate(45deg);
+      }
+    }
+
+    .panel-collapse {
+      display: block !important; // important can not be avoided due to overriding ngx-bootstrap/accordion
+      overflow: hidden !important;
+      max-height: 0;
+      @include payever_transition(max-height, $animation-duration-slide-out, $animation-effect-ease-out);
+      &.in {
+        max-height: $grid-unit-y * 30;
+      }
+    }
+  }
+}

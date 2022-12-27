@@ -1,0 +1,191 @@
+<mat-expansion-panel
+  class="mat-expansion-panel-dark mat-expansion-panel-app-header subdashboard-header"
+  [hideToggle]="true"
+  disabled>
+  <mat-expansion-panel-header
+    [collapsedHeight]="height"
+    [expandedHeight]="height">
+    <div class="content-inner">
+
+      <!-- Logo and replacer -->
+      <ng-container [ngSwitch]="!!logoSrc" *ngIf="withLogo">
+        <img
+          class="logo subdashboard-header-logo"
+          *ngSwitchCase="true"
+          [attr.src]="logoSrc"
+          [attr.alt]="title | abbreviation"
+        />
+
+        <div *ngSwitchCase="false" class="logo logo-placeholder subdashboard-header-logo">
+          <h2 class="logo-placeholder-text">
+            {{ title | abbreviation }}
+          </h2>
+        </div>
+      </ng-container>
+
+      <!-- Title and subtitle -->
+      <div *ngIf="title" class="subdashboard-header-title">
+        <mat-panel-title>
+          {{ title }}
+        </mat-panel-title>
+
+        <mat-panel-description class="header-actions" *ngIf="subtitleAction">
+          <button
+            mat-button
+            class="mat-button-link mat-button-no-padding"
+            (click)="subtitleAction.onClick($event)"
+            [ngClass]="subtitleAction.className">
+          <span class="mat-button-wrapper"
+                [translationScope]="translationScope"
+                [translate]="subtitleAction.labelTranslationArgs">
+          {{ subtitleAction.label }}
+          </span>
+          </button>
+        </mat-panel-description>
+      </div>
+
+      <ng-content select="[header-details]"></ng-content>
+
+      <div class="mat-expansion-panel-spacer"></div>
+
+      <div class="buttons-wrapper">
+        <!-- Right buttons -->
+        <ng-container *ngFor="let button of buttons">
+          <button
+            mat-raised-button
+            class="open-btn mat-button-rounded mat-button-sm subdashboard-header-button-action"
+            [ngClass]="button.className"
+            color="muted-light"
+            (click)="button.onClick($event)">
+            <pe-progress-button-content class="mat-progress-spinner-light" [loading]="isLoading" [spinnerDiameter]="21">
+              <span class="mat-button-wrapper"
+                    [translationScope]="translationScope"
+                    [translate]="button.labelTranslationArgs">
+                {{ button.label }}
+              </span>
+            </pe-progress-button-content>
+          </button>
+        </ng-container>
+
+        <!-- Right dropdown buttons -->
+        <ng-container *ngIf="dropdownItems?.length">
+          <button
+            mat-raised-button
+            color="muted-light"
+            class="mat-button-rounded mat-button-icon mat-button-sm subdashboard-header-button-action dropdown-button"
+            [matMenuTriggerFor]="menu"
+            (menuOpened)="menuOpened()">
+            <span class="mat-button-wrapper">
+              <svg class="icon icon-24">
+                <use xlink:href="#icon-dots-h-24"></use>
+              </svg>
+            </span>
+          </button>
+
+          <mat-menu
+            #menu="matMenu"
+            panelClass="pe-bootstrap"
+            [backdropClass]="'pe-subdashboard-backdrop'"
+            [overlapTrigger]="false"
+            [attr.xPosition]="'before'"
+            class="mat-menu-dark mat-menu-dropdown mat-menu-no-space">
+            <ng-template matMenuContent>
+              <ng-container *ngFor="let dropdownItem of dropdownItems">
+                <button
+                  mat-menu-item
+                  (click)="dropdownItem.onClick($event)"
+                  [translationScope]="translationScope"
+                  [translate]="dropdownItem.labelTranslationArgs">
+                  {{ dropdownItem.label }}
+                </button>
+              </ng-container>
+            </ng-template>
+          </mat-menu>
+        </ng-container>
+      </div>
+
+    </div>
+
+    <div class="content-inner-mobile">
+      <ng-container [ngSwitch]="!!logoSrc">
+        <img
+          class="logo subdashboard-header-logo"
+          *ngSwitchCase="true"
+          [attr.src]="logoSrc"
+          [attr.alt]="title | abbreviation"
+        />
+
+        <div *ngSwitchCase="false" class="logo logo-placeholder subdashboard-header-logo">
+          <h2 class="logo-placeholder-text">
+            {{ title | abbreviation }}
+          </h2>
+        </div>
+      </ng-container>
+
+      <div class="subdashboard-header-title">
+        <mat-panel-title>
+          {{ title }}
+        </mat-panel-title>
+
+        <ng-content select="[header-details-mobile]"></ng-content>
+
+        <div class="buttons-wrapper">
+          <!-- Right buttons -->
+          <ng-container *ngFor="let button of buttons">
+            <button
+              mat-raised-button
+              class="open-btn mat-button-rounded mat-button-sm subdashboard-header-button-action"
+              [ngClass]="button.className"
+              color="muted-light"
+              (click)="button.onClick($event)">
+              <pe-progress-button-content class="mat-progress-spinner-light" [loading]="isLoading" [spinnerDiameter]="21">
+                <span class="mat-button-wrapper"
+                      [translationScope]="translationScope"
+                      [translate]="button.labelTranslationArgs">
+                  {{ button.label }}
+                </span>
+              </pe-progress-button-content>
+            </button>
+          </ng-container>
+
+          <div *ngIf="dropdownItems?.length">
+            <button
+              mat-raised-button
+              color="muted-light"
+              class="mat-button-rounded mat-button-icon mat-button-sm subdashboard-header-button-action dropdown-button"
+              [matMenuTriggerFor]="menu"
+              (menuOpened)="menuOpened()">
+            <span class="mat-button-wrapper">
+              <svg class="icon icon-24">
+                <use xlink:href="#icon-dots-h-24"></use>
+              </svg>
+            </span>
+            </button>
+
+            <mat-menu
+              #menu="matMenu"
+              panelClass="pe-bootstrap"
+              [backdropClass]="'pe-subdashboard-backdrop'"
+              [overlapTrigger]="false"
+              class="mat-menu-dark mat-menu-dropdown mat-menu-no-space">
+              <ng-template matMenuContent>
+                <ng-container *ngFor="let dropdownItem of dropdownItems">
+                  <button
+                    mat-menu-item
+                    (click)="dropdownItem.onClick($event)"
+                    [translationScope]="translationScope"
+                    [translate]="dropdownItem.labelTranslationArgs">
+                    {{ dropdownItem.label }}
+                  </button>
+                </ng-container>
+              </ng-template>
+            </mat-menu>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </mat-expansion-panel-header>
+</mat-expansion-panel>

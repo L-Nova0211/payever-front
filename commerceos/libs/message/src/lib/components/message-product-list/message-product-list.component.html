@@ -1,0 +1,34 @@
+<ng-container *ngIf="!loading">
+  <pe-message-loader class="pe-message-loader"></pe-message-loader>
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <div class="header">
+    <button (click)="onClose()">{{ 'message-app.sidebar.close' | translate }}</button>
+    <button class="add" (click)="onAdd()">{{ 'message-app.sidebar.add' | translate }}</button>
+  </div>
+  <pe-data-grid
+    class="pe-data-grid"
+    #dataGridComponent
+    [items]="items"
+    [isShowGridItemInfo]="true"
+    [theme]="peOverlayData.theme"
+    [filters]="[]"
+    [multipleSelectedActions]="[]"
+    (multipleSelectedItemsChanged)="onMultipleSelectedItemsChanged($event)"
+    (layoutTypeChanged)="onLayoutTypeChanged($event)"
+  >
+    <pe-sidebar-filters-wrapper>
+      <pe-sidebar-header
+        class="pe-sidebar-header"
+        [title]="'products'"
+        [allowClose]="false">
+      </pe-sidebar-header>
+      <pe-sidebar-filter-wrapper
+        [expandable]="true"
+        [title]="'collections'"
+      >
+      </pe-sidebar-filter-wrapper>
+    </pe-sidebar-filters-wrapper>
+  </pe-data-grid>
+</ng-container>

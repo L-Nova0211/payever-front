@@ -1,0 +1,121 @@
+:host {
+  width: 436px;
+  border-radius: 12px;
+
+  .overlay {
+    background: rgba(36,39,46,.85);
+
+    &__header {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      height: 71px;
+      justify-content: space-between;
+      padding: 19px 12px 16px;
+    }
+
+    &__button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      box-sizing: border-box;
+      color: #0091df;
+      cursor: pointer;
+      font-family: Roboto;
+      font-size: 14px;
+      padding: 0 12px;
+      outline: 0;
+      max-width: -webkit-max-content;
+      max-width: -moz-max-content;
+      max-width: max-content;
+
+      &.grey {
+        color: #7a7a7a;
+      }
+    }
+
+    &__title {
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+    }
+
+
+    &__body {
+      padding: 12px;
+
+      .input {
+        .option {
+          font-weight: 500;
+        }
+        span {
+          font-weight: 500;
+        }
+        background-color: #111;
+        display: block;
+        border-radius: 12px;
+        input {
+          color: #fff;
+        }
+
+        &__select {
+          height: 42px;
+          margin-bottom: 12px;
+          cursor: pointer;
+        }
+      }
+
+      max-height: 700px;
+      overflow: auto;
+      .mat-expansion-panel {
+        border-radius: 0;
+
+        &:not(:first-child) {
+          display: block;
+          margin-top: 1px;
+        }
+
+        &.mat-expanded {
+          .icon_plus { display: none; }
+        }
+
+        &:not(.mat-expanded) {
+          .icon_minus { display: none; }
+        }
+
+        &__header {
+          .mat-content {
+            align-items: center;
+            justify-content: space-between;
+
+            .mat-expansion-panel-header-title {
+              font-size: 14px;
+              text-transform: none;
+            }
+          }
+        }
+        &__body {
+          padding: 16px 12px;
+        }
+      }
+
+    }
+  }
+}
+
+::ng-deep {
+  .pages-folder-dialog {
+
+    mat-dialog-container {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+  }
+}

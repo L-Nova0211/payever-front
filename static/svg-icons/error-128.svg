@@ -1,0 +1,5 @@
+<svg viewBox="0 0 128 128" preserveAspectRatio="xMidYMin slice" width="100%">
+  <circle class="path1" fill="none" stroke="currentColor" r="62.5" cy="63.5" cx="63.5" fill-opacity="0" stroke-width="2"></circle>
+  <line class="path2" fill="none" stroke="currentColor" stroke-width="3" x1="63.5" y1="37" x2="63.5" y2="75"></line>
+  <line class="path3" fill="none" stroke="currentColor" stroke-width="3" x1="63.5" y1="82" x2="63.5" y2="93"></line>
+</svg>

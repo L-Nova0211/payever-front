@@ -1,0 +1,83 @@
+<div class="data-grid-wrap employees-data-grid" [ngClass]="theme">
+  <pe-grid [theme]="theme" [items]="items" [embedMod]="true">
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'pages.employees.sidebar.title' | translate"
+      [sidenavMenu]="sidenavMenu"
+      (menuItemSelected)="selectSideNavMenu($event)"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [rootFolder]="rootFolderData"
+        [folders]="groupCategories"
+        [selectFolder]="selectedFolder"
+        [openActionLabel]="'pages.employees.sidebar.groups.options.permissions' | translate"
+        (selectedRootFolder)="onSelectRootFolder()"
+        (selectedFolder)="selectFolder($event)"
+        (openFolder)="onOpenEmployeeGroup($event)"
+        (createFolder)="onCreateEmployeeGroup($event)"
+        (updateFolder)="onEditEmployeeGroup($event)"
+        (deleteFolder)="onDeleteEmployeeGroup($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+    <pe-grid-content
+      [mobileTitle]="mobileTitle$ | async"
+    >
+      <pe-grid-toolbar
+        [totalItems]="paginator.total"
+        [viewMenu]="viewMenu"
+        [filterConfig]="toolbar.filterConfig"
+        (filtersChange)="filtersChange($event)"
+        [optionsMenu]="optionsMenu$ | async"
+        (optionsChange)="optionsChange($event)"
+        [sortMenu]="toolbar.sortMenu"
+        (sortChange)="sortChange($event)"
+        (viewChange)="viewChange($event)"
+        (create)="openNewUserDialog()"
+      ></pe-grid-toolbar>
+      <pe-grid-viewport
+        [selectable]="true"
+        [defaultLayout]="gridLayout"
+      >
+        <pe-grid-list
+          noItemsPlaceholder="employees"
+          [viewAdd]="true"
+          [scrollBottomOffset]="200"
+          (create)="openNewUserDialog()"
+        >
+          <ng-template let-item="item">
+            <pe-grid-item
+              [peDropIntoFolder]="itemsToMove(item)"
+              [item]="item"
+              [itemContextMenu]="itemContextMenu(item)"
+              (actionClick)="actionClick($event)"
+              (itemClick)="actionClick($event)"
+              (moveToFolder)="moveToFolder($event)"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+            ></pe-grid-item>
+          </ng-template>
+        </pe-grid-list>
+        <pe-grid-table
+          noItemsPlaceholder="employees"
+          [isLoading]="isLoading$ | async"
+          [displayedColumns]="displayedColumns"
+          [scrollBottomOffset]="50"
+        >
+          <ng-template let-item="item">
+            <pe-table-row
+              [peDropIntoFolder]="itemsToMove(item)"
+              [item]="item"
+              [itemContextMenu]="itemContextMenu(item)"
+              (actionClick)="actionClick($event)"
+              (rowClicked)="actionClick($event)"
+              (moveToFolder)="moveToFolder($event)"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+            >
+            </pe-table-row>
+          </ng-template>
+
+        </pe-grid-table>
+      </pe-grid-viewport>
+    </pe-grid-content>
+  </pe-grid>
+</div>

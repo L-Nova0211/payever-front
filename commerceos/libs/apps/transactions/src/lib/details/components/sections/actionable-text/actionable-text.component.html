@@ -1,0 +1,8 @@
+<div class="actionable-text" *ngIf="(actionableText$ | async) as actionableText" [ngClass]="theme">
+  <div class="actionable-text__icon">
+    <mat-icon class="icon-16" svgIcon="iconWarning"></mat-icon>
+  </div>
+  <div class="actionable-text__content">
+    {{actionableText | translate}}
+  </div>
+</div>

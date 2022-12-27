@@ -1,0 +1,60 @@
+<div id="import-menu">
+  <div class="menu" [ngClass]="theme">
+    <div class="menu__button" (click)="$event.stopPropagation()">
+      <mat-icon class="import-icon" svgIcon="overwrite"></mat-icon>
+      <div>
+        <span (click)="overwrite = !overwrite" [ngClass]="theme">{{'import_menu.overwrite' | translate}}</span>
+        <div class="toggle">
+          <input type="checkbox" id="toggle" [(ngModel)]="overwrite" />
+          <label for="toggle"><em></em></label>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngTemplateOutlet="menuItemRef; context: {
+      title: 'import_menu.title.csv' | translate,
+      text: 'import_menu.text.csv' | translate,
+      type: FileType.CSV,
+      exampleType: 'product.example.valid.csv',
+      icon: 'import-csv'
+    }"></ng-container>
+    <ng-container *ngTemplateOutlet="menuItemRef; context: {
+      title: 'import_menu.title.xml' | translate,
+      text: 'import_menu.text.xml' | translate,
+      type: FileType.XML,
+      exampleType: 'product.example.valid.xml',
+      icon: 'import-xml'
+    }"></ng-container>
+  </div>
+</div>
+
+
+<ng-template #menuItemRef let-title="title" let-text="text" let-type="type" let-exampleType="exampleType" let-icon="icon">
+  <button class="menu__button" (click)="this.selectImportFile(type, { overwrite: overwrite })">
+    <mat-icon class="import-icon" [svgIcon]="icon"></mat-icon>
+    <div>
+      <span [ngClass]="theme">{{title}}</span>
+      <pf-help-icon
+        [matMenuTriggerFor]="menuXML"
+        #xmlTrigger="matMenuTrigger"
+        class="menu__button-help-icon"
+        (click)="$event.stopPropagation()"></pf-help-icon>
+    </div>
+    <mat-menu #menuXML="matMenu"
+      [hasBackdrop]="true"
+      xPosition="after"
+      class="product-import-tooltip {{theme}}"
+    >
+      <div class="menu-tooltip active" (click)="$event.stopPropagation()">
+        <div class="menu-tooltip__head">
+          <span>{{'import_menu.title.help' | translate}}</span>
+          <pf-close-icon class="menu-tooltip__close-icon" (click)="closeMenuTooltip($event, xmlTrigger)"></pf-close-icon>
+        </div>
+        <div class="menu-tooltip__content">
+          <span>{{text}} (</span>
+          <a href="#" (click)="downloadFile($event, exampleType)">{{'import_menu.download' | translate}}</a>
+          <span>).</span>
+        </div>
+      </div>
+    </mat-menu>
+  </button>
+</ng-template>

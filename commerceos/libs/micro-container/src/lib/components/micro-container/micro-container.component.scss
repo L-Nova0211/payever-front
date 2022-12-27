@@ -1,0 +1,150 @@
+// @import "~@pe/ui-kit/scss/pe_variables";
+// @import "~@pe/ui-kit/scss/mixins/pe_mixins";
+// @import "~@pe/ui-kit/scss/blocks/bootstrap/forms";
+// @import "~@pe/ui-kit/scss/blocks/project/form-field";
+// @import "~@pe/ui-kit/scssx/blocks/project/form-table";
+@import "pe_variables";
+@import "pe_components";
+
+
+$header-height: $grid-unit-y * 2 + $padding-small-vertical - 1;
+
+.background-blurred {
+  backdrop-filter: blur(10px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.progress-spinner-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+:host {
+  width: 100%;
+}
+
+.micro-content {
+  height: 100%;
+  overflow: auto;
+  -ms-overflow-style: none; // hide scroll in IE/Edge but allow to scroll
+
+  &.with-select-bar {
+    bottom: 40px;
+  }
+
+  /* remove scrollbar space */
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  &.below-header {
+    top: $platform-header-height;
+    transform: translateX(0);
+    @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+      top: $platform-header-mobile-height;
+    }
+  }
+
+  &.below-subheader {
+    top: $platform-header-height * 2;
+    transform: translateX(0);
+    @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+      top: $platform-header-mobile-height * 2;
+    }
+  }
+
+  $stepper-height: 65px;
+
+  &.below-welcome-stepper {
+    top: $stepper-height;
+    transform: translateX(0);
+    bottom: 0;
+  }
+
+  &.below-header.below-welcome-stepper {
+    top: $platform-header-height + $stepper-height;
+    transform: translateX(0);
+  }
+
+  &.below-subheader.below-welcome-stepper {
+    top: $platform-header-height * 2 + $stepper-height;
+    transform: translateX(0);
+  }
+
+  &.with-header-notification {
+    &.below-header {
+      top: $platform-header-height + $platform-header-notification-height;
+      @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+        top: $platform-header-mobile-height + $platform-header-notification-height;
+      }
+    }
+
+    &.below-subheader {
+      top: $platform-header-height * 2 + $platform-header-notification-height;
+      @media(max-width: $viewport-breakpoint-sm-2 - 1) {
+        top: $platform-header-mobile-height * 2 + $platform-header-notification-height;
+      }
+    }
+  }
+
+  transactions-app {
+
+    or-details-container .mat-card-content {
+      overflow: auto;
+    }
+
+    .data-grid-toolbar{
+      background-color: black;
+      color: white;
+
+    }
+    .data-grid-scroll-container{
+      width: 100%!important;
+      padding: 0!important;
+    }
+    .mat-paginator {
+      background-color: rgba(17, 17, 17, 0.4);
+      color: white;
+    }
+    .pe-table {
+      border-radius: 0;
+      border: 0;
+      margin-bottom: 0;
+    }
+
+    .pe-info-box {
+      transform: unset;
+    }
+
+    pe-table-header-row{
+
+      pe-table-header-cell{
+        background-color: rgb(28, 28, 30)!important;
+        padding: 9px 12px 5px 12px!important;
+        color: white;
+      }
+    }
+  }
+   .data-grid-scroll-container {
+    position: relative;
+  }
+
+  settings-root {
+
+    .form-table .form-fieldset .row>[class*=col] {
+      min-height: 56px !important;
+    }
+
+    legal {
+      .form-table .form-fieldset .row>[class*=col] {
+        min-height: auto !important;
+        height: auto;
+      }
+    }
+  }
+}

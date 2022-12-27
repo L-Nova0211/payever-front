@@ -1,0 +1,113 @@
+<ng-container *ngIf="isMobile then mobileRow else rowTemplate"></ng-container>
+
+<ng-template #rowTemplate>
+  <ng-container *ngIf="peGridViewportService.selectable" [ngTemplateOutlet]="checkbox"></ng-container>
+  <ng-container *ngIf="displayColumnsData">
+    <div #elemItem *ngFor="let column of displayColumnsData; let cellIndex = index;"
+      class="grid-table-body-cell {{theme}}" [class.first-cell]="cellIndex === 0 && !peGridViewportService.selectable"
+      [class.last-cell]="cellIndex === (displayColumnsData?.length - 1)"
+      [class.first-row]="isFirstRow(item)"
+      [class.last-row]="isLastRow(item)"
+      (click)="rowClicked.emit(item)"
+    >
+      <ng-container *ngIf="getValue(item, column.name) as value">
+        <span *ngIf="!(column?.cellComponent || column?.cellComponentFactory)" class="cut-overflow"
+          [innerHTML]="value">
+        </span>
+        <pe-table-row-cell-component-host
+          *ngIf="column?.cellComponent || column?.cellComponentFactory"
+          [inputData]="{
+            item: item,
+            component: column.cellComponent,
+            componentFactory: column.cellComponentFactory,
+            key: column.name,
+            data: column.data
+          }"
+          (preview)="preview.emit(item)"
+          (actionClick)="actionClick.emit(item)"
+          (moreClick)="onContextMenu($event)">
+        </pe-table-row-cell-component-host>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #mobileRow>
+  <div #rowRef class="mobile-row-wrap {{theme}}"
+    [class.selectable]="peGridViewportService.selectable"
+    [class.first-row]="isFirstRow(item)"
+    [class.last-row]="isLastRow(item)"
+    [class.is-show-header]="(tableService.showHeadInMobile || !isMobile)"
+    [class.is-table-width-scroll]="isTableWidthScroll && isMobile"
+    (click)="rowClicked.emit(item); actionClick.emit(item)"
+  >
+    <ng-container *ngIf="peGridViewportService.selectable" [ngTemplateOutlet]="checkbox"></ng-container>
+    <div
+      *ngIf="!isTableWidthScroll && isMobile"
+      class="mobile-row-wrap__thumbnail"
+      [class.mobile-row-wrap__thumbnail-grid]="thumbnailRef"
+      [class.mobile-row-wrap__thumbnail-item]="!thumbnailRef"
+      (click)="rowClicked.emit(item)">
+      <ng-container *ngIf="thumbnailRef else thumbnailItem" [ngTemplateOutlet]="thumbnailRef"></ng-container>
+    </div>
+    <div #textBlock class="mobile-row-wrap__content"
+         [class.mobile-row-wrap__content-with-label]="!contentRowsRef.length"
+         [class.mobile-row-wrap__content-grid]="contentRowsRef.length"
+         [class.is-table-width-scroll]="isTableWidthScroll && isMobile"
+    >
+      <div class="rows-wrap" *ngIf="contentRowsRef.length else titleRow">
+        <ng-container *ngFor="let row of contentRowsRef; let i = index">
+          <div
+            class="rows-wrap__row"
+            [ngStyle]="{
+              width: (isTableWidthScroll && isMobile) ? getWidth(i) : 'auto',
+              minWidth: (isTableWidthScroll && isMobile) ? getWidth(i) : 'auto'
+            }"
+            (click)="rowClicked.emit(item)"
+          >
+            <ng-container [ngTemplateOutlet]="row"></ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <div class="bottom-line" *ngIf="bottomLineRef">
+        <ng-container [ngTemplateOutlet]="bottomLineRef"></ng-container>
+      </div>
+    </div>
+    <div class="mobile-row-wrap__badge-wrap">
+      <span
+        *ngIf="item.badge?.label"
+        class="mobile-row-wrap__badge"
+        [style.backgroundColor]="item.badge?.backgroundColor"
+        [style.color]="item.badge?.color"
+      >{{ item.badge.label }}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #titleRow>
+  <div class="rows-wrap__row" (click)="rowClicked.emit(item)">
+    {{ item.title }}
+  </div>
+  <p title="{{ item.description }}" *ngIf="item.description"
+     class="rows-wrap__description"
+  >{{ item.description }}</p>
+</ng-template>
+
+<ng-template #thumbnailItem>
+  <ng-container
+    *ngIf="(item.isLoading$ | async) !== true"
+  >
+    <img *ngIf="item.type !== 'folder' && item.image" [src]="item.image">
+    <mat-icon *ngIf="item.type === 'folder'" svgIcon="folder-icon"></mat-icon>
+  </ng-container>
+  <ng-container *ngIf="item.isLoading$ | async">
+    <mat-spinner [strokeWidth]="2" [diameter]="16"></mat-spinner>
+  </ng-container>
+</ng-template>
+
+<ng-template #checkbox>
+  <div class="grid-table-body-cell {{theme}}" [class.last-row]="isLastRow(item)" [class.first-cell]="true">
+    <mat-icon class="checkbox" svgIcon="checkbox-icon" [class.active]="peGridViewportService.isSelected(item)"
+      (click)="peGridViewportService.onSelect(item)"></mat-icon>
+  </div>
+</ng-template>

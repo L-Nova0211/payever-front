@@ -1,0 +1,15 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+ 
+ .absolute-scroll-wrapper {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   overflow: hidden;
+ }
+
+ .colored-navbar {
+    background-color: $color-solid-header-1;
+ }

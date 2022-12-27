@@ -1,0 +1,15 @@
+.pe-personal-domain {
+  max-height: 369px;
+
+  &__no-domain {
+    margin: 0 12px;
+
+    button {
+      margin: 16px 0;
+    }
+  }
+
+  &__section {
+    margin-bottom: 16px;    
+  }
+}

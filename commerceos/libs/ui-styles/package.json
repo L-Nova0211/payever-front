@@ -1,0 +1,10 @@
+{
+  "name": "@pe/ui-styles",
+  "version": "1.0.0-COSF-572.3",
+  "description": "Payever UI variables (Temporary designed as publishable library for use in separate packages. Remove this file when all packages will be moved to NX monorepo)",
+  "homepage": "https://frontend.gitlab.devpayever.com/ui-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.devpayever.com:10022/frontend/commerceos.git"
+  }
+}

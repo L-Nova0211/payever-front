@@ -1,0 +1,48 @@
+id: grid-showcase
+type: document
+styles:
+  width: 500
+children:
+  - id: section
+    type: section
+    style:
+      height:
+        desktop: 250
+        tablet: 250
+        mobile: 600
+    children:
+      - id: grid
+        type: grid
+        style:
+          top: 50
+          left: 50
+          width: 300
+          height:
+            desktop: 150
+            tablet: 150
+            mobile: 450
+          background: lightyellow
+          direction:
+            desktop: row
+            tablet: row
+            mobile: column
+          items: 3
+        children:
+          - id: text-1
+            type: text
+            text: Cell 1
+            style:
+              top: 20
+              left: 50
+              fontSize: 20
+              slot: cell-1
+          - id: text-2
+            type: text
+            text: Cell 2
+            style:
+              slot: cell-2
+          - id: text-3
+            type: text
+            text: Cell 3
+            style:
+              slot: cell-3

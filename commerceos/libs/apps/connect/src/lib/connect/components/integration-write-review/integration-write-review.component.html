@@ -1,0 +1,85 @@
+<div *ngIf="integration" class="integration-write-review">
+
+  <!-- Integration header -->
+  <div class="header">
+    <div class="header__icon">
+      <svg class="icon icon-128">
+        <use [attr.xlink:href]="integration.displayOptions.icon"></use>
+      </svg>
+    </div>
+    <div class="header__text-container">
+      <div class="header__main-title">
+        {{ integration.displayOptions.title | translate }}
+      </div>
+      <div class="header__description">
+        {{ integration.installationOptions.price | translate }}
+      </div>
+      <div class="header__author">
+        {{ integration.installationOptions.developer | translate }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Rating bar -->
+  <div class="rating-bar">
+      <connect-integration-rating-stars [currentRating]="currentUserRating" [iconClass]="'icon-24'" (selectRating)="selectRating($event)"></connect-integration-rating-stars>
+  </div>
+
+  <!-- Review form -->
+  <div class="form-container">
+    <form *ngIf="form"
+      class="form-table form-table-border-radius-md"
+      novalidate
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+      <pe-form-fieldset
+        class="transparent"
+        [fields]="formScheme.fieldsets['reviewFieldSet']"
+        [formGroup]="form"
+        [formStyle]="'transparent'">
+      </pe-form-fieldset>
+    </form>
+
+    <div *ngIf="form" class="form-container__buttons">
+      <button mat-raised-button
+        class="spec-submit-button"
+        color="muted-light"
+        (click)="onSuccess()"
+        [disabled]="form.invalid"
+        [class.mat-button-rounded]="true"
+        [class.mat-button-md]="true">
+        {{ 'integration_write_review.submit' | translate }}
+      </button>
+      <button mat-raised-button
+        color="muted-light"
+        class="form-container__cancel-button"
+        (click)="cancelReview()"
+        [class.mat-button-rounded]="true"
+        [class.mat-button-md]="true">
+        {{ 'integration_write_review.cancel' | translate }}
+    </button>
+    </div>
+  </div>
+</div>
+
+<!-- Dialogs templates -->
+<ng-template #confirmReview>
+  <pe-info-box-confirm class="confirm-review-dialog"
+  [title]=""
+  [subtitle]="'integration_full_page.rating_confirm_dialog.subtitle' | translate"
+  [cancelButtonTitle]="false"
+  [confirmButtonTitle]="'integration_full_page.rating_confirm_dialog.confirm' | translate"
+  (onConfirm)="closeReviewDialog()">
+</pe-info-box-confirm>
+</ng-template>
+
+<ng-template #confirmCancel>
+  <pe-info-box-confirm class="confirm-cancel-dialog"
+  [title]=""
+  [subtitle]="'integration_write_review.cancel_review' | translate"
+  [cancelButtonTitle]="'integration_write_review.no' | translate"
+  [confirmButtonTitle]="'integration_write_review.yes' | translate"
+  (onCancel)="closeCancelDialog(false)"
+  (onConfirm)="closeCancelDialog(true)">
+</pe-info-box-confirm>
+</ng-template>

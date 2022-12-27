@@ -1,0 +1,1192 @@
+id: tesla-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: tesla-main-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-title
+          type: button
+          data:
+            text: "Only $1.49/Watt for Solar on Existing Roofs"
+            link:
+              type: internal
+              routeId: ''
+        - id: first-section-subtitle
+          type: text
+          data:
+            text: "Lowest Cost in America - Money-back guarantee"
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-button1
+              type: button
+              data:
+                text: ORDER NOW
+                link:
+                  type: internal
+                  routeId: ''
+            - id: first-section-button2
+              type: button
+              data:
+                text: LEARN MORE
+                link:
+                  type: internal
+                  routeId: ''
+
+
+    - id: second-section
+      type: section
+      children:
+        - id: second-section-title
+          type: button
+          data:
+            text: "Solar for New Roofs"
+            link:
+              type: internal
+              routeId: ''
+        - id: second-section-subtitle
+          type: text
+          data:
+            text: "Costs Less Than a New Roof<br>Plus Solar Panels"
+        - id: second-section-block
+          type: block
+          children:
+            - id: second-section-button1
+              type: button
+              data:
+                text: ORDER NOW
+                link:
+                  type: internal
+                  routeId: ''
+            - id: second-section-button2
+              type: button
+              data:
+                text: LEARN MORE
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-title
+          type: button
+          data:
+            text: "Model S"
+            link:
+              type: internal
+              routeId: ''
+        - id: third-section-subtitle
+          type: text
+          data:
+            text: "Order Online for Touchless Delivery"
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-button1
+              type: button
+              data:
+                text: CUSTOM ORDER
+                link:
+                  type: internal
+                  routeId: ''
+            - id: third-section-button2
+              type: button
+              data:
+                text: EXISTING INVENTORY
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-title
+          type: button
+          data:
+            text: 'Model 3'
+            link:
+              type: internal
+              routeId: ''
+        - id: fourth-section-subtitle
+          type: text
+          data:
+            text: "Order Online for Touchless Delivery"
+        - id: fourth-section-block
+          type: block
+          children:
+            - id: fourth-section-button1
+              type: button
+              data:
+                text: CUSTOM ORDER
+                link:
+                  type: internal
+                  routeId: ''
+            - id: fourth-section-button2
+              type: button
+              data:
+                text: EXISTING INVENTORY
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-title
+          type: button
+          data:
+            text: 'Model X'
+            link:
+              type: internal
+              routeId: ''
+        - id: fifth-section-subtitle
+          type: text
+          data:
+            text: "Order Online for Touchless Delivery"
+        - id: fifth-section-block
+          type: block
+          children:
+            - id: fifth-section-button1
+              type: button
+              data:
+                text: CUSTOM ORDER
+                link:
+                  type: internal
+                  routeId: ''
+            - id: fifth-section-button2
+              type: button
+              data:
+                text: EXISTING INVENTORY
+                link:
+                  type: internal
+                  routeId: ''
+
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-title
+          type: button
+          data:
+            text: 'Model Y'
+            link:
+              type: internal
+              routeId: ''
+        - id: sixth-section-subtitle
+          type: text
+          data:
+            text: "Order Online for Touchless Delivery"
+        - id: sixth-section-block
+          type: block
+          children:
+            - id: sixth-section-button1
+              type: button
+              data:
+                text: CUSTOM ORDER
+                link:
+                  type: internal
+                  routeId: ''
+            - id: sixth-section-button2
+              type: button
+              data:
+                text: LEARN MORE
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: seventh-section
+      type: section
+      children:
+        - id: seventh-section-title
+          type: button
+          data:
+            text: 'Accessories'
+            link:
+              type: internal
+              routeId: ''
+        - id: seventh-section-block
+          type: block
+          children:
+            - id: seventh-section-button1
+              type: button
+              data:
+                text: SHOP NOW
+                link:
+                  type: internal
+                  routeId: ''
+
+
+stylesheets:
+  desktop:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/e2d16070-7812-449a-8365-0be226115805/bvlatuR/std/3296x1798/solar-panels-homepage-hero-desktop'
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-title:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    first-section-subtitle:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 5 100
+      backgroundColor: 'transparent'
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    first-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6af01573-c96c-4e9b-861d-7b8d66eff016/bvlatuR/std/3296x1798/solar-roof-homepage-hero-desktop'
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundSize: cover
+      backgroundPosition: center
+    second-section-title:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    second-section-subtitle:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      textAlign: center
+      margin: 5 100
+      backgroundColor: 'transparent'
+    second-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    second-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6f057d2e-8170-4b28-a190-9687f26bb2c7/bvlatuR/std/3296x1798/model-s-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-title:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      width: 820
+      fontWeight: 700
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    third-section-subtitle:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      textAlign: center
+      margin: 5 100
+      backgroundColor: 'transparent'
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 13
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    third-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 13
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/b792fa74-f82e-4707-a943-fcd380098e15/bvlatuR/std/3296x1798/model-3-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40
+    fourth-section-title:
+      display: grid
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      width: 820
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    fourth-section-subtitle:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      textAlign: center
+      margin: 5 100
+      backgroundColor: 'transparent'
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    fourth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/4c6fd6df-54b4-41ee-96fb-dc747ae9bdc0/bvlatuR/std/3296x1798/model-x-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    fifth-section-title:
+      display: grid
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      width: 820
+      fontWeight: 700
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    fifth-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 5 100
+      width: 820
+      textAlign: center
+      backgroundColor: 'transparent'
+    fifth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    fifth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 500
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/644990f0-5e42-45a1-be24-d7b78cae2444/bvlatuR/std/3296x1798/model-y-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    sixth-section-title:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      width: 820
+      margin: 50 0 0 100
+      backgroundColor: 'transparent'
+    sixth-section-subtitle:
+      width: 820
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 5 100
+      textAlign: center
+      backgroundColor: 'transparent'
+    sixth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    sixth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 300 10 50 300
+      width: 200
+      borderRadius: 20
+    sixth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 300 100 50 10
+      width: 200
+      borderRadius: 20
+
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      height: 500
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/eec3f888-b3a9-496a-8930-198e144a1322/bvlatuR/std/3296x1798/accessories-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    seventh-section-title:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 40
+      fontWeight: 700
+      width: 820
+      margin: 30 100
+      backgroundColor: 'transparent'
+    seventh-section-block:
+      display: grid
+    seventh-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 400 0 50 400
+      width: 200
+      borderRadius: 20
+
+
+  tablet:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/e2d16070-7812-449a-8365-0be226115805/bvlatuR/std/3296x1798/solar-panels-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    first-section-title:
+      width: 615
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 30
+      fontWeight: 700
+      margin: 50 100
+      backgroundColor: 'transparent'
+    first-section-subtitle:
+      color: '#3d3c41'
+      textAlign: center
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      width: 615
+      margin: 0 100
+      backgroundColor: 'transparent'
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    first-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6af01573-c96c-4e9b-861d-7b8d66eff016/bvlatuR/std/3296x1798/solar-roof-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    second-section-title:
+      width: 615
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      fontWeight: 700
+      margin: 50 100
+      backgroundColor: 'transparent'
+    second-section-subtitle:
+      textAlign: center
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 0 100
+      width: 615
+    second-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    second-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    second-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6f057d2e-8170-4b28-a190-9687f26bb2c7/bvlatuR/std/3296x1798/model-s-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    third-section-title:
+      width: 615
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      fontWeight: 700
+      margin: 50 100
+      backgroundColor: 'transparent'
+    third-section-subtitle:
+      color: '#3d3c41'
+      width: 615
+      textAlign: center
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 0 100
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    third-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    third-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/b792fa74-f82e-4707-a943-fcd380098e15/bvlatuR/std/3296x1798/model-3-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 0 40
+    fourth-section-title:
+      color: '#3d3c41'
+      width: 615
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      textAlign: center
+      fontWeight: 700
+      margin: 50 100
+      backgroundColor: 'transparent'
+    fourth-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      textAlign: center
+      width: 615
+      margin: 0 100
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    fourth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/4c6fd6df-54b4-41ee-96fb-dc747ae9bdc0/bvlatuR/std/3296x1798/model-x-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    fifth-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      width: 615
+      fontWeight: 700
+      margin: 50 100
+      backgroundColor: 'transparent'
+    fifth-section-subtitle:
+      color: '#3d3c41'
+      width: 615
+      textAlign: center
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 0 100
+    fifth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    fifth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    fifth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      gridTemplateRows: 0fr 40 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/644990f0-5e42-45a1-be24-d7b78cae2444/bvlatuR/std/3296x1798/model-y-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    sixth-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      fontWeight: 700
+      width: 615
+      margin: 50 100
+      backgroundColor: 'transparent'
+    sixth-section-subtitle:
+      display: grid
+      textAlign: center
+      width: 615
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 18
+      margin: 0 100
+    sixth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+    sixth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 180 10 0 170
+      width: 200
+      borderRadius: 20
+    sixth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 180 100 0 10
+      width: 200
+      borderRadius: 20
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 600
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/eec3f888-b3a9-496a-8930-198e144a1322/bvlatuR/std/3296x1798/accessories-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    seventh-section-title:
+      color: '#3d3c41'
+      width: 615
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 30
+      fontWeight: 700
+      margin: 80 0 0 100
+      backgroundColor: 'transparent'
+    seventh-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    seventh-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 400 0 100 300
+      width: 200
+      borderRadius: 20
+
+  mobile:
+    tesla-main-page: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/e2d16070-7812-449a-8365-0be226115805/bvlatuR/std/3296x1798/solar-panels-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      gridTemplateRows: 0fr 1fr
+    first-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 16
+      fontWeight: 700
+      width: 288
+      margin: 30 auto 0 auto
+      backgroundColor: 'transparent'
+    first-section-subtitle:
+      width: 288
+      textAlign: center
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 14
+      margin: 10 50
+      backgroundColor: 'transparent'
+    first-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    first-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    first-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      width: 344
+      height: 20
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 15 0 50 0
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6af01573-c96c-4e9b-861d-7b8d66eff016/bvlatuR/std/3296x1798/solar-roof-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      gridTemplateRows: 0fr 1fr
+    second-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      fontWeight: 700
+      width: 288
+      margin: 30 0 0 50
+      backgroundColor: 'transparent'
+    second-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 15
+      width: 288
+      margin: 10 50
+      textAlign: center
+      backgroundColor: 'transparent'
+    second-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    second-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    second-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      width: 344
+      height: 20
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 15 0 50 0
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/6f057d2e-8170-4b28-a190-9687f26bb2c7/bvlatuR/std/3296x1798/model-s-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      gridTemplateRows: 0fr 1fr
+    third-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      fontWeight: 700
+      width: 80%
+      margin: 30 0 0 50
+      backgroundColor: 'transparent'
+    third-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 15
+      margin: 10 50
+      textAlign: center
+      width: 288
+      backgroundColor: 'transparent'
+    third-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    third-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    third-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      width: 344
+      height: 20
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 15 0 50 0
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/b792fa74-f82e-4707-a943-fcd380098e15/bvlatuR/std/3296x1798/model-3-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      margin: 80 auto 40
+      gridTemplateRows: 0fr 1fr
+    fourth-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      fontWeight: 700
+      width: 288
+      margin: 30 0 0 50
+      backgroundColor: 'transparent'
+    fourth-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 15
+      margin: 10 50
+      width: 288
+      textAlign: center
+      backgroundColor: 'transparent'
+    fourth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    fourth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    fourth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      width: 344
+      height: 20
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 15 0 50 0
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/4c6fd6df-54b4-41ee-96fb-dc747ae9bdc0/bvlatuR/std/3296x1798/model-x-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    fifth-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      width: 288
+      fontWeight: 700
+      margin: 30 0 0 50
+      backgroundColor: 'transparent'
+    fifth-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 15
+      width: 288
+      textAlign: center
+      margin: 10 0 0 50
+      backgroundColor: 'transparent'
+    fifth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    fifth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    fifth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 10 0 50 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/644990f0-5e42-45a1-be24-d7b78cae2444/bvlatuR/std/3296x1798/model-y-homepage-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+      gridTemplateRows: 0fr 1fr
+    sixth-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      width: 288
+      fontWeight: 700
+      margin: 30 0 0 50
+      backgroundColor: 'transparent'
+    sixth-section-subtitle:
+      color: '#3d3c41'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      fontSize: 15
+      margin: 10 50
+      width: 288
+      textAlign: center
+      backgroundColor: 'transparent'
+    sixth-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    sixth-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 0
+      width: 344
+      height: 20
+      borderRadius: 20
+    sixth-section-button2:
+      color: '#000'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      width: 344
+      height: 20
+      fontSize: 12
+      backgroundColor: '#f4f4f4'
+      margin: 15 0 50 0
+      borderRadius: 20
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateRows: 0fr 1fr
+      height: 400
+      backgroundImage: '//tesla-cdn.thron.com/delivery/public/image/tesla/eec3f888-b3a9-496a-8930-198e144a1322/bvlatuR/std/3296x1798/accessories-homepage-hero-desktop'
+      backgroundSize: cover
+      backgroundPosition: center
+    seventh-section-title:
+      color: '#3d3c41'
+      fontFamily: Styrene Medium,Helvetica,Arial,Sans-serif
+      fontSize: 18
+      width: 288
+      backgroundColor: 'transparent'
+      fontWeight: 700
+      margin: 50 0 0 50
+    seventh-section-block:
+      display: grid
+      gridTemplateColumns: 1fr
+    seventh-section-button1:
+      color: '#fff'
+      fontFamily: HeiT ASC Traditional Chinese,M Hei PRC W45,AXIS Font Japanese W55,FB New Gothic,Gotham Medium,system,sans-serif
+      padding: 10
+      fontSize: 12
+      backgroundColor: '#393c41'
+      margin: 250 0 50 0
+      width: 344
+      height: 20
+      borderRadius: 20
+
+context: {}

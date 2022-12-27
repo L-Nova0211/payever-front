@@ -1,0 +1,23 @@
+:host {
+  display: inline-block;
+  outline: none;
+  position: relative;
+  word-break: break-word;
+  align-self: initial;
+  justify-self: initial;
+  will-change: top, left, width, height;
+  backface-visibility: hidden;
+  //transform: translate3d(0, 0, 0);
+  //overflow: hidden;
+}
+
+:host.hovered {
+  z-index: 99;
+  pointer-events: auto;
+}
+
+.content-wrap {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}

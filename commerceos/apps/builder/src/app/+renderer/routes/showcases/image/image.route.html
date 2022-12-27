@@ -1,0 +1,53 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  [title]="'Basic renderer check: Image'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  [title]="'Basic renderer check: Image'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  [title]="'Basic renderer check: Image'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop2"
+  [title]="'Basic renderer check: Image scaled to 0.5'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.updated"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'desktop', scale: 0.5, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet2"
+  [title]="'Basic renderer check: Image scaled to 0.5'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.updated"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'tablet', scale: 0.5, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile2"
+  [title]="'Basic renderer check: Image scaled to 0.5'"
+  [element]="(content$ | async).element"
+  [stylesheet]="(content$ | async).stylesheet.updated"
+  [context]="(content$ | async).context"
+  [options]="{ screen: 'mobile', scale: 0.5, locale: 'en' }"
+></sandbox-renderer-preview>

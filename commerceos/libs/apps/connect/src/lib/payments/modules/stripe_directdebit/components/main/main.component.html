@@ -1,0 +1,16 @@
+<payment-main-wrap [paymentMethod]="paymentMethod" [doOpenNextPanel$]="openNextPanel$" [doOpenPanel$]="openPanel$" [forceHideSectionAccount]="true" [hasExternalAuth]="true">
+  <!-- TODO I think BE is wrong here and returns external auth under regular auth -->
+  <ng-template let-type="type" let-index="index">
+    <ng-container *ngIf="type === 'authentication'">
+      <payment-external-authentication [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-external-authentication>
+    </ng-container>
+    <ng-container *ngIf="type === 'external-authentication'">
+      <payment-external-authentication [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-external-authentication>
+    </ng-container>
+    <ng-container *ngIf="type === 'settings'">
+      <payment-settings-acceptFee (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-acceptFee>
+      <payment-settings-shopRedirectEnabled (changed)="onSettingsOptionsChanged($event)" [paymentMethod]="paymentMethod" [paymentIndex]="index"></payment-settings-shopRedirectEnabled>
+      <payment-settings-save-button [paymentMethod]="paymentMethod" [paymentIndex]="index" [data]="settingsOptionsData$ | async"></payment-settings-save-button>
+    </ng-container>
+  </ng-template>
+</payment-main-wrap>

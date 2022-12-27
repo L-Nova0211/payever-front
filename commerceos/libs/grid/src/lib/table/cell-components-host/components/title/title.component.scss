@@ -1,0 +1,39 @@
+div {
+  align-items: center;
+  display: flex;
+
+  img,
+  .mat-icon {
+    border-radius: 3.2px;
+    height: 32px;
+    margin-right: 16px;
+    width: 32px;
+    min-width: 32px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  .circle {
+    border-radius: 32px;
+  }
+
+  .mat-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 9px 7px;
+  }
+
+  svg {
+    margin-right: 16px;
+  }
+
+  span {
+    font-size: 12px;
+    line-height: 1.33;
+    max-width: calc(100% - 34px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

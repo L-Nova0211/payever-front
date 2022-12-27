@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <ng-content></ng-content>
+</div>
+<div class="controls">
+  <button
+    class="controls__control controls__control--plus"
+    (click)="onAdd()"
+  ></button>
+  <button
+    class="controls__control controls__control--minus"
+    (click)="onRemove()"
+    [disabled]="selectedFieldIndex === null"
+  ></button>
+</div>

@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  overflow: hidden;
+  margin: 2em;
+}
+
+.header {
+  h1 { margin: 0 }
+}
+
+.content {
+  margin: 1.5em 0;
+
+  p {}
+}
+
+.controls {
+  text-align: center;
+
+  button {
+    padding: .75em;
+    color: white;
+    background: #cc1414;
+    border: none;
+    font-weight: bolder;
+    outline: none;
+  }
+}

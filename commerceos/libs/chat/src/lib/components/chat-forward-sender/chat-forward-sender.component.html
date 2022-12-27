@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="text-container">
+    <h6 class="forward-title">
+      {{'message-app.chat-forward-message'|translate}}
+    </h6>
+    <p class="forward-details">
+      {{'message-app.chat.message-sent-by-you'|translate}}
+    </p>
+  </div>
+
+  <div class="action-btns">
+    <button class="primary-btn bold" (click)="done()">Done</button>
+    <button class="secondary-btn bold" (click)="showChatDetails()">
+      {{'message-app.chat-change-recipient'|translate}}
+    </button>
+  </div>
+  <div class="subaction-btns">
+    <div>
+      {{'message-app.chat-show-sender-name'|translate}}
+    </div>
+    <div>
+      <peb-button-toggle [spacer]="false" [checked]="senderName" (changed)="senderName = $event">
+      </peb-button-toggle>
+    </div>
+  </div>
+</div>

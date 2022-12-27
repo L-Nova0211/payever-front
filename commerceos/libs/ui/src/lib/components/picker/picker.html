@@ -1,0 +1,68 @@
+<div class="picker-container" [attr.id]="inputId" #pickerWrapper>
+  <div class="picker-container__controls">
+    <div class="input-with-label" [class.is-invalid]="isFieldInvalid">
+      <span class="label-text">{{isFieldInvalid ? errorMessage : label}}</span>
+      <input
+        [type]="type"
+        placeholder="{{placeholder}}"
+        #input
+        (keyup)="onKey($event)"
+        [matAutocomplete]="auto"
+        [attr.id]="inputId"
+      />
+      <mat-autocomplete class="picker-autocomplete-panel"
+                        #auto="matAutocomplete"
+                        [displayWith]="getOptionText"
+                        [panelWidth]="optionsItemWidth">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option" (click)="onAddItem(option)">
+          <div class="picker-option-item">
+            <div *ngIf="option.image" class="picker-option-item__image">
+              <img *ngIf="!option.image.includes('#icon-flag')" [src]="option.image" />
+              <div *ngIf="option.image.includes('#icon-flag')" class="picker-option-item__flag-icon">
+                <svg [style.min-width.px]="25" style="height: 100%;" color="white">
+                  <use [attr.xlink:href]="option.image"></use>
+                </svg>
+              </div>
+            </div>
+            <span class="picker-option-item__label"> {{option.label}} </span>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+    <div class="input-with-label__button" *ngIf="buttonLabel">
+      <button peb-text-button color="confirm" (click)="onButtonClick()">{{buttonLabel}}</button>
+    </div>
+  </div>
+  <div class="picker-item-container">
+    <ng-container *ngFor="let item of pickedItems; let i = index">
+      <ng-container
+        [ngTemplateOutlet]="pickedItemTpl || defaultPickedItemTpl"
+        [ngTemplateOutletContext]="{ item: item, index: i }"
+      ></ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #defaultPickedItemTpl let-item="item" let-i="index">
+  <div class="picker-item-container__item">
+    <div class="picker-item-container__left">
+      <div *ngIf="item.image" class="picker-item-container__left-image">
+        <img *ngIf="!item.image.includes('#icon-flag')" [src]="item.image" />
+        <div *ngIf="item.image.includes('#icon-flag')" class="picker-item-container__left-image__flag-icon">
+          <svg [style.min-width.px]="25" style="height: 100%;" color="white">
+            <use [attr.xlink:href]="item.image"></use>
+          </svg>
+        </div>
+      </div>
+      <span class="picker-item-container__left-label">{{item.label}}</span>
+    </div>
+    <div class="picker-item-container__item__buttons" [ngClass]="isEditableItem
+             ? 'picker-item-container__item__multi-buttons'
+             : 'picker-item-container__item__single-button'
+          ">
+      <button *ngIf="isEditableItem" peb-text-button color="confirm"
+              (click)="onEditItem($event, i)">{{ 'ui.picker.edit' | translate }}</button>
+      <button peb-text-button color="warn" (click)="onRemoveItem($event, i)">{{ this.optionsButtonTitle }}</button>
+    </div>
+  </div>
+</ng-template>

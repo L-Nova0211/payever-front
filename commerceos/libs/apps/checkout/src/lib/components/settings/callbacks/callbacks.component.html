@@ -1,0 +1,72 @@
+<div class="pe-info-box-container-fixed callbacks-info-box">
+  <pe-info-box
+    [fixed]="false"
+    [roundBorder]="true"
+    [notFullwidthOnMobile]="true"
+    [withHeader]="false"
+    [withFooter]="false"
+    [title]="'settings.colorAndStyle.title' | translate">
+    <ng-container content>
+      <form class="form" [formGroup]="callbacksForm">
+        <mat-accordion class="checkout-mat-accordion" multi>
+          <mat-expansion-panel
+            *ngFor="let panel of panels; let last = last; let index = index;"
+            [expanded]="index === 0 || index === 1"
+            hideToggle="true">
+            <mat-expansion-panel-header
+              collapsedHeight="40px"
+              expandedHeight="40px"
+              class="mat-expansion-panel-header">
+              <mat-panel-title>
+                {{ panel.name | translate }}
+              </mat-panel-title>
+              <mat-panel-description class="toggle-icon-container">
+                <svg class="toggle-icon" *ngIf="panelRefs?.toArray() && panelRefs.toArray()[index]">
+                  <use
+                    [attr.xlink:href]="panelRefs.toArray()[index].expanded ? '#icon-minus-big-16' : '#icon-plus-big-16'"></use>
+                </svg>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-container *ngIf="panel.key === 'callbacks'" [ngTemplateOutlet]="callbacksRef"></ng-container>
+            <ng-container *ngIf="panel.key === 'webhook'" [ngTemplateOutlet]="webhookRef"></ng-container>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </form>
+
+    </ng-container>
+  </pe-info-box>
+</div>
+
+<ng-template #callbacksRef>
+  <mat-list [disableRipple]="true" class="mat-list-transparent mat-list-transparent-bold">
+    <mat-list-item class="mat-list-item-no-padding-left" *ngFor="let control of callbacks">
+      <div class="mat-list-item-flex">
+        <peb-form-field-input
+          class="field-input"
+          appearance="label"
+          [errorMessage]="(errors$ | async)[control.controlName] | translate"
+          [isFieldInvalid]="callbacksForm.controls[control.controlName].invalid && callbacksForm.controls[control.controlName].dirty"
+          [label]="control.title | translate">
+          <input class="input__value" type="text" [formControl]="callbacksForm.controls[control.controlName]">
+        </peb-form-field-input>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</ng-template>
+
+<ng-template #webhookRef>
+  <mat-list [disableRipple]="true" class="mat-list-transparent mat-list-transparent-bold">
+    <mat-list-item class="mat-list-item-no-padding-left" *ngFor="let control of webhooks">
+      <div class="mat-list-item-flex">
+        <peb-form-field-input
+          class="field-input"
+          appearance="label"
+          [errorMessage]="(errors$ | async)[control.controlName] | translate"
+          [isFieldInvalid]="callbacksForm.controls[control.controlName].invalid && callbacksForm.controls[control.controlName].dirty"
+          [label]="control.title | translate">
+          <input class="input__value" type="text" [formControl]="callbacksForm.controls[control.controlName]">
+        </peb-form-field-input>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</ng-template>

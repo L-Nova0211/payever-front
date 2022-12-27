@@ -1,0 +1,46 @@
+<pe-grid
+  [embedMod]="false"
+  [theme]="theme"
+>
+  <pe-grid-sidenav #sideNav
+    class="pe-grid-sidenav"
+    (menuItemSelected)="menuItemSelected($event)"
+    [isOpenOnMobile]="false"
+    [sidenavMenu]="sidenavMenu"
+    [sidenavTitle]="'message-app.sidebar.message' | translate"
+    [mobileView]="isEmbedChat || isLiveChat"
+  >
+    <pe-folders
+      [embedMode]="isEmbedMode"
+      [folders]="folderTree$ | async"
+      [enableMarkAsActive]="isNotMobile"
+      [rootFolder]="rootFolder"
+      [selectFolder]="getSelectedFolder"
+      (createFolder)="folderAction($event, folderActions.Create)"
+      (createHeadline)="folderAction($event, folderActions.Create)"
+      (deleteFolder)="folderAction($event, folderActions.Delete)"
+      (deleteHeadline)="folderAction($event, folderActions.Delete)"
+      (updateFolder)="folderAction($event, folderActions.Update)"
+      (updateHeadline)="folderAction($event, folderActions.Update)"
+      (positionsChanged)="onPositionsChanged($event)"
+      (selectedRootFolder)="onSelectFolder($event)"
+      (selectedFolder)="onSelectFolder($event)"
+      [sideNav]="sideNav"
+    ></pe-folders>
+  </pe-grid-sidenav>
+  <pe-grid-content
+    [fixContentBottomPadding]="true"
+    [showMobileFooter]="false"
+    [showMobileTitle]="false"
+    [mobileView]="isEmbedChat || isLiveChat"
+  >
+    <div style="position: relative; height: 100%; width: 100%;">
+      <pe-message-conversations
+        [activeFolder]="activeFolder$ | async"
+        [theme]="theme"
+        [isEmbedChat]="isEmbedChat"
+        [isLiveChat]="isLiveChat"
+      ></pe-message-conversations>
+    </div>
+  </pe-grid-content>
+</pe-grid>

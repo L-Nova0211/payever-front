@@ -1,0 +1,180 @@
+<mat-toolbar #toolbar
+             class="mat-toolbar-app mat-toolbar-padding-large"
+             [class.mat-toolbar-default]="style === 'default'"
+             [class.mat-toolbar-transparent]="style === 'transparent'"
+             [class.mat-toolbar-apps]="style === 'apps'"
+             [class.mat-toolbar-default-dark]="style === 'default' && color === 'dark'"
+             [class.mat-toolbar-default-light]="style === 'default' && color === 'light'"
+             [class.mat-toolbar-default-black]="style === 'default' && color === 'black'"
+             [class.mat-toolbar-transparent-dark]="style === 'transparent' && color === 'dark'"
+             [class.mat-toolbar-transparent-light]="style === 'transparent' && color === 'light'"
+             [class.mat-toolbar-transparent-black]="style === 'transparent' && color === 'black'"
+             [class.mat-toolbar-apps-dark]="style === 'apps' && color === 'dark'"
+             [class.mat-toolbar-apps-light]="style === 'apps' && color === 'light'"
+             [class.mat-toolbar-apps-black]="style === 'apps' && color === 'black'"
+             [class.mat-toolbar-dusky]="color === 'dusky'"
+             [class.mat-toolbar-dusky-light]="color === 'dusky-light'"
+             [class.mat-toolbar-absolute]="position === 'absolute-top'"
+             [class.mat-toolbar-fixed]="position === 'fixed-top'"
+             [class.mat-toolbar-top]="position === 'absolute-top' || position === 'fixed-top'"
+             [class.mat-toolbar-scrollable]="scrollable"
+             [ngClass]="classes"
+>
+  <div *ngIf="scrollable" #scrollContainer (pan)="onPan($event)" (panend)="onPanEnd($event)" [style.height]="toolbarHeight == 0 ? 'initial' : (toolbarHeight + 'px')">
+    <ng-template [ngTemplateOutlet]="areas"></ng-template>
+    <div *ngIf="isScrolling$ | async" class="scroll-backdrop"></div>
+  </div>
+  <ng-template *ngIf="!scrollable" [ngTemplateOutlet]="areas"></ng-template>
+</mat-toolbar>
+
+<ng-template #areas>
+  <div class="mat-toolbar-area mat-toolbar-left" [ngClass]="getAreaClasses('Left')">
+    <ng-container *ngFor="let control of controls">
+      <ng-template *ngIf="(control | async).position === 'left'"
+                   [ngTemplateOutlet]="controlsSwitch"
+                   [ngTemplateOutletContext]="{ control: control | async }"
+      ></ng-template>
+    </ng-container>
+    <div *ngIf="lockLeftArea" class="mat-toolbar-area-backdrop"></div>
+  </div>
+  <div class="mat-toolbar-area mat-toolbar-center" [ngClass]="getAreaClasses('Center')">
+    <ng-container *ngFor="let control of controls">
+      <ng-template *ngIf="(control | async).position === 'center'"
+                   [ngTemplateOutlet]="controlsSwitch"
+                   [ngTemplateOutletContext]="{ control: control | async }"
+      ></ng-template>
+    </ng-container>
+  </div>
+  <div class="mat-toolbar-area mat-toolbar-right" [ngClass]="getAreaClasses('Right')">
+    <ng-container *ngFor="let control of controls">
+      <ng-template *ngIf="(control | async).position === 'right'"
+                   [ngTemplateOutlet]="controlsSwitch"
+                   [ngTemplateOutletContext]="{ control: control | async }"
+      ></ng-template>
+    </ng-container>
+  </div>
+</ng-template>
+
+<!-- Controls switch -->
+<ng-template #controlsSwitch let-control="control">
+  <ng-container [ngSwitch]="control.type">
+    <ng-template *ngSwitchCase="'text'" [ngTemplateOutlet]="textControl" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+    <ng-template *ngSwitchCase="'link'" [ngTemplateOutlet]="linkControl" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+    <ng-template *ngSwitchCase="'menu'" [ngTemplateOutlet]="menuControl" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+    <ng-template *ngSwitchCase="'divider'" [ngTemplateOutlet]="dividerControl" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+    <ng-template *ngSwitchCase="'custom'" [ngTemplateOutlet]="customControl" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+    <ng-template *ngSwitchCase="'customElement'" [ngTemplateOutlet]="customElement" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+  </ng-container>
+</ng-template>
+
+<!-- Text control -->
+<ng-template #textControl let-control="control">
+  <span [ngClass]="control.classes" [class.hidden]="control.hidden">
+    <ng-template [ngTemplateOutlet]="textContent" [ngTemplateOutletContext]="{ control: control, link: false }"></ng-template>
+  </span>
+</ng-template>
+
+<!-- Link control -->
+<ng-template #linkControl let-control="control">
+  <button mat-button
+          *ngIf="!control.href"
+          class="mat-button mat-button-link mat-button-bold touch-scroll-button"
+          [attr.data-pe-navbar-link]="makeDataAttribute(control.text)"
+          [class.hidden]="control.hidden"
+          [color]="control.color"
+          [matTooltip]="control.tooltipText"
+          [matTooltipClass]="control.tooltipClass"
+          [ngClass]="control.classes"
+          (click)="control.onClick && control.onClick()"
+          (document:keydown)="control.shortcutKey && handleKeydown($event, control.shortcutKey, control.onClick)"
+  >
+    <ng-template [ngTemplateOutlet]="linkContent" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+  </button>
+  <a mat-button
+     *ngIf="control.href"
+     class="mat-button mat-button-link mat-button-bold touch-scroll-button"
+     [attr.data-pe-navbar-link]="makeDataAttribute(control.text)"
+     [attr.href]="control.href"
+     [attr.target]="control.openInNewTab ? '_blank' : '_self'"
+     [class.hidden]="control.hidden"
+     [color]="control.color"
+     [ngClass]="control.classes"
+     (click)="control.onClick && control.onClick()"
+  >
+    <ng-template [ngTemplateOutlet]="linkContent" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+  </a>
+</ng-template>
+
+<ng-template #linkContent let-control="control">
+  <mat-spinner class="mat-progress-spinner-light" *ngIf="control.loading" [strokeWidth]="spinerStrokeWidth" [diameter]="spinerDiameter"></mat-spinner>
+  <ng-template *ngIf="!control.loading" [ngTemplateOutlet]="textContent" [ngTemplateOutletContext]="{ control: control, link: true }"></ng-template>
+</ng-template>
+
+<ng-template #textContent let-control="control" let-link="link">
+  <svg *ngIf="control.iconPrepend" class="mat-toolbar-link-icon-prepend" [ngClass]="getIconClass(control.iconPrepend, control.iconPrependSize)">
+    <use [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'" [attr.xlink:href]="getIconId(control.iconPrepend)"></use>
+  </svg>
+  <span [ngClass]="link ? 'mat-toolbar-link-text' : 'mat-toolbar-text'" *ngIf="control.text">{{ control.text }}</span>
+  <sup class="toolbar-suptext" *ngIf="control.supText">{{ control.supText }}</sup>
+  <svg *ngIf="control.iconAppend" class="mat-toolbar-link-icon-append" [ngClass]="getIconClass(control.iconAppend, control.iconAppendSize)">
+    <use [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'" [attr.xlink:href]="getIconId(control.iconAppend)"></use>
+  </svg>
+</ng-template>
+
+<!-- Menu control -->
+<ng-template #menuControl let-control="control">
+  <button mat-button
+          panelClass="pe-bootstrap" class="mat-button-link"
+          [attr.data-pe-navbar-menu]="makeDataAttribute(control.uniqueName)"
+          [class.hidden]="control.hidden"
+          [color]="control.color"
+          [matMenuTriggerFor]="menu"
+          [ngClass]="control.classes + ' ' + control.buttonClasses"
+  >
+    <ng-template [ngTemplateOutlet]="linkContent" [ngTemplateOutletContext]="{ control: control }"></ng-template>
+  </button>
+  <mat-menu #menu="matMenu" class="{{ control.classes }} mat-menu-dark">
+    <ng-template matMenuContent>
+      <ng-container *ngIf="control.content">
+        <ng-template [ngTemplateOutlet]="control.content"></ng-template>
+      </ng-container>
+      <ng-container *ngIf="!control.content">
+        <button *ngFor="let menuItem of control.menuItems"
+              mat-menu-item
+              [attr.data-pe-navbar-manu-item]="makeDataAttribute(menuItem.text)"
+              [routerLink]="menuItem.routerLink"
+              [queryParams]="menuItem.queryParams"
+              (click)="menuItem.onClick && menuItem.onClick()">
+          <ng-template [ngTemplateOutlet]="textContent" [ngTemplateOutletContext]="{ control: menuItem, link: true }"></ng-template>
+        </button>
+      </ng-container>
+    </ng-template>
+  </mat-menu>
+</ng-template>
+
+<!-- Divider control -->
+<ng-template #dividerControl let-control="control">
+  <mat-divider class="mat-toolbar-divider mat-divider-indented"
+               [class.hidden]="control.hidden"
+               [class.mat-divider-full-height]="control.fullHeight"
+               [ngClass]="control.classes"
+               [vertical]="true"
+  ></mat-divider>
+</ng-template>
+
+<!-- Custom control -->
+<ng-template #customControl let-control="control">
+  <!-- div wrapper - fix for NK-1510 -->
+  <div [ngClass]="control.classes">
+    <ng-template *ngIf="!control.hidden" [ngTemplateOutlet]="control.content"></ng-template>
+  </div>
+</ng-template>
+
+<!-- Custom element -->
+<ng-template #customElement let-control="control">
+  <pe-custom-element-adapter [ngClass]="control.classes" 
+    [tag]="control.tag"
+    [options]="control.options"
+    [events]="control.events">
+  </pe-custom-element-adapter>
+</ng-template>

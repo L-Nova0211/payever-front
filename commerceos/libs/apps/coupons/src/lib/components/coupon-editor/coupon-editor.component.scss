@@ -1,0 +1,54 @@
+.pe-coupons-error-message {
+  margin: 0 12px 16px;
+}
+
+.pe-coupons-form-field {
+  &__suffix {
+    display: flex;
+    align-items: center;
+    right: 0;
+    height: 44px;
+
+    button {
+      border: 0;
+    }
+    
+    .suffix__button,
+    .suffix__span {
+      background-color: rgba(28, 29, 30, 0.3);
+      display: block;
+      font-family: "Roboto", sans-serif;
+      font-size: 1em;
+      padding: 1em 1em;
+      white-space: nowrap;
+    }
+
+    .suffix__button {
+      color: rgb(0, 145, 223);
+
+      &:disabled {
+        cursor: default;
+        color: rgba(0, 145, 223, 0.5);
+      }
+    }
+
+    .suffix__span {
+      color: #ffffff;
+      height: 44px;
+      padding: 0.7em 1em;
+    }
+
+    .button-toggle-container {
+      margin-right: 4px;
+    }
+  }
+}
+
+.form__loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.suffix-icon {
+  cursor: pointer;
+}

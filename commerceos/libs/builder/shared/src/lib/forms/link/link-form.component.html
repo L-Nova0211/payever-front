@@ -1,0 +1,33 @@
+<form class="form" [formGroup]="linkForm">
+
+  <peb-select
+    label="Link type"
+    class="field-control"
+    formControlName="type"
+    placeholder="Multiple Links"
+    [options]="options$ | async"
+  ></peb-select>
+
+  <div formGroupName="payload">
+    <ng-container *ngFor="let field of payload$ | async; let i = index" [ngSwitch]="field.type">
+      <peb-select
+        *ngSwitchCase="'select'"
+        class="field-control"
+        [label]="field.label"
+        [formControlName]="field.controlName"
+        [options]="field.options"
+      ></peb-select>
+      <peb-input
+        *ngSwitchCase="'input'"
+        class="field-control"
+        textAlign="left"
+        [prefix]="field.label"
+        [formControlName]="field.controlName"
+        [change]="field.changeType"
+        [placeholder]="field.placeholder || ''"
+        [valuePrefix]="field.valuePrefix"
+      ></peb-input>
+    </ng-container>
+  </div>
+
+</form>

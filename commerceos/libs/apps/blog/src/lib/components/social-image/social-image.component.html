@@ -1,0 +1,14 @@
+<div class="container" [ngClass]="config.theme">
+    <peb-social-sharing-image
+    [isImageLoading]="isImageLoading"
+    (file)="onLogoUpload($event)"
+      [title]="'blog-app.settings.page_title'|translate"
+      [image]="socialImage"
+      link="https://www.business.com"
+      [description]="'blog-app.settings.meta_description'|translate"
+    ></peb-social-sharing-image>
+
+    <div class="footer-info">
+     {{'blog-app.info.social_image'| translate}}
+    </div>
+</div>

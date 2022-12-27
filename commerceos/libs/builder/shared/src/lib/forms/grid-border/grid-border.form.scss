@@ -1,0 +1,59 @@
+@import "../../../../../../../libs/builder/styles/src/lib/styles/variables";
+
+.cell-border {
+  &__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    border-radius: 6px;
+    border: none;
+    overflow: hidden;
+    background: none;
+    column-gap: 1px;
+    row-gap: 2px;
+
+    .mat-button-toggle {
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: none;
+      color: #ffffff;
+
+      &.mat-button-toggle-checked {
+        background-color: #0371e2;
+      }
+
+      &:not(.mat-button-toggle-checked):hover {
+        background-color: rgba(79, 79, 79, 0.3);
+      }
+    }
+
+    .mat-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.border-style {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__grid-button {
+    margin: 1px 1px 1px 0;
+    padding: 6px 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    &__active {
+      background-color: #0371e2;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}

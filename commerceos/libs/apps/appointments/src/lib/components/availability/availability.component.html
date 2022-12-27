@@ -1,0 +1,62 @@
+<pe-grid
+  [items]="gridItems$ | async"
+  [theme]="theme"
+  [embedMod]="true"
+>
+  <pe-grid-content>
+    <pe-grid-toolbar
+      *ngIf="toolbar$ | async as toolbar"
+      (create)="createByHand()"
+      (filtersChange)="filtersChange($event)"
+      [filterConfig]="toolbar.filterConfig"
+      (optionsChange)="optionsChange($event)"
+      [optionsMenu]="toolbar.optionsMenu"
+      (sortChange)="sortChange($event)"
+      [sortMenu]="toolbar.sortMenu"
+      [totalItems]="paginator.total"
+      (viewChange)="viewChange($event)"
+    ></pe-grid-toolbar>
+    <pe-grid-viewport
+      [allowSetQueryPArams]="true"
+      [contextMenu]="viewportContextMenu"
+      [defaultLayout]="gridLayout"
+      (itemContextSelect)="itemContextSelect($event)"
+      [selectable]="true"
+      [viewportTitle]="viewportTitle"
+    >
+      <pe-grid-list
+        (create)="createByHand()"
+        [isLoading]="isLoading$ | async"
+        [viewAdd]="showAddNewItem"
+        (scrolledToEnd)="scrolledToEnd()"
+      >
+        <ng-template let-item="item">
+          <pe-grid-item
+            (actionClick)="actionClick($event)"
+            [item]="item"
+            (itemClick)="actionClick($event)"
+            [itemContextMenu]="itemContextMenu"
+            (itemContextSelect)="itemContextSelect($event)"
+          ></pe-grid-item>
+        </ng-template>
+      </pe-grid-list>
+      <pe-grid-table
+        [displayedColumns]="tableDisplayedColumns"
+        [isLoading]="isLoading$ | async"
+        (scrolledToEnd)="scrolledToEnd()"
+      >
+        <ng-template let-item="item">
+          <pe-table-row
+            (actionClick)="actionClick($event)"
+            [item]="item"
+            [itemContextMenu]="itemContextMenu"
+            (itemContextSelect)="itemContextSelect($event)"
+            (rowClicked)="actionClick($event)"
+          ></pe-table-row>
+        </ng-template>
+      </pe-grid-table>
+    </pe-grid-viewport>
+  </pe-grid-content>
+</pe-grid>
+<canvas #canvas [hidden]="true"></canvas>
+<router-outlet></router-outlet>

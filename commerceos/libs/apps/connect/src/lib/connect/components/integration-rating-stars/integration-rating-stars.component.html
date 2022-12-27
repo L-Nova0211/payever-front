@@ -1,0 +1,25 @@
+<!-- Simple stars -->
+<div *ngIf="!decimalMode" (mouseleave)="onMouseleave()" class="stars" [ngClass]="{ 'default-cursor': readonly }">
+    <svg (mouseover)="onMouseover(i)" (click)="onItemClick(i)" class="icon" [ngClass]="iconClass" *ngFor="let star of starsArray; let i = index">
+        <use [attr.xlink:href]="star"></use>
+    </svg>
+</div>
+
+<!-- Decimal stars -->
+<div *ngIf="decimalMode" class="decimal-stars">
+  <ul #stars class='rating background'>
+    <li *ngFor="let star of starsArray">
+        <svg class="icon" [ngClass]="iconClass">
+          <use [attr.xlink:href]="'#icon-empty-star'"></use>
+        </svg>
+    </li>
+  </ul>
+
+  <ul class='rating foreground' [ngStyle]="{'width': filledInStarsContainerWidth + 'px'}">
+    <li *ngFor="let star of starsArray" class='filled'>
+      <svg class="icon" [ngClass]="iconClass">
+          <use [attr.xlink:href]="'#icon-filled-star'"></use>
+      </svg>
+    </li>
+  </ul>
+</div>

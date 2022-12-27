@@ -1,0 +1,34 @@
+<div class="device-payments-container">
+  <communication-main-wrap
+      #wrap
+      class="communication-main-wrap__container"
+      [name]="name"
+      [title]="(integrationInfo$ | async)?.displayOptions?.title"
+      *ngIf="integrationInfo$ && (integrationInfo$ | async)">
+    <div settings class="communication-main-wrap__settings">
+      <communications-settings-secondFactor
+          class="communication-main-wrap__settings-item"
+          (changed)="onSettingsOptionsChanged($event)"
+          [integrationName]="integrationName"
+      ></communications-settings-secondFactor>
+      <communications-settings-autoresponderEnabled
+          class="communication-main-wrap__settings-item"
+          (changed)="onSettingsOptionsChanged($event)"
+          [integrationName]="integrationName"
+      ></communications-settings-autoresponderEnabled>
+      <communications-settings-verifyType
+          class="communication-main-wrap__settings-item no-border"
+          (changed)="onSettingsOptionsChanged($event)"
+          [integrationName]="integrationName"
+      ></communications-settings-verifyType>
+    </div>
+  </communication-main-wrap>
+  <settings-save-button
+      class="settings-save-button device-payments-button"
+      [integrationName]="integrationName"
+      [data]="settingsOptionsData$ | async"
+  ></settings-save-button>
+  <div class="uninstall-button">
+    <button (click)="this.uninstallService.uninstall(integration, overlayData.isLoading)">{{ 'actions.uninstall' | translate }}</button>
+  </div>
+</div>

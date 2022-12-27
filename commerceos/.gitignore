@@ -1,0 +1,49 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+.npmrc
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Custom
+npm-debug*
+.docker/.env
+.docker/github
+!.docker/github/token.dist
+.idea/
+.history/
+.vscode/*
+i18n-serve
+coverage/
+.env
+apps/builder-client/src/environments/env.microenvironment.ts
+apps/commerceos/src/environments/
+.npmrc
+.npmrc_bkp

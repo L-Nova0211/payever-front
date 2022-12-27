@@ -1,0 +1,15 @@
+// Animation
+// ---------------------------------------------------------------------------------------------
+
+$animation-duration-slide-in:                     .290s;
+$animation-duration-slide-out:                    .250s;
+$animation-duration-complex:                      .485s;
+
+$animation-duration-slide-in-mobile:              .225s;
+$animation-duration-slide-out-mobile:             .195s;
+$animation-duration-complex-mobile:               .375s;
+
+$animation-effect-ease-out:                       cubic-bezier(0.0, 0.0, 0.2, 1);
+$animation-effect-ease-in:                        cubic-bezier(0.4, 0.0, 1, 1);
+
+$animation-transition-duration:                   200ms;

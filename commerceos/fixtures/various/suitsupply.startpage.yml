@@ -1,0 +1,1273 @@
+id: suitsupply-main-page
+name: Main Page
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: suitsupply-main-page
+  type: document
+  children:
+    - id: first-section
+      type: section
+      children:
+        - id: first-section-block
+          type: block
+          children:
+            - id: first-section-title
+              type: text
+              data:
+                text: New arrivals
+            - id: first-section-description
+              type: text
+              data:
+                text: Discover more
+
+    - id: second-section
+      type: section
+      children:
+        - id: second-block1-image
+          type: block
+          children:
+            - id: second-block1-link
+              type: text
+              data:
+                text: Suits
+        - id: second-block2-image
+          type: block
+          children:
+            - id: second-block2-link
+              type: text
+              data:
+                text: Shirts
+        - id: second-block3-image
+          type: block
+          children:
+            - id: second-block3-link
+              type: text
+              data:
+                text: Knits
+
+    - id: third-section
+      type: section
+      children:
+        - id: third-section-block
+          type: block
+          children:
+            - id: third-section-title
+              type: text
+              data:
+                text: Groom or guest?
+            - id: third-section-description
+              type: text
+              data:
+                text: Discover more
+                link:
+                  type: internal
+                  routeId: ''
+    - id: fourth-section-title
+      type: section
+      children:
+        - id: fourth-section-text
+          type: text
+          data:
+            text: "Don't just fit in, <br>find your own peerfect fit"
+    - id: fourth-section
+      type: section
+      children:
+        - id: fourth-section-block1
+          type: block
+          children:
+            - id: fourth-block1-image
+              type: block
+              children: []
+            - id: fourth-block1-title
+              type: text
+              data:
+                text: "30 min/2 days"
+            - id: fourth-block1-description
+              type: text
+              data:
+                text: "In-store customizations"
+        - id: fourth-section-block2
+          type: block
+          children:
+            - id: fourth-block2-image
+              type: block
+              children: []
+            - id: fourth-block2-title
+              type: text
+              data:
+                text: "3 - 4 weeks"
+            - id: fourth-block2-description
+              type: text
+              data:
+                text: "Custom made"
+    - id: fifth-section
+      type: section
+      children:
+        - id: fifth-section-block
+          type: block
+          children:
+            - id: fifth-section-title
+              type: text
+              data:
+                text: "Made in a away we're proud of"
+                link:
+                  type: internal
+                  routeId: ''
+            - id: fifth-section-description
+              type: text
+              data:
+                text: Learn about how we lead in sustainability
+                link:
+                  type: internal
+                  routeId: ''
+
+    - id: sixth-section
+      type: section
+      children:
+        - id: sixth-section-block
+          type: block
+          children:
+            - id: sixth-section-title
+              type: text
+              data:
+                text: Order fabric samles<br> straight to your door
+            - id: sixth-section-description
+              type: text
+              data:
+                text: Feel of the real thing in your hands, before creating<br>
+                  your Custom Made suit, jacket or shirt
+            - id: sixth-section-button
+              type: text
+              data:
+                text: Shop fabrics
+                link:
+                  type: internal
+                  routeId: ''
+    - id: seventh-section
+      type: section
+      children:
+        - id: seventh-section-block1
+          type: block
+          children:
+            - id: seventh-block1-title
+              type: text
+              data:
+                text: Shipping
+            - id: seventh-block1-description
+              type: text
+              data:
+                text: "$35 USD on all orders"
+        - id: seventh-section-block2
+          type: block
+          children:
+            - id: seventh-block2-title
+              type: text
+              data:
+                text: Delivery
+            - id: seventh-block2-description
+              type: text
+              data:
+                text: "4-6 business days"
+        - id: seventh-section-block3
+          type: block
+          children:
+            - id: seventh-block3-title
+              type: text
+              data:
+                text: Free returns
+            - id: seventh-block3-description
+              type: text
+              data:
+                text: 30-day policy
+
+    - id: eighth-section
+      type: section
+      children:
+        - id: eighth-section-title
+          type: text
+          data:
+            text: Be in the know
+        - id: eighth-section-description
+          type: text
+          data:
+            text: Sign up to get the latest on products, styling and events.
+
+stylesheets:
+  desktop:
+    suitsupply-main-page: {}
+    # ----------------------------------
+    # Desktop First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      height: 1000
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week26/HP1-NA-N-wk26-1300.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 1024
+    first-section-block:
+      display: grid
+      margin: 200 0 800 350
+    first-section-title:
+      width: 200
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: 200 0 15 80
+    first-section-description:
+      width: 150
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 0 0 0 100
+    # ----------------------------------
+    # Desktop Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      height: 500
+    second-block1-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-suits-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 300
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block1-link:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 75
+      margin: 180 0 0 100
+    second-block2-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-shirts-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 300
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block2-link:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 82
+      margin: 180 0 0 100
+    second-block3-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_600/suitsupply/homepage/ss20/week28/HPS-knits-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 300
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block3-link:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#fff'
+      fontWeight: normal
+      textAlign: center
+      fontSize: 26
+      width: 70
+      margin: 180 0 0 100
+    # ----------------------------------
+    # Desktop Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      height: 700
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP2-WED-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 1024
+    third-section-block:
+      display: grid
+      margin: 250 0 400 300
+    third-section-title:
+      width: 270
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      fontSize: 32
+      fontWeight: 700
+      margin: 0 0 0 80
+    third-section-description:
+      width: 115
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      fontSize: 16
+      margin: 10 0 0 130
+    # ----------------------------------
+    # Desktop Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 3fr
+      width: 1024
+    fourth-section-title:
+      width: 1024
+      height: 70
+      display: grid
+    fourth-section-text:
+      color: '#000'
+      width: 280
+      display: grid
+      margin: 20 0 10 400
+      textAlign: center
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      fontSize: 24
+      fontWeight: 500
+    fourth-block1-image:
+      width: 320
+      height: 370
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/customize2_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      display: grid
+      margin: auto
+    fourth-section-block1:
+      display: grid
+      width: 512
+      margin: 0 0 20 0
+      gridTemplateRows: 3fr
+    fourth-block1-title:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      margin: 30 0 0 200
+      fontWeight: 400
+      color: '#2d2e2c'
+      width: 125
+      textAlign: center
+      fontSize: 20
+    fourth-block1-description:
+      fontFamily: GT America
+      margin: 12 0 0 180
+      fontWeight: 300
+      color: '#2d2e2c'
+      width: 150
+      textAlign: center
+      fontSize: 16
+    fourth-block2-image:
+      width: 320
+      height: 370
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/custommade_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      margin: auto
+      display: grid
+    fourth-section-block2:
+      display: grid
+      width: 512
+      margin: 0 0 20 0
+      gridTemplateRows: 3fr
+    fourth-block2-title:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      margin: 30 0 0 200
+      fontWeight: 400
+      color: '#2d2e2c'
+      fontSize: 20
+      width: 105
+      textAlign: center
+    fourth-block2-description:
+      fontFamily: GT America
+      margin: 12 0 0 200
+      fontWeight: 300
+      color: '#2d2e2c'
+      fontSize: 16
+      width: 90
+      textAlign: center
+    # ----------------------------------
+    # Desktop Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      height: 700
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP3-CSR-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 1024
+    fifth-section-block:
+      display: grid
+      margin: auto
+    fifth-section-title:
+      width: 486
+      textAlign: center
+      display: grid
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: 50 0 0 40
+    fifth-section-description:
+      width: 325
+      textAlign: center
+      display: grid
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 20 0 0 100
+    # ----------------------------------
+    # Desktop Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 600
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week23/HP4-FABRIC-N-wk23-5120-1.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 1024
+    sixth-section-block:
+      display: grid
+      margin: auto 0 auto auto
+    sixth-section-title:
+      width: 360
+      textAlign: center
+      display: grid
+      color: '#2d2e2c'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: 50 0 15 120
+    sixth-section-description:
+      width: 375
+      textAlign: center
+      display: grid
+      color: '#2d2e2c'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 0 0 20 100
+    sixth-section-button:
+      height: 48
+      margin: 20 0 0 250
+      display: grid
+      color: '#2d2e2c'
+      width: 85
+      textAlign: center
+      borderWidth: 1
+      borderStyle: solid
+      backgroundColor: 'transparent'
+      borderColor: '#2D2E2C'
+    # ----------------------------------
+    # Desktop Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      width: 100%
+      height: 120
+    seventh-section-block1:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block1-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      fontFamily: GT America Extended,Arial,sans-serif
+      width: 70
+      textAlign: center
+      margin: 50 0 0 80
+    seventh-block1-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      width: 130
+      textAlign: center
+      margin: 10 0 0 50
+    seventh-section-block2:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block2-title:
+      color: '#000'
+      fontWeight: 700
+      width: 63
+      fontSize: 16
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 80
+    seventh-block2-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      width: 105
+      margin: 10 0 0 60
+    seventh-section-block3:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block3-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      fontFamily: GT America Extended,Arial,sans-serif
+      width: 95
+      textAlign: center
+      margin: 50 0 0 70
+    seventh-block3-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      width: 77
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 10 0 0 80
+    # ----------------------------------
+    # Desktop Eighth Section
+    # ----------------------------------
+    eighth-section:
+      width: 1024
+      height: 314
+      backgroundColor: '#efefef'
+      display: grid
+      gridTemplateRows: 1fr 40 1fr
+    eighth-section-title:
+      margin: 100 0 0 400
+      width: 171
+      textAlign: center
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      fontSize: 26
+    eighth-section-description:
+      margin: 20 0 0 300
+      width: 373
+      textAlign: center
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      fontSize: 15
+      fontWeight: 300
+
+  tablet:
+    burberry-main-page: {}
+
+    # ----------------------------------
+    # Tablet First Section
+    # ----------------------------------
+    first-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 700
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week26/HP1-NA-N-wk26-1300.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 768
+      margin: auto
+    first-section-block:
+      display: grid
+      margin: auto
+    first-section-title:
+      width: 200
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: 200 0 15 80
+    first-section-description:
+      width: 150
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 0 0 0 100
+    # ----------------------------------
+    # Tablet Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      height: 500
+      width: 100%
+    second-block1-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-suits-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 90%
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block1-link:
+      fontFamily: GT America
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 75
+      margin: 180 0 0 50
+    second-block2-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-shirts-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 90%
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block2-link:
+      fontFamily: GT America
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 82
+      margin: 180 0 0 50
+    second-block3-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_600/suitsupply/homepage/ss20/week28/HPS-knits-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 90%
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block3-link:
+      fontFamily: GT America
+      color: '#fff'
+      fontWeight: normal
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 70
+      margin: 180 0 0 80
+    # ----------------------------------
+    # Tablet Third Section
+    # ----------------------------------
+    third-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 400
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP2-WED-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      width: 768
+    third-section-block:
+      display: grid
+      margin: auto
+    third-section-title:
+      width: 270
+      textAlign: cente
+      color: '#fff'
+      font-family: GT America
+      fontSize: 32
+      fontWeight: 700
+      margin: 0 0 0 80
+    third-section-description:
+      width: 115
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      fontSize: 16
+      margin: 10 0 0 130
+      fontWeight: 700
+    # ----------------------------------
+    # Tablet Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      gridTemplateRows: 3fr
+      width: 768
+    fourth-section-title:
+      width: 768
+      height: 70
+      display: grid
+    fourth-section-text:
+      color: '#000'
+      width: 280
+      margin: 20 0 10 230
+      textAlign: center
+      font-family: GT America
+      fontSize: 24
+      fontWeight: 500
+      backgroundColor: 'transparent'
+    fourth-block1-image:
+      width: 320
+      height: 450
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/customize2_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      margin: auto
+    fourth-section-block1:
+      display: grid
+      width: 384
+      margin: auto auto 20 auto
+      gridTemplateRows: 3fr
+    fourth-block1-title:
+      fontFamily: GT America
+      margin: 30 0 0 100
+      fontWeight: 400
+      color: '#2d2e2c'
+      fontSize: 20
+      width: 125
+      textAlign: center
+    fourth-block1-description:
+      fontFamily: GT America
+      margin: 12 0 0 85
+      fontWeight: 300
+      color: '#2d2e2c'
+      width: 150
+      textAlign: center
+      fontSize: 16
+    fourth-block2-image:
+      width: 320
+      height: 450
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/custommade_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+    fourth-section-block2:
+      display: grid
+      width: 384
+      margin: auto auto 20 auto
+      gridTemplateRows: 3fr
+    fourth-block2-title:
+      fontFamily: GT America
+      margin: 30 0 0 100
+      fontWeight: 400
+      color: '#2d2e2c'
+      width: 105
+      textAlign: center
+      fontSize: 20
+    fourth-block2-description:
+      fontFamily: GT America
+      margin: 12 0 0 110
+      fontWeight: 300
+      color: '#2d2e2c'
+      fontSize: 16
+      width: 90
+      textAlign: center
+    # ----------------------------------
+    # Tablet Fifth Section
+    # ----------------------------------
+    fifth-section:
+      display: grid
+      gridTemplateRows: 5fr
+      height: 400
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP3-CSR-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      width: 768
+      margin: auto
+    fifth-section-block:
+      display: grid
+      margin: auto
+    fifth-section-title:
+      width: 486
+      display: grid
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      fontSize: 32
+      fontWeight: 700
+      margin: 50 0 0 40
+    fifth-section-description:
+      width: 325
+      textAlign: center
+      color: '#fff'
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      fontSize: 16
+      margin: 20 0 0 100
+      fontWeight: 700
+    # ----------------------------------
+    # Tablet Sixth Section
+    # ----------------------------------
+    sixth-section:
+      display: grid
+      height: 519
+      gridTemplateRows: 1fr 40 0fr
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week23/HP4-FABRIC-N-wk23-5120-1.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 768
+    sixth-section-block:
+      display: grid
+      margin: 90 0 90 250
+    sixth-section-title:
+      width: 360
+      textAlign: center
+      color: '#000'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 32
+      margin: 50 0 15 120
+    sixth-section-description:
+      width: 375
+      textAlign: center
+      color: '#000'
+      font-family: GT America
+      fontSize: 16
+      margin: 0 0 20 100
+    sixth-section-button:
+      height: 48
+      margin: 20 0 0 250
+      textAlign: center
+      color: '#000'
+      width: 85
+      borderWidth: 1
+      borderStyle: solid
+      borderColor: '#2D2E2C'
+    # ----------------------------------
+    # Tablet Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      width: 100%
+      height: 120
+    seventh-section-block1:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block1-title:
+      color: '#000'
+      fontWeight: 700
+      width: 70
+      fontSize: 16
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 80
+    seventh-block1-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      width: 130
+      margin: 10 0 0 50
+    seventh-section-block2:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block2-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      width: 63
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 80
+    seventh-block2-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 10 0 0 60
+      width: 105
+    seventh-section-block3:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block3-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      width: 95
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 70
+    seventh-block3-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      width: 77
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 10 0 0 80
+    # ----------------------------------
+    # Tablet Eighth Section
+    # ----------------------------------
+    eighth-section:
+      width: 768
+      height: 314
+      backgroundColor: '#efefef'
+      display: grid
+      gridTemplateRows: 1fr 40 1fr
+    eighth-section-title:
+      margin: 100 0 0 300
+      width: 171
+      textAlign: center
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      fontSize: 26
+    eighth-section-description:
+      margin: 20  0 0 200
+      width: 373
+      textAlign: center
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      fontSize: 15
+      fontWeight: 300
+
+  mobile:
+    burberry-main-page: {}
+    # ----------------------------------
+    # Mobile First Section
+    # ----------------------------------
+    first-section-block:
+      display: grid
+      gridTemplateRows: 1fr 40 0fr
+      height: 400
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week26/HP1-NA-N-wk26-1300.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 360
+      margin: auto
+    first-section-title:
+      width: 200
+      display: grid
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: auto auto 0 60
+    first-section-description:
+      width: 150
+      display: grid
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 10 0 0 90
+    # ----------------------------------
+    # Mobile Second Section
+    # ----------------------------------
+    second-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr
+      height: 330
+      width: 360
+    second-block1-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-suits-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 170
+      height: 300
+      margin: 10 0 10 0
+      backgroundPosition: center
+    second-block1-link:
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 75
+      margin: 130 0 0 50
+    second-block2-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_240/suitsupply/homepage/ss20/week28/HPS-shirts-N-wk28.jpg'
+      backgroundSize: cover
+      display: grid
+      width: 170
+      height: 300
+      margin: 10 0 10 10
+      backgroundPosition: center
+    second-block2-link:
+      fontFamily: GT America
+      color: '#fff'
+      textAlign: center
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 82
+      margin: 130 0 0 30
+    second-block3-image:
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/fl_progressive,f_auto,q_auto,w_600/suitsupply/homepage/ss20/week28/HPS-knits-N-wk28.jpg'
+      backgroundSize: cover
+      display: none
+      width: 360
+      height: 400
+      margin: auto
+      backgroundPosition: center
+    second-block3-link:
+      fontFamily: GT America
+      color: '#fff'
+      fontWeight: normal
+      textAlign: center
+      display: none
+      fontSize: 26
+      backgroundColor: 'transparent'
+      width: 70
+      margin: auto
+    # ----------------------------------
+    # Mobile Third Section
+    # ----------------------------------
+    third-section-block:
+      display: grid
+      gridTemplateRows: 1fr 40 0fr
+      height: 400
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP2-WED-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      width: 360
+      margin: auto
+    third-section-block2:
+      display: none
+    third-section-title:
+      width: 270
+      display: grid
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      fontSize: 32
+      fontWeight: 700
+      margin: auto 0 0 30
+    third-section-description:
+      width: 115
+      display: grid
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      fontSize: 16
+      margin: 10 0 0 100
+      fontWeight: 700
+
+    # ----------------------------------
+    # Mobile Fourth Section
+    # ----------------------------------
+    fourth-section:
+      display: grid
+      gridTemplateColumns: 1fr
+      gridTemplateRows: 3fr
+      width: 360
+    fourth-section-title:
+      width: 100%
+      height: 70
+    fourth-section-text:
+      color: '#000'
+      width: 280
+      display: grid
+      margin: 20 0 10 30
+      textAlign: center
+      font-family: GT America
+      fontSize: 20
+      fontWeight: 500
+    fourth-block1-image:
+      width: 225
+      height: 265
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/customize2_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      marginLeft: 60
+    fourth-section-block1:
+      display: grid
+      width: 360
+      marginBottom: 20
+      gridTemplateRows: 3fr
+    fourth-block1-title:
+      fontFamily: GT America
+      margin: 30 0 0 100
+      fontWeight: 400
+      width: 125
+      textAlign: center
+      color: '#2d2e2c'
+      fontSize: 20
+    fourth-block1-description:
+      fontFamily: GT America
+      margin: 12 0 0 90
+      fontWeight: 300
+      color: '#2d2e2c'
+      width: 150
+      fontSize: 16
+    fourth-block2-image:
+      width: 225
+      height: 265
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/b_rgb:ffffff,w_700/suitsupply/assets/fw19/fit-guarantee/custommade_D.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      marginLeft: 60
+    fourth-section-block2:
+      display: grid
+      width: 360
+      marginBottom: 20
+      gridTemplateRows: 3fr
+    fourth-block2-title:
+      fontFamily: GT America
+      margin: 30 0 0 130
+      fontWeight: 400
+      color: '#2d2e2c'
+      fontSize: 20
+      width: 105
+    fourth-block2-description:
+      fontFamily: GT America
+      margin: 12 0 0 130
+      fontWeight: 300
+      color: '#2d2e2c'
+      fontSize: 16
+      width: 90
+    # ----------------------------------
+    # Mobile Fifth Section
+    # ----------------------------------
+    fifth-section-block:
+      display: grid
+      gridTemplateRows: 1fr 40 0fr
+      height: 400
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week24/HP3-CSR-N-wk24-5120.jpg'
+      backgroundSize: cover
+      backgroundPosition: center
+      width: 360
+      margin: auto
+    fifth-section-block2:
+      display: none
+    fifth-section-title:
+      width: 250
+      display: grid
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 32
+      fontWeight: 700
+      margin: auto 0 0 60
+    fifth-section-description:
+      width: 325
+      textAlign: center
+      color: '#fff'
+      font-family: GT America
+      backgroundColor: 'transparent'
+      fontSize: 16
+      margin: 10 0 0 20
+      fontWeight: 700
+    # ----------------------------------
+    # Mobile Sixth Section
+    # ----------------------------------
+    sixth-section-block:
+      display: grid
+      height: 519
+      gridTemplateRows: 1fr 40 0fr
+      backgroundImage: 'https://a.suitsupplycdn.com/image/upload/f_auto,q_auto,w_1440/suitsupply/homepage/ss20/week23/HP4-FABRIC-N-wk23-5120-1.jpg'
+      backgroundSize: cover
+      backgroundPosition: top
+      width: 360
+      marginTop: 20
+    sixth-section-title:
+      width: 300
+      textAlign: center
+      color: '#000'
+      font-family: GT America
+      fontSize: 32
+      margin: 220 0 10 20
+    sixth-section-description:
+      width: 300
+      textAlign: center
+      color: '#000'
+      font-family: GT America
+      fontSize: 16
+      margin: 0 0 0 20
+    sixth-section-button:
+      height: 48
+      margin: 60 0 30 130
+      color: '#000'
+      width: 85
+      textAlign: center
+      borderWidth: 1
+      borderStyle: solid
+      borderColor: '#2D2E2C'
+    # ----------------------------------
+    # Mobile Seventh Section
+    # ----------------------------------
+    seventh-section:
+      display: grid
+      gridTemplateColumns: 1fr 1fr 1fr
+      width: 360
+      height: 120
+    seventh-section-block1:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block1-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      width: 70
+      margin: 50 0 0 30
+    seventh-block1-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      width: 100
+      margin: 12 0 0 10
+    seventh-section-block2:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block2-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      width: 63
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 30
+    seventh-block2-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      marginTop: 10
+      marginLeft: 10
+      width: 105
+    seventh-section-block3:
+      display: grid
+      gridTemplateRows: 1fr 1fr
+      width: 100%
+    seventh-block3-title:
+      color: '#000'
+      fontWeight: 700
+      fontSize: 16
+      width: 95
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      margin: 50 0 0 10
+    seventh-block3-description:
+      color: '#2D2E2C'
+      fontSize: 13
+      width: 77
+      fontFamily: GT America Extended,Arial,sans-serif
+      textAlign: center
+      marginTop: 10
+      marginLeft: 20
+    # ----------------------------------
+    # Mobile Eighth Section
+    # ----------------------------------
+    eighth-section:
+      width: 360
+      height: 314
+      backgroundColor: '#efefef'
+      display: grid
+      gridTemplateRows: 1fr 40 1fr
+    eighth-section-title:
+      margin: 80 0 10 100
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      width: 171
+      textAlign: center
+      fontSize: 26
+    eighth-section-description:
+      margin: 0 0 0 30
+      fontFamily: GT America,-apple-system,BlinkMacSystemFont,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+      color: '#2d2e2c'
+      fontSize: 15
+      display: grid
+      width: 300
+      textAlign: center
+      fontWeight: 300
+context: {}

@@ -1,0 +1,95 @@
+:host {
+  display: block;
+  outline: none;
+  position: relative;
+  word-break: break-word;
+  will-change: top, left, width, height;
+  backface-visibility: hidden;
+  //transform: translate3d(0, 0, 0);
+}
+
+:host.hovered {
+  z-index: 99;
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content-wrap {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+
+  &__none-events {
+    pointer-events: none;
+  }
+
+  .text-content {
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+.preview-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+
+  &.loaded {
+    display: inline;
+  }
+}
+
+.video-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  .video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+
+    &.loaded {
+      display: inline;
+    }
+  }
+}
+
+.video {
+  box-sizing: border-box;
+
+  &__loading-spinner-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.children-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &__none-events > * {
+    pointer-events: auto;
+  }
+}

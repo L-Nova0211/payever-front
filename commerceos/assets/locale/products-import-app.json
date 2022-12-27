@@ -1,0 +1,87 @@
+{
+  "title": "Import Products",
+  "support_link": "Need any help?",
+  "close": "Close",
+  "submit": "Submit",
+  "response_success_scheduled_4": "<h3>{{ message }}</h3><h4>Importing your items can take a few minutes and depend on quantity of your items. <br/> Please refresh the page in a few minutes.</h4>",
+  "response_success_4": "<h3>{{ message }}</h3><h4>Total {{ count_total }} item(s). <br/> Imported {{ count_imported }} item(s). Updated {{ count_updated }} item(s). Existed {{ count_existed }} item(s). <br/> Error on import: {{ count_error }} item(s). <br/> {{error_list}}</h4>",
+  "response_failure_4": "<h3>{{ message }}</h3>",
+  "response_message": "Initiated Importing products, You will be notified by a mail once the products are imported successfully",
+  "import_message": "Upload in progress. You will be informed by email",
+  "methods": {
+    "ebay": "Ebay",
+    "amazon": "Amazon",
+    "magento": "Magento",
+    "google": "Google",
+    "csv": "CSV",
+    "xml": "XML",
+    "overwrite": "Overwrite existing products"
+  },
+  "errors": {
+    "title": "Error",
+    "forbidden": "You don't have permission to perform this action!",
+    "upload_failed": "Upload of products failed"
+  },
+  "amazon": {
+    "start_importing": "Start Importing products with",
+    "start_importing_via": "Amazon Importer",
+    "instructions": "Import from Amazon is available only for Amazon.de, Amazon.es, Amazon.fr and Amazon.it.<br/>You have to authorise a developer (Name: \"<b>payever GmbH</b>\", ID: \"<b>1915-8175-1543</b>\") in your seller central before import.",
+    "placeholders": {
+      "merchant_id": "Seller ID",
+      "auth_token": "MWS authorization token"
+    }
+  },
+  "magento": {
+    "start_importing": "Start Importing products with",
+    "start_importing_via": "Magento Importer",
+    "placeholders": {
+      "store_url": "Magento store URL",
+      "api_username": "Magento API username",
+      "api_key": "Magento API key"
+    }
+  },
+  "google": {
+    "start_importing": "Start Importing products from",
+    "start_importing_via": "Google Shopping",
+    "instructions_1": "You have to add \"<b>{{ google_email }}</b>\" as admin in your merchant center before import.",
+    "proceed_button": "Proceed to Google",
+    "import_failed": "Import failed due to an unexpected error.",
+    "account_does_not_match_merchant_id": "This Google account does not match the Merchant ID",
+    "placeholders": {
+      "merchant_id": "Merchant ID"
+    }
+  },
+  "csv": {
+    "start_importing": "CSV File",
+    "upload_csv": "Upload a CSV to mass import your items",
+    "upload_csv_1": "1. Download our template file",
+    "upload_csv_2": "2. Fill the CSV file with your items",
+    "upload_button": "Upload CSV file",
+    "errors": {
+      "non_csv_file": "Can't upload files other than CSV"
+    }
+  },
+  "xml": {
+    "start_importing": "XML File",
+    "upload_xml": "Upload a XML to mass import your items",
+    "upload_xml_step_1": "1. Download our template file",
+    "upload_xml_step_2": "2. Fill the XML file with your items",
+    "upload_button": "Upload XML file",
+    "errors": {
+      "non_xml_file": "Can't upload files other than XML"
+    }
+  },
+  "import_menu": {
+    "overwrite": "Overwrite existing products",
+    "title": {
+      "csv": "Import CSV",
+      "xml": "Import XML",
+      "help": "Help"
+    },
+    "text": {
+      "csv": "Please import a CSV file based on this example",
+      "xml": "Please import a XML file based on this example"
+    },
+    "download": "download"
+  }
+}

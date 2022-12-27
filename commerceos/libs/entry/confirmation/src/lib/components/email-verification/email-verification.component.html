@@ -1,0 +1,40 @@
+<ng-container *ngIf="translationsReady$ | async">
+  <entry-layout [hideLogo]="true">
+    <!-- <div class="text-center dark">
+      <br /><br />
+      <svg class="icon" [class.icon-32]="isMobile$ | async" [class.icon-48]="!(isMobile$ | async)">
+        <use [attr.xlink:href]="'#' + (errors ? 'icon-alert-24' : 'icon-check2-16')"></use>
+      </svg>
+      <div class="heading-2">
+        {{ errors ? ('password.confirmation.error' | translate) : ('password.confirmation.success' | translate) }}
+      </div>
+      <p class="descriptions">{{ 'password.confirmation.message' | translate }}</p>
+      <br />
+      <br />
+      <div class="buttons">
+        <button
+          (click)="navigateToEntry()"
+          mat-button
+          type="button"
+          class="mat-button-link mat-button-no-padding back-button"
+          [routerLink]="['/entry']"
+          translate
+        >
+          {{ 'password.confirmation.back' | translate }}
+        </button>
+      </div>
+    </div> -->
+    <div class="text-center dark" style="padding: 10px 0;">
+      <div style="width:56px;height:56px;display: flex;margin: auto;">
+        <svg>
+          <use [attr.xlink:href]="'#icon-commerceos-success'"></use>
+        </svg>
+      </div>
+      <!-- <div class="heading-2">{{ errors ? ('password.confirmation.error' | translate) : ('password.confirmation.success' | translate) }}!</div> -->
+      <p class="descriptions">{{ 'password.confirmation.message' | translate }}</p>
+      <div class="buttons-back">
+        <button type="button" class="verification-button" translate (click)="navigateToLogin()">password.confirmation.back</button>
+      </div>
+    </div>
+  </entry-layout>
+</ng-container>

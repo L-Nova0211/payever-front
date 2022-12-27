@@ -1,0 +1,73 @@
+//
+// Form Field
+// ----------------------------
+
+@include mat-form-field-theme($theme);
+
+.pe-bootstrap {
+
+  .mat-form-field {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: inherit;
+    .icon {
+      color: $mat-form-field-label-empty-color;
+    }
+
+    &.mat-focused {
+      .mat-form-field-required-marker {
+        color: $color-blue;
+      }
+    }
+
+    &-hint-wrapper {
+      display: none;
+    }
+
+    &-infix {
+      padding-top: ceil($grid-unit-y / 2) + 1;
+      border-top-width: $grid-unit-y + 2;
+      font-weight: $font-weight-light;
+
+      .mat-input-element {
+        color: $color-secondary-0;
+      }
+    }
+
+    &-label {
+      color: $mat-form-field-label-color;
+    }
+
+    &-empty {
+      color: $mat-form-field-label-empty-color;
+    }
+
+    // States
+    // -------------------------
+
+    &.mat-form-field-disabled {
+      .mat-form-field-underline {
+        background-image: none;
+      }
+    }
+    
+    &.mat-form-field-invalid {
+      .mat-form-field-subscript-wrapper {
+        overflow: hidden;
+        max-width: 100%;
+  
+        .mat-error {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+
+  }
+
+  .mat-input-with-addon-inline-prepend-wrapper {
+    @include pe_flexbox();
+    @include pe_align-items(left);
+  }
+}

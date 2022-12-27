@@ -1,0 +1,128 @@
+@import '../theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin select-option($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $dropdown-panel: map-get($theme-config, dropdown-panel);
+  $hover: map-get($theme-config, hover);
+  $hover-text: map-get($theme-config, hover-text);
+  $separator: map-get($theme-config, separator);
+  $text-color: map-get($theme-config, text-color);
+
+  background-color: $dropdown-panel !important;
+  color: $text-color !important;
+
+  &.border:not(:last-child) {
+    border-bottom: 1px solid $separator;
+  }
+
+  &:hover,
+  &.active,
+  &.selected {
+    background-color: $hover !important;
+    color: $hover-text !important;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $hover !important;
+    }
+  }
+
+  & span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+:host {
+  &.dark,
+  &.default {
+    @include select-option($dark-theme);
+  }
+  &.light {
+    @include select-option($light-theme);
+  }
+  &.transparent {
+    @include select-option($transparent-theme);
+  }
+}
+
+:host {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 10px 12px;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+
+  height: 44px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px !important;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &:hover,
+  &.active {
+    outline: none;
+
+    .applied {
+      svg {
+        g {
+          g {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    color: #93a1aa;
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: #fff;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .check-container {
+    width: 16px;
+    height: 16px;
+    position: relative;
+
+    .check {
+      position: absolute;
+      width: 8px;
+      height: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 5px;
+      left: 4px;
+    }
+    .check-background {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .action-text {
+    color: #7a7a7a;
+    padding-left: 10px;
+  }
+}

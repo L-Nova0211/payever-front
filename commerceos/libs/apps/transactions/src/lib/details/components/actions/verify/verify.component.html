@@ -1,0 +1,39 @@
+<pe-action-container
+  titleTranslateKey="transactions.form.verify.heading"
+  [theme]="theme"
+  submitTitleTranslateKey="transactions.form.verify.actions.verify"
+  [isLoading]="isLoading$ | async"
+  (closeEvent)="close()"
+  (submitEvent)="done()"
+>
+  <pe-verify-action-fields [order]="order"></pe-verify-action-fields>
+
+  <!-- TODO: Refactor this approach, probably generic form creation similar to pe/forms -->
+  <pe-verify-action-by-id
+    *ngIf="showById$ | async as field; else common"
+    [field]="field"
+    [verify$]="verify$"
+    (verify)="verify($event)"
+    (errorKey)="seTypeErrorKey($event)"
+  >
+  </pe-verify-action-by-id>
+
+  <ng-template #common>
+    <pe-verify-action-simple
+      *ngIf="showSimple$ | async; else code"
+      [verify$]="verify$"
+      (verify)="verify($event)"
+      (errorKey)="seTypeErrorKey($event)"
+    >
+    </pe-verify-action-simple>
+
+    <ng-template #code>
+      <pe-verify-action-digit-code
+        [verify$]="verify$"
+        (verify)="verify($event)"
+        (errorKey)="seTypeErrorKey($event)"
+      >
+      </pe-verify-action-digit-code>
+    </ng-template>
+  </ng-template>
+</pe-action-container>

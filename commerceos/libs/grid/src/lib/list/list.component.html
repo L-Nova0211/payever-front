@@ -1,0 +1,53 @@
+<div
+  class="virtual-grid-list"
+  [style.--scrollWidth.px]="scrollWidth"
+>
+  <div #virtualScroll
+    pe-grid-infinite-scroll
+    class="virtual-grid-list__items"
+    (scrolledToEnd)="scrolledToEnd.emit()"
+    [wrapperRef]="container"
+  >
+    <div #virtualScrollWrapper
+      class="virtual-grid-list__wrapper"
+      [style.height.px]="container.height"
+    >
+      <pe-grid-list-skeleton
+        *ngIf="isShowSkeleton()"
+        [columns]="columns"
+        @fadeOutAnimation
+      ></pe-grid-list-skeleton>
+      <div #container
+        class="grid-list-container"
+        [class.hidden]="isShowSkeleton()"
+        [@showHideAnimation]="isShowSkeleton() ? 'hide' : 'show'"
+      >
+        <ng-container *ngIf="items.length || viewAdd">
+          <ng-container
+            *ngFor="let item of items; trackBy: trackByIdx"
+            [ngTemplateOutlet]="item?.addGridItem ? addItem : itemTemplate"
+            [ngTemplateOutletContext]="{ item: item }"
+          ></ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #addItem>
+  <pe-grid-list-item
+    *ngIf="isViewAdd"
+    (click)="create.emit()"
+    [toAdd]="isViewAdd"
+  ></pe-grid-list-item>
+</ng-template>
+
+<ng-container *ngIf="!items?.length">
+  <div *ngIf="itemsInitialized$ | async"
+    class="grid-list-container__no-items"
+    [class]="theme"
+    [class.hidden]="isShowSkeleton()">
+    <span class="grid-list-container__no-items--title">No {{ noItemsPlaceholder }}</span>
+    <span class="grid-list-container__no-items--subtitle">There are no {{ noItemsPlaceholder }} for your search</span>
+  </div>
+</ng-container>

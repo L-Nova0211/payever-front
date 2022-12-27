@@ -1,0 +1,141 @@
+<form
+  *ngIf="form"
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <button
+    #submitTrigger
+    id="submitTrigger"
+    name="submitButton"
+    type="submit"
+    hidden
+  ></button>
+  <ng-container *ngFor="let price of pricing.controls; let i = index">
+    <div
+      class="pricing__wrapper"
+      formArrayName="pricing"
+    >
+      <div class="pricing__row" [formGroupName]="i">
+        <div class="pricing__row__inputs">
+          <peb-form-field-input
+            class='main-form-field-input'
+            label="{{ 'placeholders.price' | translate }}" appearance="label"
+            [animated]='true'
+            [isFieldInvalid]='isSubmitted && price.controls.price.errors?.required'
+            [errorMessage]="'Price is required'">
+            <input
+              placeholder="{{ 'placeholders.price' | translate }}"
+              formControlName="price"
+              type="number"
+              (change)="onPriceChange($event.target.value, 'salePrice', i)"
+            />
+            <div class="suffix">
+              <p>{{ this.currency || 'EUR' }}</p>
+            </div>
+          </peb-form-field-input>
+          <peb-form-field-input
+            class='main-form-field-input'
+            label="{{ 'placeholders.salePrice' | translate }}" appearance="label"
+            [animated]='true'
+            [isFieldInvalid]='isSubmitted && price.controls.salePrice.errors?.required'
+            [errorMessage]="'Sale price must be lower than regular price'">
+            <input
+              placeholder="{{ 'placeholders.salePrice' | translate }}"
+              formControlName="salePrice"
+              type="number"
+              (change)="onPriceChange($event.target.value, 'salePrice', i)"
+            />
+            <div class="suffix">
+              <p>{{ this.currency || 'EUR' }}</p>
+            </div>
+          </peb-form-field-input>
+        </div>
+        <peb-select
+          class='form-field-select peb-select'
+          formControlName="customerEligibility"
+          [label]="'customer_eligibility.label' | translate"
+          selectType="label"
+          (changed)="onClickCustomerEligibility(i)"
+        >
+          <peb-select-option
+            *ngFor="let option of customerEligibility"
+            [label]="('customer_eligibility.' + option.label) | translate"
+            [value]="option.value"
+          ></peb-select-option>
+        </peb-select>
+        <!-- CUSTOMER ELIGIBILITY END -->
+
+        <!-- GROUPS OF CUSTOMERS START -->
+        <ng-container *ngIf="groupsOfCustomers && price.value.customerEligibility === 'SPECIFIC_GROUPS_OF_CUSTOMERS'"
+        >
+          <div class="pricing__row__autocomplete">
+            <pe-search
+              [errorMessage]="'customer_eligibility.groups_of_customers_error' | translate"
+              [isFieldInvalid]="price.get('customerEligibilityCustomerGroups').invalid"
+              [items]="filterResultGroupsOfCustomers$ | async"
+              (filterChanged)="onFilterGroupOfCustomers$.next($event)"
+              [label]="'customer_eligibility.groups_of_customers' | translate"
+              [placeholder]="'customer_eligibility.search_groups_of_customers' | translate"
+              (selected)="addToArray($event, price.value.customerEligibilityCustomerGroups, i,arrayNames.GroupsOfCustomers)"
+            ></pe-search>
+            <pe-search-list>
+              <pe-search-list-item
+                *ngFor="let group of price.value.customerEligibilityCustomerGroups; let k = index; trackBy: trackItem"
+                [image]="getFromArray(groupsOfCustomers, group?.id)?.image"
+                [removeButtonLabel]="'customer_eligibility.actions.remove'"
+                (remove)="removeFromArray(price.value.customerEligibilityCustomerGroups, k, i, arrayNames.GroupsOfCustomers)"
+              >{{ getFromArray(groupsOfCustomers, group?.id)?.title }}</pe-search-list-item>
+            </pe-search-list>
+          </div>
+        </ng-container>
+        <!-- GROUPS OF CUSTOMERS END -->
+
+        <!-- SPECIFIC CUSTOMERS START -->
+        <ng-container *ngIf="customers && price.value.customerEligibility === 'SPECIFIC_CUSTOMERS'">
+          <div class="pricing__row__autocomplete">
+            <pe-search
+              [errorMessage]="'customer_eligibility.customers_error' | translate"
+              [isFieldInvalid]="price.get('customerEligibilitySpecificCustomers').invalid"
+              [items]="filterResultCustomer$ | async"
+              (filterChanged)="onFilterCustomers$.next($event)"
+              [label]="'customer_eligibility.customers' | translate"
+              [placeholder]="'customer_eligibility.search_customer' | translate"
+              (selected)="addToArray($event, price.value.customerEligibilitySpecificCustomers, i, arrayNames.Customers)"
+            ></pe-search>
+            <pe-search-list>
+              <pe-search-list-item
+                *ngFor="let customer of price.value.customerEligibilitySpecificCustomers; let k = index; trackBy: trackItem"
+                [image]="getFromArray(customers, customer?.id)?.image"
+                [removeButtonLabel]="'customer_eligibility.actions.remove'"
+                (remove)="removeFromArray(price.value.customerEligibilitySpecificCustomers, k, i, arrayNames.Customers)"
+              >{{ getFromArray(customers, customer?.id)?.title }}</pe-search-list-item>
+            </pe-search-list>
+          </div>
+        </ng-container>
+      </div>
+      <button class="button remove" type="button" (click)="removeGroup(i)">
+        <mat-icon svgIcon="remove-icon"></mat-icon>
+      </button>
+    </div>
+    <div class="body-messages">
+      
+      <peb-messages
+        *ngIf="isSubmitted && price.errors?.salePriceGreater"
+        [message]="'mainSection.form.errors.sale_price' | translate"
+      ></peb-messages>
+
+      <peb-messages
+        *ngIf="isSubmitted && price.errors?.priceAndMainPriceNotEqual"
+        [message]="'mainSection.form.errors.unequal_prices' | translate"
+      ></peb-messages>
+
+    </div>
+  </ng-container>
+  <button
+    class="add"
+    type="button"
+    (click)="addPrice()">
+    {{'add_price_by_group' | translate}}
+  </button>
+</form>

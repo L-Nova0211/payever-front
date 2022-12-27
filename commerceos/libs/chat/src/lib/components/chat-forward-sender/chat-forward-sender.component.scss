@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 260px;
+  width: 300px;
+  padding: 25px 20px 20px 20px;
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .forward-title {
+      margin-bottom: 0px;
+      font-size: 15px;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      font-weight: bold;
+      color: #ffffff;
+  
+    }
+    .forward-link {
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    
+    .forward-details {
+      text-align: center;
+      margin-bottom: 20px; 
+      font-size: 14px;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      margin-top: 10px;
+      color: #ffffff;
+    }
+  }
+
+  .action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    button {
+      height: 35px;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 7px;
+    }
+
+    .primary-btn {
+      background: #0084ff;
+    }
+
+    .secondary-btn {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .subaction-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+}
+
+.bold {
+  font-weight: bolder;
+}

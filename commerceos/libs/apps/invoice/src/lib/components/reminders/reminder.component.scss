@@ -1,0 +1,16 @@
+.container{
+    padding: 0 16px 16px;
+    .toggle-container{
+        background-color: #111111;
+        display: flex;
+        margin-bottom: 16px;
+        border-radius: 12px;
+        color: white;
+        justify-content: space-between;
+        div:first-child{
+            margin:12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}

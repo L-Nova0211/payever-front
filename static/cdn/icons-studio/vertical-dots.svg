@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16">
+  <g fill="#FFF" fill-rule="evenodd">
+    <path
+      d="M14 4c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2M8 4c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2M2 4C.896 4 0 3.104 0 2s.896-2 2-2 2 .896 2 2-.896 2-2 2"
+      transform="rotate(-90 8 8)"
+    />
+  </g>
+</svg>

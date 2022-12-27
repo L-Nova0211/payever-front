@@ -1,0 +1,236 @@
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.circular-chart {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 7px;
+
+  &__body {
+    display: block;
+    margin: 10px auto;
+    height: 36px;
+    width: 36px;
+    transform: scale(5);
+    &.green .circle {
+      stroke: #00f67d;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+
+    &-date {
+      color: #eeeeee;
+      font-family: 'Roboto', sans-serif;
+      text-anchor: middle;
+      font-size: 9px;
+      text-align: center;
+      line-height: normal;
+      width: 60px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &-percentage {
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      text-anchor: middle;
+      font-weight: bold;
+      text-align: center;
+      font-size: 24px;
+      width: 75px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &-profit {
+      color: #00f67d;
+      font-family: 'Roboto', sans-serif;
+      text-anchor: middle;
+      line-height: normal;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      width: 50px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #292929;
+  stroke-width: 2.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: butt;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.percentage {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #eeeeee;
+    line-height: 14px;
+  }
+}
+
+.done-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0371e2;
+  cursor: pointer;
+}
+
+:host {
+  font-family: 'Roboto', sans-serif;
+  &.dark-widget {
+    .percentage {
+      &__title {
+        color: #eeeeee;
+      }
+    }
+
+    .circular-chart {
+      &__text {
+        &-date {
+          color: #eeeeee;
+        }
+        &-percentage {
+          color: #fff;
+        }
+      }
+    }
+
+    .circle-bg {
+      stroke: #292929;
+    }
+  }
+  &.light-widget {
+    .percentage {
+      &__title {
+        color: #000;
+      }
+    }
+
+    .circular-chart {
+      &__text {
+        &-date {
+          color: #78787d;
+        }
+        &-percentage {
+          color: #000;
+        }
+      }
+    }
+
+    .circle-bg {
+      stroke: #e0e0e0;
+    }
+  }
+  &.transparent-widget {
+    .percentage {
+      &__title {
+        color: #eeeeee;
+      }
+    }
+    .circular-chart {
+      &__text {
+        &-date {
+          color: #eeeeee;
+        }
+        &-percentage {
+          color: #fff;
+        }
+      }
+    }
+    .circle-bg {
+      stroke: #292929;
+    }
+  }
+
+  &.small {
+    .percentage__title {
+      font-size: 12px;
+    }
+    .circular-chart {
+      width: 96px;
+      height: 96px;
+      &__body {
+        margin: 10px auto;
+        height: 36px;
+        width: 36px;
+        transform: scale(2.8);
+      }
+    }
+  }
+  &.medium {
+    .circular-chart {
+      width: 96px;
+      height: 96px;
+      &__body {
+        margin: 10px auto;
+        height: 36px;
+        width: 36px;
+        transform: scale(2.8);
+      }
+    }
+  }
+  &.large {
+    .circular-chart {
+      margin-top: 30px;
+
+      &__text {
+        margin-top: 10px;
+        bottom: 82px;
+        top: 101px;
+
+        &-date {
+          font-size: 16px;
+          width: 121px;
+        }
+        &-percentage {
+          font-size: 44px;
+          width: 130px;
+        }
+        &-profit {
+          font-size: 15px;
+          width: 100px;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.large-config {
+  padding: 15px;
+  height: 45px;
+}

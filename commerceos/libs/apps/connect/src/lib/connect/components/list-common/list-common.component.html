@@ -1,0 +1,78 @@
+<div class="connect-container" *ngIf="theme">
+  <pe-grid [theme]="theme" [items]="gridItems$ | async">
+    <pe-grid-sidenav
+      #sideNav
+      [sidenavTitle]="'connect-app.list_common.title' | translate"
+    >
+      <pe-folders
+        [sideNav]="sideNav"
+        [rootFolder]="rootFolderData"
+        [folders]="categoriesTreeData"
+        [selectFolder]="selectedFolder"
+        [isLoading]="isLoadingFolders$ | async"
+        (selectedRootFolder)="onSelectRootFolder()"
+        (selectedFolder)="selectFolder($event)"
+      ></pe-folders>
+    </pe-grid-sidenav>
+    <pe-grid-content
+      [mobileTitle]="mobileTitle$ | async"
+    >
+      <pe-grid-toolbar
+        [title]="'connect-app.list_common.items_title' | translate"
+        [viewAdd]="false"
+        [viewMenu]="viewMenu"
+        [totalItems]="connectListService.paginator.total"
+        [filterConfig]="toolbar.filterConfig"
+        (filtersChange)="filtersChange($event)"
+        [sortMenu]="toolbar.sortMenu"
+        (sortChange)="sortChange($event)"
+        (viewChange)="viewChange($event)"
+      ></pe-grid-toolbar>
+      <pe-grid-viewport
+        [selectable]="false"
+        [viewportTitle]="'connect-app.installation.title' | translate"
+        [defaultLayout]="gridLayout"
+      >
+        <pe-grid-list
+          noItemsPlaceholder="apps"
+          [viewAdd]="false"
+          [scrollBottomOffset]="connectListService.paginator.perPage"
+          [isLoading]="(connectListService.isLoading$ | async)"
+          (scrolledToEnd)="scrollBottom()"
+        >
+          <ng-template let-item="item">
+            <pe-grid-item
+              [item]="item"
+              [disableContextMenu]="true"
+              [autoHeightImage]="true"
+              [itemContextMenu]="item.cardItem.status.installed ? itemContextMenu : null"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+              (actionClick)="actionClick($event)"
+              (itemClick)="itemClick($event)"
+            ></pe-grid-item>
+          </ng-template>
+        </pe-grid-list>
+        <pe-grid-table
+          noItemsPlaceholder="apps"
+          [isLoading]="connectListService.isLoading$ | async"
+          [displayedColumns]="displayedColumns"
+          [scrollBottomOffset]="50"
+          (scrolledToEnd)="scrollBottom()"
+        >
+          <ng-template let-item="item">
+            <pe-table-row
+              [item]="item"
+              [disableContextMenu]="true"
+              [itemContextMenu]="item.cardItem.status.installed ? itemContextMenu : null"
+              (itemContextSelect)="onItemContentContextMenu($event)"
+              (actionClick)="actionClick($event)"
+              (rowClicked)="itemClick($event)"
+            >
+            </pe-table-row>
+          </ng-template>
+
+        </pe-grid-table>
+      </pe-grid-viewport>
+    </pe-grid-content>
+  </pe-grid>
+</div>

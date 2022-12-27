@@ -1,0 +1,214 @@
+:host {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+
+  .search_container {
+    padding: 0 12px 16px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .input-container {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        padding: 9px;
+        flex-grow: 1;
+        display: flex;
+        .search-icon {
+          height: 14px;
+          width: 14px;
+          vertical-align: top;
+          margin: 0px 5px 0 0;
+          color: #7a7a7a;
+        }
+        .search-input {
+          flex-grow: 1;
+          font-size: 12px;
+          font-weight: 400;
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+          color: #fff;
+        }
+        .clear-icon {
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+    .content {
+      overflow: auto;
+      border-radius: 12px;
+      margin-top: 16px;
+      min-height: 309px;
+      max-height: 309px;
+      min-width: 404px;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, .7)
+      }
+
+      &:hover::-webkit-scrollbar-thumb:hover {
+        background: #555
+      }
+
+      &::-webkit-scrollbar-track {
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+
+      -webkit-overflow-scrolling: touch;
+
+      .overflow-hidden {
+        overflow-x: hidden;
+        overflow: auto;
+        color: #7d7d7d;
+      }
+
+      .search-list-container {
+        overflow-y: unset;
+        border-radius: 12px;
+
+        >div:first-child {
+          padding-top: 12px;
+        }
+
+        >div:last-child {
+          padding-bottom: 12px;
+        }
+
+        >div.no-result:first-child {
+          display: block !important;
+        }
+
+        .no-result {
+          display: none;
+          text-align: center;
+          width: 100%;
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .loading-items {
+          border-radius: 13px;
+          display: flex;
+          justify-content: right;
+          margin-bottom: 12px;
+          align-items: center;
+          text-align: center;
+          div {
+            width: 100%;
+            font-weight: normal;
+            text-align: center;
+            &.loading {
+              font-size: 16px;
+              font-weight: 500;
+              font-style: italic;
+            }
+          }
+        }
+        .search-items {
+          padding: 0px 12px;
+          border-bottom: 1px solid #393939;
+          display: flex;
+          padding-top: 4px;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          width: 404px;
+          max-width: 80vw;
+
+          >div {
+            display: flex;
+            align-items: center;
+          }
+
+          .avatar {
+            margin-bottom: 5px;
+          }
+
+          .item-details {
+            line-height: 20px;
+            border-radius: 0px;
+            padding: 0px 0px 4px 8px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+            font-size: 12px !important;
+          }
+
+          &:hover {
+            background-color: #0371e2;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .pe-message-chat-room-list__title  {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .line-item {
+    min-height: 20px;
+  }
+
+  .forward-header {
+    margin: 15px 44px 15px 0px;  
+    display: flex;
+    font-family: Roboto;
+    justify-content: space-between;
+
+    .cancel-button {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: normal;
+      color: #7a7a7a;
+    }
+  
+    .forward-detail {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.13;
+      letter-spacing: normal;
+      color: #fff;
+    }
+  }
+
+  //HACK: safari only
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+
+    .search_container {
+      padding: 0 12px 16px;
+    }
+    .search-list-container {
+      overflow-y: unset;
+    }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.confirm-action-dialog {
+  .message-schedule {
+    &__container {
+      .label-input-content-wrapper {
+        width: auto;
+        background: rgba(38, 39, 40);
+        border-radius: 6px;
+        margin: 8px 16px;
+        text-align: left;
+
+        input {
+          font-size: 12px !important;
+        }
+      }
+      .peb-datetime-picker-wrapper {
+        transform: translate(0px, -110px);
+      }
+    }
+  }
+}

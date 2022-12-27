@@ -1,0 +1,50 @@
+//
+// Image picker
+// ----------------------------
+
+$border-highlight-color: #88c6ff;
+$border-highlight-width: 2px;
+
+$border-highlight-hover-color: rgba($color-blue, .2);
+$border-highlight-hover-width: 1px;
+
+@mixin border-highlight {
+  outline: $border-highlight-width solid $border-highlight-color;
+  outline-offset: -$border-highlight-width;
+}
+
+@mixin border-highlight-hover {
+  outline: $border-highlight-hover-width solid $border-highlight-hover-color;
+  outline-offset: -$border-highlight-hover-width;
+}
+
+.pe-bootstrap {
+
+  .border-highlight {
+    &:hover {
+      @include border-highlight-hover();
+    }
+
+    &-active {
+      @include border-highlight();
+    }
+
+    &-element {
+      @include payever_absolute();
+      @include border-highlight-hover();
+      display: none;
+      pointer-events: none;
+
+      &-active {
+        display: block;
+        @include border-highlight();
+      }
+    }
+
+    &-container:hover  {
+      .border-highlight-element {
+        display: block;
+      }
+    }
+  }
+}

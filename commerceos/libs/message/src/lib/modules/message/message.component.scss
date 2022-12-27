@@ -1,0 +1,74 @@
+.pe-message {
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    &.live-chat {
+      display: none;
+      position: fixed;
+      bottom: 52px;
+      right: 16px;
+      height: calc(100vh - 68px);
+      max-height: 740px;
+      width: 328px;
+      z-index: 999999;
+      overflow: hidden;
+      transform: translateY(10%);
+      opacity: 0;
+      border-radius: 16px;
+
+      &.shown {
+        display: block;
+      }
+    }
+  }
+
+  &__hide-message {
+    position: absolute;
+    top: 12px;
+    right: 36px;
+    width: 16px;
+    height: 16px;
+    z-index: 10;
+    cursor: pointer;
+
+    &_out-of-chat {
+      right: 14px;
+      top: 14px;
+    }
+
+    .icon {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__container:not(.message-list):not(.message-folder) .pe-message__hide-message {
+    right: 48px;
+  }
+
+  &__mobile-navigation {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    cursor: pointer;
+
+    mat-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &_out-of-chat {
+      top: 14px;
+      left: 14px;
+    }
+  }
+}
+
+.pe-message-pin-overlay .overlay-widget-container {
+  border-radius: 0;
+}

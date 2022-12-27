@@ -1,0 +1,203 @@
+@import '../../../../../ui-styles/src/pe_skeleton.scss';
+@import "../../misc/styles/table.mixin.scss";
+
+$checkboxWidth: var(--checkboxWidth);
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  @include GridColumns($checkboxWidth);
+}
+
+.skeleton-wrapper {
+  display: contents;
+
+  &.is-table-width-scroll {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: $skeleton-bg-dark;
+  }
+
+  .skeleton-container {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    background: $skeleton-bg-dark;
+    padding: 0 8px;
+
+    @supports (-moz-appearance:none) {
+      width: calc(100% - 16px);
+    }
+
+
+    &.first-row {
+      &.first-cell {
+        border-radius: 12px 0 0 0;
+      }
+      &.last-cell {
+        border-radius: 0 12px 0 0;
+      }
+    }
+
+    &.last-row {
+      &.first-cell {
+        border-radius: 0 0 0 12px;
+      }
+      &.last-cell {
+        border-radius: 0 0 12px 0;
+      }
+    }
+
+    .skeleton-item {
+      background: $skeleton-color-dark;
+
+      &.small-circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $skeleton-color-dark;
+        @include skeleton-animation();
+      }
+
+      &.square {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background: $skeleton-color-dark;
+        @include skeleton-animation();
+      }
+
+      &.line {
+        width: 80%;
+        max-width: 105px;
+        height: 12px;
+        border-radius: 3px;
+        @include skeleton-animation();
+      }
+
+      &.ellipse {
+        width: 100px;
+        height: 24px;
+        border-radius: 12px;
+        margin-left: auto;
+        @include skeleton-animation();
+      }
+
+      &.rectangle {
+        width: 100px;
+        height: 24px;
+        border-radius: 12px;
+        margin-left: auto;
+        @include skeleton-animation();
+      }
+
+      &.thumbnail {
+        width: 32px;
+        height: 32px;
+        border-radius: 3.2px;
+        @include skeleton-animation();
+      }
+
+      &.thumbnail-with-name,
+      &.thumbnail-circle-with-name {
+        position: relative;
+        width: 80%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          display: block;
+          content: "";
+          width: 32px;
+          height: 32px;
+          border-radius: 3.2px;
+          background: $skeleton-color-dark;
+          @include skeleton-animation();
+        }
+
+        &::after {
+          display: block;
+          content: "";
+          width: 80%;
+          max-width: 105px;
+          height: 12px;
+          border-radius: 3px;
+          background: $skeleton-color-dark;
+          margin-left: 16px;
+          @include skeleton-animation();
+        }
+      }
+
+      &.thumbnail-circle-with-name {
+        &::before {
+          border-radius: 50%;
+          @include skeleton-animation();
+        }
+      }
+    }
+  }
+
+  &.transparent {
+    background: $skeleton-bg-dark;
+
+    .skeleton-container {
+      background: $skeleton-bg-dark;
+
+      .skeleton-item {
+        background: $skeleton-color-dark;
+
+        &.thumbnail-with-name,
+        &.thumbnail-circle-with-name {
+          background: transparent;
+
+          &::before {
+            background: $skeleton-color-dark;
+          }
+
+          &::after {
+            background: $skeleton-color-dark;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    background: $skeleton-bg-light;
+
+    .skeleton-container {
+      background: $skeleton-bg-light;
+
+      .skeleton-item {
+        background: $skeleton-color-light;
+
+        &.small-circle {
+          background: $skeleton-color-light;
+        }
+
+        &.square {
+          background: $skeleton-color-light;
+        }
+
+        &.thumbnail-with-name,
+        &.thumbnail-circle-with-name {
+          background: transparent;
+
+          &::before {
+            background: $skeleton-color-light;
+          }
+
+          &::after {
+            background: $skeleton-color-light;
+          }
+        }
+      }
+    }
+  }
+}

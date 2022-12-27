@@ -1,0 +1,25 @@
+<input
+  #input
+  type="text"
+  [formControl]="formControl"
+  [matAutocomplete]="auto"
+  (blur)="onBlur()"
+  required
+>
+<label *ngIf="label">{{ label }}</label>
+<mat-autocomplete
+  class="pe-chat-autocomplete__option-list"
+  #auto="matAutocomplete"
+  (optionSelected)="optionSelected($event)">
+  <mat-option
+    *ngFor="let item of filteredItems | async; let i = index; trackBy: trackOption"
+    id="pe-chat-autocomplete__option-{{ i }}"
+    [value]="item">
+    <div class="pe-chat-autocomplete__option">
+      <svg *ngIf="item.icon" height="32" width="32">
+        <use [attr.xlink:href]="item.icon"></use>
+      </svg>
+      <span>/{{ item.name }}</span>
+    </div>
+  </mat-option>
+</mat-autocomplete>

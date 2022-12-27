@@ -1,0 +1,53 @@
+@import "../../../../../../assets/variables";
+
+.cdk-overlay-backdrop.connect-modal + .cdk-global-overlay-wrapper {
+  .shopify-container {
+    min-width: 100%;
+    padding: 0;
+
+
+    .pe-info-box {
+      width: 100%;
+      padding: 0;
+
+      .info-box {
+        .mat-card {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .mat-list-item-col.sections-step-buttons {
+      .button-download {
+        background-color: transparent !important;
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        text-align: center;
+        color: #0091df;
+        cursor: pointer;
+      }
+    }
+
+    &__api-keys {
+      .mat-expansion-panel-header-title.mat-expansion-panel-header-title-no-logo.text-centered {
+        width: 100%;
+
+        .add-button {
+          width: 100%;
+          font-family: Roboto, sans-serif;
+          font-size: 16px;
+          font-weight: normal;
+          text-align: center;
+          color: #0091df;
+          cursor: pointer;
+        }
+      }
+
+      .mat-expansion-panel.mat-expansion-panel-no-body {
+        .mat-expansion-panel-content .mat-expansion-panel-body {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

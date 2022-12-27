@@ -1,0 +1,17 @@
+<mat-list-item
+    class="mat-list-item-no-padding-left"
+  >
+    <div class="mat-list-item-flex">
+      <div class="mat-list-item-col text-left">
+        <span translate>{{ modal.titleKey }}</span>
+      </div>
+      <div class="mat-list-item-col text-right">
+        <button mat-raised-button type="button" color="muted-light" class="expansion-list-button"
+          [class.mat-button-xs]="true" [class.mat-button-rounded]="true"
+          (click)="openDialog(modal)"
+        >
+          {{ 'settings.colorAndStyle.actions.change' | translate }}
+        </button>
+      </div>
+    </div>
+  </mat-list-item>

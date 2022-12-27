@@ -1,0 +1,28 @@
+
+<form novalidate [formGroup]="form" *ngIf="form !== null">
+  <peb-form-background class="second-section" *ngFor="let applicant of applicantsControl.controls">
+    <ng-container [formGroup]="applicant">
+      <peb-form-field-input
+        [isFieldInvalid]="isSubmitted && applicant.get(field.name).errors"
+        [errorMessage]="'transactions.form.verify.errors.required' | translate"
+        [label]="makeBorrowerName(applicant.get('applicant').value)"
+        appearance="label"
+      >
+        <input type="text"
+          [mask]="field.mask"
+          [formControlName]="field.name" />
+      </peb-form-field-input>
+    </ng-container>
+  </peb-form-background>
+
+  <peb-form-background class="second-section">
+    <peb-checkbox
+      [isFieldInvalid]="isSubmitted && form.get('_confirm').errors"
+      class="verify-checkbox"
+      type="label"
+      formControlName="_confirm"
+    >
+      {{ 'transactions.form.verify.labels.confirm' | translate }}
+    </peb-checkbox>
+  </peb-form-background>
+</form>

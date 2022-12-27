@@ -1,0 +1,24 @@
+.pe-bootstrap {
+  code {
+    color: $color-dark-red;
+    background-color: $color-very-light-gray;
+    border-radius: $border-radius-base;
+  }
+  kbd {
+    background-color: $color-dark-gray;
+    border-radius: $border-radius-base;
+  }
+  pre {
+    padding: $grid-unit-y $pe_hgrid_gutter/2;
+    margin: 0 0 $grid-unit-y;
+    font-size: 12px;
+    line-height: $grid-unit-y * 2;
+    color: $color-dark-gray;
+    background-color: $color-very-light-gray;
+    border: none;
+    border-radius: $border-radius-base;
+  }
+  .pre-scrollable {
+    max-height: $grid-unit-y * 30;
+  }
+}

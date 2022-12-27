@@ -1,0 +1,3 @@
+<button class="tool" type="button" #screen (click)="openScreen(screen)">
+  <mat-icon class="tool__icon" *ngIf="screen$ | async as s" [svgIcon]="'screen-' + s"></mat-icon>
+</button>

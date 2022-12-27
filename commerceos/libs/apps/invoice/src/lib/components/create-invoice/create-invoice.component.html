@@ -1,0 +1,161 @@
+<div class="container" [ngClass]="config.theme">
+
+  <peb-expandable-panel (opened)="panelStateTrigger('customer')" [isContentOpen]="panelState.customer" headerLabel="Customer information">
+    <peb-form-background>
+       
+      <peb-product-picker
+          #contactPicker
+          [data]="contacts$ | async"
+          [formControl]="invoiceForm.get('customer')"
+          (filtered)="contactsFilter$.next($event)"
+          [buttonFunction]="openContactDialog"
+          [multiSelect]="false"
+          placeholder="Search"
+          label="Add Contacts"
+          [isFieldInvalid]="errors.customer.hasError"
+          [errorMessage]="errors.customer.errorMessage"
+        ></peb-product-picker>
+    </peb-form-background>
+  </peb-expandable-panel>
+  <peb-expandable-panel (opened)="panelStateTrigger('details')" [isContentOpen]="panelState.details" headerLabel="Invoice details">
+    <peb-form-background>
+      <peb-form-field-input label="Invoice date" appearance="label"
+      [isFieldInvalid]="errors.invoice_date.hasError" [errorMessage]="errors.invoice_date.errorMessage">
+        <input
+          #invoiceDate
+          pebInput
+          type="datetime"
+          name="invoice_date"
+          [formControl]="invoiceForm.get('invoice_date')"
+          placeholder="DD.MM.YYYY"
+          (click)="openDatepicker($event, 'invoice_date')" />
+        <div class="suffix-icon">
+          <mat-icon svgIcon="datetime-picker" (click)="openDatepicker({ target: invoiceDate }, 'invoice_date')"></mat-icon>
+        </div>
+      </peb-form-field-input>
+      <peb-form-field-input label="Invoice No" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.invoice_no.hasError" [errorMessage]="errors.invoice_no.errorMessage">
+        <input [formControl]="invoiceForm.get('invoice_no')" name="invoice_no" placeholder="Invoice No"
+        />
+      </peb-form-field-input>
+      <peb-select [formControl]="invoiceForm.get('payment_terms')" selectType="label" label="Payment Terms" [animated]="true">
+        <peb-select-option *ngFor="let term of paymentTerms" [value]="term.value" [label]="term.label"></peb-select-option>
+      </peb-select>
+      <peb-form-field-input label="Due Date" appearance="label"
+      [isFieldInvalid]="errors.due_date.hasError" [errorMessage]="errors.due_date.errorMessage">
+        <input
+          #dueDate
+          [formControl]="invoiceForm.get('due_date')"
+          placeholder="DD.MM.YYYY"
+          type="datetime"
+          name="due_date"
+          (click)="openDatepicker($event, 'due_date')" />
+        <div class="suffix-icon">
+          <mat-icon svgIcon="datetime-picker" (click)="openDatepicker({ target: dueDate }, 'due_date')"></mat-icon>
+        </div>
+      </peb-form-field-input>
+
+    </peb-form-background>
+
+  </peb-expandable-panel>
+
+  <peb-expandable-panel (opened)="panelStateTrigger('billing')" [isContentOpen]="panelState.billing" headerLabel="Billing details">
+    <peb-form-background>
+      <peb-form-field-input label="Zip Code" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.zipCode.hasError" [errorMessage]="errors.zipCode.errorMessage">
+        <input
+          type="text"
+          [formControl]="invoiceForm.get('zipCode')"
+          placeholder="Zip Code"
+          name="zipCode"
+          />
+      </peb-form-field-input>
+      <peb-form-field-input label="Street Number" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.streetNumber.hasError" [errorMessage]="errors.streetNumber.errorMessage">
+        <input [formControl]="invoiceForm.get('streetNumber')" type="text" placeholder="Street Number" name="streetNumber" />
+      </peb-form-field-input>
+
+      <peb-form-field-input label="Street Name" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.streetName.hasError" [errorMessage]="errors.streetName.errorMessage">
+        <input
+          [formControl]="invoiceForm.get('streetName')"
+          placeholder="Street Name"
+          type="text"
+          name="streetName"
+          >
+      </peb-form-field-input>
+
+      <peb-form-field-input label="State Province Code" appearance="label" [animated]="true" 
+      [isFieldInvalid]="errors.stateProvinceCode.hasError" [errorMessage]="errors.stateProvinceCode.errorMessage">
+        <input [formControl]="invoiceForm.get('stateProvinceCode')" type="text" placeholder="State Province Code" name="stateProvinceCode" />
+      </peb-form-field-input>
+
+      <peb-form-field-input label="Phone" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.phone.hasError" [errorMessage]="errors.phone.errorMessage">
+        <input [formControl]="invoiceForm.get('phone')" type="text" placeholder="Phone" />
+      </peb-form-field-input>
+
+      <peb-form-field-input label="Country Code" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.countryCode.hasError" [errorMessage]="errors.countryCode.errorMessage">
+        <input [formControl]="invoiceForm.get('countryCode')" type="text" placeholder="Country Code" name="countryCode" />
+      </peb-form-field-input>
+
+      <peb-form-field-input label="City" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.city.hasError" [errorMessage]="errors.city.errorMessage">
+        <input [formControl]="invoiceForm.get('city')" type="text" placeholder="City" name="city"/>
+      </peb-form-field-input>
+
+      <peb-form-field-input label="Tax Exempt" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.taxExempt.hasError" [errorMessage]="errors.taxExempt.errorMessage">
+        <input [formControl]="invoiceForm.get('taxExempt')" type="text" placeholder="Tax Exempt" name="taxExempt"/>
+      </peb-form-field-input>
+
+      <peb-form-field-input label="Tax Id" appearance="label" [animated]="true"
+      [isFieldInvalid]="errors.taxId.hasError" [errorMessage]="errors.taxId.errorMessage">
+        <input [formControl]="invoiceForm.get('taxId')" type="text" placeholder="Tax Id" name="taxId" />
+      </peb-form-field-input>
+
+    </peb-form-background>
+
+  </peb-expandable-panel>
+
+
+  <peb-expandable-panel (opened)="panelStateTrigger('items')" [isContentOpen]="panelState.items" headerLabel="Items">
+
+    <peb-form-background>
+
+        <peb-product-picker
+          #productPicker
+          [data]="products$ | async"
+          [formControl]="invoiceForm.get('products')"
+          (filtered)="productsFilter$.next($event)"
+          [buttonFunction]="openProductDialog"
+          placeholder="Search"
+          [isFieldInvalid]="errors.products.hasError"
+          [errorMessage]="errors.products.errorMessage"
+        ></peb-product-picker>
+    </peb-form-background>
+  </peb-expandable-panel>
+  <peb-expandable-panel (opened)="panelStateTrigger('options')" [isContentOpen]="panelState.options" headerLabel="Invoice options" [isContentOpen]="false">
+
+    <peb-form-background>
+
+      <peb-select [formControl]="invoiceForm.get('price_format')" selectType="label" label="Price Format" [animated]="true">
+        <peb-select-option [value]="priceFormats.NET" [label]="priceFormats.NET"></peb-select-option>
+        <peb-select-option [value]="priceFormats.GROSS" [label]="priceFormats.GROSS"></peb-select-option>
+      </peb-select>
+
+      <pe-input-picker
+        class="select-options"
+        [formControl]="invoiceForm.get('currency')"
+        [selectedItem]="selectedCurrency"
+        [label]="labelCurrency"
+        [data]="currencies"
+        placeholder="Currency"
+        [errorMessage]="errors.currency.errorMessage"
+        [isFieldInvalid]="errors.currency.hasError"
+      ></pe-input-picker>
+
+    </peb-form-background>
+  </peb-expandable-panel>
+ </div>

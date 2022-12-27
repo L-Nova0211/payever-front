@@ -1,0 +1,124 @@
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .group__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.cell-border {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__grid-button {
+    margin: 1px 1px 1px 0;
+    padding: 6px 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    &__active {
+      background-color: #0371e2;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.link-to {
+  &__button {
+    padding: 4px 5px 4px 8px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.remove-links {
+  cursor: pointer;
+  padding: 6px 31px;
+  border-radius: 6px;
+  background-color: #37363b;
+  width: 100%;
+  text-align: center;
+}
+
+.integrations {
+  &__wrapper {
+    cursor: pointer;
+    width:100%;
+  }
+  &__integration {
+    box-sizing: border-box;
+    padding: 6px 18px;
+    border-radius: 7px;
+    width:100%;
+  }
+  &__action {
+    box-sizing: border-box;
+    padding: 6px 18px 6px 44px;
+    width:100%;
+    border-radius: 7px;
+    &:hover {
+      background-color: #0371e2;
+    }
+  }
+}
+
+peb-alignment-form {
+  width: 100%;
+}
+
+.dimensions {
+  .number-input {
+    display: flex;
+
+    peb-number-input {
+      box-sizing: border-box;
+      max-width: 62px;
+      margin-right: 1px;
+    }
+
+    div {
+      border-radius: 6px;
+      display: flex;
+      overflow: hidden;
+
+      button {
+        align-items: center;
+        appearance: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        outline: none;
+        margin-left: 1px;
+        width: 40px;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+:host {
+  display: block;
+  width: 50%;
+  overflow: hidden;
+  .wrapper-flex {
+    @include pe_flexbox;
+
+    .store-logo {
+      @include pe_flexbox;
+      @include pe_align-items(center);
+      @include pe_justify-content(center);
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      background-size: contain;
+      background-position: center;
+      background-image: $default-logo-gradient;
+      background-repeat: no-repeat;
+      min-width: 64px;
+      min-height: 64px;
+      overflow: hidden;
+      img {
+        max-height: 100%;
+
+        &.large-then-parent {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      h2 {
+        color: $color-white;
+        font-size: 37px;
+        font-family: sans-serif;
+        margin: 0;
+      }
+    }
+
+    .store-info {
+      @include pe_flexbox;
+      @include pe_flex-direction(column);
+      justify-content: center;
+      flex: 1;
+      max-width: calc(100% - 75px);
+
+      .store-title {
+        font-size: 21px;
+        font-weight: 500;
+        color: $color-secondary;
+        margin-bottom: 8px;
+
+        @media (max-width: $viewport-breakpoint-xs-2) {
+          display: inline-block;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .mat-raised-button {
+        width: $grid-unit-x * 6;
+      }
+    }
+  }
+  .store-logo {
+    margin-right: 15px;
+  }
+
+  @media (max-width: $viewport-breakpoint-ipad - 1) {
+    .store-title {
+      font-size: 18px;
+    }
+    .store-logo {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      margin-right: 11px;
+    }
+
+    .mat-raised-button {
+      min-width: 44px;
+    }
+  }
+  @media (max-width: $viewport-breakpoint-xs-1) {
+    .store-title {
+      font-size: 15px;
+    }
+  }
+}

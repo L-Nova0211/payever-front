@@ -1,0 +1,30 @@
+<div #editorRenderer class="editor-renderer" [style.padding]="padding$ | async">
+  <div
+    class="renderer-wrap"
+    [style.width.px]="(dimensions$ | async)?.width"
+    [style.height.px]="(dimensions$ | async)?.height"
+    [style.transform]="translate$ | async"
+  >
+    <peb-renderer
+      #renderer
+      (contextmenu)="contextMenu($event)"
+      class="peb-renderer"
+      [style.transform]="scale$ | async"
+      [style.width.px]="width$ | async"
+      [screen]="(screen$ | async)"
+      [element]="(theme$ | async)?.template"
+      [stylesheet]="(theme$ | async)?.stylesheet"
+      [context]="(theme$ | async)?.context"
+      [options]="options$ | async"
+    ></peb-renderer>
+    <ng-container *ngIf="viewBox$ | async as viewBox">
+      <peb-section-borders [width]="viewBox.width" [height]="viewBox.height" [sections]="sections$ | async"></peb-section-borders>
+      <peb-control-hover [width]="viewBox.width" [height]="viewBox.height"></peb-control-hover>
+      <peb-controls [width]="viewBox.width" [height]="viewBox.height"></peb-controls>
+      <peb-selection [width]="viewBox.width" [height]="viewBox.height"></peb-selection>
+      <peb-radius [width]="viewBox.width" [height]="viewBox.height"></peb-radius>
+    </ng-container>
+  </div>
+</div>
+
+<iframe class="iframe" #iframe (load)="onLoad(iframe)"></iframe>

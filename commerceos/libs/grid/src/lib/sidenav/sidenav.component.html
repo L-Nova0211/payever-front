@@ -1,0 +1,30 @@
+<div class="pe-grid-sidenav__container">
+  <div *ngIf="isGlobalLoading" class="skeleton-title"></div>
+  <div
+    *ngIf="showSidenavHeader"
+    class="pe-grid-sidenav__title"
+    [class.hidden]="isGlobalLoading"
+  >
+    {{ sidenavTitle }}
+    <mat-icon svgIcon="small-close-icon" (click)="close(true)"></mat-icon>
+  </div>
+  <ng-content select="[searchConversation]"></ng-content>
+  <ng-content select="[emptyConversationList]"></ng-content>
+  <div
+    class="pe-grid-sidenav__content"
+    [class.pe-grid-sidenav__content_small-padding]="smallPadding"
+  >
+    <ng-scrollbar visibility="hover" appearance="compact">
+      <ng-content></ng-content>
+    </ng-scrollbar>
+  </div>
+  <div *ngIf="isGlobalLoading" class="skeleton__menu"></div>
+  <div
+    *ngIf="sidenavMenu && !mobileView"
+    class="pe-grid-sidenav__menu"
+    [class.pe-grid-sidenav__menu_opened]="menuOpened"
+    (click)="openMenu($event.target, $event.target.clientWidth)"
+  >
+    <mat-icon *ngIf="!isGlobalLoading" svgIcon="side-menu-icon-cc"></mat-icon>
+  </div>
+</div>

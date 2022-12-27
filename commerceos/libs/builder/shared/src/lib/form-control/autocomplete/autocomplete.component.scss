@@ -1,0 +1,71 @@
+.autocomplete {
+  &__wrapper {
+    display: inline-flex;
+    height: 28px;
+    width: 100%;
+  }
+
+  &__value {
+    flex: 1;
+    display: flex;
+    border-radius: 6px;
+    font-size: 11px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    color: #ffffff;
+
+    input {
+      appearance: none;
+      color: inherit;
+      font-size: 11px;
+      line-height: normal;
+      background: transparent;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      min-width: 0;
+      width: 100%;
+      padding: 0 6px;
+    }
+
+    .prefix {
+      display: flex;
+      padding: 0 10px 0 4px;
+      align-items: center;
+      color: #7a7a7a;
+    }
+
+    .suffix {
+      display: flex;
+      padding: 0 4px 0 10px;
+      align-items: center;
+      color: #7a7a7a;
+    }
+  }
+
+  &__selected {
+    margin-top: 6px;
+
+    span {
+      margin-top: 0;
+    }
+  }
+
+  &__selected-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 0 6px;
+
+    :not(:last-child) {
+      margin-top: 6px;
+    }
+
+    mat-icon {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+}

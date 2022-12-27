@@ -1,0 +1,32 @@
+<div class="integration-card connect-popup-wrapper" *ngIf="integration">
+    <div class="item">
+        <div class="item__preview">
+            <div
+                    *ngIf="integration.loadImageLazy"
+                    inViewport
+                    class="item__image"
+                    [ngStyle]="{'background-image': imageSrc}"
+                    (inViewportAction)="onInViewportChange($event)">
+            </div>
+            <div
+                    *ngIf="!integration.loadImageLazy"
+                    #image
+                    class="item__image"
+                    [ngStyle]="{'background-image': 'url(' + integration?.installationOptions?.links[0]?.url + ')'}">
+
+            </div>
+        </div>
+        <div class="item__info">
+            <div class="item__title ellipsis-text"
+                 [title]="integration?.displayOptions?.title | translate"
+                 [innerHtml]="integration?.displayOptions?.title | translate">
+            </div>
+            <div class="item__description"
+                 ellipsis
+                 ellipsis-resize-detection="manual"
+                 [title]="integration?.installationOptions?.description | translate"
+                 [innerHtml]="integration?.installationOptions?.description | translate">
+            </div>
+        </div>
+    </div>
+</div>

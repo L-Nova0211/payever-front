@@ -1,0 +1,46 @@
+@import './background';
+@import '../autocomplete/autocomplete-theme';
+@import '../form-background/form-background-theme';
+@import '../checkbox/checkbox-theme';
+@import '../color-picker/color-picker-themes';
+@import '../country-picker/country-picker-theme';
+@import '../radio-button/radio-theme';
+@import '../button-toggle/toggle';
+@import '../expandable-panel/expand-panel';
+@import '../form-field-input/form-field-input-theme';
+@import '../select/select-theme';
+@import '../form-field-textarea/form-field-textarea-theme';
+@import '../chips/chips-theme';
+@import '../social-sharing-image/social-sharing-image-theme';
+@import '../logo-picker/logo-picker-theme';
+@import '../product-picker/product-picker-theme';
+@import '../picker/picker-theme';
+@import '../list-info/list-info-theme';
+@import '../list/list-theme';
+@import '../search/search-theme';
+@import '../button/button-theme';
+
+@mixin peb-theme($theme-config) {
+  $key: 'peb-theme';
+  @include peb-background-theme($theme-config);
+  @include peb-form-background-theme($theme-config);
+  @include peb-checkbox-theme($theme-config);
+  @include peb-color-picker-theme($theme-config);
+  @include peb-country-picker-theme($theme-config);
+  @include peb-radio-theme($theme-config);
+  @include peb-toggle-theme($theme-config);
+  @include peb-expandable-theme($theme-config);
+  @include peb-form-field-input-theme($theme-config);
+  @include peb-list-info-theme($theme-config);
+  @include peb-select-theme($theme-config);
+  @include peb-form-field-textarea-theme($theme-config);
+  @include peb-chips-theme($theme-config);
+  @include peb-social-sharing-image-theme($theme-config);
+  @include peb-logo-picker-theme($theme-config);
+  @include peb-product-picker-theme($theme-config);
+  @include pe-picker-theme($theme-config);
+  @include pe-autocomplete-theme($theme-config);
+  @include pe-list-theme($theme-config);
+  @include pe-search-theme($theme-config);
+  @include pe-button-theme($theme-config);
+}

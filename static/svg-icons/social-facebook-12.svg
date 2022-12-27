@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="xMidYMin slice" width="100%" viewBox="0 0 12 12">
+    <g fill="none" fill-rule="evenodd">
+        <g fill="currentColor" fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <path d="M14 7.667c0-3.18-2.686-5.759-6-5.759s-6 2.578-6 5.76c0 2.874 2.194 5.256 5.063 5.688V9.332H5.539V7.667h1.524V6.398c0-1.443.895-2.24 2.266-2.24.656 0 1.343.112 1.343.112v1.417h-.757c-.745 0-.978.444-.978.9v1.08h1.665l-.266 1.665H8.937v4.024C11.806 12.924 14 10.542 14 7.667z" transform="translate(-50 -250) translate(16 88) translate(8 15.264) translate(24 145.011)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

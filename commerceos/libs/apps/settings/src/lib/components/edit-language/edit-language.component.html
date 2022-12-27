@@ -1,0 +1,11 @@
+<form class="form-container" [ngClass]="theme" [formGroup]="languageForm">
+    <peb-form-background>
+        <peb-select selectType="label" label="{{ 'form.create_form.language.label' | translate }}" formControlName="language">
+            <peb-select-option class="select-options"
+                               *ngFor="let item of languages"
+                               value="{{ item.value }}"
+                               label="{{ item.label }}"
+            ></peb-select-option>
+        </peb-select>
+    </peb-form-background>
+</form>

@@ -1,0 +1,72 @@
+<sandbox-renderer-preview
+  id="preview-desktop"
+  title="Basic renderer check: Desktop"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop-1"
+  title="Basic renderer check: Desktop"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.first"
+  [options]="{ screen: 'desktop', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet"
+  title="Basic renderer check: Tablet"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.second"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-tablet-1"
+  title="Basic renderer check: Tablet"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.third"
+  [options]="{ screen: 'tablet', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile"
+  title="Basic renderer check: Mobile"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-mobile-1"
+  title="Basic renderer check: Mobile"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.fourth"
+  [options]="{ screen: 'mobile', scale: 1, locale: 'en' }"
+></sandbox-renderer-preview>
+
+<sandbox-renderer-preview
+  id="preview-desktop2"
+  title="Basic renderer check: Desktop scaled"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.all"
+  [options]="{ screen: 'desktop', scale: 2, locale: 'en' }"
+></sandbox-renderer-preview>
+
+
+<sandbox-renderer-preview
+  id="preview-desktop23"
+  title="Basic renderer check: Desktop scaled"
+  [element]="(content$ | async).elements"
+  [context]="(content$ | async).context"
+  [stylesheet]="(content$ | async).stylesheet.fifth"
+  [options]="{ screen: 'desktop', scale: 2, locale: 'en' }"
+></sandbox-renderer-preview>

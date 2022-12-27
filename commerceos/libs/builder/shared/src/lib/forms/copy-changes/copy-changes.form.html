@@ -1,0 +1,9 @@
+<form *ngIf="formGroup" [formGroup]="formGroup">
+    <div class="form__row">
+      <span>COPY CHANGES FROM</span>
+      <button class="sidebar__button sidebar__button--details" (click)="showDetail()">
+        Select view
+        <mat-icon class="sidebar__icon sidebar__icon__arrow" svgIcon="arrow"></mat-icon>
+      </button>
+    </div>
+</form>

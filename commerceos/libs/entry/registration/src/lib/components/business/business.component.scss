@@ -1,0 +1,56 @@
+@import "pe_variables.scss";
+
+  .signup-button{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #0371e2;
+    color:white;
+    font-size: 14px;
+    outline: 0;
+    border: 0;
+    margin-top: 12px;
+    height: 54px;
+    font-weight: 500;
+    &:hover{
+      background-color: rgb(23, 133, 246);
+    }
+
+    @media (min-width: 521px) {
+      height: 44px;
+    }
+  }
+
+  .gray{
+    background-color: rgb(56, 59, 66);
+    &:hover{
+      background-color: rgb(66, 69, 76);
+    }
+  }
+
+  .registration-header-title {
+    text-align: center;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.3333333333;
+    margin-bottom: 22px;
+
+    @media (min-width: 521px) {
+      line-height: 1.5714285714;
+    }
+  }
+
+  .entry-layout-terms {
+    margin-top: 18px;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    color: $color-secondary-6;
+    a {
+      cursor: pointer;
+      font-size: 13px;
+      color: $color-secondary-0;
+      font-weight: 500;
+    }
+  }

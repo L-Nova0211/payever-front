@@ -1,0 +1,22 @@
+{
+  "access": {
+    "business": {
+      "defaultInstalled": true,
+      "isDefault": true
+    },
+    "admin": {
+      "defaultInstalled": true,
+      "isDefault": true
+    },
+    "user": {
+      "defaultInstalled": true,
+      "isDefault": true
+    },
+    "partner": {
+      "defaultInstalled": false,
+      "isDefault": false
+    }
+  },
+  "code": "commerceos",
+  "url": "/business/{uuid}"
+}

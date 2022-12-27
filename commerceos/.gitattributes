@@ -1,0 +1,3 @@
+env.test.ts lockable
+env.staging.ts lockable
+env.production.ts lockable

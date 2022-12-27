@@ -1,0 +1,73 @@
+@import '~@pe/ui-kit/scss/mixins/pe_mixins';
+@import '~@pe/ui-kit/scss/pe_variables';
+
+.integration-write-review {
+  padding-top: $padding-base-vertical*4;
+  color: $color-white;
+  max-width: 700px;
+  margin: auto;
+}
+
+
+.header {
+  width: 100%;
+  display: flex;
+  padding-bottom: $padding-base-vertical;
+  border-bottom: 1px solid $color-white-grey-1;
+
+  &__text-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-left: 50px;
+  }
+
+  &__main-title {
+    font-size: $font-size-large-1;
+    font-weight: $font-weight-medium;
+  }
+
+  &__description {
+    font-size: $font-size-micro-1;
+    font-weight: $font-weight-thin;
+    color: $color-white-grey-4;
+  }
+
+  &__author {
+    font-size: $font-size-micro-1;
+  }
+}
+
+.form-container {
+  padding-top: $padding-base-vertical*2;
+
+  &__buttons {
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  &__cancel-button {
+    margin-left: 8px;
+  }
+}
+
+.rating-bar {
+  padding: 15px 0 0px 0;
+}
+
+::ng-deep.confirm-cancel-dialog {
+  .mat-card {
+    background-color: $color-grey-1;
+  }
+}
+
+::ng-deep.confirm-review-dialog {
+  .mat-card {
+    background-color: $color-grey-1;
+  }
+}
+
+::ng-deep.border-bottom {
+  border-bottom-right-radius: $border-radius-base * 2;
+  border-bottom-left-radius: $border-radius-base * 2;
+}

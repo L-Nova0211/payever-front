@@ -1,0 +1,147 @@
+@import "../../../../assets/imports";
+@import "../../../../assets/variables";
+
+:host {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.col-xs-6 {
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .col-sm-4 { width: 33.33333333%; }
+  .col-sm-8 { width: 66.66666667%; }
+}
+
+.loading {
+  padding: 24px 0;
+  position: relative;
+
+  .mat-progress-spinner {
+    left: 50%;
+    margin-left: -10px;
+  }
+}
+
+.loading-error {
+  padding: 16px 24px 16px;
+}
+
+:host ::ng-deep .mat-expansion-panel .mat-expansion-panel-header svg {
+  color: #e6e5e5 !important;
+}
+
+:host ::ng-deep {
+  .key {
+    padding: 0 2px;
+
+    @media (max-width: $viewport-breakpoint-sm-1 - 1) {
+      padding: 14px 0 10px;
+    }
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .key-info {
+      margin: 0;
+      background-color: $table-content-background-color;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 0;
+
+      .small-2 {
+        color: $regular-text-color;
+      }
+
+      .row {
+        margin: 0;
+        height: 40px;
+        padding: 0 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid $menu-item-border-color;
+
+        & > [class*=col] {
+          color: $regular-text-color;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+
+      .key-value {
+        position: relative;
+        word-break: break-all;
+        color: $color-white-grey-5;
+
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 60px;
+
+        .btn-copy {
+          cursor: pointer;
+          color: #0091df;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .btn-copy:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .key:last-child {
+    border-bottom: none;
+  }
+
+  .plugin-api-accordion-container {
+    border-radius: 12px;
+    overflow: hidden;
+
+    .mat-expansion-panel {
+      &:first-of-type {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+
+      &:last-of-type {
+        border-bottom-left-radius: 12px !important;
+        border-bottom-right-radius: 12px !important;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+::ng-deep .overlay-light {
+  .key {
+    .key-info {
+      background-color: $content-light-background-color;
+
+      .small-2 {
+        color: $regular-light-text-color;
+      }
+
+      .row {
+        border-bottom: 1px solid $content-light-border-color;
+
+        & > [class*=col] {
+          color: $regular-light-text-color;
+        }
+      }
+    }
+  }
+}
+
+.sections-step-buttons .mat-raised-button.mat-button-base {
+  margin-top: 0;
+}

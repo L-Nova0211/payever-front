@@ -1,0 +1,18 @@
+<a [routerLink]="link" (click)="hide.emit()">
+  <span class="icon">
+    <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" [attr.xlink:href]="icon"></use>
+    </svg>
+  </span>
+  <span class="ellipsis">{{message}}</span>
+  <ng-container *ngTemplateOutlet="defaultTemplate"></ng-container>
+</a>
+
+<ng-template #defaultTemplate>
+  <div class="round"></div>
+</ng-template>
+
+<ng-template #hoveredTemplate>
+  <!-- <div class="round-blue">
+  </div> -->
+</ng-template>

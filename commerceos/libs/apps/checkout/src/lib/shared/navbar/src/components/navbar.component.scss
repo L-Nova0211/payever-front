@@ -1,0 +1,22 @@
+@import "~@pe/ui-kit/scss/pe_variables.scss";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+.mat-toolbar-app {
+  overflow-x: hidden;
+}
+
+.scroll-backdrop {
+  @include full_screen();
+  z-index: 1000;
+}
+
+.toolbar-suptext {
+  color: #ce7a45;
+  margin-left: 0;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.touch-scroll-button {
+  touch-action: unset !important;
+}

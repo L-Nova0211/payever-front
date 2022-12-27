@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+  <peb-form-field-input
+    [isFieldInvalid]="form.get('amount')?.invalid"
+    [errorMessage]="
+      'transactions.form.refund.fields.amount.errors.limits'
+        | translate
+          : {
+              min: 0 | currency: order.transaction.currency:undefined:undefined:locale,
+              max: refundTotal | currency: order.transaction.currency:undefined:undefined:locale
+            }
+    "
+    [class.disabled]="this.form.get('amount')?.disabled"
+    label="{{ 'transactions.form.shipping_goods.labels.amount_placeholder' | translate }}"
+    appearance="label"
+    >
+    <input
+      type="text"
+      pebInput
+      placeholder="{{
+        'transactions.form.shipping_goods.labels.amount'
+          | translate
+            : {
+                amount: refundTotal | currency: order.transaction.currency:undefined:undefined:locale
+              }
+      }}"
+      formControlName="amount"
+      (keypress)="amountChanged($event)"
+    />
+  </peb-form-field-input>
+</form>

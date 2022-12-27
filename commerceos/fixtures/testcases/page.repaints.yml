@@ -1,0 +1,89 @@
+id: testcases-repaints
+name: Repaints
+variant: front
+type: replica
+master: ~
+data: {}
+template:
+  id: repaints-document
+  type: document
+  children:
+    - id: repaints-header
+      type: section
+      children: []
+    - id: repaints-body
+      type: section
+      data:
+        devGrid: true
+        devGridStep: 25
+      children:
+        - id: repaint-body-left
+          type: block
+          children:
+            - id: repaint-body-button
+              type: button
+              data:
+                text: Move me!
+                variant: button--rounded
+        - id: repaint-body-right
+          type: block
+          children: []
+    - id: repaints-footer
+      type: section
+      children: []
+
+stylesheets:
+  desktop:
+    repaints-document: {}
+    repaints-header:
+      height: 250
+      backgroundImage: /fixtures/testcases/assets/repaints-animal.jpg
+      backgroundSize: contain
+      backgroundRepeat: no-repeat
+      backgroundPosition: 50% 50%
+    repaints-body:
+      display: grid
+      margin: 0 auto
+      height: 340
+      gridTemplateColumns: 512 512
+    repaint-body-left:
+      gridArea: 1 / 1 / 1 / 1
+      width: 512
+      height: 340
+      backgroundImage: /fixtures/testcases/assets/repaints-car.jpg
+      backgroundSize: contain
+    repaint-body-button:
+      background: red
+      color: white
+      padding: 15
+      marginTop: 100
+      marginLeft: 100
+    repaint-body-right:
+      gridArea: 1 / 2 / 1 / 2
+      width: 512
+      height: 340
+      backgroundImage: /fixtures/testcases/assets/repaints-paris.jpg
+      backgroundSize: contain
+    repaints-footer:
+      height: 250
+      backgroundImage: /fixtures/testcases/assets/repaints-water.jpg
+      backgroundSize: contain
+      backgroundRepeat: no-repeat
+      backgroundPosition: 50% 50%
+  tablet:
+    repaints-document: {}
+    repaints-header: {}
+    repaints-body: {}
+    repaint-body-left: {}
+    repaint-body-button: {}
+    repaint-body-right: {}
+    repaints-footer: {}
+  mobile:
+    repaints-document: {}
+    repaints-header: {}
+    repaints-body: {}
+    repaint-body-left: {}
+    repaint-body-button: {}
+    repaint-body-right: {}
+    repaints-footer: {}
+context: {}

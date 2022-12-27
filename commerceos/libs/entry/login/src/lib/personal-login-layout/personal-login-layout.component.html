@@ -1,0 +1,14 @@
+<entry-layout [hideLogo]="false" [entryLogo]="getIndustryIcon()">
+
+  <ng-container content>
+    <div class="login-header">{{ 'forms.login.header' | translate }}</div>
+    <entry-login
+      [withoutRegister]="withoutRegister"
+      [withoutForgot]="withoutForgot"
+      (onSuccessLogin)="onSuccessLogin()"
+      (onSecondFactorCode)="secondFactorCodeOn.emit()"
+      (onRegister)="registerOn.emit()"
+    >
+    </entry-login>
+  </ng-container>
+</entry-layout>

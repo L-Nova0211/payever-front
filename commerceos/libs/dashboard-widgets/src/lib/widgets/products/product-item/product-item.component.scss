@@ -1,0 +1,109 @@
+@import "~@pe/ui-kit/scss/pe_variables";
+@import "~@pe/ui-kit/scss/mixins/pe_mixins";
+
+:host {
+  .product-wrapper {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+  .product-image {
+    width: $icon-size-48;
+    height: $icon-size-48;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: $color-white; // should stay white for all themes
+    border-radius: $border-radius-base;
+    background-position: center;
+    float: left;
+    margin-right: 10px;
+    @media (max-width: $viewport-breakpoint-sm-4 - 1) {
+      margin-right: 5px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .product-info {
+    @include pe_inline-flex;
+    @include pe_flex-direction(column);
+    margin-right: 16px;
+    vertical-align: top;
+    @media (max-width: $viewport-breakpoint-sm-4 - 1) {
+      margin-right: 8px;
+    }
+    @media (max-width: $viewport-breakpoint-xs-2 - 1) {
+      margin-top: 6px;
+      width: 100%;
+    }
+  }
+  .product-title {
+    color: $color-secondary;
+    font-size: $font-size-micro-2;
+    font-weight: 500;
+    line-height: 15px;
+  }
+  .product-quantity {
+    color: $color-secondary;
+    font-size: $font-size-small;
+    font-weight: 300;
+    line-height: normal;
+    b {
+      font-size: 21px;
+      font-weight: 500;
+      @media (max-width: $viewport-breakpoint-sm-4 - 1) {
+        font-size: 15px;
+      }
+    }
+  }
+  .product-lastbuy,
+  .product-price {
+    color: $color-secondary-3;
+    font-size: $font-size-micro-2;
+    font-weight: 300;
+    line-height: 15px;
+  }
+  .product-price {
+    margin-top: 4px;
+    color: $color-secondary-9;
+  }
+  .product-small {
+    @include pe_flexbox;
+    @include pe_justify-content(space-between);
+
+    .product-image {
+      width: $icon-size-48;
+      height: $icon-size-48;
+    }
+
+    .product-info {
+      margin-right: 5px;
+    }
+
+    .product-quantity b {
+      font-size: $font-size-small;
+    }
+  }
+  @media (max-width: $viewport-breakpoint-ipad - 1) {
+    .product-small {
+      .product-lastbuy,
+      .product-price,
+      .product-title {
+        font-size: 10px;
+      }
+
+      .product-quantity {
+        font-size: $font-size-micro-2;
+
+        b {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    .product-info { margin-right: 0; }
+  }
+}

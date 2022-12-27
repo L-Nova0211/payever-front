@@ -1,0 +1,23 @@
+<div class="policies-wrapper" [ngClass]="theme">
+    <pe-text-editor-toolbar
+        #editorToolbar
+        [hideLink]="true"
+        [hideOpenNewTab]="true"
+        [hideColorPicker]="true"
+        [hideFontSize]="true"
+        (actionClicked)="onTextEditorAction($event)"
+        (click)="editorFocused = true">
+    </pe-text-editor-toolbar>
+    <pe-text-editor
+        #textEditor
+        class="text-editor"
+        [ngClass]="theme"
+        [theme]="theme"
+        [htmlText]="description"
+        [editable]="true"
+        [placeholder]="placeholder"
+        (contentChange)="onDescriptionChange($event)"
+        (editorFocus)="editorFocus()"
+        (editorClick)="$event.stopPropagation()">
+    </pe-text-editor>
+</div>

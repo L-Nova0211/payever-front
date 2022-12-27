@@ -1,0 +1,122 @@
+@import '../../../ui/src/lib/components/theming/theming';
+
+$dark-theme: peb-theme-choose('dark');
+$light-theme: peb-theme-choose('light');
+$transparent-theme: peb-theme-choose('transparent');
+
+@mixin pe-dushboard-menu-theme($theme-config) {
+  $accent: map-get($theme-config, accent);
+  $box-shadow-color: map-get($theme-config, box-shadow-color);
+  $hover: map-get($theme-config, hover);
+  $hover-menu-item: map-get($theme-config, hover-menu-item);
+  $hover-text: map-get($theme-config, hover-text);
+  $text-color: map-get($theme-config, text-color);
+  $x-button: map-get($theme-config, x-button);
+
+  background-color: $accent;
+  box-shadow: 0 2px 12px 0 $box-shadow-color;
+
+  .pe-dashboard-menu {
+
+    &__title,
+    &__item-title,
+    &__close-button:hover {
+      color: $text-color;
+    }
+
+    &__close-button {
+      color: $x-button;
+    }
+    
+    &__item {
+      &:hover {
+        background-color: $hover-menu-item;
+        color: $hover-text;
+      }
+    }
+
+    &__item-icon {
+      background-color: #636363;
+      color: #fff;
+    }
+  }
+}
+
+.pe-dashboard-menu {
+  margin-right: -4px;
+  margin-top: 6px;
+  width: 254px;
+
+  @media(max-width: 720px){
+    width: 210px;
+  }
+
+  .mat-menu-content {
+    padding: 8px;
+  }
+
+  &.dark,
+  &.default {
+    @include pe-dushboard-menu-theme($dark-theme);
+  }
+
+  &.light {
+    @include pe-dushboard-menu-theme($light-theme);
+  }
+
+  &.transparent {
+    @include pe-dushboard-menu-theme($transparent-theme);
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    padding: 8px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__close-button {
+    cursor: pointer;
+    height: 20px;
+    transition: all .2s;
+    width: 20px;
+  }
+  
+  &__item {
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 8px;
+    padding: 6px 8px !important;
+    transition: all .2s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-icon {
+    border-radius: 5px;
+    display: flex;
+    margin-right: 8px;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    padding: 2px;
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,148 @@
+@import "../../../styles/src/lib/styles/spinner";
+@import "../../../styles/src/lib/styles/variables";
+
+$background: #1c1d1e;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #24272e;
+}
+
+.post-toolbar {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.content-wrap {
+  overflow: hidden;
+  width: 100%;
+  box-shadow: inset 0 0 0.25em #1c1d1e;
+  border-radius: 12px 12px 0 0;
+
+  .toolbar {
+    background: #24272e;
+  }
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 32px);
+  background-color: #e4e4e4;
+}
+
+.pages {
+  height: calc(100% - 96px);
+  overflow: scroll;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.pages .page {
+  cursor: pointer
+}
+
+.page {
+  padding: 10px 0 5px 0;
+  cursor: pointer;
+  border-radius: 4.5px;
+
+  &--active {
+    background-color: #1767e1;
+  }
+
+  &:hover:not(&--active):not(.page--skeleton) {
+    //background-color: $page-item-hover-color;
+  }
+
+  &__preview {
+    margin: auto;
+    position: relative;
+    //width: $page-item-preview-width;
+    //padding-top: $page-item-preview-aspect-ratio;
+    //background-color: $page-item-font-color;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.15);
+    pointer-events: none;
+
+    img, peb-renderer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    //color: $page-item-font-color;
+    margin: auto;
+    margin-top: 0.25em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: $page-item-preview-width;
+  }
+
+  &--skeleton:hover {
+    cursor: inherit;
+  }
+
+  &--skeleton & {
+
+    &__preview,
+    &__name {
+      animation: skeleton 1s ease-in-out forwards infinite;
+      animation-direction: alternate;
+      //background-color: $background-skeleton;
+    }
+
+    &__name {
+      width: 100%;
+      height: 1em;
+    }
+  }
+}
+
+iframe {
+  border: none;
+  background: transparent;
+}
+
+.preview-renderer {
+  z-index: -1000;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .sidebar--right {
+    width: 100%;
+    height: 382px;
+    position: absolute;
+    align-self:flex-end;
+    border-radius: 0;
+    margin-left: 0;
+  }
+  .sidebar--left {
+    width: 100%
+  }
+  .sidebar--additional-left {
+    width: 100%;
+  }
+}
